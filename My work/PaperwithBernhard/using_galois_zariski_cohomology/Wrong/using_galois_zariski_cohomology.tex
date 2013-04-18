@@ -1,0 +1,200 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\theoremstyle{remark}\newtheorem*{rem}{Remark}
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\cal L}}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Using ``Galois structure of Zariski cohomology''}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+Let $X$ be a smooth connected projective algebraic curve over an algebraically closed field $k$ of charactersitic $p>0$.
+Suppose that $G$ is a cyclic group of prime order $l$ (not equal $p$) which acts faithfully on $X$.
+We denote by $Y$ the quotient curve $X/G$, and by $\pi$ the canonical projection $X\rightarrow Y$.
+Then let $K_X$ and $K_Y$ denote the canonical divisors of $X$ and $Y$ respectively, and similarly let $g_X$ and $g_Y$ denote the genera of the curves.
+Moreover, we assume that $g_X\geq 2$ and that $g_Y = 0$.
+
+
+We wish to use \citep[Thm 4.5]{galiosstruc} to find when $G$ acts trivially on $H^0(X,\Omega^{\otimes m})$.
+In order to do this we will first need to introduce some notation.
+
+We first denote by $\chi_P$ the representation of the decomposition group $G_P$ on the cotangent space $\frak m_P/\frak m_P^2$.
+We also introduce the unique projective module $N_{G,X}$ satisfying
+\begin{equation*}
+ \bigoplus^l N_{G,X} = \bigoplus_{P\in X} \bigoplus_{d=1}^{e^t_p-1} \bigoplus^d {\rm Ind}_{G_P}^G(\chi_P^d),
+\end{equation*}
+
+where $e^t_p$ denotes that (tame) ramification index at a point $P\in X$, as in \citep[Thm 4.3]{galiosstruc}.
+
+Fix an integer $m\geq 2$. Now if we write $mK_X = \sum_{P\in X} n_P[P]$ then we can define $r_P\in \{0,\ldots, e^t_p - 1\}$ and $s_P\in \ZZ$ to be the unique values such that
+\[
+ n_P = r_P + s_Pe_P^t.
+\]
+
+Finally, if for any $Q\in Y$ we let $\bar Q \in X$ be an element of the fibre with respect to $\pi$, we can state \citep[Thm 4.5]{galiosstruc}, which says that we have the following equality in $K_0(k[G])$:
+\begin{equation}\label{eq}
+ \chi(G,X,\Omega^{\otimes m}) = -[N_{G,X}] +\sum_{Q\in Y}\sum^{r_{\bar Q}}_{d=1} [{\rm Ind}_{G_{\bar Q}}^G(\chi_{\bar Q}^d)]  + \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right) [k[G]],
+\end{equation}
+where for any $k[G]$ module $A$ then $[A]$ denotes that class of $A$ in $K_0[k[G]]$.
+
+We wish to find when the action of $G$ on $H^0(X,\Omega^{\otimes m})$ is trival.
+Note that $[H^0(X,\Omega^{\otimes m})]$ is in the same class as $\chi(G,X,\Omega^{\otimes m})$ in $K_0(k[G])$, since $mK_X$ is non-special under our assumptions.
+Hence the action will be trivial precisely when we have equality between the dimension and the fixed dimension.
+However, rather than compute this in its entirety we will look at the weaker question of when each component of the right hand side of \ref{eq} has dimension equal to its fixed dimension.
+We will see that even this can only tell us that $l=2$ and that $m$ is either odd or 2.
+
+
+Before we look at the first two parts, we recall from \citep[Rem. 4.30]{introtoreps} that for a representation $V$ of a group $G$ and a subgroup $H\subseteq G$ we have
+\[
+  \dim \rm{Ind}_H^G(V) = \dim(V)\cdot\frac{|G|}{|H|}.
+\]
+
+Since our group is of prime order, any subgroup is either trivial, or the whole group.
+If $G_P = G$ then $G$ acts trivially on $P$, and $P$ is a ramification point, and has ramification index $l=|G|$.
+In the other case, when $G_P$ is trivial, then $P$ is unramified, and has ramification index one.
+Now in both $N_{G,X}$ and $\sum_{Q\in Y}\sum^{r_{\bar Q}}_{d=1} {\rm Ind}_{G_P}^G(\chi_P^d)$ we sum over all the points in $X$ and $Y$ respectively, and then we sum to one less than their ramification index.
+So we have $\dim {\rm Ind}_{G_P}^G(\chi_P^d) = \dim \chi_P^d = 1$ for all contributing components.
+
+Following this we can write 
+\[
+ l\cdot \dim N_{G,X} = \sum_{P\in X} \sum_{d=1}^{e^t_P -1} d\cdot \dim {\rm Ind}_{G_P}^G\chi_P^d = \sum_{P\ \rm{ ramified}} \sum_{d=1}^{l -1} d
+\]
+since the dimension of $\chi^d_P$ is $1$.
+Now the fixed dimension of $\chi^d_P$ is precisely 0 for $d>0$, and hence we also have
+\[
+ l\cdot \dim N_{G,X}^G = \sum_{P\ \rm{ ramified}} \sum_{d=1}^{l-1} 0 = 0.
+\]
+
+We now compute the difference of these to see when they are zero:
+\begin{eqnarray*}
+ l\cdot \dim N_{G,X} - l\cdot \dim N_{G,X}^G & = & l\cdot \sum_{P\ \rm{ ramified}} \left( \frac{(l-1)l(2l-1)}{6} - \frac{(l-1)l}{2}\right) \\
+  & = & l\cdot \sum_{P\ \rm{ ramified}} \frac{(2l-1)((l-1)l) - 3(l-1)l}{6}\\
+  & = & l\cdot \sum_{P\ \rm{ ramified}} \frac{(2l-4)(l-1)l}{6}.
+\end{eqnarray*}
+The sum is clearly zero if and only if all it's terms are, which is true if and only if $l\in \{0,1,2\}$.
+But $l=0$ is not possible, and $l=1$ would mean that we have the trivial group, so $l=2$ is the only interesting case.
+
+We now move on to the second term in the sum, and compute its dimension which is
+\[
+ \dim \left(\sum_{Q\in Y} \sum_{d=1}^{r_{\bar Q}} \rm{Ind}_{G_{\bar Q}}^G (\chi_{\bar Q}^{-d})\right) = \sum_{Q\in Y} \sum_{d=1}^{r_{\bar Q}} d.
+\]
+On the other hand the fixed dimension is
+\[
+ \sum_{Q\in Y} \sum_{d=1}^{r_{\bar Q}} 1.
+\]
+
+So these dimensions will be equal if and only if $r_{\bar Q}$ is equal to 0 or 1 for all $Q \in Y$.
+Since we know that $l=2$, we can be more explicit.
+Recall that we can write $mK_X = mK_Y + mR$, where $R$ is the ramification divisor.
+We can assume $K_Y = -2[P']$ for some unramified point $P'\in X$.
+This gives us $-2m = r_{P'} + s_{P'}l$, and for any ramified point $P$ we also have $m(l-1) = r_P + s_Pl$ (since all the ramification is tame, all the non-zero coefficients of $R$ are $l-1)$).
+Since $l=2$ the first of these identities tells us that $r_{P'}=0$ and $s_{P'}=m$.
+From the second identity we see that if $P$ is a ramified point $r_P$ is $0$ if $m$ is even, and is $1$ otherwise.
+
+
+Finally, we now compute when 
+\[
+ \dim \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right) k[G] - \dim \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right) k[G]^G = \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right)(l-1) = 0.
+\]
+Since $l=2$ reduces to
+\[
+ \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right)(l-1) = 1 + \sum_{Q\in Y} s_{\bar Q} = 0.
+\]
+
+We can rewrite this as
+\begin{eqnarray*}
+ -l &=& \sum_{Q\in Y} ls_{\bar Q}\\
+ &= &\sum_{P\ \rm{ramified}}( m(l-1) -r_P )- (2m + r_{P'})\\
+& =& \sum_{P\ \rm{ramified}}( m(l-1) -r_P )- 2m,
+\end{eqnarray*}
+since $r_{P'}=0$.
+Now if $m$ is odd and there are two ramification points then this is satisfied; we just have $2(m-1) -2m = -2$, which is true.
+If $m$ is even we can write $m = 2m'$, then for equality to hold we are asking that $-2=n2m'-4m'= 2m'(n-2)$. 
+Since $m'(2-n) = 1$ if and only $m' = n = 1$, the only even value $m$ can take is two.
+
+So we have deduced that $l=2$, and if even $m=2$.
+
+\bibliography{/home/joe/files/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+\end{document}

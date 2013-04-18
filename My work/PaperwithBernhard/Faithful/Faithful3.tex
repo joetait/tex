@@ -1,0 +1,457 @@
+\documentclass[12pt,leqno]{article}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+
+\oddsidemargin=0.3cm \evensidemargin=0.3cm \topmargin=-1cm
+\textwidth=15.3cm \textheight=23cm
+\parskip=5pt
+\parindent=0pt
+
+
+
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\minusquad}{\!\!\!\!\!\!}
+\newcommand{\scrE}{\mathcal{E}}
+\newcommand{\scrF}{\mathcal{F}}
+\newcommand{\scrI}{\mathcal{I}}
+\newcommand{\scrO}{\mathcal{O}}
+\newcommand{\frcm}{\mathfrak{m}}
+\newcommand{\frcn}{\mathfrak{n}}
+\newcommand{\frca}{\mathfrak{a}}
+\newcommand{\biject}{\stackrel{\sim}{\longrightarrow}}
+\newcommand{\modd}{\!\!\!\mod}
+\newcommand{\Fq}{\mathds{F}_{q}}
+
+
+%\liff{ref}
+\newcommand{\liff}[1]{\stackrel{#1}{\Longleftrightarrow}}
+
+%\lformula {label}{mathcode}
+\newcommand{\lformula}[2]{\begin{equation} \label{#1} #2
+\end{equation}}
+
+%\formula{mathcode}
+\newcommand{\formula}[1]{\begin{equation} #1 \end{equation}}
+
+%\intlabel{label}
+%\newcommand{\intlabel}[1]{\label{#1} \textbf{[Label: #1 ]} \newline}
+\newcommand{\intlabel}[1]{\label{#1}}
+
+
+\newcommand{\cA}{{\cal A}}
+\newcommand{\cC}{{\cal C}}
+\newcommand{\cB}{{\cal B}}
+\newcommand{\cD}{{\cal D}}
+\newcommand{\cE}{{\cal E}}
+\newcommand{\cF}{{\cal F}}
+\newcommand{\cG}{{\cal G}}
+\newcommand{\cH}{{\cal H}}
+\newcommand{\cI}{{\cal I}}
+\newcommand{\cJ}{{\cal J}}
+\newcommand{\cK}{{\cal K}}
+\newcommand{\cL}{{\cal L}}
+\newcommand{\cM}{{\cal M}}
+\newcommand{\cN}{{\cal N}}
+\newcommand{\cO}{{\cal O}}
+\newcommand{\cP}{{\cal P}}
+\newcommand{\cQ}{{\cal Q}}
+\newcommand{\cR}{{\cal R}}
+\newcommand{\cV}{{\cal V}}
+
+
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\FF}{{\mathbb F}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\NN}{{\mathbb N}}
+\renewcommand{\AA}{{\mathbb A}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\HH}{{\mathbb H}}
+
+
+
+
+\begin{document}
+\begin{center} {\bf\Large Faithful Action on the Space of Global\\
+\vspace*{0.2cm} Differentials of an Algebraic Curve} \end{center}
+\begin{center}\sc Bernhard K\"ock \end{center}
+
+\bigskip
+
+\begin{quote}
+\footnotesize {\bf Abstract.} Given a faithful action of a
+finite group $G$ on an algebraic curve of genus at least 2, we
+prove that the induced action on the space of global
+holomorphic differentials is faithful as well unless the
+characteristic of the base field is  2 and $G$ contains a
+hyperelliptic involution.
+
+
+{\bf Mathematics Subject Classification 2000.} 14H30; 14F10;
+11R32.
+
+\end{quote}
+
+\bigskip
+
+Let $X$ be a connected smooth projective algebraic curve over
+an algebraically closed field $k$ equipped with a faithful
+action of a finite group $G$ of order $n$. Then $G$ also acts
+on the vector space $H^0(X, \Omega_X)$ of global holomorphic
+differentials on $X$. A widely studied problem is to determine
+the structure of $H^0(X,\Omega_X)$ as module over the group
+ring $k[G]$. It goes back to the Chevalley-Weil when $k = \CC$,
+see \cite{CW}. If the canonical projection $\pi: X \rightarrow
+Y$ from $X$ to the quotient curve $Y = X/G$ is tamely ramified,
+a fairly explicit answer to this problem has been given in 1986
+by Kani in \cite{Ka}. For more recent answers to (related)
+questions in more general situations the reader is referred to
+the papers \cite{Bo} and \cite{FWK}. In the case of arbitrary
+wild ramification the explicit calculation of the
+$k[G]$-isomorphism class of $H^0(X,\Omega_X)$ is still an open
+problem.
+
+This note is concerned with the weaker question whether $G$
+acts faithfully on the space~$H^0(X,\Omega_X)$. We give the
+following answer to this question. Let $g_X$ and $g_Y$ denote
+the genus of $X$ and $Y$, respectively, and let $p$ denote the
+characteristic of $k$. We recall that a hyperelliptic
+involution of $X$ is an automorphism $\sigma$ of $X$ of order
+$2$ such that the quotient curve $X/\langle \sigma \rangle$ is
+isomorphic to $\PP^1_k$.
+
+{\bf Theorem.} {\em We assume that $g_X \ge 2$. Then $G$ acts
+faithfully on $H^0(X,\Omega_X)$ if and only if $p \not=2$ or if
+$G$ does not contain any hyperelliptic involution.}
+
+The proof of this theorem will be given after the proof of
+Proposition~1 below.
+
+
+{\bf Corollary.}  {\em Let $g_X \ge 2$. If $G$ does not act
+faithfully on $H^0(X,\Omega_X)$ then $p=2$, $g_Y =0$ and the
+projection $\pi$ is not tamely ramified.}
+
+{\em Proof.} By the previous theorem we have $p=2$ and there
+exists a hyperelliptic involution $\sigma \in G$. Then the
+Hurwitz formula (see Corollary~2.4 on p.~301 in \cite{Ha})
+applied to the projection $X\rightarrow X/\langle \sigma
+\rangle \cong \PP^1_k$ shows that $X\rightarrow X/\langle
+\sigma \rangle$ is not unramified and hence not tamely
+ramified; then $\pi$ is not tamely ramified either. And the
+Hurwitz formula applied to the projection $\PP^1_k\cong
+X/\langle \sigma \rangle \ra  Y$ shows that the genus of $Y$ is
+$0$ as well.
+
+The following example describes some (mostly trivial) cases
+when the action of $G$ on $H^0(X, \Omega_X)$ is in fact
+trivial.
+
+
+
+{\bf Example.}\\
+(a) If $g_X = 0$ then $G$
+obviously acts trivially on $H^0(X,\Omega_X) = \{0\}$.\\
+(b) If $g_X =1 $ (that is if $X$ is an elliptic curve) and if
+$G$ is a finite subgroup of $X(k)$ acting on $X$ by
+translations then $G$ leaves invariant any global non-vanishing
+holomorphic differential and hence $G$ acts trivially on
+$H^0(X,\Omega_X)$.\\
+(c) Let $p=2$. If $n=2$ and $g_Y =0$, then $G \cong \ZZ/2\ZZ$
+acts trivially on $H^0(X, \Omega_X)$ by Proposition~2 below.
+For instance, let $r$ be an odd natural number, let $k(x,y)$ be
+the extension of the rational function field $k(x)$ given by
+the Artin-Schreier equation $y^2-y = x^r$ and let $\pi: X
+\rightarrow \PP^1_k$ be the corresponding cover of nonsingular
+curves over $k$; then $G$ acts trivially on the vector space
+$H^0(X,\Omega_X)$ whose dimension is $\frac{r-1}{2}$ by
+Example~2.5 on p.~1095 in \cite{Ko}.
+
+
+The next lemma is crucial for the proof of Proposition~1 which
+in turn is the main idea for the proof of our theorem. We begin
+by introducing some notations. For any $G$-invariant divisor
+$D$ on $X$ let $\cO_X(D)$ denote the corresponding equivariant
+invertible $\cO_X$-module, as usual. Furthermore let
+$\pi_*^G(\cO_X(D))$ denote the subsheaf of the direct image
+$\pi_*(\cO_X(D))$ fixed by the obvious action of $G$ on
+$\pi_*(\cO_X(D))$ and let $\left\lfloor \frac{\pi_*(D)}{n}
+\right \rfloor$ denote the divisor on $Y$ obtained from the
+push-forward $\pi_*(D)$ by replacing the coefficient $m_Q$ of
+$Q$ in $\pi_*(D)$ with the integral part $\left \lfloor
+\frac{m_Q}{n} \right \rfloor$ of $\frac{m_Q}{n}$ for every $Q
+\in Y$. The function fields of $X$ and $Y$ are denoted by
+$K(X)$ and $K(Y)$, respectively. Finally, for any $P \in X$,
+let $e_P$ denote the ramification index of $\pi$ at $P$ and let
+$\textrm{ord}_P$ and $\textrm{ord}_Q$ denote the respective
+valuations of $K(X)$ and $K(Y)$ at $P$ and $Q:=\pi(P)$.
+
+{\bf Lemma.} {\em Let $D$ be a $G$-invariant divisor on $X$.
+Then the sheaves $\pi_*^G(\cO_X(D))$ and
+$\cO_Y\left(\left\lfloor \frac{\pi_*(D)}{n}\right
+\rfloor\right)$ are equal as subsheaves of the constant sheaf
+$K(Y)$ on $Y$. In particular the sheaf $\pi_*^G(\cO_X(D))$ is
+an invertible $\cO_Y$-module. }
+
+For the reader's convenience we include a proof of this lemma
+although it may already exist in the literature.
+
+{\em Proof.} For every open subset $V$ of $Y$ we have
+\[\pi_*^G(\cO_X(D))(V) = \cO_X(D) (\pi^{-1}(V))^G \subseteq K(X)^G = K(Y).\]
+In particular both sheaves are subsheaves of the constant sheaf
+$K(Y)$ as stated. It therefore suffices to check that their
+stalks are equal. Let $Q \in Y$, let $P \in \pi^{-1}(Q)$ and
+let $n_P$ denote the coefficient of $D$ at $P$. Then we have
+\begin{eqnarray*}
+\lefteqn{\pi_*^G\left(\cO_X(D)\right)_Q = \cO_X(D)_P \cap
+K(Y)}\\
+&=& \left\{f \in K(Y): \textrm{ord}_P(f) \ge -n_P\right\}\\
+&=& \left\{f \in K(Y): \textrm{ord}_Q(f) \ge - \frac{n_P}{e_P}\right\}\\
+&=& \left\{ f \in K(Y): \textrm{ord}_Q(f) \ge - \left\lfloor
+\frac{n_P}{e_P} \right\rfloor \right\}\\
+&=& \cO_Y\left(\left\lfloor \frac{\pi_*(D)}{n} \right\rfloor
+\right)_Q,
+\end{eqnarray*}
+as desired. \hfill $\Box$
+
+
+Let $R := \sum_{P\in X} \textrm{dim}_k (\Omega_{X/Y}) [P]$
+denote the ramification divisor of $\pi$. The following
+proposition computes the dimension of the subspace of
+$H^0(X,\Omega_X)$ fixed by $G$.
+
+
+{\bf Proposition~1.}
+\[\dim_k \left(H^0(X,\Omega_X)^G\right) = \left\{
+\begin{array}{ll}
+g_Y & \textrm{if } \textrm{deg} \left\lfloor \frac{\pi_*(R)}{n} \right\rfloor = 0\\
+\\
+g_Y-1 + \textrm{deg}\left\lfloor \frac{\pi_*(R)}{n} \right\rfloor &
+\textrm{if } \textrm{deg}\left\lfloor \frac{\pi_*(R)}{n} \right\rfloor > 0.
+\end{array}\right.\]
+
+
+{\em Proof.} Let $K_X$ be a $G$-invariant canonical divisor on
+$X$, that is we have an equivariant isomorphism $\cO_X(K_X)
+\cong \Omega_X$. Let the divisor $K_Y$ on $Y$ be defined by the
+equality $\pi^*(\Omega_Y) = \cO_X(\pi^*(K_Y))$ of subsheaves of
+$\cO_X(K_X)$. Note that we consider $\pi^*(\Omega_Y)$ as a
+subsheaf of $\Omega_X \cong \cO_X(K_X)$ and that we have a
+short exact sequence
+\[0 \rightarrow \pi^* \Omega_Y \rightarrow \Omega_X \rightarrow
+\Omega_{X/Y} \rightarrow 0. \]
+ In particular we have $K_X = \pi^* K_Y + R$ and hence
+\[\left\lfloor \frac{\pi_*(K_X)}{n} \right \rfloor = \left
+\lfloor \frac{\pi_*\pi^*(K_Y) + \pi_*(R)}{n} \right \rfloor =
+K_Y + \left \lfloor \frac{\pi_*(R)}{n} \right\rfloor.\]
+ Using the previous lemma we conclude that $\pi_*^G(\Omega_X) \cong
+\cO_Y\left(K_Y + \left \lfloor
+\frac{\pi_*(R)}{n}\right\rfloor\right)$ and finally that
+\begin{eqnarray*}
+\lefteqn{\textrm{dim}_k \left(H^0(X,\Omega_X)^G \right)}\\
+& = & \textrm{dim}_k \left(H^0\left(Y, \pi_*^G(\Omega_X)\right)\right) \\
+& = & \textrm{dim}_k
+\left(H^0\left(Y, \cO_Y\left(K_Y+ \left\lfloor \frac{\pi_*(R)}{n}\right\rfloor \right) \right) \right).
+\end{eqnarray*}
+If $\textrm{deg}\left\lfloor \frac{\pi_*(R)}{n} \right \rfloor
+= 0$ then $\left \lfloor \frac{\pi_*(R)}{n} \right\rfloor$ is
+the zero divisor and we conclude that
+\[\textrm{dim}_k\left(H^0(X,\Omega_X)^G\right) =
+\textrm{dim}_k\left(H^0(Y, \Omega_Y)\right) = g_Y,\] as desired.
+If $\textrm{deg}\left\lfloor \frac{\pi_*(R)}{n} \right \rfloor
+> 0$ the divisor $K_Y + \left \lfloor \frac{\pi_*(R)}{n} \right
+\rfloor$ is non-special and using the Riemann-Roch theorem (see
+Theorem~1.3 on p.~295 and Example~1.3.4 on p.~296 in \cite{Ha})
+we obtain
+\begin{eqnarray*}
+\lefteqn{\dim_k\left(H^0(X, \Omega_X)^G \right)}\\
+& = & \textrm{deg}\left(K_Y + \left \lfloor \frac{\pi_*(R)}{n} \right \rfloor \right) + 1 - g_Y \\
+& = & g_Y - 1 + \textrm{deg} \left \lfloor \frac{\pi_*(R)}{n} \right\rfloor ,
+\end{eqnarray*}
+as stated. \hfill $\Box$
+
+{\em Proof of Theorem.} To prove the if-direction we suppose
+that $G$ does not act faithfully on $H^0(X, \Omega_X)$. By
+replacing $G$ with the (non-trivial) kernel $H$ of the action
+of $G$ on $H^0(X, \Omega_X)$ we may assume that $G$ is
+non-trivial and that $G$ acts trivially on $H^0(X,\Omega_X)$.\\
+We first prove that $\pi$ is not tamely ramified. Suppose that
+$\pi$ is tamely ramified. Then we have $R= \sum_{P \in X}
+(e_P-1)[P]$ by Proposition 2.2(c) on p.~300 in \cite{Ha}; hence
+$\left \lfloor \frac{\pi_*(R)}{n} \right \rfloor$ is the zero
+divisor. Therefore we obtain
+\[g_X = \textrm{dim}_k\left(H^0(X, \Omega_X)\right) =
+\textrm{dim}\left(H^0(X,\Omega_X)^G\right) = g_Y\] by
+Proposition~1. Substituting this equality into the Hurwitz
+formula
+\[2(g_X -1) = 2n (g_Y-1) + \textrm{deg}(R)\]
+yields the desired contradiction because $n \ge 2$, $g_X \ge 2$
+and $\textrm{deg}(R) \ge 0$. \\
+We next prove that $g_Y =0$. By the argument used in the
+previous paragraph we know that $\left \lfloor
+\frac{\pi_*(R)}{n} \right \rfloor$ is not the zero divisor.
+Then Proposition~1 tells us that
+\[g_X = g_Y-1 + \textrm{deg} \left \lfloor \frac{\pi_*(R)}{n}
+\right \rfloor.\] Substituting this equality into the Hurwitz
+formula we obtain
+\[2\left(g_Y - 1 + \textrm{deg}\left \lfloor \frac{\pi_*(R)}{n}
+\right \rfloor -1 \right) = 2n (g_Y -1) + \textrm{deg}(R).\]
+For any $Q \in Y$ let $n_Q$ denote the coefficient of the
+ramification divisor $R$ at any $P \in \pi^{-1}(Q)$ and let
+$e_Q := e_P$ for any $P \in \pi^{-1}(Q)$. Rewriting the
+previous equation yields
+\begin{eqnarray*}
+\lefteqn{(2n-2)g_Y = 2n-4 + 2 \,\textrm{deg}\left \lfloor
+\frac{\pi_*(R)}{n}\right \rfloor - \textrm{deg}(R)}\\
+&=& 2 \left(n-2 + \sum_{Q \in Y}
+\left(\left\lfloor \frac{n}{e_Q} \frac{n_Q}{n} \right\rfloor - \frac{n}{e_Q} \frac{n_Q}{2}\right) \right)\\
+&=& 2 \left(n-2 + \sum_{Q \in Y}
+\left( \left\lfloor \frac{n_Q}{e_Q} \right\rfloor - \frac{n_Q}{e_Q} \frac{n}{2} \right)\right)\\
+& \le & 2(n-2)
+\end{eqnarray*}
+because $\frac{n}{2} \ge 1$ and $\left\lfloor \frac{n_Q}{e_Q}
+\right\rfloor \le \frac{n_Q}{e_Q}$ for all $Q \in Y$. Hence we
+obtain $g_Y \le \frac{n-2}{n-1} < 1$ and therefore $g_Y =0$, as
+desired. \\
+As $\pi$ is not tamely ramified, the characteristic of $k$ is
+positive and we may furthermore replace $G$ by a cyclic
+subgroup of $G$ of order $p$ (that is still supposed to act
+trivially on $H^0(X,\Omega_X)$). In the previous paragraph we
+have shown that $g_Y=0$. To finish the proof of the
+if-direction of our theorem it therefore suffices to show that
+$p=2$.  This and the other direction follow from the following
+proposition. \hfill $\Box$
+
+{\bf Proposition~2.} {\em Let $p  > 0$ and let $G$ be cyclic of
+order $p$. We furthermore assume that $g_Y = 0$. Then $G$ acts
+trivially on $H^0(X,\Omega_X)$ if and only if one of the
+following three conditions holds:\\
+(i) $p=2$.\\
+(ii) $g_X =0$.\\
+(iii) $p=3$ and $g_X=1$. }
+
+{\em Proof.} Let $P_1, \ldots, P_r \in X$ be the ramified
+points of $\pi: X \ra Y$ and, for $i=1, \ldots, r$, define $N_i
+\in \NN$ by $\textrm{ord}_{P_i}(\sigma(\pi_i) - \pi_i) = N_i
++1$ where $\pi_i$ is a local parameter at $P_i$ and $\sigma$ is
+a generator of $G$. From Lemma~1 on p.~87 in \cite{Na} we know
+that $p$ does not divide $N_i$, a fact we will use several
+times below. The ramification divisor $R$ of $\pi$ is equal to
+$\sum_{i=1}^r(N_i+1)(p-1)[P_i]$ by Hilbert's formula for the
+order of the different (see Prop.~4, \S 1, Ch.~IV on p.~72 in
+\cite{Se}). Let $N:= \sum_{i=1}^r N_i$. Using the Hurwitz
+formula we obtain
+\[2g_X - 2 = -2p + (N+r)(p-1)\] and hence
+\[\textrm{dim}_k\left(H^0(X,\Omega_X)\right) = g_X =
+\frac{(N+r-2)(p-1)}{2}.\] Since $g_X \ge 0$ we obtain $r \ge
+1$; that is, $\pi$ is not unramified. Therefore we have
+\[\textrm{deg} \left\lfloor \frac{\pi_*(R)}{p} \right\rfloor =
+\sum_{i=1}^r \left\lfloor \frac{(N_i+1)(p-1)}{p}\right\rfloor
+\ge \sum_{i=1}^r \left\lfloor \frac{2(p-1)}{p}\right\rfloor = r
+> 0.\] From Proposition~1 we then conclude that
+\begin{eqnarray*}
+\lefteqn{\textrm{dim}_k
+\left(H^0(X,\Omega_X)^G\right) = g_Y -1 + \textrm{deg}
+\left\lfloor \frac{\pi_*(R)}{p} \right\rfloor}\\
+&=& -1 + \sum_{i=1}^r \left\lfloor \frac{(N_i+1)(p-1)}{p}\right\rfloor\\
+&=& -1 + N +r + \sum_{i=1}^r \left\lfloor -\frac{N_i+1}{p}\right\rfloor.
+\end{eqnarray*}
+If $p=2$ the dimension of both $H^0(X,\Omega_X)$ and
+$H^0(X,\Omega_X)^G$ is therefore equal to $\frac{N+r-2}{2}$. If
+$g_X = 0$ both dimensions are obviously equal to~$0$. If $p=3$
+and $g_X =1$ we obtain $N+r=3$ and hence $r=1$ and $N=2$; thus
+both dimensions are equal to $1$. Therefore in all three of
+these cases $G$ acts trivially on $H^0(X,\Omega_X)$.
+This finishes the proof of the if-direction in Proposition~2.\\
+To prove the other direction we now assume that $G$ acts
+trivially on $H^0(X, \Omega_X)$ and that $p \ge 3$ and prove
+that condition~(ii) or condition~(iii) holds. For each $i=1,
+\ldots, r$, we write $N_i = s_i p +t_i$ with $s_i \in \NN$ and
+$t_i \in \{1, \ldots, p-1\}$. We furthermore put $S:=
+\sum_{i=1}^r s_i$ and $T:= \sum_{i=1}^r t_i \ge r$. Then we
+have
+\[ \frac{(N+r-2)(p-1)}{2} =\textrm{dim}_k(H^0(X,\Omega_X))  =
+\textrm{dim}_k\left(H^0(X,\Omega_X)^G\right) = N-S-1 .\]
+Rearranging this equation we obtain
+\[(3-p)N - 2S = (r-2)(p-1) +2  \]
+and hence
+\[(-p^2 + 3p -2)S = (r-2)(p-1) +2 - (3-p)T.\]
+Since $-p^2+3p-2 = - (p-1)(p-2)$ and $p \ge 3$ this equation
+implies that
+\[ S = \frac{(r-2)(1-p)-2 + T (3-p)}{(p-1)(p-2)}. \]
+Because $S \ge 0$ the numerator of this fraction is
+non-negative, that is
+\begin{eqnarray*}
+\lefteqn{0 \le (r-2)(1-p) - 2 + T (3-p)}\\
+&\le & (r-2)(1-p) - 2 + r (3-p)\\
+&=& 2 (r-1)(2-p).
+\end{eqnarray*}
+Hence we have $r=1$ and that numerator is $0$. We conclude that
+$S=0$ and hence that $T=1$ or $p=3$. If $T=1$ we also have
+$N=1$ and finally
+\[g_X = \frac{(N+r-2)(p-1)}{2} = 0,\]
+i.e.\ condition~(ii) holds. If $T \not=1$ and $p=3$ we obtain
+$N=T=2$ and finally \[g_X = \frac{(N+r-2)(p-1)}{2} =1,\] i.e.\
+condition~(iii) holds. \hfill $\Box$
+
+{\em Acknowledgments.} The question underlying this paper goes
+back to Michel Matignon. I would like to thank Niels Borne for
+communicating this question to me, for pointing me to the above
+lemma and for sketching a proof of the fact that $G$ acts
+faithfully on $H^0(X,\Omega_X)$ in the tamely ramified case.
+
+
+
+
+
+
+
+
+\begin{thebibliography}{FWK}
+\bibitem[Bo]{Bo} \textsc{N.~Borne}, Cohomology of
+    $G$-sheaves in positive characteristic, \textit{Adv.\ Math.}~\textbf{201} (2006),
+    454-515.
+\bibitem[CW]{CW} \textsc{C.~Chevalley} and \textsc{A.~Weil},
+    \"Uber
+    das
+    Verhalten der Integrale erster Gattung bei Automorphismen
+    des Funktionenk\"orpers, \textit{Hamb.\ Abh.}~\textbf{10} (1934),
+    358-361.
+\bibitem[FWK]{FWK} \textsc{H.~Fischbacher-Weitz} and
+    \textsc{B.~K\"ock}, Equivariant Riemann-Roch theorems for
+    curves over perfect fields, \textit {Manuscripta
+    Math.}~\textbf{128} (2009), 89-105.
+\bibitem[Ha]{Ha} \textsc{R.~Hartshorne}, Algebraic
+    Geometry, \textit{Grad.\ Texts in Math.}, vol.~52, Springer, New York 1977.
+\bibitem[Ka]{Ka} \textsc{E.~Kani}, The Galois-module structure
+    of the space of holomorphic differentials of a curve,
+    \textit{J.\ Reine Angew. Math.}~\textbf{367} (1986),
+    187-206.
+\bibitem[K\"o]{Ko} \textsc{B.~K\"ock}, Galois
+    structure  of
+    Zariski cohomology for weakly ramified covers of curves,
+    \textit{American Journal of Mathematics}~\textbf{126} (2004),
+    1085-1107.
+\bibitem[Na]{Na} \textsc{S.\ Nakajima}, Action of an
+    automorphism of order $p$ on cohomology groups of an
+    algebraic curve, \textit{J.\ Pure Appl.\ Algebra}~\textbf{42}
+    (1986), 85-94.
+\bibitem[Se]{Se} \textsc{J.-P.~Serre}, Corps locaux, \textit{
+    Publications de l'Institut de Math\'ematique de l'Universit\'e de
+  Nancago VIII}, Hermann, Paris 1962.
+\end{thebibliography}
+
+\bigskip
+
+\bigskip
+
+
+School of Mathematics, University of Southampton, Southampton
+SO17 1BJ, UK. {\em E-mail:} B.Koeck@soton.ac.uk.
+
+
+\end{document}

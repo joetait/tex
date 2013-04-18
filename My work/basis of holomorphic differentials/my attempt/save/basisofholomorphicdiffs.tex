@@ -1,0 +1,623 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+ \usepackage{graphicx} % support the \includegraphics command and options
+
+\parindent0ex % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{mathtools}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\theoremstyle{plain}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{thm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{ex}[defn]{Example}
+\newtheorem*{unnumthm}{Theorem}
+\newtheorem{defnlem}[defn]{Definition/Lemma}
+\newtheorem{defnthm}[defn]{Theorem/Definition}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\mathcal L}}
+\newcommand{\cA}{{\mathcal A}}
+\newcommand{\cD}{{\mathcal D}}
+
+
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+\DeclareMathOperator{\Tr}{Tr}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{More hyperelliptic curves}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+  \subsection{Hyperelliptic curves, characteristic unequal to 2}\label{charneq2}
+  Let $X$ be a smooth, projective, connected hyperelliptic algebraic curve of genus $g$ over an algebraically closed field $k$, with $\cha (k) \neq 2$.
+Let $x:X\rightarrow \mathbb{P}_k^1$ be the corresponding holomorphic map of degree $2$.
+This curve then has a corresponding degree two extension $k(x,y)$ of the rational function field in one variable over $k$, $k(x)$, where
+\begin{equation}\label{definingequation}
+ y^2 = f(x)
+\end{equation}
+for some $f(x)\in k[x]$ with no repeated roots (see, for example, \cite[7.4.3]{liu}).
+Also, the degree of $f(x)$ must be $2g+1$ or $2g+2$, as we will see after considering the branch points of $x$ in the next paragraph.
+
+
+We now show that the branch points of $x$ correspond to the solutions of $f(x)$ and possibly $\infty \in \mathbb P_k^1$.
+Firstly, since $f(x)$ has no repeated roots then \eqref{definingequation} defines a non-singular affine curve $X'$, with a degree two projection $x': X'\rightarrow \mathbb A_k^1$.
+For any point $a\in \mathbb A_k^1$ which is not a solution to $f(x)$, then there are two points in the pre-image of $a$ under $\pi$, namely $(a,\pm \sqrt{a})$, and $a$ is not branch point.
+On the other hand, if $a\in \mathbb A_k^1$ is a solution to $f(x)$, then there is only one point in the pre-image and hence it is a branch point.
+Hence the only branch points of $X$ are those corresponding to solutions of $f(x)$ and possibly $\infty$.
+By the Riemann-Hurwitz formula, Corollary \ref{hur},
+\[ 
+\deg(R) = 2g -2 +2\cdot 2 = 2g + 2.
+\]
+Since $x$ is of degree $2$ and at most tamely ramified, the coefficients of the ramification divisor are all $1$ (see the start of Section \ref{dimsection}).
+It then follows that if $\infty$ is a branch point the degree of $f(x)$ is $2g+1$, and otherwise the degree of $f(x)$ is $2g+2$.
+We denote the ramification points of $\pi$ by $P_i$ for $1 \leq i \leq 2g+2$ and if infinity is a branch point we will let $P_1$ be the corresponding ramification point.
+For the rest of the report we will let $d:=\deg(f(x))$.
+\begin{comment}
+We can define $j\in \aut(X)$ to be the map defined $q_1 \mapsto q_2$ for $q_1, q_2 \in x^{-1}(a)$. 
+Obviously this is the identity on the ramification points, and since $x$ is of degree $2$, $j^2$ is the identity map.
+We will now use this to show the existence of one more function, $y$, which is necessary to define the basis of $H^0(X,\Omega_X^{\otimes m})$.
+
+If we let $D$ be the divisor $(g+1)p + (g+1)q$ on $k$, then there exists a $y \in \cL(D)$ (unique up to a factor) such that $j^* (y) = -y$.
+To start, we have by the Riemann-Roch theorem that $l(D) = \dim\cL(D) = (2g+2)-g+1 = g+3$.
+So $\cL(D) \cong k^{g+3}$.
+Since $x(p) = x(q) = \infty$ then $j^*$ defines a linear map $\cL(D) \rightarrow \cL(D)$.
+Since $j^{*2} = 1$, the eigenvalues must be $\pm 1$, and as such we can decompose $\cL(D)$ in two subspaces, $\cL(D)^+$ and $\cL(D)^-$, corresponding to the eigenspaces of eigenvalues $1$ and $-1$ respectively.
+Note that $\cL(D) = \cL(D)^+ \oplus \cL(D)^-$.
+
+If $f\in \cL(D)^+$ then this means that $j^*(f(q))=f(j(q))=f(q)$ for all $q \in X$.
+But $x$ maps $q$ and $j(q)$, and only these two points, to the same point in $\mathbb P_k^1$ for all $q\in X$.
+So any meromorphic function in $\cL(D)^+$ can be written as a composition of $x$ and a meromorphic function on $\mathbb P_k^1$, such that the composition only has poles at $p$ and $q$ (i.e. the meromorphic function on $\mathbb{P}_k^1$ only has poles at infinity.)
+The order of the pole at $p$ or $q$ cannot exceed $g+1$, hence $1,x,\ldots ,x^{g+1}$ forms a basis of $\cL(D)^+$.
+As this implies that $\dim\cL(D)^+ = g+2$, and as $\dim\cL(D) = g+3$, we see that $\dim\cL(D)^- = 1$, and so there is a non-trivial meromorphic function $y \in \cL(D)$ such that $j^*(y) = -y$.
+This is the $y$ we will use in the following proposition.\\
+\end{comment}
+
+
+Next we will need to define precisely what the divisor of a poly-differential is.
+If we consider an element of the tensor product $\omega \in \Omega_X^{\otimes m}$ then locally it can be written as $y dx_1\otimes \ldots \otimes dx_m$, where $x_j \in K(X)$ for all $1 \leq j \leq m$.
+Let $P$ be a point in $X$.
+Since each $dx_j$ can be written as $y_j dt$ for some $y_j\in K(X)$ and some uniformising parameter $t$ at $P$, we can rewrite $\omega$ as $y' dt \otimes \ldots \otimes dt$, where $y' = y \cdot y_1 \cdots y_m$.
+We then define the order of $\omega$ at $P$ to be $\ord_P(\omega ) := \ord_P(y')$.
+In the particular case where $\omega = fdx \otimes \ldots \otimes fdx = f^m dx^{\otimes m}$ for some $f\in K(X)$ then when we change $x$ to a uniformising parameter we have $y_1 = \ldots = y_m = z$ for some $z\in K(X)$. 
+Hence in this instance \[ \ord_P(\omega) = \ord_P(z^m) = m\ord_P(z) = m\ord_P(dx).\]
+
+We now prove the main proposition of this section.
+\vskip1em
+
+
+
+\begin{prop}\label{propneq2}
+Let $m\geq 1$.
+Let $X$, $x$ and $y$ be as above, and let $\omega := \frac{dx^{\otimes m}}{y^m}$. 
+Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by
+
+
+$\begin{cases}
+ \omega, x\omega, \ldots , x^{g-1}\omega &  \mbox{if}\ m=1 \\
+ \omega, x\omega, x^2\omega & \mbox{if}\ m=g=2 \\
+ \omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots x^{(m-1)(g-1)-2}y\omega & \mbox{otherwise.}
+ \end{cases}
+$
+
+\end{prop}
+
+\vskip1em
+
+\begin{rem}
+ Note that the case where $m=1$ is treated in \cite[7.4.3]{liu} and \cite[$\S$4, Ch. IV]{griffiths}.
+\end{rem}
+
+\begin{proof}
+We first show that the elements are linearly independent over $k$.
+Since $\omega$ is fixed, it is equivalent to show that the coefficients are linearly independent over $k$ - i.e. that $1,x,\ldots ,x^n, y, xy, x^ly$ are linearly independent over $k$ for any $n$ and $l$.
+The only time this linear independence is not clear is when we consider one term of the form $x^i$ and another of the form $x^jy$.
+But if two such elements were linearly dependent then the extension $k(x,y)$ of $k(x)$ would be degree one, which is not the case.
+
+To show that the listed elements in the proposition are indeed holomorphic differentials, we show that their divisors are non-negative.
+We first compute the divisors associated to $x$, $y$ and $dx^{\otimes m}$.
+\begin{comment}
+For any $f\in K(X)$ we will denote by $(f)_0$ and $(f)_\infty$ the divisor of zeroes and divisor of poles of $f$ respectively.
+In particular, 
+\[
+          (f)_0 := \sum_{\{P\in X|\ord_P(f)>0\}}\ord_P(f)[P],      
+ \]
+ and 
+ \[
+ (f)_\infty = \sum_{\{P\in X |\ord_P(f)<0\}} -\ord_P(f)[P].
+ \]
+\end{comment}
+
+Let $D_0 = [p']+[q']$ with $p',q' \in X$ (note that we could have $p' = q'$) be the divisor of zeroes of $x$. 
+Then $ i D_0$ is the divisor of zeroes of $x^i$. 
+Similarly, let $D_\infty = [p] + [q]$ with $p, q \in X$ (again, we could have $p=q$) be the divisor of poles of $x$. 
+So overall $\di (x^i) = i D_0 - i D_\infty$.
+
+
+To compute $\di (dx^{\otimes m})$, we first note that it suffices to compute the divisor of $dx$, since $\di (dx^{\otimes m}) =m\di (dx)$, as above.
+Since $x$ can viewed either as the projection of $X$ on to the projective line or as a function on the projective line, we use $\di_X (dx)$ and $\di_{\mathbb P^1} (dx)$ to differentiate these cases.
+Recalling the Riemann-Hurwitz formula (Theorem \ref{detailedhurwitz}) we see that
+\[
+ \di_X (dx) = \pi^*( \di_{\mathbb P^1}(dx)) + R = R - 2D_{\infty},
+\]
+since $\di_{\mathbb P^1}(dx) = -D_\infty$ and hence $\pi^* (\di_{\mathbb P^1}(dx)) = -2D_\infty$.
+
+Finally, we compute $\di (y)$.
+Since $\di (y^2) = \di (f(x))$ and hence $\di(y) = \frac{1}{2}\di(f(x))$, we need only compute the divisor of $f(x)$.
+As noted earlier, the solutions to $f$ correspond to the ramification points.
+So for any $P\notin x^{-1}(\infty)$ then $\ord_P(y) =  \frac{1}{2}\ord_P(f(x)) = 1$ if $P$ is a ramification point, and $\ord_P(y) = \frac{1}{2}\ord_P(f(x)) = 0$ otherwise.
+If infinity is not a branch point and $P\in x^{-1}(\infty)$ then $\ord_P(y)  = \frac{1}{2}\ord_P(f(x)) = - \frac{1}{2} (2g+2) = -(g+1)$.
+So in this case we have
+\[
+ \di(y) = \sum_{i=1}^{2g+2} [P_i]- (g+1)D_\infty = R - (g+1)D_{\infty}.
+ \]
+On the other hand, if infinity is a branch point and $P\in \pi^{-1}(\infty)$, then $\ord_P(y)  = \frac{1}{2}\ord_P(f(x)) = - (2g+1)$.
+Then in this case we have 
+\[
+ \di(y) = \sum_{i=2}^{2g+2} [P_i] - (2g+1)[P_1] = R - (2g+1)[P_1].
+ \]
+\begin{comment}
+Firstly, since $y(p_i)= y(j(p_i)) = j^*(y)(p_i)= -y(p_i)$ for all $i$ we see that $y(p_i)=0$.
+Therefore $\deg(y)_0 \geq \deg\left(\sum_{i = 1}^{2g +2} [p_i] \right) = 2g+2$.
+But since $y\in \cL(D)$, we know that $\deg(y)_{\infty} \leq \deg((g+1)D) = 2g + 2$, and as $\deg(y) = \deg(y)_0 - \deg(y)_{\infty} = 0$ then $\deg(y)_0 = \deg(y)_{\infty} = 2g+2$.
+So
+\[
+ (y)_0 = \sum_{i=1}^{2g+2} [p_i], \ (y)_{\infty} = (g+1)D_\infty.
+\]
+\end{comment}
+
+We now show that the differentials listed in Proposition \ref{propneq2} are holomorphic.
+We consider the differentials with no $y$ coefficients simultaneously.
+If $m\geq 1$ and $g\geq 2$ then we have 
+\begin{eqnarray*}
+ \di(x^i\omega) & = & \di \left( \frac{x^idx^{\otimes m}}{y^m} \right)\\ & = & i(D_0 -D_\infty) + m(R-2D_\infty) -m(R-(g+1)D_\infty) \\
+ & = & iD_0 + (mg -m -i)D_\infty \\
+ & = & iD_0 + (m(g-1) -i)D_\infty,
+\end{eqnarray*}
+which is positive for $0\leq i \leq m(g-1)$.
+Note that if $m=g=2$ then there are three elements of this form, and since $\dim_kH^0(X,\Omega_X^{\otimes 2})=3$ by Lemma \ref{dim3}, these elements form a basis.
+Also, if $m=1$ then by Riemann-Roch the dimension of $H^0(X,\Omega_X)$ is $g$, and we have $g$ linearly independent elements of the form $x^i\omega$, so again they must form a basis.
+
+\begin{comment}
+If $m=g=2$ then we have that
+\begin{eqnarray*}
+ \di\left(\frac{x^idx^{\otimes 2}}{y^2}\right) & = & i(D_0-D_\infty) + 2(R-2D_\infty) - 2(R-(g+1)D_\infty) \\
+ & = & iD_0+ ((2g-2)-i)D_\infty \\
+ & = & iD_0 +(2-i)D_\infty,
+\end{eqnarray*}
+which is positive for $0\leq 2$.
+By Lemma \ref{dim3} then $\dim_kH^0(X,\Omega_X^{\otimes 2})=3$, so again, we have three linearly independent elements, so they must form a basis.
+\end{comment}
+
+
+Now we consider the case where $m\geq 2$ and $g \geq 2$, where at least one of these inequalities is strict.
+If infinity is a not branch point then
+\begin{eqnarray*}
+ \di (x^iy\omega) & = & \di(x^i\omega) + R -(g+1)D_\infty \\
+ & = & iD_0 + R +((m-1)(g-1)-2-i)D_\infty,
+\end{eqnarray*}
+which is holomorphic only for $0\leq i \leq (m-1)(g-1)-2$.
+
+Similarly, if infinity is a branch point we have
+\begin{eqnarray*}
+ \di (x^iy\omega) & = & \di(x^i\omega) + \sum_{i=2}^{2g+2}[P_i] -(2g+1)[P_1]\\
+ & = & iD_0 + \sum_{i=2}^{2g+2}[P_i] + (2m(g-1)-2g-1-2i)[P_1] \\
+& = & iD_0 +\sum_{i=2}^{2g+2}[P_i] + (2(m-1)(g-1)-3-2i)[P_1].
+\end{eqnarray*}
+This is holomorphic if and only if $0\leq 2i \leq 2(m-1)(g-1)-3$, or equivalently if and only if $0\leq i \leq (m-1)(g-1)-2$.
+
+By Lemma \ref{dim3} we know that 
+\[
+\dim_kH^0(X,\Omega_X^{\otimes m}) = (2m-1)(g-1).
+\]
+Since the number of differentials listed in the last case of the proposition is precisely
+\[
+ (m-1)(g-1)-1 + m(g-1) +1 = 2mg -2m -g + 1 = (2m-1)(g-1)
+\]
+it is clear that these elements form a basis.
+\end{proof}
+
+We denote by $\sigma$ the automorphism of $X$ of order 2, which maps each point to its corresponding point in the pre-image of $x$ (note that this map fixes the ramification points).
+Since $\sigma(y) = -y$, and $\sigma$ acts trivially on $x$, we can see that in the case where $m=g=2$ the action will be trivial, since the only power of $y$ is two, and of course $y^2 = (-y)^2$.
+In any other case we have an odd power of $y$ in the basis, and hence the action of $\sigma$ is not trivial.
+This proves the main theorem for hyperelliptic curves over a field with characteristic not equal to 2.
+
+
+
+
+\subsection{Hyperelliptic curves, characteristic 2}
+Let $X$ be a smooth, projective, connected hyperelliptic algebraic curve of genus $g$ over an algebraically closed field $k$ of characteristic two.
+Let $\pi:X \rightarrow \mathbb P_k^1$ be the corresponding holomorphic degree two map.
+By \cite[\S 7.4.3]{liu} this curve has a corresponding degree two extension $k(x,y)$ of the function field of one variable over $k$, $k(x)$, where
+\begin{equation}\label{ext}
+  y^2 - h(x)y = f(x)
+\end{equation}
+for some polynomials $h(x), f(x)\in k[x]$, with maximum degrees of $g+1$ and $2g+2$ respectively.
+We now show what conditions the smoothness of the curve imposes on $f(x)$ and $h(x)$.
+\vskip1em
+
+
+
+\begin{lem}\label{smoothness}
+Since the curve is smooth $h(x)$ and $h'(x)^2 f(x) + f'(x)$ have no common zeroes on $X$.
+\end{lem}
+\begin{proof}
+ The Jacobian criterion (see, for example, \cite[Thm. 2.19]{liu}), states that the partial derivatives of \eqref{ext} with respect to $x$ and with respect to $y$ are zero at a point $P\in X$ if and only if the curve is not smooth.
+ Clearly \[
+          \frac{\partial}{\partial y} (y^2 -h(x)y -f(x)) = h(x)
+         \]
+ since the characteristic of $k$ is 2.
+ On the other hand
+ \begin{equation*}\label{xderivative}
+  \frac{\partial}{\partial x} (y^2 - h(x)y -f(x)) = h'(x)y - f'(x).
+ \end{equation*}
+Now it is obvious that $h'(x)y - f'(x)$ is zero if and only if
+\[
+ (h'(x)y-f'(x))^2 = h'(x)^2y^2 -f'(x)^2 = h'(x)^2h(x)y + h'(x)^2f(x) - f'(x)^2
+ \]
+is also zero.
+
+ Then it follows from the Jacobian criterion and the smoothness of $X$ that $h(x)$ and $h'(x)^2f(x) + f'(x)$ can have no common zeroes on $X$. 
+\end{proof}
+
+
+We now introduce some notation.
+Let $a\in \mathbb P_k^1$.
+If $a$ is a branch point then we denote the point in the pre-image of $a$ under $\pi$ by $P_a$, otherwise we denote the two points in the pre-image by $P_a'$ and $P_a''$.
+To simplify future calculations we also define $D_a := \pi^*([a])$.
+We let $d$ be the degree of $h(x)$, and denote the number of distinct roots of $f(x)$ and $h(x)$ in $\mathbb A_k^1$ by $l$ and $k$ respectively.
+
+
+
+We now describe the ramified points of $\pi$, in order to compute the ramification divisor.
+It follows from Lemma \ref{smoothness} that $X'$, the affine curve defined by \eqref{ext}, is smooth.
+Then $\pi$ restricts to a map $X'\rightarrow \mathbb A^1_k$, the projection on to the $x$ co-ordinate.
+For any $a\in \mathbb A_k^1$, if $(a,b)$ is in $\pi^{-1}(a)$ then so is $(a,b+h(a))$.
+Since is clear that $(a,b)$ and $(a,b+h(a))$ are distinct if and only if $h(a)\neq 0$, and
+Since the extension is degree two, this shows that the ramified points in $X'$ correspond to the roots of $h(x)$.
+We denote the zeroes of $h(x)$ by $a_i$ for $1\leq i \leq k$.
+For each $a_i$ there is a corresponding $b_i$, which is the square root of $f(a_i)$.
+We will also denote the corresponding ramification point by $P_i := P_{a_i}$ and the divisors by $D_{a_i}:=D_i$.
+
+
+By \cite[\S 7.4.3]{liu}, the degree of $h(x)$ is less than $g+1$ if and only if $\infty \in \mathbb P_k^1$ is a branch point.
+In the case when infinity is a branch point the degree of $f(x)$ must be precisely $2g+1$.
+On the other hand, if infinity is not a branch point, the degree of $f(x)$ can be anything from 1 to $2g+2$.
+
+We will now compute the ramification divisor of $\pi$, which we will denote $R$.
+\vskip1em
+
+
+\begin{lem}\label{char2ramification}
+ Let $n_i$ be the order of $h(x)$ at $a_i\in \mathbb A_k^1$.
+Then the coefficient $\delta_P$ of the ramification divisor $R$ at $P\in X$ is given by
+\[
+ \delta_P = \left\{
+ \begin{array}{ll}
+ 2n_i & {\rm if }\ P=P_i\ {\rm for\ some }\ i \in \{1,\ldots ,k\}, \\
+ 2(g+1-d) & {\rm if }\ \infty \ {\rm is a branch point and }\  P=P_\infty, \\
+ 0 & {\rm otherwise.} 
+ \end{array}
+\right.
+\]
+\end{lem}
+\begin{proof}
+
+ Let $P=P_i$ for some $i\in \{1,\ldots , k\}$.
+ Then $y-b_i$ is a local parameter at $P$.
+ To see this, note that the maximal ideal $\mathfrak m_{P}$ of the local ring $\cO_{X,P}$ at $P$ is generated by $x-a_i$ and $y-b_i$.
+ But $x-a_i\in \mathfrak m_{P}^2$ since $\pi$ is ramified at $P$ with ramification index 2.
+ By Nakayama's lemma \cite[Prop. 2.6]{atiyahmacdonald}, $y-b_i$ is therefore a local parameter at $P$.
+ 
+ Using Hilbert's formula \cite[Prop 4, \S 1, Ch IV]{localfields} we obtain
+ \begin{eqnarray*}
+  \delta_P & = & \sum_{i\geq 0} \left(\ord(G_i(P))-1\right) \\
+  & = & {\rm max\ }\left\{ i\in \NN | G_i(P)\neq \{1\}\right\} + 1 \\
+  & = & \ord_{P}(\sigma(y-b_i) - (y-b_i)).
+  \end{eqnarray*}
+  
+ By an argument similar to that used to show the correspondence between the solutions of $h(x)$ and the ramification points, it is clear $\sigma(y)=y+h(x)$.
+ It then follows that
+  \begin{eqnarray*}
+  \delta_P & = & \ord_{P}(\sigma(y-b_i) - (y-b_i)) \\
+  & = & \ord_{P}(y-b_i+h(x) - y + b_i) \\
+  & = & 2\ord_{a_i}(h(x)) \\
+  & = & 2n_i.
+ \end{eqnarray*}
+ 
+ It is clear that if $P \neq P_i$ for $1\leq i \leq k$, then $\sigma_P \neq 0$ if and only if $P \in \pi^{-1}(\infty)$.
+Recall that by the Riemann-Hurwitz formula $\deg(R) = 2g+2$.
+If infinity is not a branch point then $\deg\left( \sum_{i=1}^k 2n_i[P_i]\right) = 2g+2$, as $\deg(h(x)) = g+1$. 
+Since $R$ is a non-negative divisor the $P_i$ must be the only points with non-zero coefficients.
+ If infinity is a branch point then the coefficient at $P_\infty$ is $\deg(R) - \sum_{i=1}^k2n_i$, which is equal to $2g+2-2d = 2(g+1-d)$, as stated.
+ 
+\end{proof}
+
+
+We will now compute the divisors associated to $h(x)$, $x$ and $y$ in $K(X)$, and also to $dx$.
+These are all the elements required to form a basis of $H^0(X,\Omega_X^{\otimes m})$.
+\vskip1em
+
+\begin{lem}\label{xchar2}
+ The divisor of $x\in K(X)$ is 
+ \[
+  \di (x)= D_0 - D_\infty.
+\]
+\end{lem}
+\begin{proof}
+ Given our notations above, this is clear.
+\end{proof}
+
+
+\begin{lem}\label{dxchar2}
+  Let $m\geq 1$.
+ The divisor associated to the poly-differential $dx^{\otimes m}$ is 
+ \[
+  \di (dx^{\otimes m}) =m\sum_{i=1}^kn_iD_i + m(g-1-d)D_\infty
+ \]
+\end{lem}
+\begin{proof}
+ We first note that it suffices to compute $\di (dx)$, since $\di (dx^{\otimes m}) = m\di (dx)$, as described earlier.
+
+ Now we compute the divisor of $dx$.
+We will need to consider the divisor of $dx$ both as a differential on $X$ and on $\mathbb P_k^1$. 
+We will use the notation of $\di_X(dx)$ and $\di_{\mathbb P^1}(dx)$ to differentiate between the two cases.
+Then the Riemann-Hurwitz formula (Theorem \ref{detailedhurwitz}) states that
+\[
+ \di_X( dx) = \pi^*\di_{\mathbb P^1}(dx) + R.
+\]
+We already computed $R$ in Lemma \ref{char2ramification}, and $\pi^*\di_{\mathbb P^1}(dx) = -2D_\infty$.
+Hence we have
+\[
+ \di_X( dx) = \sum_{i=1}^k 2n_iP_i + (g+1-d)D_\infty - 2D_\infty = \sum_{i=1}^k n_iD_i + (g-1-d)D_\infty.
+\]
+Multiplying through by $m$ we obtain the desired result.
+ \end{proof}
+
+ \vskip1em
+
+ 
+ \begin{lem}\label{h(x)char2}
+  The divisor associated to $\frac{1}{h(x)}$ is
+  \[
+  \di \left(\frac{1}{h(x)}\right) = dD_\infty - \sum_{i=1}^k n_iD_i 
+ \]
+ \end{lem}
+\begin{proof}
+If $\pi$ is ramified at infinity then $\ord_{P_{\infty}}\left(\frac{1}{h(x)}\right) = -\ord_{P_{\infty}}(h(x)) = 2d$.
+If $\pi$ is not ramified at infinity then $\ord_{P_{\infty}'}\left(\frac{1}{h(x)}\right) = \ord_{P_{\infty}''}\left(\frac{1}{h(x)}\right)=d$.
+For $1\leq i \leq k$ then $\ord_{P_i}\left(\frac{1}{h(x)}\right) = -\ord_{P_i}(h(x))= -2n_i$.
+At any other point of $X$ the order of $\frac{1}{h(x)}$ is clearly zero.
+\end{proof}
+
+We again consider the affine curve $X'$, and we let $b_j \in \mathbb A_k^1$, for $1\leq j\leq l \leq 2g+1$, be the zeroes of $f(x)$.
+If $b_j$ corresponds to a branch point then we denote the unique point in the pre-image of $b_j$ by $Q_j$.
+Otherwise there are two points in the pre-image, and we denote these \[ Q_j:=(b_j,0)\ {\rm and}\ Q_j':=(b_j,h(b_j)).\]
+
+
+~
+
+
+\begin{lem}\label{ychar2}
+ Let $m_j$ be the order of $f(x)$ at $b_j\in \mathbb A_k^1$.
+ Then if $\infty$ is a branch point we have
+ \[
+  \di(y) = \sum_{j=1}^l m_j[Q_j] - (2g+1)[P_\infty].
+ \]
+
+ Otherwise we have either
+ \begin{equation*}
+  \di(y) = \sum_{j=1}^l m_j[Q_j] + (g + 1-\deg(f(x)))[P_\infty'] -(g+1)[P_\infty''].
+ \end{equation*}
+ or
+  \begin{equation*}
+  \di(y) = \sum_{j=1}^l m_j[Q_j] + (g + 1-\deg(f(x)))[P_\infty''] -(g+1)[P_\infty'].
+ \end{equation*}
+\end{lem}
+
+
+\begin{proof}
+ First note that if $P\in X'$ is not a zero of $f(x)$ (i.e. $P\neq Q_j$ for any $j$), then it is clear that $y|_P \neq 0$.
+ Indeed, if $y$ were zero then we would have $f(x)|_P = y^2 + h(x)y|_P = 0$, a contradiction.
+ 
+ If $\pi$ is not ramified at $Q_j$ then $h(b_j) \neq 0$, and $y|_{Q_j} = 0$, hence $y+h(x)$ is a unit at $Q_j$.
+ Since $y(y+h(x)) = f(x)$, it follows that
+ \begin{equation}\label{zeroesofy}
+  \ord_{Q_j}(y) = \ord_{Q_j}\left(\frac{f(x)}{y+h(x)}\right) = \ord_{Q_j}(f(x)) -\ord_{Q_j}(y+h(x)) = m_j.
+ \end{equation}
+
+ On the other hand, when $Q_j$ is a ramification point we must have $m_j=1$.
+ Otherwise we would have $f'(x)|_{Q_j} = 0$.
+Since we also have $h(x)|_{Q_j} = f(x)|_{Q_j} = 0$, this would contradict Lemma \ref{smoothness}.
+ So if we let $\tilde f(x) := \frac{f(x)}{x-b_j}$ and $\tilde h(x) := \frac{h(x)}{x-b_j}$ then $\tilde f(x)$ is a unit at $Q_j$.
+We have \[y^2 = f(x) - yh(x) = (x-\alpha_i)(\tilde f(x) - \tilde h(x)y),\]
+ and hence
+ \begin{equation*}
+   \ord_{Q_i}(y^2) = \ord_{Q_i}(x-\alpha_i) + \ord_{Q_i}(\tilde f(x) - \tilde h(x)y).
+  \end{equation*}
+We then deduce the following facts that $\ord_{Q_j}(\tilde f(x)-\tilde h(x)y) = 0$; the function $\tilde f(x) - \tilde h(x)y$ does not have an affine pole, $\tilde f(x)$ is a unit at $Q_j$ and the point $Q_j$ is a zero of $\tilde h(x)y$.
+Hence $\ord_{Q_i}(y^2) = \ord_{Q_i}(x-\alpha_i) = 2$ and we have determined the zero divisor of $y$. 
+
+
+If infinity is a branch point there is only one point of $X$ at which $y$ can have a pole, namely $P_\infty$.
+Since the degree of $\di (y)$ is zero, then the pole divisor of $y$ must be
+$
+ (2g+1)[P_\infty],
+$
+and this completes the proof when infinity is a branch point.
+
+We now suppose that infinity is not a branch point; recall that this implies that the degree of $h(x)$ is $g+1$.
+We consider \eqref{zeroesofy} according to whether $\ord_{P_\infty'}(y)$ is greater than, less than or equal to $-(g+1)$.
+First note that we cannot have $\ord_{P_\infty'}(y) < -(g+1)$, else $\ord_{P_\infty'}(y+h(x)) = \ord_{P_\infty'}(y)< -(g+1)$.
+This implies that \[ \ord_{P_\infty'}(y+h(x)) + \ord_{P_\infty'}(y) < -2(g+1) \leq \ord_{P_\infty'}(f(x)), \] contradicting \eqref{zeroesofy}.
+On the other hand, if $\ord_{P_\infty'} (y) = -(g+1)$, then by \eqref{zeroesofy} we see that $\ord_{P_\infty'}(y+h(x)) = -\deg(f) +g+1$.
+Lastly, if $\ord_{P_\infty'}(y) > -(g+1)$, then $\ord_{P_\infty'}(y+h(x)) = -(g+1)$, and hence $\ord_{P_\infty'} (y) = -\deg(f) +g+1$ by \eqref{zeroesofy}.
+
+Note that in all cases we have $\ord_{P_\infty'}(y) + \ord_{P_\infty''}(y) = -\deg(f(x))$, and so the degree of $\di (y)$ is zero.
+\end{proof}
+
+Recall that $X$ has a canonical automorphism of order two, which we will denote $\sigma$.
+If $P\in X$ is a branch point then $\sigma$ will fix $P$.
+If $P$ is not a branch point then $\sigma$ permutes $P$ with the unique, distinct point in $X$ with the same image as $P$ under $\pi$.
+
+Given this involution, in the proof of the above lemma we showed that when infinity is not a branch point one of $\ord_{P_\infty '}(y)$ or $\ord_{P_\infty '}(\sigma(y))$ is $g + 1-\deg(f(x))$, and the other is $-(g+1)$.
+ Since $\sigma(P_\infty') = P_\infty''$, we will assume for the rest of the report that $\ord_{P_\infty'}(y) = g+1-\deg(f(x))$ if infinity is not a branch (and hence $\ord_{P_\infty''}(y) = -(g+1)$).
+
+
+We now prove the following proposition, determining a basis of the space of global holomorphic poly-differentials as a vector space over $k$.
+\vskip1em
+
+\begin{prop}
+Assume that $g\geq 2$ and let $\omega:= \frac{dx^{\otimes m}}{h(x)^m}$. 
+Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by
+
+$\begin{cases}
+ \omega, x\omega, \ldots , x^{g-1}\omega &  \mbox{if}\ m=1 \\
+ \omega, x\omega, x^2\omega & \mbox{if}\ m=g=2 \\
+ \omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots x^{(m-1)(g-1)-2}y\omega & \mbox{otherwise.}
+ \end{cases}
+$
+\end{prop}
+\begin{rem}
+ Note that the case where $m=1$ can be found in \cite[\S 7.4.3]{liu}.
+\end{rem}
+
+\begin{proof}
+ We first assume that the above elements are holomorphic poly-differentials, and show that they then form a basis.
+To show that the elements are linearly independent over $k$ we need only show that the coefficients are, since $\omega$ is fixed.
+The only case where this is not clear is when the coefficients contain both $x$ and $y$ terms.
+But since the $y$ terms are all linear, and the extension is of degree two, it must follow that coefficients are linearly independent.
+ 
+ 
+ In the case that $m=1$ then we have that $\dim_k H^0(X,\Omega_X) =g$ by Lemma \ref{dim3}, and there are $g$ elements described in the statement of the proposition in this case, so they must form a basis.
+ If $m \geq 2$ then $\dim_k H^0(X,\Omega_X^{\otimes m}) = (2m-1)(g-1)$.
+ If $m=g=2$ then $(2m-1)(g-1) = 3$, and there are three elements listed in the proposition.
+ On the other hand if $m\geq 2$ and $g > 2$ the proposition lists
+ \[
+  m(g-1)+1 + (g-1)(m-1)-2+1 = 2mg -2m -g +1 = (2m-1)(g-1)
+ \]
+ elements, and again they must form a basis.
+ 
+ We now show that the listed poly-differentials are holomorphic, i.e. that their divisors are non-negative.
+ Firstly we have
+ \begin{eqnarray}\label{nonydifferentials}
+  \di(x^i\omega) & = & \di \left( \frac{x^i dx^{\otimes m}}{h(x)^m} \right) \nonumber \\ \nonumber & = & i(D_0 - D_\infty) +2m\sum_{i=1}^k n_i[P_i] + m(g-1-d)D_\infty \nonumber \\
+  & & -2m\sum_{i=1}^k n_i [P_i] + dmD_\infty \nonumber \\
+  & = & iD_0 + (m(g-1) -i)D_\infty
+ \end{eqnarray}
+  by Lemmas \ref{xchar2}, \ref{dxchar2} and \ref{h(x)char2}, and this is clearly non-negative if and only if $0\leq i \leq m(g-1)$.
+  
+  Similarly the divisor 
+  \begin{eqnarray}\label{unramifiedydifferential}
+   \di(x^iy\omega) & = & \di \left( \frac{x^i ydx^{\otimes m}}{h(x)^m} \right)\nonumber \\ & = & iD_0 + (m(g-1) -i)D_\infty + \sum_{i=1}^l m_i[Q_i] - (2g+1)[P_\infty] \nonumber \\
+    & = & iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2m(g-1) -(2g+1) -2i)[P_\infty] \nonumber  \\
+   & = & iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2((m-1)(g-1) -1 -i)-1)[P_\infty]
+  \end{eqnarray}
+which is clearly non-negative if and only if $0 \leq i \leq (g-1)(m-1)-2$.
+
+ 
+ We now consider the case where $\infty$ is not a branch point.
+ Then 
+ \begin{eqnarray*}
+  \di(y\omega x^i) & = & iD_0 -iD_\infty + (m(g-1)-i)D_\infty \\ & & 
+  +\sum_{i=1}^l m_i[Q_i] +(g+1-\deg(f(x)))[P_\infty'] -(g+1)[P_\infty''] \\
+ & = & iD_0 + \sum_{i=1}^l m_i[Q_i] + ((m+1)(g-1) + 2 - \deg(f(x)) -i)[P_\infty']\\
+ & & +((m-1)(g-1)-2-i)[P_\infty''].
+ \end{eqnarray*}
+ 
+For this to be holomorphic we require three conditions to hold: that $i\geq 0$, $i\leq (m+1)(g-1)-2$ and that $i \leq (m-1)(g+1) - \deg(f(x)) + 2$.
+Recalling that $1 \leq \deg(f(x)) \leq 2g+2$, then we see that 
+\begin{eqnarray*}
+ (m+1)(g-1)+2 - \deg(f(x)) & \geq & (m+1)(g-1) + 2 - 2g-2 \\
+ & = & mg + g - m - 1 - 2g \\
+ & = & mg - g -m -1 \\
+ &= & (m-1)(g-1) - 2.
+\end{eqnarray*}
+Hence the differentials in \eqref{unramifiedydifferential} are holomorphic if $0 \leq i \leq (m-1)(g-1)-2$.
+So regardless of whether infinity is or is not a branch point, there are $m(g-1)-1$ basis elements of the form $x^i\omega$ and $(m-1)(g-1)-1$ elements of the form $yx^idx$.
+Now $$m(g-1)+1 + (m-1)(g-1) -1 = 2mg -g-2m+1 = (2m-1)(g-1) = \dim_kH^0(X,\Omega_X^{\otimes m})$$ and hence the differentials form a basis.
+\end{proof}
+
+  Since $\sigma$ acts trivially on $x$, it is clear that in both the $m=1$ case and the case where $m=g=2$ that the group action is trivial.
+  On other hand, since $\sigma(y) = y+h(x)$, we can see that in the other cases the action is not trivial, as there are $y$ coefficients of the basis elements.
+  Hence this proves the main theorem in the case of hyperelliptic curves in characteristic two.
+
+
+\bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
+%\bibliography{/home/joe/files/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+
+\end{document}

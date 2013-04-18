@@ -1,0 +1,100 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+
+
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\ord}{ord}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{5 month report}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+Since starting I have been attending a number of MAGIC courses. In the first semester I attended a 10 hour category theory course, covering the basic definitions and theorems of the topic, in a general manner that could be easily applied to which ever area of maths it is required in. I also attended a 10 hour number theory course, studying rings of integers. This included Dirichlet's unit theorem and mentioned both the  Dedekind zeta function and Dirichlet's class number formula.
+
+This semester I am currently attending three courses. Commutative algebra is one, which so far has covered all the essential results for rings and modules, and is now moving to some geometric relations with them. I am also attending algebraic geometry, which is using the abstract definition of a variety to develop the link between algebra and geometry, with an aim to proving the Riemann-Roch theorem by the end of the course. Finally, I am going to the Representation of Groups lecture course. This course begins with defining what a representation is and what characters are, and intends to finally cover the representation theory of the symmetric groups.
+
+The main literature, however, that I have read since starting is William Fulton's Algebraic Curves \citep[Fu]{fulton}. This book takes a classical approach to algebraic geometry (i.e. without sheaves or schemes),  works through from basic definitions to divisors and a full proof of the Riemann-Roch theorem. Exercises from the book were used to check and test my understanding of the topics covered. In particular, a question at the end of the last chapter, on the derivation of the Hurwitz formula was completed very thoroughly. It was written in to a four page document, and will be particularly useful as it is a special case of a formula I will be using a lot. In working through this exercise I used a lot of information and gained a lot of insight that will be useful for future work.
+
+Another piece of literature I looked at was Sheaf Theory by B. R. Tennison \citep[Te]{tennison}. I followed this text along with notes from Bernhard's MAGIC course that ran in Spring 2010. In this I learnt all the basic theorems and definitions required to understand Sheaf theory, as well as working through examples, and eventually seeing some applications, such as the Riemann-Roch theorem.
+
+I have also been reading a paper by Bernhard, titled “Faithful Action on the Space of Global Differentials of an Algebraic Curve” \citep[K{\"o}]{faithfulaction}. This paper looks at when a finite group G which acts on a connected smooth projective algebraic curve acts faithfully on $H^0(X, \Omega_X)$, the space of global holomorphic differentials. It turns out that G nearly always acts faithfully on this space, with only a couple of exceptions. Having read this paper Bernhard then recommended that I try and extend the result to see when G would act faithfully on the the space $H^0(X, \Omega^{\otimes{m}}_X)$. I have done this, and found that though it mostly acts trivially, there is one case when the genus is two and this does not happen. This result used the Hurwitz formula as well as results and techniques from \citep[K{\"o}]{faithfulaction}. It is now almost written up in a form that could be added to the original paper.
+
+In the future I intend to do more to describe the action of $G$ on a general Riemann-Roch space and use this to get results in equivariant deformation theory. I will firstly look at \citep[Bo]{cohogsheaves} and \citep[K{\"o}]{galiosstruc}, which look at these generalisations and how to construct them. Then I will look at \citep[K{\"o}; Ko]{quaddiffequi}, which demonstrates applications to equivariant deformation theory.
+
+
+
+\bibliography{/home/jtait/Desktop/Work/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+
+
+
+\end{document}

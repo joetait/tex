@@ -1,0 +1,157 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{ex}{Example}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Weierstrass points}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+Let $X$ be a Riemann surface.
+Fix a point $P\in X$.\\
+
+\begin{defn}
+ We call $n \in \mathbb{N}$ a gap number for $|K|$ at $P$ if $L(K-nP) \neq L(K-(n-1)P)$.
+\end{defn}
+
+By Riemann-Roch we have
+\[
+ L(K-np) = 2g-2-n+1-g + (L(nP)),
+\]
+where $L$ denotes the dimension of the space associated to the divisor.
+
+So 
+\begin{eqnarray*}
+ L(K-(n-1)P) - L(K-nP) & = & g-1-(n-1) + L((n-1)P) -(g-1-n + L(nP))\\
+  & = & L((n-1)P) + 1 - L(nP).
+\end{eqnarray*}
+So $n$ is a gap number if and only if $L(nP)=L((n-1)P)$.
+
+We can look at the nested sequence 
+\[
+ \{0\}\subset l(0) \subseteq l(P) \subseteq \ldots \subseteq l(nP) \subseteq \ldots
+\]
+and we have equality from $l((n-1)p)$ to $l(np)$ if and only if $n$ is a gap number.
+
+At each step the dimension can increase by at most one. We know that once $n \geq 2g-1$ the dimension will increase by precisely one each time.
+We also know that $L((2g - 2)P) = g$, whilst $L(0) = 1$. So we have $2g-1$ steps, each with a an increase of at most 1, to go from dimension 1 to dimension $g$.
+Hence there must be $2g-1 - (g-1)=g$ integers where the dimension does not increase, and we call these the gap numbers, denoted $G_P(|K|)$.\\
+
+\begin{defn}
+ We call $P$ a Weierstrass point if $G_P(|K|) \neq \{1,2,\ldots, g\}$. 
+ i.e. if $l(0)=l(P)=\ldots = l(gP) \subsetneq l((g+1)P) \subsetneq \ldots $.
+\end{defn}
+
+Note that this definition is equivalent to saying the $L(gP)\geq 2$.
+
+\subsection{Questions:}
+1) {\em Show that $2\notin G_P(|K|)$ if and only if $X$ is hyperelliptic and $P$ is a ramification map for the double covering $\pi: X\rightarrow \mathbb P^1$.
+If so, show that $G_P(|k|) = \{1,3,5,\ldots ,2g-1\}$.}
+
+Suppose $X$ is hyperelliptic and that $P$ is a ramification point.
+Let $a = \pi (P)$. 
+Then by identifying $\mathbb P^1$ with $k\cup \infty$ we can define a map $f:\mathbb P^1 \rightarrow k\cup \infty$ which has a zero of order 1 at $a$. 
+i.e. $f= (x-a)$.
+Then, since $X$ is hyperelliptic and $P$ is a ramification point, we ave $\ord_P(f\circ \pi) = 2$.
+So there is a meromorphic map with a pole of exactly degree 2 at $P$ and no other poles, and hence $2\notin G_P(|K|)$.
+In this case, since we have a function with order 2 at $P$, we can take powers to get a function with order $n$ for each even $n \in \mathbb N$.
+Hence $n \notin G_P(|K|)$ for $n$ even, which means that $G_P(|K|) \supseteq \{1,3,\ldots 2g-1\}$. 
+But since $G_P(|K|)$ contains $g$ elements, and so does this set, we have equality.
+
+Now if $X$ is hyperelliptic but $P$ is not a branch point, then the preimage of $a$ contains two points, say $P'$ and $P$.
+So if a meromorphic function has a pole at $P$ then it must also have a pole at $P'$.
+Hence it cannot be in $l(nP)$.
+
+
+If $X$ is not hyperelliptic, then first note that $P$ must a totally ramified, else there will be multiple points in the preimage, and we can run the same argument as above.
+Since $X$ is hyperelliptic, any map $\pi:X \rightarrow \mathbb P^1$ must de degree at least 3.
+So any map is determined by $f:\mathbb P^1 \rightarrow k\cup \infty$ that has a pole at $a = \pi (P)$, must have order equal to the degree.
+Hence it's order is not precisely 2, and we are done.
+
+2) {\em Show that if $X$ is hyperelliptic then there are exactly $2g+2$ Weierstrass points on $X$, each having the above set as the set of gap numbers.}
+
+The only points with positive weights are the ramification points, or equivalently by the previous exercise, the points with $G_P(|K|) = \{1,3,\ldots ,2g-1\}$.
+In this case the weight is the sum of the first $g-1$ even numbers, which is $g(g-1)$. 
+We then halve this due to the degree of the map.
+By Corollary 4.17 in \cite[Ch. VII]{mir} we then see that the number of Weierstrass points is $x$ where $x\cdot \frac{g(g-1)}{2} = g(g+1)(g-1)$.
+Hence $x$ clearly equals $2g+2$.
+
+
+
+\bibliography{/home/jtait/files/Desktop/Work/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+
+\end{document}

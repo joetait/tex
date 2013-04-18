@@ -1,0 +1,79 @@
+\section{Introduction}
+
+In topology, the number of holes in a compact, orientable surface is an important invariant, called the genus, and classifies compact, orientable surfaces up to homeomorphism.
+In particular the genus is an important topological invariant of compact Riemann surfaces.
+It is well known that for any compact Riemann surface the genus is also equal to the dimension of the space of global holomorphic differentials.
+Furthermore there is a correspondence between compact Riemann surfaces and smooth projective algebraic curves over $\mathbb C$, and the notion of holomorphic differentials can be extended to such curves.
+In fact we can extend this even further, by defining the genus of any curve over an algebraically closed field to the dimension of the space of global holomorphic differentials.
+The above alone makes it obvious that the space of global holomorphic differentials is a fundamental object in the theory of algebraic curves.
+The general motivation underlying this report is to study this space as a representation of a subgroup of the automorphism group of the given curve.
+
+\begin{comment} It is a well known and fundamental fact of the theory of Riemann surfaces that Riemann surfaces can be classified as $n$-torii (including the sphere as the zero torus).
+This means that the topological invariant of genus is an invariant in this area of study too, where it is called the analytic genus.
+Equally as important is the correspondence between compact Riemann surfaces and connected, projective, smooth algebraic curves over the complex numbers.
+So it is natural to ask how the genus arises in the case of these curves.
+As a corollary to the Riemann-Roch theorem it can be seen that the dimension of the space of {\em holomorphic differentials} (see Section \ref{Hurwitzsection}) over $\mathbb C$, which we denote by $H^0(X,\Omega_X)$, is what corresponds to the analytic genus.
+This invariant is called the arithmetic genus, and can be extended to any curve over an algebraically closed field.
+For this reason, among others, the space of holomorphic differentials is a fundamental object in algebraic geometry, and widely studied.
+\end{comment}
+Let $X$ be a smooth connected projective curve over an algebraically closed field $k$.
+Given a subgroup $G$ of the automorphism group of $X$ then a classic problem pertaining to $H^0(X,\Omega_X)$, the space of holomorphic differentials (see section \ref{Hurwitzsection}), is determining its $k[G]$-module structure.
+This originally dates back to 1934, and a paper of Chevalley and Weil \cite{chev}.
+They only considered the case when $k= \mathbb C$, but the complete structure has since been discovered in the case where the projection from $X$ to the quotient curve is tamely ramified.
+This was done by Kani in 1986 \cite{Kani}.
+Progress has also been made recently in the case where the projection is wildly ramified; in particular Karanikolopoulos and A. Kontogeorgis \cite {kako} have computed the $k[G]$-module structure for any cyclic group $G$.
+Also, in 1986 Broughton \cite{Broughton} computed the $k[G]$-module structure of the space of global holomorphic poly-differentials, $H^0(X,\Omega_X^{\otimes m})$ (see Section \ref{charneq2}), in the case where $\cha(k) = 0$.
+
+In this report we will not look directly at the $k[G]$-module structue, but rather at the related question of determining when the action of $G$ on $H^0(X,\Omega_X)$, and also on $H^0(X,\Omega_X^{\otimes m})$, is faithful.
+The following is our main result:
+\vskip1em
+
+  \begin{unnumthm}{\bf 1}\label{maintheorem}
+    Suppose that $g_X\geq 2$ and let $m\geq1$. 
+    Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ contains a hyperelliptic involution and one of the following two sets of conditions holds:
+      \begin{itemize}
+	\item $m=1$ and $p=2$;
+	\item $m=2$ and $g_X=2$.
+      \end{itemize}
+  \end{unnumthm}
+
+  The format of the report is now briefly outlined.
+  
+  In the first section we prove the strong form of the Riemann-Hurwitz formula (Theorem \ref{hur}).
+  The Riemann-Hurwitz formula relates the genus of two curves when there is a surjective map from one to the other, via the degree of the map and the degree of the ramification divisor.
+  However, this can obscure the fact that the canonical divisors (see Section \ref{Hurwitzsection}) themselves are related.
+  The strong form of the theorem states that given two curves and a surjective map $\pi:X\rightarrow Y$ of degree $n$ between the curves, with ramification divisor $R$ (see Section \ref{Hurwitzsection}), we have
+  \[
+ \di (\pi^* (\omega)) = \pi^*(\di (\omega)) + R,
+  \]
+where $\omega$ is a non-zero differential on $Y$, and $\pi^*$ is the pull-back induced by $\pi$.
+This section closely follows Stichtenoth's book, see \cite{stichtenoth}.
+
+The second section looks at computing the dimension of various spaces, but the most significant is the dimension of the subspace of $H^0(X,\Omega_X^{\otimes m})$ fixed by $G$, where $m\geq 1$.
+This result, along with two other results in section three, forms the heart of the proof of the main theorem.
+The dimension itself is dependent, essentially, on the genus of the quotient curve, $Y=X/G$, the degree of the projection map $\pi:X\rightarrow Y$, the ramification divisor $R$ of $\pi$ and $m$.
+By using the Riemann-Roch theorem we can easily compute the dimension of $H^0(X,\Omega_X^{\otimes m})$, and the comparison of these two dimensions is what will be used in the third section.
+
+
+In the third section we consider when a group of prime power order acts trivially on $H^0(X,\Omega_X^{\otimes m})$.
+By only considering cyclic groups of prime power order our computations are made considerably easier.
+Initially we only consider groups of prime order.
+In this case, if the characteristic of $k$ is different to $p$ then the projection map is tamely ramified, and hence we know that the coefficients of the ramification divisor are $p-1$.
+This makes it considerably easier to compute the dimension of the fixed space, as of all the parameters it depends on, the ramification divisor is the most difficult to deal with.
+When the characteristic of the field and the order of the group are the same (i.e. when wild ramification could occur), then the computations are longer, but still made considerably easier by our assumptions.
+At the end of the third section we use results of \cite{kako} to make the same computations for groups whose orders are powers of $p$.
+The results we use are somewhat more technical, but they do extend the original results.
+We also make some computations for a general divisor $D$, which in general should have degree greater than $2g-2$, and give criteria for when the action is trivial on the associated Riemann-Roch space $H^0(X,\cO_X(D))$.
+
+In the fourth section we prove the main result.
+This builds on sections two and three, by reducing from a group which does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$, to a subgroup that acts trivially.
+We consider the cases where $m=1$ and $m\geq 2$ separately; despite similar methods being employed, there are technical details that need to be changed according to which case is being considered.
+These technical details show clearly in the statement: if $m=1$ then the characteristic of $k$ must be 2 for the action to not be faithful, but the genus is not relevant at all.
+In contrast, if we consider $m\geq 2$, the characteristic now does not matter, but the genus must be 2 (as does $m$).
+
+In the final section we consider examples to illuminate what has been done in the previous sections.
+We start by considering the rather trivial cases where $g_X=0$ and $g_X= 1$.
+We give explicit proofs of when the action is faithful, as these cases where not included in the proof of the main theorem.
+We then go on to construct a basis for the space of holomorphic poly-differentials for any given hyperelliptic curve.
+This serves to explicitly prove the main theorem for this class of curves, and helps to enlighten the reader by way of a concrete example.
+In particular, it helps to show why we have a different type of result according to whether $m=1$ or $m\geq 2$.

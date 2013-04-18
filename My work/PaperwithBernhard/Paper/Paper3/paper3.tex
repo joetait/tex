@@ -1,0 +1,815 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem*{unnumthm}{Theorem}
+\theoremstyle{remark}\newtheorem*{rem}{Remark}
+
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\cal L}}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Faithful Action on Spaces of Global Poly-Differentials on an Algebraic Curve}
+\author{Bernhard K\"ock and Joseph Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+\begin{quote}
+ 
+
+  {\bf Abstract} Given a faithful action of a finite group $G$ on an algebraic curve~$X$ of genus $g_X\geq 2$, 
+we prove that the induced action on the space of global holomorphic poly-differentials of order $m$ is faithful as well 
+unless $G$ contains a hyperelliptic involution and either both $m=1$ and the characteristic of the base field is $2$ or both $m=2$ and $g_X=2$.\\
+\end{quote}
+
+  \section{Introduction}
+
+  Let $X$ be a connected smooth projective algebraic curve over
+an algebraically closed field $k$ equipped with a faithful
+action of a finite group $G$ of order $n$. Then $G$ also acts
+on the vector space $H^0(X, \Omega_X)$ of global holomorphic
+differentials on $X$. A widely studied problem is to determine
+the structure of $H^0(X,\Omega_X)$ as module over the group
+ring $k[G]$. It goes back to the Chevalley-Weil when $k = \mathbf{C}$,
+see \cite{CW}. If the canonical projection $\pi: X \rightarrow
+Y$ from $X$ to the quotient curve $Y = X/G$ is tamely ramified,
+a fairly explicit answer to this problem has been given in 1986
+by Kani in \cite{Ka}. For more recent answers to (related)
+questions in more general situations the reader is referred to
+the papers \cite{Bo} and \cite{FWK}. In the case of arbitrary
+wild ramification the explicit calculation of the
+$k[G]$-isomorphism class of $H^0(X,\Omega_X)$ is still an open
+problem.
+
+Here we look at the weaker question of whether $G$ acts faithfully on $H^0(X,\Omega_X)$ and also whether $G$ acts faithfully on the space $H^0(X,\Omega_X^{\otimes m})$ of global holomorphic poly-differentials of order $m$ (for $m\geq 2$).
+Our answer to the question is the following theorem.
+
+
+Let $p$ denote the characteristic of $k$ and let $g_X$ denote the genus of $X$.
+We also recall that a hyperelliptic involution of $X$ is an automorphism $\sigma$ of $X$ of order $2$ such that the quotient curve $X/\langle \sigma \rangle$ is isomorphic to $\mathbb{P}_k^1$. \\
+\newpage
+  \begin{unnumthm}
+    Suppose that $g_X\geq 2$ and let $m\geq1$. 
+    Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ contains a hyper-elliptic involution and one of the following two sets of conditions holds:
+      \begin{itemize}
+	\item $m=1$ and $p=2$;
+	\item $m=2$ and $g_X=2$.
+      \end{itemize}
+  \end{unnumthm}
+To show this, we first compute the dimension of the fixed space of global holomorphic differentials and poly-differentials.
+We then use this to find when a cyclic group of prime order acts trivially on the space.
+Finally, in the proof of the main theorem we reduce the proof to the case where $G$ is cyclic of prime order, reducing it to an earlier problem.
+
+We now give some further notation for the paper.
+We write
+  \[
+      R=\sum_{P\in X}\delta_P[P]
+  \]
+for the ramification divisor of $\pi:X \rightarrow Y$.
+Recall that
+  \[
+     \delta_P=\sum_{j=0}^{\infty}(\ord(G_j(P))-1),
+  \]
+where $G_j(P)$ is the $j^{th}$ ramification group at $P$ in lower notation, see \cite[Ch. IV, {\S}~1]{localfields}.
+For any $P\in X$, let $e_P=\ord(G_0(P))$ denote the ramification index at $P$.
+For any $Q\in Y$ we write $\delta_Q$ for $\delta_P$ and $e_Q$ for $e_P$ where $P\in \pi^{-1}(Q)$.
+As usual, the sheaf of differentials on $X$ is denoted by $\Omega_X$ and it's $m^{th}$ tensor power by $\Omega_X^{\otimes m}$ for any $m\geq 1$.
+Sections of $\Omega_X^{\otimes m}$ are called {\em poly-differentials of order $m$} and, if $m=2$, {\em quadratic differentials}.
+We let $K_Y$ be a canonical divisor on $Y$. 
+Then the divisor $K_X:=\pi^*(K_Y)+R$ is a $G$-invariant canonical divisor on $X$ by \cite[{\S} IV, Prop. 2.3]{hart} and $\mathscr{O}_X(mK_X)$ and $\Omega_X^{\otimes m}$ are isomorphic as $G$-sheaves.
+
+  \section{Dimension Formulas}
+
+In this section we compute the dimension of $H^0(X,\Omega_X^{\otimes m})$ and of $H^0(X,\Omega_X^{\otimes m})^G$, the subspace of $H^0(X,\Omega_X^{\otimes m})$ fixed by $G$.
+In later sections, by comparing the two dimensions, we will ascertain when the action of $G$ on $H^0(X,\Omega_X^{\otimes m})$ is trivial.
+
+By definition we have $\dim_kH^0(X,\Omega_X)=g_X$.
+If $m\geq 2$, we have the following formula for $\dim_kH^0(X,\Omega_X^{\otimes m})$.\\
+
+
+\begin{lem}\label{dim3}
+  Let $m\geq 2$. Then
+    \begin{equation}
+      \dim_kH^0(X,\Omega_X^{\otimes m}) =
+	\begin{cases}
+	  0 & \mbox{if } g_X=0,\\
+	  1 & \mbox{if } g_X=1,\\
+	  (2m-1)(g_X-1) & \mbox{otherwise}.
+	\end{cases}
+    \end{equation}
+\end{lem}
+\begin{proof}
+  If $g_X=0$ then $\deg(mK_X)=-2m<0$, and hence $\dim_kH^0(X,\Omega_X^{\otimes m})=0$.
+
+  If $g_X=1$ then by \cite[Ch. IV, Example 1.3.6]{hart} we know that $K_X$ is equivalent to the zero divisor.
+  Hence $mK_X$ is too and $\dim_kH^0(X,\Omega_X^{\otimes m})=1$.
+
+  Finally, if $g_X\geq 2$ then $\deg(K_X)\geq1$, so $\deg(mK_X)>\deg(K_X)$, so by the Riemann-Roch theorem \cite[Ch. 8, {\S}6]{fulton} we see that $\dim_kH^0(X,\Omega_X^{\otimes m})=\deg(mK_X)+1-g_X=(2m-1)(g_X-1)$.
+\end{proof}
+
+We now introduce some notations. 
+For any $G$-invariant divisor $D$ on $X$ let $\cO_X(D)$ denote the corresponding equivariant invertible $\cO_X$-module, as usual. 
+Furthermore let $\pi_*^G(\cO_X(D))$ denote the sub-sheaf of the direct image $\pi_*(\cO_X(D))$ fixed by the obvious action of $G$ on $\pi_*(\cO_X(D))$ and let $\left\lfloor \frac{\pi_*(D)}{n}
+\right \rfloor$ denote the divisor on $Y$ obtained from the push-forward $\pi_*(D)$ by replacing the coefficient $m_Q$ of $Q$ in $\pi_*(D)$ with the integral part $\left \lfloor \frac{m_Q}{n} \right \rfloor$ of $\frac{m_Q}{n}$ for every $Q \in Y$. 
+The function fields of $X$ and $Y$ are denoted by $K(X)$ and $K(Y)$, respectively. 
+Finally, for any $P \in X$ let $\textrm{ord}_P$ and $\textrm{ord}_Q$ denote the respective valuations of $K(X)$ and $K(Y)$ at $P$ and $Q:=\pi(P)$.
+
+
+
+The next lemma is the main idea in the proof of our formula for $\dim_kH^0(X,\Omega_X^{\otimes m})^G$, see Proposition \ref{dim}. \\
+
+
+  \begin{lem}
+    Let $D$ be a $G$-invariant divisor on $X$.
+    Then the sheaves $\pi_*^G(\cO_X(D))$ and $\cO_Y\left(\left\lfloor \frac{\pi_*(D)}{n}\right \rfloor\right)$ are equal as sub-sheaves of the constant sheaf $K(Y)$ on $Y$. 
+    In particular the sheaf $\pi_*^G(\cO_X(D))$ is an invertible $\cO_Y$-module.
+  \end{lem}
+  \begin{proof}
+    For every open subset $V$ of $Y$ we have 
+      \[
+	 \pi_*^G(\cO_X(D))(V) = \cO_X(D) (\pi^{-1}(V))^G \subseteq K(X)^G = K(Y).
+      \]
+    In particular both sheaves are sub-sheaves of the constant sheaf $K(Y)$ as stated. 
+    It therefore suffices to check that their stalks are equal. 
+    Let $Q \in Y$, let $P \in \pi^{-1}(Q)$ and let $n_P$ denote the coefficient of $D$ at $P$. 
+    Then we have
+      \begin{eqnarray*}
+	 \lefteqn{\pi_*^G\left(\cO_X(D)\right)_Q = \cO_X(D)_P \cap K(Y)}\\
+	  &=& \left\{f \in K(Y): \textrm{ord}_P(f) \ge -n_P\right\}\\
+	  &=& \left\{f \in K(Y): \textrm{ord}_Q(f) \ge - \frac{n_P}{e_P}\right\}\\
+	  &=& \left\{ f \in K(Y): \textrm{ord}_Q(f) \ge - \left\lfloor\frac{n_P}{e_P} \right\rfloor \right\}\\
+	  &=& \cO_Y\left(\left\lfloor \frac{\pi_*(D)}{n} \right\rfloor\right)_Q,
+      \end{eqnarray*}
+    as desired.
+  \end{proof}
+
+The following proposition contains the aforementioned formula for the dimension of the subspace of $H^0(X,\Omega_X^{\otimes m})$ fixed by $G$.
+In particular we see that the dimension is completely determined by $m$, $g_Y$ and $\deg \left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor$.\\
+
+  \begin{prop}\label{dim}
+    Let $m\geq 1$. Then the dimension of $H^0(X,\Omega_X^{\otimes m})^G$ is equal to
+	\begin{equation*}
+	   \begin{cases}
+	    g_Y & \mbox{if } m=1 \mbox{ and } \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor = 0, \\
+\\
+	    1 & \mbox{if } g_Y=1 \mbox{ and } \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor = 0, \\ 
+\\
+	    0 & \mbox{if } g_Y=0 \mbox{ and } \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor < 2m, \\
+\\
+	    (2m-1)(g_Y-1) + \deg\left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor & \mbox{otherwise}.
+	  \end{cases}
+      \end{equation*}
+  \end{prop}
+  \begin{proof}
+
+    Let $E$ denote the divisor $\left\lfloor \frac{\pi_*(mK_X)}{n} \right\rfloor$ on $Y$. As $K_X=\pi^*(K_Y)+R$ we have
+      \[ E = 
+      \left \lfloor \frac{\pi_*\pi^*(mK_Y) + \pi_*(mR)}{n} \right \rfloor =
+      mK_Y + \left \lfloor \frac{m\pi_*(R)}{n} \right \rfloor.\]
+    Using the previous lemma we conclude that $\pi_*^G(\Omega_X^{\otimes m}) \cong \cO_Y (E)$ and finally that
+      \begin{equation*}
+	\textrm{dim}_k H^0(X,\Omega_X^{\otimes m})^G 
+	 = \textrm{dim}_k H^0\left(Y, \pi_*^G(\Omega_X^{\otimes m})\right)
+	  = \textrm{dim}_k H^0\left(Y, \cO_Y\left( E \right) \right).
+      \end{equation*}
+
+
+  In the first case of the proposition, i.e. if $m=1$ and $\deg \left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor=0$, then $\left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor$ is the zero divisor and we conclude that 
+    \begin{equation*}
+	\dim_kH^0(X,\Omega_X)^G = \dim_kH^0(Y, \Omega_Y) = g_Y
+    \end{equation*}
+
+
+  In the second case again $\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor$ is the zero divisor. 
+  Furthermore, as $g_Y=1$, $K_Y$ is equivalent to the zero divisor, and hence $mK_Y$ is too. 
+  This means that
+    \begin{equation*}
+      \dim_kH^0(X,\Omega_X^{\otimes m})^G = \dim_kH^0\left( Y,\cO_Y\left( E \right) \right) 
+      = \dim_k  H^0\left( Y,\cO_Y\left( 0 \right) \right)
+      = 1.
+    \end{equation*}
+
+
+  For the third case it suffices to show that $\deg \left( E \right) < 0$.
+  As $g_Y=0$ we have $\deg(K_Y)=-2$, so $\deg(mK_Y)=-2m$, and $\deg \left( E \right)$ is indeed negative.
+
+
+
+  We now show that in all other cases $\deg(E)\geq \deg(K_Y)$, and then the Riemann-Roch formula \cite[Ch. IV, {\S}1, Theorem 1.3]{hart} will give 
+     \begin{eqnarray*}
+	\lefteqn{\dim_kH^0(X,\Omega_X^{\otimes m})^G = \dim_kH^0\left(Y,\mathscr{O}_Y\left( E \right)\right)} \\
+	& = & 1-g_Y+\deg\left(mK_Y+\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor\right) \\
+	& = & (2m-1)(g_Y-1)+\deg\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor,
+      \end{eqnarray*}
+  completing the proof.
+
+
+  All that remains is to show that $\deg(E)\geq \deg(K_Y)$ in all other cases.
+  Firstly, if $g_Y=0$ and $\deg \left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor \geq 2m$ then, as $\deg(mK_Y)=-2m$, we have $\deg \left( E \right) \geq 0 > \deg(K_Y)$.
+  Similarly, if $g_Y=1$ and $\deg \left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor >0$ then, as $\deg \left( mK_Y \right)=0$, we have $\deg \left( E \right) > 0 = \deg (K_Y)$.
+  If $m=1$ and $\deg \left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor >0$ then clearly $\deg \left( E \right) > \deg (K_Y)$.
+  Lastly, if $m\geq 2$ and $g_Y\geq 2$ then $\deg (K_Y) > 0$ and we have 
+    \begin{equation*}
+      \deg \left( E \right) \geq \deg\left( mK_Y \right) > \deg (K_Y).
+    \end{equation*}
+  So in all other cases we have $\deg(E)\geq \deg(K_Y)$, and the proof is complete.
+  \end{proof}
+
+
+If $m=1$ we reformulate Proposition \ref{dim} in the following slightly more concrete way. 
+Let $S$ denote the set of all points $Q\in Y$ such that $\pi$ is not tamely ramified at $Q$ and let $s$ denote the cardinality of $S$. 
+Note that $s=0$ if $p$ does not divide $n$.\\
+
+\begin{cor}\label{dim2}
+  We have 
+    \begin{eqnarray*}
+      \dim_kH^0(X,\Omega_X)^G = 
+	\begin{cases}
+	  g_Y & \mbox{if } s=0, \\
+	  g_Y-1+\sum_{Q\in S}\left\lfloor \frac{\delta_Q}{e_Q} \right\rfloor & \mbox{otherwise}.
+	\end{cases}
+    \end{eqnarray*}
+\end{cor}
+\begin{proof}
+  We have
+    \[
+	\deg\left\lfloor\frac{\pi_*(R)}{n} \right\rfloor = \sum_{Q\in Y}\left\lfloor\sum_{P\mapsto Q} \frac{\delta_P}{n} \right\rfloor = \sum_{Q\in Y} \left\lfloor \frac{\delta_Q}{e_Q} \right\rfloor.
+    \]
+Furthermore we have $\left\lfloor \frac{\sigma_Q}{e_Q} \right\rfloor = 0$ if and only if $\sigma_Q<e_Q$, i.e. if and only $Q\in S$. 
+Thus Corollary \ref{dim2} follows from Proposition \ref{dim}.
+\end{proof}
+
+\begin{rem}
+  Note that if $p>0$ and $G$ is cyclic then Corollary \ref{dim2} can be derived from proposition 6 in the recent pre-print
+ \cite{kako} by Karanikolopoulos and Kontogeorgis.
+\end{rem}
+
+
+
+  \section{Trivial action in the cyclic case}
+
+   In this section, rather than looking at a general group $G$, we determine when specific classes of cyclic groups will act trivially on $\dim_kH^0(X,\Omega_X^{\otimes m})$.
+   By limiting ourselves to these groups this question will be a lot easier, and then in the final section we will show how to reduce the general situation to these cases.\\
+
+  In this section, $P_1,\ldots ,P_r \in X$ denote the ramification points of $\pi$ and we write $e_i$ and $\delta_i$ for $e_{P_i}$ and $\delta_P{_i}$.
+  Also, for $i=1, \ldots, r$, we define $N_i \in \NN$ by $\textrm{ord}_{P_i}(\delta(\pi_i) - \pi_i) = N_i +1$ where $\pi_i$ is a local parameter at the ramification point $P_i$ and $\sigma$ is a generator of $G(P_i)$.\\ 
+
+
+  \begin{prop}\label{m=1}
+    Let $p  > 0$ and let $G$ be cyclic of order $p$.
+    Furthermore, we assume that $g_Y=0$.
+    Then $G$ acts trivially on $H^0(X,\Omega_X)$ if and only if one of the following three conditions holds:
+	 \begin{itemize}
+	  \item $g_X=0$;
+	  \item $g_X=1$ and $p=3$;
+	  \item $p=2$.
+	 \end{itemize}
+  \end{prop}
+  \begin{proof}
+    From Lemma~1 on p.~87 in \cite{Naka} we know that $p$ does not divide $N_i$, a fact we will use several times below. 
+    The ramification divisor $R$ of $\pi$ is equal to $\sum_{i=1}^r(N_i+1)(p-1)[P_i]$ by Hilbert's formula for the order of the different (see Prop.~4, \S 1, Ch.~IV on p.~72 in \cite{localfields}). 
+    Let $N:= \sum_{i=1}^r N_i$. 
+    Recall that the Hurwitz formula states
+      \begin{equation}\label{hur}
+	2(g_X-1)=2n(g_Y-1) + \deg(R).
+      \end{equation}
+    Using this we obtain
+      \begin{equation}\label{hur2}
+	2g_X - 2 = -2p + (N+r)(p-1)
+      \end{equation}
+    and hence
+      \[
+	\textrm{dim}_kH^0(X,\Omega_X) = g_X =\frac{(N+r-2)(p-1)}{2}.
+      \] 
+    Since $g_X \ge 0$ we obtain $r \ge 1$; that is, $\pi$ is not unramified. 
+    Therefore we have 
+      \[
+	\textrm{deg} \left\lfloor \frac{\pi_*(R)}{p} \right\rfloor =
+	\sum_{i=1}^r \left\lfloor \frac{(N_i+1)(p-1)}{p}\right\rfloor 
+	\ge \sum_{i=1}^r \left\lfloor \frac{2(p-1)}{p}\right\rfloor = r > 0.
+      \] 
+    From Proposition~1 we then conclude that
+      \begin{eqnarray*}
+	\lefteqn{\textrm{dim}_k H^0(X,\Omega_X)^G = g_Y -1 + \textrm{deg} \left\lfloor \frac{\pi_*(R)}{p} \right\rfloor}\\
+	&=& -1 + \sum_{i=1}^r \left\lfloor \frac{(N_i+1)(p-1)}{p}\right\rfloor\\
+	&=& -1 + N +r + \sum_{i=1}^r \left\lfloor -\frac{N_i+1}{p}\right\rfloor.
+      \end{eqnarray*}
+    If $p=2$ the dimension of both $H^0(X,\Omega_X)$ and $H^0(X,\Omega_X)^G$ is therefore equal to $\frac{N+r-2}{2}$. 
+    If $g_X = 0$ both dimensions are obviously equal to~$0$.
+    If $p=3$ and $g_X =1$ we obtain $N+r=3$ and hence $r=1$ and $N=2$; thus both dimensions are equal to $1$.
+    Therefore in all three of these cases $G$ acts trivially on $H^0(X,\Omega_X)$.
+    This finishes the proof of the if-direction in Proposition~2.\\
+    To prove the other direction we now assume that $G$ acts trivially on $H^0(X, \Omega_X)$ and that $p \ge 3$ and prove that the first or second condition holds. 
+    For each $i=1, \ldots, r$, we write $N_i = s_i p +t_i$ with $s_i \in \NN$ and $t_i \in \{1, \ldots, p-1\}$. 
+    We furthermore put $S:=\sum_{i=1}^r s_i$ and $T:= \sum_{i=1}^r t_i \ge r$. 
+    Then we have
+      \[ 
+	 \frac{(N+r-2)(p-1)}{2} =\textrm{dim}_k(H^0(X,\Omega_X))  = \textrm{dim}_k\left(H^0(X,\Omega_X)^G\right) = N-S-1 .
+      \]
+    Rearranging this equation we obtain
+      \[
+	 (3-p)N - 2S = (r-2)(p-1) +2  
+      \]
+    and hence
+      \[
+	 (-p^2 + 3p -2)S = (r-2)(p-1) +2 - (3-p)T.
+      \]
+    Since $-p^2+3p-2 = - (p-1)(p-2)$ and $p \ge 3$ this equation implies that
+      \[ 
+	S = \frac{(r-2)(1-p)-2 + T (3-p)}{(p-1)(p-2)}. 
+      \]
+    Because $S \ge 0$ the numerator of this fraction is non-negative, that is
+      \begin{eqnarray*}
+	\lefteqn{0 \le (r-2)(1-p) - 2 + T (3-p)}\\
+	&\le & (r-2)(1-p) - 2 + r (3-p)\\
+	&=& 2 (r-1)(2-p).
+      \end{eqnarray*}
+    Hence we have $r=1$ and that numerator is $0$. 
+    We conclude that $S=0$ and hence that $T=1$ or $p=3$. 
+    If $T=1$ we also have $N=1$ and finally
+      \[
+	g_X = \frac{(N+r-2)(p-1)}{2} = 0,
+      \]
+    i.e. the first condition holds. 
+    If $T \not=1$ and $p=3$ we obtain $N=T=2$ and finally 
+      \[
+	g_X = \frac{(N+r-2)(p-1)}{2} =1,
+      \] 
+    i.e.\
+    the second condition holds.
+  \end{proof}
+
+  \begin{prop}\label{triv}
+    Let $m \geq 2$. 
+    Suppose that $G$ is a cyclic group of prime order $l$ (which may or may not be equal to $\cha(k)=p$) and that $g_Y=0$. 
+    Then $G$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$ if and only if one of the following conditions holds:
+      \begin{itemize}
+	\item $g_X=0$;
+	\item $g_X=1$;
+	\item $g_X=m=l=2$.
+      \end{itemize}
+  \end{prop}
+\begin{proof}
+    If $g_X=0$ then $\deg(mK_X)=-2m<0$; hence $\dim_k(H^0(X,\Omega_X^{\otimes m})=0$ by \cite[{\S} 8, Prop. 3]{fulton} and the action must be trivial.
+
+    We now look at the case when $g_X=1$. By \cite[Chap. IV,\ Example 1.3.6]{hart} we know that $K_X$ is equivalent to the zero divisor. 
+    Hence 
+      \[
+	H^0(X,\Omega_X^{\otimes m})\cong H^0(X,\mathscr{O}_X(mK_X)) \cong H^0(X,\mathscr{O}_X(0))=k,
+      \]
+    the space of constant functions, which is $G$ invariant. 
+    Hence the action of $G$ on the space $H^0(X,\Omega_X^{\otimes m})$ is trivial.
+
+    From now on we assume that $g_X\geq 2$. 
+    We have different proofs according to whether or not the order $l$ of the group is the same as the characteristic $p$ of the field.
+
+
+	First we assume that $l=p$. 
+	Due to (\ref{hur2}) we have $2g_X-2=-2p+k(p-1)$, and combining this with Lemma \ref{dim3} we can write
+		\[
+		\dim_kH^0(X,\Omega_X^{\otimes m})=(2m-1)(g_X-1)=(2m-1)\Big(\frac{k(p-1)-2p}{2}\Big).
+		\]
+
+	Now if $\deg\left \lfloor{\frac{m\pi_*(R)}{p}}\right\rfloor\geq 2m$ then by Proposition 2 we have
+		\begin{eqnarray*}	
+			\lefteqn{\dim_kH^0(X,\Omega_X^{\otimes m})^G = 1-2m+\deg\Big{\lfloor}{\frac{m\pi_*(R)}{p}}\Big{\rfloor}} \\
+			&= & 1-2m+\sum_{i=1}^r \Big{\lfloor}{\frac{m(N_i+1)(p-1)}{p}}\Big{\rfloor} \\
+			&= & 1-2m+mk+\sum_{i=1}^r\Big{\lfloor}{\frac{-m(N_i+1)}{p}}\Big{\rfloor}. 
+		\end{eqnarray*}
+	
+	If we have $p=g_X=m=2$ then on the one hand we see that $\dim_kH^0(X,\Omega_X^{\otimes m})=3$. 
+	On the other hand, we first note that the equation $2g_X-2=-2p+k(p-1)$ implies that $k=6$. 
+	So $\deg\left\lfloor \frac{m\pi_*(R)}{p}\right\rfloor=mk+\sum_{i=1}^r\Big{\lfloor}{\frac{-m(N_i+1)}{p}}\Big{\rfloor}=2k-k>2m$. 	
+	Then we can compute $\dim_kH^0(X,\Omega_X^{\otimes m})^G=9+\sum\lfloor-N_i-1\rfloor=3$. 
+	So the dimensions are equal and the action of $G$ on $H^0(X,\Omega_X^{\otimes m})$ is trivial. 
+	This completes the if direction of the proof.
+
+	Now we assume that the action is trivial. This first implies that 
+	$\deg \left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor \geq 2m$ because otherwise we would 
+	have $\dim_k(H^0(X,\Omega_X^{\otimes m})^G)=0$ by the previous proposition, but we know that 
+	$\dim_k(H^0(X,\Omega_X^{\otimes m}))=(2m-1)(g_X-1)$ (6) is strictly positive. So we have:
+		\begin{eqnarray}
+			\lefteqn{(2m-1)\frac{k(p-1)-2p}{2} = \dim_k(H^0(X,\Omega_X^{\otimes m}))} \nonumber\\
+			& = & \dim_k(H^0(X,\Omega_X^{\otimes m})^G) \nonumber\\
+			& = & 1-2m+mk+\sum_{i=1}^r\Big{\lfloor}\frac{-m(N_i+1)}{p}\Big{\rfloor}\nonumber \\
+			& \leq & 1-2m+mk+\sum_{i=1}^r\frac{-m(N_i+1)}{p}\nonumber \\
+			& = & 1-2m+mk-\frac{mk}{p}.
+		\end{eqnarray}
+
+	If we then multiply by $2p$ we obtain
+		\begin{equation}
+			(2mk-k-4m+2)p^2+(-4mk+k-2+4m)p+2mk\leq 0.
+		\end{equation}
+
+	The left hand side of this then factorises as
+		\begin{multline*}
+			(k-2)(2m-1)p^2-((k-2)(2m-1)+2mk)p+2mk = \\
+			(p-1)((k-2)(2m-1)p-2mk)
+		\end{multline*}
+
+	As (\ref{hur2}) tells us that $-2p+k(p-1)=2g_X-2 \geq 2$ then we see that 
+		\begin{equation}
+			k\geq \frac{2+2p}{p-1}=2+\frac{4}{p-1}>2.
+		\end{equation}
+
+	So from (7) and (8) we see that
+		\begin{eqnarray}
+			p & \leq & \frac{2mk}{(k-2)(2m-1)}\nonumber\\
+			& = & \frac{k}{k-2}\cdot\frac{2m}{2m-1}\nonumber\\
+			& = & \Big( 1+\frac{2}{k-2} \Big) \Big(1+\frac{1}{2m-1} \Big)\\
+			& \leq & 4, \nonumber	
+		\end{eqnarray}
+
+	i.e. $p=2$ or $p=3$. 
+
+	Suppose that $p=3$. Then from (8) we have $k\geq 4$. However, from (10) and (9) we also have that 
+		\begin{eqnarray*}
+			3 & \leq &\Big( 1+\frac{2}{k-2} \Big) \Big(1+\frac{1}{2m-1} \Big)\\
+			& \leq & \Big( 1+\frac{2}{k-2} \Big) \frac{4}{3}\\
+			& \leq & \frac{8}{3},
+		\end{eqnarray*}
+
+	a contradiction.
+
+	Lastly, we come to the case when $p=2$. From (9) we see that $2\leq \Big(1+\frac{2}{k-2}\Big)\frac{4}{3}$ 
+	and hence $k\leq 6$. However, from (8) we also see that $k\geq 6$, so $k=6$. Then from (6) $2m-1=1-2m+6m-3m$
+	and $m=2$. Finally, (\ref{hur2}) gives us that $2g_X-2=-4+6=2$ and hence $g_X=2$. 
+	This completes the only if direction of the proof when $l=p$.
+
+    Now if $l\neq p$ then we know that all the coefficients of the ramification divisor are $l-1$. 
+    To show the if direction in this case, first note that from Lemma \ref{dim3} we see that $\dim_kH^0(X,\Omega_X^{\otimes m})=3$. 
+    On the other hand, the Hurwitz formula, $2g_X-2=-2l+\deg(R)=-2l+r(l-1)$, implies that $r=6$. 
+    Finally Proposition \ref{dim} gives us
+      \begin{equation*}
+	\dim_kH^0(X,\Omega_X^{\otimes m})^G = -(2m-1) + \sum_{i=1}^r \left\lfloor \frac{m\cdot n_i}{l} \right\rfloor
+	= -3 +\sum_{i=1}^6 \left\lfloor \frac{m(l-1)}{l} \right\rfloor
+	= 3
+      \end{equation*}
+    since $m=l=2$.
+    As the dimensions of $H^0(X,\Omega_X^{\otimes m})$ and $H^0(X,\Omega_X^{\otimes m})^G$ are equal the action is trivial.
+
+
+    Now, for the final section of the proof, we still assume that $g_X\geq 2$, and furthermore suppose that $G$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$. 
+    We will show that, given that $g_X\geq 2$, the only possibility is that $g_X=2$, which occurs when $l=2$.
+    Hence we will have proven that $g_X=l=m=2$, as desired.
+    From Lemma \ref{dim3} and Proposition~\ref{dim} we obtain
+      \begin{eqnarray*}
+	\lefteqn{(2m-1)(g_X-1)=\dim_kH^0(X,\Omega_X^{\otimes m})} \\
+	& = & \dim_kH^0(X,\Omega_X^{\otimes m})^G=-(2m-1)+\sum_{i=1}^r \left\lfloor \frac{m\cdot n_i}{l} \right\rfloor
+      \end{eqnarray*}
+    and hence
+      \begin{equation*}
+	(2m-1)g_X = \sum_{i=1}^r \left\lfloor \frac{m\cdot n_i}{l} \right\rfloor
+	= \sum_{i=1}^r \left\lfloor \frac{m(l-1)}{l} \right\rfloor
+	= r\left( m+\left\lfloor \frac{-m}{l} \right\rfloor \right).
+      \end{equation*}
+    By choosing $s\in \{1,\ldots ,l\}$ and $q\in \mathbb{N}$ such that $m=ql+s$ we can rewrite this as
+      \begin{equation}\label{eq:mult}
+	(2m-1)g_X=r(m-q-1).
+      \end{equation}
+    If we multiply (\ref{eq:mult}) by $l-1$ and then substitute in for the $r(l-1)$ term in the Hurwitz formula we get
+      \begin{equation*}
+	(2m-1)(l-1)g_X=(2g_X+2(l-1))(m-q-1).
+      \end{equation*}
+    By rearranging we are able to compute $g_X$ in terms of $m,l$ and $q$:
+      \begin{eqnarray*}
+	\lefteqn{g_X = \frac{2(l-1)(m-q-1)}{(2m-1)(l-1)-2(m-q-1)}} \\
+	& = & 1 + \frac{2(m-q-1)-(2q+1)(l-1)}{(2m-1)(l-1)-2(m-q-1)} \\
+	& = & 1 + \frac{2s-1-l}{(2m-1)(l-1)-2(m-q-1)}  \\
+	& = & 1 + \frac{2(s-1)+1-l}{(2m-1-2q)(l-1)-2(s-1)}. 
+      \end{eqnarray*}
+    First, we show that if $l\geq 3$ the equation cannot hold whilst $g_X\geq 2$.
+    Observe that the denominator is strictly greater than $l-1$, remembering that $m=ql+s$:
+      \begin{eqnarray*}
+	(2m-1-2q)(l-1)-2(s-1) & = & ((2q(l-1)+2s-1)(l-1)-2(s-1) \\
+	& \geq & (2s-1)(l-1)-2(s-1) \\
+	& \geq & (2s-1)(l-1)-2(s-1)(l-1) \\
+	& = & l-1;
+      \end{eqnarray*}
+    here the two inequalities are equalities if and only if $q=0$ and $s=1$, respectively, and, as $m\geq 2$, not both equalities can be equalities.
+    Now the numerator is at most $l-1$, occurring when $s=l$. 
+    Hence if $l\geq 3$ the fraction will be less than one and $g_X < 2$, which we have already looked at.
+    Now if $l=2$, then $s$ is either 1 or 2.
+    If $s=1$ the fraction is negative, and $g_X<1$, which again we have already considered.
+    Finally, if $s=2$ then $g_X\leq 2$, with equality if and only if $q=0$ i.e. if $m=2$.
+    So if $g_X \geq 2$ then the action being trivial implies that $g_X=l=m=2$, and the proof is complete.    
+  \end{proof}
+
+For the rest of this section we assume that $p>0$ and that $G$ is a cyclic group of order $p^l$ for some $l$.
+What we are now going to do will not be used in the final section, but is included because it generalises the previous results.
+More precisely, we do not restrict ourselves to looking at $H^0(X,\Omega_X^{\otimes m})$, but using \cite{kako} we study $H^0(X,\mathscr{O}(D))$ for any $G$-invariant divisor $D$ such that $\deg(D)>2g_X-2$.
+
+
+We first introduce some notation.
+Let $D = \sum_{P\in X} n_P[P]$ be a $G$-invariant divisor on $X$.
+Then let $\langle a \rangle$ denote the fractional part of any $a\in \mathbb{R}$, i.e. $\langle a \rangle = a - \lfloor a \rfloor$.
+Also, for any $Q\in Y$ let $n_Q$ be equal to $n_P$ for any $P\in \pi^{-1}(Q)$.\\
+
+
+
+  \begin{prop}\label{nakaj}
+    Suppose $p>0$ and $G$ is a cyclic group of order $p^l$ for some $l$.
+    Let $D$ be a $G$-invariant divisor on $X$ such that $\deg(D)>2g_X-2$.
+    Then the action of $G$ on $H^0(X,\mathscr{O}_X(D))$ is trivial if and only if
+      \[ 
+	(p^l-1)\deg(D)=p^l\left(g_X-g_Y-\sum_{Q\in Y}\left\langle \frac{n_Q}{e_Q} \right\rangle\right).
+      \]
+  \end{prop}
+  \begin{proof}
+We first remind the reader of the notation in \cite{kako}.
+Let $\sigma$ be a generator of $G$.
+Let $V$ be the $k[G]$ module with $k$-basis $e_1,\ldots ,e_{p^l}$ and $G$-action defined by $\sigma\cdot e_i=e_i+e_{i-1}$, $1\leq i \leq p^l,\ e_0=0$.
+Then $V_j$, defined to be the subspace of $V$ spanned by $e_1,\ldots ,e_j$ over $k$, is also a $k[G]$ module.
+In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representatives for the set of isomorphism classes of indecomposable $k[G]$-modules. For each $j=1,\ldots,p^l$ let $m_j$ denote the multiplicity of $V_j$ in the $k[G]$-module $H^0(X,\cO_x(D))$, i.e. we have $H^0(X,\cO_x(D))\cong \oplus_{j=1}^{p^l}m_jV_j$.
+
+
+
+    First note that the action of $G$ on $H^0(X,\cO_X(D))$ is trivial if and only if
+      \begin{equation}\label{triva}
+	\dim_k H^0(X,\mathscr{O}_X(D))^G =\dim_k H^0(X,\mathscr{O}_X(D)).
+      \end{equation}
+	
+    It is clear that the $G$-invariant part of each sub-module $V_j$ is spanned by $e_1$. 
+    Hence $\dim_kH^0(X,\mathscr{O}_X(D))^G = \sum_{j=1}^{p^l} m_j$.
+    By \cite[Theorem 2.1]{quaddiffequi}, which relies on \cite{Bo}, we have
+      \begin{eqnarray*}
+	\sum_{j=1}^{p^l} m_j & = & 1- g_Y +\sum_{Q\in Y} \left\lfloor \frac{n_Q}{e_Q}\right\rfloor\\
+	& = & 1- g_Y + \sum_{Q\in Y} \left( \frac{n_Q}{e_Q} - \left\langle \frac{n_Q}{e_Q}\right\rangle \right) \\
+  	& = & 1 - g_Y + \frac{1}{p^l}\deg(D) - \sum_{Q\in Y} \left\langle \frac{n_Q}{e_Q} \right\rangle.
+      \end{eqnarray*}
+
+    Now as $\deg(D)>2g_X-2$ we have $\dim_kH^0(X,\mathscr{O}_X(D)) =\deg(D)+1-g_X$ by the Riemann-Roch theorem. 
+    So the action of $G$ on $H^0(X,\mathscr{O}_X(D))$ is trivial if and only if
+      \begin{equation*}
+	\deg(D)+1-g_X  = 1 - g_Y + \frac{1}{p^l}\deg(D) - \sum_{Q\in Y}\left\langle \frac{n_Q}{e_Q} \right\rangle. \label{hi}
+      \end{equation*}
+
+    This then rearranges to $(p^l-1)\deg(D)=p^l\left(g_X-g_Y-\sum_{Q\in Y}\left\langle \frac{n_Q}{e_Q} \right\rangle\right)$, as desired.
+    \end{proof}
+
+  \begin{cor}\label{this}
+    Suppose that $\deg(D)\geq 2g_X$. Then the action of $G$ on $H^0(X,\mathscr{O}_X(D))$ is trivial if and 
+    only if $e_Q | n_Q$ for all $Q\in Y$, $\deg(D)=2g_X$ and either $g_X=0$ or $p^l=2$.
+  \end{cor}
+  \begin{proof}
+    The following inequalities always hold under the stated assumptions:
+      \[
+	(p^l-1)\deg(D)\geq (p^l-1)2g_X \geq p^lg_X \geq p^lg_X-p^l\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle.
+      \]
+    Now the first inequality is an equality if and only if $\deg(D)=2g_X$. 
+    The second is an equality if and only if either $g_X=0$ or $p^l=2$. 
+    Lastly, the third inequality is an equality if and only if $\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle=0$, which is the case if and only if each $n_Q$ is divisible by~$e_Q$. 
+    Given these observations, Proposition \ref{nakaj} implies Corollary~\ref{this}.
+  \end{proof}
+    
+The following Corollary is stated for completeness sake.\\
+
+  \begin{cor}
+    Suppose that $\deg(D)= 2g_X-1$. Then the action of $G$ on $H^0(X,\mathscr{O}_X(D))$ is trivial if and only if one of the following conditions hold:
+      \begin{itemize}
+	\item $g_X=0$;
+	\item  $p^l=2$ and $\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle=\frac{1}{2}$;
+	\item  $g_X=1$ and $\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle=\frac{1}{p^l}$;
+	\item  $g_X=2$, $p^l=3$ and $e_Q\mid n_Q$ for all $Q\in Y$.
+      \end{itemize}
+  \end{cor}~
+
+
+  \begin{rem}
+    It can easily be shown that in the last case the Hurwitz formula implies that $r\leq 4$. 
+    Furthermore, if $r=1$ then the conditions ``$\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle=\frac{1}{p^l}$" and ``$e_Q\mid n_Q$ for all $Q\in Y$" are already implied by ``$\deg(D)=2g_X-1$".
+  \end{rem}
+
+  \begin{proof}
+    Firstly, if $g_X=0$ then $\deg(D)=-1<0$, so $\dim_kH^0(X,\mathscr{O}_X(D))=0$ and the action is trivial.
+
+    Now note that, as $\deg(D)=2g_X-1$, we conclude from Proposition \ref{nakaj} that the action is trivial if and only if 
+      \begin{equation*}
+	(p^l-1)(2g_X-1)=p^l\left(g_X-\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle\right).
+      \end{equation*}
+    If $p^l=2$ then this is equivalent to $2g_X-1=2g_X-2\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle$ and hence to $\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle=\frac{1}{2}$.
+
+    If $g_X=1$ then this is equivalent to $p^l-1=p^l-p^l\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle$ and hence also to $\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle=\frac{1}{p^l}$.
+
+    Lastly, if $p^l\geq 3$ and $g_X\geq 2$ then we have that $g_X\geq \frac{p^l-1}{p^l-2}$ which is equivalent to the first inequality in the chain
+      \begin{equation*}
+	(p^l-1)(2g_X-1)\geq p^lg_X\geq p^lg_X-p\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle.
+      \end{equation*}
+    Hence the action is trivial if and only if both inequalities are equalities, which is the case if and only if $p^l=3,\ g_X=2$ and $e_Q\mid n_Q$ for all $Q\in Y$.
+  \end{proof}
+
+The following Corollary generalises the only-if direction of the $l=p$ part of the proof of of Proposition $3$.\\
+
+  \begin{cor}
+    Let $m\geq 2$. 
+    We assume that $g_X\geq 2$ and that $G$ is a cyclic group of order~$p^l$. 
+    If $G$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$, then $p^l=g_X=m=2$   .
+  \end{cor}
+  \begin{proof}
+    As $g_X\geq 2$ and $m\geq 2$ we have that $\deg(mK_X)\geq 2g_X$. 
+    So by Corollary \ref{this}, the action is trivial if and only if $p^l=2,\ \deg(mK_X)=2g_X$ and $e_Q | n_Q$ for all $Q\in Y$. 
+    Now $\deg(mK_X)=2g_X$ means that $m(2g_X-2)=2g_X$, so $m(g_X-1)=g_X$, and hence that $m=g_X=2$. 
+  \end{proof}
+
+  \section{The Main Theorem}
+  In this section we prove the main theorem of the paper, describing exactly when $G$ will act faithfully on $H^0(X,\Omega_X^{\otimes m})$.
+
+
+  We begin with some examples when the action of $G$ on $H^0(X, \Omega_X^{\otimes m})$ is in fact trivial.
+
+{\bf Example.}\\
+  (a) If $g_X = 0$ then $\deg(K_X)=-2$ and so $\deg(mK_X)<0$ for $m\geq1$. 
+  Hence  $H^0(X,\Omega_X^{\otimes m}) = \{0\}$ and $G$ acts trivially for all $m\geq 1$.
+
+  
+  (b) Suppose $g_X =1 $ (i.e. suppose $X$ is an elliptic curve) and that $G$ is a finite subgroup of $X(k)$ acting on $X$ by translations.
+  Then $G$ leaves invariant any global non-vanishing holomorphic differential and hence $G$ acts trivially on $H^0(X,\Omega_X)$.
+  Since $\Omega_X\cong \Omega_X^{\otimes m}$ for $m\geq1$ when $g_X=1$, this means that $G$ also acts trivially on  $H^0(X,\Omega_X^{\otimes m})$.
+
+
+  (c) Let $p=2$. 
+  If $n=2$ and $g_Y =0$, then $G \cong \ZZ/2\ZZ$ acts trivially on $H^0(X, \Omega_X)$ by Proposition~\ref{m=1}.
+  For instance, let $r$ be an odd natural number, let $k(x,y)$ be the extension of the rational function field $k(x)$ given by the Artin-Schreier equation $y^2-y = x^r$ and let $\pi: X \rightarrow \PP^1_k$ be the corresponding cover of non-singular curves over $k$; 
+  then $G$ acts trivially on the vector space $H^0(X,\Omega_X)$ whose dimension is $\frac{r-1}{2}$ by Example~2.5 on p.~1095 in \cite{galoisstruc}.
+
+  (d) Let $k(x,y)$ be the extension of the rational function field $k(x)$ given by $y^2=(x-x_1)\ldots (x-x_6)$, where $x_1, \ldots , x_6$ are pairwise distinct.
+      Then the corresponding natural projection $\pi:X\rightarrow \mathbb{P}_k^1$ is of degree $2$ and ramified exactly over $x_1,\ldots , x_6\in \mathbb{P}_k^1$.
+      Now by Lemma \ref{dim3} and Proposition \ref{dim} respectively $\dim_kH^0(X,\Omega_X^{\otimes 2})$ and $\dim_kH^0(X,\Omega_X^{\otimes 2})^G$ are both $3$, so the action is trivial.\\
+
+  \begin{unnumthm}
+    Suppose that $g_X\geq 2$ and let $m\geq1$. 
+    Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ contains a hyper-elliptic involution and one of the following conditions holds:
+      \begin{itemize}
+	\item $m=1$ and $p=2$;
+	\item $m=2$ and $g_X=2$.
+      \end{itemize}
+  \end{unnumthm}
+  \begin{proof}
+    We first show the if direction. 
+    In the case when $m=1$, the hyper-elliptic involution contained in $G$ generates a subgroup of order $2$.
+    Since $p=2$, this acts trivially by Proposition \ref{m=1}, and hence $G$ does not act faithfully.
+    In the case when $m=2$, then again looking at the subgroup generated by the hyper-elliptic involution, we have a group of order $2$ acting on $H^0(X,\Omega_X^{\otimes m})$.
+    So, by Proposition \ref{triv} and since $g_X=m=2$, the action of this subgroup is trivial, and again, this means that $G$ does not act faithfully.
+
+
+    We now start the proof of the only if direction, supposing that $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$. 
+    By replacing $G$ with the (non-trivial) kernel $H$ if necessary, we may assume that $G$ is non-trivial and acts trivially on $H^0(X,\Omega_X^{\otimes m})$.
+
+
+    We start the proof by showing that $g_Y=0$, which is shown separately for the cases when $m=1$ and when $m\geq 2$.
+    In the case when $m=1$ we start by showing that $\deg  \left\lfloor \frac {\pi_*(R)}{n} \right\rfloor >0$ by contradiction.
+    Suppose that $\deg\left\lfloor \frac{\pi_*(R)}{n} \right\rfloor =0$.
+    As $G$ acts trivially then by Proposition~\ref{dim} we have:
+      \begin{equation*}
+	g_X=\dim_k H^0(X,\Omega_X)=\dim_k H^0(X,\Omega_X)^G=g_Y.
+      \end{equation*}
+    Substituting this into the Hurwitz formula (\ref{hur}) yields the desired contradiction because $g_X\geq 2, n\geq 2$ and $\deg(R)\geq 0$.
+
+    Thus $\deg\left( \left\lfloor \frac{\pi_*(R)}{n} \right\rfloor \right) >0$. 
+    Now Proposition~\ref{dim} gives us that
+      \begin{equation*}
+	g_X=\dim_k H^0(X,\Omega_X)=\dim_k H^0(X,\Omega_X)^G= g_Y-1+\deg\left\lfloor \frac{\pi_*(R)}{n} \right\rfloor.
+      \end{equation*}
+    Substituting this in to the Hurwitz formula (\ref{hur}), we see that
+      \begin{equation*}
+	2\left(g_Y - 1 + \textrm{deg}\left \lfloor \frac{\pi_*(R)}{n} \right \rfloor -1 \right) = 2n (g_Y -1) + \textrm{deg}(R).
+      \end{equation*}
+    For any $Q \in Y$ let $n_Q$ denote the coefficient of the ramification divisor $R$ at any $P \in \pi^{-1}(Q)$ and let $e_Q := e_P$ for any $P \in \pi^{-1}(Q)$. 
+    Rewriting the previous equation yields
+      \begin{eqnarray*}
+	\lefteqn{(2n-2)g_Y = 2n-4 + 2 \,\textrm{deg}\left \lfloor \frac{\pi_*(R)}{n}\right \rfloor - \textrm{deg}(R)}\\
+	&=& 2 \left(n-2 + \sum_{Q \in Y} \left(\left\lfloor \frac{n}{e_Q} \frac{n_Q}{n} \right\rfloor - \frac{n}{e_Q} \frac{n_Q}{2}\right) \right)\\
+	&=& 2 \left(n-2 + \sum_{Q \in Y} \left( \left\lfloor \frac{n_Q}{e_Q} \right\rfloor - \frac{n_Q}{e_Q} \frac{n}{2} \right)\right)\\
+	& \le & 2(n-2)
+      \end{eqnarray*}
+    because $\frac{n}{2} \ge 1$ and $\left\lfloor \frac{n_Q}{e_Q}\right\rfloor \le \frac{n_Q}{e_Q}$ for all $Q \in Y$. 
+    Hence we obtain $g_Y \le \frac{n-2}{n-1} < 1$ and therefore $g_Y =0$, as desired.
+
+    We now show that $g_Y=0$ when $m\geq 2$. 
+    Since $g_X\geq 2$ we have that $\deg(mK_X)=m(2g_X-2)>2g_X-2=\deg(K_X)$.
+    By Lemma \ref{dim3}, and as both $m$ and $g_X$ are at least 2, then $\dim_kH^0(X,\Omega_X^{\otimes m})^G=\dim_kH^0(X,\Omega_X^{\otimes m})=(2m-1)(g_X-1)>1$.
+    There is only one case in Proposition \ref{dim} such that $m\geq 2$ and $\dim_k H^0(X,\Omega_X^{\otimes m})^G>1$, so 
+      \begin{equation*}
+	(2m-1)(g_X-1)=(2m-1)(g_Y-1)+\deg\left(\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor \right).
+      \end{equation*}
+    Combining this with the Hurwitz formula (\ref{hur}) we see that
+      \begin{eqnarray*}
+	2(2m-1)(g_Y-1)+2\deg\left(\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor\right) & = & 2(2m-1)(g_X-1)\\
+	& = & 2n(2m-1)(g_Y-1)+(2m-1)\deg(R)
+      \end{eqnarray*}
+    which can be re-arranged as
+      \begin{equation*}
+	(2m-1)(2n-2)(g_Y-1)=2\deg\left(\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor\right)-(2m-1)\deg(R).
+      \end{equation*}
+    So if we can show that the right hand side of this equation is negative then we will have $g_Y-1<0$ and hence $g_Y=0$, as desired.
+
+    Using the same notation as in the case when $m=1$, we calculate:
+      \begin{align*}
+	\lefteqn{2\deg\left(\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor\right)-(2m-1)\deg(R)}\\
+	& = \sum_{Q \in Y} \left(2\left\lfloor m\cdot \frac{n}{e_Q}\frac{n_Q}{n}\right\rfloor -n(2m-1)\frac{n_Q}{e_Q}\right) \\
+	&\leq   \sum_{Q\in Y}\left( 2m\cdot\frac{n_Q}{e_Q}-n(2m-1)\frac{n_Q}{e_Q}\right) \\
+	& =  (2m-n(2m-1))\sum_{Q\in Y }\frac{n_Q}{e_Q}.
+      \end{align*}
+
+    Now as $n,m\geq 2$ then we have $2m-n(2m-1)\leq 2m-2(2m-1)=2(1-m)<0$ and we are done as $\sum_{Q\in Y}\frac{n_Q}{e_Q}$ is positive.
+
+    So we have shown that in all cases, if $G$ does not act faithfully then $g_Y=0$.
+    Now if $m\geq 2$ then firstly note that $G$ must contain a cyclic subgroup of prime order, and this will act trivially on $H^0(X,\Omega_X^{\otimes m})$ as $G$ does.
+    Now Proposition \ref{triv} tells us that $m=g_X=2$, and that the order of this subgroup must also be 2.
+    Hence, if we denote this subgroup by $K$, then $X/K\cong \mathbb{P}_k^1$, thus completing the only if direction for $m\geq 2$.
+    
+    Similarly, the $m=1$ case of the only-if direction will follow from Proposition \ref{m=1} after we show that $p>0$ and there is a cyclic subgroup of order $p$ that acts trivially. 
+    This is true as $\pi$ cannot be tamely ramified.
+    Indeed, if it were then $R=\sum_{P\in X} (e_P-1)[P]$ \cite[{\S} IV, Cor. 2.4]{hart}, and $\deg\left\lfloor \frac{\pi_*(R)}{n} \right\rfloor=0$, which we have already shown cannot be the case.
+    Hence $p$ must be positive, and there is a cyclic subgroup of order $p$ which acts trivially.
+  \end{proof}
+
+\begin{rem}
+  Note that the existence of a hyper-elliptic involution $\sigma$ in $G$ means not only that the genus of $X/\langle \sigma \rangle$ but also the genus of $Y=X/G$ is $0$ (by the Hurwitz formula).
+  If moreover $p=2$, then the canonical projection $X\rightarrow X/\langle \sigma \rangle$ is not unramified (again by the Hurwitz formula) and hence not tamely ramified; then $\pi$ cannot be tamely ramified either.
+\end{rem}
+
+{\em Acknowledgements.} A prototype of the question underlying this paper goes
+back to Michel Matignon. The first-named author would like to thank Niels Borne for
+communicating this question to him and for sketching a proof of the fact that $G$ acts
+faithfully on $H^0(X,\Omega_X)$ in the tamely ramified case.
+
+\bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+\end{document}

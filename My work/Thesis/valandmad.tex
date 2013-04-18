@@ -1,0 +1,259 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\theoremstyle{remark}\newtheorem*{rem}{Remark}
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\cal L}}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Valentini and Madan}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+Let $X$ be a smooth connected projective algebraic curve over an algebraically closed field $k$ of characteristic $p>0$, on which the cyclic group $G$ of prime order $p$ acts faithfully.
+This induces an action of $G$ on $H^0(X,\Omega_X)$, and we will compute when this action is trivial.
+This can be done with the paper of Valentini and Madan when the genus of $X$ is at least $2$.
+
+We start by phrasing the question in the language of the paper; rather than the curve $X$ we will refer to the corresponding function field $F$, and we will write $\Omega_F$ instead of $H^0(X,\Omega_X)$.
+The subspace of $F$ fixed by $G$ (equivalently, the quotient of $X$ by the action of $G$) will be denoted $E$, and it's space of holomorphic differentials $\Omega_E$.
+Finally, we will denote the genus of $E$ and $F$ by $g_E$ and $g_F$ respectively, and assume that $g_E=0$.
+
+Note that the paper assumes $|G|=p^n$ for some $n \geq 1$, so where appropriate the value of $n$ will be substituted with $1$, after specifying that the substitution has been made.
+ 
+Let $\sigma$ be a generator of $G$. 
+There are $p$ unique indecomposable representations of $G$, which can be written $K[G]/(\sigma - 1)^k$, for $k\in \{1,\ldots, p\}$ \textbf{Find citation}.
+The trivial action corresponds to $k=1$ and the regular representation corresponds to $k=p$.
+For a decomposition of the $G$-representation of $\Omega_F$ in to indecomposable representations, we will denote by $d_k$ the number of times the representation of degree $k$ occurs.
+So if $\Omega_F = \sum_{m=1}^t \oplus \Omega_m$ for some $t\leq g_F$ is a decomposition of $\Omega_F$ in to a direct sum of indecomposable sub-modules $\Omega_m$, then $d_k$ is the number of components of the sum isomorphic to $K[G]/(\sigma -1)^k.$
+Note that if the action is trivial then the trivial representation will be the only indecomposable sub-module. 
+As such, showing that $G$ acts trivially is equivalent to showing that $d_1 = g_F$, and $d_k= 0 $ for $k \geq 1$.
+{\em
+We start by defining the following subspaces of $\Omega_F$,
+\begin{equation*}
+	\Omega_F^i = \{\omega\in \Omega_F | (\sigma - 1)^i\omega=0\}\ \mbox{ for } 0\leq i \leq p.
+\end{equation*}
+This is an increasing sequence of subspaces, from $0$ to $\Omega_F$, and we can see that $\dim_k\Omega_F^i = \sum_{m=1}^t\dim(\Omega_F^i \cap \Omega_m)$, where $\Omega_m$ are the same indecomposable sub-modules as earlier.
+Now note that for the indecomposable module $k[G]/(\sigma - 1)^k$ it is true that 
+\[
+ \dim_k\{v \in k[G]/(\sigma - 1)^k | (\sigma - 1)^iv = 0\} = \left\{ \begin{array}{ll}
+                                                                      i & i\leq k \\
+\\
+								      k & i > k
+                                                                     \end{array} \right. \mbox{\textbf{prove this!}}
+\]
+
+Therefore $\dim_k\Omega_F^i = \sum _{k=1}^{i-1} kd_k + \sum_{k=i}^p id_k$, and it follows that 
+\[
+dim_k(\Omega_F^{i+1}/\Omega_F^i) = \sum_{k=i+1}^p d_k.
+\]
+
+As we wish to find $d_k$, we rewrite this as 
+\begin{eqnarray*}
+d_p & = & \dim_k(\Omega_F^p/\Omega_F^{p-1}) \\
+d_k & = & \dim_k(\Omega_F^k/\Omega_F^{k-1}) - \dim_k(\Omega_F^{k-1}/\Omega_F^{k-1}).
+\end{eqnarray*}
+Now to compute $\dim_k(\Omega_F^i/\Omega_F^{i-1})$ we look at the extension $F/E$.
+
+}
+
+The extension $F/E$ is a degree $p$ Artin extension, so it has generation of the form 
+\[
+F=E(y), \mbox{	} y^p-y = b, \mbox{	} b\in E.
+\]
+
+Note that in the paper, there are $n$ intermediary fields, labelled $E_j$, each of which is an Artin-Schreier extension with equivalently labelled $b_j$ and $y_j$.
+The $b$ and $y$ we are using correspond to $b_1$ and $y_1$ respectively, and $F$ and $E$ correspond to $E_1$ and $E_0$ respectively.
+
+
+We can choose $b$ and $y$ to satisfy the conditions of Lemma 5.1 of appendix 5 of \cite{quaddiffequi}, which states:\newline
+
+
+\begin{lem}\label{koeck}
+Let $L/K$ be a totally ramified Galois extension of degree $p$.
+Then there exists an element $y \in L$ whose valuation is coprime to $p$ and
+negative, say $-m$, such that $y^p - y \in K$ and $L = K(y)$. The greatest
+integer $M$ such that the higher ramification group $G_M$ of $L/K$ does not vanish
+is then equal to $m$.
+\end{lem}
+
+
+At this point in the paper, for $1\leq k \leq p^n-1$, $a_i^k$ is defined to be the co-efficient of $p^i$ in the p-adic expansion of $k$. 
+Since we have $n=1$, we only have $a_0^k = k$ in this expansion, a fact we will later use.
+
+Let $\bar{P_1},\dots , \bar{P_s}$ be the primes of $E$ that ramify, and let $P(i,1,1)$ denote the prime ideal above $\bar{P_i}$, in $F$.
+(Note that we are using this notation to be consistent with the paper. 
+There, the authors used $P(i,j,m)$, where $i$ denoted the prime ideal in $E$ it was above, $j$ denoted which extension the ideal was in, and $m$ was used to differentiate between these.
+We set $j=1$ as $n=1$, as already commented.
+Also, since the order of $G$ is prime, we may only have one prime above each $\bar{P_i}$, so $m=1$ too.)
+
+
+Now for each $\bar{P_i}$ the normalised valuation determined by $\bar{P_i}$ applied to $z\in E$ is denoted $v(i,1,1,z)$.
+(Again, note that in the paper the authors use $v(i,j,m,z)$ to denote the valuation of a $z\in E_j$ determined by $P(i,j,m).$
+Here however we will only require the valuation in $E$.)
+We let $e_i$ be the ramification index of $\bar{P_i}$ and let $r=n-\max{e_i}$.
+Since $n=1$, it is clear that $e_i=1$ for all $i$, unless the extension is unramified, and hence $r=0$.
+Again, this is not necessarily the case if $n\geq 2$, and but we will use the notation of the paper.
+
+From the proof of Lemma 2 in Valentini and Madan, if we set $\Phi(i,j) = \Phi(i,1) = -v(i,1,1,b)$, then we have the following formula to determine the exponent of the different at $P(i,1,m)$:
+
+\begin{eqnarray}\label{eq}
+\delta_i & = & (p-1)\sum_{j=n-e_i+1}^n (\Phi(i,j) + 1)p^{n-j} \\
+	    & = & (p-1)(\Phi(i,1) + 1).
+\end{eqnarray}
+
+To determine $d_k$ in terms of this, then we set 
+\[
+v_{ik} = \left\lfloor \frac{\delta_i - k\Phi(i,1)}{p} \right\rfloor,
+\]
+
+for $0\leq k \leq p-1$, where $\lfloor c \rfloor$ denotes the largest integer not exceeding $c$ for any $c\in \mathbb{R}$.
+
+For each $k$ we then denote the sum of these values of all the ramification points by $ \Gamma_k = \sum_{i=1}^s v_{ik}.$
+
+Now we can apply Theorem 1 in Valentini and Madan, which states:\\
+\begin{thm}
+Let $G$ be a cyclic group of automorphisms of $F$ of order $p^n$. 
+Let $E$ be the fixed field of $G$ with $g_E$ its genus.
+The regular representation of $G$ occurs $g_E-1+\alpha$ times in the representation of $G$ on $\Omega_F$, with $\alpha = 1$ if $r=0$ and $\alpha = 0$ otherwise.
+For $k=1,\ldots p^n-1$, the indecomposable representation of degree $k$ occurs $\Gamma_{k-1}-\Gamma_k + \alpha_k$ times, with $\alpha_k = 1$ if $k= p^n-p^r +1$, $\alpha_k = -1$ if $k=p^n-p^r$ and $\alpha_k = 0$ otherwise.
+\end{thm}
+
+Now note that $g_E=0$ by assumption, and $r=0$ as commented earlier, so the degree of the regular representation is zero.
+
+Now suppose that $p>2$ and that $g_X\geq 2$.
+Suppose also that the action is trivial.
+
+
+We first observe that $\Gamma_{p-1} = 0$. Indeed
+\[
+ v_{i(p-1)} = \delta_i - (p-1)\Phi(i,1) = (p-1)(\Phi(i,1) + 1) - (p-1)\Phi(i,1) = p-1,
+\]
+and $\left \lfloor \frac{p-1}{p} \right\rfloor = 0$. This gives $\Gamma_{p-1} = \sum_{i=1}^s 0 = 0$, as desired.
+
+Now if we were to assume that the action is trivial, then for all $k\neq 1$ the representation of degree $k$ should not occur and it should be true that $d_k = 0$.
+So if $k= p-1$ we have $\Gamma_{p-2} - \Gamma_{p-1} - 1 = \Gamma_{p-2} -1 = 0$, and hence $\Gamma_{p-2} = 1$.
+Inductively for $2\leq k \leq p-2$, by the relation $\Gamma_{k-1} - \Gamma_k =0$, then $\Gamma_k = 1$.
+
+Finally, we show a contradiction occurs when $k = 1$.
+Since $p| \delta_i$, we can write
+\begin{equation}\label{round}
+ \Gamma_0 - \Gamma_1 = \left\lfloor \frac{\delta_i}{p} \right\rfloor -\left\lfloor \frac{\delta_i - \Phi(i,1)}{p} \right\rfloor = -\left\lfloor \frac{-\Phi(i,1)}{p} \right\rfloor.
+\end{equation}
+
+As 
+\[
+ 1 = \Gamma_{p-2} = \sum_{i=1}^s\left\lfloor \frac{\Phi(i,1) + p -1}{p} \right\rfloor,
+\]
+ and as the sum is made of non-negative terms (by lemma \ref{koeck}, $-\Phi(i,1) \geq 0$) , we see that $p \leq \Phi(i,1) \leq p-1$ for one $i$, and $\Phi(i,1) = 0$ otherwise.
+Without loss of generality we can assume the $\Phi(1,i)$ is the only non-zero term.
+Combining this with \ref{round} and the action being trivial implies that $1 = -\left\lfloor \frac{-\Phi(1,1)}{p} \right\rfloor = \Gamma_0 - \Gamma_1 = g_F.$
+Since $g_F \geq 2$ this is a contradiction and we are done.
+
+
+\newpage
+
+
+Putting $k=1$, we get 
+\[
+\Gamma_0 - \Gamma_1 = \sum_{i=1}^s\left(\left\lfloor \frac{\delta_i}{p} \right\rfloor \left\lfloor \frac{\delta_i - \Phi(i,1)}{p} \right\rfloor \right) = \sum_{i=1}^s - \left\lfloor \frac{\phi(i)}{p} \right\rfloor = g_F.
+\]
+
+Now since $\Gamma_{k-1}-\Gamma_k+\alpha_k = \Gamma_{k-1}-\Gamma_k = 0$ for $k=1,\ldots ,p-2$, it follows that $\Gamma_k=g_F$ for all $k\neq p-1$.
+
+We now show that $\Gamma_{p-1} = 0$, which will contradict
+\[
+ \Gamma_{p-2} - \Gamma_{p-1} - 1 = g_F - \Gamma_{p-1} - 1 = 0.
+\]
+
+
+Indeed, for $k = p-1$, we have by \ref{eq}
+\begin{eqnarray*}
+v_{ik} & = & \left \lfloor \frac{\delta_i - k\Phi(i,1)}{p} \right\rfloor \\
+	& = & \left\lfloor \frac{(p-1)(\Phi(i,1) + 1) - (p-1)\Phi(i,1)}{p} \right\rfloor\\
+	& = & 0.
+\end{eqnarray*}
+
+
+
+\bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+\end{document}

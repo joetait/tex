@@ -1,0 +1,151 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\cal L}}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+\DeclareMathOperator{\aut}{Aut}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Basis of $H^0(X,\Omega_X$}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+Let $C$ be a smooth, compact, connected hyperelliptic algebraic curve of genus $g$ over $\mathbb{C}$.
+Let $x$ be a hyperelliptic map involution of $C$, i.e. a second degree holomorphic map $C\rightarrow \mathbb{P}^1$.
+
+We now show some simple results about $x$. 
+Firstly, $x$ has preciesly $2g + 2$ ramification points.
+This follows from computing the degree of the ramification divisor $R$.
+By the Hurwitz formula $\deg(R) = 2g -2 +2\cdot 2 = 2g + 2$.
+Since $x$ is of degree $2$, the coefficients of the ramification divisor are at most $1$, and hence $R = p_1 \ldots p_{2g+2}$, for distinct $p_i$.
+We let $a_i = x(p_i)$ and suppose $(x)_{\infty} = p + q$.
+We can define $j\in \aut(C)$ to be the map defined $q_1 \mapsto q_2$ for $q_1, q_2 \in x^{-1}(a)$. 
+Obviously this is the identity on the ramification points, and since $x$ is of degree $2$, $j^2 = 1$.
+We will now use this to show the existence of one more function, $y$, which is necessary to define the basis of $\Omega_C$.
+
+If we let $D = (g+1)p + (g+1)q$ be a divisor on $C$, then we can show that there exists a $y \in \cL(D)$ such that $j^* (y) = -y$.
+To start, we have by the Riemann-Roch theorem that $l(D) = dim\cL(D) = (2g+2)-g+2 = g+3$.
+So $\cL(D) \cong \mathbb{C}^{g+3}$.
+Now since $x(p) = x(q) = \infty$, then $j(D) = D$ and $j^*$ defines a linear map $\cL(D) \rightarrow \cL(D)$.
+Since $j^{*2} = 1$, the eiegenvalues must be $\pm 1$, and as such we can decompose $\cL(D)$ in to two subspaces, $\cL(D)^+$ and $\cL(D)^-$, corresponding the eigenspaces of eigenvalues $1$ and $-1$ respectively.
+Note that $\cL(D) = \cL(D)^+ \oplus \cL(D)^-$.
+Now any meromorphic function in $\cL(D)^+$ can be written as a composition of $x$ and a meromorphic function on $\mathbb{P}^1$, which will only have poles at $p$ and $q$ (i.e. the meromorphic function on $\mathbb{P}^1$ only has poles at infinity.)
+The order of the pole at $p$ or $q$ cannot exceed $g+1$, hence $1,x,\ldots ,x^{g+1}$ forms a basis of $\cL(D)^+$.
+As this implies that $\dim\cL(D)^+ = g+2$, and as $\dim\cL(D) = g+3$, we see that $\dim\cL(D)^- = 1$, and so there is a non-trivial meromorphic function $y \in \cL(D)$ such that $j^*(y) = -y$.
+This is the $y$ we will use in the following Proposition to help define the basis.\\
+
+
+\begin{prop}
+$\omega_1 = \frac{dx}{y}, \omega_2 = \frac{xdx}{y}, \ldots , \omega_g = \frac{x^{g-1}dx}{y}$ form a basis of $\Omega_C^1$, with $C$, $x$ and $y$ as above.
+\end{prop}
+\begin{proof}
+Clearly $\omega_1, \ldots , \omega_g$ are linearly independent.
+To show that they are indeed holomorphic differentials, we show that their divisors are greater than $0$, i.e. that $(\omega_{\alpha}) \geq 0$ for all $1\leq \alpha \leq g$.
+We first write the divisor as $(\omega_{\alpha}) = (x^{\alpha -1}) + (dx) - (y)$, and consider these seperate components one at a time.
+
+First, suppose $(x)_0 = p'+q' = D'$. Then $(x^{\alpha -1})  = (\alpha - 1)D'$. Note that we could have $p' = q'$.
+
+If we also let $D* = p + q$ then $(x^{\alpha - 1}) = (\alpha - 1)D*$, and so overall $(x^{\alpha - }) = (\alpha - 1)D' - (\alpha - 1)D*$.
+
+
+We now look at $(dx)$. 
+Let $z_i$ be a local coordinate map for $p_i$, with $z_i(p_i) = 0$.
+Since $x$ is degree $2$, then $x - a_i = z_i^2h_i(z_i)$, where $h_i$ is a holomorphic map and does no vanish in a neighbourhood of $0$.
+It follows that 
+\[
+ dx = 2z_ih_i(z_i) + z_i^2h_i'(z)dz_i = z_i(2h_i(z_i) + z_ih_i'(z_i))dz_i.
+\]
+
+Evalutating at $p_i$ we see that $2h_i(z_i) + z_ih_i'(z_i)|_{p_i} = 2h_i(0) \neq =0$, so $dx$ has a zero of order $1$ at each ramification point.
+]
+
+\end{proof}
+
+
+
+
+\bibliography{/home/jtait/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+\end{document}

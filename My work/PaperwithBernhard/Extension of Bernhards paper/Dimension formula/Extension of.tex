@@ -1,0 +1,238 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+
+\DeclareMathOperator{\ord}{ord}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Extension of ``Faithful Action on the space of Global Differentials of an Algebraic curve"}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+Let $X$ be a connected smooth projective algebraic curve over an algebraically closed field $k$ with a faithful action of a finite group $G$ of order $n$. Let $Y=X/G$ and let $\pi:X\rightarrow Y$ be the natural projection. We shall also denote the genus of $X$ and $Y$ by $g_X,\ g_Y$ respectively. Let $R:=\sum_{P\in X} \mbox{dim}_k((\Omega_{X/Y})_P)[P]$ be the ramification divisor of $\pi$.\\
+
+
+\begin{prop}
+	Let $m\geq 2$. Then
+\begin{equation*}
+\dim_k(H^0(X,\Omega_{X}^{\otimes m})^G)  =
+\begin{cases}
+0 & \text{if } g_Y=0\ \text{and } \\ & \deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big)<2m,\\
+1 & \text{if } g_Y=1\ \text{and } \\ & \deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big)=0,\\
+(2m-1)(g_Y-1) +\deg\Big(\Big{\lfloor}{\frac{m\pi_* (R)}{n}}\Big{\rfloor}\Big) & \text{otherwise}.
+\end{cases}
+\end{equation*}
+\end{prop}
+
+\begin{proof}
+
+Let $K_Y$ be a canonical divisor on $Y$. Then we define $K_X:=\pi^*(K_Y)+R$, and hence $mK_X=m\pi^*(K_Y)+mR$; note that $K_X$ is a canonical divisor by \citep[Chap. IV,\ prop 2.3]{hart} and is also $G$-invariant by definition. Moreover, by ? we have an equivariant isomorphism between th $G$-sheaves $\mathscr{O}_X(K_X))$ and $\Omega_X$. We have that
+	\[ 
+		\Big{\lfloor}{\frac{\pi_*(mK_X)}{n}} \Big{\rfloor}
+		= \Big{\lfloor}{\frac{\pi_*(m\pi^*(K_Y))+\pi_*(mR)}{n}} \Big{\rfloor}
+		= mK_Y+\Big{\lfloor} {\frac{m\pi_*(R)}{n}}\Big{\rfloor}.
+	\]
+	
+Hence, by the lemma in \citep{faithfulaction}, we see that 
+	\[
+		\pi_*^G(\Omega_X^{\otimes m})\cong \pi_*^G(\mathscr{O}_X(mK_X))\cong \mathscr{O}_Y\Big(mK_Y 			+\Big{\lfloor}{\frac{m\pi_*(R)}{n}}\Big{\rfloor}\Big).
+	\]
+
+and so
+	\begin{eqnarray*}
+		\mbox{dim}_k(H^0(X,\Omega_{X}^{\otimes m})^G)&=&
+		\mbox{dim}_k(H^0(Y,\pi_*^G(\Omega_{X}^{\otimes m})))\\
+		&=&\mbox{dim}_k\Big(H^0\Big(Y,\mathscr{O}_Y\Big(mK_Y+\Big{\lfloor}{\frac{m\pi_*(R)}						{n}}\Big{\rfloor}\Big)\Big)\Big).
+	\end{eqnarray*}
+
+First we consider the case when $g_Y=0$. Suppose that $\deg\Big(\Big{\lfloor}{\frac{m\pi_* (R)}{n}}\Big{\rfloor}\Big) < 2m$. Then as $\deg(K_Y)=-2$ we have that $\deg(mK_Y)=-2m$ and hence that $\mbox{deg}\Big(mK_Y +\Big{\lfloor}{\frac{m\pi_*(R)}{n}}\Big{\rfloor}\Big)<0$. So by \citep[prop. 3, {\S}8]{fulton} then $\mbox{dim}_k(H^0(X,\Omega_{X}^{\otimes m})^G)=0.$
+
+
+Otherwise we have 
+	\[
+		\deg\Big(mK_Y+\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big)>-2=2g_Y-2=\deg(K_Y).
+	\]
+
+Similarly, in the case when $g_Y\geq2$, after noting that $deg(K_Y)>0$ we can see that
+	\[
+		\deg\Big(mK_Y+\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big)\geq\deg(mK_Y)>\deg(K_Y).
+	\]
+Also, if $g_Y=1$ and $\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big)\geq1$ then
+	\[
+		\deg\Big(mK_Y+\Big
+{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big)>0=\deg(K_Y).
+	\]
+In all three of these cases it then follows from the Riemann-Roch theorem \citep[Cor. 2, {\S}8]{fulton} that 
+	\begin{eqnarray*}
+			\mbox{dim}_k\Big(H^0\Big(Y,\mathscr{O}_Y\Big(mK_Y+\Big{\lfloor}{\frac{m\pi_*(R)}						{n}}\Big{\rfloor} \Big)\Big)\Big)= & 1-g_Y+\mbox{deg}\Big(mK_Y+\Big{\lfloor}{\frac{m\pi_*(R)}					{n}}\Big{\rfloor}\Big) \\
+			= & (2m-1)(g_Y-1)+\mbox{deg}\Big(\Big{\lfloor}{\frac{m\pi_*(R)}{n}}\Big{\rfloor}\Big).
+	\end{eqnarray*}
+
+Lastly, if $g_Y=1$ and $\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big)=0$ then $\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}+mK_Y\Big)=0$. By \citep[Chap. IV,\ Example 1.3.6]{hart} we know that any divisor of degree zero is equivalent to the zero divisor, and so
+\begin{eqnarray*}
+\mbox{dim}_k\Big(H^0\Big(Y,\mathscr{O}_Y\Big(mK_Y+\Big{\lfloor}{\frac{m\pi_*(R)}{n}}\Big{\rfloor} \Big)\Big)\Big) &= & \mbox{dim}_k(H^0(Y,\mathscr{O}_Y(0))) \\ 
+& = & 1 \\
+& = & 1+\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}+mK_Y\Big).
+\end{eqnarray*}
+\end{proof}
+
+\begin{prop}
+Let $m\geq 2$. We assume that $p>0$, that $G$ is a cyclic group of order $p$ and also that $g_Y=0$. Then $G$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$ if and only if
+	\begin{itemize}
+		\item
+			$g_X=0$ or
+		\item
+			$g_X=1$ or
+		\item
+			$p=g_X=m=2$.
+	\end{itemize}
+\end{prop}
+
+\begin{proof}
+
+Let $P_1,\ldots ,P_r\in X$ be the ramification points of $\pi:X\rightarrow Y$, and for $i=1,\ldots ,r$  and define $N_i\in \mathbb{N}$ by $\ord_{P_i}(\sigma(\pi_i)-\pi_i)=N_i+1$, where $\pi_i$ is a local parameter at $P_i$ and $\sigma$ is a generator of $G$. Note that $p\nmid N_i$ for any $i$ by \citep[Lem. 1, pg. 87]{naka}. Also, note that $R=\sum_{i=1}^r(N_i+1)(p-1)[P_i]$ by \citep[Prop. 4, {\S}1, Ch. IV]{localfields} and let $N=\sum_{i=1}^rN_i$ and $k=N+r=\sum_{i=1}^r(N_i+1)$.
+
+If $g_X=0$ then $\mbox{deg}(mK_X)=-2m<0$; hence $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m}))=0$ by \citep[prop. 3, {\S}8]{fulton} and the action must be trivial.
+
+We now look at the case when $g_X=1$. By \citep[Chap. IV,\ Example 1.3.6]{hart} we know that $K_X$ is equivalent to the zero divisor and $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m}))=\dim_k(H^0(X,\mathscr{O}_X(mK_X)))=\dim_k(H^0(X,\mathscr{O}_X(0)))=1$.  By the Hurwitz formula $2g_X-2=-2p+k(p-1)$ we obtain $g_X=\frac{(k-2)(p-1)}{2}$ and either $k=4,\ p=2$ or $k=3,\ p=3$. We claim that in all cases $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m})^G)$ is also $1$ so the action is trivial. If $k=3$ then $r=1$ and $N_1=2$ and $\Big{\lfloor}\frac{m(N_1+1)(p-1)}{p}\Big{\rfloor}=2m$. 
+In the other case we have two possibilities: $r=2,\ N_i=1$ for $i=1,2$, or $r=1$ and $N_1=3$. If $r=2$ then $\sum_{i=1}^2\Big{\lfloor}\frac{m(N_i+1)(p-1)}{p}\Big{\rfloor}=\sum_{i=1}^2m=2m$.
+Similarly, if $r=1$ then $\Big{\lfloor}\frac{m(N_1+1)(p-1)}{p}\Big{\rfloor}=2m$. Hence, by the previous proposition, $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m})^G)=1-2m+2m=1$ in all cases, proving our claim.
+
+From now on we consider the last case, assume that $g_X\geq 2$, so then we have that $\mbox{deg}(mK_X)=m(2g_X-2)>2g_X-2=\mbox{deg}(K_X)$. So by the Riemann-Roch theorem \citep[Cor. 2, {\S}8]{fulton},
+	\[
+		\mbox{dim}_K(H^0(X,\Omega_X^{\otimes m}))=\mbox{deg}(mK_X)+1-g_X=2m(g_X-1)+1-g_X=(2m-1)(g_X-1).
+	\]
+
+Again, due to the Hurwitz formula we have $2g_X-2=-2p+k(p-1)$, and hence we can write
+	\[
+		\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m}))=(2m-1)(g_X-1)=(2m-1)\Big(\frac{k(p-1)-2p}					{2}\Big).
+	\]
+
+Now if $\mbox{deg}\Big(\Big{\lfloor}{\frac{m\pi_*(R)}{p}}\Big{\rfloor}\Big)\geq 2m$ then
+	\begin{eqnarray*}	
+			\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m})^G) & = & 1-2m+\mbox{deg}\Big(\Big{\lfloor}							{\frac{m\pi_*(R)}{p}}\Big{\rfloor}\Big) \\
+			&= & 1-2m+\sum_{i=1}^r \Big{\lfloor}{\frac{m(N_i+1)(p-1)}{p}}\Big{\rfloor} \\
+			&= & 1-2m+mk+\sum_{i=1}^r\Big{\lfloor}{\frac{-m(N_i+1)}{p}}\Big{\rfloor}. 
+	\end{eqnarray*}
+	
+If we have $p=g_X=m=2$ then on the one hand we see that $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m}))=3$. On the other hand, we first note that the equation $2g_X-2=-2p+k(p-1)$ meaning that $k=6$. So $\mbox{deg}\Big(\Big{\lfloor}{\frac{m\pi_*(R)}{p}}\Big{\rfloor}\Big)=mk+\sum_{i=1}^r\Big{\lfloor}{\frac{-m(N_i+1)}{p}}\Big{\rfloor}=2k-k>2m$. Then we can compute $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m})^G)=9+\sum\lfloor-N_i-1\rfloor=3$. So the dimensions are equal and the action of$G$ on $H^0(X,\Omega_X^{\otimes m}$ is trivial. This completes the if direction of the proof.
+
+Now we assume that the action is trivial. This first implies that $\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big)\geq 2m$ because otherwise we would have $\dim_k(H^0(X,\Omega_X^{\otimes m})^G)=0$ by the previous proposition, but wekow that as $\dim_k(H^0(X,\Omega_X^{\otimes m}))=(2m-1)(g_X-1)$ that it must be strictly positive. So we have:
+	\begin{eqnarray}
+		(2m-1)\frac{k(p-1)-2p}{2} & = & \dim_k(H^0(X,\Omega_X^{\otimes m})) \nonumber\\
+		& = & \dim_k(H^0(X,\Omega_X^{\otimes m})^G) \nonumber\\
+		& = & 1-2m+mk+\sum_{i=1}^r\Big{\lfloor}\frac{-m(N_i+1)}{p}\Big{\rfloor}\nonumber \\
+		& \leq & 1-2m+mk+\sum_{i=1}^r\frac{-m(N_i+1)}{p}\nonumber \\
+		& = & 1-2m+mk-\frac{mk}{p}.
+	\end{eqnarray}
+
+If we then multiply by $2p$ we obtain
+	\begin{equation}
+		(2mk-k-4m+2)p^2+(-4mk+k-2+4m)p+2mk\leq 0.
+	\end{equation}
+
+The left hand side of this then factorises as
+	\begin{multline*}
+		(k-2)(2m-1)p^2-((k-2)(2m-1)+2mk)p+2mk = \\
+		(p-1)((k-2)(2m-1)p-2mk)
+	\end{multline*}
+
+As the Hurwitz formula tells us that $-2p+k(p-1)=2g_X-2 \geq 2$ then we see that 
+	\begin{equation}
+		k\geq \frac{2+2p}{p-1}=2+\frac{4}{p-1}>2.
+	\end{equation}
+
+So from (2) and (3) we see that
+	\begin{eqnarray}
+		p & \leq & \frac{2mk}{(k-2)(2m-1)}\nonumber\\
+		& = & \frac{k}{k-2}\cdot\frac{2m}{2m-1}\nonumber\\
+		& = & \Big( 1+\frac{2}{k-2} \Big) \Big(1+\frac{1}{2m-1} \Big)\\
+		& \leq & 4, \nonumber
+	\end{eqnarray}
+
+i.e. $p=2$ or $p=3$. 
+
+Suppose that $p=3$. Then from (3) we have $k\geq 4$. However, from (4) we also have that 
+	\begin{eqnarray*}
+		3 & \leq &\Big( 1+\frac{2}{k-2} \Big) \Big(1+\frac{1}{2m-1} \Big)\\
+		& \leq & \Big( 1+\frac{2}{k-2} \Big) \frac{4}{3}\\
+		& \leq & \frac{8}{3},
+	\end{eqnarray*}
+
+a contradiction.
+
+Lastly, we come to the case when $p=2$. From (4) we see that $2\leq \Big(1+\frac{2}{k-2}\Big)\frac{4}{3}$ and hence $k\leq 6$. However, from (3) we also see that $k\geq 6$, hence $k=6$. So from (1) $2m-1=1-2m+6m-3m$ and $m=2$. Also, the Hurwitz formula gives us that $2g_X-2=-4+6=2$ and hence $g_X=2$. This completes the only if direction of the proof.
+\end{proof}
+
+\bibliography{/home/jtait/Desktop/Work/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+\end{document}

@@ -1,0 +1,35 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+
+%opening
+\title{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+Hence if $\deg\left(\left\lfloor{\frac{m\pi_*(R)}{l}}\right\rfloor \right)\geq 2m$ then by Proposition \ref{dim1} we have
+      \begin{eqnarray*}	
+	\dim_k(H^0(X,\Omega_X^{\otimes m})^G) & = & 1-2m+\deg\left(\left\lfloor {\frac{m\pi_*(R)}{l}}\right\rfloor \right) \\
+	&= & 1-2m+\sum_{i=1}^r \left\lfloor {\frac{m(N_i+1)(l-1)}{l}}\right\rfloor \\
+	&= & 1-2m+mr+\sum_{i=1}^r\left\lfloor {\frac{-m(N_i+1)}{l}} \right\rfloor. 
+      \end{eqnarray*}
+	
+    If we have $l=g_X=m=2$ then on the one hand we see from \eqref{eq:riem} that $\dim_k(H^0(X,\Omega_X^{\otimes m}))=3$. 
+    On the other hand, we first note that the Hurwitz formula, $2g_X-2=-2l+k(l-1)$, implies that $k=6$. 
+    So $\deg\left(\left\lfloor {\frac{m\pi_*(R)}{l}}\right\rfloor \right)=mk+\sum_{i=1}^r\left\lfloor {\frac{-m(N_i+1)}{l}}\right\rfloor =2k-k>2m$. 
+    Then we can compute $\dim_k(H^0(X,\Omega_X^{\otimes m})^G)=9+\sum\lfloor-N_i-1\rfloor=3$. 
+    So the dimensions are equal and the action of $G$ on $H^0(X,\Omega_X^{\otimes m})$ is trivial. 
+    This completes the if direction of the proof when $l=p$.
+    We now show only if direction in this case.
+    
+    Since $l=p$ and $g_X\geq 2$ then we have that $\deg(mK_X)\geq 2g_X$. 
+    So by Corollary 3, we have a trivial action if and only if $p=2,\ \deg(mK_X)=2g_X$ and $p|n_i$ for all $i$. 
+    Now $\deg(mK_X)=2g_X$ means that $m(2g_X-2)=2g_X$, so $m(g_X-1)=g_X$, and hence that $m=g_X=2$. 
+
+\end{document}

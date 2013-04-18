@@ -1,0 +1,341 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\theoremstyle{remark}\newtheorem*{rem}{Remark}
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\cal L}}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Basis of holomorphic poly-differentials of a hyper-elliptic curve part 1: $\cha (k)=2$}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+         
+         
+\begin{document}
+\maketitle
+
+
+Let $k$ be an algebraically closed field of characteristic 2.
+Let $k(x)$ be the rational function field in one variable $x$ and let $K|k(x)$ be a field extension of degree 2, i.e. an Artin-Schreier extension.
+Let $\pi:C \rightarrow \mathbb P_k^1$ be the corresponding morphism of smooth projective curves over $k$ and let $g$ denote the genus of $C$.
+By \cite[\S 7.4.3]{liu}, there exists a $y\in K$ such that $K=k(x,y)$ and $y$ satisfies the equation
+\begin{equation}\label{1}
+  y^2 - h(x)y = f(x)
+\end{equation}
+for some polynomials $h(x), f(x)\in k[x]$, with maximum degrees of $g+1$ and $2g+2$ respectively.
+Let $d$ be the degree of $h(x)$.
+We denote the space of global holomorphic differentials of $C$ by $\Omega$.
+
+We first describe the ramified points of $\pi$, in order to compute the ramification divisor.
+Considering $\mathbb A_k^2$ as a subspace of $\mathbb P_k^2$, let $C'$ the part of the curve in $\mathbb A_k^2$.
+Then $\pi$ restricts to a map $C'\rightarrow \mathbb A^1_k$, the projection on the $x$ co-ordinate.
+Let $a\in \mathbb A_k^1$ be a point in the image of $\pi$.
+Then if $(a,b)$ is a point in $\pi^{-1}(a)$, so is the point $(a,b+h(a))$, which is clearly distinct if and only if $h(a)\neq 0$.
+Since the extension is degree two, this shows that the only ramified points in the affine part are the roots of $h(x)$.
+If $h(x)$ is non-constant, we denote zeroes of $h(x)$ by $P_i=(a_i,b_i)$ for $1\leq i \leq k$ where $k \leq g+1$.
+If these are not all the ramification points, then the point at infinity is also ramified.
+In this case it will be written $P_{\infty}$.
+If this is not the case we will denote the two points that map to infinity as $P_{\infty}'$ and $P_{\infty}''$.
+
+We will now compute the ramification divisor, which will allow us to see exactly when $P_1,\ldots,P_k$ are all the ramified points.\\
+
+\begin{lem}
+ Let $n_i$ be the order of $h(x)$ at $a_i\in \mathbb A_k^1$.
+Then we can write the ramification divisor of $\pi$ is precisely
+ \[
+  R = \left\{ \begin{array}{ll}
+               \sum_{i=1}^k 2n_i[P_i] & \mbox{if } \sum_{i=1}^k 2n_i = 2g+2 \\
+		\\
+               \sum_{i=1}^k 2n_i[P_i] + (2g+2-2\sum_{i=1}^kn_i)[P_{\infty}] & \mbox{otherwise.}
+             \end{array} \right. \]
+
+\end{lem}
+\begin{rem}
+ We will show that the point at infinity is ramified if and only if $\sum_{i=1}^k n_i = \deg(h(x)) < g+1$
+ (or equivalently it is unramified if and only  $\sum_{i=1}^k n_i = g+1$).
+ Hence the equality will always make sense in the second case.
+\end{rem}
+\begin{proof}
+ First note that by the Hurwitz formula $\deg(R) = 2g+2$.
+ Then if $\sum_{i=1}^k n_i < 2g+2$ is all the ramification from the points $P_i$, there must exist another point, i.e. $P_{\infty}$, which has ramification $2g+2-\sum _{i=1}^k2n_i$.
+ So it will suffice to prove that coefficient of $[P_i]$ is $2n_i$ for $1\leq i \leq k$.
+ 
+ We start by showing that $y-b_i$ is a uniformising parameter in $\mathscr O_{P_i}$.
+ Now $x-a_i$ is a uniformising parameter at $\pi(P_i)$, so it will be sufficient to show that $x-a_i = u(y-b_i)^2$ for some unit $u\in \mathscr O_{P_i}$.
+ We write $y^2-b_i^2 = yh(x)-(f(x)-b_i^2)$, and then write $h(x)=(x-a_i)w(x)$ and $f(x)-b_i^2=(x-a_i)v(x)$.
+ So 
+ \[
+x-a_i = \frac{y^2-b_i^2}{yw(x)-v(x)} = \frac{(y-b_i)^2}{yw(x)-v(x)},
+ \]
+and it remains to show that the denominator, $r(x,y) = yw(x)-v(x)$, is a unit.
+
+To show that $r(x,y)$ is indeed a unit we consider two cases, and show that in both the polynomial is not in the maximal ideal $\mathfrak M_{P_i}=(x-a_i,y-b_i)$.
+Firstly, if $b_i=0$ then $y\in \mathfrak{M}_{P_i}$, and hence $r\in \mathfrak M_{P_i}$ if and only if $v(x)$ is.
+But then we would have $(x-a_i)|v(x)$, and hence $(x-a_i)^2|f(x)$, and this would contradict the smoothness of the curve.
+Alternatively, if $b_i\neq 0$, then $r(x,y)\in \mathfrak M_{P_i}$ if and only if $(x-a_i)|r(x,y)$.
+But then $(x-a_i)^2|yh(x)-f(x)$, and so $(x-a_i)|yh'(x)-f'(x)$, which again would contradict smoothness (recall that $(x-a_i)|h(x)$ by virture of $P_i$ being a ramification point).
+So we have shown that $r(x,y)\in \mathscr O_{P_i}^*$.
+
+Now write $h(x)=(x-a_i)^ns(x)$ where $s(x)\in \mathscr O_p^*$.
+Note that $\sigma (y)=y+h(x)$, by an argument similar to that used to show that the solutions to $h(x)$ give ramified points.
+So there exist odd $N_{P_i}\in \mathbb N$ defined by $N_{P_i}+1=\ord_P(\sigma(y - b_i) - (y-b_i))$, which are the coefficients of $P_i$ in $R$.
+We compute these $N_{P_i}+1$ explicitly,
+\begin{eqnarray*}
+ \ord_{P_i}(\sigma(y-b_i)-(y-b_i)) & = & \ord_{P_i}(y-b_i-h(x)-y+b_i)\\
+ & = & \ord_{P_i}((x-a_i)^ns(x))\\
+ & = & \ord_{P_i}((y-b_i)^{2n}r(x,y)s(x))^{-1}\\
+ & = & 2n_i,
+\end{eqnarray*}
+finishing the proof.
+\end{proof}
+
+
+We first compute the divisor associated to $x\in K$.
+
+\begin{lem}
+ The divisor of $x\in K(X)$ is 
+ \[
+  \di (x)= \left\{ 
+  \begin{array}{ll}
+    P_0+P_0' - 2P_{\infty} & \mbox{if } d<g+1\\
+    P_0+P_0' - P_{\infty}' - P_{\infty}'' & \mbox{otherwise.}
+  \end{array}\right.
+\]
+\end{lem}
+\begin{proof}
+ Given our assumptions above, this is clear.
+\end{proof}
+
+\begin{lem}
+ The divisor associated to the differential $dx^{\otimes m}$ is 
+ \[
+  \di (dx^{\otimes m}) = \left\{ 
+  \begin{array}{ll}
+   2m\sum_{i=1}^k n_iP_i + 2m(g-1-d)P_{\infty} & \mbox{if } d<g+1\\
+   2m\sum_{i=1}^k n_iP_i - 2m(P_{\infty}' + P_{\infty}'') & \mbox{otherwise.}
+  \end{array}\right.
+ \]
+\end{lem}
+\begin{proof}
+ We first note that it suffices to compute $\di (dx)$, since $\di (dx^{\otimes m}) = m\di (dx)$.
+
+ If $a\in \mathbb A_k^1$ is unramified, then $x-a$ is a uniformising parameter at both points in the preimage.
+Then if $P$ maps to $a$, then $\ord_P(dx)=\ord_P(d(x-a))=0$, by \cite[\S 8.5]{fulton}.
+Now consider any ramified point $a_i\in \mathbb A_k^1$, and as in the proof of the above lemma, we can write $x-a_i$ as $\frac{(y-b_i)^2}{yw(x)-v(x)}$.
+This gives us that
+\begin{eqnarray*}
+ dx & = & d(x-a_i) \\
+ & = & d \left( \frac{(y-b_i)^2}{yw(x)-v(x)} \right) \\
+ & = & \frac{2y}{yw-v} dy + (y-b_i)^2\left( d\frac{1}{yw-v}\right)\\
+ & = & \left( \frac{y-b_i}{yw+v}\right)^2d(yw+v)\\
+ & = & \left( \frac{y-b_i}{yw+v}\right)^2(d(yw)+dv)\\
+ & = & \left( \frac{y-b_i}{yw+v}\right)^2d(yw),
+ \end{eqnarray*}
+ and 
+ \[
+\ord_{P_i}\left( \left( \frac{y-b_i}{yw+v}\right)^2(d(yw)+dv)\right) = \ord_{P_i}\left( \left( \frac{y-b_i}{yw+v}\right)^2d(yw)\right)
+\]
+since $v$ is a unit.
+If $(x-a_i)\nmid w$ then $w$ is a unit and we see that the order of $dx$ at $P_i$ is 2.
+Otherwise, we write $w(x)=(x-a_i)w(x)'$, and iterate the process.
+This gives $\ord_{P_i}(dx)=2n_i$.
+Note that the case where $w$ is a unit is precisely the case where $n_i=1$.
+
+Finally, since $dx\neq 0$ then $\di (dx)$ is a canonical divisor and has degree $2g-2$.
+It follows that $\ord_{P_{\infty}}(dx)=2(g-1-d)$ if $d<g+1$, and $\ord_{P_{\infty}'}(dx) =\ord_{P_{\infty}''}(dx)=(g-1-d) = -2$ otherwise.
+ \end{proof}
+
+ \begin{lem}
+  The divisor associated to $\frac{1}{h(x)}$ is
+  \[
+  \di \left(\frac{1}{h(x)}\right) = \left \{
+  \begin{array}{ll}
+   -2\sum_{i=1}^k n_i P_i + 2dP_{\infty} & \mbox{if } d<g+1\\
+   -2\sum_{i=1}^k n_i P_i + d(P_{\infty}' + P_{\infty}'') & \mbox{otherwise.}
+  \end{array}\right.
+ \]
+ \end{lem}
+\begin{proof}
+If infinity is ramified then $\ord_{P_{\infty}}\left(\frac{1}{h(x)}\right) = -\ord_{P_{\infty}}(h(x)) = 2d$.
+If it is not ramified, then $\ord_{P_{\infty}'}\left(\frac{1}{h(x)}\right) = \ord_{P_{\infty}''}\left(\frac{1}{h(x)}\right)=d$.
+For the ramified points $P_i$, $1\leq i \leq k$, then $\ord_{P_i}\left(\frac{1}{h(x)}\right) = -\ord_{P_i}(h(x))= -2n_i$.
+At any other point the order of $\frac{1}{h(x)}$ is clearly zero.
+\end{proof}
+
+ 
+ \begin{lem}
+  The divisor associated to $y$ is 
+  \[
+   \di (y) = \left\{ 
+   \begin{array}{ll}
+   \sum_{i=1}^l m_i Q_i - (2g+1)P_\infty & \mbox{if } d<g+1 \\
+    \ldots -(g+1)(P_\infty' + P_\infty'') & \mbox{otherwise},
+   \end{array}\right.
+ \]
+ where $Q_i$ are the solutions to $f(x)$, $m_i$ are the corresponding multiplicities. and $l$ is the number of distinct roots of $f(x)$. 
+ \end{lem}
+\begin{proof}
+Clearly if $(a,0)$ is a point in the affine part of the curve, then $f(a) = 0$, and their is a corresponding point $(a,h(a))$. 
+Also, if $f(a) = 0$ then one of the two points in $\pi^{-1}(a)$ is $(a,0)$.
+So we have a bijection between the zeroes of $f(x)$ and $y$ {\bf (need to consider $h(a)=0$).}
+This shows that the positive part of $\di (y)$ is $\sum_{i=1}^l m_i Q_i$.
+
+Now if $d<g+1$ then $\deg(f(x)) = 2g+1$ and also $P_\infty$ is ramified.
+It is clear that $\ord_{P_\infty}(f(x)) = -2(2g+1)$, and also that $\ord_{P_\infty}(h(x))\geq-2g>-2(2g+1)$, hence the order of $y$ at $P_\infty$ is also negative.
+Then 
+\begin{eqnarray*}
+ -\ord_{P_{\infty}}(y^2-h(x)y) & = & {\rm max}\{ -2\ord_{P_{\infty}}(y),-\ord_{P_{\infty}}(h(x)y) \}\\
+ & = & -ord_{P_\infty}(f(x)) \\
+ & = & 2(2g+1).
+\end{eqnarray*}
+
+ Since $\deg(h(x))< g+1$ then we conclude that $2\ord_{Q_{\infty}}(y)$ must be the maximum.
+ So $\ord_{\infty}(y) = -(2g+1)$, and 
+ \[
+  \di(y) =\sum_{i=1}^l Q_i - (2g+1)P_{\infty}.
+  \]
+
+ 
+If $d=g+1$, we know that 
+\[
+ \ord_{P_\infty'}(y^2)={\rm min} \{\ord_{P_\infty'}(f(x)),\ord_{P_\infty'}(h(x)y)\}.
+\]
+Now if $\ord_{P_\infty'}(f(x))$ is the minimum, then $\ord_{P_\infty'}(y)=\frac{1}{2}\ord_{P_\infty'}(f(x))$.
+But then since $\ord_{P_\infty'}(h(x)) \leq \ord_{P_\infty'}(f(x))$ (recall that $\deg(f(x)) \leq 2g+2$, and that $P_\infty$ is a pole), then this would imply that $\ord_{P_\infty'}(h(x)y)$ is the minimum.
+According to whether or not $\deg(f(x))=2g+2$, this implies that we can choose either polynomials, or that $\ord_{P_\infty'}(h(x)y)$ is the minimum.
+So we have shown that
+\[
+ \ord_{P_\infty'}(y^2)=\ord_{P_\infty'}(h(x)y),
+\]
+whence it follows that $\ord_{P_\infty'}(y)=g+1$.
+The same argument holds for $P_\infty''$.
+
+
+\end{proof}
+
+
+We now prove the following theorem, determining a basis of the space of global holomorphic poly-differentials as a vector space over $k$.\\
+
+\begin{prop}
+Let $C$, $x$ and $y$ be as above. 
+Then
+\[ \frac{dx^{\otimes m}}{h(x)^m}, \frac{xdx^{\otimes m}}{h(x)^m}, \ldots , \frac{x^{m(g-1)}dx^{\otimes m}}{h(x)^m}, 
+\frac{ydx^{\otimes m}}{h(x)^m},\ldots , \frac{x^{(g-1)(m-1)-2}ydx^{\otimes m}}{h(x)^m}\]
+form a basis of $\Omega^m$.
+\end{prop}
+\begin{proof}
+ Using the above lemmas we compute the divisors of $\frac{x^idx^{\otimes m}}{h(x)^m}$ for $0\leq i \leq m(g-1)$ and $\frac{yx^jdx^{\otimes m}}{h(x)^m}$ for $0\leq j \leq (g-1)(m-1)-2$.
+ 
+ Let $D_\infty=2 P_\infty$ if $d<g+1$, and let $D_\infty=P_\infty' + P_\infty''$ otherwise.
+ Then in the first case, 
+ \begin{eqnarray*}
+  \di\left(\frac{x^idx^{\otimes m}}{h(x)^m}\right) & = &  iP_0+iP_0' - iD_{\infty} + m\sum_{i=1}^n n_iP_i + m(g-1-d)D_{\infty} \\
+  & &  \quad \quad \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad -m\sum_i^n n_i P_i +mdD_{\infty}\\
+  & = & iP_0 + iP_0' + (m(g-1)-i)D_{\infty}.
+ \end{eqnarray*}
+ So clearly this is a global holomorphic differential for the stated values of $i$.
+ 
+ In the second case we need to consider seperately whether $d=g+1$ or not.
+ If $d<g+1$ then we have 
+ \begin{eqnarray*}
+  \di\left(\frac{yx^jdx^{\otimes m}}{h(x)^m}\right) & = &\sum_i^l m_iQ_i - (2g+1)P_\infty + jP_0+jP_0' - 2jP_\infty + \\
+  & & m\sum_{i=1}^n n_i P_i + 2m(g-1-d)P_{\infty} -m\sum_i^n n_i P_i +2mdP_{\infty} \\
+  & = & \sum_i^l m_iQ_i  + jP_0+jP_0' + (2m(g-1)-2j -(2g+1))P_{\infty} \\
+  & = & \sum_i^l m_iQ_i  + jP_0+jP_0' + (2(g-1)(m-1)-3-2j)P_\infty,
+  \end{eqnarray*}
+  which finishes the proof in the case.
+  
+  Finally, we look at when $d=g+1$.
+  Then
+  \begin{eqnarray*}
+     \di\left(\frac{yx^jdx^{\otimes m}}{h(x)^m}\right) & = & \ldots- (g+1)(P_\infty'+P_\infty'') + jP_0+jP_0' - j(P_\infty'+P_\infty'') + \\
+  & & m\sum_{i=1}^n n_i P_i + m(g-1-d)(P_{\infty}+P_\infty) -m\sum_i^n n_i P_i + md(P_{\infty}'+P_\infty'') \\
+  & = & \ldots + jP_0+jP_0' + (m(g-1)-j -(g+1))(P_{\infty}'+P_\infty) \\
+  & = & \ldots  + jP_0+jP_0' + ((g-1)(m-1)-2-j)(P_\infty'+P_\infty''),
+  \end{eqnarray*}
+completing the proof.
+ 
+  So all the elements described above are global holomorphic differentials.
+\end{proof}
+
+
+\bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+\end{document}

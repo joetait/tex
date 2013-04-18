@@ -1,0 +1,160 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{ex}{Example}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{current work}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+Let $f:X\rightarrow Y$ be a Galois covering over an algebraically closed field $k$.
+Let $G:=\gal (X/Y)$ be a finite group of order $n$, and let $g_X$ and $g_Y$ be the genera of $X$ and $Y$ respectively.
+
+\begin{prop}
+  Let $g_X\geq 2$ and suppose that $m=kn$, $k\in \mathbb{N}$.
+  Then $G$ acts trivally on $H^0(X,\Omega_X^{\otimes m})$ if and only if $k=1,g_X=n=2$ and $g_Y=0$.
+\end{prop}
+
+\begin{proof}
+  First we will assume $g_Y=0$ and prove the rest of the result, before independently showing this at the end.
+
+  We now use dimension and the Hurwitz formulas together to show that $k=1$ and $g_X=n=2$.
+  The Hurwitz formula states that $2g_x-2=-2n+\deg(R)$.
+  Also, if $G$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$ then we have
+    \begin{equation*}
+      \dim_kH^0(X,\Omega_X^{\otimes m})=\dim_kH^0(X,\Omega_X^{\otimes m})^G.
+    \end{equation*}
+
+  Using Riemann-Roch on the left hand side, and proposition 4 (as labelled in nine month report) onm the right hand side, we get
+    \begin{equation*}
+      (2m-1)(g_X-1)=-(2m-1)+\deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor,
+    \end{equation*}
+  which simplifies to $(2m-1)g_X=k\deg(R)$.
+  Note that when using proposition 4 we assumed that $\deg(R)\geq 2m$; this must be the case, else by the Hurwitz formula $g_X$ would be negative.
+
+  Combining these formulas will allow us to compute $g_X,n$ and $k$, completing the first section of the proof.
+  We first note that $(2m-1)g_X=k(2g_X-2+2n)$, which we then rearrange as $g_X=\frac{2k(n-1)}{2kn-1-2k}$.
+  We can further rewrite this as
+    \begin{equation*}
+      g_X=1+\frac{1}{2kn-1-2k}.
+    \end{equation*}
+  As $g_X$ is an integer greater than 1 then this can only be solved when $2kn-1-2k=1$, in which case $g_X=2$.
+  This is clearly the same as $k(n-1)=1$, which happens if and only if $k=1$ and $n=2$.
+  It now only remains to show that $g_Y=0$ (done as in nine month report).
+
+	We have that $\dim_kH^0(X,\Omega_X^{\otimes m})=\dim_k(H^0(X,\Omega_X^{\otimes m}))^G$. 
+	But $H^0(X,\Omega_X^{\otimes m})$ has dimension $(2m-1)(g_X-1)$ as before, and as $m,g_X\geq 2$ then this the 
+	dimension is greater than $1$. But $H^0(X,\Omega_X^{\otimes m})>1$ only in the last case of proposition 4
+	, hence we have
+		\begin{equation*}
+			(2m-1)(g_X-1)=(2m-1)(g_Y-1)+\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{p}\Big{\rfloor}\Big).
+		\end{equation*}
+	Combining this with the Hurwitz formula we see that
+		\begin{eqnarray*}
+			2(2m-1)(g_Y-1)+2\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{p}\Big{\rfloor}\Big) & = & 2(2m-1)(g_X-1)\\
+			& = & 2p(2m-1)(g_Y-1)+(2m-1)\deg(R)
+		\end{eqnarray*}
+	which can be rearranged as
+		\begin{equation*}
+			(2m-1)(2p-2)(g_Y-1)=2\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{p}\Big{\rfloor}\Big)-(2m-1)\deg(R).
+		\end{equation*}
+	So if we can show that $2\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{p}\Big{\rfloor}\Big)-(2m-1)\deg(R)<0$ 
+	then we will have $g_Y-1<0$ and hence $g_Y=0$.
+
+	To show this, let $P_1,\ldots ,P_r\in X$ be the ramification poinbts of $\pi:X\rightarrow Y$ and let $n_i$, 
+	$i=1,\ldots ,r$, be defined by $R=\sum_{i=1}^rn_i[P_i]$. Note that the ramification 
+	index at each $P_i$ is equal to $p$ and that the fibre $\pi^{-1}(\pi(P_i))$ contains only $P_i$.
+		\begin{eqnarray*}
+			\lefteqn{2\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{p}\Big{\rfloor}\Big)-(2m-1)\deg(R)}\\
+			&=\sum_{i=1}^r\Big(2\Big{\lfloor}m\cdot \frac{n_i}{p}\Big{\rfloor}-(2m-1)\cdot n_i\Big) \\
+			&\leq  \sum_{i=1}^r\Big(2m\cdot\frac{n_i}{p}-(2m-1)p\cdot\frac{n_i}{p}\Big) \\
+			& =  (2m-p(2m-1))\sum_{i=1}^r\frac{n_i}{p}.
+		\end{eqnarray*}
+	Now as $p,m\geq 2$ then we have $2m-p(2m-1)\leq 2m-2(2m-1)=2(1-m)<0$ and we are done as 
+	$\sum_{i=1}^r\frac{n_i}{p}$ is positive.
+
+  
+
+\end{proof}
+
+
+
+
+\bibliography{/home/jtait/Desktop/Work/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+
+\end{document}

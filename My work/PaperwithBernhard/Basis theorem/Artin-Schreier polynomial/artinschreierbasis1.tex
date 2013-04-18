@@ -1,0 +1,155 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\theoremstyle{remark}\newtheorem*{rem}{Remark}
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\cal L}}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Artin-Schreier extensions}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+Let $k$ be an algebraically closed field of characteristic 2.
+Consider the Artin-Schreier extension $k(x,y)$ of $k(x)$ by $y$, where $y$ satisfies
+\begin{equation}\label{1}
+  y^2 - y = f(x)
+\end{equation}
+for some polynomial $f(x)\in k[x]$.
+Then let $C$ be the smooth projective curve associated to this extension.
+Let $g$ be the genus of the curve, and let $\pi$ be the canonical projection $C\rightarrow \mathbb P_1^k$.
+We denote the space of global holomorphic differentials of $C$ by $\Omega$.
+
+We now prove the following theorem, determining a basis of the space of global holomorphic differentials as a vector space over $k$.\\
+
+
+
+
+\begin{thm}
+ The elements $dx, xdx, \ldots , x^{(g-1)}dx$ form a basis of  of $\Omega$ over $k$.
+\end{thm}
+\begin{proof}
+First note that if $C$ is birationally equivalent to $\mathbb P_1^k$, then $g=0$, there are no basis elements, and the theorem holds.
+
+We may now assume that $g\geq 1$.
+Considering $\mathbb A_k^2$ as a subspace of $\mathbb P_k^2$, let $C'$ the part of the curve in $\mathbb A_k^2$.
+Then $\pi$ restricts to a map $C'\rightarrow \mathbb A^1_k$, the projection on the $x$ co-ordinate.
+Let $x'\in \mathbb A_k^1$ be a point in the image of $\pi$.
+Then if $(y',x')$ is a point in $\pi^{-1}(x')$, so is the distinct point $(y'+1,x')$.
+Since the extension is degree two, this shows that there are no ramified points in the affine part.
+
+However, from the Hurwitz formula we see that
+\[
+ 2g+2 = \deg (R),
+\]
+where $R$ is the ramification divisor of $\pi$ (recall that $\pi$ maps to $\mathbb P_k^1$, which has genus zero).
+Hence the degree of the ramification divisor is positive, and there must exist a ramification point i.e. the point at infinity, $[0:1:0]\in \mathbb P_k^2$.
+
+
+We have already shown that there are two points, $P_0$ and $P_0'$, in $\pi^{-1}(0)$, and one point in $\pi^{-1}(\infty)$, which we call $P$.
+Then $\di(\pi) = [P_0] + [P_0'] - 2[P]$.
+
+Now we look at the differential $d x$.
+Let $Q$ be a point in $C$ other than $P$, and let $a= \pi(Q)$ be the image of $Q$ in $\mathbb A_k^1$.
+Then $x-a$ is a local parameter at $a$, and since $a$ is unramified, it is also a local parameter at $Q$.
+Hence $\ord_Q(dx)=\ord_Q(d(x-a)) = 0$, by  \citep[\S 8.5]{fulton}.
+
+Since $0\neq dx \in \Omega$, then $\di (dx)$ is a canonical divisor; see, for example, \citep[\S 8.5]{fulton}.
+Hence we conclude that $\di (dx) = (2g-2)[P]$.
+Then for $Q\notin \{P,P_0,P_0'\}$ we see that $\ord_Q(x^idx)=0$ for all $i\geq 0$.
+If $Q$ is either $P_0$ or $P_0'$, then $\ord_Q(x^idx)=i$ for all $i\geq 0$.
+Finally, $\ord_P(x^idx)=-2i+2g-2$ for all $i\geq 0$.
+Hence $\deg(\di (x^idx))>0$ for $0 \leq i \leq g-1$, and $x^idx$ is a holomorphic differential for $0 \leq i\leq g-1$.
+There are $g$ of them, so if we show that they are linearly independent, we will be done, since $\dim(\Omega)=g$.
+
+
+
+If they were not linearly independent there would exist $a_i\in k$ for $0\leq i \leq g-1$ such that $\sum_{i=0}^{g-1} a_ix^idx = 0$.
+Since $\Omega$ is a one dimensional vector space over the field of rational functions of $X$, this would imply $\sum_{i=0}^{g-1} a_ix^i = 0$.
+Hence $a_i = 0$ for all $i$, and the differentials are linearly independent. 
+\end{proof}
+
+
+
+\bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+\end{document}

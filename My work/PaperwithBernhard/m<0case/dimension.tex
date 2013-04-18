@@ -1,0 +1,124 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+
+\DeclareMathOperator{\ord}{ord}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Template}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+\begin{lem}
+  Suppose that $m<0$. Then
+  \begin{equation*}
+    \dim_k(H^0(X,\Omega_X^{\otimes m})^G)=
+      \begin{cases}
+	0 & \mbox{if }\deg\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor\leq 2m-2\\
+	1-2m+\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor & \mbox{otherwise}
+      \end{cases}
+  \end{equation*}
+\end{lem}
+\begin{proof}
+  Let $K_Y$ be a canonical divisor on $Y$. Then we define $K_X:=\pi^*(K_Y)+R$, and hence $mK_X=m\pi^*(K_Y)+mR$; note that $K_X$ is a canonical divisor by \citep[Chap. IV,\ prop 2.3]{hart} and is also $G$-invariant by definition. Moreover, by ? we have an equivariant isomorphism between th $G$-sheaves $\mathscr{O}_X(K_X))$ and $\Omega_X$. We have that
+	\[ 
+		\Big{\lfloor}{\frac{\pi_*(mK_X)}{n}} \Big{\rfloor}
+		= \Big{\lfloor}{\frac{\pi_*(m\pi^*(K_Y))+\pi_*(mR)}{n}} \Big{\rfloor}
+		= mK_Y+\Big{\lfloor} {\frac{m\pi_*(R)}{n}}\Big{\rfloor}.
+	\]
+	
+Hence, by the lemma in \citep{faithfulaction}, we see that 
+	\[
+		\pi_*^G(\Omega_X^{\otimes m})\cong \pi_*^G(\mathscr{O}_X(mK_X))\cong \mathscr{O}_Y\Big(mK_Y 			+\Big{\lfloor}{\frac{m\pi_*(R)}{n}}\Big{\rfloor}\Big).
+	\]
+
+and so
+	\begin{eqnarray*}
+		\mbox{dim}_k(H^0(X,\Omega_{X}^{\otimes m})^G)&=&
+		\mbox{dim}_k(H^0(Y,\pi_*^G(\Omega_{X}^{\otimes m})))\\
+		&=&\mbox{dim}_k\Big(H^0\Big(Y,\mathscr{O}_Y\Big(mK_Y+\Big{\lfloor}{\frac{m\pi_*(R)}						{n}}\Big{\rfloor}\Big)\Big)\Big).
+	\end{eqnarray*}
+Since $g_X=0$ then clearly $g_Y=0$ too.
+We know look at two cases.
+Firstly, when $\deg(mK_Y+\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor)\leq -2$ then clearly the dimension of the fixed space is $0$, as the degree is negative.
+Since $g_Y=0$ then $\deg(mK_Y)=-2m$, hence re-arranging the above formula gives us the first case.
+
+Now if $\deg(mK_Y+\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor)>-2$ then the divisor is ample and hence the dimension is precisely
+  \begin{equation}
+    \deg(mK_Y+\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor)+1-g_Y=1-2m+\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor.
+  \end{equation}
+\end{proof}
+
+
+\bibliography{/home/jtait/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+\end{document}

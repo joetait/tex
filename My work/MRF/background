@@ -1,0 +1,30 @@
+Suppose we have a smooth function $f$ our Riemann surface, and let $P$ be a specific point in the Riemann surface.
+Then there is a neighbourhood of $P$ that we can assume to be the same as a neighbourhood of $\mathbb C$ (and hence that $P \in \mathbb C$).
+Given any point $x$ this neighbourhood, we have the directional derivative $\partial_x f$ which we can evaluate at $P$.
+This gives us a function, which depends on $P$, from $U$ to $\mathbb C$, and we call this function $df_P$.
+So we now have a function associated to each point in $U$, and we call the function $df: P \mapsto df_P$ a differential form.
+We can cover our Riemann surface with co-ordinate charts, and we call a family of differential forms that match on the overlaps of these charts a global differential form.
+
+If a differential $df$ can be written $g(z)dz$ for some local parameter $z$, with $g(z)$ a holomorphic function, then we say that $df$ is a holomorphic differential.
+The space of holomorphic differentials forms a vector space over $\mathbb C$.
+Incredibly, the dimension of this space is precisely the genus of the Riemann surface.
+We will abuse the fact that this gives us a purely algebraic way to express a fundamental topological constant in order to define a genus for algebraic curves.
+
+First we need some terminology and concepts used in algebraic geometry.
+We will do this over $\mathbb C$ to be concrete, but everything will hold equally well over any algebraically closed field.
+Varieties are the central object of study in algebraic geometry.
+A variety is the zero set of some polynomials $f_1(x_1,\ldots, x_m), \ldots , f_n(x_1, \ldots, x_m)\in \mathbb C[x_1, \ldots, x_m]$, and is denoted 
+$V(f_1, \ldots , f_n)$.
+An algebraic curve is a one-dimensional algebraic variety (one way of defining the dimension of a variety is to define it to be the dimension of the tangent space at any point).
+
+The functions that we consider on curves are quotients of polynomials, of the form $\frac{f}{g}$.
+These functions make the field of rational functions on a variety $V$.
+Rational functions may have a finite number of poles when the denominator is zero, and this sense they are like meromorphic functions in complex analysis.
+From the space of rational functions we form the space of differentials on $V$, denoted $\Omega_V$.
+When we are looking at complex curves, the elements of this space are analogous to the differentials forms described earlier, and there is also an analogue to the space of holomorphic differentials.
+The space of holomorphic differentials on a curve is denoted by $H^0(V,\Omega_V)$, and we define the genus of a curve to be $\dim_k H^0(V,\Omega_V)$.
+This allows to extend the notion of genus where the topological definition wouldn't make sense.
+
+
+We will also see the space of holomorphic polydifferentials.
+The space of polydifferentials of order $m$ is $\Omega_V^{\otimes m} = \Omega_V \otimes \ldots \otimes \Omega_V$, and $H^0(V,\Omea_V)$ are the elements of $\Omega_V$ that can be written $f(z)dz\otimes \ldots \otimes dz$ with $f(z)$ holomorphic.

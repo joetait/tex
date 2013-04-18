@@ -1,0 +1,38 @@
+To show the if direction, we only have to show that that $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m}))=\mbox{dim}_k((X,\Omega_X^{\otimes m})^G)$.
+
+If we have $p=g_X=m=2$ then on the one hand we see that $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m}))=3$. On the other hand, we first note that the equation $2g_X-2=-2p+(N+r)(p-1)$ means that $k=6$, and then we can compute $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m})^G)=9+\sum\lfloor-N_i-1\rfloor=3$. So the dimensions are equal and the action is trivial.
+
+Now we show that showing the only if direction is equivalent to solving the inequality $\frac{2mk}{2mk+2-4m-mk}<p$ (note that the denominator here is always positive for $m,k\geq 2$).
+
+Now this value is the largest value of $p$ solving the quadratic 
+
+	\[
+		(2mk-k-4m+2)p^2+(-4mk+k-2+4m)p+2mk=((2mk+2-4m-k)p-2mk)(p-1).
+	\]
+
+We can derive this by replacing $\sum_{i=1}^r\Big{\lfloor{\frac{-m(N_i+1)}{p}}\Big{\rfloor}}$ with $\sum_{i=1}^r\frac{-m(N_i+1)}{p}$ in the formula for the dimension of $\mbox{dim}_k(H^0(X,\Omega_k^{\otimes m})^G)$. By definition of the floor function $\sum_{i=1}^r\frac{-m(N_i+1)}{p}\geq \sum_{i=1}^r\Big{\lfloor{\frac{-m(N_i+1)}{p}}\Big{\rfloor}}$, and hence if
+
+	\[
+		(2m-1)\Big(\frac{k(p-1)-2p}{2}\Big)>1-2m+mk+\sum_{i=1}^r\frac{-m(N_i+1)}{p}
+	\]
+
+then we certainly have
+
+	\[
+		(2m-1)\Big(\frac{k(p-1)-2p}{2}\Big)>1-2m+mk+\sum_{i=1}^r\Big{\lfloor}{\frac{-m(N_i+1)}{p}}\Big{\rfloor};
+	\]
+
+ i.e. $\mbox{dim}_k(H^0(X,\mathscr{O}_X))>\mbox{dim}_k(H^0(X,\mathscr{O}_X)^G)$ and the action is non-trivial.
+
+
+In the case that $p\geq 3$ then we need only solve $\frac{2mk}{2mk+2-4m-k}<3\leq p$. This inequality is equivalent to $4mk+9-12m-3k>3$, which then factorises to $(4m-3)(k-3)>3$, and as $4m\geq 8$, and hence the inequality always holds as long as $k>3$. If $k=3$, note first that we know that $p\geq 5$, otherwise the Hurwitz formula would give $g_X=1$, which we are not considering here. So then we need to solve $\frac{4mk}{4mk+4-8m-2k}=\frac{12m}{4m-2}< 5$. This is equivalent to $8m>10$, which always holds for $m\geq2$. So if $p\geq 3$ and $g_X\geq2$ then the action is always non-trivial.
+
+Now if $p=2$ then we are solving $\frac{4mk}{4mk+4-8m-2k}<2$, which can be re-written as $mk+2-4m-k>0$. This facorises to $(k-4)(m-1)>2$. If $k>7$ then this inequality is clearly satisfied and the action is trivial.
+
+ If $k=6$ and $m>2$ then it is also clear that the action is trivial. The case when $k=6$ and $m=2$ we have already dealt with, as $k=6$ implies that $g_X=2$ by the Hurwitz formula.
+
+As $p=2$ we know that $k\neq 5$; $k=\sum_{i=1}^r(N_i+1)$ and as $p\nmid N_i$ each term is even, and hence the sum must be even too.
+
+If $k=4$ and $p=2$ then the hurwitz formula shows us that $g_X=1$, and we are only considering $g_X\geq 2$.
+
+Lastly, $k=3$ if and only if $r=1$ and $N_1=2$; but as $p\nmid N_i$ this is not possible. 

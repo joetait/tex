@@ -1,0 +1,238 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+%\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\theoremstyle{remark}\newtheorem*{rem}{Remark}
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\cal L}}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Artin-Schreier extensions}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+Let $k$ be an algebraically closed field of characteristic 2.
+Let $k(x)$ be the rational function field in one variable $x$ and let $K|k(x)$ be a field extension of degree 2, i.e.\ an Artin-Schreier extension.
+Let $\pi:C \rightarrow \mathbb P_k^1$ be the corresponding morphism of smooth projective curves over $k$ and let $g$ denote the genus of $C$.
+By \cite[\S 7.4.3]{liu}, there exists a $y\in K$ such that $K=k(x,y)$ and $y$ satisfies the equation
+\begin{equation}\label{ext}
+  y^2 - h(x)y = f(x)
+\end{equation}
+for some polynomials $h(x), f(x)\in k[x]$, with maximum degrees of $g+1$ and $2g+2$ respectively.
+In order for the curve to be smooth, we require that $h(x)$ and $h'(x)^2f(x) + f'(x)^2$ are prime to each other.
+This is equivalent to the Jacobian criterion.
+
+Let $d$ be the degree of $h(x)$.
+We denote the space of global holomorphic differentials of $C$ by $\Omega$.
+
+We first describe the ramified points of $\pi$, in order to compute the ramification divisor.
+Since we required \eqref{ext} to satisfy the Jacobian criterion, we can consider the affine curve defined by this equation, which will be smooth.
+We denote this curve by $C'$.
+Then $\pi$ restricts to a map $C'\rightarrow \mathbb A^1_k$, the projection on the $x$ co-ordinate.
+Let $a\in \mathbb A_k^1$.
+Then if $(a,b)$ is a point in $\pi^{-1}(a)$, so is the point $(a,b+h(a))$, which is clearly distinct if and only if $h(a)\neq 0$.
+Since the extension is degree two, this shows that the ramified points in the affine part correspond to the roots of $h(x)$.
+If $h(x)$ is non-constant, we denote zeroes of $h(x)$ by $a_i$ for $1\leq i \leq k$ where $k \leq g+1$.
+For each $a_i$ there is a corresponding $b_i$, which is the root of $f(a_i)$.
+We will also denote the corresponding ramification point by $P_i$.
+If these are not all the ramification points, then the point at infinity is also a branch point.
+In this case the point that maps to infinity will be written $P_{\infty}$.
+If this is not the case we will denote the two points that map to infinity as $P_{\infty}'$ and $P_{\infty}''$.
+
+We will now compute the ramification divisor to see exactly when $P_1,\ldots,P_k$ are all the ramified points.\\
+
+\begin{lem}
+ Let $n_i$ be the order of $h(x)$ at $a_i\in \mathbb A_k^1$.
+Then the coefficient $\delta_P$ of the ramification divisor $R$ at $P\in X$ is given by
+\[
+ \delta_P = \left\{
+ \begin{array}{ll}
+ 2n_i & {\rm if }\ P=P_i\ {\rm for\ some }\ i \in \{1,\ldots ,k\}, \\
+ 2(g+1-d) & {\rm if }\ d<g+1\ {\rm and }\ P=P_\infty, \\
+ 0 & {\rm otherwise.} 
+ \end{array}
+\right.
+\]
+\end{lem}
+\begin{proof}
+ First note that by the Hurwitz formula $\deg(R) = 2g+2$.
+ Then if the ramification index at each $P_i$ is $2n_i$, and $\sum_{i=1}^k 2n_i = 2d < 2g+2$, there must exist another point, i.e. $P_{\infty}$, which is ramified.
+ Then the ramification at this point is $2g+2-2d$.
+ So it will suffice to prove that coefficient of $[P_i]$ is $2n_i$ for $1\leq i \leq k$.
+ 
+ In order to prove this we first need to show that $y-b_i$ is a local parameter at $P_i$.
+ To see this, note that the maximal ideal $\mathfrak M_{P_i}$ of the local ring $\cO_{X,P_i}$ at $P_i$ is generated by $x-a_i$ and $y-b_i$.
+ But $x-a_i\in \mathfrak M_{P_i}^2$ since $\pi$ is ramified at $P_i$ with ramification index 2 {\bf At least 2??}.
+ By Nakayama's lemma, $y-a_i$ is therefore a local parameter at $P_i$.
+ 
+ Now we can compute $\delta_P$ for $P\in \{P_1,\ldots , P_k\}$, using Hilbert's formula \cite[Prop. 4, \S 1, Ch. IV]{localfields},
+ \begin{eqnarray*}
+  \delta_P & = & \sum_{i\geq 0} \left(\ord(G_i(P))-1\right) \\
+  & = & {\rm max\ }\left\{ i\in \NN | G_i(P)\neq \{1\}\right\} \\
+  & = & \ord_{P_i}(\sigma(y-b_i) - (y-b_i)).
+  \end{eqnarray*}
+  
+ By an argument similar to that used to show the correspondence between the solutions of $h(x)$ and the ramification points, it is clear $\sigma(y)=y+h(x)$.
+ The following calculation then concludes the proof,
+  \begin{eqnarray*}
+  \delta_P & = & \ord_{P_i}(\sigma(y-b_i) - (y-b_i)) \\
+  & = & \ord_{P_i}(y-b_i+h(x) - y + b_i) \\
+  & = & 2\ord_{a_i}(h(x)) \\
+  & = & 2n_i.
+ \end{eqnarray*}
+\end{proof}
+
+
+
+We now prove the following theorem, determining a basis of the space of global holomorphic differentials as a vector space over $k$.\\
+
+
+\begin{thm}
+ The elements $\frac{dx}{h(x)}, \frac{xdx}{h(x)}, \ldots , \frac{x^{(g-1)}dx}{h(x)}$ form a basis of $\Omega$ over $k$.
+\end{thm}
+\begin{proof}
+
+First note that if $C$ is birationally equivalent to $\mathbb P_1^k$, then $g=0$, there are no basis elements, and the theorem holds.
+
+We may now assume that $g\geq 1$.
+If $0\in \mathbb A_k^1$ is a branch point, then we will denote the point that maps to it by $P_0$.
+If it is not ramified then we will denote the points above it by $P_0'$ and $P_0''$.
+
+In the rest of the proof we will refer to the divisors $D_0$ and $D_\infty$, defined as
+\[
+ D_0=\left\{ \begin{array}{ll}
+             2P_0 &\ {\rm If\ 0\ is\ a\ branch\ point,}\\
+             P_0'+P_0'' &\ \rm{otherwise,}
+            \end{array}
+\right.
+\]
+and
+\[
+ D_\infty = \left\{ \begin{array}{ll}
+                     2P_\infty &\ {\rm if\ \infty\ is\ a\ branch\ point,}\\
+                     P_\infty' + P_\infty'' &\ {\rm otherwise.}
+                    \end{array}\right.
+\]
+These will allow us to consider the multiple cases simultaneously.
+
+Now we will compute the divisors of the separate components of the elements we claim form a basis.
+
+It is clear that $\di (x^i) = i(D_0-D_\infty)$.
+
+
+Now we compute the divisor of $dx$.
+We will need to consider the divisor of $dx$ both as a differential on $C$ and and on $\mathbb P^1$. 
+We will use the notation of $\di_C(dx)$ and $\di_{\mathbb P^1}(dx)$ to do do this.
+Then, the Hurwitz formula {\bf reference} states that
+\[
+ \di_C( dx) = \pi^*\di_{\mathbb P^1}(dx) + R.
+\]
+Now we have already computed $R$ in the previous lemma, and $\pi^*\di_{\mathbb P^1}(dx) = -2D_\infty$, so we understand $\di_C(dx)$.
+
+
+Finally we look at $\frac{1}{h(x)}$.
+If infinity is ramified then $\ord_{P_{\infty}}\left(\frac{1}{h(x)}\right) = -\ord_{P_{\infty}}(h(x)) = 2d$.
+If it is not ramified, then $\ord_{P_{\infty}'}\left(\frac{1}{h(x)}\right) = \ord_{P_{\infty}''}\left(\frac{1}{h(x)}\right)=g+1$.
+For the ramified points $P_i$, $1\leq i \leq k$, then $\ord_{P_i}\left(\frac{1}{h(x)}\right) = -\ord_{P_i}(h(x))= -2n_i$.
+At any other point the order of $\frac{1}{h(x)}$ is clearly zero.
+So $\di\left(\frac{1}{h(x)}\right) = (g+1)D_\infty -R$.
+
+
+Combining these divisors gives us
+\begin{eqnarray*}
+ \di \left(\frac{x^idx}{h(x)}\right) & = & i(D_0-D_\infty)-2D_\infty + R + (g+1)D_\infty -R \\
+ & = & iD_0 + (g-i-1)D_\infty.
+\end{eqnarray*}
+
+Hence the divisor is positive for $0\leq i \leq g-1$.
+
+
+
+
+It remains to show that the elements are linearly independent.
+This follows from the fact that $dx$ is a basis of the space of meromorphic functions over $K$, and the fact that the functions $\frac{1}{h(x)},\ldots , \frac{x^{g-1}}{h(x)}$ are linearly independent over $k$.
+\end{proof}
+
+
+
+\bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{alpha}
+
+\end{document}

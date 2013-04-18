@@ -1,0 +1,163 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+
+\DeclareMathOperator{\ord}{ord}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Extension of ``Faithful Action on the space of Global Differentials of an Algebraic curve"}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+Let $\pi :X \rightarrow Y$ be a finite Galois covering of connected, complete, non-singular curves over an algebraically closed field $k$ of characteristic $p$. Let $G=\mbox{Gal}(X/Y)$ and assume that $G$ is cyclic of order $p$. Let $\{ P_1,\ldots ,P_r\}$ be the ramification points of $\pi$. For $i=1,\ldots ,r$, let $N_i$ be defined by $N_i+1=\ord_{P_i}(\sigma\cdot\pi_i-\pi_i)$, where $\sigma$ is a generator of $G$, and $\pi_i$ is a funtion such that $\ord_{P_i}(\pi_i)=1$. From Nakajimas paper ``Action of an Automorphism of Order $p$ on Cohomology Groups of anAlgebraic Curve", and using the same notaton, it is clear that for a $G$-invariant divisor $D$ on $X$ with $\deg(D)>2g_X-2$ the dimension of the subspace of $H^0(X,\mathscr{O}_X(D))$ which is invariant under the action of $G$ is $\sum_{i=1}^r m_j$. For such a divisor $D$ we shall denote by $n_i$ the co-efficients of the ramification points.
+
+Note that this sum cancels in a very natural manner; we have that
+	\begin{eqnarray}
+		H^0((X,\mathscr{O}_X(D))^G) & = & \sum_{j=1}^p m_j \\*
+		& = & \sum_{j=1}^{p-1} \Big( \sum_{i=1}^r\Big(\frac{1}{p}N_i+\Big<\frac{n_i-jN_i}{p}\Big>-\Big<\frac{n_i-(j-1)N_i}{p}\Big>\Big)\Big) \\*
+		& + & \frac{1}{p}\deg(D)-g_Y+1\sum_{i=1}^r\Big(\frac{1}{p}N_i-N_i-\Big<\frac{n_i-(p-1)N_i}{p}\Big>\Big) \\*
+		& = & \frac{1}{p}\deg(D)-g_Y+1\sum_{i=1}^r \Big<\frac{n_i}{p}\Big>.
+	\end{eqnarray}
+
+Now as $\deg(D)>2g_X-2$ then if the action is trivial then we have
+	\begin{eqnarray}
+		H^0((X,\mathscr{O}_X(D))) & = & \deg(D)+1-g_X \\
+		& = & \frac{1}{p}\deg(D)-g_X+1-\sum_{i=1}^r\Big<\frac{n_i}{p}\Big> \\ 
+		& = & H^0((X,\mathscr{O}_X(D))^G). \label{hi}
+	\end{eqnarray}
+
+From now on we assume that $g_Y=0$. Then we can simplify \eqref{hi} to
+	 \begin{equation}
+		(p-1)\deg(D)=pg_X-p\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>.\label{hi2}
+	\end{equation}
+
+\begin{lem}
+Suppose that $\deg(D)\geq 2g_X$. Then the action of $G$ on $H^0(X,\mathscr{O}_X(D))$ is trivial if and only if $p=2$, $\deg(D)=2g_X$ and $p | n_i$ for all $i$, or if $g_X=0$ and $p | n_i$ for all $i$.
+\end{lem}
+\begin{proof}
+If $g_X \geq 1$ then we have the following string of inequlaities;
+	\[
+		(p-1)\deg(D)\geq (p-1)2g_X \geq pg_X \geq pg_X-\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>.
+	\]
+Now the first inequality is an equality if and only if $\deg(D)=2g_X$. The second is an equality if and only if $p=2$. Lastly, the third inequality is an equality if and only $\sum_{i=1}^rp\Big<\frac{n_i}{p}\Big>=0$, which is the case if and only if each $n_i$ is divisible by $p$. This completes the first part of the proof.
+
+Now if $g_X=0$ then we have 
+	\[
+		(p-1)\deg(D)\geq 0 \geq -p\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>
+	\]
+So we only require that $\deg(D)=0=2g_X$ and $\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>=0$. This completes the rest of the proof.
+\end{proof}
+
+\begin{lem}
+If $\deg(D)=2g_X-1$ then the action is trivial if and only if $g_X=0$ or if $p=3$, $g_X=2$ and $p|n_i$ for all $i$.
+\end{lem}
+\begin{proof}
+If $g_X=0$ then $\deg(D)<0$ and so $\dim(H^0(X,\mathscr{O}_X(D)))=0$. If $g_X\geq1$ then we want to see when 
+	\[
+		(p-1)\deg(D)=(p-1)(2g_X-1)=pg_X-p\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>,
+	\]
+which can be re-arranged to $g_X(p-2)-p+1=-p\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>$. We then note that $g_X(p-2)+1>0$ and $-p\geq -p\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>$ unless $\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>=0$, which in turn is equivelant to all the $n_i$ being divisible by $p$. Then we have $g_X(p-2)=p-1$, which is only solved for positive integers when $p=3$ and $g_X=2$. This completes the proof.
+\end{proof}
+
+Remembering that $\Omega_X^{\otimes m}\cong \mathscr{O}_X(mK_X)$ where $K_X$ is a canonical divisor on $X$, we will now use these results to prove the following statement about the action of $G$ on the group $H^0(X,\Omega_X^{\otimes m})$, where $m\geq 2$. \\
+
+\begin{prop}
+Let $m\geq 2$. We assume that $p>0$, that $G$ is a cyclic group of order $p$ and also that $g_Y=0$. Then $G$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$ if and only if
+	\begin{itemize}
+		\item
+			$g_X=0$ or
+		\item
+			$g_X=1$ or
+		\item
+			$p=g_X=m=2$.
+	\end{itemize}
+\end{prop}
+
+\begin{proof}
+
+Throughout this proof $K_X$ will denote a canonical divisor on $X$.
+
+If $g_X=0$ then $\mbox{deg}(mK_X)=-2m<0$; hence $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m}))=0$ by \citep[prop. 3, {\S}8]{fulton} and the action must be trivial.
+
+We now look at the case when $g_X=1$, and start by setting some notation. Let $R$ denote the ramification divisor of $\pi$. Then $R=\sum_{i=1}^r(N_i+1)(p-1)[P_i]$ by \citep[Prop. 4, {\S}1, Ch. IV]{localfields} and let $N=\sum_{i=1}^rN_i$ and $k=N+r=\sum_{i=1}^r(N_i+1)$. Note that $p\nmid N_i$ for any $i$ by \citep[Lem. 1, pg. 87]{naka}.
+
+By \citep[Chap. IV,\ Example 1.3.6]{hart} we know that $K_X$ is equivalent to the zero divisor and $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m}))=\dim_k(H^0(X,\mathscr{O}_X(mK_X)))=\dim_k(H^0(X,\mathscr{O}_X(0)))=1$.  By the Hurwitz formula $2g_X-2=-2p+k(p-1)$ we obtain $g_X=\frac{(k-2)(p-1)}{2}$ and either $k=4,\ p=2$ or $k=3,\ p=3$. We claim that in all cases $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m})^G)$ is also $1$ so the action is trivial. If $k=3$ then $r=1$ and $N_1=2$ and $\Big{\lfloor}\frac{m(N_1+1)(p-1)}{p}\Big{\rfloor}=2m$. 
+In the other case we have two possibilities: $r=2,\ N_i=1$ for $i=1,2$, or $r=1$ and $N_1=3$. If $r=2$ then $\sum_{i=1}^2\Big{\lfloor}\frac{m(N_i+1)(p-1)}{p}\Big{\rfloor}=\sum_{i=1}^2m=2m$.
+Similarly, if $r=1$ then $\Big{\lfloor}\frac{m(N_1+1)(p-1)}{p}\Big{\rfloor}=2m$. Hence, by the previous proposition [possibly putting in proposition from other  about dimension anyway, so can use it here...?], $\mbox{dim}_k(H^0(X,\Omega_X^{\otimes m})^G)=1-2m+2m=1$ in all cases, proving our claim. 
+
+If $g_X\geq 2$ then we have that $\deg(mK_X)\geq 2g_X$. So by Lemma 1, we have a trivial action if and only if $p=2,\ deg(D)=2g_X$ and $p|n_i$ for all $i$. Now $\deg(mK_X)=2g_X$ means that $m(2g_X-2)=2g_X$, so $m(g_X-1)=g_X$, and hence we must have $m=g_X=2$.
+\end{proof}
+
+
+\bibliography{/home/jtait/Desktop/Work/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+\end{document}

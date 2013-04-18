@@ -1,0 +1,355 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[draft, 11pt, notitlepage]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{top=17mm, bottom=20mm, left=20mm, right=20mm} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{mathtools}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\theoremstyle{plain}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{thm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{ex}[defn]{Example}
+\newtheorem*{unnumthm}{Theorem}
+\newtheorem{defnlem}[defn]{Definition/Lemma}
+\newtheorem{defnthm}[defn]{Theorem/Definition}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\mathcal L}}
+\newcommand{\cA}{{\mathcal A}}
+\newcommand{\cD}{{\mathcal D}}
+
+
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+\DeclareMathOperator{\Tr}{Tr}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{MRF proposal}
+\author{Joseph Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+
+
+\section{Background}
+
+%Algebraic geometry is an incredibly broad area of study, inspiring David Mumford to say that it is has ``adherents who are secretly plotting to take over all the rest of mathematics".
+Algebraic geometry stems from the fundamental problem of finding solutions to sets of polynomials.
+The geometry of this has of course been recognised ever since Descartes visualised Cartesian coordinates, but it is modern algebraic methods that have allowed for otherwise impossible developments and insights.
+A now classical fact, which provides both motivation and insight to algebraic geometry,  is the correspondence between compact Riemann surfaces and smooth complex curves (one-dimensional solution set of polynomials).
+
+Riemann surfaces are complex manifolds; spaces that locally look like the complex plane. For example, the Earth, which is roughly a sphere, looks flat from our perspective.
+Since they are surfaces they can be classified by their genus, which is a topological invariant measuring how many holes the surface has.
+So for example, a sphere would have genus zero, whilst a torus would have genus 1.
+As the genus is such a fundamental invariant we would like to be able to define it algebraically, in the hope that this definition will extend to curves and varieties, the central objects of study in algebraic geometry.
+
+Suppose we have a smooth function $f$ our Riemann surface, and let $P$ be a specific point in the Riemann surface.
+Then there is a neighbourhood of $P$ that we can assume to be the same as a neighbourhood of $\mathbb C$ (and hence that $P \in \mathbb C$).
+Given any point $x$ this neighbourhood, we have the directional derivative $\partial_x f$ which we can evaluate at $P$.
+This gives us a function, which depends on $P$, from $U$ to $\mathbb C$, and we call this function $df_P$.
+So we now have a function associated to each point in $U$, and we call the function $df: P \mapsto df_P$ a differential form.
+We can cover our Riemann surface with co-ordinate charts, and we call a family of differential forms that match on the overlaps of these charts a global differential form.
+
+If a differential $df$ can be written $g(z)dz$ for some local parameter $z$, with $g(z)$ a holomorphic function, then we say that $df$ is a holomorphic differential.
+The space of holomorphic differentials forms a vector space over $\mathbb C$.
+Incredibly, the dimension of this space is precisely the genus of the Riemann surface.
+We will abuse the fact that this gives us a purely algebraic way to express a fundamental topological constant in order to define a genus for algebraic curves.
+
+First we need some terminology and concepts used in algebraic geometry.
+We will do this over $\mathbb C$ to be concrete, but everything will hold equally well over any algebraically closed field.
+Varieties are the central object of study in algebraic geometry.
+A variety is the zero set of some polynomials $f_1(x_1,\ldots, x_m), \ldots , f_n(x_1, \ldots, x_m)\in \mathbb C[x_1, \ldots, x_m]$, and is denoted 
+$V(f_1, \ldots , f_n)$.
+An algebraic curve is a one-dimensional algebraic variety (one way of defining the dimension of a variety is to define it to be the dimension of the tangent space at any point).
+
+The functions that we consider on curves are quotients of polynomials, of the form $\frac{f}{g}$.
+These functions make the field of rational functions on a variety $V$.
+Rational functions may have a finite number of poles when the denominator is zero, and this sense they are like meromorphic functions in complex analysis.
+From the space of rational functions we form the space of differentials on $V$, denoted $\Omega_V$.
+When we are looking at complex curves, the elements of this space are analogous to the differentials forms described earlier, and there is also an analogue to the space of holomorphic differentials.
+The space of holomorphic differentials on a curve is denoted by $H^0(V,\Omega_V)$, and we define the genus of a curve to be $\dim_k H^0(V,\Omega_V)$.
+This allows to extend the notion of genus where the topological definition wouldn't make sense.
+
+
+We will also see the space of holomorphic polydifferentials.
+The space of polydifferentials of order $m$ is $\Omega_V^{\otimes m} = \Omega_V \otimes \ldots \otimes \Omega_V$, and $H^0(V,\Omega_V)$ are the elements of $\Omega_V$ that can be written $f(z)dz\otimes \ldots \otimes dz$ with $f(z)$ holomorphic.
+\begin{comment}
+To do this we use the notion of a differential form on a Riemann surface. 
+A differential form gives, at each point $P$ on our Riemann surface, a linear function from the tangent space at $P$ to $\mathbb C$.
+We call the function at this point $df_P$, and the differential form itself is denoted just $df$.
+So a differential form is a function that, at each point, gives another function on the tangent space.
+Of course, the tangent space depends on the co-ordinate chart chosen, but 
+
+In order to relate this to algebraic geometry we first need to introduce some of the key components of the topic.
+Firstly, the object of study is the variety.
+A variety $V = V(f_1, \ldots, f_n)$ is the zero set of some polynomaials $f_1, \ldots , f_n$, with coefficients in the field $k$ we are working over.
+Curves are one dimensional varieties, where dimension 
+
+
+As already stated, there is an equivalence between smooth complex curves and Riemann surfaces.
+As such there is an algebraic definition of differentials on a complex curve, and this naturally extends to any curve over an algebraically closed field.
+We denote the space of holomorphic differentials on a curve $X$ over an algebraically closed field $k$ by $H^0(X,\Omega_X)$.
+Inspired by the aforementioned equivlance, we call the dimension $\dim_kH^0(X,\Omega_X)$ the genus of $X$.
+
+
+
+\begin{comment}
+The equivalence between Riemann Surfaces and smooth curves over the complex numbers
+is crystallised by the Riemann-Roch theorem, which relates the topological genus of Riemann surfaces to the arithmetic genus of complex curves. 
+This can in fact be used to define the genus of a curves.
+But this theorem holds in precisely the same form for curves over any algebraically closed field, and so provides a natural way to extend the notion of genus to any curve in this case.
+
+So how do we define the genus of a curve over $\mathbb C$ (note that we could replace $\mathbb C$ by any algebraically closed field; we use $\mathbb C$ for now for the sake of concreteness).
+We first must make precise what we mean by a curve over $\mathbb C$.
+Given complex polynomials $f_1(x_1,\ldots , x_m), \ldots ,f_n(x_1,\ldots, x_m)$ we let $ V := V(f_1,\ldots , f_n)$ denote the set of points in $(a_1, \ldots , a_m) \in \mathbb C^m$ that are solutions to $f_1,\ldots, f_n$.
+This is a curve if it is dimension one (one way of defining dimension is the maximum dimension of the tangent space at a point where not all the derivatives vanish).
+%For example, the curve defined by $(y-x)(y+x)$ is just the union of two curves that it contains, those defined by $(y-x)$ and $(y+x)$.
+
+We now look at maps from curves to $\mathbb C$.
+Since we are considering spaces defined by polynomials, the only maps to $\mathbb C$ we consider are polynomial maps, as this gives us the properties we desire, such as being smooth.
+However, considering all polynomial maps leaves us with many redundancies. For example, if we consider the curve defined by some polynomial $f$, then the function $f:V(f) \rightarrow \mathbb C$ is identical to the zero function; indeed, that is precisely how $V(f)$ is defined.
+So we instead consider the ring of polynomials quotiented by all multiples of our defining functions, 
+\[
+K[V] = K[V(f_1,\ldots f_n)] := \mathbb C[x_1, \ldots , x_m]/(f_1,\ldots , f_n).
+\]
+We call $K[V]$ the coordinate ring of $V$.
+Finally, we let the function field, denoted $K(V)$, be the space of quotients of the coordinate ring.
+So elements of $K(V)$ are of the form $\frac{f}{g}$ for $f,g \in K[V]$, with $g \neq 0$.
+
+
+Functions that are in this fractional form can have points where they are undefined, in particular when the denominator is zero. 
+This will be a finite set of points, and we call these points poles. 
+We can give each pole $P$ an order, namely the degree of the zero of the numerator at $P$ minus the degree of the zero of the denominator at $P$.
+For example, for $a\in \mathbb C$, the function $\frac{1}{(x-a)^n}$ on $\mathbb C$ will have degree $-n$ at $a$ (a pole of order $n$ at $a$).
+To define the notion of order precisely requires some more effort, and the reader is referred to Fulton's book Algebraic Curves \cite[\S 2.5]{fulton}.
+
+Using these functions we will now form a vector space over $\mathbb C$ (the space of holomorphic differentials), and the dimension of this vector space will be $g$, the genus of our curve.
+The rest of the report will be looking at this vector space, since it plays a crucial role in the area of algebraic geometry.
+To start forming the aforementioned vector space
+we define a derivation of $K(V)$ in to a $K(V)$ vector space $W$; this is a $\mathbb C$ linear map $D:K(V) \rightarrow W$ such that $D(ab) = aD(b) + D(a)b$ for all $a,b \in K(V)$.
+Equivalently, $D$ is a derivation if it is a $\mathbb C$-linear map
+and satisfies the Liebnez law.
+
+There is a unique $K(V)$ vector space $\Omega_V$ and a derivation $d:K(V) \rightarrow \Omega_V$ such that any derivation $D:K(V) \rightarrow W$ factors uniquely through $\Omega_V$; i.e. there is a unique $f$ such that $D= f \circ d$ in the composition 
+\[
+K(V) \stackrel{d}{\rightarrow} \Omega_V \stackrel{f}{\rightarrow} W.
+\]
+Now $d:K(V) \rightarrow \Omega_V$ is a surjection, and we denote elements of $\Omega_V$ by $dx$, where $x \in K(V)$.
+It can be shown that $\Omega_V$ is a one-dimensional as a $K(V)$ vector space, with basis $dx$ for any $x \in K(V) \backslash \mathbb C$.
+
+
+
+The space of holomorphic differentials is a subspace of $\Omega_V$, and to define this subspace we need to extend our definition of order to differentials.
+Fix a point $P \in V$.
+Then we can find a function $x \in K(V)$ such that $\ord_P(x) = 1$, and since $\Omega_V$ is a one-dimensional vector space over $K(X)$ we can write any differential $dy$ as $fdx$ for some $f \in K(V)$.
+Given this, we define the order of $dy$ at $P$ to be $\ord_P(dy) = \ord_P(fdx) := \ord_P(f)$.
+It can be shown that this is well defined.
+
+
+then the space of holomorphic differentials are the elements of $\Omega_V$ which have non-negative order everywhere.
+This space is denoted $H^0(V,\Omega_V)$.
+It should be noted that for the rest of the report we will be considering projective curves, where as what we have described so far are affine curves.
+The intuition in both cases is largely the same, but the addition of points at infinity in the projective case makes much of the algebra a lot more natural.
+\end{comment}
+
+\section{Research}
+Let $k$ be an algebraically closed field of characteristic $p\geq 0$, and let $X$ be a smooth projective connected curve over $k$. 
+Let $G$ be a finite group of order $n$ acting on $X$.
+
+
+My work has focussed on looking at the induced action on $H^0(X,\Omega_X)$ of a group that acts on the curve $X$.
+Indeed, this action is natural; given a function $f:X \rightarrow k$ we just let $g(f(x)) := f(g\circ x)$ for any $g \in G$ and $x\in X$.
+It is then clear that $G$ acts on $H^0(X,\Omega_X)$, since this is defined through $K(X)$.
+So a classical question, going back to a 1934 paper by Chevalley and Weil \cite{chev} when $k = \mathbb C$, asks what the $k[G] $ module structure of $H^0(X,\Omega_X)$ is.
+ 
+This has been answered in the case where $k$ is any field of characteristic zero. However, when $p>0$ the question is more difficult (for example, Maschke's theorem may not be applicable), and is still open. 
+Moreover, this relates to curves over finite fields (since of course they are all prime characteristic), which then leads to applications in coding theory, discussed later.
+
+
+
+One of the ways to approach this question is to study the map $\pi:X\rightarrow Y$, where $Y$ is quotient of $X$ by $G$; i.e. the space we are left with if we consider points $x$ and $y$ in $X$ as being the same if there is an element of $g$ such that $gx = y$.
+Under this map almost all points in $Y$ will be mapped to by $n$ points in $X$.
+In this respect $X$ is similar to a covering space of $Y$, as in topology.
+However, there will be a finite number of points in $Y$ which have less than $n$ points in the pre-image under $\pi$, and these are called branch points.
+The corresponding points in $X$ are called ramification points.
+%The points in $\pi^{-1}Q_i$ are called ramification points.
+% We can associate to each $P\in \pi^{-1}(Q_i)$ a ramification index which heuristically tells us how many of the normally $n$ points above $Q_i$ it represents.
+% The ramification index necessarily divides $n$, and the sum of the ramification indices of all the points in the pre-image of any $Q\in Y$ is precisely $n$. A point is ramified if its ramification index is greater than one.
+%If characteristic $p$ divides the ramification index of a point then we say that $\pi$ is wildly ramified, and otherwise we say it is tamely ramified.
+
+
+In general, it is easier to make computations with tamely ramified maps; for example, the question we posed earlier regarding the $k[G]$-module structure was solved for $\pi$ tamely ramified in 1986 by Kani \cite{Kani}. However, in the general case of wild ramification this is still an open problem.
+
+In my PhD I have been looking at the weaker but related question of whether $G$ acts faithfully on $H^0(X,\Omega_X)$. 
+The main result of my transfer thesis is theorem \ref{theorem} below \cite{faithfulaction}.
+This completely answers the question, as well as the question of when does $G$ act faithfully on the space of holomorphic poly-differentials, $H^0(X,\Omega_X^{\otimes m})$ for $m\geq 2$ :\\
+
+\begin{thm}\label{theorem}
+Let $m\geq 1$ and suppose that $g$, the genus of $X$, is at least 2.
+Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ does not contain a hyperelliptic involution and one of the following two sets of conditions holds:
+ \begin{itemize}
+\item $m=1$ and $p=2$;
+\item $m=2$ and $g=2$.
+\end{itemize}
+\end{thm}
+
+Any curve which has an automorphism that is a hyperelliptic involution could be considered, in some sense, to contain a hyperelliptic curve.
+For this reason I computed explicitly the basis of $H^0(X,\Omega_X^{\otimes m})$ for any hyperelliptic curve, regardless of characteristic, genus or value of $m$ \cite{faithfulaction}.
+This allows us to see precisely why the action is or is not faithful in a concrete manner.
+
+A number of papers and pre-prints in the area have recently been published or made available. Most notably, Karanikolopoulos and Kontogeorgis published a paper in which they computed the $k[G]$-module structure of $H^0(X,\Omega_X)$ when $G$ is a cyclic group \cite{kako}. This extended a paper of Valentini and Madan \cite{valmadan}, which contained the same result, but only for a cyclic group whose order is some power of the characteristic of the field.
+
+%I then computed a specific example of this. Since one of the conditions for a non-faithful action is having a hyperelliptic involution, hyperelliptic curves were a canonical choice. By computing an explicit basis for the space of holomorphic (poly-)differentials of hyerpelliptic curves, in all characteristics, we were able to demonstrate precisely why we had the action we did in this case.
+
+\section{Future Work}
+Moving on to future work, the example of hyperelliptic curves will provide a good sandbox for quickly testing theorems, ideas and possible extensions of other papers. Indeed, hyperelliptic curves exist in all genera and all characteristics, and as these are often the two deciding factors for our group actions, we can explicitly (though perhaps crudely) test all possible cases.
+
+
+A recent paper of Ruthi Hortsch \cite{hortsch} considers whether the representation $H^0(X,\Omega_X)$ is irreducible for a specific hyperelliptic curve, namely that defined by $y^2 = x^p-x$.
+ More interestingly, in the second section she considers the relation between the algebraic de-Rham hypercohomology and holomorphic differentials, which are related by a short exact sequence.
+I will compute the basis of de-Rham cohomology for any hyperelliptic curve,
+ and I will then show when the action of $G$ on the de-Rham cohomology is faithful, by combining the theorem stated earlier with the short exact sequence.
+This should be a short term project.
+derham cohomology should be motivated.
+
+
+
+Another interesting problem comes from a publication of Koeck and Kontogeorgis \cite{quaddiffequi}. In this quadratic differentials are considered; these are poly-differentials of degree 2. These are of particular interest in deformation theory since the dimension of the space of $G$-coinvariants of quadratic differentials is the same as the dimension of the first equivariant cohomology group of $(G,X)$ with coefficients the tangent space of $X$.
+The dimension of the space of $G$-coinvariants is computed in the case when $G$ is elementary abelian (see [reference]).
+ My goal is to generalise this result to any group (the interesting case being when the characteristic of $k$ divides the order of the group).
+This will be a longer term problem.
+
+
+Another area of related research will come from [reference Katz-gabber].
+In this paper the authors find conditions related to the ramification groups on how many indecomposable modules $\Omega_X^{\otimes m}$ can be a direct sum of, and they also find a condition on when $H^0(X,\Omega_X^{\otimes m})$ is irreducible.
+The latter result is of the most interest, and can be used to investigate further the $k[G]$-module structure of $H^0(X,\Omega_X^{\otimes m})$. 
+There are three interesting lines of research that can follow from this.
+One is to consider the casewhen $G$ acts faithfully and that $H^0(X,\Omega_X^{\otimes m})$ is decomposable to discover its structure and how it can be decomposed.
+The second is to consider when $G$ does not act faithfully but $H^0(X,\Omega_X^{\otimes m})$ is indecomposable to see exactly how $G$ does not act faithfully.
+Lastly, if $G$ acts faithfully and $H^0(X,\Omega_X^{\otimes})$ is indecomposable then we should be able to understand the $k[G]$-module structure of $H^0(X,\Omega_X^{\otimes m})$ much better.
+All three of these are independant areas of research that occur for a large range of values of $m$ and $g$ and both stem from combining Theorem \ref{theorem} and [reference cor 48].
+
+
+
+
+The most prominent practical application of this work would be in the area of linear codes, for example Goppa codes.
+A code over the finite field $F_q$ is a linear subspace $C$ of $F_q^n$.
+The codewords are the elements of $C$.
+The main aim of coding theory is to minimise $n$ whilst maximising the number of points in $C$ and the distance between points.
+This means that one can communicate a large amount of information whilst minimising the chance of a miscommunication.
+Goppa codes are among the codes most strongly linked to algebraic geometry, and understanding representations on $H^0(X,\Omega_X)$ will also allow us to understand groups acting on these codes, as we have already shown in \cite[\S 7]{faithfulaction}.
+An overview of the general topic is available in \cite{stichtenoth}.
+
+
+\section{Other activities}
+
+I have submitted a joint paper with my supervisor, Bernhard K\"{o}ck, to the Israel Journal of Mathematics \cite{faithfulaction}.
+
+I have also attended a number of conferences, and talked at ``Groups and Riemann Surfaces" in Universidad Aut\'{o}noma de Madrid. I am also going to be talking at the young researchers in mathematics conference in Edinburgh University and at characteristic $p$ methods in algebraic geometry at Imperial College.
+
+Since starting my PhD I have attended a broad range of MAGIC courses, namely number theory, algebraic geometry, category theory, modular forms, Lie algebras, commutative algebra and representation theory. I am also attending the current internal seminar series on K-theory.
+
+In the second year of my PhD I organised the postgraduate pure seminar series. I previously helped to organise undergraduate seminar series at Warwick and am currently organising a series of short half hour talks on interesting topics for the undergraduates at the University of Southampton. I have also attended, organised and talked at a number of reading groups since arriving at Southampton, including Lie algebras, scheme theory and homological algebra, and currently organising one on Chern classes. 
+
+I have undertaken a lot of teaching and marking, including number theory, calculus 1 and 2, linear algebra 1 and 2 and analysis. I also taught small groups of four students during the fourth year of my undergraduate at Warwick University, as well as private tutoring.
+
+
+
+
+
+
+
+
+
+%\bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
+\bibliography{/home/joe/files/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

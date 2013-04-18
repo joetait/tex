@@ -1,0 +1,210 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\cal L}}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+\DeclareMathOperator{\aut}{Aut}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Basis of $\Omega_C^1$}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+Let $C$ be a smooth, compact, connected hyperelliptic algebraic curve of genus $g$ over $\mathbb{C}$.
+Let $x:C\rightarrow \mathbb{P}^1$ be the corresponding holomorphic map of degree $2$.
+This curve then has a corresponding degree two extension $\mathbb C(x,y)$ of the rational function field in one variable over $\mathbb C$, $\mathbb C(x)$, where
+\[
+ y^2 = f(x)
+\]
+for some $f(x)\in \mathbb C[x]$.
+We require that $f(x)$ has no repeated roots, otherwise the curve would be singular.
+Also, the degree of $f(x)$ must be $2g+1$ or $2g+2$.
+In the first case then $\infty \in \mathbb P^1$ will be a branch point, where as in the second case it is not.
+However, by an automorphism of $\mathbb P^1$ we can assume that $\infty$ is not a branch point, and that the degree of $f(x)$ is $2g+2$.
+
+We now show some preliminary results about $x$. 
+Firstly, $x$ has precisely $2g + 2$ ramification points.
+This follows from computing the degree of the ramification divisor $R$ of $x$.
+By the Hurwitz formula 
+\[ 
+\deg(R) = 2g -2 +2\cdot 2 = 2g + 2.
+\]
+Since $x$ is of degree $2$, the coefficients of the ramification divisor are at most $1$, and hence $R = p_1 + \ldots + p_{2g+2}$, for distinct $p_i\in C$.
+We let $a_i = x(p_i)$.
+Since $\infty \notin \{a_1,\ldots ,a_{2g+2}\}$ then $(x)_{\infty} = p + q$ for some $p \neq q $ in $C$.
+We can define $j\in \aut(C)$ to be the map defined $q_1 \mapsto q_2$ for $q_1, q_2 \in x^{-1}(a)$. 
+Obviously this is the identity on the ramification points, and since $x$ is of degree $2$, $j^2$ is the identity map.
+We will now use this to show the existence of one more function, $y$, which is necessary to define the basis of $\Omega_C$.
+
+If we let $D$ be the divisor $(g+1)p + (g+1)q$ on $C$, then there exists a $y \in \cL(D)$ (unique up to a factor) such that $j^* (y) = -y$.
+To start, we have by the Riemann-Roch theorem that $l(D) = \dim\cL(D) = (2g+2)-g+1 = g+3$.
+So $\cL(D) \cong \mathbb{C}^{g+3}$.
+Since $x(p) = x(q) = \infty$ then $j^*$ defines a linear map $\cL(D) \rightarrow \cL(D)$.
+Since $j^{*2} = 1$, the eigenvalues must be $\pm 1$, and as such we can decompose $\cL(D)$ in two subspaces, $\cL(D)^+$ and $\cL(D)^-$, corresponding to the eigenspaces of eigenvalues $1$ and $-1$ respectively.
+Note that $\cL(D) = \cL(D)^+ \oplus \cL(D)^-$.
+
+If $f\in \cL(D)^+$ then this means that $j^*(f(q))=f(j(q))=f(q)$ for all $q \in C$.
+But $x$ maps $q$ and $j(q)$, and only these two points, to the same point in $\mathbb P^1$ for all $q\in C$.
+So any meromorphic function in $\cL(D)^+$ can be written as a composition of $x$ and a meromorphic function on $\mathbb P^1$, such that the composition only has poles at $p$ and $q$ (i.e. the meromorphic function on $\mathbb{P}^1$ only has poles at infinity.)
+The order of the pole at $p$ or $q$ cannot exceed $g+1$, hence $1,x,\ldots ,x^{g+1}$ forms a basis of $\cL(D)^+$.
+As this implies that $\dim\cL(D)^+ = g+2$, and as $\dim\cL(D) = g+3$, we see that $\dim\cL(D)^- = 1$, and so there is a non-trivial meromorphic function $y \in \cL(D)$ such that $j^*(y) = -y$.
+This is the $y$ we will use in the following proposition.\\
+
+
+\begin{prop}
+Let $C$, $x$ and $y$ be as above. Then $\omega_0 = \frac{dx}{y}, \omega_1 = \frac{xdx}{y}, \ldots , \omega_{g-1} = \frac{x^{g-1}dx}{y}$ form a basis of $\Omega_C^1$.
+\end{prop}
+\begin{proof}
+Clearly $\omega_0, \ldots , \omega_{g-1}$ are linearly independent.
+To show that they are indeed holomorphic differentials, we show that their divisors are greater than $0$, i.e. that $(\omega_{\alpha}) \geq 0$ for all $0\leq \alpha \leq g-1$.
+We first write the divisor as $\di (\omega_{\alpha}) = \di (x^\alpha) + \di (dx) - \di (y)$, and consider these separate components one at a time.
+
+First, let $D' = \di (x)_0 = p'+q'$, with $p',q' \in C$ (note that we could have $p' = q'$). 
+Then $\di (x^\alpha)_0  = \alpha D'$. 
+If we also let $D^* = p + q$, with $p$ and $q$ defined as above, then $\di (x^\alpha)_{\infty} = \alpha D^*$.
+So overall $\di (x^\alpha) = \alpha D' - \alpha D^*$.
+
+
+Now we compute the divisor of $dx$.
+Since $x$ can viewed as the projection of $C$ on to the projective line, or as a function on the projective line, we will use $\di_C (dx)$ and $\di_{\mathbb P^1} (dx)$ to differentiate these cases.
+We first recall that the Hurwitz formula tells us that
+\[
+ \di_C (dx) = \pi^*( \di_{\mathbb P^1}(dx)) + R.
+\]
+But we know that $\pi^* (\di_{\mathbb P^1}(dx)) = 2D^*$, and we have already computed the ramification divisor, so this is done.
+
+\begin{comment} We now look at the divisor $(dx)$. 
+Let $z_i$ be a local coordinate map for $p_i$, with $z_i(p_i) = 0$.
+Since the ramification index of $x$ at $a_i$ is $2$, then $x - a_i = z_i^2h_i(z_i)$, where $h_i$ is a holomorphic map which does not vanish in a neighbourhood of $0$.
+It follows that 
+\[
+ dx = \left(2z_ih_i(z_i) + z_i^2h_i'(z_i)\right) dz_i = z_i(2h_i(z_i) + z_ih_i'(z_i))dz_i.
+\]
+
+Evaluating at $p_i$ we see that $(2h_i(z_i) + z_ih_i'(z_i))|_{p_i} = 2h_i(0) \neq 0$, so $dx$ has a zero of order $1$ at each ramification point.
+
+Now if we take one of the preimages of infinity, say $p$, then let $z$ be a co-ordinate near $p$ such that $z(p)=0$.
+As $x$ has a pole of order $1$ at $p$ we have $u:=\frac{1}{x} = zh(z)$ for some holomorphic function $h$ such that $h(0)\neq 0$.
+So
+\[
+dx = -\frac{du}{u^2} = -\frac{(h(z) + zh'(z))}{z^2h(z)^2},
+\]
+and as both $(h(z) + zh(z))|_p \neq 0$ and $h(z)^2|_p \neq 0$, $p$ is an order $2$ pole of $dx$.
+We can run the exact same argument if we had chosen $q$ instead of $p$, so $q$ is also an order $2$ pole of $dx$.
+
+Finally, take some $p \notin \{p_1, \ldots, p_{2g+2},\infty\}$ and let $z$ be a local coordinate for $p$ with $z(p) = 0$.
+Then if $x(p) = a$ we can write $x - a = zh(z)$ for some holomorphic function $h$ which does not vanish in a neighbourhood of $p$.
+In that case $dx = h(z)$, and so the order of $dx$ at such a $p$ is zero.
+
+Combining all of this gives 
+\[
+ (dx) = \sum_{i=1}^{2g+2} [p_i] - 2D^*.
+\]
+\end{comment}
+
+Finally, we compute $(y)$.
+Firstly, since $y(p_i)= y(j(p_i)) = j^*(y)(p_i)= -y(p_i)$ for all $i$ we see that $y(p_i)=0$.
+Therefore $\deg(y)_0 \geq \deg\left(\sum_{i = 1}^{2g +2} [p_i] \right) = 2g+2$.
+But since $y\in \cL(D)$, we know that $\deg(y)_{\infty} \leq \deg((g+1)D) = 2g + 2$, and as $\deg(y) = \deg(y)_0 + \deg(y)_{\infty} = 0$ then $\deg(y)_0 = \deg(y)_{\infty} = 2g+2$.
+So
+\[
+ (y)_0 = \sum_{i=1}^{2g+2} [p_i], \ (y)_{\infty} = (g+1)D^*.
+\]
+
+
+Combining these we have 
+\begin{eqnarray*}
+ (\omega_{\alpha}) & = & ((\alpha )D' -(\alpha )D^*) + \left(\sum_{i=1}^{2g+2}[p_i] -2D^* \right) - \left(\sum_{i=1}^{2g+2} [p_i] - (g+1)D^* \right)\\
+& = & (\alpha )D' + (g-1-\alpha)D^*.
+\end{eqnarray*}
+For $0\leq \alpha \leq g-1$ then both the coefficients are non-negative, so $\omega_{\alpha}$ are all holomorphic differentials.
+\end{proof}
+
+
+
+
+% \bibliography{/home/jtait/Documents/Maths/Bibliography/biblio.bib}
+% \bibliographystyle{plain}
+
+\end{document}

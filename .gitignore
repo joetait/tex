@@ -1,8 +1,11 @@
+*~
 *.acn
 *.acr
 *.alg
 *.aux
+*.backup
 *.bbl
+*.bbl~
 *.blg
 *.dvi
 *.fdb_latexmk
@@ -22,11 +25,14 @@
 *.nav
 *.nlo
 *.out
+*.pdf
 *.pdfsync
 *.ps
 *.snm
+*.swp
 *.synctex.gz
 *.toc
 *.vrb
 *.xdy
 *.tdo
+*.u1conflict

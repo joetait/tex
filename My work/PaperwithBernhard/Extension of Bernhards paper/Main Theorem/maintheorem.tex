@@ -1,0 +1,117 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+
+\DeclareMathOperator{\ord}{ord}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Extension of ``Faithful Action on the space of Global Differentials of an Algebraic curve"}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+\begin{thm}
+Let $g_X\geq 2$ and $m\geq 2$. If $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ then $m=p=g_X=2$, $g_Y=0$ and $\pi$ is not tamely ramified.
+\end{thm}
+\begin{proof}
+To show that $g_Y=0$, we assume that $G$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$, so $\dim_kH^0(X,\Omega_X^{\otimes m})=\dim_k(H^0(X,\Omega_X^{\otimes m}))^G$. But $H^0(X,\Omega_X^{\otimes m})$ has dimension $(2m-1)(g_X-1)>1$, and which is the case if and only if we are in the last case of proposition 1; i.e.
+\begin{equation*}
+	(2m-1)(g_X-1)=(2m-1)(g_Y-1)+\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big).
+\end{equation*}
+The Hurwitz formula also says
+\begin{equation*}
+	2(g_X-1)=2n(g_Y-1)+\deg(R).
+\end{equation*}
+Combining the last two equations we see that
+\begin{eqnarray*}
+	2(2m-1)(g_Y-1)+2\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big) & = & 2(2m-1)(g_X-1)\\
+	& = & 2n(2m-1)(g_Y-1)+(2m-1)\deg(R)
+\end{eqnarray*}
+which can be rearranged as
+\begin{equation*}
+(2m-1)(2n-2)(g_Y-1)=2\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big)-(2m-1)\deg(R).
+\end{equation*}
+So if we can show that $2\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big)-(2m-1)\deg(R)<0$ then we will be done.
+
+To show this, first note that if we denote the coefficent of the ramification divisor for any $P\in \pi^{-1}(Q)$ by $n_Q$ and and let $e_Q:= e_P$ for any $P\in \pi^{-1}$, where $e_P$ is the ramification  at $P$, then
+\begin{eqnarray*}
+	2\deg\Big(\Big{\lfloor}\frac{m\pi_*(R)}{n}\Big{\rfloor}\Big)-(2m-1)\deg(R)&=&\sum_{Q\in Y}\Big(2\Big{\lfloor}m\cdot \frac{n}{e_Q}\cdot \frac{n_Q}{n}\Big{\rfloor}-(2m-1)\frac{n}{e_Q}\cdot n_Q\Big) \\
+	&\leq & \sum_{Q\in Y}\Big(2m\cdot\frac{n_Q}{e_Q}-(2m-1)n\cdot\frac{n_Q}{e_Q}\Big) \\
+	& = & (2m-n(2m-1))\sum_{Q\in Y}\frac{n_Q}{e_Q}.
+\end{eqnarray*}
+Now as $n,m\geq 2$ then we have $2m-n(2m-1)\leq 2m-2(2m-1)=2(1-m)<0$ and we are done.
+\end{proof}
+
+
+
+\bibliography{/home/jtait/Desktop/Work/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+\end{document}

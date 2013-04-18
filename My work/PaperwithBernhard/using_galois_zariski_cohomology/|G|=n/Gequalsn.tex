@@ -1,0 +1,202 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\theoremstyle{remark}\newtheorem*{rem}{Remark}
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\cal L}}
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Using ``Galois structure of Zariski cohomology''}
+\author{J Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+Let $X$ be a smooth connected projective algebraic curve over an algebraically closed field $k$ of charactersitic $p>0$.
+Suppose that $G$ is a cyclic group of prime order $n$ (coprime to $p$) which acts faithfully on $X$.
+We denote by $Y$ the quotient curve $X/G$, and by $\pi$ the canonical projection $X\rightarrow Y$.
+Then let $K_X$ and $K_Y$ denote the canonical divisors of $X$ and $Y$ respectively, and similarly let $g_X$ and $g_Y$ denote the genera of the curves.
+Moreover, we assume that $g_X\geq 2$ and that $g_Y = 0$.
+
+
+We wish to use \citep[Thm 4.5]{galoisstruc} to find when $G$ acts trivially on $H^0(X,\Omega^{\otimes m})$.
+In order to do this we will first need to introduce some notation.
+
+We first denote by $\chi_P$ the representation of the decomposition group $G_P$ on the cotangent space $\mathfrak{m}_P/\mathfrak{m}_P^2$.
+We also introduce the unique projective module $N_{G,X}$ satisfying
+\begin{equation*}
+ \bigoplus^n N_{G,X} = \bigoplus_{P\in X} \bigoplus_{d=1}^{e^t_p-1} \bigoplus^d {\rm Ind}_{G_P}^G(\chi_P^d),
+\end{equation*}
+
+where $e^t_p$ denotes the (tame) ramification index at a point $P\in X$, as in \citep[Thm 4.3]{galoisstruc}.
+
+Fix an integer $m\geq 2$. Now if we write $mK_X = \sum_{P\in X} n_P[P]$ then we can define $r_P\in \{0,\ldots, e^t_p - 1\}$ and $s_P\in \ZZ$ to be the unique values such that
+\[
+ n_P = r_P + s_Pe_P^t.
+\]
+
+Finally, if for any $Q\in Y$ we let $\bar Q \in X$ be an element of the fibre with respect to $\pi$, we can state \citep[Thm 4.5]{galoisstruc}, which says that we have the following equality in $K_0(k[G])$:
+\begin{equation}\label{eq}
+ \chi(G,X,\Omega^{\otimes m}) = -[N_{G,X}] +\sum_{Q\in Y}\sum^{r_{\bar Q}}_{d=1} [{\rm Ind}_{G_{\bar Q}}^G(\chi_{\bar Q}^d)]  + \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right) [k[G]],
+\end{equation}
+where for any $k[G]$ module $A$ then $[A]$ denotes that class of $A$ in $K_0[k[G]]$.
+
+We wish to find when the action of $G$ on $H^0(X,\Omega^{\otimes m})$ is trival.
+Note that $[H^0(X,\Omega^{\otimes m})]$ is in the same class as $\chi(G,X,\Omega^{\otimes m})$ in $K_0(k[G])$, since $mK_X$ is non-special under our assumptions.
+Hence the action will be trivial precisely when we have equality between the dimension and the fixed dimension.
+We will work out the dimension and fixed dimension of each of the components of the above sum seperately, before combining them to give a complete answer.
+
+
+Before we look at the first two parts, we recall from \citep[Rem. 4.30]{introtoreps} that for a representation $V$ of a group $G$ and a subgroup $H\subseteq G$ we have
+\[
+  \dim \rm{Ind}_H^G(V) = \dim(V)\cdot\frac{|G|}{|H|}.
+\]
+
+We let $U_k\subset X$ be the set of points in $X$ whose ramification degree is precisely $k$.
+Then for any $P\in U_k$ the order of $G_P$ is also $k$.
+Hence for $P\in U_k$ we have $\dim {\rm Ind}_{G_P}^G(\chi_P^d) = \frac{n}{k} \dim \chi_P^d = \frac{n}{k}$.
+
+
+
+Following this we can write 
+\begin{eqnarray*}
+ n \cdot \dim N_{G,X} & = & \sum_{k=1}^n \sum_{P\in U_k} \sum_{d=1}^{e^t_P -1} d\cdot \dim {\rm Ind}_{G_P}^G\chi_P^d \\
+ & = & \sum_{k=1}^n \sum_{P\in U_k} \sum_{d=1}^{k -1} d\cdot \frac{n}{k} \\
+ & = & \sum_{k=1}^n \sum_{P\in U_k} \frac{(k-1)\cdot n}{2}
+\end{eqnarray*}
+since the dimension of $\chi^d_P$ is $1$.
+Hence
+\[
+ \dim N_{G,X} = \sum_{k=1}^n \sum_{P\in U_k}  \frac{k-1}{2}.
+\]
+
+Now the fixed dimension of $\chi^d_P$ is precisely 0 for $d>0$, and hence we also have
+\[
+ n\cdot \dim N_{G,X}^G = \sum_{k=1}^n \sum_{P\in U_k} \sum_{d=1}^{k-1} 0 = 0.
+\]
+
+We now move on to the second term in the sum.
+Let $W_k=\pi (U_k)$.
+Then its dimension is
+\[
+ \dim \left(\sum_{k=1}^n \sum_{Q\in W_k} \sum_{d=1}^{r_{\bar Q}} \rm{Ind}_{G_{\bar Q}}^G (\chi_{\bar Q}^{-d})\right) = \sum_{k=1}^n \sum_{Q\in W_k} r_{\bar Q}\cdot \frac{n}{k}.
+\]
+Note that we can sum over all $Q\in Y$, since $r_{\bar Q}$ is zero for all but a finite number of points.
+
+
+On the other hand the fixed dimension is again zero.
+
+
+Finally, we now compute when 
+\[
+ \dim \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right) k[G] = n \cdot \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right).
+ \]
+On the other hand, the fixed dimension is
+\[
+\dim \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right) k[G]^G = 1 + \sum_{Q\in Y} s_{\bar Q}.
+\]
+
+By substituting all of these in to \ref{eq}, we find that the dimension of $H^0(X,\Omega_X^{\otimes m})$ is
+\[
+ -\sum_{k=1}^n \sum_{P\in U_k} \frac{k-1}{2} + \sum_{k=1}^n \sum_{Q\in W_k} r_{\bar Q} \frac{n}{k} + n\cdot \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right),
+\]
+whilst the dimension of the fixed subspace of $H^0(X,\Omega_X^{\otimes m})$ is just
+\[
+ 1 + \sum_{Q\in Y} s_{\bar Q}.
+\]
+
+ Hence the group acts trivially if and only if
+\[
+-\sum_{k=1}^n \sum_{P\in U_k} \frac{k-1}{2} + \sum_{k=1}^n \sum_{Q\in W_k} r_{\bar Q} \frac{n}{k} + (n-1)\cdot \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right),
+\]
+
+In order to compute this we first need to work out what $r_{\bar Q}$ and $s_{\bar Q}$ are.
+Denoting the ramification divisor of $\pi$ by $R$, recall that we can write $mK_X = m \pi^* K_Y + mR$.
+Since we are assuming that $g_Y=0$, we can write $K_Y=-2[Q']$ for some unramified point $Q'\in Y$.
+Also, we know that $R=\sum_{P\ {\rm ramified}} (e_P^t-1)[P]$.
+Clearly if $Q$ is not ramified and not $Q'$, then $r_{\bar Q}=s_{\bar Q}=0$.
+If $\bar Q \in \pi^{-1}(Q')$ then $-2m = r_{\bar Q} + s_{\bar Q}$.
+Finally, if $P$ is a ramified point then $m(e_P^t-1)=r_P + s_Pe^t_P$.
+
+
+
+\bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+\end{document}

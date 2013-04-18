@@ -1,0 +1,12 @@
+\begin{lem}
+If $\deg(D)=2g_X-1$ and $g_Y=0$ then the action of $G$ on $H^0(X,\mathscr{O}_X(D)$ is trivial if and only if $g_X=0$ or if $p=3$, $g_X=2$ and $p|n_i$ for all $i$.
+\end{lem}
+\begin{proof}
+If $g_X=0$ then $\deg(D)<0$ and so $\dim(H^0(X,\mathscr{O}_X(D)))=0$.
+
+If $g_X\geq1$ then we want to see when 
+	\[
+		(p-1)\deg(D)=(p-1)(2g_X-1)=pg_X-p\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>,
+	\]
+which can be re-arranged to $g_X(p-2)-p+1=-p\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>$. We then note that $g_X(p-2)+1>0$ and $-p\geq -p\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>$ unless $\sum_{i=1}^r\Big<\frac{n_i}{p}\Big>=0$, which in turn is equivelant to all the $n_i$ being divisible by $p$. Then we have $g_X(p-2)=p-1$, which is only solved for positive integers when $p=3$ and $g_X=2$. This completes the proof.
+\end{proof}
