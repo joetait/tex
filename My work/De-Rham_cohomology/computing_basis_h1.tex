@@ -1,0 +1,134 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[draft, 11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{mathtools}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\theoremstyle{plain}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{thm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{ex}[defn]{Example}
+\newtheorem*{unnumthm}{Theorem}
+\newtheorem{defnlem}[defn]{Definition/Lemma}
+\newtheorem{defnthm}[defn]{Theorem/Definition}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\mathcal L}}
+\newcommand{\cA}{{\mathcal A}}
+\newcommand{\cD}{{\mathcal D}}
+
+
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+\DeclareMathOperator{\Tr}{Tr}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{}
+\author{}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+
+We assume the the characteristic of our field is $p\geq 3$.
+We make the assumption that our hyperelliptic curve is ramified at both infinity and zero.
+This can be done by automorphism without loss of generality, and makes the initial compuations simpler.
+
+
+In the paper of Hortsch, we take the pairing $\langle y^{-1}x^idx, yx^{-j} \rangle = res(x^{i-j}dx)$.
+We consider the same pairing to start with.
+A condition taken directly from the same paper, we require a pole at $P_0$ (the point above 0), and a pole at any other point as well.
+We do indeed also have a pole at the point $P_\infty$ (the point above $\infty$).
+To demonstrate this:
+\begin{eqnarray}
+	\div(x^{i-j}dx) & = &  2(i-j)P_0  2(j-i)P_\infty + R - 2D_\infty \\
+	& = & (2i-2j+1)P_0 +(R-P_0-P_\infty) +(2j-2i-3)P_\infty.
+\end{eqnarray}
+
+Recall that since both $P_\infty$ and $P_0$ are ramification points then $R-P_0-P_\infty$ is positive.
+So we have a pole at both $P_0$ and $P_\infty$ if and only if $i=j+1$.
+
+Now we need to compute the residue of $x^{-1}dx$ at $P_\inf$.
+To start with we note that $t:= \frac{y}{x^{g+1}}$.
+We can compute the order of $t$ at $P_\infty$; the computation follows simply from the fact that $t^2 = \frac{f(x)}{x^{2g+2}}$.
+Then $\ord_{P_\infty}(t) = \frac{1}{2}\ord_{P_\infty}(f(x)) - \ord_{P_\infty}(x^{2g+2})$.
+
+
+\bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
+%\bibliography{/home/joe/files/Documents/Maths/Bibliography/biblio.bib}
+\bibliographystyle{plain}
+
+
+\end{document}
