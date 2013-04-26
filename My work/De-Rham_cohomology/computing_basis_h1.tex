@@ -113,18 +113,24 @@ A condition taken directly from the same paper, we require a pole at $P_0$ (the 
 We do indeed also have a pole at the point $P_\infty$ (the point above $\infty$).
 To demonstrate this:
 \begin{eqnarray}
-	\div(x^{i-j}dx) & = &  2(i-j)P_0  2(j-i)P_\infty + R - 2D_\infty \\
+	\di(x^{i-j}dx) & = &  2(i-j)P_0  2(j-i)P_\infty + R - 2D_\infty \\
 	& = & (2i-2j+1)P_0 +(R-P_0-P_\infty) +(2j-2i-3)P_\infty.
 \end{eqnarray}
 
 Recall that since both $P_\infty$ and $P_0$ are ramification points then $R-P_0-P_\infty$ is positive.
 So we have a pole at both $P_0$ and $P_\infty$ if and only if $i=j+1$.
 
-Now we need to compute the residue of $x^{-1}dx$ at $P_\inf$.
+Now we need to compute the residue of $x^{-1}dx$ at $P_\infty$.
 To start with we note that $t:= \frac{y}{x^{g+1}}$.
 We can compute the order of $t$ at $P_\infty$; the computation follows simply from the fact that $t^2 = \frac{f(x)}{x^{2g+2}}$.
 Then $\ord_{P_\infty}(t) = \frac{1}{2}\ord_{P_\infty}(f(x)) - \ord_{P_\infty}(x^{2g+2})$.
 
+We now write $dx$ in terms of $dt$.
+First, $dt^2 = f\cdot d\frac{1}{x^{2g+2}} + \frac{1}{x^{2g+2}} \cdot df$.
+Now $f\cdot d\frac{1}{x^{2g+2}} = f\cdot 2g+1 \cdot \frac{1}{x^{2g+3}} dx$ and $\frac{1}{x^{2g+2}} \cdot df = \frac{1}{2g+2}\cdot f' \cdot dx$.
+So in total $dt^2 = \left (2g+1 \cdot \frac{f}{x^{2g+3}} - \frac{f'}{x^{2g+2}} \right ) dx$.
+
+Finally, we have $\frac{1}{x}dx = \frac {2\cdot x^{2g+1}}{\left ( (2g+1)\cdot \frac{f}{x} - f' \right )} \cdot t dt$.
 
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
 %\bibliography{/home/joe/files/Documents/Maths/Bibliography/biblio.bib}
