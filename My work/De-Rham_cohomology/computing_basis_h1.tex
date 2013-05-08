@@ -109,14 +109,14 @@ This can be done by automorphism without loss of generality, and makes the initi
 We can also assume that the equation $y^2 = f(x)$ defines the affine part of the curve with \[
 f(x) = a_{2g+1}x^{2g+1} + a_{2g}x^{2g} +\ldots + a_0.
 \]
-By a third automorphism, if required, we may assume that $a_{2g} \neq =0$.
+By a third automorphism, if required, we may assume that $a_{2g} \neq 0$.
 
 
 In the paper of Hortsch, we take the pairing $\langle y^{-1}x^idx, yx^{-j} \rangle = \res(x^{i-j}dx)$.
 We consider the same pairing to start with.
 A condition taken directly from the same paper, we require a pole at $P_0$ (the point above 0), and a pole at any other point as well.
 We do indeed also have a pole at the point $P_\infty$ (the point above $\infty$).
-To demonstrate this:
+To demonstrate this we compute the divisor
 \begin{eqnarray}
 	\di(x^{i-j}dx) & = &  2(i-j)P_0  2(j-i)P_\infty + R - 2D_\infty \\
 	& = & (2i-2j+1)P_0 +(R-P_0-P_\infty) +(2j-2i-3)P_\infty.
@@ -124,28 +124,31 @@ To demonstrate this:
 
 Recall that since both $P_\infty$ and $P_0$ are ramification points then $R-P_0-P_\infty$ is positive.
 So we have a pole at both $P_0$ and $P_\infty$ if and only if $i=j+1$.
+{\bf Note - this assumes that the coefficient of $P_0$ and $P_\infty$ in $R$ is one - this can be done via an automorphism?}
 
 Now we need to compute the residue of $x^{-1}dx$ at $P_\infty$.
-To start with we note that $t:= \frac{y}{x^{g+1}}$.
+To start with we note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$.
 We can compute the order of $t$ at $P_\infty$; the computation follows simply from the fact that $t^2 = \frac{f(x)}{x^{2g+2}}$.
 Then $\ord_{P_\infty}(t) = \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}d_{P_\infty}(x^{2g+2}) = 1$.
 
-We now write $dx$ in terms of $dt$.
+We now write $\frac{1}{x}dx$ in terms of $dt$.
 First, $dt^2 = f\cdot d\frac{1}{x^{2g+2}} + \frac{1}{x^{2g+2}} \cdot df$.
-Now $f\cdot d\frac{1}{x^{2g+2}} = f\cdot 2g+1 \cdot \frac{1}{x^{2g+3}} dx$ and $\frac{1}{x^{2g+2}} \cdot df = \frac{1}{2g+2}\cdot f' \cdot dx$.
+Now $f\cdot d\frac{1}{x^{2g+2}} = f\cdot (2g+1 ) \cdot \frac{1}{x^{2g+3}} dx$ and $\frac{1}{x^{2g+2}} \cdot df = \frac{1}{2g+2}\cdot f' \cdot dx$.
 So in total $dt^2 = \left (2g+1 \cdot \frac{f}{x^{2g+3}} - \frac{f'}{x^{2g+2}} \right ) dx$.
 
 Finally, we have $\frac{1}{x}dx = \frac {2\cdot x^{2g+1}}{\left ( (2g+1)\cdot \frac{f}{x} - f' \right )} \cdot t dt$.
 
 Let $h(x) = (2g+1)\cdot \frac{f}{x} - f'$.
-Note that $\deg(h(x)) \leq 2g-1$.
-Hence $\ord_{P_\infty}\left ( \frac{2\cdot x^{2g+1}}{h(x)} \right ) \leq -2(2g+1) + 2(2g-1) = -4$.
+Note that $\deg(h(x)) = 2g-1$ since we assumed that $a_{2g}\neq 0$.
+Hence $\ord_{P_\infty}\left ( \frac{2\cdot x^{2g+1}}{h(x)} \right ) = -2(2g+1) + 2(2g-1) = -4$.
 We want to compute the coefficent of $t^{-2}$ in the laurent series of this.
+This is because the residue of $\frac{1}{x}dx$ is the coefficient of $t^{-1}$ in $\frac{2x^{2g+1}}{h(x)}\cdot t$, whihc is coefficient of $t^{-2}$ in $\frac{2x^{2g+1}}{h(x)}$.
 
 
 Note that 
 \begin{eqnarray}
-h(x) & = & \left( \frac{a_{2g}(2g+1)x^{2g-1}}{x^{2g+1}} - \frac{2g\cdot a_{2g}\cdot x^{2g-1}}{x^{2g+1}} \right) + \left(\frac{a_{2g-1}\cdot(2g+1)\cdot x^{2g-2}}{x^{2g+1}} - \frac{(2g-1)\cdot a_{2g-1} \cdot x^{2g-2}}{x^{2g+1}} \right) + \ldots \\
+h(x) & = & \left( \frac{a_{2g}(2g+1)x^{2g-1}}{x^{2g+1}} - \frac{2g\cdot a_{2g}\cdot x^{2g-1}}{x^{2g+1}} \right) \\
+& ~ & + \left(\frac{a_{2g-1}\cdot(2g+1)\cdot x^{2g-2}}{x^{2g+1}} - \frac{(2g-1)\cdot a_{2g-1} \cdot x^{2g-2}}{x^{2g+1}} \right) + \ldots \\
 & = & \frac{a_{2g}}{x^2} + \frac{2\cdot a_{2g-1}}{x^3} + \ldots
 \end{eqnarray}
 
@@ -166,12 +169,20 @@ So $c_6$ must satisfy
 \frac{2a_{2g-1}}{x^3} = \frac{c_4\cdot 2 \cdot a_{2g} \cdot a_{2g+1}}{x^3} + \frac{c_6 \cdot a_{2g+1}^3}{x^3}.
 \]
 
-Hence we can easily derive $c_6 = \frac{2\cdot a_{2g-1} \cdot a_{2g+1} - 2a_{2g}^2}{a_{2g+1}^4}$.
+Hence we can easily derive $c_6 = \frac{2\cdot a_{2g-1} \cdot a_{2g+1} - 2a_{2g}^2}{a_{2g+1}^4}$, from equations $(7)$ and $(4)$ above.
 
 Then, since $c_6d_{-4} + c_4d_{-2} = 0$ we have that $d_{-2} = -\frac{c_6d_{-4}}{c_4} = -\frac{c_6}{c_4}$.
 
-So if we write $\frac{1}{h}  = \sum_{i\geq -4} d_it^i$, then we have $\sum c_it^i \cdot \sum d_it^i = 1$.
-Since the residue is $2d_{-2}$ (recall that $\frac{1}{x}dx = \frac{2}{h}\cdot t dt$, thus increasing the index by 1) we only need to compute enough to discover that term.
+We then suppose that $\frac{1}{h}  = \sum_{i\geq -4} d_it^i$, and then we have $\sum c_it^i \cdot \sum d_it^i = 1$.
+As described earlier we want to compute $d_{-2}$.
+Expanding the product of the sums we see
+\[
+1 = c_4\cdot d_{-4} + (c_6\cdot d_{-4} + c_4\cdot d_{-2})t^2 + \ldots
+\]
+So $c_4 \cdot d_{-4} = 1$ and hence $d_{-4} = \frac{1}{c_4}$.
+
+
+
 So  we have 
 \[
 d_{-2} = \frac{a_{2g+1}^4}{a_{2g}^2} \cdot \left( \frac{2a_{2g-1}a_{2g+1} - 2a_{2g}^2}{a_{2g+1}^4} \right) = \frac{2a_{2g-1}a_{2g+1} - 2a_{2g}^2}{a_{2g}^2}.
@@ -183,12 +194,7 @@ But if we write the roots of $f(x)$ as $\alpha_i \in k$ with $1\leq i \leq 2g+1$
 {\bf If this sum is zero, then by an automorphism of the curve we can change one of the roots by a small value, and hence make it non-zero.}
 
 
-\[
-1 = c_4\cdot d_{-4} + (c_6\cdot d_{-4} + c_4\cdot d_{-2})t^2 + \ldots
-\]
-So $c_4 \cdot d_{-4} = 1$ and hence $d_{-4} = \frac{1}{c_4}$.
-
-
+\begin{comment}
 Try using a different uniformising parameter.
 Let $t=\frac{y}{x^{g+1}+x}$.
 Then 
@@ -207,6 +213,7 @@ In particular
 \frac{1}{x}dx  = 
 \]
 Note - if the lead terms of the demoninator (i.e. $h(x)$) do not cancel then the residue should be easy to compute.
+\end{comment}
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
 %\bibliography{/home/joe/files/Documents/Maths/Bibliography/biblio.bib}
 \bibliographystyle{plain}
