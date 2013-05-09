@@ -103,19 +103,22 @@
 \maketitle
 
 
-We assume the the characteristic of our field is $p\geq 3$.
-We make the assumption that our hyperelliptic curve is ramified at both infinity and zero.
-This can be done by automorphism without loss of generality, and makes the initial compuations simpler.
-We can also assume that the equation $y^2 = f(x)$ defines the affine part of the curve with \[
-f(x) = a_{2g+1}x^{2g+1} + a_{2g}x^{2g} +\ldots + a_0.
+Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g$ over an algebraically closed field $k$ of characteristic unequal to 2.
+Let $x:X\rightarrow \mathbb P_k^1$ be the corresponding holomorphic map of degree two.
+There is then a corresponding field extension of $k(x)$ by $y$, where $y$ is defined by
+\[
+y^2 = f(x),
 \]
-By a third automorphism, if required, we may assume that $a_{2g} \neq 0$.
+for some $f(x)\in k[x]$.
+By an automorphism of $X$ we may assume that $0$ and $\infty$ are branch points.
+We let $P_0$ and $P_\infty$ be the unique points in $x^{-1}(0)$ and $x^{-1}(\infty)$ respectively.
+We may also assume that $f(x) = x^{2g+1} + a_{2g}x^{2g} + \ldots + a_0$ for some $a_i \in k$.
+If $a_{2g}=0$ we can use a third automorphism to adjust the roots, and hence we may assume that $a_{2g} \neq 0$.
 
 
 In the paper of Hortsch, we take the pairing $\langle y^{-1}x^idx, yx^{-j} \rangle = \res(x^{i-j}dx)$.
 We consider the same pairing to start with.
-A condition taken directly from the same paper, we require a pole at $P_0$ (the point above 0), and a pole at any other point as well.
-We do indeed also have a pole at the point $P_\infty$ (the point above $\infty$).
+In order to compute the residue we require there to be a pole at $P_0$ and $P_\infty$. 
 To demonstrate this we compute the divisor
 \begin{eqnarray}
 	\di(x^{i-j}dx) & = &  2(i-j)P_0  2(j-i)P_\infty + R - 2D_\infty \\
@@ -124,17 +127,30 @@ To demonstrate this we compute the divisor
 
 Recall that since both $P_\infty$ and $P_0$ are ramification points then $R-P_0-P_\infty$ is positive.
 So we have a pole at both $P_0$ and $P_\infty$ if and only if $i=j+1$.
-{\bf Note - this assumes that the coefficient of $P_0$ and $P_\infty$ in $R$ is one - this can be done via an automorphism?}
+So we will be considering the differential $\frac{1}{x}dx$.
+{\bf Note - this assumes that the coefficient of $P_0$ and $P_\infty$ in $R$ is one - this may be done via an automorphism?}
 
 Now we need to compute the residue of $x^{-1}dx$ at $P_\infty$.
 To start with we note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$.
 We can compute the order of $t$ at $P_\infty$; the computation follows simply from the fact that $t^2 = \frac{f(x)}{x^{2g+2}}$.
-Then $\ord_{P_\infty}(t) = \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}d_{P_\infty}(x^{2g+2}) = 1$.
+Then 
+\[
+ord_{P_\infty}(t) = \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}d_{P_\infty}(x^{2g+2}) = -(2g+1) + (2g+2) = 1.
+\]
 
 We now write $\frac{1}{x}dx$ in terms of $dt$.
-First, $dt^2 = f\cdot d\frac{1}{x^{2g+2}} + \frac{1}{x^{2g+2}} \cdot df$.
-Now $f\cdot d\frac{1}{x^{2g+2}} = f\cdot (2g+1 ) \cdot \frac{1}{x^{2g+3}} dx$ and $\frac{1}{x^{2g+2}} \cdot df = \frac{1}{2g+2}\cdot f' \cdot dx$.
-So in total $dt^2 = \left (2g+1 \cdot \frac{f}{x^{2g+3}} - \frac{f'}{x^{2g+2}} \right ) dx$.
+First, 
+\[
+dt^2 = f\cdot d\frac{1}{x^{2g+2}} + \frac{1}{x^{2g+2}} \cdot df.
+\]
+Now 
+\[
+f\cdot d\frac{1}{x^{2g+2}} = f\cdot \frac{2g+1}{x^{2g+3}} dx \ {\rm and}\ \frac{1}{x^{2g+2}} \cdot df = \frac{1}{x^{2g+2}}\cdot f' \cdot dx.
+\]
+So in total 
+\[
+dt^2 = \left (\frac{(2g+1)\cdot f}{x^{2g+3}} - \frac{f'}{x^{2g+2}} \right ) dx.
+\]
 
 Finally, we have $\frac{1}{x}dx = \frac {2\cdot x^{2g+1}}{\left ( (2g+1)\cdot \frac{f}{x} - f' \right )} \cdot t dt$.
 
@@ -142,20 +158,20 @@ Let $h(x) = (2g+1)\cdot \frac{f}{x} - f'$.
 Note that $\deg(h(x)) = 2g-1$ since we assumed that $a_{2g}\neq 0$.
 Hence $\ord_{P_\infty}\left ( \frac{2\cdot x^{2g+1}}{h(x)} \right ) = -2(2g+1) + 2(2g-1) = -4$.
 We want to compute the coefficent of $t^{-2}$ in the laurent series of this.
-This is because the residue of $\frac{1}{x}dx$ is the coefficient of $t^{-1}$ in $\frac{2x^{2g+1}}{h(x)}\cdot t$, whihc is coefficient of $t^{-2}$ in $\frac{2x^{2g+1}}{h(x)}$.
+This is because the residue of $\frac{1}{x}dx$ is the coefficient of $t^{-1}$ in $\frac{2x^{2g+1}}{h(x)}\cdot t$, which is the coefficient of $t^{-2}$ in $\frac{2x^{2g+1}}{h(x)}$.
 
 
 Note that 
-\begin{eqnarray}
-h(x) & = & \left( \frac{a_{2g}(2g+1)x^{2g-1}}{x^{2g+1}} - \frac{2g\cdot a_{2g}\cdot x^{2g-1}}{x^{2g+1}} \right) \\
-& ~ & + \left(\frac{a_{2g-1}\cdot(2g+1)\cdot x^{2g-2}}{x^{2g+1}} - \frac{(2g-1)\cdot a_{2g-1} \cdot x^{2g-2}}{x^{2g+1}} \right) + \ldots \\
+\begin{eqnarray}\label{h(x)}
+h(x) & = & \left( \frac{a_{2g}(2g+1)x^{2g-1}}{x^{2g+1}} - \frac{2g\cdot a_{2g}\cdot x^{2g-1}}{x^{2g+1}} \right) \nonumber \\
+& ~ & + \left(\frac{a_{2g-1}\cdot(2g+1)\cdot x^{2g-2}}{x^{2g+1}} - \frac{(2g-1)\cdot a_{2g-1} \cdot x^{2g-2}}{x^{2g+1}} \right) + \ldots \nonumber \\
 & = & \frac{a_{2g}}{x^2} + \frac{2\cdot a_{2g-1}}{x^3} + \ldots
 \end{eqnarray}
 
 Also note that 
-\begin{eqnarray}
-t^4 & = & \frac{f(x)^2}{x^{4g+4}} \\
-& = & \frac{a_{2g+1}^2 x^{4g+2}}{x^{4g+4}} + \frac{2\cdot a_{2g}\cdot a_{2g+1} \cdot x^{4g+1}}{x^{4g+4}} + \ldots \\
+\begin{eqnarray}\label{t^4}
+t^4 & = & \frac{f(x)^2}{x^{4g+4}} \nonumber \\
+& = & \frac{a_{2g+1}^2 x^{4g+2}}{x^{4g+4}} + \frac{2\cdot a_{2g}\cdot a_{2g+1} \cdot x^{4g+1}}{x^{4g+4}} + \ldots \nonumber \\
 & = & \frac{a_{2g+1}^2}{x^2} + \frac{2\cdot a_{2g} \cdot a_{2g+1}}{x^3} + \ldots
 \end{eqnarray}
 
@@ -166,12 +182,12 @@ We now compute the $c_6$ coefficient in the sum.
 We know that the lead term of $t^6 = \frac{f(x)^3}{x^{6g+6}}$ is $\frac{2a_{2g}^2}{a_{2g+1}x^3}$.
 So $c_6$ must satisfy
 \[
-\frac{2a_{2g-1}}{x^3} = \frac{c_4\cdot 2 \cdot a_{2g} \cdot a_{2g+1}}{x^3} + \frac{c_6 \cdot a_{2g+1}^3}{x^3}.
+\frac{2a_{2g-1}}{x^3} = \frac{c_4\cdot 2 \cdot a_{2g} \cdot a_{2g+1}}{x^3} + \frac{c_6 \cdot a_{2g+1}^3}{x^3},
 \]
+from \eqref{h(x)} and \eqref{t^4}.
 
-Hence we can easily derive $c_6 = \frac{2\cdot a_{2g-1} \cdot a_{2g+1} - 2a_{2g}^2}{a_{2g+1}^4}$, from equations $(7)$ and $(4)$ above.
+Hence we can easily derive $c_6 = \frac{2\cdot a_{2g-1} \cdot a_{2g+1} - 2a_{2g}^2}{a_{2g+1}^4}$.
 
-Then, since $c_6d_{-4} + c_4d_{-2} = 0$ we have that $d_{-2} = -\frac{c_6d_{-4}}{c_4} = -\frac{c_6}{c_4}$.
 
 We then suppose that $\frac{1}{h}  = \sum_{i\geq -4} d_it^i$, and then we have $\sum c_it^i \cdot \sum d_it^i = 1$.
 As described earlier we want to compute $d_{-2}$.
@@ -183,7 +199,8 @@ So $c_4 \cdot d_{-4} = 1$ and hence $d_{-4} = \frac{1}{c_4}$.
 
 
 
-So  we have 
+Then we also have $c_6d_{-4} + c_4d_{-2} = 0$ and hence $d_{-2} = -\frac{c_6d_{-4}}{c_4} = -\frac{c_6}{c_4}$.
+So in total  
 \[
 d_{-2} = \frac{a_{2g+1}^4}{a_{2g}^2} \cdot \left( \frac{2a_{2g-1}a_{2g+1} - 2a_{2g}^2}{a_{2g+1}^4} \right) = \frac{2a_{2g-1}a_{2g+1} - 2a_{2g}^2}{a_{2g}^2}.
 \]
