@@ -112,7 +112,7 @@ y^2 = f(x),
 for some $f(x)\in k[x]$.
 By an automorphism of $X$ we may assume that $0$ and $\infty$ are branch points.
 We let $P_0$ and $P_\infty$ be the unique points in $x^{-1}(0)$ and $x^{-1}(\infty)$ respectively.
-We may also assume that $f(x) = x^{2g+1} + a_{2g}x^{2g} + \ldots + a_0$ for some $a_i \in k$.
+We may also assume that $f(x) = a_{2g+1}x^{2g+1} + a_{2g}x^{2g} + \ldots + a_0$ for some $a_i \in k$.
 If $a_{2g}=0$ we can use a third automorphism to adjust the roots, and hence we may assume that $a_{2g} \neq 0$.
 
 
@@ -125,15 +125,14 @@ To demonstrate this we compute the divisor
 	& = & (2i-2j+1)P_0 +(R-P_0-P_\infty) +(2j-2i-3)P_\infty.
 \end{eqnarray}
 
-Recall that since both $P_\infty$ and $P_0$ are ramification points then $R-P_0-P_\infty$ is positive.
-So we have a pole at both $P_0$ and $P_\infty$ if and only if $i=j+1$.
+Recall that since both $P_\infty$ and $P_0$ are ramification points it follows that $R-P_0-P_\infty$ is positive.
+Hence we have a pole at both $P_0$ and $P_\infty$ if and only if $i=j+1$.
 So we will be considering the differential $\frac{1}{x}dx$.
 {\bf Note - this assumes that the coefficient of $P_0$ and $P_\infty$ in $R$ is one - this may be done via an automorphism?}
 
 Now we need to compute the residue of $x^{-1}dx$ at $P_\infty$.
 To start with we note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$.
-We can compute the order of $t$ at $P_\infty$; the computation follows simply from the fact that $t^2 = \frac{f(x)}{x^{2g+2}}$.
-Then 
+We can compute the order of $t$ at $P_\infty$; the computation follows simply from the fact that $t^2 = \frac{f(x)}{x^{2g+2}}$, which gives
 \[
 ord_{P_\infty}(t) = \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}d_{P_\infty}(x^{2g+2}) = -(2g+1) + (2g+2) = 1.
 \]
@@ -177,7 +176,7 @@ t^4 & = & \frac{f(x)^2}{x^{4g+4}} \nonumber \\
 
 So if we write $h(x) = \sum_{i\geq 4} c_i t^i$ then we must have $c_4 = \frac{a_{2g}}{a_{2g+1}^2}$ in order that the coefficients of $\frac{1}{x^2}$ are equal.
 
-We now compute the $c_6$ coefficient in the sum.
+We now compute the $c_6$ expansions of $h(x)$.
 
 We know that the lead term of $t^6 = \frac{f(x)^3}{x^{6g+6}}$ is $\frac{2a_{2g}^2}{a_{2g+1}x^3}$.
 So $c_6$ must satisfy
@@ -208,7 +207,12 @@ d_{-2} = \frac{a_{2g+1}^4}{a_{2g}^2} \cdot \left( \frac{2a_{2g-1}a_{2g+1} - 2a_{
 Now we can assume that $a_{2g+1} = 1$, since this will not affect the curve.
 This reduces the task of showing that the residue is non-zero to showing that $a_{2g-1} -a_{2g}^2 \neq 0$.
 But if we write the roots of $f(x)$ as $\alpha_i \in k$ with $1\leq i \leq 2g+1$ then we can see that $a_{2g-1} -a_{2g}^2 = \sum_{i=1}^{2g+1}\alpha_i^2$.
-{\bf If this sum is zero, then by an automorphism of the curve we can change one of the roots by a small value, and hence make it non-zero.}
+ 
+{\bf If this sum is zero, then by an automorphism of the curve we can change one of the roots by a small value, and hence make it non-zero. 
+Indeed, we can fix all but one root, say $\alpha_1$. Then there is only one value of $\alpha_1$ such that $a_{2g}=0$, and there are only two values of $\alpha_1$ such that $\sum_{i=1}^{2g+1}\alpha_i^2 = 0$. Since $k$ is infinite we can certainly ensure that our automorphism of $X$ sends $\alpha_1$ to an element of $k$ distinct from these three values.
+
+Note that this relies on 0 and $\infty$ not being the only roots, but this only occurs if the defining equation is $y^2 = x^{2g+1}$, which can be considered seperately if needed.}
+
 
 
 \begin{comment}
