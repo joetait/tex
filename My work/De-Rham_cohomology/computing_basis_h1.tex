@@ -229,7 +229,26 @@ First note that $\ord_{P_\infty}(yx^{-i})= \ord_{P_\infty}(y) + \ord_{P_\infty}(
 Hence if we let $t$ be a uniformising parameter at $P_\infty$ then $yx^{-i} = ct^{-2g-1+2i} + {\rm \ higher \ order \ terms \ }$, and since $dt^{-2g-1+2i} = (2i-(2g+1)) t^{-2g-2+2i}dt$ it follows that $\ord_{P_\infty}(dyx^{-i}) = 2i-2g-2$.
 
 
+Obviously $dyx^{-i} = x^{-i}dy + ydx^{-i}$.
+Now $y$ is a uniformising parameter at $P_0$, so $\ord_{P_0}(x^{-i}dy) = -2i$.
+Also, since $ydx^{-i} = \frac{y}{x^{i-1}}tdt$ for some uniformising parameter $t$ at $P_\infty$, we have $\ord_{P_\infty}(ydx^{-i}) = 2i-2g-2$.
+So if we let $\omega_1 = x^{-i}dy$ and $\omega_2 = ydx^{-i}$ then we have two differentials with the desired orders at $P_0$ and $P_\infty$ respectively, and whose sum is equal to $f= yx^{-i}$.
+However, they are not regular on the rest of the space.
+The order at $P_\infty$ of $dy$ is $-2g$, so the order of $\omega_1$ is $2i-2g$ at $P_\infty$.
+We can see that the order of $dy$ at $P_\infty$ is $-2g$, since
+\[
+2ydy = dy^2 = df = f'dx = f'x^2d\frac{1}{x} = 2f'x^2tdt
+\]
+for some uniformising parameter.
+Then $\ord_{P_\infty}(dy) = \ord_{P_\infty}(\frac{2f'x^2t}{y}dt = -4g - 2 +1 +2g+1 = -2g$.
+The order at $P_0$ of $ydx^{-i}$ is $-2i$.
 
+
+So we need a function $h$ such that either 
+\begin{itemize}
+ 	\item $h$ has a zero of order $2g$ at $P_0$ and $h-1$ has a zero of order $2g$ at $P_\infty$ {\bf OR}
+	\item $h$ has a zero of order $2g$ at $P_\infty$ and $h-1$ has a zero of order $2g$ at $P_0$.
+\end{itemize}
 
 
 
