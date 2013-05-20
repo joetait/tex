@@ -1,0 +1,46 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+%% ModernCV themes
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\renewcommand{\familydefault}{\sfdefault}
+\nopagenumbers{}
+
+%% Character encoding
+\usepackage[utf8]{inputenc}
+
+%% Adjust the page margins
+\usepackage[scale=0.75]{geometry}
+
+%% Personal data
+\firstname{Joseph}
+\familyname{Tait}
+%\title{Resumé title (optional)}
+\address{Flat 2B Riverview, Spear Road, Southampton }{SO14 6UF}
+\mobile{07809770837}
+%\phone{+2~(345)~678~901}
+%\fax{+3~(456)~789~012}
+\email{joe.tait@southampton.ac.uk}
+\homepage{www.soton.ac.uk/\~jjt1e10}
+%\extrainfo{additional information}
+%\photo[64pt][0.4pt]{picture}
+%\quote{Some quote (optional)}
+
+%%------------------------------------------------------------------------------
+%% Content
+%%------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+
+\section{Education}
+\cventry{2006--2010}{MMath}{The University of Warwick}{Coventry}{ \textit{First class} }{}  % arguments 3 to 6 can be left empty
+\cventry{2010--Present}{PhD}{The University of Southampton}{Southampton}{ \textit{} }{}
+%\cvitem{title}{ \emph{Title} }
+\cvitemwithcomment{Master's Thesis}{Title: Algebraic K-Theory\newline Supervisor: John Jones}{The thesis closely followed Rosenberg's Algebraic K-theory, in particular focussing on $K_0$, $K_1$ and $K_2$ and the long exact sequence which they fit in to}
+\cvdoubleitem{category X}{XXX, YYY, ZZZ}{category Y}{XXX, YYY, ZZZ}
+\cvlistitem{Item 1}
+\cvlistdoubleitem{Item 2}{Item 3}
+%% ...
+
+\bibliography{publications}
+\end{document}
