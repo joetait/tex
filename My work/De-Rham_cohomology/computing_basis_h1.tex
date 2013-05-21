@@ -253,13 +253,13 @@ So we need a function $h$ such that either
 
 There is also the issue of potential other poles and zeroes of each differential.
 We first consider $x^{-i}dy$.
-Now $ dy = \frac{f'}{y}dx$, so \[\di (dy) = \di(f') - \di (y) + \di (dx) = \di(f') - (R - (2g+2)[P_\infty]) + (R - 4[P_\infty]) = \di(f') +(2g-2)[P_\infty]. \]
+Now $ dy = \frac{f'}{y}dx$, so \begin{eqnarray*} \di (dy) & = & \di(f') - \di (y) + \di (dx) \\ & = & \di(f') - (R - (2g+2)[P_\infty]) + (R - 4[P_\infty])\\  & = & \di(f') +(2g-2)[P_\infty].\end{eqnarray*}
 Note that we use the Hurwitz formula to compute the divisor of $dx$.
-So \[ di(x^{-i}dy) = \di(f') -2i[P_0] + (2i +2g-2)P_{\infty}. \]
+So \[ \di(x^{-i}dy) = \di(f') -2i[P_0] + (2i +2g-2)P_{\infty}. \]
 
 We now consider $ydx^{-i}$.
 Firstly, \[ y dx^{-i} = y\cdot \frac{i}{x^{i-1}}d\frac{1}{x} = y \cdot \frac{i}{x^{i+1}} dx.\]
-Hence \[\di (ydx^{-i}) = (R - (2g+2)[P_\infty]) -(2(i+1)[P_0] - 2(i+1)[P_\infty]) + (R - 4[P_\infty]) = 2R - 2(i+1)[P_0] + 2(i-g-2)[P_\infty] .\]
+Hence \begin{eqnarray*} \di (ydx^{-i}) & = & (R - (2g+2)[P_\infty]) -(2(i+1)[P_0] - 2(i+1)[P_\infty]) + (R - 4[P_\infty]) \\ & = &  2R - 2(i+1)[P_0] + 2(i-g-2)[P_\infty] \\ & = & 2\left ( \sum_{\text{Ramified } P\neq P_0, P_\infty}[P]\right) - 2i[P_0] +2(i-g-1)P_\infty .\end{eqnarray*}
 
 
 
