@@ -255,11 +255,33 @@ There is also the issue of potential other poles and zeroes of each differential
 We first consider $x^{-i}dy$.
 Now $ dy = \frac{f'}{y}dx$, so \begin{eqnarray*} \di (dy) & = & \di(f') - \di (y) + \di (dx) \\ & = & \di(f') - (R - (2g+2)[P_\infty]) + (R - 4[P_\infty])\\  & = & \di(f') +(2g-2)[P_\infty].\end{eqnarray*}
 Note that we use the Hurwitz formula to compute the divisor of $dx$.
-So \[ \di(x^{-i}dy) = \di(f') -2i[P_0] + (2i +2g-2)P_{\infty}. \]
+So \begin{eqnarray} \di(x^{-i}dy) & = &  \di(f') -2i[P_0] + (2i +2g-2)P_{\infty} \\ & = & \di_0(f') - 2i[P_0] + (2i-2)[P_\infty]. \end{eqnarray}
 
 We now consider $ydx^{-i}$.
 Firstly, \[ y dx^{-i} = y\cdot \frac{i}{x^{i-1}}d\frac{1}{x} = y \cdot \frac{i}{x^{i+1}} dx.\]
 Hence \begin{eqnarray*} \di (ydx^{-i}) & = & (R - (2g+2)[P_\infty]) -(2(i+1)[P_0] - 2(i+1)[P_\infty]) + (R - 4[P_\infty]) \\ & = &  2R - 2(i+1)[P_0] + 2(i-g-2)[P_\infty] \\ & = & 2\left ( \sum_{\text{Ramified } P\neq P_0, P_\infty}[P]\right) - 2i[P_0] +2(i-g-1)P_\infty .\end{eqnarray*}
+
+
+We also compute the divisor of $dyx^{-i}$.
+To start with, note that 
+\begin{eqnarray}
+2yx^{-i} & = & d(yx^{-i})^2 \\
+& = & dfx^{-2i} \\
+& = & fdx^{-2i} + x{-2i}df \\
+& = & -f\cdot\frac{2i}{x^{2i+1}}dx + \frac{f'}{x^{2i}}dx \\
+& = & \frac{1}{x^{2i}}\left( f' - 2i\frac{f}{x}\right) dx 
+\end{eqnarray}
+
+Hence it follows that 
+\begin{equation*}
+dyx^{-i} = \frac{1}{2yx^{i}}\left( f' - \frac{2if}{x} \right) dx
+\end{equation*}
+and so
+\[
+\di (dxy^{-i}) = \di_0(h) -2i[P_0] +2(i-g-1)[P_\infty],
+\]
+where $h = \left ( f'-\frac{2if}{x} \right )$.
+We use $h$ as we will not in general know what its zeroes are, though we do know that $\di_0(h)$ is a positive divisor of degree $2g$ (note that it cannot have a zero at a ramification point, since $f$ and $f'$ have distinct roots).
 
 
 
