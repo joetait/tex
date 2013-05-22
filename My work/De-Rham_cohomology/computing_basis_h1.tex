@@ -283,6 +283,17 @@ and so
 where $h = \left ( f'-\frac{2if}{x} \right )$.
 We use $h$ as we will not in general know what its zeroes are, though we do know that $\di_0(h)$ is a positive divisor of degree $2g$ (note that it cannot have a zero at a ramification point, since $f$ and $f'$ have distinct roots).
 
+We could try writing $dyx^{-i}$ as $\frac{1}{2yx^i}dx - (1-h)\frac{1}{2yx^i}dx$.
+We then  have 
+\[
+\di \left( \frac{1}{2yx^i}dx\right) = -\di(y) - \di(x^i) + \di(dx) = (2g+2i-2)[P_\infty] - 2i[P_0]
+\]
+which has the correct pole at $P_0$ and is otherwise regular.
+
+On the other hand we have
+\[
+\di\left((1-h)\frac{1}{2yx^i}\right ) dx = \di_0(1-h) -4g[P_\infty] +2(g+i-1)[P_\infty]-2i[P_0] = \di_0(1-h) +2(i-g-1)[P_\infty] - 2i[P_0]
+\]
 
 
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
