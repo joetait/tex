@@ -20,6 +20,7 @@
 %   read geometry.pdf for detailed page layout information
 
 \usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{todonotes}
 
 \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
@@ -292,8 +293,30 @@ which has the correct pole at $P_0$ and is otherwise regular.
 
 On the other hand we have
 \[
-\di\left((1-h)\frac{1}{2yx^i}\right ) dx = \di_0(1-h) -4g[P_\infty] +2(g+i-1)[P_\infty]-2i[P_0] = \di_0(1-h) +2(i-g-1)[P_\infty] - 2i[P_0]
+\di\left((1-h)\frac{1}{2yx^i}\right ) dx = \di_0(1-h) -4g[P_\infty] +2(g+i-1)[P_\infty]-2i[P_0] = \di_0(1-h) +2(i-g-1)[P_\infty] - 2i[P_0].
 \]
+
+We write $h(x) = b_{2g}x^{2g} + b_{2g-1}x^{2g-1} + \ldots + b_1x + b_0$.
+We then let $\phi = b_{2g} x^{2g} b_{2g-1}x^{2g-1} + \ldots + b_{g+1}x^{g+1} $ and $\psi = h - \phi = b_gx^g + \ldots + b_0$.
+
+It is then clear that $\frac{\phi }{2yx^i}dx + \frac{\psi}{2yx^i}dx = \frac{\phi + \psi}{2yx^i}dx = \frac{h}{2yx^i}dx$.
+
+We then compute the divisors of both of these differentials to check that they are regular on the appropriate sets.
+Firstly
+\begin{eqnarray*}
+\di\left( \frac{\phi}{2yx^i}dx \right) & = & \di(\phi) _ ( R - 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R - 4[P-\infty]) \\
+& = & \di_0\left( \frac{\phi}{x^{g+1}}\right) + 2(g+1)[P_0] - 4g[P_\infty] - 2i[P-0] + 2(g-1)[P-\infty] \\
+& = & \di_0\left( \frac{\phi}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0].
+\end{eqnarray*}
+
+On the other hand
+\begin{eqnarray*}
+\di \left( \frac{\psi}{2yx^i}dx\right) & = & \di (\psi ) -R + (2g+2)[P_\infty] - 2i[P_0] + 2i[P_\infty] + R -4[P_\infty] \\
+& = & \di_0(\psi) - 2g[P_\infty] + 2(g+i-2)[P_\infty] -2i[P_0] \\
+& = & \di_0(\psi) + 2(i-1)[P_\infty] - 2i[P_0].
+\end{eqnarray*}
+
+It should be noted that we required the coefficient $b_0$ in $h$ to be non-zero for this to be true, as then $\di_0(\psi)$ has a coefficient of zero for $[P_0]$. This is indeed the case, since $b_0 = a_1 - 2ia_1 = (1-2i)a_1 \neq 0$ if $a_1$ is non-zero. \todo{add that $a_1 \neq 0$ at start}
 
 
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
