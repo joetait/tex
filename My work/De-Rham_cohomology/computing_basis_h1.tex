@@ -111,31 +111,34 @@ There is then a corresponding field extension of $k(x)$ by $y$, where $y$ is def
 y^2 = f(x),
 \]
 for some $f(x)\in k[x]$.
-By an automorphism of $X$ we may assume that $0$ and $\infty$ are branch points.
+By an automorphism of $\mathbb P_k^1$ we may assume that $0$ and $\infty$ are branch points.
 We let $P_0$ and $P_\infty$ be the unique points in $x^{-1}(0)$ and $x^{-1}(\infty)$ respectively.
-We may also assume that $f(x) = a_{2g+1}x^{2g+1} + a_{2g}x^{2g} + \ldots + a_0$ for some $a_i \in k$.
+We may also assume that $f(x) = a_{2g+1}x^{2g+1} + a_{2g}x^{2g} + \ldots $ for some $a_i \in k$; note that the constant term is zero since $0$ is a branch point.
 If $a_{2g}=0$ we can use a third automorphism to adjust the roots, and hence we may assume that $a_{2g} \neq 0$.
 
 
-In the paper of Hortsch, we take the pairing $\langle y^{-1}x^idx, yx^{-j} \rangle = \res(x^{i-j}dx)$.
-We consider the same pairing to start with.
-In order to compute the residue we require there to be a pole at $P_0$ and $P_\infty$. 
-To demonstrate this we compute the divisor
+We recall that Serre duality gives a map $\text{Res}: H^0(X,\Omega_X) \times H^1(X,\Omega_X) \rightarrow k$.
+This is defined by  $\omega,f) \rightarrow \sum_{P\in X}\text{res}_P(f\omega)$ for some $(\omega, f) \in   H^0(X,\Omega_X) \times H^1(X,\Omega_X)$.
+We consider the pair $(y^{-1}x^idx,yx^{-j})\in  H^0(X,\Omega_X) \times H^1(X,\Omega_X)$, mapping to $sum_{P\in X} \text{res}_P x^{i-j}dx$.
+This can be calculated by summing the residues over the points in $X\backslash P_0$, or by the residue theorem we can equivalently can compute the negative of the residue at $P_0$.
+So for $\text{res}(x^{i-j})dx$ to be non-zero there must be a pole on $X\backslash P_0$ and at $P_0$.
+We can check when this occurs by computing the divisor of $x^{i-j}dx$, which we do presently:
 \begin{eqnarray}
 	\di(x^{i-j}dx) & = &  2(i-j)P_0 +  2(j-i)P_\infty + R - 2D_\infty \\
-	& = & (2i-2j+1)P_0 +(R-P_0-P_\infty) +(2j-2i-3)P_\infty.
+	& = & (2i-2j+1)P_0 +(R-P_0-P_\infty) +(2j-2i-3)P_\infty,
 \end{eqnarray}
+Where $R$ is the ramification divisor of $x$, and $D_\infty = 2[P_\infty]$.
 
 Recall that since both $P_\infty$ and $P_0$ are ramification points it follows that $R-P_0-P_\infty$ is positive.
-Hence we have a pole at both $P_0$ and $P_\infty$ if and only if $i=j+1$.
+Moreover, since $X$ is a hyperelliptic curve the coefficient of point in the ramification is 1, we have a pole at both $P_0$ and $P_\infty$ if and only if $j=i+1$.
 So we will be considering the differential $\frac{1}{x}dx$.
 
 
 Now we need to compute the residue of $x^{-1}dx$ at $P_\infty$.
 To start with we note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$.
-We can compute the order of $t$ at $P_\infty$; the computation follows simply from the fact that $t^2 = \frac{f(x)}{x^{2g+2}}$, which gives
+Indeed we can compute the order of $t$ at $P_\infty$; the computation follows simply from the fact that $t^2 = \frac{f(x)}{x^{2g+2}}$, which gives
 \[
-ord_{P_\infty}(t) = \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}d_{P_\infty}(x^{2g+2}) = -(2g+1) + (2g+2) = 1.
+\ord_{P_\infty}(t) = \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}\ord_{P_\infty}(x^{2g+2}) = -(2g+1) + (2g+2) = 1.
 \]
 
 We now write $\frac{1}{x}dx$ in terms of $dt$.
@@ -145,8 +148,9 @@ dt^2 = f\cdot d\frac{1}{x^{2g+2}} + \frac{1}{x^{2g+2}} \cdot df.
 \]
 Now 
 \[
-f\cdot d\frac{1}{x^{2g+2}} = f\cdot \frac{2g+1}{x^{2g+3}} dx \ {\rm and}\ \frac{1}{x^{2g+2}} \cdot df = \frac{1}{x^{2g+2}}\cdot f' \cdot dx.
+f\cdot d\frac{1}{x^{2g+2}} = -f\cdot \frac{2g+2}{x^{2g+3}} dx \ {\rm and}\ \frac{1}{x^{2g+2}} \cdot df = \frac{1}{x^{2g+2}}\cdot f' \cdot dx.
 \]
+\begin{comment}
 So in total 
 \[
 dt^2 = \left (\frac{(2g+1)\cdot f}{x^{2g+3}} - \frac{f'}{x^{2g+2}} \right ) dx.
@@ -211,7 +215,36 @@ But if we write the roots of $f(x)$ as $\alpha_i \in k$ with $1\leq i \leq 2g+1$
  
 {\bf If this sum is zero, then by an automorphism of the curve we can change one of the roots by a small value, and hence make it non-zero. 
 Indeed, we can fix all but one root, say $\alpha_1$. Then there is only one value of $\alpha_1$ such that $a_{2g}=0$, and there are only two values of $\alpha_1$ such that $\sum_{i=1}^{2g+1}\alpha_i^2 = 0$. Since $k$ is infinite we can certainly ensure that our automorphism of $X$ sends $\alpha_1$ to an element of $k$ distinct from these three values.}
+\end{comment}
 
+Hence
+\[
+dt^2 = \frac{1}{x^{2g+2}}\left(f` - \frac{(2g+2)f}{x}\right) dx
+\]
+and it then follows that
+\[
+\frac{1}{x}dx = \frac{-2tx^{2g+1}}{\left(\frac{(2g+2)f}{x} - f`\right)} dt.
+\]
+We now let $h = \left(\frac{(2g+2)f}{x} - f`\right)$, and noting that the coefficient of $x^{2g}$ in $h$ is $(2g+2)a_{2g+1} - (2g+1)a_{2g+1} = a_{2g+1}$, we see that $h$ is a degree $2g$ polynomial in $x$.
+We wish to compute the coefficient of $t^{-1}$ in the expansion of $\frac{1}{x}dx$ at $P_\infty$ and computing the first coefficient of $\frac{h}{x^{2g+1}}$ is a key step.
+
+Now
+\[
+\frac{h}{x^{2g+1}} = frac{a_{2g+1}x^{2g}}{x^{2g+1}} + \ldots = \frac{a_{2g+1}}{x} + \ldots 
+\]
+Similarly 
+\[
+t^2 = \frac{f}{x^{2g+2} } = \frac{a_{2g+1}}{x} + \ldots
+\]
+
+Since $\ord_{P_\infty}\left(\frac{h}{x^{2g+1}}\right) = 2$ we have that $\frac{h}{x^{2g+1}} = \sum_{i\geq 2} c_it^i$ for $c_i\in k$, and from the above computations we can see that $c_2 = 1$.
+We can also write $\frac{x^{2g+1}}{h} = \sum_{i\geq -2} d_it^i$, for $d_i$.
+Since $\frac{h}{x^{2g+1}} \cdot \frac{x^{2g+1}}{h} = \left( \sum_{i\geq 2} c_it^i\right) \cdot \left( \sum_{i\geq -2} d_it^i\right) = 1$ we conclude that $d_{-2} = 1$.\todo{need some large brackets}
+Now 
+\[
+\frac{1}{x}dx = \left( -2t \cdot \sum_{i\geq -2} d_it^i\right) dt = \left( \sum_{i\geq -2}-2d_it^{i+1} \right) dt
+\]
+so we can see that the residue is $-2$.
 
 We now want to find, given $yx^{-i}$ for some $1\leq i \leq g$, two differentials $\omega_1$ and $\omega_2$, satisfying the following:
 \begin{itemize}
