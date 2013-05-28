@@ -231,7 +231,7 @@
 % defines one's address (optional)
 % usage: \address{<street>}{<city>}{<country>}
 % where the <city> and <country> arguments can be omitted or provided empty
-\NewDocumentCommand{\address}{mG{}G{}G{}G{}}{\def\@addressstreet{#1}\def\@addresscity{#2}\def\@addresscountry{#3}\def\@addresspostcode{#4}\def\@addresspostcode{#5}}
+\NewDocumentCommand{\address}{mG{}G{}G{}G{}G{}}{\def\@addressstreet{#1}\def\@addresscity{#2}\def\@addresscountry{#3}\def\@addresspostcode{#4}\def\@addresspostcode{#5}}
 
 % defines one's email (optional)
 % usage: \email{<email adress>}
