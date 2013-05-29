@@ -106,32 +106,55 @@
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g$ over an algebraically closed field $k$ of characteristic unequal to 2.
 Let $x:X\rightarrow \mathbb P_k^1$ be the corresponding holomorphic map of degree two.
-There is then a corresponding field extension of $k(x)$ by $y$, where $y$ is defined by
+There is then an associated field extension of $k(x)$ by $y$, where $y$ is defined by
 \[
 y^2 = f(x),
 \]
 for some $f(x)\in k[x]$.
 By an automorphism of $\mathbb P_k^1$ we may assume that $0$ and $\infty$ are branch points.
 We let $P_0$ and $P_\infty$ be the unique points in $x^{-1}(0)$ and $x^{-1}(\infty)$ respectively.
-We may also assume that $f(x) = a_{2g+1}x^{2g+1} + a_{2g}x^{2g} + \ldots $ for some $a_i \in k$; note that the constant term is zero since $0$ is a branch point.
-If $a_{2g}=0$ we can use a third automorphism to adjust the roots, and hence we may assume that $a_{2g} \neq 0$.
+We may also assume that $f(x) = a_{2g+1}x^{2g+1} + a_{2g}x^{2g} + \ldots $ for some $a_i \in k$, $a_{2g+1} \neq 0$; note that the constant term is zero since $0\in \mathbb P_k^1$ is a branch point.
+Since the constant term is zero, we can conclude that $a_1 \neq 0$, else $x^2$ would divide $f(x)$, but we do not allow repeated roots.
 
+We wish to compute a basis for the de-Rham hypercohomology of this curve, which we denote by $H^1_{dR}(X/k)$. \todo{check notation - currently copied from Hortsch paper}
+To do this we se the fact that we have the following short exact sequence:
+\begin{equation}\label{ses}
+0 \ra H^0(X,\Omega_X) \ra H^1_{dR}(X/k) \ra H^1(X,\cO_x) \ra 0.
+\end{equation}
 
-We recall that Serre duality gives a map $\text{Res}: H^0(X,\Omega_X) \times H^1(X,\Omega_X) \rightarrow k$.
-This is defined by  $\omega,f) \rightarrow \sum_{P\in X}\text{res}_P(f\omega)$ for some $(\omega, f) \in   H^0(X,\Omega_X) \times H^1(X,\Omega_X)$.
-We consider the pair $(y^{-1}x^idx,yx^{-j})\in  H^0(X,\Omega_X) \times H^1(X,\Omega_X)$, mapping to $sum_{P\in X} \text{res}_P x^{i-j}dx$.
-This can be calculated by summing the residues over the points in $X\backslash P_0$, or by the residue theorem we can equivalently can compute the negative of the residue at $P_0$.
-So for $\text{res}(x^{i-j})dx$ to be non-zero there must be a pole on $X\backslash P_0$ and at $P_0$.
+We use \v{C}ech cohomology for our computations.
+We have an affine open cover by $U_1 = X\backslash P_0$ and $U_2 = X \backslash P_\infty$, which we denote by $U = \{ U_1, \ U_2\}$.
+\todo{find citation}{Now by definition}  $\check{H}_{dR}^1(U)$ is the quotient of the $k$-vector space 
+\[
+\{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1 - \omega_2\}
+\]
+
+by the subspace
+\[
+\{ (df_1, df_2, f_1-f_2)|f_i \in \cO_x(U_i)\}.
+\]
+
+Now given the short exact sequence \eqref{ses} we can compute when a group $G$ acting on $X$ acts faithfully on $H^1_{dR}(X/k)$ by computing a basis of the other terms in the sequence and seeing when $G$ acts faithfully on them.
+We know that $\{x^iy^{-1}dx\}_{0\leq i \leq g-1}$ form a basis of $H^0(X,\Omega_X)$ from previous work, so that leaves us to compute a basis of $H^1(X,\cO_X)$.
+
+We start doing this by using Serre duality.
+We recall that Serre duality gives a map $\text{Res}: H^0(X,\Omega_X) \times H^1(X,\cO_X) \rightarrow k$.
+This is defined by  $(\omega,f) \rightarrow \sum_{P\in X}\text{res}_P(f\omega)$ for some $(\omega, f) \in   H^0(X,\Omega_X) \times H^1(X,\cO_X)$.
+We consider the pair $(y^{-1}x^idx,yx^{-j})$ 
+% \in  H^0(X,\Omega_X) \times H^1(X,\cO_X) 
+, which maps to $\sum_{P\in X} \text{res}_P (x^{i-j}dx)$. \todo{As we're using Cech cohomology, we compute each open set. The only poles are at P0 and Pinfinity, so it is regular on the insterstion}
+This can be calculated by summing the residues over the points in $U_1$ or by the residue theorem we can equivalently can compute the negative of the residue at $P_0$.
+So for $\text{res}(x^{i-j})dx$ to be non-zero there must be a pole at at least one point in $U_1$ and at $P_0$.
 We can check when this occurs by computing the divisor of $x^{i-j}dx$, which we do presently:
 \begin{eqnarray}
 	\di(x^{i-j}dx) & = &  2(i-j)P_0 +  2(j-i)P_\infty + R - 2D_\infty \\
 	& = & (2i-2j+1)P_0 +(R-P_0-P_\infty) +(2j-2i-3)P_\infty,
 \end{eqnarray}
-Where $R$ is the ramification divisor of $x$, and $D_\infty = 2[P_\infty]$.
+where $R$ is the ramification divisor of $x$, and $D_\infty = 2[P_\infty]$.
 
 Recall that since both $P_\infty$ and $P_0$ are ramification points it follows that $R-P_0-P_\infty$ is positive.
-Moreover, since $X$ is a hyperelliptic curve the coefficient of point in the ramification is 1, we have a pole at both $P_0$ and $P_\infty$ if and only if $j=i+1$.
-So we will be considering the differential $\frac{1}{x}dx$.
+Moreover, since $X$ is a hyperelliptic curve the coefficient of every point in the ramification divisor is 1, we have a pole at both $P_0$ and $P_\infty$ if and only if $j=i+1$.
+So we will be considering the differential $\frac{1}{x}dx$, as this is the only differential of the form $x^{i-j}dx$ which can possibly have non-zero residue at the required points.
 
 
 Now we need to compute the residue of $x^{-1}dx$ at $P_\infty$.
@@ -219,18 +242,18 @@ Indeed, we can fix all but one root, say $\alpha_1$. Then there is only one valu
 
 Hence
 \[
-dt^2 = \frac{1}{x^{2g+2}}\left(f` - \frac{(2g+2)f}{x}\right) dx
+dt^2 = \frac{1}{x^{2g+2}}\left(f' - \frac{(2g+2)f}{x}\right) dx
 \]
 and it then follows that
 \[
-\frac{1}{x}dx = \frac{-2tx^{2g+1}}{\left(\frac{(2g+2)f}{x} - f`\right)} dt.
+\frac{1}{x}dx = \frac{-2tx^{2g+1}}{\left(\frac{(2g+2)f}{x} - f'\right)} dt.
 \]
-We now let $h = \left(\frac{(2g+2)f}{x} - f`\right)$, and noting that the coefficient of $x^{2g}$ in $h$ is $(2g+2)a_{2g+1} - (2g+1)a_{2g+1} = a_{2g+1}$, we see that $h$ is a degree $2g$ polynomial in $x$.
+We now let $h = \left(\frac{(2g+2)f}{x} - f'\right)$, and noting that the coefficient of $x^{2g}$ in $h$ is $(2g+2)a_{2g+1} - (2g+1)a_{2g+1} = a_{2g+1}$, we see that $h$ is a degree $2g$ polynomial in $x$.
 We wish to compute the coefficient of $t^{-1}$ in the expansion of $\frac{1}{x}dx$ at $P_\infty$ and computing the first coefficient of $\frac{h}{x^{2g+1}}$ is a key step.
 
 Now
 \[
-\frac{h}{x^{2g+1}} = frac{a_{2g+1}x^{2g}}{x^{2g+1}} + \ldots = \frac{a_{2g+1}}{x} + \ldots 
+\frac{h}{x^{2g+1}} = \frac{a_{2g+1}x^{2g}}{x^{2g+1}} + \ldots = \frac{a_{2g+1}}{x} + \ldots 
 \]
 Similarly 
 \[
@@ -238,14 +261,19 @@ t^2 = \frac{f}{x^{2g+2} } = \frac{a_{2g+1}}{x} + \ldots
 \]
 
 Since $\ord_{P_\infty}\left(\frac{h}{x^{2g+1}}\right) = 2$ we have that $\frac{h}{x^{2g+1}} = \sum_{i\geq 2} c_it^i$ for $c_i\in k$, and from the above computations we can see that $c_2 = 1$.
-We can also write $\frac{x^{2g+1}}{h} = \sum_{i\geq -2} d_it^i$, for $d_i$.
-Since $\frac{h}{x^{2g+1}} \cdot \frac{x^{2g+1}}{h} = \left( \sum_{i\geq 2} c_it^i\right) \cdot \left( \sum_{i\geq -2} d_it^i\right) = 1$ we conclude that $d_{-2} = 1$.\todo{need some large brackets}
+We can also write $\frac{x^{2g+1}}{h} = \sum_{i\geq -2} d_it^i$, for some $d_i\in k$.
+Since \[
+\frac{h}{x^{2g+1}} \cdot \frac{x^{2g+1}}{h} = \left( \sum_{i\geq 2} c_it^i\right) \cdot \left( \sum_{i\geq -2} d_it^i\right) = 1
+\]
+ we conclude that $d_{-2} = 1$. 
 Now 
 \[
 \frac{1}{x}dx = \left( -2t \cdot \sum_{i\geq -2} d_it^i\right) dt = \left( \sum_{i\geq -2}-2d_it^{i+1} \right) dt
 \]
 so we can see that the residue is $-2$.
 
+To make sure that this is part of the basis for $H^1(\Omega_X,\cO_X)$ we need to find suitable differentials $\omega_1$ and $\omega_2$, regular on $U_1$ and $U_2$ respectively, such that $d(yx^{-i}) = \omega_1 - \omega_2$.
+\begin{comment}
 We now want to find, given $yx^{-i}$ for some $1\leq i \leq g$, two differentials $\omega_1$ and $\omega_2$, satisfying the following:
 \begin{itemize}
 	\item $df = \omega_1 - \omega_2$,
@@ -285,7 +313,10 @@ So we need a function $h$ such that either
 	\item $h$ has a zero of order $2g$ at $P_\infty$ and $h-1$ has a zero of order $2g$ at $P_0$.
 \end{itemize}
 
-There is also the issue of potential other poles and zeroes of each differential.
+
+We can, of course, rewrite $d(yx^{-i})$ as $ydx^{-i} + x^{-i}dy$.
+We will start by studying these two divisors, and use them to find an appropriate $\omega_1$ and $\omega_2$.
+
 We first consider $x^{-i}dy$.
 Now $ dy = \frac{f'}{y}dx$, so \begin{eqnarray*} \di (dy) & = & \di(f') - \di (y) + \di (dx) \\ & = & \di(f') - (R - (2g+2)[P_\infty]) + (R - 4[P_\infty])\\  & = & \di(f') +(2g-2)[P_\infty].\end{eqnarray*}
 Note that we use the Hurwitz formula to compute the divisor of $dx$.
@@ -294,17 +325,17 @@ So \begin{eqnarray} \di(x^{-i}dy) & = &  \di(f') -2i[P_0] + (2i +2g-2)P_{\infty}
 We now consider $ydx^{-i}$.
 Firstly, \[ y dx^{-i} = y\cdot \frac{i}{x^{i-1}}d\frac{1}{x} = y \cdot \frac{i}{x^{i+1}} dx.\]
 Hence \begin{eqnarray*} \di (ydx^{-i}) & = & (R - (2g+2)[P_\infty]) -(2(i+1)[P_0] - 2(i+1)[P_\infty]) + (R - 4[P_\infty]) \\ & = &  2R - 2(i+1)[P_0] + 2(i-g-2)[P_\infty] \\ & = & 2\left ( \sum_{\text{Ramified } P\neq P_0, P_\infty}[P]\right) - 2i[P_0] +2(i-g-1)P_\infty .\end{eqnarray*}
+\end{comment}
 
-
-We also compute the divisor of $dyx^{-i}$.
+We begin by computing the divisor of $dyx^{-i}$.
 To start with, note that 
-\begin{eqnarray}
-2yx^{-i} & = & d(yx^{-i})^2 \\
+\begin{eqnarray*}
+2yx^{-i}d(yx^{-i}) & = & d(yx^{-i})^2 \\
 & = & dfx^{-2i} \\
 & = & fdx^{-2i} + x{-2i}df \\
 & = & -f\cdot\frac{2i}{x^{2i+1}}dx + \frac{f'}{x^{2i}}dx \\
 & = & \frac{1}{x^{2i}}\left( f' - 2i\frac{f}{x}\right) dx 
-\end{eqnarray}
+\end{eqnarray*}
 
 Hence it follows that 
 \begin{equation*}
@@ -312,12 +343,14 @@ dyx^{-i} = \frac{1}{2yx^{i}}\left( f' - \frac{2if}{x} \right) dx
 \end{equation*}
 and so
 \[
-\di (dxy^{-i}) = \di_0(h) -2i[P_0] +2(i-g-1)[P_\infty],
+\di (dxy^{-i}) = \di_0(s) -2i[P_0] +2(i-g-1)[P_\infty],
 \]
-where $h = \left ( f'-\frac{2if}{x} \right )$.
-We use $h$ as we will not in general know what its zeroes are, though we do know that $\di_0(h)$ is a positive divisor of degree $2g$ (note that it cannot have a zero at a ramification point, since $f$ and $f'$ have distinct roots).
-
-We could try writing $dyx^{-i}$ as $\frac{1}{2yx^i}dx - (1-h)\frac{1}{2yx^i}dx$.
+where $s(x) = \left ( f'-\frac{2if}{x} \right )$.
+We use $s$ as we will not in general know what its zeroes are, though we do know that $\di_0(s)$ is a \todo{actually, degree is 4g - check if this affects other things}{positive divisor of degree $4g$}.
+This is true since $2i <2g+1$, thus the coefficient of $x^{2g}$ in $s$, which is $(2g+1)a_{2g+1}- 2ia_{2g+1}$, is non-zero. 
+We will implicitly be using the fact that $s$ cannot have a zero at a ramification point, since $f$ and $f'$ have distinct roots, in our future computations.
+\begin{comment}
+We could try writing $dyx^{-i}$ as $\frac{1}{2yx^i}dx - (1-s)\frac{1}{2yx^i}dx$.
 We then  have 
 \[
 \di \left( \frac{1}{2yx^i}dx\right) = -\di(y) - \di(x^i) + \di(dx) = (2g+2i-2)[P_\infty] - 2i[P_0]
@@ -326,30 +359,68 @@ which has the correct pole at $P_0$ and is otherwise regular.
 
 On the other hand we have
 \[
-\di\left((1-h)\frac{1}{2yx^i}\right ) dx = \di_0(1-h) -4g[P_\infty] +2(g+i-1)[P_\infty]-2i[P_0] = \di_0(1-h) +2(i-g-1)[P_\infty] - 2i[P_0].
+\di\left((1-s)\frac{1}{2yx^i}\right ) dx = \di_0(1-s) -4g[P_\infty] +2(g+i-1)[P_\infty]-2i[P_0] = \di_0(1-s) +2(i-g-1)[P_\infty] - 2i[P_0].
 \]
 
-We write $h(x) = b_{2g}x^{2g} + b_{2g-1}x^{2g-1} + \ldots + b_1x + b_0$.
-We then let $\phi = b_{2g} x^{2g} b_{2g-1}x^{2g-1} + \ldots + b_{g+1}x^{g+1} $ and $\psi = h - \phi = b_gx^g + \ldots + b_0$.
+\end{comment}
 
-It is then clear that $\frac{\phi }{2yx^i}dx + \frac{\psi}{2yx^i}dx = \frac{\phi + \psi}{2yx^i}dx = \frac{h}{2yx^i}dx$.
+
+
+We write $s(x) = b_{2g}x^{2g} + b_{2g-1}x^{2g-1} + \ldots + b_1x + b_0$.
+We then let $\phi = b_{2g} x^{2g} b_{2g-1}x^{2g-1} + \ldots + b_{g+1}x^{g+1} $ and $\psi = s - \phi = b_gx^g + \ldots + b_0$.
+
+It is then clear that $\frac{\phi }{2yx^i}dx - \frac{-\psi}{2yx^i}dx = \frac{\phi + \psi}{2yx^i}dx = \frac{s}{2yx^i}dx$.
 
 We then compute the divisors of both of these differentials to check that they are regular on the appropriate sets.
 Firstly
 \begin{eqnarray*}
-\di\left( \frac{\phi}{2yx^i}dx \right) & = & \di(\phi) _ ( R - 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R - 4[P-\infty]) \\
-& = & \di_0\left( \frac{\phi}{x^{g+1}}\right) + 2(g+1)[P_0] - 4g[P_\infty] - 2i[P-0] + 2(g-1)[P-\infty] \\
+\di\left( \frac{\phi}{2yx^i}dx \right) & = & \di(\phi) - ( R - 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R - 4[P_\infty]) \\
+& = & \di_0\left( \frac{\phi}{x^{g+1}}\right) + 2(g+1)[P_0] - 4g[P_\infty] - 2i[P_0] + 2(g-1)[P_\infty] \\
 & = & \di_0\left( \frac{\phi}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0].
 \end{eqnarray*}
 
 On the other hand
 \begin{eqnarray*}
-\di \left( \frac{\psi}{2yx^i}dx\right) & = & \di (\psi ) -R + (2g+2)[P_\infty] - 2i[P_0] + 2i[P_\infty] + R -4[P_\infty] \\
+\di \left( \frac{-\psi}{2yx^i}dx\right) & = & \di (\psi ) -R + (2g+2)[P_\infty] - 2i[P_0] + 2i[P_\infty] + R -4[P_\infty] \\
 & = & \di_0(\psi) - 2g[P_\infty] + 2(g+i-2)[P_\infty] -2i[P_0] \\
 & = & \di_0(\psi) + 2(i-1)[P_\infty] - 2i[P_0].
 \end{eqnarray*}
 
-It should be noted that we required the coefficient $b_0$ in $h$ to be non-zero for this to be true, as then $\di_0(\psi)$ has a coefficient of zero for $[P_0]$. This is indeed the case, since $b_0 = a_1 - 2ia_1 = (1-2i)a_1 \neq 0$ if $a_1$ is non-zero. \todo{add that $a_1 \neq 0$ at start}
+It should be noted that we required the coefficient $b_0$ in $s$ to be non-zero for this to be true, as then $\di_0(\psi)$ has a coefficient of zero for $[P_0]$. This is indeed the case, since $b_0 = a_1 - 2ia_1 = (1-2i)a_1 \neq 0$ since $a_1$ is non-zero. 
+
+
+So if we now let $\omega_1 = \frac{-\psi}{2yx^i}dx$ and $\omega_2 = \frac{\phi}{2yx^i}dx$ then we have our two differentials.
+
+\newpage
+
+\section{characteristic 2}
+
+We now consider the same question when $\cha (k) = 2$.
+Our field extension corresponding to $X$ is now defined differently; it is $k(x,y)$, where
+\[
+y^2 - yh(x) = f(x)
+\]
+for some polynomials $f$ and $h$.
+Since we are still assuming that $0$ and infinity are branch points, it follows that $\deg(f) = 2g+1$ and that $\deg(h)  = d = \leq g$. \todo{cite liu}
+We suppose that $h(x) = \prod_i^m (x-a_i)^{n_i}$, and that $P_i\in X$ are the corresponding ramification points.
+We then have that the ramification divisor has coefficients $\delta_P$ where
+\[
+\delta_P = \left \{ \begin{array}{ll}
+2n_i & \text{if } P= P_i \text{ for some } i=1, \ldots , m \\
+2(g+1-d) & \text{if } P=P_\infty \\
+0 & \text{else.}
+\end{array}
+\right.
+\]
+
+
+We now recall the divisors of some other elements of the function field which we will be using.
+\begin{eqnarray}
+\di (dx) & = & R - 4[P_\infty] \\
+\di (h(x)) & = & R - 2d[P_\infty] \\
+\di (x^i) & = & 2i[P_0] - 2i[P_\infty]\\
+\di (y) & = & \di_0(y) - (2g+1)[P_\infty].
+\end{eqnarray}
 
 
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
