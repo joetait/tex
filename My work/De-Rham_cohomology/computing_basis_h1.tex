@@ -415,12 +415,24 @@ We then have that the ramification divisor has coefficients $\delta_P$ where
 
 
 We now recall the divisors of some other elements of the function field which we will be using.
-\begin{eqnarray}
+\begin{eqnarray*}
 \di (dx) & = & R - 4[P_\infty] \\
-\di (h(x)) & = & R - 2d[P_\infty] \\
+\di (h(x)) & = & R - 2(g+1)[P_\infty] \\
 \di (x^i) & = & 2i[P_0] - 2i[P_\infty]\\
 \di (y) & = & \di_0(y) - (2g+1)[P_\infty].
-\end{eqnarray}
+\end{eqnarray*}
+
+Though we have not properly described the zero divisor of $y$, it should be recalled that since $P_0$ is a ramification, $\di_0(y)$ will have a coefficient of one for $[P_0]$.
+Details of the above are in my 18 month report.
+
+As before, we will consider a pairing in $H^0(X,\Omega_X) \times H^1(X,\cO_X)$, and start by showing that is has poles at both $P_0$ and $P_\infty$.
+As shown in the 18 month report, a basis of $H^0(X,\Omega_X)$ is $\frac{x^idx}{h(x)}$ for $0 \leq i \leq g-1$.
+We consider the pairing $\left(\frac{x^idx}{h(x)}, x^{-j}y\right) \mapsto \frac{x^{i-j}ydx}{h(x)}$.
+We compute the divisor
+\begin{eqnarray*}
+\di\left(\frac{x^{i-j}ydx}{h(x)}\right)  & = & 2(i-j)[P_0] - 2(i-j)[P_\infty] + \di_0(y) - (2g+1)[P_\infty] +R -4[P_\infty] -R +2(g+2)[P_\infty] \\
+& = &  \di_0(y) + 2(i-j)[P_0] +(2(j-i)-3)[P_\infty]
+\end{eqnarray*}
 
 
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
