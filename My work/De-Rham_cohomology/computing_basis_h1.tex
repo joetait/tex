@@ -402,7 +402,8 @@ y^2 - yh(x) = f(x)
 \]
 for some polynomials $f$ and $h$.
 Since we are still assuming that $0$ and infinity are branch points, it follows that $\deg(f) = 2g+1$ and that $\deg(h)  = d = \leq g$. \todo{cite liu}
-We suppose that $h(x) = \prod_i^m (x-a_i)^{n_i}$, and that $P_i\in X$ are the corresponding ramification points.
+We suppose that $h(x) = \prod_1^m (x-a_i)^{n_i}$, and that $P_i\in X$ are the corresponding ramification points.
+We will assume that $a_1 = 0$.
 We then have that the ramification divisor has coefficients $\delta_P$ where
 \[
 \delta_P = \left \{ \begin{array}{ll}
@@ -447,20 +448,20 @@ So clearly $t$ is a uniformising parameter at $P_\infty$.
 We now wish to write $\frac{ydx}{xh(x)}$ as $r(x,y)dt$ for some function $r$.
 We first write $dy$ in terms of $dx$.
 Since
-\begin{eqnarray}
+\begin{eqnarray*}
 0 & = & dy^2 \\
 & = & f'dx + hdy + yh'dx
-\end{eqnarray}
+\end{eqnarray*}
 we conclude that 
 \[
 dy = \left( \frac{f'yh'}{h} \right) dx.
 \]
 We now rewrite $dt$ as follows:
-\begin{eqnarray}
+\begin{eqnarray*}
 dt & = & yd\frac{1}{x^{g+1}} + \frac{1}{x^{g+1}}dy \\
 & = & \frac{1}{x^{g+1}} \left( \frac{(g+1)y}{x} + \frac{f'+yh'}{h} \right) dx \\
 & = & \frac{1}{x^{g+1}} \left( \frac{xf'}{y} + xh' + (g+1)h \right) \frac{y}{hx} dx.
-\end{eqnarray}
+\end{eqnarray*}
 
 In total we then have
 \[
@@ -495,6 +496,14 @@ Since $1 = \frac{s(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{s(x,y)} = \left( \sum_{i
 
 
 So now we need to find $\omega_1$ and $\omega_2$ such that $d(yx^{-i}) = \omega_1 - \omega_2$.
+We start by splitting up $d(yx^{-i})$ as $\frac{1}{x} \left(iyh + xf' + yh'x \right) dx$, and we now compute the divisors of these differentials.
+We let $R' = R - 2n_1[P_0] - 2(g+1-d)[P_\infty]$, $F = \di_0(h') - 2(n_1 - 1)[P_0]$ and let $E = \di_0(y) - [P_0]$.
+Then
+\begin{eqnarray*}
+\di \left(\frac{iyh}{x^i}\right) dx  & = & (4n_1 -2i +1)[P_0] + E + 2R' + (2i-3)[P_\infty] \\
+\di \left(\frac{xf'}{x^i} \right) dx & = & 2(n_1 + 1 -i)[P_0] + \di_0(f) + R' -2(g+2+d-i)[P_\infty] \\
+\di \left(\frac{yh'x}{x^i}\right) dx & = & (4n_1 + 1 -2i)[P_0] + E + F + R' + 2(g-1-2d)[P_\infty].
+\end{eqnarray*}
 
 
 
