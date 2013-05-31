@@ -102,7 +102,7 @@
 
 \begin{document}
 \maketitle
-
+\todo[inline]{in general, check for when p might divide the genus or i, for i between 0 and g-1}
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g$ over an algebraically closed field $k$ of characteristic unequal to 2.
 Let $x:X\rightarrow \mathbb P_k^1$ be the corresponding holomorphic map of degree two.
@@ -433,6 +433,69 @@ We compute the divisor
 \di\left(\frac{x^{i-j}ydx}{h(x)}\right)  & = & 2(i-j)[P_0] - 2(i-j)[P_\infty] + \di_0(y) - (2g+1)[P_\infty] +R -4[P_\infty] -R +2(g+2)[P_\infty] \\
 & = &  \di_0(y) + 2(i-j)[P_0] +(2(j-i)-3)[P_\infty]
 \end{eqnarray*}
+
+So clearly we have a pole at both $P_0$ and $P_\infty$ if and only if $j=i+1$, and in this case the order of the pole at both points is $-1$.
+
+So this means we need to compute the residue of $\frac{ydx}{xh(x)}$ at $P_\infty$.
+We start by noting that $t = \frac{y}{x^{g+1}}$ is a uniformising parameter; we check this by computing the divisor:
+\[
+\di(t) = \di_0(y) - (2g+1)[P_\infty] -(2g+2)[P_0] + (2g+2)[P_\infty] = \di_0(y)-(2g+2)[P_0] + [P_\infty].
+\]
+
+So clearly $t$ is a uniformising parameter at $P_\infty$.
+
+We now wish to write $\frac{ydx}{xh(x)}$ as $r(x,y)dt$ for some function $r$.
+We first write $dy$ in terms of $dx$.
+Since
+\begin{eqnarray}
+0 & = & dy^2 \\
+& = & f'dx + hdy + yh'dx
+\end{eqnarray}
+we conclude that 
+\[
+dy = \left( \frac{f'yh'}{h} \right) dx.
+\]
+We now rewrite $dt$ as follows:
+\begin{eqnarray}
+dt & = & yd\frac{1}{x^{g+1}} + \frac{1}{x^{g+1}}dy \\
+& = & \frac{1}{x^{g+1}} \left( \frac{(g+1)y}{x} + \frac{f'+yh'}{h} \right) dx \\
+& = & \frac{1}{x^{g+1}} \left( \frac{xf'}{y} + xh' + (g+1)h \right) \frac{y}{hx} dx.
+\end{eqnarray}
+
+In total we then have
+\[
+\frac{ydx}{xh(x)} = \frac{x^{g+1}y}{s(x,y)}dt
+\]
+where $s(x,y) = xf' + yxh' + (g+1)yh$.
+
+We can write $\frac{x^{g+1}y}{s(x,y)} = \sum_{i\geq -1} c_i t^i$, and we wish to compute $c_{-1}$.
+
+We shall do this by computing the coefficient of $t$ in the expansion $\frac{s(x,y)}{x^{g+1}y} = \sum_{i\geq 1}d_it^i$.
+We can split up $\frac{s(x,y)}{x^{g+1}y}$ in to three terms, namely $\frac{xf'}{x^{g+1}y}$, $\frac{yxh'}{x^{g+1}y}$ and $\frac{yh}{x^{g+1}y}$.
+Each of these terms can of course be expanded as a power series in $t$, but only the first term mentioned has order 1 at $P_\infty$, and hence this term will determine the coefficient of $t$ in the power series expansion of $\frac{s(x,y)}{x^{g+1}y}$.
+Suppose that $f = \alpha_{2g+1}x^{2g+1} + \alpha_{2g}x^{2g} + \ldots + \alpha_1x^1$.
+Then $xf'= \alpha_{2g+1}x^{2g+1} + \alpha_{2g-1}x^{2g-1} + \ldots + \alpha_1x^1$; i.e. we have just removed the even power terms.
+
+So the the only term in $\frac{xf'}{x^{g+1}y}$ of order 1 at $P_\infty$ is $\frac{\alpha_{2g+1}x^{2g+1}}{x^{g+1}y} = \frac{\alpha_{2g+1}x^{g}}{y}$.
+Since
+\[
+\frac{\alpha_{2g+1}x^g}{y} = \frac{\alpha_{2g+1}}{x}t^{-1}
+\]
+and $\frac{1}{x} = \sum_{i\geq 2}e_it^i$ for some $e_i \in k$, if we compute $e_2$ then we will have computed $d_1$.
+But since $t^2 = \frac{f + hy}{x^{2g+2}}$, and clearly $\frac{hy}{x^{2g+2}}$ has no terms of the form $\frac{c}{x}$ for some $c \in k$, and 
+\[
+\frac{f}{x^{2g+2}} = \frac{\alpha_{2g+1}}{x} + \ldots
+\]
+we conclude that $e_2 = \frac{1}{\alpha_{2g+1}}$.
+Hence $d_1 = \alpha_{2g+1} \cdot \frac{1}{\alpha_{2g+1}} = 1$.
+
+
+We finally use this to compute $c_{-1}$.
+Since $1 = \frac{s(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{s(x,y)} = \left( \sum_{i\geq 1}d_it^i \right) \cdot \left( \sum_{i\geq -1}c_it^i\right)$, we conclude that $c_{-1} = d_{1} = 1$.
+
+
+So now we need to find $\omega_1$ and $\omega_2$ such that $d(yx^{-i}) = \omega_1 - \omega_2$.
+
 
 
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
