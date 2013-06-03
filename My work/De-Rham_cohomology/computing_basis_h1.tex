@@ -423,7 +423,7 @@ We now recall the divisors of some other elements of the function field which we
 \di (y) & = & \di_0(y) - (2g+1)[P_\infty].
 \end{eqnarray*}
 
-Though we have not properly described the zero divisor of $y$, it should be recalled that since $P_0$ is a ramification, $\di_0(y)$ will have a coefficient of one for $[P_0]$.
+Though we have not properly described the zero divisor of $y$, it should be recalled that since $P_0$ is a ramification, \todo{is this right?}{$\di_0(y)$ will have a coefficient of one for $[P_0]$.}
 Details of the above are in my 18 month report.
 
 As before, we will consider a pairing in $H^0(X,\Omega_X) \times H^1(X,\cO_X)$, and start by showing that is has poles at both $P_0$ and $P_\infty$.
@@ -496,13 +496,14 @@ Since $1 = \frac{s(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{s(x,y)} = \left( \sum_{i
 
 
 So now we need to find $\omega_1$ and $\omega_2$ such that $d(yx^{-i}) = \omega_1 - \omega_2$.
-We start by splitting up $d(yx^{-i})$ as $\frac{1}{x} \left(iyh + xf' + yh'x \right) dx$, and we now compute the divisors of these differentials.
+We start by splitting up $d(yx^{-i})$ as $\frac{1}{x^i} \left(iyh + xf' + yh'x \right) dx+ \frac{iy}{x^{i+1}} dx$, and we now compute the divisors of these differentials.
 We let $R' = R - 2n_1[P_0] - 2(g+1-d)[P_\infty]$, $F = \di_0(h') - 2(n_1 - 1)[P_0]$ and let $E = \di_0(y) - [P_0]$.
 Then
 \begin{eqnarray*}
-\di \left(\frac{iyh}{x^i}\right) dx  & = & (4n_1 -2i +1)[P_0] + E + 2R' + (2i-3)[P_\infty] \\
-\di \left(\frac{xf'}{x^i} \right) dx & = & 2(n_1 + 1 -i)[P_0] + \di_0(f) + R' -2(g+2+d-i)[P_\infty] \\
-\di \left(\frac{yh'x}{x^i}\right) dx & = & (4n_1 + 1 -2i)[P_0] + E + F + R' + 2(g-1-2d)[P_\infty].
+\di \left(\frac{iyh}{x^i}\right) dx  & = & (4n_1 -2i +1)[P_0] + E + 2R' + (2i-4d-3)[P_\infty] \\
+\di \left(\frac{xf'}{x^i} \right) dx & = & 2(n_1 + 1 -i)[P_0] + \di_0(f') + R' -2(2+d-i)[P_\infty] \\
+\di \left(\frac{yh'x}{x^i}\right) dx & = & (4n_1 + 1 -2i)[P_0] + E + F + R' - (3+2d)[P_\infty] \\
+\di \left( \frac{iy}{x^{i+1}}\right) dx & = & (2n_1 -2i -1)[P_0] + E + R'  -(2i+1)[P_\infty].
 \end{eqnarray*}
 
 
