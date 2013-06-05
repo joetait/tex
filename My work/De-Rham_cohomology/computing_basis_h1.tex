@@ -511,6 +511,50 @@ We should note that the first and last divisor are actually just 0 if $i$ is eve
 Can rewrite the last divisor as $\frac{1}{h}\left(\frac{y^2 + f}{x^{i+1}}\right)$.
 Using this it seems that there should be a pole of "large" order at $P_0$.
 
+The above is wrong, as I was using an incorrect expansion of $dy$.
+So we actually have
+\begin{eqnarray*}
+dyx^{-i} & = & x^{-i}dy + ydx^{-i} \\
+& = & \frac{1}{x^i} \left( \frac{f' + yh'}{h}\right) dx + \frac{iy}{x^{i+1}}dx \\
+& = & \left( \frac{f'}{x^ih} + \frac{yh'}{x^ih} + \frac{iy}{x^{i+1}} \right) dx
+\end{eqnarray*}
+
+So when we expand the first term we get
+\begin{eqnarray*}
+\di \left( \frac{f'dx}{x^ih} \right) & = & \di (f') + \di ( dx ) - \di (x^i) - \di (h) \\
+& = & \di_0 (f') - 2g[P_\infty] + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] -R + (2g+2)[P_\infty] \\
+& = & \di_0(f') - 2i[P_0] +2(i-1)[P_\infty].
+\end{eqnarray*}
+
+
+Before computing the next term we will define the divisor $H' := \di_0(h') - 2(n_1 -1)[P_0]$, and hence we have $\di_0(h') = H' + 2(n_1-1)[P_0]$.
+We can now compute the divisor of the seond term as
+\begin{eqnarray*}
+\di\left( \frac{yh'dx}{x^ih} \right)  & = & \di_0(y) - (2g+1)[P_\infty] + \di_0(h') - 2(d-1)[P_\infty] + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + (2g+2)[P_\infty] \\
+& = & \di_0(y) - 2g[P_\infty] - [P_\infty] + \di_0(h') - 2d[P_\infty] + 2[P_\infty] - 4[P_\infty] -2i[P_0] + 2i[P_\infty]+ 2g[P_\infty] + 2[P_\infty]  \\
+& = & \di_0(y) + (2i-2d-1)[P_\infty] + di_0(h') - 2i[P_0] \\
+& = & \di_0(y) + (2i -2d -1) [P_\infty] + H + (2(n_1 - 1 - i)[P_0].
+\end{eqnarray*}
+
+
+Maybe try splitting $h'$ in to two parts, one with degree greater than $n_1$, the other with degree less (and throw an equals in somewhere).
+
+
+We now define another divisor before computing the third part of the divisor.
+We let $R' = R - 2(g+1-d)[P_\infty] - 2n_1[P_0]$, so that $R = R' + 2(g+1-d)[P_\infty] + 2n_1[P_0]$.
+We now compute the third divisor:
+\begin{eqnarray*}
+\di \left( \frac{iydx}{x^{i+1}} \right) & = & \di_0(y) - (2g+1)[P_\infty] + R - 4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] \\
+& = & \di_0(y) - 2g[P_\infty] - [P_\infty] + R' + 2g[P_\infty] + 2[P_\infty] - 4[P_\infty] - 2d[P_\infty] + 2n_1[P_0] - 2i[P_0] -2[P_0] + 2i[P_\infty] +2[P_\infty]  \\
+& = & \di_0(y) + R' + (2n_1 - 2i -2)[P_0] + (2i -2d -1)[P_\infty].
+\end{eqnarray*}
+
+This is an issue if $n_1 \leq i \leq d$, since then coefficients for both $P_0$ and $P_\infty$ are negative, and so the differential is regular on neither $U_1$ or $U_2$.
+
+
+
+
+
 
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
 %\bibliography{/home/joe/files/Documents/Maths/Bibliography/biblio.bib}
