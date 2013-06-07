@@ -555,8 +555,29 @@ We now compute the third divisor:
 This is an issue if $n_1 \leq i \leq d$, since then coefficients for both $P_0$ and $P_\infty$ are negative, and so the differential is regular on neither $U_1$ or $U_2$.
 
 
+In the case that $i$ is even we only need to split up the first two terms, as the last term is zero.
+We start with $\frac{yh'dx}{x^ih}$.
+We assume that $d$ and $n_1$ are both odd, hence $h'$ is of degree $d-1$ and the highest power of $x$ that divides $h'$ is $n_1-1$.
+Then we can write $h' = \beta_d x^{d-1} + \ldots + \beta_{n_1} x^{n_1-1}$.
+We then define two polynomials, $\theta = \beta_{d-1} x^{d-1} + \ldots + \beta_{i+1}x^i$ and $\psi = \beta_{i-1}x^{i-2} + \ldots + \beta_{n_1}x^{n_1-1}$, whose sum is $h'$.
+We now compute the divisors of $\frac{y\theta dx}{x^ih}$ and $\frac{y\psi dx}{x^ih}$. 
+\begin{eqnarray*}
+\di\left(\frac{y\theta dx}{x^ih}\right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\theta) + R - 4[P_\infty] -2i[P_0] + 2i[P_\infty] - R + (2g+2)[P_\infty] \\
+& = & \di_0(y) + \di(\theta) -2i[P_0] + (2i -3)[P_\infty] \\
+& = & \di_0(y) + \di_0(\theta) - 2(d-1)[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
+& = & \di_0(y) + \di_0\left(\frac{\theta}{x^i}\right) + 2i[P_0] -2i[P_0] + (2i-2d-1)[P_\infty]\\
+& = & \di_0(y) + \di_0\left(\frac{\theta}{x^i} \right) + (2i-2d-1)[P_\infty]
+\end{eqnarray*}
 
+and
 
+\begin{eqnarray*}
+\di\left( \frac{y\psi dx}{x^ih} \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + (2g+2)[P_\infty] \\
+& = & \di_0(y) + \di(\psi) -2i[P_0] + (2i-3)[P_\infty] \\
+& = & \di_0(y) + \di_0(\psi) - 2(i-2)[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
+& = & \di_0(y) + \di_0(\psi) -2i[P_0] + [P_\infty].
+\end{eqnarray*}
+\todo{check this}{Similar computations will work when either $d$ or $n_1$ (or both) are even} and when we have split up $\frac{f'dx}{x^ih}$ we have two divisors that sum to $dx^iy$ and are regular on the appropriate sets whenever $i$ is even.
 
 
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
