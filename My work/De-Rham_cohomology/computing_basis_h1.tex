@@ -522,16 +522,18 @@ dyx^{-i} & = & x^{-i}dy + ydx^{-i} \\
 So when we expand the first term we get
 \begin{eqnarray*}
 \di \left( \frac{f'dx}{x^ih} \right) & = & \di (f') + \di ( dx ) - \di (x^i) - \di (h) \\
-& = & \di_0 (f') - 2g[P_\infty] + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] -R + (2g+2)[P_\infty] \\
-& = & \di_0(f') - 2i[P_0] +2(i-1)[P_\infty].
+& = & \di_0 (f') - 4g[P_\infty] + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] -R + (2g+2)[P_\infty] \\
+& = & \di_0(f') - 2(g+)i[P_0] +2(i-1)[P_\infty].
 \end{eqnarray*}
 
 
 Before computing the next term we will define the divisor $H' := \di_0(h') - 2(n_1 -1)[P_0]$, and hence we have $\di_0(h') = H' + 2(n_1-1)[P_0]$.
 We can now compute the divisor of the seond term as
 \begin{eqnarray*}
-\di\left( \frac{yh'dx}{x^ih} \right)  & = & \di_0(y) - (2g+1)[P_\infty] + \di_0(h') - 2(d-1)[P_\infty] + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + (2g+2)[P_\infty] \\
-& = & \di_0(y) - 2g[P_\infty] - [P_\infty] + \di_0(h') - 2d[P_\infty] + 2[P_\infty] - 4[P_\infty] -2i[P_0] + 2i[P_\infty]+ 2g[P_\infty] + 2[P_\infty]  \\
+\di\left( \frac{yh'dx}{x^ih} \right)  & = & \di_0(y) - (2g+1)[P_\infty] + \di_0(h') - 2(d-1)[P_\infty] + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - \\
+& & R + (2g+2)[P_\infty] \\
+& = & \di_0(y) - 2g[P_\infty] - [P_\infty] + \di_0(h') - 2d[P_\infty] + 2[P_\infty] - 4[P_\infty] -\\
+& & 2i[P_0] + 2i[P_\infty]+ 2g[P_\infty] + 2[P_\infty]  \\
 & = & \di_0(y) + (2i-2d-1)[P_\infty] + di_0(h') - 2i[P_0] \\
 & = & \di_0(y) + (2i -2d -1) [P_\infty] + H + (2(n_1 - 1 - i)[P_0].
 \end{eqnarray*}
@@ -545,7 +547,8 @@ We let $R' = R - 2(g+1-d)[P_\infty] - 2n_1[P_0]$, so that $R = R' + 2(g+1-d)[P_\
 We now compute the third divisor:
 \begin{eqnarray*}
 \di \left( \frac{iydx}{x^{i+1}} \right) & = & \di_0(y) - (2g+1)[P_\infty] + R - 4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] \\
-& = & \di_0(y) - 2g[P_\infty] - [P_\infty] + R' + 2g[P_\infty] + 2[P_\infty] - 4[P_\infty] - 2d[P_\infty] + 2n_1[P_0] - 2i[P_0] -2[P_0] + 2i[P_\infty] +2[P_\infty]  \\
+& = & \di_0(y) - 2g[P_\infty] - [P_\infty] + R' + 2g[P_\infty] + 2[P_\infty] - 4[P_\infty] - 2d[P_\infty] +\\
+& &  2n_1[P_0] - 2i[P_0] -2[P_0] + 2i[P_\infty] +2[P_\infty]  \\
 & = & \di_0(y) + R' + (2n_1 - 2i -2)[P_0] + (2i -2d -1)[P_\infty].
 \end{eqnarray*}
 
