@@ -580,6 +580,52 @@ and
 \todo{check this}{Similar computations will work when either $d$ or $n_1$ (or both) are even} and when we have split up $\frac{f'dx}{x^ih}$ we have two divisors that sum to $dx^iy$ and are regular on the appropriate sets whenever $i$ is even.
 
 
+
+We now suppose that we can write $f = \alpha_{2g+1} x^{2g+1} + \ldots + \alpha_1x$, and hence we have $f' = \alpha_{2g+1}x^{2g} + \ldots + \alpha_1$.
+We fix $i$.
+We let $\phi (x) = \alpha_{2g+1}x^{2g} + \ldots + \alpha_{i+1}x^i$ and $\psi (x) = \alpha_{i-1}x^{i-2} + \ldots + \alpha_1$.
+
+Then we have
+\begin{eqnarray*}
+\di \left( \frac{\phi dx}{x^i h} \right) & = & \di(\phi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + (2g+2) [P_\infty] \\
+& = & \di_0(\phi) - 4g[P_\infty] - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] + 2g[P_\infty] + 2[P_\infty] \\
+& = & \di_0(\phi) - 2i[P_0] + 2(i-g-1)[P_\infty] \\
+& = & \di_0\left( \frac{\phi}{x^i} \right) + \di_0( x^i) - 2i[P_0] + 2(i-g-1)[P_\infty] \\
+& = & \di_0 \left( \frac{\phi}{x^i} \right) + 2(i-g-1)[P_\infty].
+\end{eqnarray*}
+
+Similarly 
+\begin{eqnarray*}
+\di\left( \frac{\psi dx}{x^ih} \right) & = & \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + 2(g+1)[P_\infty] \\
+& = & \di_0(\psi ) - 2(i-2)[P_\infty] - 4[P_\infty] - 2i[P_0] + 2(g+i + 1)[P_\infty] \\
+& = & \di_0(\psi) - 2i[P_0] + 2(g+1)[P_\infty].
+\end{eqnarray*}
+
+So we have rewritten the first term as the sum of two differentials( dependent on $i$), one of which is regular on $U_1$ and the other regular on $U_2$.
+
+We now consider the case where $i$ is specifically odd, and when $n_1$ and $d$ are even.
+Then we have 
+\[
+\left( \frac{yh'}{x^ih} + \frac{iy}{x^{i+1}} \right) dx  =  y \left( \frac{xh' + h}{x^{i+1}} \right) dx.
+\]
+
+We know that $xh' + h = \beta_d x^d + \ldots + \beta_{n_1}x^{n_1}$.
+The only case we need to consider is when $n_1 \leq i \leq d$, and in this case we define $\phi = \beta_dx^d + \ldots + \beta_{i+1}^{i+1}$ and $\psi = \beta_{i-1} + x^{i-1} + \ldots + \beta_{n_1}x^{n_1}$.
+Then it is clear that $\frac{y\psi}{x^{i+1}}dx + \frac{y\phi}{x^{i+1}}dx = y\left( \frac{xh' + h}{x^{i+1}} \right) dx$.
+We then compute the divisors of these differentials, as follows
+\begin{eqnarray*}
+ \di \left( \frac{y \phi}{x^{i+1}} dx \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di( \phi) + R - 4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] \\
+& = & \di_0(y) + \di(\phi) -(2g+1)[P_\infty] + R' + 2(g+1-d)[P_\infty] + 2n_1[P_0] - 2(i+1)[P_0] + 2(i-1)[P_\infty] \\
+& = & \di_0(y) + \di(\phi) + R' + 2(n_1 - i -1)[P_0] + (2i-2d-1)[P_\infty] \\
+& = & \di_0(y) + \di_0(\phi) + R' + 2(n_1 - i - 1)[P_0] + (2i - 4d - 1)[P_\infty] \\
+& = & \di_o(y) + \di_0\left( \frac{\phi}{x^{i+1}} \right) + 2n_1[P_0] + (2i - 4d -1)[P_\infty]. 
+\end{eqnarray*}
+
+Similarly 
+\begin{eqnarray*}
+\di \left( \frac{psi y}{x^{i+1}} dx \right) & = & 
+\end{eqnarray*}
+
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
 %\bibliography{/home/joe/files/Documents/Maths/Bibliography/biblio.bib}
 \bibliographystyle{plain}
