@@ -606,7 +606,7 @@ So we have rewritten the first term as the sum of two differentials( dependent o
 We now consider the case where $i$ is specifically odd, and when $n_1$ and $d$ are even.
 Then we have 
 \[
-\left( \frac{yh'}{x^ih} + \frac{iy}{x^{i+1}} \right) dx  =  y \left( \frac{xh' + h}{x^{i+1}} \right) dx.
+\left( \frac{yh'}{x^ih} + \frac{iy}{x^{i+1}} \right) dx  =  y \left( \frac{xh' + h}{hx^{i+1}} \right) dx.
 \]
 
 We know that $xh' + h = \beta_d x^d + \ldots + \beta_{n_1}x^{n_1}$.
@@ -614,16 +614,19 @@ The only case we need to consider is when $n_1 \leq i \leq d$, and in this case 
 Then it is clear that $\frac{y\psi}{x^{i+1}}dx + \frac{y\phi}{x^{i+1}}dx = y\left( \frac{xh' + h}{x^{i+1}} \right) dx$.
 We then compute the divisors of these differentials, as follows
 \begin{eqnarray*}
- \di \left( \frac{y \phi}{x^{i+1}} dx \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di( \phi) + R - 4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] \\
-& = & \di_0(y) + \di(\phi) -(2g+1)[P_\infty] + R' + 2(g+1-d)[P_\infty] + 2n_1[P_0] - 2(i+1)[P_0] + 2(i-1)[P_\infty] \\
-& = & \di_0(y) + \di(\phi) + R' + 2(n_1 - i -1)[P_0] + (2i-2d-1)[P_\infty] \\
-& = & \di_0(y) + \di_0(\phi) + R' + 2(n_1 - i - 1)[P_0] + (2i - 4d - 1)[P_\infty] \\
-& = & \di_o(y) + \di_0\left( \frac{\phi}{x^{i+1}} \right) + 2n_1[P_0] + (2i - 4d -1)[P_\infty]. 
+ \di \left( \frac{y \phi}{hx^{i+1}} dx \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di( \phi) + R - 4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] -R + 2(g+1)[P_\infty] \\
+& = & \di_0(y) + \di(\phi) -(2g+1)[P_\infty] + R' + 2(g+1-d)[P_\infty] + 2n_1[P_0] - 2(i+1)[P_0] + 2(i-1)[P_\infty] -R' - 2n_1[P_0]- 2(g+1-d)[P_\infty] +2(g+1)[P_\infty] \\
+& = & \di_0(y) + \di(\phi) + R' - 2(i +1)[P_0] + (2i-2)[P_\infty] \\
+& = & \di_0(y) + \di_0(\phi) + R' - 2(i + 1)[P_0] + (2i - 2d - 2)[P_\infty] \\
+& = & \di_o(y) + \di_0\left( \frac{\phi}{x^{i+1}} \right) + 2(i - d -1)[P_\infty]. 
 \end{eqnarray*}
 
 Similarly 
 \begin{eqnarray*}
-\di \left( \frac{psi y}{x^{i+1}} dx \right) & = & 
+\di \left( \frac{\psi y}{hx^{i+1}} dx \right) & = & \di_0(y) -(2g+1)[P_\infty] + \di(\psi) +R -4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] - R + 2(g+1)[P_\infty] \\
+& = & \di_0(y) + \di(\psi) -2(i+1)[P_0] + (2i-1)[P_\infty] \\
+& = & \di_0(y) + \di_0(\psi) - 2(i-1)[P_\infty] - 2(i+1)[P_0] + (2i+1)[P_\infty] \\
+& = & \di_0(y) + \di_0(\psi) - 2(i+1)[P_0] + [P_\infty]
 \end{eqnarray*}
 
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
