@@ -102,6 +102,9 @@
 
 \begin{document}
 \maketitle
+
+\section{Characteristic not 2}
+
 \todo[inline]{in general, check for when p might divide the genus or i, for i between 0 and g-1}
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g$ over an algebraically closed field $k$ of characteristic unequal to 2.
@@ -431,7 +434,8 @@ As shown in the 18 month report, a basis of $H^0(X,\Omega_X)$ is $\frac{x^idx}{h
 We consider the pairing $\left(\frac{x^idx}{h(x)}, x^{-j}y\right) \mapsto \frac{x^{i-j}ydx}{h(x)}$.
 We compute the divisor
 \begin{eqnarray*}
-\di\left(\frac{x^{i-j}ydx}{h(x)}\right)  & = & 2(i-j)[P_0] - 2(i-j)[P_\infty] + \di_0(y) - (2g+1)[P_\infty] +R -4[P_\infty] -R +2(g+2)[P_\infty] \\
+\di\left(\frac{x^{i-j}ydx}{h(x)}\right)  & = & 2(i-j)[P_0] - 2(i-j)[P_\infty] + \di_0(y) - (2g+1)[P_\infty] +R -4[P_\infty] \\
+& & -R +2(g+2)[P_\infty] \\
 & = &  \di_0(y) + 2(i-j)[P_0] +(2(j-i)-3)[P_\infty]
 \end{eqnarray*}
 
@@ -496,7 +500,9 @@ Since $1 = \frac{s(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{s(x,y)} = \left( \sum_{i
 
 
 So now we need to find $\omega_1$ and $\omega_2$ such that $d(yx^{-i}) = \omega_1 - \omega_2$.
-We start by splitting up $d(yx^{-i})$ as $\frac{1}{x^i} \left(iyh + xf' + yh'x \right) dx+ \frac{iy}{x^{i+1}} dx$, and we now compute the divisors of these differentials.\todo{wrong to assume that f(0)=0?}
+We start by splitting up 
+\begin{comment}
+$d(yx^{-i})$ as $\frac{1}{x^i} \left(iyh + xf' + yh'x \right) dx+ \frac{iy}{x^{i+1}} dx$, and we now compute the divisors of these differentials.\todo{wrong to assume that f(0)=0?}
 We let $R' = R - 2n_1[P_0] - 2(g+1-d)[P_\infty]$, $F = \di_0(h') - 2(n_1 - 1)[P_0]$ and let $E = \di_0(y) - [P_0]$.
 Then
 \begin{eqnarray*}
@@ -512,11 +518,12 @@ Can rewrite the last divisor as $\frac{1}{h}\left(\frac{y^2 + f}{x^{i+1}}\right)
 Using this it seems that there should be a pole of "large" order at $P_0$.
 
 The above is wrong, as I was using an incorrect expansion of $dy$.
-So we actually have
+\end{comment}
+the differential as follows
 \begin{eqnarray*}
 dyx^{-i} & = & x^{-i}dy + ydx^{-i} \\
 & = & \frac{1}{x^i} \left( \frac{f' + yh'}{h}\right) dx + \frac{iy}{x^{i+1}}dx \\
-& = & \left( \frac{f'}{x^ih} + \frac{yh'}{x^ih} + \frac{iy}{x^{i+1}} \right) dx
+& = & \left( \frac{f'}{x^ih} + \frac{yh'}{x^ih} + \frac{iy}{x^{i+1}} \right) dx.
 \end{eqnarray*}
 
 So when we expand the first term we get
@@ -528,10 +535,10 @@ So when we expand the first term we get
 
 
 Before computing the next term we will define the divisor $H' := \di_0(h') - 2(n_1 -1)[P_0]$, and hence we have $\di_0(h') = H' + 2(n_1-1)[P_0]$.
-We can now compute the divisor of the seond term as
+We can now compute the divisor of the second term as
 \begin{eqnarray*}
-\di\left( \frac{yh'dx}{x^ih} \right)  & = & \di_0(y) - (2g+1)[P_\infty] + \di_0(h') - 2(d-1)[P_\infty] + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - \\
-& & R + (2g+2)[P_\infty] \\
+\di\left( \frac{yh'dx}{x^ih} \right)  & = & \di_0(y) - (2g+1)[P_\infty] + \di_0(h') - 2(d-1)[P_\infty] + R - 4[P_\infty] \\
+& & - 2i[P_0] + 2i[P_\infty] - R + (2g+2)[P_\infty] \\
 & = & \di_0(y) - 2g[P_\infty] - [P_\infty] + \di_0(h') - 2d[P_\infty] + 2[P_\infty] - 4[P_\infty] -\\
 & & 2i[P_0] + 2i[P_\infty]+ 2g[P_\infty] + 2[P_\infty]  \\
 & = & \di_0(y) + (2i-2d-1)[P_\infty] + di_0(h') - 2i[P_0] \\
@@ -562,7 +569,8 @@ Then we can write $h' = \beta_d x^{d-1} + \ldots + \beta_{n_1} x^{n_1-1}$.
 We then define two polynomials, $\theta = \beta_{d-1} x^{d-1} + \ldots + \beta_{i+1}x^i$ and $\psi = \beta_{i-1}x^{i-2} + \ldots + \beta_{n_1}x^{n_1-1}$, whose sum is $h'$.
 We now compute the divisors of $\frac{y\theta dx}{x^ih}$ and $\frac{y\psi dx}{x^ih}$. 
 \begin{eqnarray*}
-\di\left(\frac{y\theta dx}{x^ih}\right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\theta) + R - 4[P_\infty] -2i[P_0] + 2i[P_\infty] - R + (2g+2)[P_\infty] \\
+\di\left(\frac{y\theta dx}{x^ih}\right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\theta) + R - 4[P_\infty] -2i[P_0] + 2i[P_\infty] - R \\
+& &  + (2g+2)[P_\infty] \\
 & = & \di_0(y) + \di(\theta) -2i[P_0] + (2i -3)[P_\infty] \\
 & = & \di_0(y) + \di_0(\theta) - 2(d-1)[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
 & = & \di_0(y) + \di_0\left(\frac{\theta}{x^i}\right) + 2i[P_0] -2i[P_0] + (2i-2d-1)[P_\infty]\\
@@ -572,7 +580,8 @@ We now compute the divisors of $\frac{y\theta dx}{x^ih}$ and $\frac{y\psi dx}{x^
 and
 
 \begin{eqnarray*}
-\di\left( \frac{y\psi dx}{x^ih} \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + (2g+2)[P_\infty] \\
+\di\left( \frac{y\psi dx}{x^ih} \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] \\
+& & - R + (2g+2)[P_\infty] \\
 & = & \di_0(y) + \di(\psi) -2i[P_0] + (2i-3)[P_\infty] \\
 & = & \di_0(y) + \di_0(\psi) - 2(i-2)[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
 & = & \di_0(y) + \di_0(\psi) -2i[P_0] + [P_\infty].
@@ -614,8 +623,10 @@ The only case we need to consider is when $n_1 \leq i \leq d$, and in this case 
 Then it is clear that $\frac{y\psi}{x^{i+1}}dx + \frac{y\phi}{x^{i+1}}dx = y\left( \frac{xh' + h}{x^{i+1}} \right) dx$.
 We then compute the divisors of these differentials, as follows
 \begin{eqnarray*}
- \di \left( \frac{y \phi}{hx^{i+1}} dx \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di( \phi) + R - 4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] -R + 2(g+1)[P_\infty] \\
-& = & \di_0(y) + \di(\phi) -(2g+1)[P_\infty] + R' + 2(g+1-d)[P_\infty] + 2n_1[P_0] - 2(i+1)[P_0] + 2(i-1)[P_\infty] -R' - 2n_1[P_0]- 2(g+1-d)[P_\infty] +2(g+1)[P_\infty] \\
+ \di \left( \frac{y \phi}{hx^{i+1}} dx \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di( \phi) + R - 4[P_\infty] - 2(i+1)[P_0] \\
+& ~ & + 2(i+1)[P_\infty] -R + 2(g+1)[P_\infty] \\
+& = & \di_0(y) + \di(\phi) -(2g+1)[P_\infty] + R' + 2(g+1-d)[P_\infty] + 2n_1[P_0] - 2(i+1)[P_0] \\ 
+& ~ & + 2(i-1)[P_\infty] -R' - 2n_1[P_0]- 2(g+1-d)[P_\infty] +2(g+1)[P_\infty] \\
 & = & \di_0(y) + \di(\phi) + R' - 2(i +1)[P_0] + (2i-2)[P_\infty] \\
 & = & \di_0(y) + \di_0(\phi) + R' - 2(i + 1)[P_0] + (2i - 2d - 2)[P_\infty] \\
 & = & \di_o(y) + \di_0\left( \frac{\phi}{x^{i+1}} \right) + 2(i - d -1)[P_\infty]. 
@@ -623,7 +634,8 @@ We then compute the divisors of these differentials, as follows
 
 Similarly 
 \begin{eqnarray*}
-\di \left( \frac{\psi y}{hx^{i+1}} dx \right) & = & \di_0(y) -(2g+1)[P_\infty] + \di(\psi) +R -4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] - R + 2(g+1)[P_\infty] \\
+\di \left( \frac{\psi y}{hx^{i+1}} dx \right) & = & \di_0(y) -(2g+1)[P_\infty] + \di(\psi) +R -4[P_\infty] - 2(i+1)[P_0] \\
+& ~ & + 2(i+1)[P_\infty] - R + 2(g+1)[P_\infty] \\
 & = & \di_0(y) + \di(\psi) -2(i+1)[P_0] + (2i-1)[P_\infty] \\
 & = & \di_0(y) + \di_0(\psi) - 2(i-1)[P_\infty] - 2(i+1)[P_0] + (2i+1)[P_\infty] \\
 & = & \di_0(y) + \di_0(\psi) - 2(i+1)[P_0] + [P_\infty]
