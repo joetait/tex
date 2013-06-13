@@ -116,18 +116,18 @@ y^2 = f(x),
 for some $f(x)\in k[x]$.
 By an automorphism of $\mathbb P_k^1$ we may assume that $0$ and $\infty$ are branch points.
 We let $P_0$ and $P_\infty$ be the unique points in $x^{-1}(0)$ and $x^{-1}(\infty)$ respectively.
-We may also assume that $f(x) = a_{2g+1}x^{2g+1} + a_{2g}x^{2g} + \ldots $ for some $a_i \in k$, $a_{2g+1} \neq 0$; note that the constant term is zero since $0\in \mathbb P_k^1$ is a branch point.
-Since the constant term is zero, we can conclude that $a_1 \neq 0$, else $x^2$ would divide $f(x)$, but we do not allow repeated roots.
+We may also assume that $f(x) = a_{2g+1}x^{2g+1} + a_{2g}x^{2g} + \ldots + a_1x$ for some $a_i \in k$, and $a_{2g+1} \neq 0$; note that the constant term is zero since $0\in \mathbb P_k^1$ is a branch point.
+As the constant term is zero, we can conclude that $a_1 \neq 0$, else $x^2$ would divide $f(x)$ and we do not allow repeated roots.
 
 We wish to compute a basis for the de-Rham hypercohomology of this curve, which we denote by $H^1_{dR}(X/k)$. \todo{check notation - currently copied from Hortsch paper}
-To do this we se the fact that we have the following short exact sequence:
+To do this we use the fact that we have the following short exact sequence:
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra H^1_{dR}(X/k) \ra H^1(X,\cO_x) \ra 0.
 \end{equation}
 
 We use \v{C}ech cohomology for our computations.
 We have an affine open cover by $U_1 = X\backslash P_0$ and $U_2 = X \backslash P_\infty$, which we denote by $U = \{ U_1, \ U_2\}$.
-\todo{find citation}{Now by definition}  $\check{H}_{dR}^1(U)$ is the quotient of the $k$-vector space 
+\todo{find citation}{By definition}  $\check{H}_{dR}^1(U)$ is the quotient of the $k$-vector space 
 \[
 \{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1 - \omega_2\}
 \]
@@ -137,30 +137,30 @@ by the subspace
 \{ (df_1, df_2, f_1-f_2)|f_i \in \cO_x(U_i)\}.
 \]
 
-Now given the short exact sequence \eqref{ses} we can compute when a group $G$ acting on $X$ acts faithfully on $H^1_{dR}(X/k)$ by computing a basis of the other terms in the sequence and seeing when $G$ acts faithfully on them.
-We know that $\{x^iy^{-1}dx\}_{0\leq i \leq g-1}$ form a basis of $H^0(X,\Omega_X)$ from previous work, so that leaves us to compute a basis of $H^1(X,\cO_X)$.
+Given the short exact sequence \eqref{ses} we can compute when a group $G$ acting on $X$ acts faithfully on $H^1_{dR}(X/k)$ by computing a basis of the other terms in the sequence and seeing when $G$ acts faithfully on them.
+We know that the elements $\frac{dx}{y}, \frac{xdx}{y}, \ldots , \frac{x^{g-1}dx}{y}$ form a basis of $H^0(X,\Omega_X)$ from previous work, so we only need to compute a basis of $H^1(X,\cO_X)$.
 
-We start doing this by using Serre duality.
+%We start doing this by using Serre duality.
 We recall that Serre duality gives a map $\text{Res}: H^0(X,\Omega_X) \times H^1(X,\cO_X) \rightarrow k$.
 This is defined by  $(\omega,f) \rightarrow \sum_{P\in X}\text{res}_P(f\omega)$ for some $(\omega, f) \in   H^0(X,\Omega_X) \times H^1(X,\cO_X)$.
 We consider the pair $(y^{-1}x^idx,yx^{-j})$ 
 % \in  H^0(X,\Omega_X) \times H^1(X,\cO_X) 
 , which maps to $\sum_{P\in X} \text{res}_P (x^{i-j}dx)$. \todo{As we're using Cech cohomology, we compute each open set. The only poles are at P0 and Pinfinity, so it is regular on the insterstion}
 This can be calculated by summing the residues over the points in $U_1$ or by the residue theorem we can equivalently can compute the negative of the residue at $P_0$.
-So for $\text{res}(x^{i-j})dx$ to be non-zero there must be a pole at at least one point in $U_1$ and at $P_0$.
+So for $\text{Res}(x^{i-j}dx)$ to be non-zero there must be a pole at at least one point in $U_1$ and at $P_0$.
 We can check when this occurs by computing the divisor of $x^{i-j}dx$, which we do presently:
 \begin{eqnarray}
-	\di(x^{i-j}dx) & = &  2(i-j)P_0 +  2(j-i)P_\infty + R - 2D_\infty \\
+	\di(x^{i-j}dx) & = &  2(i-j)P_0 +  2(j-i)P_\infty + R - 4[P_\infty] \\
 	& = & (2i-2j+1)P_0 +(R-P_0-P_\infty) +(2j-2i-3)P_\infty,
 \end{eqnarray}
-where $R$ is the ramification divisor of $x$, and $D_\infty = 2[P_\infty]$.
+where $R$ is the ramification divisor of $x$.
 
 Recall that since both $P_\infty$ and $P_0$ are ramification points it follows that $R-P_0-P_\infty$ is positive.
 Moreover, since $X$ is a hyperelliptic curve the coefficient of every point in the ramification divisor is 1, we have a pole at both $P_0$ and $P_\infty$ if and only if $j=i+1$.
 So we will be considering the differential $\frac{1}{x}dx$, as this is the only differential of the form $x^{i-j}dx$ which can possibly have non-zero residue at the required points.
 
 
-Now we need to compute the residue of $x^{-1}dx$ at $P_\infty$.
+We now turn to computing precisely the residue of $x^{-1}dx$ at $P_\infty$.
 To start with we note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$.
 Indeed we can compute the order of $t$ at $P_\infty$; the computation follows simply from the fact that $t^2 = \frac{f(x)}{x^{2g+2}}$, which gives
 \[
@@ -263,17 +263,17 @@ Similarly
 t^2 = \frac{f}{x^{2g+2} } = \frac{a_{2g+1}}{x} + \ldots
 \]
 
-Since $\ord_{P_\infty}\left(\frac{h}{x^{2g+1}}\right) = 2$ we have that $\frac{h}{x^{2g+1}} = \sum_{i\geq 2} c_it^i$ for $c_i\in k$, and from the above computations we can see that $c_2 = 1$.
-We can also write $\frac{x^{2g+1}}{h} = \sum_{i\geq -2} d_it^i$, for some $d_i\in k$.
+Since $\ord_{P_\infty}\left(\frac{h}{x^{2g+1}}\right) = 2$ we know that $\frac{h}{x^{2g+1}} = \sum_{i\geq 2} c_it^i$ for some $c_i\in k$, and from the above computations we can see that $c_2 = 1$.
+We also know that $\frac{x^{2g+1}}{h} = \sum_{i\geq -2} d_it^i$, for some $d_i\in k$.
 Since \[
-\frac{h}{x^{2g+1}} \cdot \frac{x^{2g+1}}{h} = \left( \sum_{i\geq 2} c_it^i\right) \cdot \left( \sum_{i\geq -2} d_it^i\right) = 1
+1 = \frac{h}{x^{2g+1}} \cdot \frac{x^{2g+1}}{h} = \left( \sum_{i\geq 2} c_it^i\right) \cdot \left( \sum_{i\geq -2} d_it^i\right)
 \]
- we conclude that $d_{-2} = 1$. 
+ and $c_2 = 1$ we conclude that $d_{-2} = 1$. 
 Now 
 \[
 \frac{1}{x}dx = \left( -2t \cdot \sum_{i\geq -2} d_it^i\right) dt = \left( \sum_{i\geq -2}-2d_it^{i+1} \right) dt
 \]
-so we can see that the residue is $-2$.
+so we see that the residue is $-2$.
 
 To make sure that this is part of the basis for $H^1(\Omega_X,\cO_X)$ we need to find suitable differentials $\omega_1$ and $\omega_2$, regular on $U_1$ and $U_2$ respectively, such that $d(yx^{-i}) = \omega_1 - \omega_2$.
 \begin{comment}
@@ -335,9 +335,9 @@ To start with, note that
 \begin{eqnarray*}
 2yx^{-i}d(yx^{-i}) & = & d(yx^{-i})^2 \\
 & = & dfx^{-2i} \\
-& = & fdx^{-2i} + x{-2i}df \\
+& = & fdx^{-2i} + x^{-2i}df \\
 & = & -f\cdot\frac{2i}{x^{2i+1}}dx + \frac{f'}{x^{2i}}dx \\
-& = & \frac{1}{x^{2i}}\left( f' - 2i\frac{f}{x}\right) dx 
+& = & \frac{1}{x^{2i}}\left( f' - \frac{2if}{x}\right) dx 
 \end{eqnarray*}
 
 Hence it follows that 
@@ -346,7 +346,7 @@ dyx^{-i} = \frac{1}{2yx^{i}}\left( f' - \frac{2if}{x} \right) dx
 \end{equation*}
 and so
 \[
-\di (dxy^{-i}) = \di_0(s) -2i[P_0] +2(i-g-1)[P_\infty],
+\di (dxy^{-i}) = \di_0(s) -2i[P_0] +(2i-2g-3)[P_\infty],
 \]
 where $s(x) = \left ( f'-\frac{2if}{x} \right )$.
 We use $s$ as we will not in general know what its zeroes are, though we do know that $\di_0(s)$ is a \todo{actually, degree is 4g - check if this affects other things}{positive divisor of degree $4g$}.
