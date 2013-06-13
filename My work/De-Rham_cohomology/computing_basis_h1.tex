@@ -349,9 +349,9 @@ and so
 \di (dxy^{-i}) = \di_0(s) -2i[P_0] +(2i-2g-3)[P_\infty],
 \]
 where $s(x) = \left ( f'-\frac{2if}{x} \right )$.
-We use $s$ as we will not in general know what its zeroes are, though we do know that $\di_0(s)$ is a \todo{actually, degree is 4g - check if this affects other things}{positive divisor of degree $4g$}.
-This is true since $2i <2g+1$, thus the coefficient of $x^{2g}$ in $s$, which is $(2g+1)a_{2g+1}- 2ia_{2g+1}$, is non-zero. 
-We will implicitly be using the fact that $s$ cannot have a zero at a ramification point, since $f$ and $f'$ have distinct roots, in our future computations.
+In general $s$ will be a polynomial of degree $2g$ in $x$.
+However, if $p$ divides $(2g+1)a_{2g+1}- 2ia_{2g+1}$, the coefficient of $x^{2g}$, then the degree will be less, and in this case we will let $d_s$ be the degree of $s$.
+Note that we will not in general know what the zeroes of $s$ are, but when we use $\di_0(s)$ this will not affect the coefficients of $[P_0]$ and $[P_\infty]$ in the divisors we are computing, and these are the relevant parts of the divisor.
 \begin{comment}
 We could try writing $dyx^{-i}$ as $\frac{1}{2yx^i}dx - (1-s)\frac{1}{2yx^i}dx$.
 We then  have 
@@ -382,6 +382,10 @@ Firstly
 & = & \di_0\left( \frac{\phi}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0].
 \end{eqnarray*}
 
+We now consider what will happen to this divisor if $d_s < 2g$.
+Firstly, if $d_s \leq g$ then $\phi = 0$ so $\frac{\phi}{2yx^i}dx = 0$ and is regular everywhere.
+Otherwise we will still have a factor of at least $x^{g+1}$ in $\phi$ and the coefficient of $[P_0]$ will still be positive, meaning that the differential is still regular on $U_1$.
+
 On the other hand
 \begin{eqnarray*}
 \di \left( \frac{-\psi}{2yx^i}dx\right) & = & \di (\psi ) -R + (2g+2)[P_\infty] - 2i[P_0] + 2i[P_\infty] + R -4[P_\infty] \\
@@ -389,7 +393,9 @@ On the other hand
 & = & \di_0(\psi) + 2(i-1)[P_\infty] - 2i[P_0].
 \end{eqnarray*}
 
-It should be noted that we required the coefficient $b_0$ in $s$ to be non-zero for this to be true, as then $\di_0(\psi)$ has a coefficient of zero for $[P_0]$. This is indeed the case, since $b_0 = a_1 - 2ia_1 = (1-2i)a_1 \neq 0$ since $a_1$ is non-zero. 
+Again, we consider what would happen if the degree of $\psi$ were decreased due to $p$ dividing coefficients of $s$.
+But if the degree of $\psi$ decreases then its order at $P_\infty$ increases.
+As the divisor is regular on $U_2$ when $b_g \neq 0$, it will therefore still be regular if the degree decreases.
 
 
 So if we now let $\omega_1 = \frac{-\psi}{2yx^i}dx$ and $\omega_2 = \frac{\phi}{2yx^i}dx$ then we have our two differentials.
