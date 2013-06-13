@@ -413,12 +413,12 @@ for some polynomials $f$ and $h$.
 Since we are still assuming that $0$ and infinity are branch points, it follows that $\deg(f) = 2g+1$ and that $\deg(h)  = d  \leq g$. \todo{cite liu}
 We suppose that $h(x) = \prod_1^m (x-a_i)^{n_i}$, and that $P_i\in X$ are the corresponding ramification points.
 We will assume that $a_1 = 0$.
-We then have that the ramification divisor has coefficients $\delta_P$ where
+It then follows that the ramification divisor has coefficients $\delta_P$ where
 \[
 \delta_P = \left \{ \begin{array}{ll}
 2n_i & \text{if } P= P_i \text{ for some } i=1, \ldots , m \\
 2(g+1-d) & \text{if } P=P_\infty \\
-0 & \text{else.}
+0 & \text{otherwise.}
 \end{array}
 \right.
 \]
@@ -429,33 +429,33 @@ We now recall the divisors of some other elements of the function field which we
 \di (dx) & = & R - 4[P_\infty] \\
 \di (h(x)) & = & R - 2(g+1)[P_\infty] \\
 \di (x^i) & = & 2i[P_0] - 2i[P_\infty]\\
-\di (y) & = & \di_0(y) - (2g+1)[P_\infty].
+\di (y) & = & \di_0(y) - (2g+1)[P_\infty]
 \end{eqnarray*}
 
 Though we have not properly described the zero divisor of $y$, it should be recalled that since $P_0$ is a ramification, \todo{is this right?}{$\di_0(y)$ will have a coefficient of one for $[P_0]$.}
 Details of the above are in my 18 month report.
 
-As before, we will consider a pairing in $H^0(X,\Omega_X) \times H^1(X,\cO_X)$, and start by showing that is has poles at both $P_0$ and $P_\infty$.
+As before, we will consider a pairing in $H^0(X,\Omega_X) \times H^1(X,\cO_X)$, and start by showing that it has poles at both $P_0$ and $P_\infty$.
 As shown in the 18 month report, a basis of $H^0(X,\Omega_X)$ is $\frac{x^idx}{h(x)}$ for $0 \leq i \leq g-1$.
 We consider the pairing $\left(\frac{x^idx}{h(x)}, x^{-j}y\right) \mapsto \frac{x^{i-j}ydx}{h(x)}$.
 We compute the divisor
 \begin{eqnarray*}
 \di\left(\frac{x^{i-j}ydx}{h(x)}\right)  & = & 2(i-j)[P_0] - 2(i-j)[P_\infty] + \di_0(y) - (2g+1)[P_\infty] +R -4[P_\infty] \\
 & & -R +2(g+2)[P_\infty] \\
-& = &  \di_0(y) + 2(i-j)[P_0] +(2(j-i)-3)[P_\infty]
+& = &  \di_0(y) + 2(i-j)[P_0] +(2(j-i)-3)[P_\infty].
 \end{eqnarray*}
 
-So clearly we have a pole at both $P_0$ and $P_\infty$ if and only if $j=i+1$, and in this case the order of the pole at both points is $-1$.
+Clearly we have a pole at both $P_0$ and $P_\infty$ if and only if $j=i+1$, and in this case the order of the pole at both points is $-1$.
 
-So this means we need to compute the residue of $\frac{ydx}{xh(x)}$ at $P_\infty$.
-We start by noting that $t = \frac{y}{x^{g+1}}$ is a uniformising parameter; we check this by computing the divisor:
+We now wish to compute the residue of $\frac{ydx}{xh(x)}$ at $P_\infty$.
+We start by noting that $t = \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$; we check this by computing the divisor:
 \[
 \di(t) = \di_0(y) - (2g+1)[P_\infty] -(2g+2)[P_0] + (2g+2)[P_\infty] = \di_0(y)-(2g+2)[P_0] + [P_\infty].
 \]
 
 So clearly $t$ is a uniformising parameter at $P_\infty$.
 
-We now wish to write $\frac{ydx}{xh(x)}$ as $r(x,y)dt$ for some function $r$.
+We now wish to write $\frac{y}{xh(x)}dx$ as $r(x,y)dt$ for some function $r$.
 We first write $dy$ in terms of $dx$.
 Since
 \begin{eqnarray*}
@@ -475,39 +475,40 @@ dt & = & yd\frac{1}{x^{g+1}} + \frac{1}{x^{g+1}}dy \\
 
 In total we then have
 \[
-\frac{ydx}{xh(x)} = \frac{x^{g+1}y}{s(x,y)}dt
+\frac{y}{xh(x)}dx = \frac{x^{g+1}y}{s(x,y)}dt
 \]
 where $s(x,y) = xf' + yxh' + (g+1)yh$.
 
-We can write $\frac{x^{g+1}y}{s(x,y)} = \sum_{i\geq -1} c_i t^i$, and we wish to compute $c_{-1}$.
+We know that $\frac{x^{g+1}y}{s(x,y)} = \sum_{i\geq -1} c_i t^i$, with $c_i \in k$, and we wish to compute $c_{-1}$.
 
 We shall do this by computing the coefficient of $t$ in the expansion $\frac{s(x,y)}{x^{g+1}y} = \sum_{i\geq 1}d_it^i$.
 We can split up $\frac{s(x,y)}{x^{g+1}y}$ in to three terms, namely $\frac{xf'}{x^{g+1}y}$, $\frac{yxh'}{x^{g+1}y}$ and $\frac{yh}{x^{g+1}y}$.
-Each of these terms can of course be expanded as a power series in $t$, but only the first term mentioned has order 1 at $P_\infty$, and hence this term will determine the coefficient of $t$ in the power series expansion of $\frac{s(x,y)}{x^{g+1}y}$.
-Suppose that $f = \alpha_{2g+1}x^{2g+1} + \alpha_{2g}x^{2g} + \ldots + \alpha_1x^1$.
-Then $xf'= \alpha_{2g+1}x^{2g+1} + \alpha_{2g-1}x^{2g-1} + \ldots + \alpha_1x^1$; i.e. we have just removed the even power terms.
+Each of these terms can of course be expanded as a in $t$, but only the first term mentioned has order 1 at $P_\infty$, and hence this term will determine the coefficient of $t$ in the power series expansion of $\frac{s(x,y)}{x^{g+1}y}$.
+Suppose that $f = \alpha_{2g+1}x^{2g+1} + \alpha_{2g}x^{2g} + \ldots + \alpha_1x^1 + \alpha_0$.
+Then $xf'= \alpha_{2g+1}x^{2g+1} + \alpha_{2g-1}x^{2g-1} + \ldots + \alpha_1x^1$; i.e. the terms with an even power are removed.
 
 So the the only term in $\frac{xf'}{x^{g+1}y}$ of order 1 at $P_\infty$ is $\frac{\alpha_{2g+1}x^{2g+1}}{x^{g+1}y} = \frac{\alpha_{2g+1}x^{g}}{y}$.
 Since
 \[
 \frac{\alpha_{2g+1}x^g}{y} = \frac{\alpha_{2g+1}}{x}t^{-1}
 \]
-and $\frac{1}{x} = \sum_{i\geq 2}e_it^i$ for some $e_i \in k$, if we compute $e_2$ then we will have computed $d_1$.
-But since $t^2 = \frac{f + hy}{x^{2g+2}}$, and clearly $\frac{hy}{x^{2g+2}}$ has no terms of the form $\frac{c}{x}$ for some $c \in k$, and 
+and $\frac{1}{x} = \sum_{i\geq 2}e_it^i$ for some $e_i \in k$, if we compute $e_2$ then we will have effectively computed $d_1$.
+Now $t^2 = \frac{f }{x^{2g+2}}+ \frac{hy}{x^{2g+2}}$, and clearly $\frac{hy}{x^{2g+2}}$ has no terms of the form $\frac{c}{x}$ for some $c \in k$. 
+On the other hand
 \[
 \frac{f}{x^{2g+2}} = \frac{\alpha_{2g+1}}{x} + \ldots
 \]
-we conclude that $e_2 = \frac{1}{\alpha_{2g+1}}$.
-Hence $d_1 = \alpha_{2g+1} \cdot \frac{1}{\alpha_{2g+1}} = 1$.
+Hence we conclude that $e_2 = \frac{1}{\alpha_{2g+1}}$.
+It follows that $d_1 = \alpha_{2g+1} \cdot \frac{1}{\alpha_{2g+1}} = 1$.
 
 
 We finally use this to compute $c_{-1}$.
 Since $1 = \frac{s(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{s(x,y)} = \left( \sum_{i\geq 1}d_it^i \right) \cdot \left( \sum_{i\geq -1}c_it^i\right)$, we conclude that $c_{-1} = d_{1} = 1$.
 
 
-So now we need to find $\omega_1$ and $\omega_2$ such that $d(yx^{-i}) = \omega_1 - \omega_2$.
-We start by splitting up 
+So now we need to find $\omega_1$ and $\omega_2$, regular on $U_1$ and $U_2$ respectively, such that $d(yx^{-i}) = \omega_1 - \omega_2$.
 \begin{comment}
+We start by splitting up 
 $d(yx^{-i})$ as $\frac{1}{x^i} \left(iyh + xf' + yh'x \right) dx+ \frac{iy}{x^{i+1}} dx$, and we now compute the divisors of these differentials.\todo{wrong to assume that f(0)=0?}
 We let $R' = R - 2n_1[P_0] - 2(g+1-d)[P_\infty]$, $F = \di_0(h') - 2(n_1 - 1)[P_0]$ and let $E = \di_0(y) - [P_0]$.
 Then
@@ -525,14 +526,15 @@ Using this it seems that there should be a pole of "large" order at $P_0$.
 
 The above is wrong, as I was using an incorrect expansion of $dy$.
 \end{comment}
-the differential as follows
+We start by rewriting $dyx^{-i}$ as a divisor of $dx$, as follows
 \begin{eqnarray*}
 dyx^{-i} & = & x^{-i}dy + ydx^{-i} \\
 & = & \frac{1}{x^i} \left( \frac{f' + yh'}{h}\right) dx + \frac{iy}{x^{i+1}}dx \\
 & = & \left( \frac{f'}{x^ih} + \frac{yh'}{x^ih} + \frac{iy}{x^{i+1}} \right) dx.
 \end{eqnarray*}
 
-So when we expand the first term we get
+We compute the divisors of each term to see when they are regular on $U_1$ or $U_2$.
+To start with we have
 \begin{eqnarray*}
 \di \left( \frac{f'dx}{x^ih} \right) & = & \di (f') + \di ( dx ) - \di (x^i) - \di (h) \\
 & = & \di_0 (f') - 4g[P_\infty] + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] -R + (2g+2)[P_\infty] \\
@@ -540,32 +542,54 @@ So when we expand the first term we get
 \end{eqnarray*}
 
 
-Before computing the next term we will define the divisor $H' := \di_0(h') - 2(n_1 -1)[P_0]$, and hence we have $\di_0(h') = H' + 2(n_1-1)[P_0]$.
+Before computing the next divisor we define $H' := \di_0(h') - 2(n_1 -1)[P_0]$, and hence we have $\di_0(h') = H' + 2(n_1-1)[P_0]$.
 We can now compute the divisor of the second term as
 \begin{eqnarray*}
 \di\left( \frac{yh'dx}{x^ih} \right)  & = & \di_0(y) - (2g+1)[P_\infty] + \di_0(h') - 2(d-1)[P_\infty] + R - 4[P_\infty] \\
 & & - 2i[P_0] + 2i[P_\infty] - R + (2g+2)[P_\infty] \\
 & = & \di_0(y) - 2g[P_\infty] - [P_\infty] + \di_0(h') - 2d[P_\infty] + 2[P_\infty] - 4[P_\infty] -\\
 & & 2i[P_0] + 2i[P_\infty]+ 2g[P_\infty] + 2[P_\infty]  \\
-& = & \di_0(y) + (2i-2d-1)[P_\infty] + di_0(h') - 2i[P_0] \\
-& = & \di_0(y) + (2i -2d -1) [P_\infty] + H + (2(n_1 - 1 - i)[P_0].
+& = & \di_0(y) + (2i-2d-1)[P_\infty] + \di_0(h') - 2i[P_0] \\
+& = & \di_0(y) + (2i -2d -1) [P_\infty] + H' + (2(n_1 - 1 - i)[P_0].
 \end{eqnarray*}
 
+Note that $H'$ is a positive  divisor with no $[P_0]$ or $[P_\infty]$ terms, so it will not affect whether the differential is regular on $U_1$ or $U_2$.
 
-Maybe try splitting $h'$ in to two parts, one with degree greater than $n_1$, the other with degree less (and throw an equals in somewhere).
 
-
-We now define another divisor before computing the third part of the divisor.
-We let $R' = R - 2(g+1-d)[P_\infty] - 2n_1[P_0]$, so that $R = R' + 2(g+1-d)[P_\infty] + 2n_1[P_0]$.
-We now compute the third divisor:
+We now define $R' = R - 2(g+1-d)[P_\infty] - 2n_1[P_0]$, so that $R = R' + 2(g+1-d)[P_\infty] + 2n_1[P_0]$.
+Then the third divisor is
 \begin{eqnarray*}
 \di \left( \frac{iydx}{x^{i+1}} \right) & = & \di_0(y) - (2g+1)[P_\infty] + R - 4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] \\
 & = & \di_0(y) - 2g[P_\infty] - [P_\infty] + R' + 2g[P_\infty] + 2[P_\infty] - 4[P_\infty] - 2d[P_\infty] +\\
 & &  2n_1[P_0] - 2i[P_0] -2[P_0] + 2i[P_\infty] +2[P_\infty]  \\
-& = & \di_0(y) + R' + (2n_1 - 2i -2)[P_0] + (2i -2d -1)[P_\infty].
+& = & \di_0(y) + R' + (2n_1 - 2i -2)[P_0] + (2i -2d -1)[P_\infty]
+\end{eqnarray*}
+when $i$ is odd, and is zero if $i$ is even.
+
+As with $H'$, $R'$ is a positive divisor with no $[P_0]$ or $[P_\infty]$ terms.
+
+We now suppose that we can write $f = \alpha_{2g+1} x^{2g+1} + \ldots + \alpha_1x +\alpha_0$, and hence we have $f' = \alpha_{2g+1}x^{2g} + \ldots + \alpha_1$.
+We fix $i$.
+We let $\phi (x) = \alpha_{2g+1}x^{2g} + \ldots + \alpha_{i+1}x^i$ and $\psi (x) = \alpha_{i-1}x^{i-2} + \ldots + \alpha_1$.
+
+Then we have
+\begin{eqnarray*}
+\di \left( \frac{\phi dx}{x^i h} \right) & = & \di(\phi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + (2g+2) [P_\infty] \\
+& = & \di_0(\phi) - 4g[P_\infty] - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] + 2g[P_\infty] + 2[P_\infty] \\
+& = & \di_0(\phi) - 2i[P_0] + 2(i-g-1)[P_\infty] \\
+& = & \di_0\left( \frac{\phi}{x^i} \right) + \di_0( x^i) - 2i[P_0] + 2(i-g-1)[P_\infty] \\
+& = & \di_0 \left( \frac{\phi}{x^i} \right) + 2(i-g-1)[P_\infty].
 \end{eqnarray*}
 
-This is an issue if $n_1 \leq i \leq d$, since then coefficients for both $P_0$ and $P_\infty$ are negative, and so the differential is regular on neither $U_1$ or $U_2$.
+Similarly 
+\begin{eqnarray*}
+\di\left( \frac{\psi dx}{x^ih} \right) & = & \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + 2(g+1)[P_\infty] \\
+& = & \di_0(\psi ) - 2(i-2)[P_\infty] - 4[P_\infty] - 2i[P_0] + 2(g+i + 1)[P_\infty] \\
+& = & \di_0(\psi) - 2i[P_0] + 2(g+1)[P_\infty].
+\end{eqnarray*}
+
+So we have rewritten the first term as the sum of two differentials (dependent on $i$), one of which is regular on $U_1$ and the other regular on $U_2$.
+
 
 
 In the case that $i$ is even we only need to split up the first two terms, as the last term is zero.
@@ -595,28 +619,6 @@ and
 \todo{check this}{Similar computations will work when either $d$ or $n_1$ (or both) are even} and when we have split up $\frac{f'dx}{x^ih}$ we have two divisors that sum to $dx^iy$ and are regular on the appropriate sets whenever $i$ is even.
 
 
-
-We now suppose that we can write $f = \alpha_{2g+1} x^{2g+1} + \ldots + \alpha_1x$, and hence we have $f' = \alpha_{2g+1}x^{2g} + \ldots + \alpha_1$.
-We fix $i$.
-We let $\phi (x) = \alpha_{2g+1}x^{2g} + \ldots + \alpha_{i+1}x^i$ and $\psi (x) = \alpha_{i-1}x^{i-2} + \ldots + \alpha_1$.
-
-Then we have
-\begin{eqnarray*}
-\di \left( \frac{\phi dx}{x^i h} \right) & = & \di(\phi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + (2g+2) [P_\infty] \\
-& = & \di_0(\phi) - 4g[P_\infty] - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] + 2g[P_\infty] + 2[P_\infty] \\
-& = & \di_0(\phi) - 2i[P_0] + 2(i-g-1)[P_\infty] \\
-& = & \di_0\left( \frac{\phi}{x^i} \right) + \di_0( x^i) - 2i[P_0] + 2(i-g-1)[P_\infty] \\
-& = & \di_0 \left( \frac{\phi}{x^i} \right) + 2(i-g-1)[P_\infty].
-\end{eqnarray*}
-
-Similarly 
-\begin{eqnarray*}
-\di\left( \frac{\psi dx}{x^ih} \right) & = & \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + 2(g+1)[P_\infty] \\
-& = & \di_0(\psi ) - 2(i-2)[P_\infty] - 4[P_\infty] - 2i[P_0] + 2(g+i + 1)[P_\infty] \\
-& = & \di_0(\psi) - 2i[P_0] + 2(g+1)[P_\infty].
-\end{eqnarray*}
-
-So we have rewritten the first term as the sum of two differentials( dependent on $i$), one of which is regular on $U_1$ and the other regular on $U_2$.
 
 We now consider the case where $i$ is specifically odd, and when $n_1$ and $d$ are even.
 Then we have 
