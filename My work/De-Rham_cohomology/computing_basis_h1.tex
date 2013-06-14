@@ -597,8 +597,9 @@ and
 
 
 We now suppose that we can write $f = \alpha_{2g+1} x^{2g+1} + \ldots + \alpha_1x$, and hence we have $f' = \alpha_{2g+1}x^{2g} + \ldots + \alpha_1$.
-We fix $i$.
 We let $\phi (x) = \alpha_{2g+1}x^{2g} + \ldots + \alpha_{i+1}x^i$ and $\psi (x) = \alpha_{i-1}x^{i-2} + \ldots + \alpha_1$.
+Of course we do not know that any of the coefficients other $\alpha_{2g+1}$ are non-zero.
+In particular, this means that $\psi(x)$ has a pole of order less than or equal to $2(i-1)$ at $P_\infty$, a fact we will use below.
 
 Then we have
 \begin{eqnarray*}
@@ -612,11 +613,11 @@ Then we have
 Similarly 
 \begin{eqnarray*}
 \di\left( \frac{\psi dx}{x^ih} \right) & = & \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + 2(g+1)[P_\infty] \\
-& = & \di_0(\psi ) - 2(i-2)[P_\infty] - 4[P_\infty] - 2i[P_0] + 2(g+i + 1)[P_\infty] \\
+& \geq & \di_0(\psi ) - 2(i-1)[P_\infty] - 4[P_\infty] - 2i[P_0] + 2(g+i + 1)[P_\infty] \\
 & = & \di_0(\psi) - 2i[P_0] + 2(g+1)[P_\infty].
 \end{eqnarray*}
 
-So we have rewritten the first term as the sum of two differentials( dependent on $i$), one of which is regular on $U_1$ and the other regular on $U_2$.
+So we have rewritten the $\frac{fdx}{x^ih}$ as the sum of two differentials (dependent on $i$), one of which is regular on $U_1$ and the other regular on $U_2$.
 
 We now consider the case where $i$ is specifically odd, and when $n_1$ and $d$ are even.
 Then we have 
