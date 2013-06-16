@@ -432,7 +432,8 @@ We now recall the divisors of some other elements of the function field which we
 \di (y) & = & \di_0(y) - (2g+1)[P_\infty]
 \end{eqnarray*}
 
-Though we have not properly described the zero divisor of $y$, it should be recalled that since $P_0$ is a ramification, \todo{is this right?}{$\di_0(y)$ will have a coefficient of one for $[P_0]$.}
+Though we have not properly described the zero divisor of $y$, it should be recalled that since $P_0$ is a ramification, $\di_0(y)$ will have a coefficient of at most one for $[P_0]$.
+\todo[inline]{Check that haven't assumed that $\di_0(y)$ has co-eff 1 at $P_0$}
 Details of the above are in my 18 month report.
 
 As before, we will consider a pairing in $H^0(X,\Omega_X) \times H^1(X,\cO_X)$, and start by showing that it has poles at both $P_0$ and $P_\infty$.
@@ -455,7 +456,7 @@ We start by noting that $t = \frac{y}{x^{g+1}}$ is a uniformising parameter at $
 
 So clearly $t$ is a uniformising parameter at $P_\infty$.
 
-We now wish to write $\frac{y}{xh(x)}dx$ as $r(x,y)dt$ for some function $r$.
+We now wish to write $\frac{y}{xh(x)}dx$ as $r(x,y)dt$ for some $r \in k(x,y)$.
 We first write $dy$ in terms of $dx$.
 Since
 \begin{eqnarray*}
@@ -479,15 +480,16 @@ In total we then have
 \]
 where $s(x,y) = xf' + yxh' + (g+1)yh$.
 
-We know that $\frac{x^{g+1}y}{s(x,y)} = \sum_{i\geq -1} c_i t^i$, with $c_i \in k$, and we wish to compute $c_{-1}$.
+\todo{show that the order of this function is -1 at $P_\infty$}{We know that $\frac{x^{g+1}y}{s(x,y)} = \sum_{i\geq -1} c_i t^i$, with $c_i \in k$, and we wish to compute $c_{-1}$.}
+
 
 We shall do this by computing the coefficient of $t$ in the expansion $\frac{s(x,y)}{x^{g+1}y} = \sum_{i\geq 1}d_it^i$.
 We can split up $\frac{s(x,y)}{x^{g+1}y}$ in to three terms, namely $\frac{xf'}{x^{g+1}y}$, $\frac{yxh'}{x^{g+1}y}$ and $\frac{yh}{x^{g+1}y}$.
-Each of these terms can of course be expanded as a in $t$, but only the first term mentioned has order 1 at $P_\infty$, and hence this term will determine the coefficient of $t$ in the power series expansion of $\frac{s(x,y)}{x^{g+1}y}$.
+Each of these terms can of course be written as a power series in $t$, but only the first term mentioned has order 1 at $P_\infty$, and hence this term will uniquely determine $d_1$.
 Suppose that $f = \alpha_{2g+1}x^{2g+1} + \alpha_{2g}x^{2g} + \ldots + \alpha_1x^1 + \alpha_0$.
 Then $xf'= \alpha_{2g+1}x^{2g+1} + \alpha_{2g-1}x^{2g-1} + \ldots + \alpha_1x^1$; i.e. the terms with an even power are removed.
 
-So the the only term in $\frac{xf'}{x^{g+1}y}$ of order 1 at $P_\infty$ is $\frac{\alpha_{2g+1}x^{2g+1}}{x^{g+1}y} = \frac{\alpha_{2g+1}x^{g}}{y}$.
+So the only term in $\frac{xf'}{x^{g+1}y}$ of order 1 at $P_\infty$ is $\frac{\alpha_{2g+1}x^{2g+1}}{x^{g+1}y} = \frac{\alpha_{2g+1}x^{g}}{y}$.
 Since
 \[
 \frac{\alpha_{2g+1}x^g}{y} = \frac{\alpha_{2g+1}}{x}t^{-1}
@@ -503,7 +505,7 @@ It follows that $d_1 = \alpha_{2g+1} \cdot \frac{1}{\alpha_{2g+1}} = 1$.
 
 
 We finally use this to compute $c_{-1}$.
-Since $1 = \frac{s(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{s(x,y)} = \left( \sum_{i\geq 1}d_it^i \right) \cdot \left( \sum_{i\geq -1}c_it^i\right)$, we conclude that $c_{-1} = d_{1} = 1$.
+Since $1 = \frac{s(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{s(x,y)} = \left( \sum_{i\geq 1}d_it^i \right) \cdot \left( \sum_{i\geq -1}c_it^i\right)$, we conclude that $c_{-1} = \frac{1}{d_{1}} = 1$.
 
 
 So now we need to find $\omega_1$ and $\omega_2$, regular on $U_1$ and $U_2$ respectively, such that $d(yx^{-i}) = \omega_1 - \omega_2$.
@@ -569,38 +571,12 @@ when $i$ is odd, and is zero if $i$ is even.
 As with $H'$, $R'$ is a positive divisor with no $[P_0]$ or $[P_\infty]$ terms.
 
 
-In the case that $i$ is even we only need to split up the first two terms, as the last term is zero.
-We start with $\frac{yh'dx}{x^ih}$.
-We assume that $d$ and $n_1$ are both odd, hence $h'$ is of degree $d-1$ and the highest power of $x$ that divides $h'$ is $n_1-1$.
-Then we can write $h' = \beta_d x^{d-1} + \ldots + \beta_{n_1} x^{n_1-1}$.
-We then define two polynomials, $\theta = \beta_{d-1} x^{d-1} + \ldots + \beta_{i+1}x^i$ and $\psi = \beta_{i-1}x^{i-2} + \ldots + \beta_{n_1}x^{n_1-1}$, whose sum is $h'$.
-We now compute the divisors of $\frac{y\theta dx}{x^ih}$ and $\frac{y\psi dx}{x^ih}$. 
-\begin{eqnarray*}
-\di\left(\frac{y\theta dx}{x^ih}\right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\theta) + R - 4[P_\infty] -2i[P_0] + 2i[P_\infty] - R \\
-& &  + (2g+2)[P_\infty] \\
-& = & \di_0(y) + \di(\theta) -2i[P_0] + (2i -3)[P_\infty] \\
-& = & \di_0(y) + \di_0(\theta) - 2(d-1)[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
-& = & \di_0(y) + \di_0\left(\frac{\theta}{x^i}\right) + 2i[P_0] -2i[P_0] + (2i-2d-1)[P_\infty]\\
-& = & \di_0(y) + \di_0\left(\frac{\theta}{x^i} \right) + (2i-2d-1)[P_\infty]
-\end{eqnarray*}
 
-and
-
-\begin{eqnarray*}
-\di\left( \frac{y\psi dx}{x^ih} \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] \\
-& & - R + (2g+2)[P_\infty] \\
-& = & \di_0(y) + \di(\psi) -2i[P_0] + (2i-3)[P_\infty] \\
-& = & \di_0(y) + \di_0(\psi) - 2(i-2)[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
-& = & \di_0(y) + \di_0(\psi) -2i[P_0] + [P_\infty].
-\end{eqnarray*}
-\todo{check this}{Similar computations will work when either $d$ or $n_1$ (or both) are even} and when we have split up $\frac{f'dx}{x^ih}$ we have two divisors that sum to $dx^iy$ and are regular on the appropriate sets whenever $i$ is even.
-
-
-
-We now suppose that we can write $f = \alpha_{2g+1} x^{2g+1} + \ldots + \alpha_1x$, and hence we have $f' = \alpha_{2g+1}x^{2g} + \ldots + \alpha_1$.
+We start by writing $\frac{fdx}{x^ih}$ as the sum of two divisors, one regular on $U_1$ and the other regular on $U_2$.
+We start by writing $f = \alpha_{2g+1} x^{2g+1} + \ldots + \alpha_1x$, and hence we have $f' = \alpha_{2g+1}x^{2g} + \ldots + \alpha_1$.
 We let $\phi (x) = \alpha_{2g+1}x^{2g} + \ldots + \alpha_{i+1}x^i$ and $\psi (x) = \alpha_{i-1}x^{i-2} + \ldots + \alpha_1$.
 Of course we do not know that any of the coefficients other $\alpha_{2g+1}$ are non-zero.
-In particular, this means that $\psi(x)$ has a pole of order less than or equal to $2(i-1)$ at $P_\infty$, a fact we will use below.
+In particular, this means that $\psi(x)$ has a pole of order less than or equal to $2(i-1)$ at $P_\infty$, and that $\phi(x)$ has a zero of order at least $2i$ at $P_0$, facts we will use below.
 
 Then we have
 \begin{eqnarray*}
@@ -610,6 +586,10 @@ Then we have
 & = & \di_0\left( \frac{\phi}{x^i} \right) + \di_0( x^i) - 2i[P_0] + 2(i-g-1)[P_\infty] \\
 & = & \di_0 \left( \frac{\phi}{x^i} \right) + 2(i-g-1)[P_\infty].
 \end{eqnarray*}
+Notice that $\frac{\phi}{x}$ may still have a zero at $P_0$, but this will not affect the above differential being regular on $U_1$.
+
+
+
 
 Similarly 
 \begin{eqnarray*}
@@ -617,17 +597,69 @@ Similarly
 & \geq & \di_0(\psi ) - 2(i-1)[P_\infty] - 4[P_\infty] - 2i[P_0] + 2(g+i + 1)[P_\infty] \\
 & = & \di_0(\psi) - 2i[P_0] + 2(g+1)[P_\infty].
 \end{eqnarray*}
+Note that we have equality on the second line if and only if $\alpha_{i-1}$ is non-zero.
+Of course, even if we do not have equality, the differential is still regular on $U_2$.
+
+
 
 So we have rewritten the $\frac{fdx}{x^ih}$ as the sum of two differentials (dependent on $i$), one of which is regular on $U_1$ and the other regular on $U_2$.
 
-We now consider the case where $i$ is specifically odd, and when $n_1$ and $d$ are even.
-Then we have 
+
+
+If we now suppose that $i$ is even, then the only term left to consider is
+$\frac{yh'dx}{x^ih}$.
+If $h'$ is zero then the differential is trivially regular on both sets, so we assume $h'$ is not zero.
+Then we suppose that the highest term in $h'$ with non-zero coefficient has degree $d'$ and that the lowest term with non-zero coefficient has degree $e'$.
+Then we can write $h' = \beta_{d'+1} x^{d'} + \ldots + \beta_{e'+1} x^{e'}$.
+\todo{specify that this is when i is between d' and e'}{We then define two polynomials, $\theta = \beta_{d'+1} x^{d'} + \ldots + \beta_{i+1}x^i$ and $\psi = \beta_{i-1}x^{i-2} + \ldots + \beta_{e'+1}x^{e'}$, whose sum is $h'$.}
+Again, either of these polynomials could be zero, and if so the differentials whose divisors we compute next will obviously be zero, and the differentials will trivially be regular on both $U_1$ and $U_2$.
+Hence we will assume in the computations below that neither polynomial is the zero function.
+
+
+
+It should also be noted that since we are assuming $i$ is even we know that $\psi$ does not have an $x^{i-1}$ term, since the differential of $x^i$ is zero.
+Also, as in the previous case, we know only know that $\theta$ has a zero of order at least $2i$ at $P_0$, rather than precisely $2i$.
+We now compute the divisors of $\frac{y\theta dx}{x^ih}$ and $\frac{y\psi dx}{x^ih}$. 
+\begin{eqnarray*}
+\di\left(\frac{y\theta dx}{x^ih}\right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\theta) + R - 4[P_\infty] -2i[P_0] + 2i[P_\infty] - R \\
+& &  + (2g+2)[P_\infty] \\
+& = & \di_0(y) + \di(\theta) -2i[P_0] + (2i -3)[P_\infty] \\
+& = & \di_0(y) + \di_0(\theta) - 2d'[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
+& = & \di_0(y) + \di_0\left(\frac{\theta}{x^i}\right) + 2i[P_0] -2i[P_0] + (2i-2d'-3)[P_\infty]\\
+& = & \di_0(y) + \di_0\left(\frac{\theta}{x^i} \right) + (2i-2d'-3)[P_\infty]
+\end{eqnarray*}
+
+and
+
+\begin{eqnarray*}
+\di\left( \frac{y\psi dx}{x^ih} \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] \\
+& & - R + (2g+2)[P_\infty] \\
+& = & \di_0(y) + \di(\psi) -2i[P_0] + (2i-3)[P_\infty] \\
+& \geq & \di_0(y) + \di_0(\psi) - 2(i-2)[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
+& = & \di_0(y) + \di_0(\psi) -2i[P_0] + [P_\infty].
+\end{eqnarray*}
+Note that we have equality in the third line if and only if $\beta_{i-2}$ is non-zero.
+So we have now written $\frac{yh'dx}{x^ih}$ as the sum of two divisors, one regular on $U_1$ and the other regular on $U_2$, and this completes our basis in the case that $i$ is even.
+
+
+
+
+We now consider the case what happens when $i$ is odd, and in this case we will consider the last two terms simultaneously.
+It is clear that
 \[
 \left( \frac{yh'}{x^ih} + \frac{iy}{x^{i+1}} \right) dx  =  y \left( \frac{xh' + h}{hx^{i+1}} \right) dx.
 \]
 
-We know that $xh' + h = \beta_d x^d + \ldots + \beta_{n_1}x^{n_1}$.
-The only case we need to consider is when $n_1 \leq i \leq d$, and in this case we define $\phi = \beta_dx^d + \ldots + \beta_{i+1}^{i+1}$ and $\psi = \beta_{i-1} + x^{i-1} + \ldots + \beta_{n_1}x^{n_1}$.
+Now $xh' + h$ is precisely the polynomial formed by removing all the even terms from $h$.
+Of course, this could be zero, but in that case the differential above is trivially regular on both $U_1$ and $U_2$ and there is nothing to do.
+So we assume the polynomial is non-zero, and of degree $d''$, with lowest non-zero term of degree $e''$.
+Hence we know that $xh' + h = \beta_{d''+1} x^{d''} + \ldots + \beta_{e''+1}x^{e''}$.
+Of course, this could be zero, but in that case the differential above is trivially regular on both $U_1$ and $U_2$ and there is nothing to do.
+So we assume the polynomial is non-zero, and of degree $d''$, with lowest non-zero term of degree $e''$.
+
+
+
+The only case we need to consider is when $e'' \leq i \leq d''$, and in this case we define $\phi = \beta_{d''+1} x^{d''} + \ldots + \beta_{i+1}^{i+1}$ and $\psi = \beta_{i-1} + x^{i-1} + \ldots + \beta_{e''+1}x^{e''}$.
 Then it is clear that $\frac{y\psi}{x^{i+1}}dx + \frac{y\phi}{x^{i+1}}dx = y\left( \frac{xh' + h}{x^{i+1}} \right) dx$.
 We then compute the divisors of these differentials, as follows
 \begin{eqnarray*}
@@ -636,18 +668,24 @@ We then compute the divisors of these differentials, as follows
 & = & \di_0(y) + \di(\phi) -(2g+1)[P_\infty] + R' + 2(g+1-d)[P_\infty] + 2n_1[P_0] - 2(i+1)[P_0] \\ 
 & ~ & + 2(i-1)[P_\infty] -R' - 2n_1[P_0]- 2(g+1-d)[P_\infty] +2(g+1)[P_\infty] \\
 & = & \di_0(y) + \di(\phi) + R' - 2(i +1)[P_0] + (2i-2)[P_\infty] \\
-& = & \di_0(y) + \di_0(\phi) + R' - 2(i + 1)[P_0] + (2i - 2d - 2)[P_\infty] \\
-& = & \di_o(y) + \di_0\left( \frac{\phi}{x^{i+1}} \right) + 2(i - d -1)[P_\infty]. 
+& \geq & \di_0(y) + \di_0(\phi) + R' - 2(i + 1)[P_0] + (2i - 2d'' - 2)[P_\infty] \\
+& = & \di_o(y) + \di_0\left( \frac{\phi}{x^{i+1}} \right) + R' + 2(i - d'' -1)[P_\infty]. 
 \end{eqnarray*}
 
 Similarly 
 \begin{eqnarray*}
 \di \left( \frac{\psi y}{hx^{i+1}} dx \right) & = & \di_0(y) -(2g+1)[P_\infty] + \di(\psi) +R -4[P_\infty] - 2(i+1)[P_0] \\
-& ~ & + 2(i+1)[P_\infty] - R + 2(g+1)[P_\infty] \\
+&  & + 2(i+1)[P_\infty] - R + 2(g+1)[P_\infty] \\
 & = & \di_0(y) + \di(\psi) -2(i+1)[P_0] + (2i-1)[P_\infty] \\
-& = & \di_0(y) + \di_0(\psi) - 2(i-1)[P_\infty] - 2(i+1)[P_0] + (2i+1)[P_\infty] \\
+& \geq & \di_0(y) + \di_0(\psi) - 2(i-1)[P_\infty] - 2(i+1)[P_0] + (2i+1)[P_\infty] \\
 & = & \di_0(y) + \di_0(\psi) - 2(i+1)[P_0] + [P_\infty]
 \end{eqnarray*}
+
+
+So when $i$ is odd we can also write the last two terms as a sum of differentials, with one regular on $U_1$ and the other regular on $U_2$. 
+
+In total we can always write the differentials as a sum of two others, regular on the correct sets, thus we have a basis of $H^1(X,\cO_x)$ when $\cha (k) =2$.
+
 
 \bibliography{/home/jtait/files/Documents/Maths/Bibliography/biblio.bib}
 %\bibliography{/home/joe/files/Documents/Maths/Bibliography/biblio.bib}
