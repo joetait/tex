@@ -105,10 +105,9 @@
 
 \section{Characteristic not 2}
 
-\todo[inline]{in general, check for when p might divide the genus or i, for i between 0 and g-1}
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g$ over an algebraically closed field $k$ of characteristic unequal to 2.
-Let $x:X\rightarrow \mathbb P_k^1$ be the corresponding holomorphic map of degree two.
+Let $x:X\rightarrow \mathbb P_k^1$ be the corresponding morphism of degree two.
 There is then an associated field extension of $k(x)$ by $y$, where $y$ is defined by
 \[
 y^2 = f(x),
@@ -138,11 +137,11 @@ by the subspace
 \]
 
 Given the short exact sequence \eqref{ses} we can compute when a group $G$ acting on $X$ acts faithfully on $H^1_{dR}(X/k)$ by computing a basis of the other terms in the sequence and seeing when $G$ acts faithfully on them.
-We know that the elements $\frac{dx}{y}, \frac{xdx}{y}, \ldots , \frac{x^{g-1}dx}{y}$ form a basis of $H^0(X,\Omega_X)$ from previous work, so we only need to compute a basis of $H^1(X,\cO_X)$.
+We know that the elements $\frac{dx}{y}, \frac{xdx}{y}, \ldots , \frac{x^{g-1}dx}{y}$ form a basis of $H^0(X,\Omega_X)$ from previous work/literature, so we only need to compute a basis of $H^1(X,\cO_X)$.
 
 %We start doing this by using Serre duality.
 We recall that Serre duality gives a map $\text{Res}: H^0(X,\Omega_X) \times H^1(X,\cO_X) \rightarrow k$.
-This is defined by  $(\omega,f) \rightarrow \sum_{P\in X}\text{res}_P(f\omega)$ for some $(\omega, f) \in   H^0(X,\Omega_X) \times H^1(X,\cO_X)$.
+\todo{just sum over $U_1$ and not the whole of $X$?}This is defined by  $(\omega,f) \rightarrow \sum_{P\in X}\text{res}_P(f\omega)$ for some $(\omega, f) \in   H^0(X,\Omega_X) \times H^1(X,\cO_X)$.
 We consider the pair $(y^{-1}x^idx,yx^{-j})$ 
 % \in  H^0(X,\Omega_X) \times H^1(X,\cO_X) 
 , which maps to $\sum_{P\in X} \text{res}_P (x^{i-j}dx)$. \todo{As we're using Cech cohomology, we compute each open set. The only poles are at P0 and Pinfinity, so it is regular on the insterstion}
@@ -351,7 +350,7 @@ and so
 where $s(x) = \left ( f'-\frac{2if}{x} \right )$.
 In general $s$ will be a polynomial of degree $2g$ in $x$.
 However, if $p$ divides $(2g+1)a_{2g+1}- 2ia_{2g+1}$, the coefficient of $x^{2g}$, then the degree will be less, and in this case we will let $d_s$ be the degree of $s$.
-Note that we will not in general know what the zeroes of $s$ are, but when we use $\di_0(s)$ this will not affect the coefficients of $[P_0]$ and $[P_\infty]$ in the divisors we are computing, and these are the relevant parts of the divisor.
+Note that we will not in general know what the zeroes of $s$ are, but when we use $\di_0(s)$ this will not affect the coefficients of $[P_0]$ and $[P_\infty]$ in the divisors we are computing, and these are the relevant parts of the divisor (recall that $f$ has no repeated roots and has a zero at $0$, so $f'(0) \neq 0$).
 \begin{comment}
 We could try writing $dyx^{-i}$ as $\frac{1}{2yx^i}dx - (1-s)\frac{1}{2yx^i}dx$.
 We then  have 
@@ -411,7 +410,7 @@ y^2 - yh(x) = f(x)
 \]
 for some polynomials $f$ and $h$.
 Since we are still assuming that $0$ and infinity are branch points, it follows that $\deg(f) = 2g+1$ and that $\deg(h)  = d  \leq g$. \todo{cite liu}
-We suppose that $h(x) = \prod_1^m (x-a_i)^{n_i}$, and that $P_i\in X$ are the corresponding ramification points.
+We suppose that $h(x) = \prod_1^m (x-a_i)^{n_i} = \beta_d x^d + \ldots + \beta_{n_1} x^{n_1}$, and that $P_i\in X$ are the corresponding ramification points.
 We will assume that $a_1 = 0$.
 It then follows that the ramification divisor has coefficients $\delta_P$ where
 \[
@@ -433,7 +432,6 @@ We now recall the divisors of some other elements of the function field which we
 \end{eqnarray*}
 
 Though we have not properly described the zero divisor of $y$, it should be recalled that since $P_0$ is a ramification, $\di_0(y)$ will have a coefficient of at most one for $[P_0]$.
-\todo[inline]{Check that haven't assumed that $\di_0(y)$ has co-eff 1 at $P_0$}
 Details of the above are in my 18 month report.
 
 As before, we will consider a pairing in $H^0(X,\Omega_X) \times H^1(X,\cO_X)$, and start by showing that it has poles at both $P_0$ and $P_\infty$.
@@ -608,6 +606,7 @@ So we have rewritten the $\frac{fdx}{x^ih}$ as the sum of two differentials (dep
 
 If we now suppose that $i$ is even, then the only term left to consider is
 $\frac{yh'dx}{x^ih}$.
+If $i$ is greater than $d$ or less than $n_1$ then we can see from the divisor of the differential that it will be regular on $U_2$ and $U_1$ respectively, so we suppose that $d \geq i \geq n_1$.
 If $h'$ is zero then the differential is trivially regular on both sets, so we assume $h'$ is not zero.
 Then we suppose that the highest term in $h'$ with non-zero coefficient has degree $d'$ and that the lowest term with non-zero coefficient has degree $e'$.
 Then we can write $h' = \beta_{d'+1} x^{d'} + \ldots + \beta_{e'+1} x^{e'}$.
@@ -652,7 +651,8 @@ It is clear that
 
 Now $xh' + h$ is precisely the polynomial formed by removing all the even terms from $h$.
 Of course, this could be zero, but in that case the differential above is trivially regular on both $U_1$ and $U_2$ and there is nothing to do.
-So we assume the polynomial is non-zero, and of degree $d''$, with lowest non-zero term of degree $e''$.
+Also, as in the previous case, we need only consider what happens when $d \geq i \geq n_1$.
+We assume the polynomial is non-zero, and of degree $d''$, with lowest non-zero term of degree $e''$.
 Hence we know that $xh' + h = \beta_{d''+1} x^{d''} + \ldots + \beta_{e''+1}x^{e''}$.
 Of course, this could be zero, but in that case the differential above is trivially regular on both $U_1$ and $U_2$ and there is nothing to do.
 So we assume the polynomial is non-zero, and of degree $d''$, with lowest non-zero term of degree $e''$.
