@@ -1,0 +1,16 @@
+question - why E_2 - we wish to have a spectral sequence converge, since then we can find something out about H* as it is a direct sum of the E_0 terms, and so will then be a sum of E_\infty terms too
+
+
+page 9 - "the filtration on H* takes the form..." - what follows should have F^p H \subset F^{p+1}H... rather F^n...
+
+Page 11 - where e and e' live (about 3/4 of the way down)
+
+page 15 - polynomial near top - missing terms?
+
+end of pg 20, start of 21 ???
+
+end of page 21 - should it be d_2(x_2 \tensor y_1) = 2x_2^2
+
+page 62 - union F^sA not equal to A
+
+interesting questions - chap 1 - 1.3, 
