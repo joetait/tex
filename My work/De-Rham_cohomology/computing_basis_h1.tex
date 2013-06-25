@@ -106,19 +106,18 @@
 \section{Characteristic not 2}
 
 
-Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g$ over an algebraically closed field $k$ of characteristic unequal to 2.
-Let $x:X\rightarrow \mathbb P_k^1$ be the corresponding morphism of degree two.
-There is then an associated field extension of $k(x)$ by $y$, where $y$ is defined by
+Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic unequal to 2.
+Let $x:X\rightarrow \mathbb P_k^1$ be the corresponding morphism of degree two such that the associated field extension of $k(x)$ is given by $y$, where $y$ is defined by
 \[
 y^2 = f(x),
 \]
-for some $f(x)\in k[x]$.
+for some $f(x)\in k[x]$ with no repeated roots.
 By an automorphism of $\mathbb P_k^1$ we may assume that $0$ and $\infty$ are branch points.
 We let $P_0$ and $P_\infty$ be the unique points in $x^{-1}(0)$ and $x^{-1}(\infty)$ respectively.
 We may also assume that $f(x) = a_{2g+1}x^{2g+1} + a_{2g}x^{2g} + \ldots + a_1x$ for some $a_i \in k$, and $a_{2g+1} \neq 0$; note that the constant term is zero since $0\in \mathbb P_k^1$ is a branch point.
 As the constant term is zero, we can conclude that $a_1 \neq 0$, else $x^2$ would divide $f(x)$ and we do not allow repeated roots.
 
-We wish to compute a basis for the de-Rham hypercohomology of this curve, which we denote by $H^1_{dR}(X/k)$. \todo{check notation - currently copied from Hortsch paper}
+We wish to compute a basis for the first de-Rham hypercohomology of this curve, which we denote by \todo{$H^1_{dR}(X/k)$.}{define this} \todo{check notation - currently copied from Hortsch paper}
 To do this we use the fact that we have the following short exact sequence:
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra H^1_{dR}(X/k) \ra H^1(X,\cO_x) \ra 0.
