@@ -81,6 +81,7 @@
 \newcommand{\cL}{{\mathcal L}}
 \newcommand{\cA}{{\mathcal A}}
 \newcommand{\cD}{{\mathcal D}}
+\newcommand{\cU}{{\mathcal U}}
 
 
 \DeclareMathOperator{\aut}{Aut}
@@ -117,54 +118,63 @@ We let $P_0$ and $P_\infty$ be the unique points in $x^{-1}(0)$ and $x^{-1}(\inf
 We may also assume that $f(x) = a_{2g+1}x^{2g+1} + a_{2g}x^{2g} + \ldots + a_1x$ for some $a_i \in k$, and $a_{2g+1} \neq 0$; note that the constant term is zero since $0\in \mathbb P_k^1$ is a branch point.
 As the constant term is zero, we can conclude that $a_1 \neq 0$, else $x^2$ would divide $f(x)$ and we do not allow repeated roots.
 
-We wish to compute a basis for the first de-Rham hypercohomology of this curve, which we denote by \todo{$H^1_{dR}(X/k)$.}{define this} \todo{check notation - currently copied from Hortsch paper}
+We wish to compute a basis for the first de-Rham hypercohomology of this curve, which we denote by \todo{define this}{$H^1_{dR}(X/k)$.} 
 To do this we use the fact that we have the following short exact sequence:
 \begin{equation}\label{ses}
-0 \ra H^0(X,\Omega_X) \ra H^1_{dR}(X/k) \ra H^1(X,\cO_x) \ra 0.
+0 \ra H^0(X,\Omega_X) \ra H^1_{dR}(X/k) \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
 
 We use \v{C}ech cohomology for our computations.
-We have an affine open cover by $U_1 = X\backslash P_0$ and $U_2 = X \backslash P_\infty$, which we denote by $U = \{ U_1, \ U_2\}$.
-\todo{find citation}{By definition}  $\check{H}_{dR}^1(U)$ is the quotient of the $k$-vector space 
+We have an affine open cover by $U_1 = X\backslash P_0$ and $U_2 = X \backslash P_\infty$, which we denote by ${\cal U} = \{ U_1, \ U_2\}$.
+\todo{find citation}{By definition}  $\check{H}_{dR}^1(\cU)$ is the quotient of the $k$-vector space 
 \[
 \{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1 - \omega_2\}
 \]
 
 by the subspace
 \[
-\{ (df_1, df_2, f_1-f_2)|f_i \in \cO_x(U_i)\}.
+\{ (df_1, df_2, f_1-f_2)|f_i \in \cO_X(U_i)\}.
 \]
 
-Given the short exact sequence \eqref{ses} we can compute when a group $G$ acting on $X$ acts faithfully on $H^1_{dR}(X/k)$ by computing a basis of the other terms in the sequence and seeing when $G$ acts faithfully on them.
-We know that the elements $\frac{dx}{y}, \frac{xdx}{y}, \ldots , \frac{x^{g-1}dx}{y}$ form a basis of $H^0(X,\Omega_X)$ from previous work/literature, so we only need to compute a basis of $H^1(X,\cO_X)$.
+\todo[inline]{State theorem/proposition here}
+
+Given the short exact sequence \eqref{ses} we can \todo{confirm this for above theorem}{compute when a group $G$ acting on $X$ acts faithfully on $H^1_{dR}(X/k)$ by computing a basis of the other terms in the sequence and seeing when $G$ acts faithfully on them.}
+We know that the elements $\frac{dx}{y}, \frac{xdx}{y}, \ldots , \frac{x^{g-1}dx}{y}$ form a basis of $H^0(X,\Omega_X)$ from \cite[\S 7, Prop. 4.26]{liu}, so we only need to compute a basis of $H^1(X,\cO_X)$.\todo{add Bernhard's note}
 
 %We start doing this by using Serre duality.
-We recall that Serre duality gives a map $\text{Res}: H^0(X,\Omega_X) \times H^1(X,\cO_X) \rightarrow k$.
-\todo{just sum over $U_1$ and not the whole of $X$?}This is defined by  $(\omega,f) \rightarrow \sum_{P\in X}\text{res}_P(f\omega)$ for some $(\omega, f) \in   H^0(X,\Omega_X) \times H^1(X,\cO_X)$.
-We consider the pair $(y^{-1}x^idx,yx^{-j})$ 
-% \in  H^0(X,\Omega_X) \times H^1(X,\cO_X) 
+\todo{find citation}{We recall} that Serre duality gives a map $\text{Res}: H^0(X,\Omega_X) \times H^1(X,\cO_X) \rightarrow k$.
+\todo{just sum over $U_1$ and not the whole of $X$?}This is defined by  \todo{what is f}{$(\omega,f) \rightarrow \sum_{P\in X}\text{res}_P(f\omega)$} for some $(\omega, f) \in   H^0(X,\Omega_X) \times H^1(X,\cO_X)$.
+\todo[inline]{do I want to quantify $i$ and $j$? Certainly not $j$, maybe $i$}
+We consider the pair $(y^{-1}x^idx,yx^{-j})$% \in  H^0(X,\Omega_X) \times H^1(X,\cO_X) 
 , which maps to $\sum_{P\in X} \text{res}_P (x^{i-j}dx)$. \todo{As we're using Cech cohomology, we compute each open set. The only poles are at P0 and Pinfinity, so it is regular on the insterstion}
 This can be calculated by summing the residues over the points in $U_1$ or by the residue theorem we can equivalently can compute the negative of the residue at $P_0$.
 So for $\text{Res}(x^{i-j}dx)$ to be non-zero there must be a pole at at least one point in $U_1$ and at $P_0$.
 We can check when this occurs by computing the divisor of $x^{i-j}dx$, which we do presently:
 \begin{eqnarray}
-	\di(x^{i-j}dx) & = &  2(i-j)P_0 +  2(j-i)P_\infty + R - 4[P_\infty] \\
-	& = & (2i-2j+1)P_0 +(R-P_0-P_\infty) +(2j-2i-3)P_\infty,
+	\di(x^{i-j}dx) & = &  \di(x^{i-j}) + \di(dx) \\
+	& = & 2(i-j)[P_0] +  2(j-i)[P_\infty] + R - 4[P_\infty] \\
+	& = & (2i-2j+1)[P_0] +(R-[P_0]-[P_\infty]) +(2j-2i-3)[P_\infty],
 \end{eqnarray}
 where $R$ is the ramification divisor of $x$.
 
-Recall that since both $P_\infty$ and $P_0$ are ramification points it follows that $R-P_0-P_\infty$ is positive.
+Recall that since both $P_\infty$ and $P_0$ are ramification points it follows that $R-[P_0]-[P_\infty]$ is positive.
 Moreover, since $X$ is a hyperelliptic curve the coefficient of every point in the ramification divisor is 1, we have a pole at both $P_0$ and $P_\infty$ if and only if $j=i+1$.
-So we will be considering the differential $\frac{1}{x}dx$, as this is the only differential of the form $x^{i-j}dx$ which can possibly have non-zero residue at the required points.
+It follows that the only divisor of the form $x^{i-j}dx$ that can possibly have non-zero residue at $P_0$ and $P_\infty$ is $\frac{1}{x}dx$.
+We will now compute exactly what the residue of $\frac{1}{x}dx$ is at $P_\infty$ to check that it is non-zero.
 
 
 We now turn to computing precisely the residue of $x^{-1}dx$ at $P_\infty$.
 To start with we note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$.
-Indeed we can compute the order of $t$ at $P_\infty$; the computation follows simply from the fact that $t^2 = \frac{f(x)}{x^{2g+2}}$, which gives
-\[
-\ord_{P_\infty}(t) = \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}\ord_{P_\infty}(x^{2g+2}) = -(2g+1) + (2g+2) = 1.
-\]
+Indeed we can compute the order of $t$ at $P_\infty$ as follows %the computation follows simply from the fact that $t^2 = \frac{f(x)}{x^{2g+2}}$, which gives
+\begin{eqnarray}
+	\ord_{P_\infty}(t) & = & \frac{1}{2}\ord_{P_\infty}(t^2) \\
+ 	& = & \frac{1}{2}\ord_{P_\infty}\left( \frac{f}{x^{2g+2}} \right) \\
+	& = & \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}\ord_{P_\infty}(x^{2g+2})\\
+	& = & -(2g+1) + (2g+2) \\
+	& = & 1.
+\end{eqnarray}
 
+\todo[inline]{rewrite using the quotient rule}
 We now write $\frac{1}{x}dx$ in terms of $dt$.
 First, 
 \[
@@ -241,6 +251,8 @@ But if we write the roots of $f(x)$ as $\alpha_i \in k$ with $1\leq i \leq 2g+1$
 Indeed, we can fix all but one root, say $\alpha_1$. Then there is only one value of $\alpha_1$ such that $a_{2g}=0$, and there are only two values of $\alpha_1$ such that $\sum_{i=1}^{2g+1}\alpha_i^2 = 0$. Since $k$ is infinite we can certainly ensure that our automorphism of $X$ sends $\alpha_1$ to an element of $k$ distinct from these three values.}
 \end{comment}
 
+\todo[inline]{check if $P_0$ would be easier - I don't think so...}
+
 Hence
 \[
 dt^2 = \frac{1}{x^{2g+2}}\left(f' - \frac{(2g+2)f}{x}\right) dx
@@ -261,10 +273,12 @@ Similarly
 t^2 = \frac{f}{x^{2g+2} } = \frac{a_{2g+1}}{x} + \ldots
 \]
 
+\todo[inline]{check all summation notation}
 Since $\ord_{P_\infty}\left(\frac{h}{x^{2g+1}}\right) = 2$ we know that $\frac{h}{x^{2g+1}} = \sum_{i\geq 2} c_it^i$ for some $c_i\in k$, and from the above computations we can see that $c_2 = 1$.
 We also know that $\frac{x^{2g+1}}{h} = \sum_{i\geq -2} d_it^i$, for some $d_i\in k$.
-Since \[
-1 = \frac{h}{x^{2g+1}} \cdot \frac{x^{2g+1}}{h} = \left( \sum_{i\geq 2} c_it^i\right) \cdot \left( \sum_{i\geq -2} d_it^i\right)
+Since
+\[
+1 = \left( \sum_{i\geq 2} c_it^i\right) \cdot \left( \sum_{i\geq -2} d_it^i\right)
 \]
  and $c_2 = 1$ we conclude that $d_{-2} = 1$. 
 Now 
@@ -273,7 +287,8 @@ Now
 \]
 so we see that the residue is $-2$.
 
-To make sure that this is part of the basis for $H^1(\Omega_X,\cO_X)$ we need to find suitable differentials $\omega_1$ and $\omega_2$, regular on $U_1$ and $U_2$ respectively, such that $d(yx^{-i}) = \omega_1 - \omega_2$.
+To make sure that $\frac{1}{x}dx$ is part of the basis for $H^1(\Omega_X,\cO_X)$ we need to find suitable differentials $\omega_1$ and $\omega_2$, regular on $U_1$ and $U_2$ respectively, such that $d(yx^{-j}) = \omega_1 - \omega_2$.
+\todo[inline]{change all i's to j's}
 \begin{comment}
 We now want to find, given $yx^{-i}$ for some $1\leq i \leq g$, two differentials $\omega_1$ and $\omega_2$, satisfying the following:
 \begin{itemize}
@@ -340,15 +355,17 @@ To start with, note that
 
 Hence it follows that 
 \begin{equation*}
-dyx^{-i} = \frac{1}{2yx^{i}}\left( f' - \frac{2if}{x} \right) dx
+d \left( yx^{-i} \right) = \frac{1}{2yx^{i}}\left( f' - \frac{2if}{x} \right) dx
 \end{equation*}
 and so
+\todo[inline]{check compuation below, possibly note on a seperate piece of paper}
+\todo[inline]{change $s$'s to $s_i$}
 \[
-\di (dxy^{-i}) = \di_0(s) -2i[P_0] +(2i-2g-3)[P_\infty],
+\di (dyx^{-i}) = \di_0(s) -2i[P_0] +(2i-2g-3)[P_\infty],
 \]
-where $s(x) = \left ( f'-\frac{2if}{x} \right )$.
+where $s(x) = \left ( f'-\frac{2if}{x} \right )$ and $\di_0(s(x))$ is the divisor of zeroes of $s$.
 In general $s$ will be a polynomial of degree $2g$ in $x$.
-However, if $p$ divides $(2g+1)a_{2g+1}- 2ia_{2g+1}$, the coefficient of $x^{2g}$, then the degree will be less, and in this case we will let $d_s$ be the degree of $s$.
+\todo{check about $p$ dividing coefficients}However, if $p$ divides $(2g+1)a_{2g+1}- 2ia_{2g+1}$, the coefficient of $x^{2g}$, then the degree will be less, and in this case we will let $d_s$ be the degree of $s$.
 Note that we will not in general know what the zeroes of $s$ are, but when we use $\di_0(s)$ this will not affect the coefficients of $[P_0]$ and $[P_\infty]$ in the divisors we are computing, and these are the relevant parts of the divisor (recall that $f$ has no repeated roots and has a zero at $0$, so $f'(0) \neq 0$).
 \begin{comment}
 We could try writing $dyx^{-i}$ as $\frac{1}{2yx^i}dx - (1-s)\frac{1}{2yx^i}dx$.
@@ -375,18 +392,20 @@ It is then clear that $\frac{\phi }{2yx^i}dx - \frac{-\psi}{2yx^i}dx = \frac{\ph
 We then compute the divisors of both of these differentials to check that they are regular on the appropriate sets.
 Firstly
 \begin{eqnarray*}
-\di\left( \frac{\phi}{2yx^i}dx \right) & = & \di(\phi) - ( R - 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R - 4[P_\infty]) \\
+\di\left( \frac{\phi}{2yx^i}dx \right) & = & \di(\phi) -\di(y) - \di(x^i) _ \di (dx) \\
+& = & \di(\phi) - ( R - 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R - 4[P_\infty]) \\
 & = & \di_0\left( \frac{\phi}{x^{g+1}}\right) + 2(g+1)[P_0] - 4g[P_\infty] - 2i[P_0] + 2(g-1)[P_\infty] \\
 & = & \di_0\left( \frac{\phi}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0].
 \end{eqnarray*}
 
 We now consider what will happen to this divisor if $d_s < 2g$.
 Firstly, if $d_s \leq g$ then $\phi = 0$ so $\frac{\phi}{2yx^i}dx = 0$ and is regular everywhere.
-Otherwise we will still have a factor of at least $x^{g+1}$ in $\phi$ and the coefficient of $[P_0]$ will still be positive, meaning that the differential is still regular on $U_1$.
+Otherwise we will still have a factor of at least $x^{g+1}$ in $\phi$ and the coefficient of $[P_0]$ will still be positive, meaning that the differential is still regular on $U_2$.
 
 On the other hand
 \begin{eqnarray*}
-\di \left( \frac{-\psi}{2yx^i}dx\right) & = & \di (\psi ) -R + (2g+2)[P_\infty] - 2i[P_0] + 2i[P_\infty] + R -4[P_\infty] \\
+\di \left( \frac{-\psi}{2yx^i}dx\right) & = & \di(\psi) - \di(y) - \di(x^i) + \di (dx) \\
+& = & \di (\psi ) -R + (2g+2)[P_\infty] - 2i[P_0] + 2i[P_\infty] + R -4[P_\infty] \\
 & = & \di_0(\psi) - 2g[P_\infty] + 2(g+i-2)[P_\infty] -2i[P_0] \\
 & = & \di_0(\psi) + 2(i-1)[P_\infty] - 2i[P_0].
 \end{eqnarray*}
