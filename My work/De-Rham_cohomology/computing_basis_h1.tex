@@ -136,7 +136,24 @@ by the subspace
 \{ (df_1, df_2, f_1-f_2)|f_i \in \cO_X(U_i)\}.
 \]
 
-\todo[inline]{State theorem/proposition here}
+\todo[inline]{check that I have been consistent with whether it is $(U_1,U_2,X)$ or $(U_2, U_1,X)$}
+\begin{prop}\label{basish1char0}
+
+Let $1 \leq g$.
+Furthermore, let $s(x) = \left( f'(x) - \frac{2if}{x}\right) = b_{2g}x^{2g} + \ldots + b_0$ and then let 
+\[
+\phi = b_{2g} x^{2g} + \ldots b_{g+1}x^{g+1}
+\]
+and
+\[ 
+\psi = b_gx^g + \ldots + b_0.
+\]
+Then a basis of $H^1(X, \cO_X)$ is given by
+\[
+\left( \left(\frac{-\psi}{2xy^i}\right) dx, \left( \frac{\phi}{2yx^i} \right) dx, yx^{-i} \right).
+\]
+
+\end{prop}
 
 Given the short exact sequence \eqref{ses} we can \todo{confirm this for above theorem}{compute when a group $G$ acting on $X$ acts faithfully on $H^1_{dR}(X/k)$ by computing a basis of the other terms in the sequence and seeing when $G$ acts faithfully on them.}
 We know that the elements $\frac{dx}{y}, \frac{xdx}{y}, \ldots , \frac{x^{g-1}dx}{y}$ form a basis of $H^0(X,\Omega_X)$ from \cite[\S 7, Prop. 4.26]{liu}, so we only need to compute a basis of $H^1(X,\cO_X)$.\todo{add Bernhard's note}
