@@ -153,7 +153,7 @@ We recall the following divisors, which we will make use of throughout this arti
 \di (x^i) & = & 2i[P_0] - 2i[P_\infty]\\
 \di (y) & = & \di_0(y) - (2g+1)[P_\infty].
 \end{eqnarray*}
-Finally, to define the ramification divisor we suppose that \todo{check this notation doesn't clash with anything else}{$h = \prod_{i=1}^d (x-a_i)^{n_i}$} for some $d \leq g$.
+Finally, to define the ramification divisor we suppose that \todo{check this notation doesn't clash with anything else}{$H(x) = \prod_{i=1}^d (x-a_i)^{n_i}$} for some $d \leq g$.
 Then $a_i \in \mathbb P_k^1$ are the branch points of $x$ and we let $P_i \in X$ be the correspding ramification points of $x$.
 Then 
 \[
@@ -186,9 +186,61 @@ Let $i=1,\ldots g$. If $p\neq 2$ then a basis of $H^1(X,\cO_X)$ is given by
 
 and if $p=2$ then a basis is given by
 \[
-	\left( \left(\frac{\Psi}{x^{i+1}h}\right) dx, \left( \frac{\Phi}{x^{i+1}h} \right) dx, x^{-i}y \right).
+	\left( \left(\frac{-\Psi}{x^{i+1}h}\right) dx, \left( \frac{\Phi}{x^{i+1}h} \right) dx, x^{-i}y \right).
 \]
 \end{prop}
+
+
+\begin{proof}
+
+We start by showing that $x^{-i}y$ is a viable choice for the third component of both sets of bases.
+
+From the earlier description of Serre duality, it is clear that if $\omega_i$ is a basis of $H^0(X, \Omega_X)$ then we require that the image of the residue map, ${\rm Res}(\omega_i, x^{-i}y)$ is non-zero.
+
+If $p \neq 2$ then $\omega_i = \frac{x^{i-1}}{y}dx$ is a basis of $H^0(X, \Omega_X)$. 
+Then ${\rm Res}(\omega_i, x^{-i}y) = res(x^{-1}dx)$ should be non-zero on $U_1$ and $U_2$, or equivalently $x^{-1}dx$ should have a pole of order one at both $P_0$ and $P_\infty$ (recall that the differential needs to be regular on $U_1 \cap U_2$).
+The divisor of $x^{-1}dx$ is
+\begin{eqnarray}
+\di (x^{-1}dx) & = & \di(dx) - \di (x) \\
+& = & R - 4[P_\infty] - 2[P_0] + 2[P_\infty] \\
+& = & (R-[P_0]-[P_\infty]) - [P_0] - [P_\infty].
+\end{eqnarray}
+Since $R -[P_0]-[P_\infty]$ is a positive divisor with no $[P_0]$ or $[P_\infty]$ terms we see that $x^{-1}dx$ does indeed have a pole of order one at both $P_0$ and $P_\infty$.
+
+If $p=2$ then a basis of $H^0(X,\Omega_X)$ is given by $\omega_i = \frac{x^{i-1}}{h(x)}dx$, and again we compute the divisor of $x^{-i}y\cdot \omega_i = \frac{y}{xh(x)}dx$.
+\begin{eqnarray}
+\di\left( \frac{y}{xh(x)}dx \right) & = & \di(y) + \di(dx) - \di(x) - \di(h(x)) \\
+& = & \di_0(y) -2[P_0] -[P_\infty],
+\end{eqnarray}
+where $\di_0$ denotes the divisor of zeroes of a function, or the positive part of the divisor.
+Now we know that $y$ has a zero of order at most 1 at $P_0$. \todo{justify order at most 1 statement}
+
+Now that we know $xy^{-i}$ is the third part of the triple making the basis, we need to find two differentials, one regular on $U_1$ and the other regular on $U_2$, such that their difference is $d(x^{-i}y)$.
+
+We again treat the cases $p=2$ and $p=\neq 2$ seperately.
+We start by rewriting $d(x^{-i}y)$ in terms of $dx$.
+We note that
+\begin{eqnarray*}
+2yx^{-i}d(yx^{-i}) & = & d(yx^{-i})^2 \\
+& = & dfx^{-2i} \\
+& = & fdx^{-2i} + x^{-2i}df \\
+& = & -f\cdot\frac{2i}{x^{2i+1}}dx + \frac{f'}{x^{2i}}dx \\
+& = & \frac{1}{x^{2i}}\left( f' - \frac{2if}{x}\right) dx 
+\end{eqnarray*}
+
+and hence it follows that 
+\begin{equation*}
+d \left( yx^{-i} \right) = \frac{1}{2yx^{i}}\left( f' - \frac{2if}{x} \right) dx = \frac{s_i(x)}{2yx^i}dx.
+\end{equation*}
+
+We define $\alpha^i_j$ for $1\leq j \leq 2g$, such that
+\[
+	$s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0, 
+\]
+and then 
+
+\end{proof}
+
 
 \begin{comment}
 We define $\alpha^i_j$ and $\Alpha^i_{j+1}$ for $0 \leq j \leq 2g$, and $\Beta_k^i$ for $1\leq k \leq g$, such that
