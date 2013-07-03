@@ -288,17 +288,92 @@ dyx^{-i} & = & x^{-i}dy + ydx^{-i} \\
 
 Define $A^i_{j+1}$ for $0 \leq j \leq 2g$, and $B_k^i$ for $1\leq k \leq g$, such that
 \[
-	S_i(x) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(\Beta_g^i x^i + \ldots + \Beta_1^i x).
-\] 
+	S_i(x,y) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(B_g^i x^i + \ldots + B_1^i x).
+\]
+\todo[inline]{add y in to the $S_i$ variables}
+Note that many of these coefficients may be zero.
+
+We seperate $\Phi_i$ and $\Psi_i$ in to two parts, one with a $y$ factor and the other without, which we will denote with superscript $x$ and $y$ respectively.
+We denote by $d^x_\Phi, d^y_\Phi, d^x_\Psi$ and $d^y_\Psi$ the highest degree $x$ term occuring in $\Phi^x, \Phi^y, \Psi^x$ and $\Psi^y$ respectively.
+Note that as in the previous case we have suppressed the $i$.
+We then show that each part is regular on the appropriate set, and conclude that both $\Phi_i$ and $\Psi_i$ are also regular on the same sets.
+
+We first compute the divisors associated to $\Phi_i$.
+Firstly, 
+\begin{eqnarray*}
+\di \left( \frac{\phi dx}{x^i h} \right) & = & \di(\phi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + (2g+2) [P_\infty] \\
+& \geq & \di_0(\phi) - 4g[P_\infty] - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] + 2g[P_\infty] + 2[P_\infty] \\
+& = & \di_0(\phi) - 2i[P_0] + 2(i-g-1)[P_\infty] \\
+& = & \di_0\left( \frac{\phi}{x^i} \right) + \di_0( x^i) - 2i[P_0] + 2(i-g-1)[P_\infty] \\
+& = & \di_0 \left( \frac{\phi}{x^i} \right) + 2(i-g-1)[P_\infty].
+\end{eqnarray*}
+
+If we suppose that $i$ is even then $\Psi_i^y = \frac{yh'dx}{x^ih}$, and this is regular on $U_2$ since
+
+\begin{eqnarray*}
+\di\left(\Psi^y_i dx) \right) & = & \di\left(\frac{y\theta dx}{x^ih}\right) \\
+& = &  \di_0(y) - (2g+1)[P_\infty] + \di(\theta) + R - 4[P_\infty] -2i[P_0] + 2i[P_\infty] - R \\
+& &  + (2g+2)[P_\infty] \\
+& = & \di_0(y) + \di(\theta) -2i[P_0] + (2i -3)[P_\infty] \\
+& = & \di_0(y) + \di_0(\theta) - 2d'[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
+& = & \di_0(y) + \di_0\left(\frac{\theta}{x^i}\right) + 2i[P_0] -2i[P_0] + (2i-2d'-3)[P_\infty]\\
+& = & \di_0(y) + \di_0\left(\frac{\theta}{x^i} \right) + (2i-2d'-3)[P_\infty]
+\end{eqnarray*}
+
+Finally, if $i$ is odd then $\Psi^y_i = y \left( \frac{xh' + h}{hx^{i+1}} \right) dx$.
+We then compute 
+\begin{eqnarray*}
+ \di \left( \frac{y \phi}{hx^{i+1}} dx \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di( \phi) + R - 4[P_\infty] - 2(i+1)[P_0] \\
+& ~ & + 2(i+1)[P_\infty] -R + 2(g+1)[P_\infty] \\
+& = & \di_0(y) + \di(\phi) -(2g+1)[P_\infty] + R' + 2(g+1-d)[P_\infty] + 2n_1[P_0] - 2(i+1)[P_0] \\ 
+& ~ & + 2(i-1)[P_\infty] -R' - 2n_1[P_0]- 2(g+1-d)[P_\infty] +2(g+1)[P_\infty] \\
+& = & \di_0(y) + \di(\phi) + R' - 2(i +1)[P_0] + (2i-2)[P_\infty] \\
+& \geq & \di_0(y) + \di_0(\phi) + R' - 2(i + 1)[P_0] + (2i - 2d'' - 2)[P_\infty] \\
+& = & \di_o(y) + \di_0\left( \frac{\phi}{x^{i+1}} \right) + R' + 2(i - d'' -1)[P_\infty]. 
+\end{eqnarray*}
+
+This completes the proof that $\Phi_i$ is regular on $U_2$.
+
+We now complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
+\begin{eqnarray*}
+\di\left( \frac{\psi dx}{x^ih} \right) & = & \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + 2(g+1)[P_\infty] \\
+& \geq & \di_0(\psi ) - 2(i-1)[P_\infty] - 4[P_\infty] - 2i[P_0] + 2(g+i + 1)[P_\infty] \\
+& = & \di_0(\psi) - 2i[P_0] + 2(g+1)[P_\infty].
+\end{eqnarray*}
+
+
+As before, we need to consider the cases when $i$ is odd and when $i$ is even seperately for $\Psi_i^y$, and we first suppose that $i$ is even.
+Then we have 
+\begin{eqnarray*}
+\di\left( \frac{y\psi dx}{x^ih} \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] \\
+& & - R + (2g+2)[P_\infty] \\
+& = & \di_0(y) + \di(\psi) -2i[P_0] + (2i-3)[P_\infty] \\
+& \geq & \di_0(y) + \di_0(\psi) - 2(i-2)[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
+& = & \di_0(y) + \di_0(\psi) -2i[P_0] + [P_\infty].
+\end{eqnarray*}
+
+On the other hand, if $i$ is odd then we have
+\begin{eqnarray*}
+\di \left( \frac{\psi y}{hx^{i+1}} dx \right) & = & \di_0(y) -(2g+1)[P_\infty] + \di(\psi) +R -4[P_\infty] - 2(i+1)[P_0] \\
+&  & + 2(i+1)[P_\infty] - R + 2(g+1)[P_\infty] \\
+& = & \di_0(y) + \di(\psi) -2(i+1)[P_0] + (2i-1)[P_\infty] \\
+& \geq & \di_0(y) + \di_0(\psi) - 2(i-1)[P_\infty] - 2(i+1)[P_0] + (2i+1)[P_\infty] \\
+& = & \di_0(y) + \di_0(\psi) - 2(i+1)[P_0] + [P_\infty]
+\end{eqnarray*}
+
+
+Again, it is clear that all the functions are regular on the appropriate sets, and since it is clear that $\frac{\Phi_i}{hx^{i+1}} - \frac{\Psi_i}{Hx^{i+1}} = \frac{S_i(x)}{Hx^{i+1}}$ then we have completed the proof.
+
+
 
 \end{proof}
 
 
 
 \begin{comment}
-We define $\alpha^i_j$ and $\Alpha^i_{j+1}$ for $0 \leq j \leq 2g$, and $\Beta_k^i$ for $1\leq k \leq g$, such that
+We define $\alpha^i_j$ and $\Alpha^i_{j+1}$ for $0 \leq j \leq 2g$, and $B_k^i$ for $1\leq k \leq g$, such that
 \[
-	$s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0 \ {\rm and } \ S_i(x) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(\Beta_g^i x^i + \ldots + \Beta_1^i x).
+	$s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0 \ {\rm and } \ S_i(x) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(B_g^i x^i + \ldots + B_1^i x).
 \] 
 \end{comment}
 
