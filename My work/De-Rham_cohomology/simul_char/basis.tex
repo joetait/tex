@@ -181,12 +181,12 @@ We can now give a basis for $H^1(X,\cO_X)$.
 
 Let $i=1,\ldots g$. If $p\neq 2$ then a basis of $H^1(X,\cO_X)$ is given by 
 \[
-	\left( \left( \frac{-\psi}{2yx^i}\right) dx, \left(\frac{\phi}{2yx^i}\right) dx, x^{-i}y\right)
+	\left( \left( \frac{-\psi_i}{2yx^i}\right) dx, \left(\frac{\phi_i}{2yx^i}\right) dx, x^{-i}y\right)
 \]
 
 and if $p=2$ then a basis is given by
 \[
-	\left( \left(\frac{-\Psi}{x^{i+1}h}\right) dx, \left( \frac{\Phi}{x^{i+1}h} \right) dx, x^{-i}y \right).
+	\left( \left(\frac{-\Psi_i}{x^{i+1}h}\right) dx, \left( \frac{\Phi_i}{x^{i+1}h} \right) dx, x^{-i}y \right).
 \]
 \end{prop}
 
@@ -213,11 +213,11 @@ If $p=2$ then a basis of $H^0(X,\Omega_X)$ is given by $\omega_i = \frac{x^{i-1}
 & = & \di_0(y) -2[P_0] -[P_\infty],
 \end{eqnarray}
 where $\di_0$ denotes the divisor of zeroes of a function, or the positive part of the divisor.
-Now we know that $y$ has a zero of order at most 1 at $P_0$. \todo{justify order at most 1 statement}
+Now we know that $y$ has a zero of order at most 1 at $P_0$, and hence we see that the differential has an order one pole at both $P_0$ and $P_\infty$ \todo{justify order at most 1 statement}
 
 Now that we know $xy^{-i}$ is the third part of the triple making the basis, we need to find two differentials, one regular on $U_1$ and the other regular on $U_2$, such that their difference is $d(x^{-i}y)$.
 
-We again treat the cases $p=2$ and $p=\neq 2$ seperately.
+We again treat the cases $p=2$ and $p\neq 2$ seperately.
 We start by rewriting $d(x^{-i}y)$ in terms of $dx$.
 We note that
 \begin{eqnarray*}
@@ -235,17 +235,70 @@ d \left( yx^{-i} \right) = \frac{1}{2yx^{i}}\left( f' - \frac{2if}{x} \right) dx
 
 We define $\alpha^i_j$ for $1\leq j \leq 2g$, such that
 \[
-	$s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0, 
+	s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0, 
 \]
 and then 
+\[
+\phi_i = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i = \alpha^i_gx^g + \ldots + \alpha^i_0.
+\]
+Note that it is possible for any of these coefficients to be zero. Indeed, it is possible for either $\phi_i$ or $\psi_i$ to be zero.
+Whenever they are non-zero we denote their degrees by $d_\phi$ and $d_\psi$ respectively.
+Note that we have suppressed the $i$ index here since this will be clear from context.
+
+
+We now show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{\psi_i}{2yx^i}dx$ are regular on $U_2$ and $U_1$ respectively.
+We may assume that $\phi_i$ and $\psi_i$ are non-zero, since zero is regular everywhere.
+The divisor of $\frac{\phi_i}{2yx^i}dx$ is
+
+\begin{eqnarray*}
+\di\left( \frac{\phi_i}{2yx^i}dx \right) & = & \di(\phi_i) -\di(y) - \di(x^i) - \di (dx) \\
+& = & \di(\phi_i) - ( R - 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R - 4[P_\infty]) \\
+& = & \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + 2(g+1)[P_0] - 2d_\phi[P_\infty] - 2i[P_0] + 2(g-1)[P_\infty] \\
+& \geq & \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + 2(g+1)[P_0] - 4g[P_\infty] - 2i[P_0] + 2(g-1)[P_\infty] \\
+& = & \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0].
+\end{eqnarray*}
+which shows that it is regular on $U_2$.
+
+Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is 
+
+\begin{eqnarray*}
+\di \left( \frac{-\psi_i}{2yx^i}dx\right) & = & \di(\psi) - \di(y) - \di(x^i) + \di (dx) \\
+& = & \di (\psi_i ) -R + (2g+2)[P_\infty] - 2i[P_0] + 2i[P_\infty] + R -4[P_\infty] \\
+& =  & \di(\psi_i) + 2(g+i-2)[P_\infty] -2i[P_0] \\
+& \geq & \di_0(\psi_i) - 2g[P_\infty] + 2(g+i-2)[P_\infty] -2i[P_0] \\
+& = & \di_0(\psi_i) + 2(i-1)[P_\infty] - 2i[P_0].
+\end{eqnarray*}
+Since $i\geq 1$ we conclude that $\frac{\psi_i}{2yx^i}dx$ is regular on $U_1$.
+
+Finally, since 
+\[ 
+\frac{\phi_i}{2yx^i}dx - \frac{-\psi_i}{2yx^i}dx = \frac{s_i(x)}{2yx^i}dx = d(yx^{-i}
+\]
+we have proved the proposition when $p\neq 2$.
+
+We now consider the case when $p=2$.
+We first rewrite the divisor so that it is in terms of $dx$, as follows:
+
+\begin{eqnarray*}
+dyx^{-i} & = & x^{-i}dy + ydx^{-i} \\
+& = & \frac{1}{x^i} \left( \frac{F' + yH'}{H}\right) dx + \frac{iy}{x^{i+1}}dx \\
+& = & \left( \frac{F'}{x^iH} + \frac{yH'}{x^iH} + \frac{iy}{x^{i+1}} \right) dx.\\
+& = & \frac{S_i(x)}{x^{i+1}H}dx.
+\end{eqnarray*}
+
+Define $A^i_{j+1}$ for $0 \leq j \leq 2g$, and $B_k^i$ for $1\leq k \leq g$, such that
+\[
+	S_i(x) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(\Beta_g^i x^i + \ldots + \Beta_1^i x).
+\] 
 
 \end{proof}
+
 
 
 \begin{comment}
 We define $\alpha^i_j$ and $\Alpha^i_{j+1}$ for $0 \leq j \leq 2g$, and $\Beta_k^i$ for $1\leq k \leq g$, such that
 \[
-	$s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0 \ {\rm and } \ S_i(x) = \alpha_{2g+1}^ix^{2g+1} + \ldots + \alpha^i_1 x + y(\Beta_g^i x^i + \ldots + \Beta_1^i x).
+	$s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0 \ {\rm and } \ S_i(x) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(\Beta_g^i x^i + \ldots + \Beta_1^i x).
 \] 
 \end{comment}
 
