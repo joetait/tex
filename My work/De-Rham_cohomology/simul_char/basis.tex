@@ -82,6 +82,7 @@
 \newcommand{\cA}{{\mathcal A}}
 \newcommand{\cD}{{\mathcal D}}
 \newcommand{\cU}{{\mathcal U}}
+\newcommand{\cech}{\v{C}ech \ }
 
 
 \DeclareMathOperator{\aut}{Aut}
@@ -108,6 +109,30 @@
 
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p$.
+By an automorphism of $ \mathbb P_k^1$ we may assume that $P_0$ and $P_\infty$ are ramification points.
+
+We start by recalling how we define the algebraic de-Rham cohomology of $X$ via \cech cohomology.
+The de-Rham cohomology of an algebraic curve is the hypercohomology of the sheaves of differentials on the curve. Since a curve doesn't have differentials of degree greater than one, this is just the hypercohomology of the complex
+\[
+0 \rightarrow \cO_X \rightarrow \Omega_X \rightarrow 0.
+\]
+
+The cover we are using for the \cech cohomology consists of just two open sets, $U_1 = X\backslash P_0$ and $U_2 = X\backslash P_\infty$, and we let ${\cal U} = \{ U_1,  U_2\}$.
+Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$ given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
+Since our cover consists of only two elements, then \todo{which term - just the first?}{the \cech cohomology of} $\Omega_X^\bullet$ with respect to the cover $\cal U$ is precisely the cokernel of this map.
+
+Hence to compute the \cech de-Rham cohomology, we need to compute the cohomology of the total complex of
+\[ \begin{array}{ccccccc}
+~ & ~ & 0 & \rightarrow & 0 & ~ & ~ \\
+~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
+0 & \rightarrow & \cO_X(U_0)\times cO_X(U_1) & \rightarrow & \Omega_X(U_1)\times \Omega_X(U_2) & \rightarrow & 0 \\
+~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
+0 & \rightarrow & \cO_X(U_1 \cap U_2) & \rightarrow & \cO_X(U_1 \cap U_2) & \rightarrow & 0 \\
+~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
+~ & ~ & 0 & \rightarrow & 0 & ~ & ~ \\
+\end{array}
+\]
+
 
 We wish to compute a basis for the first de-Rham hypercohomology of this curve, which we denote by \todo{define this}{$H^1_{dR}(X/k)$.} 
 To do this we use the fact that we have the following short exact sequence:
@@ -151,8 +176,9 @@ We recall the following divisors, which we will make use of throughout this arti
 \di (dx) & = & R - 4[P_\infty] \\
 \di (h(x)) & = & R - 2(g+1)[P_\infty] \\
 \di (x^i) & = & 2i[P_0] - 2i[P_\infty]\\
-\di (y) & = & \di_0(y) - (2g+1)[P_\infty].
+\di (y) & = & \di_0(y) - (2g+1)[P_\infty],
 \end{eqnarray*}
+where $\di_0$ of a function denotes the divisor of zeroes of a function, or the positive part of the divisor of the function.
 Finally, to define the ramification divisor we suppose that \todo{check this notation doesn't clash with anything else}{$H(x) = \prod_{i=1}^d (x-a_i)^{n_i}$} for some $d \leq g$.
 Then $a_i \in \mathbb P_k^1$ are the branch points of $x$ and we let $P_i \in X$ be the correspding ramification points of $x$.
 Then 
@@ -167,15 +193,15 @@ Firstly, when $p\neq 2$ we define
 \[
 	s_i(x) := f'(x) - \frac{2if}{x}
 \]
-and is $p = 2$ we define
+and if $p = 2$ we define
 \[
-	S_i(x) := xF'(x) + xyH'(x) + iyH(x)
+	S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)
 \].
 
 We then let $\phi_i$ and $\psi_i$ be all the terms of $s_i(x)$ with degrees greater than $g$ and less than or equal to $g$ respectively.
-Similarly, we let $\Phi_i$ and $\Psi_i$ be the monomials of $S_i(x)$ where the degree of the $x$ component is greater than or equal to $i$ and less than $i$ respectively.
+Similarly, we let $\Phi_i$ and $\Psi_i$ be the monomials of $S_i(x,y)$ where the degree of the $x$ component is greater than or equal to $i$ and less than $i$ respectively.\todo{check if it should $\geq$ or $\leq$ i}
 
-We can now give a basis for $H^1(X,\cO_X)$.
+We can now give a basis for $H^1(X,\cO_X)$.\\
 
 \begin{prop}\label{basis}
 
@@ -195,10 +221,10 @@ and if $p=2$ then a basis is given by
 
 We start by showing that $x^{-i}y$ is a viable choice for the third component of both sets of bases.
 
-From the earlier description of Serre duality, it is clear that if $\omega_i$ is a basis of $H^0(X, \Omega_X)$ then we require that the image of the residue map, ${\rm Res}(\omega_i, x^{-i}y)$ is non-zero.
+From the earlier description of Serre duality, it is clear that if $\omega_i$ is a basis of $H^0(X, \Omega_X)$ then we require that the image of the residue map, ${\rm Res}(\omega_i, x^{-i}y)$ is non-zero.\todo{serre duality}
 
 If $p \neq 2$ then $\omega_i = \frac{x^{i-1}}{y}dx$ is a basis of $H^0(X, \Omega_X)$. 
-Then ${\rm Res}(\omega_i, x^{-i}y) = res(x^{-1}dx)$ should be non-zero on $U_1$ and $U_2$, or equivalently $x^{-1}dx$ should have a pole of order one at both $P_0$ and $P_\infty$ (recall that the differential needs to be regular on $U_1 \cap U_2$).
+Then ${\rm Res}(\omega_i, x^{-i}y) = {\rm res}(x^{-1}dx)$ should be non-zero on $U_1$ and $U_2$, or equivalently $x^{-1}dx$ should have a pole of order one at both $P_0$ and $P_\infty$ (recall that the differential needs to be regular on $U_1 \cap U_2$).
 The divisor of $x^{-1}dx$ is
 \begin{eqnarray}
 \di (x^{-1}dx) & = & \di(dx) - \di (x) \\
@@ -207,12 +233,11 @@ The divisor of $x^{-1}dx$ is
 \end{eqnarray}
 Since $R -[P_0]-[P_\infty]$ is a positive divisor with no $[P_0]$ or $[P_\infty]$ terms we see that $x^{-1}dx$ does indeed have a pole of order one at both $P_0$ and $P_\infty$.
 
-If $p=2$ then a basis of $H^0(X,\Omega_X)$ is given by $\omega_i = \frac{x^{i-1}}{h(x)}dx$, and again we compute the divisor of $x^{-i}y\cdot \omega_i = \frac{y}{xh(x)}dx$.
+If $p=2$ then a basis of $H^0(X,\Omega_X)$ is given by $\omega_i = \frac{x^{i-1}}{H(x)}dx$, and again we compute the divisor of $x^{-i}y\cdot \omega_i = \frac{y}{xH(x)}dx$.
 \begin{eqnarray}
-\di\left( \frac{y}{xh(x)}dx \right) & = & \di(y) + \di(dx) - \di(x) - \di(h(x)) \\
-& = & \di_0(y) -2[P_0] -[P_\infty],
+\di\left( \frac{y}{xH(x)}dx \right) & = & \di(y) + \di(dx) - \di(x) - \di(H(x)) \\
+& = & \di_0(y) -2[P_0] -[P_\infty].
 \end{eqnarray}
-where $\di_0$ denotes the divisor of zeroes of a function, or the positive part of the divisor.
 Now we know that $y$ has a zero of order at most 1 at $P_0$, and hence we see that the differential has an order one pole at both $P_0$ and $P_\infty$ \todo{justify order at most 1 statement}
 
 Now that we know $xy^{-i}$ is the third part of the triple making the basis, we need to find two differentials, one regular on $U_1$ and the other regular on $U_2$, such that their difference is $d(x^{-i}y)$.
@@ -242,7 +267,7 @@ and then
 \phi_i = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i = \alpha^i_gx^g + \ldots + \alpha^i_0.
 \]
 Note that it is possible for any of these coefficients to be zero. Indeed, it is possible for either $\phi_i$ or $\psi_i$ to be zero.
-Whenever they are non-zero we denote their degrees by $d_\phi$ and $d_\psi$ respectively.
+Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively.
 Note that we have suppressed the $i$ index here since this will be clear from context.
 
 
@@ -257,22 +282,23 @@ The divisor of $\frac{\phi_i}{2yx^i}dx$ is
 & \geq & \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + 2(g+1)[P_0] - 4g[P_\infty] - 2i[P_0] + 2(g-1)[P_\infty] \\
 & = & \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0].
 \end{eqnarray*}
-which shows that it is regular on $U_2$.
+which shows that it is regular on $U_2$, since $i \leq g$.\todo{reference divisors}
 
 Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is 
 
 \begin{eqnarray*}
-\di \left( \frac{-\psi_i}{2yx^i}dx\right) & = & \di(\psi) - \di(y) - \di(x^i) + \di (dx) \\
+\di \left( \frac{\psi_i}{2yx^i}dx\right) & = & \di(\psi_i) - \di(y) - \di(x^i) + \di (dx) \\
 & = & \di (\psi_i ) -R + (2g+2)[P_\infty] - 2i[P_0] + 2i[P_\infty] + R -4[P_\infty] \\
 & =  & \di(\psi_i) + 2(g+i-2)[P_\infty] -2i[P_0] \\
 & \geq & \di_0(\psi_i) - 2g[P_\infty] + 2(g+i-2)[P_\infty] -2i[P_0] \\
 & = & \di_0(\psi_i) + 2(i-1)[P_\infty] - 2i[P_0].
 \end{eqnarray*}
+\todo{reference divisors}
 Since $i\geq 1$ we conclude that $\frac{\psi_i}{2yx^i}dx$ is regular on $U_1$.
 
 Finally, since 
 \[ 
-\frac{\phi_i}{2yx^i}dx - \frac{-\psi_i}{2yx^i}dx = \frac{s_i(x)}{2yx^i}dx = d(yx^{-i}
+\frac{\phi_i}{2yx^i}dx - \frac{-\psi_i}{2yx^i}dx = \frac{s_i(x)}{2yx^i}dx = d(yx^{-i})
 \]
 we have proved the proposition when $p\neq 2$.
 
@@ -283,39 +309,39 @@ We first rewrite the divisor so that it is in terms of $dx$, as follows:
 dyx^{-i} & = & x^{-i}dy + ydx^{-i} \\
 & = & \frac{1}{x^i} \left( \frac{F' + yH'}{H}\right) dx + \frac{iy}{x^{i+1}}dx \\
 & = & \left( \frac{F'}{x^iH} + \frac{yH'}{x^iH} + \frac{iy}{x^{i+1}} \right) dx.\\
-& = & \frac{S_i(x)}{x^{i+1}H}dx.
+& = & \frac{S_i(x,y)}{x^{i+1}H}dx.
 \end{eqnarray*}
 
 Define $A^i_{j+1}$ for $0 \leq j \leq 2g$, and $B_k^i$ for $1\leq k \leq g$, such that
 \[
-	S_i(x,y) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(B_g^i x^i + \ldots + B_1^i x).
+	S_i(x,y) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(B_g^i x^g + \ldots + B_1^i x).
 \]
 \todo[inline]{add y in to the $S_i$ variables}
 Note that many of these coefficients may be zero.
 
 We seperate $\Phi_i$ and $\Psi_i$ in to two parts, one with a $y$ factor and the other without, which we will denote with superscript $x$ and $y$ respectively.
-We denote by $d^x_\Phi, d^y_\Phi, d^x_\Psi$ and $d^y_\Psi$ the highest degree $x$ term occuring in $\Phi^x, \Phi^y, \Psi^x$ and $\Psi^y$ respectively.
-Note that as in the previous case we have suppressed the $i$.
+Note that whilst any of these polymials may be zero, we assume that they are all non-zero, since zero is regular everywhere.\todo{clarify}
+We denote the degrees of $\Phi^x_i, \Phi^y_i, \Psi^x_i$ and $\Psi_i^y$ as polynomials in $x$ by $d^x_\Phi, d^y_\Psi, d^x_\Psi$ and $d^y_\Psi$ respectively.
+Note that as in the previous case we have suppressed the $i$ term in the degrees.
 We then show that each part is regular on the appropriate set, and conclude that both $\Phi_i$ and $\Psi_i$ are also regular on the same sets.
 
 We first compute the divisors associated to $\Phi_i$.
 Firstly, 
 \begin{eqnarray*}
-\di \left( \frac{\phi dx}{x^i h} \right) & = & \di(\phi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + (2g+2) [P_\infty] \\
-& \geq & \di_0(\phi) - 4g[P_\infty] - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] + 2g[P_\infty] + 2[P_\infty] \\
-& = & \di_0(\phi) - 2i[P_0] + 2(i-g-1)[P_\infty] \\
-& = & \di_0\left( \frac{\phi}{x^i} \right) + \di_0( x^i) - 2i[P_0] + 2(i-g-1)[P_\infty] \\
-& = & \di_0 \left( \frac{\phi}{x^i} \right) + 2(i-g-1)[P_\infty].
+\di \left( \frac{\Phi_i^x dx}{x^{i+1} H} \right) & = & \di(\Phi_i^x) + R - 4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] - R + (2g+2) [P_\infty] \\
+& \geq & \di_0(\Phi_i^x) - 4g[P_\infty] - 4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] + 2g[P_\infty] + 2[P_\infty] \\
+& = & \di_0(\Phi_i^x) - 2(i+1)[P_0] + 2(i-g)[P_\infty] \\
+& = & \di_0\left( \frac{\Phi_i^x}{x^{i+1}} \right) + \di_0( x^{i+1}) - 2(i+1)[P_0] + 2(i-g)[P_\infty] \\
+& = & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + 2(i-g)[P_\infty],
 \end{eqnarray*}
+which is clearly positive on $U_2$.
 
-If we suppose that $i$ is even then $\Psi_i^y = \frac{yh'dx}{x^ih}$, and this is regular on $U_2$ since
-
+We now suppose that $i$ is even. Then we have
 \begin{eqnarray*}
-\di\left(\Psi^y_i dx) \right) & = & \di\left(\frac{y\theta dx}{x^ih}\right) \\
-& = &  \di_0(y) - (2g+1)[P_\infty] + \di(\theta) + R - 4[P_\infty] -2i[P_0] + 2i[P_\infty] - R \\
+\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right) & = &  \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) + R - 4[P_\infty] -2(i+1)[P_0] + 2(i+1)[P_\infty] - R \\
 & &  + (2g+2)[P_\infty] \\
-& = & \di_0(y) + \di(\theta) -2i[P_0] + (2i -3)[P_\infty] \\
-& = & \di_0(y) + \di_0(\theta) - 2d'[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
+& = & \di_0(y) + \di(\Psi) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
+& = & \di_0(y) + \di_0(\Psi) - 2d_\Psi^y[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
 & = & \di_0(y) + \di_0\left(\frac{\theta}{x^i}\right) + 2i[P_0] -2i[P_0] + (2i-2d'-3)[P_\infty]\\
 & = & \di_0(y) + \di_0\left(\frac{\theta}{x^i} \right) + (2i-2d'-3)[P_\infty]
 \end{eqnarray*}
