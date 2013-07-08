@@ -82,7 +82,7 @@
 \newcommand{\cA}{{\mathcal A}}
 \newcommand{\cD}{{\mathcal D}}
 \newcommand{\cU}{{\mathcal U}}
-\newcommand{\cech}{\v{C}ech \ }
+\newcommand{\cech}{\v{C}ech }
 
 
 \DeclareMathOperator{\aut}{Aut}
@@ -109,7 +109,7 @@
 
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p$.
-By an automorphism of $ \mathbb P_k^1$ we may assume that $P_0$ and $P_\infty$ are ramification points.
+By an automorphism of $ \mathbb P_k^1$ we may assume that 0 and $\infty$ are branch points, and we denote the corresponding ramification points in $X$ as $P_0$ and $P_\infty$ respectively.
 
 We start by recalling how we define the algebraic de-Rham cohomology of $X$ via \cech cohomology.
 The de-Rham cohomology of an algebraic curve is the hypercohomology of the sheaves of differentials on the curve. Since a curve doesn't have differentials of degree greater than one, this is just the hypercohomology of the complex
@@ -123,15 +123,16 @@ Since our cover consists of only two elements, then \todo{which term - just the 
 
 Hence to compute the \cech de-Rham cohomology, we need to compute the cohomology of the total complex of
 \[ \begin{array}{ccccccc}
-~ & ~ & 0 & \rightarrow & 0 & ~ & ~ \\
+~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
-0 & \rightarrow & \cO_X(U_0)\times cO_X(U_1) & \rightarrow & \Omega_X(U_1)\times \Omega_X(U_2) & \rightarrow & 0 \\
+0 & \rightarrow & \cO_X(U_0)\times \cO_X(U_1) & \rightarrow & \Omega_X(U_1)\times \Omega_X(U_2) & \rightarrow & 0 \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
-0 & \rightarrow & \cO_X(U_1 \cap U_2) & \rightarrow & \cO_X(U_1 \cap U_2) & \rightarrow & 0 \\
+0 & \rightarrow & \cO_X(U_1 \cap U_2) & \rightarrow & \Omega_X(U_1 \cap U_2) & \rightarrow & 0 \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
-~ & ~ & 0 & \rightarrow & 0 & ~ & ~ \\
+~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 \end{array}
 \]
+where the horizontal arrows are just the differential map $d$.
 
 
 We wish to compute a basis for the first de-Rham hypercohomology of this curve, which we denote by \todo{define this}{$H^1_{dR}(X/k)$.} 
@@ -140,9 +141,7 @@ To do this we use the fact that we have the following short exact sequence:
 0 \ra H^0(X,\Omega_X) \ra H^1_{dR}(X/k) \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
 
-We use \v{C}ech cohomology for our computations.
-We have an affine open cover by $U_1 = X\backslash P_0$ and $U_2 = X \backslash P_\infty$, which we denote by ${\cal U} = \{ U_1, \ U_2\}$.
-\todo{find citation}{By definition}  $\check{H}_{dR}^1(\cU)$ is the quotient of the $k$-vector space 
+A more concrete way of putting this is to say that $H^1_{{\text dR}}(X/k)$ is the quotient of
 \[
 \{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1 - \omega_2\}
 \]
@@ -152,15 +151,21 @@ by the subspace
 \{ (df_1, df_2, f_1-f_2)|f_i \in \cO_X(U_i)\}.
 \]
 
-In order to compute this basis we will first give a basis of $H^1(X,\cO_X)$(a basis of $H^0(X,\Omega_X)$ is already available in the literature, for example \todo{insert reference}). This will depend upon the defining equations for the associated field extension of $K(x)$ that we choose, and this in turn will depend on whether $p=2$ or not.
+We wish to compute a basis of $H^1_{{\text dR}}(X/k)$, in order that we can see how $G$ acts on $H^1_{{\text dR}}(X/k)$.
+To do this we will compute the basis of the two outer terms of the short exact sequence
+\begin{equation}\label{ses}
+0 \ra H^0(X,\Omega_X) \ra H^1_{dR}(X/k) \ra H^1(X,\cO_X) \ra 0.
+\end{equation}
+The basis of $H^0(X,\Omega_X)$ is already known in the literature \todo{citation} so we need only compute the basis of $H^1(X,\cO_X)$.
+This of course depends upon the defining equations of our curve, which we now fix.
+
 
 If $p \neq 2$ then our extension of $k(x)$ will be $k(x,y)$ where $y$ satisfies 
 \[
 	y^2 = f(x)
 \]
-for some polynomial $f \in k[x]$ of degree $2g+1$ or $2g+2$ and with no repeated roots.
-By an autopmorphism of $\mathbb P_k^1$ we may assume that $\deg(f) = 2g+1$ and moreover that $0$ and $\infty$ are branch points.
-We will denote the pre-images of $0$ and $\infty$ under $x$ by $P_0$ and $P_\infty$ respectively.
+for some polynomial $f \in k[x]$.
+Since we assumed that $\infty$ is a branch point $f(x)$ is necessarily of degree $2g+1$.
 
 We recall that $\di (R) = \di(y) + (g+1)[P_\infty]$ and that $\di( dx) = R - 4[P_\infty]$.
 
@@ -180,7 +185,7 @@ We recall the following divisors, which we will make use of throughout this arti
 \end{eqnarray*}
 where $\di_0$ of a function denotes the divisor of zeroes of a function, or the positive part of the divisor of the function.
 Finally, to define the ramification divisor we suppose that \todo{check this notation doesn't clash with anything else}{$H(x) = \prod_{i=1}^d (x-a_i)^{n_i}$} for some $d \leq g$.
-Then $a_i \in \mathbb P_k^1$ are the branch points of $x$ and we let $P_i \in X$ be the correspding ramification points of $x$.
+Then $a_i \in \mathbb P_k^1$ are the branch points of $x$ and we let $P_i \in X$ be the corresponding ramification points of $x$.
 Then 
 \[
 R = \sum_{i=1}^d 2n_i[P_i] - (g+1-d)[P_\infty].
