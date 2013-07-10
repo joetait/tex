@@ -135,11 +135,6 @@ Hence to compute the \cech de-Rham cohomology, we need to compute the cohomology
 where the horizontal arrows are just the differential map $d$.
 
 
-We wish to compute a basis for the first de-Rham hypercohomology of this curve, which we denote by \todo{define this}{$H^1_{dR}(X/k)$.} 
-To do this we use the fact that we have the following short exact sequence:
-\begin{equation}\label{ses}
-0 \ra H^0(X,\Omega_X) \ra H^1_{dR}(X/k) \ra H^1(X,\cO_X) \ra 0.
-\end{equation}
 
 A more concrete way of putting this is to say that $H^1_{{\text dR}}(X/k)$ is the quotient of
 \[
@@ -156,7 +151,7 @@ To do this we will compute the basis of the two outer terms of the short exact s
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra H^1_{dR}(X/k) \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
-The basis of $H^0(X,\Omega_X)$ is already known in the literature \todo{citation} so we need only compute the basis of $H^1(X,\cO_X)$.
+The basis of $H^0(X,\Omega_X)$ is already known in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute the basis of $H^1(X,\cO_X)$.
 This of course depends upon the defining equations of our curve, which we now fix.
 
 
@@ -174,8 +169,8 @@ On the other hand, if $p=2$, then our extension will be $k(x,y)$, this time with
 	y^2 - H(x)y = F(x),
 \]
 where $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
+Also, as noted in \cite{faithfulaction}, we may assume that $F(x)$ is not divisible by $x^2$.
 
-\todo[inline]{note if I need to add other relations here}
 We recall the following divisors, which we will make use of throughout this article:
 \begin{eqnarray*}
 \di (dx) & = & R - 4[P_\infty] \\
@@ -184,7 +179,7 @@ We recall the following divisors, which we will make use of throughout this arti
 \di (y) & = & \di_0(y) - (2g+1)[P_\infty],
 \end{eqnarray*}
 where $\di_0$ of a function denotes the divisor of zeroes of a function, or the positive part of the divisor of the function.
-Finally, to define the ramification divisor we suppose that \todo{check this notation doesn't clash with anything else}{$H(x) = \prod_{i=1}^d (x-a_i)^{n_i}$} for some $d \leq g$.
+Finally, to define the ramification divisor we suppose that $H(x) = \prod_{i=1}^d (x-a_i)^{n_i}$ for some $d \leq g$.
 Then $a_i \in \mathbb P_k^1$ are the branch points of $x$ and we let $P_i \in X$ be the corresponding ramification points of $x$.
 Then 
 \[
@@ -204,7 +199,7 @@ and if $p = 2$ we define
 \].
 
 We then let $\phi_i$ and $\psi_i$ be all the terms of $s_i(x)$ with degrees greater than $g$ and less than or equal to $g$ respectively.
-Similarly, we let $\Phi_i$ and $\Psi_i$ be the monomials of $S_i(x,y)$ where the degree of the $x$ component is greater than or equal to $i$ and less than $i$ respectively.\todo{check if it should $\geq$ or $\leq$ i}
+Similarly, we let $\Phi_i$ and $\Psi_i$ be the monomials of $S_i(x,y)$ where the degree of the $x$ component is greater than or equal to $i$ and less than $i$ respectively.
 
 We can now give a basis for $H^1(X,\cO_X)$.\\
 
@@ -217,7 +212,7 @@ Let $i=1,\ldots g$. If $p\neq 2$ then a basis of $H^1(X,\cO_X)$ is given by
 
 and if $p=2$ then a basis is given by
 \[
-	\left( \left(\frac{-\Psi_i}{x^{i+1}h}\right) dx, \left( \frac{\Phi_i}{x^{i+1}h} \right) dx, x^{-i}y \right).
+	\left( \left(\frac{-\Psi_i}{x^{i+1}H}\right) dx, \left( \frac{\Phi_i}{x^{i+1}H} \right) dx, x^{-i}y \right).
 \]
 \end{prop}
 
@@ -271,7 +266,7 @@ and then
 \phi_i = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i = \alpha^i_gx^g + \ldots + \alpha^i_0.
 \]
 Note that it is possible for any of $\alpha_i^j$ to be zero. Indeed, it is possible for either $\phi_i$ or $\psi_i$ to be zero.
-Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $\d_\psi$ respectively. From the definition of $\phi$ and $\psi$ we know that $0 < d_\phi \leq g$ and $g < d_\psi \geq 2g$ respectively.
+Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi$ and $\psi$ we know that $0 < d_\phi \leq g$ and $g < d_\psi \geq 2g$ respectively.
 Note that we have suppressed the $i$ index here since this will be clear from context.
 
 
@@ -306,18 +301,17 @@ We see that
 \begin{eqnarray*}
 \left( \left( \frac{\Phi_i}{x^{i+1}H} \right) - \left( \frac{- \Psi_i}{x^{i+1}H} \right) \right) dx & = & \frac{S_i(x,y)}{x^{i+1}H}dx \\
 & = & \left( \frac{F'}{x^iH} + \frac{yH'}{x^iH} + \frac{iy}{x^{i+1}} \right) dx \\
-& = & \frac{1}{x^i}\left( \frac{F' + yH'}{H} \right) dx \frac{iy}{x^{i+1}dx \\
+& = & \frac{1}{x^i}\left( \frac{F' + yH'}{H} \right) dx \frac{iy}{x^{i+1}}dx \\
 & = & x^{-i}dy + ydx^{-i} \\
 & = & dyx^{-i}.
 \end{eqnarray*}
-Hence it only remains to show that $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_1$ and $U_2$ respectively.
+Hence it only remains to show that $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_2$ and $U_1$ respectively.
 
 
 We define $A^i_{j+1}$ for $0 \leq j \leq 2g$, and $B_k^i$ for $1\leq k \leq g$, such that
 \[
 	S_i(x,y) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(B_g^i x^g + \ldots + B_1^i x).
 \]
-\todo[inline]{add y in to the $S_i$ variables}
 Note that many of these coefficients may be zero.
 In particular we note that $B_i^i = 0$ for all $i$.
 If $i$ is even then $B_g^ix^g + \ldots + B_1^ix = H'x$.
@@ -335,75 +329,56 @@ We can now define the following polynomials
 \Phi_i^x & = & A^i_{2g+1}x^{2g+1} + \ldots + A^i_{i+1}x^{i+1} \\
 \Psi_i^x & = & A^i_ix^i + \ldots + A^i_1x \\
 \Phi_i^y & = & B_g^ix^g + \ldots B_{i+1}^ix^{i+1} \\
-\Psi_i^y & = & B_{i-1}^i + \ldots + B_1^ix
+\Psi_i^y & = & B_{i-1}^i + \ldots + B_1^ix.
 \end{eqnarray*}
 
 
+Clearly $\Phi_i = \Phi_i^x + y\Phi_i^y$ and $\Psi_i = \Psi_i^x + y\Psi_i^y$, and we will use this splitting of to show that $\Phi_i$ and $\Psi_i$ are regular on $U_2$ and $U_1$ respectively.
 
 We first compute the divisors associated to $\Phi_i$.
 Firstly, 
 \begin{eqnarray*}
-\di \left( \frac{\Phi_i^x dx}{x^{i+1} H} \right) & = & \di(\Phi_i^x) + R - 4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] - R + (2g+2) [P_\infty] \\
-& \geq & \di_0(\Phi_i^x) - 4g[P_\infty] - 4[P_\infty] - 2(i+1)[P_0] + 2(i+1)[P_\infty] + 2g[P_\infty] + 2[P_\infty] \\
-& = & \di_0(\Phi_i^x) - 2(i+1)[P_0] + 2(i-g)[P_\infty] \\
-& = & \di_0\left( \frac{\Phi_i^x}{x^{i+1}} \right) + \di_0( x^{i+1}) - 2(i+1)[P_0] + 2(i-g)[P_\infty] \\
-& = & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + 2(i-g)[P_\infty],
+\di \left( \frac{\Phi_i^x dx}{x^{i+1} H} \right) & = & \di(\Phi_i^x) + (R - 4[P_\infty]) - (2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R - (2g+2) [P_\infty]) \\
+& = & \di_0(\Phi_i^x) -d_\Phi^x[P_\infty] -2(i+1)[P_0] + 2(g+i)[P_\infty]\\
+& \geq & \di_0(\Phi_i^x) - 2(2g+1)[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\ 
+& = & \di_0(\Phi_i^x) - 2(i+1)[P_0] + 2(i-1-g)[P_\infty] \\
+& = & \di_0\left( \frac{\Phi_i^x}{x^{i+1}} \right) + \di_0( x^{i+1}) - 2(i+1)[P_0] + 2(i-g-1)[P_\infty] \\
+& = & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + 2(i-g-1)[P_\infty],
 \end{eqnarray*}
 which is clearly positive on $U_2$.
 
-We now suppose that $i$ is even. Then we have
+We now compute the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, namely
 \begin{eqnarray*}
-\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right) & = &  \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) + R - 4[P_\infty] -2(i+1)[P_0] + 2(i+1)[P_\infty] - R \\
-& &  + (2g+2)[P_\infty] \\
-& = & \di_0(y) + \di(\Psi) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
-& = & \di_0(y) + \di_0(\Psi) - 2d_\Psi^y[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
-& = & \di_0(y) + \di_0\left(\frac{\theta}{x^i}\right) + 2i[P_0] -2i[P_0] + (2i-2d'-3)[P_\infty]\\
-& = & \di_0(y) + \di_0\left(\frac{\theta}{x^i} \right) + (2i-2d'-3)[P_\infty]
-\end{eqnarray*}
-
-Finally, if $i$ is odd then $\Psi^y_i = y \left( \frac{xh' + h}{hx^{i+1}} \right) dx$.
-We then compute 
-\begin{eqnarray*}
- \di \left( \frac{y \phi}{hx^{i+1}} dx \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di( \phi) + R - 4[P_\infty] - 2(i+1)[P_0] \\
-& ~ & + 2(i+1)[P_\infty] -R + 2(g+1)[P_\infty] \\
-& = & \di_0(y) + \di(\phi) -(2g+1)[P_\infty] + R' + 2(g+1-d)[P_\infty] + 2n_1[P_0] - 2(i+1)[P_0] \\ 
-& ~ & + 2(i-1)[P_\infty] -R' - 2n_1[P_0]- 2(g+1-d)[P_\infty] +2(g+1)[P_\infty] \\
-& = & \di_0(y) + \di(\phi) + R' - 2(i +1)[P_0] + (2i-2)[P_\infty] \\
-& \geq & \di_0(y) + \di_0(\phi) + R' - 2(i + 1)[P_0] + (2i - 2d'' - 2)[P_\infty] \\
-& = & \di_o(y) + \di_0\left( \frac{\phi}{x^{i+1}} \right) + R' + 2(i - d'' -1)[P_\infty]. 
+\di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right) & = &  (\di_0(y) - (2g+1)[P_\infty]) + \di(\Phi_i^y) + (R - 4[P_\infty]) -(2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R \\
+& &  - (2g+2)[P_\infty]) \\
+& = & \di_0(y) + \di(\Phi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
+& = & \di_0(y) + \di_0(\Phi_i^y) - 2d_\Phi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
+& = & \di_0(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}}\right) + 2(i+1)[P_0] -2(i+1)[P_0] + (2i-2d_\Phi^y - 1)[P_\infty]\\
+& = & \di_0(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (2i-2d_\Phi^y -1)[P_\infty]
 \end{eqnarray*}
 
 This completes the proof that $\Phi_i$ is regular on $U_2$.
 
 We now complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{eqnarray*}
-\di\left( \frac{\psi dx}{x^ih} \right) & = & \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] - R + 2(g+1)[P_\infty] \\
-& \geq & \di_0(\psi ) - 2(i-1)[P_\infty] - 4[P_\infty] - 2i[P_0] + 2(g+i + 1)[P_\infty] \\
-& = & \di_0(\psi) - 2i[P_0] + 2(g+1)[P_\infty].
+\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right) & = & \di(\Psi_i^x) + (R - 4[P_\infty]) - (2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R - 2(g+1)[P_\infty]) \\
+& \geq & \di_0(\Psi_i^x ) - 2(i-1)[P_\infty] - 2i[P_0] + 2(g+i)[P_\infty] \\
+& = & \di_0(\Psi_i^x) - 2i[P_0] + 2(g+1)[P_\infty],
 \end{eqnarray*}
+which is clearly positive on $U_1$.
 
-
-As before, we need to consider the cases when $i$ is odd and when $i$ is even seperately for $\Psi_i^y$, and we first suppose that $i$ is even.
-Then we have 
 \begin{eqnarray*}
-\di\left( \frac{y\psi dx}{x^ih} \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\psi) + R - 4[P_\infty] - 2i[P_0] + 2i[P_\infty] \\
-& & - R + (2g+2)[P_\infty] \\
-& = & \di_0(y) + \di(\psi) -2i[P_0] + (2i-3)[P_\infty] \\
-& \geq & \di_0(y) + \di_0(\psi) - 2(i-2)[P_\infty] - 2i[P_0] + (2i-3)[P_\infty] \\
-& = & \di_0(y) + \di_0(\psi) -2i[P_0] + [P_\infty].
-\end{eqnarray*}
-
-On the other hand, if $i$ is odd then we have
-\begin{eqnarray*}
-\di \left( \frac{\psi y}{hx^{i+1}} dx \right) & = & \di_0(y) -(2g+1)[P_\infty] + \di(\psi) +R -4[P_\infty] - 2(i+1)[P_0] \\
-&  & + 2(i+1)[P_\infty] - R + 2(g+1)[P_\infty] \\
-& = & \di_0(y) + \di(\psi) -2(i+1)[P_0] + (2i-1)[P_\infty] \\
-& \geq & \di_0(y) + \di_0(\psi) - 2(i-1)[P_\infty] - 2(i+1)[P_0] + (2i+1)[P_\infty] \\
-& = & \di_0(y) + \di_0(\psi) - 2(i+1)[P_0] + [P_\infty]
+\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right) & = &  \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) + R - 4[P_\infty] -2(i+1)[P_0] + 2(i+1)[P_\infty] - R \\
+& &  + (2g+2)[P_\infty] \\
+& = & \di_0(y) + \di(\Psi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
+& = & \di_0(y) + \di_0(\Psi_i^y) - 2d_\Psi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
+& \geq & \di_0(y) + \di_0(\Psi_i^y) -2(i-1)[P_\infty] -2(i+1)[P_0] + (2i-1)[P_\infty] \\
+& = & \di_0(y) + \di_0(\Psi_i^y) -2(i+1)[P_0] + [P_\infty].
 \end{eqnarray*}
 
 
-Again, it is clear that all the functions are regular on the appropriate sets, and since it is clear that $\frac{\Phi_i}{hx^{i+1}} - \frac{\Psi_i}{Hx^{i+1}} = \frac{S_i(x)}{Hx^{i+1}}$ then we have completed the proof.
+
+Again, it is clear that this differential is regular on $U_1$, and since we have already seen that $\frac{\Phi_i}{hx^{i+1}} - \frac{\Psi_i}{Hx^{i+1}} = \frac{S_i(x)}{Hx^{i+1}}$ we have completed the proof.
 
 
 
@@ -422,6 +397,8 @@ We define $\alpha^i_j$ and $\Alpha^i_{j+1}$ for $0 \leq j \leq 2g$, and $B_k^i$ 
 	
 
 
+\bibliography{/home/jtait/files/tex/Bibliography/biblio.bib}
+\bibliographystyle{plain}
 
 
 \end{document}
