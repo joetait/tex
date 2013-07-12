@@ -97,7 +97,7 @@
 
 %%% The "real" document content comes below...
 
-\title{}
+\title{Group actions on de-Rham cohomology of hyperelliptic curves}
 \author{}
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
@@ -105,7 +105,7 @@
 \begin{document}
 \maketitle
 
-\section{Characteristic not 2}
+\section{Background}
 
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p$.
@@ -119,9 +119,7 @@ The de-Rham cohomology of an algebraic curve is the hypercohomology of the sheav
 
 The cover we are using for the \cech cohomology consists of just two open sets, $U_1 = X\backslash P_0$ and $U_2 = X\backslash P_\infty$, and we let ${\cal U} = \{ U_1,  U_2\}$.
 Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$ given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
-Since our cover consists of only two elements, then \todo{which term - just the first?}{the \cech cohomology of} $\Omega_X^\bullet$ with respect to the cover $\cal U$ is precisely the cokernel of this map.
-
-Hence to compute the \cech de-Rham cohomology, we need to compute the cohomology of the total complex of
+Hence to compute the \cech de-Rham cohomology, we need to compute the cohomology of the total complex of the following \cech complex:
 \[ \begin{array}{ccccccc}
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
@@ -133,6 +131,8 @@ Hence to compute the \cech de-Rham cohomology, we need to compute the cohomology
 \end{array}
 \]
 where the horizontal arrows are just the differential map $d$.
+By a theorem, the first sheaf cohomology group agrees with the first de Rham cohomology group.\todo{check this and find a reference}
+
 
 
 
