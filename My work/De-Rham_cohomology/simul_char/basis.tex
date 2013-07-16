@@ -4,7 +4,7 @@
 % This is a simple template for a LaTeX document using the "article" class.
 % See "book", "report", "letter" for other types of document.
 
-\documentclass[draft, 11pt]{article} % use larger type; default would be 10pt
+\documentclass[11pt]{article} % use larger type; default would be 10pt
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
 
@@ -17,7 +17,7 @@
 \geometry{a4paper} % or letterpaper (US) or a5paper or....
 % \geometry{margins=2in} % for example, change the margins to 2 inches all round
 % \geometry{landscape} % set up the page for landscape
-%   read geometry.pdf for detailed page layout information
+% read geometry.pdf for detailed page layout information
 
 \usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{todonotes}
@@ -100,7 +100,7 @@
 \title{Group actions on de-Rham cohomology of hyperelliptic curves}
 \author{}
 %\date{} % Activate to display a given date or no date (if empty),
-         % otherwise the current date is printed 
+         % otherwise the current date is printed
 
 \begin{document}
 \maketitle
@@ -113,13 +113,13 @@ By an automorphism of $ \mathbb P_k^1$ we may assume that 0 and $\infty$ are bra
 
 We start by recalling how we define the algebraic de-Rham cohomology of $X$ via \cech cohomology.
 The de-Rham cohomology of an algebraic curve is the hypercohomology of the sheaves of differentials on the curve. Since a curve doesn't have differentials of degree greater than one, this is just the hypercohomology of the complex
-\[
+\begin{equation}\label{res}
 0 \rightarrow \cO_X \rightarrow \Omega_X \rightarrow 0.
-\]
+\end{equation}
 
-The cover we are using for the \cech cohomology consists of just two open sets, $U_1 = X\backslash P_0$ and $U_2 = X\backslash P_\infty$, and we let ${\cal U} = \{ U_1,  U_2\}$.
+The cover we are using for the \cech cohomology consists of just two open sets, $U_1 = X\backslash P_0$ and $U_2 = X\backslash P_\infty$, and we let ${\cal U} = \{ U_1, U_2\}$.
 Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$ given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
-Hence to compute the \cech de-Rham cohomology, we need to compute the cohomology of the total complex of the following \cech complex:
+It is this map that gives us the vertical differentials in the \cech complex of \ref{res}, which is:
 \[ \begin{array}{ccccccc}
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
@@ -130,18 +130,19 @@ Hence to compute the \cech de-Rham cohomology, we need to compute the cohomology
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 \end{array}
 \]
-where the horizontal arrows are just the differential map $d$.
-By a theorem, the first sheaf cohomology group agrees with the first de Rham cohomology group.\todo{check this and find a reference}
+where the horizontal arrows are the standard differential map $d$.
+By \cite[Cor. 12.4.7]{EGA0III}, the first sheaf cohomology group agrees with the first de Rham cohomology group.
+Note that this relies on ${\check H}^p({\mathcal U},\cO_X) $ being zero for all $p\geq 1$.
+Since $U_1$ and $U_2$ are affine, this follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.
 
 
 
-
-A more concrete way of putting this is to say that $H^1_{{\text dR}}(X/k)$ is the quotient of
+Upon computing $H^1_{{\text dR}}(X/k)$ using this complex we see that it is the space
 \[
 \{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1 - \omega_2\}
 \]
 
-by the subspace
+quotiented by the subspace
 \[
 \{ (df_1, df_2, f_1-f_2)|f_i \in \cO_X(U_i)\}.
 \]
@@ -152,12 +153,19 @@ To do this we will compute the basis of the two outer terms of the short exact s
 0 \ra H^0(X,\Omega_X) \ra H^1_{dR}(X/k) \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
 The basis of $H^0(X,\Omega_X)$ is already known in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute the basis of $H^1(X,\cO_X)$.
-This of course depends upon the defining equations of our curve, which we now fix.
 
+In order to do this we will need to use Serre duality, which we briefly remind the reader of presently.
+Serre duality states that $H^0(X,\Omega_X)$ and $H^1(X,\cO_X)$ are dual to each other, and that there is a canonical map ${\text Res}:H^0(X,\omega_X) \times H^1(X,\cO_X) \rightarrow k$.
+Details of the definition of ${\text Res}$ can be found in appendix B of \todo{in progress}
+\todo[inline]{add details - in particular, relate to the basis we have for de rham}
 
-If $p \neq 2$ then our extension of $k(x)$ will be $k(x,y)$ where $y$ satisfies 
+\section{Basis of $H^1(X,\cO_X)$}
+
+The bases of the $k$-vector spaces in \ref{ses} will be given in terms of the defining equations, so we describe these now.
+
+If $p \neq 2$ then our extension of $k(x)$ will be $k(x,y)$ where $y$ satisfies
 \[
-	y^2 = f(x)
+y^2 = f(x)
 \]
 for some polynomial $f \in k[x]$.
 Since we assumed that $\infty$ is a branch point $f(x)$ is necessarily of degree $2g+1$.
@@ -166,10 +174,10 @@ We recall that $\di (R) = \di(y) + (g+1)[P_\infty]$ and that $\di( dx) = R - 4[P
 
 On the other hand, if $p=2$, then our extension will be $k(x,y)$, this time with $y$ defined by
 \[
-	y^2 - H(x)y = F(x),
+y^2 - H(x)y = F(x),
 \]
 where $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
-Also, as noted in \cite{faithfulaction}, we may assume that $F(x)$ is not divisible by $x^2$.
+Also, as noted in \cite[\S 6]{faithfulaction}, we may assume that $F(x)$ is not divisible by $x^2$.
 
 We recall the following divisors, which we will make use of throughout this article:
 \begin{eqnarray*}
@@ -181,7 +189,7 @@ We recall the following divisors, which we will make use of throughout this arti
 where $\di_0$ of a function denotes the divisor of zeroes of a function, or the positive part of the divisor of the function.
 Finally, to define the ramification divisor we suppose that $H(x) = \prod_{i=1}^d (x-a_i)^{n_i}$ for some $d \leq g$.
 Then $a_i \in \mathbb P_k^1$ are the branch points of $x$ and we let $P_i \in X$ be the corresponding ramification points of $x$.
-Then 
+Then
 \[
 R = \sum_{i=1}^d 2n_i[P_i] - (g+1-d)[P_\infty].
 \]
@@ -189,13 +197,13 @@ R = \sum_{i=1}^d 2n_i[P_i] - (g+1-d)[P_\infty].
 
 In order to state the basis of $H^1(X,\cO_X)$, as well as to shorten the proof of the following proposition, we define the following polynomial and differentials.
 Suppose that $1 \leq i \leq g$
-Firstly, when $p\neq 2$ we define 
+Firstly, when $p\neq 2$ we define
 \[
-	s_i(x) := f'(x) - \frac{2if}{x}
+s_i(x) := f'(x) - \frac{2if}{x}
 \]
 and if $p = 2$ we define
 \[
-	S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)
+S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)
 \].
 
 We then let $\phi_i$ and $\psi_i$ be all the terms of $s_i(x)$ with degrees greater than $g$ and less than or equal to $g$ respectively.
@@ -205,17 +213,42 @@ We can now give a basis for $H^1(X,\cO_X)$.\\
 
 \begin{prop}\label{basis}
 
-Let $i=1,\ldots g$. If $p\neq 2$ then a basis of $H^1(X,\cO_X)$ is given by 
+Let $i=1,\ldots, g$. If $p\neq 2$ then a basis of $H^1(X,\cO_X)$ is given by
 \[
-	\left( \left( \frac{-\psi_i}{2yx^i}\right) dx, \left(\frac{\phi_i}{2yx^i}\right) dx, x^{-i}y\right)
+\left( \left( \frac{-\psi_i}{2yx^i}\right) dx, \left(\frac{\phi_i}{2yx^i}\right) dx, x^{-i}y\right)
 \]
 
 and if $p=2$ then a basis is given by
 \[
-	\left( \left(\frac{-\Psi_i}{x^{i+1}H}\right) dx, \left( \frac{\Phi_i}{x^{i+1}H} \right) dx, x^{-i}y \right).
+\left( \left(\frac{-\Psi_i}{x^{i+1}H}\right) dx, \left( \frac{\Phi_i}{x^{i+1}H} \right) dx, x^{-i}y \right).
 \]
 \end{prop}
 
+Before proving this proposition we use it to prove our main theorem
+\begin{thm}
+
+Suppose that $g \geq 2$.
+Then any group $G$ acting on $X$ acts faithfully on $H^1_{dR}(X/k)$, the first algebraic de Rham cohomology group of $X$.
+
+\end{thm}
+\begin{proof}
+
+Recall that $H^0(X,\Omega_X)$ injects in to $H^1_{dR}(X/k)$.
+Then if $p \neq 2$, or if $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $H^1_{dR}(X/k)$.
+
+We now suppose that $p=2$ and $G$ does contain a hyperelliptic involution $\sigma$.
+We see from the above proposition that the third entry in the basis of $H^1(X,\cO_X)$ given by \cech cohomology is $x^{-i}y$ for $1 \leq i \leq g$.
+Now $\sigma(y) = y+ H$, and $\sigma$ preserves the cover $\mathcal U$, since it will fix the ramification points.
+Hence the action of $\sigma$ on the basis elements in Proposition \ref{basis} is just component wise, and in particular on the third component it is non-trivial.
+Hence the action of $G$ is faithful.
+
+\todo[inline]{check the last paragraph. In particular, read up about actions on Cech cohomology}
+
+\end{proof}
+
+\todo[inline]{look up classes of hyperelliptic curves whose auto groups are known, and see what else can be done}
+
+We now prove Proposition \ref{basis}.
 
 \begin{proof}
 
@@ -223,7 +256,7 @@ We start by showing that $x^{-i}y$ is a viable choice for the third component of
 
 From the earlier description of Serre duality, it is clear that if $\omega_i$ is a basis of $H^0(X, \Omega_X)$ then we require that the image of the residue map, ${\rm Res}(\omega_i, x^{-i}y)$ is non-zero.\todo{serre duality}
 
-If $p \neq 2$ then $\omega_i = \frac{x^{i-1}}{y}dx$ is a basis of $H^0(X, \Omega_X)$. 
+If $p \neq 2$ then $\omega_i = \frac{x^{i-1}}{y}dx$ is a basis of $H^0(X, \Omega_X)$.
 Then ${\rm Res}(\omega_i, x^{-i}y) = {\rm res}(x^{-1}dx)$ should be non-zero on $U_1$ and $U_2$, or equivalently $x^{-1}dx$ should have a pole of order one at both $P_0$ and $P_\infty$ (recall that the differential needs to be regular on $U_1 \cap U_2$).
 The divisor of $x^{-1}dx$ is
 \begin{eqnarray*}
@@ -242,7 +275,7 @@ We again see that there is a pole of precisely order one at $P_\infty$, and henc
 
 Now that we know $xy^{-i}$ is the third part of the triple making the basis, we need to find two differentials, one regular on $U_1$ and the other regular on $U_2$, such that their difference is $d(x^{-i}y)$.
 
-We again treat the cases $p=2$ and $p\neq 2$ seperately.
+We again treat the cases $p=2$ and $p\neq 2$ separately.
 We start by observing that
 \begin{eqnarray*}
 \left( \frac{\phi_i}{2yx^i} - \frac{-\psi_i}{2yx^i} \right) dx & = & \frac{s_i(x)}{2yx^i} dx \\
@@ -253,15 +286,15 @@ We start by observing that
 & = & \frac{x}{2y} d(yx^{-i})^2 \\
 & = & d(yx^{-i}).
 \end{eqnarray*}
-Hence it just remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_1$ and $U_2$ respectively.
+Hence it only remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_1$ and $U_2$ respectively.
 
 
 
 We define $\alpha^i_j$ for $1\leq j \leq 2g$, such that
 \[
-	s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0, 
+s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0,
 \]
-and then 
+and then
 \[
 \phi_i = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i = \alpha^i_gx^g + \ldots + \alpha^i_0.
 \]
@@ -281,18 +314,17 @@ The divisor of $\frac{\phi_i}{2yx^i}dx$ is
 & \geq & \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + 2(g+1)[P_0] - 4g[P_\infty] - 2i[P_0] + 2(g+i-1)[P_\infty] \\
 & = & \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0].
 \end{eqnarray*}
-which shows that it is regular on $U_2$, since $i \leq g$.\todo{reference divisors}
+which shows that it is regular on $U_2$, since $i \leq g$.
 
-Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is 
+Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 
 \begin{eqnarray*}
 \di \left( \frac{\psi_i}{2yx^i}dx\right) & = & \di(\psi_i) - \di(y) - \di(x^i) + \di (dx) \\
 & = & \di (\psi_i ) -(R + 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R -4[P_\infty]) \\
-& =  & \di(\psi_i) + 2(g+i-1)[P_\infty] -2i[P_0] \\
+& = & \di(\psi_i) + 2(g+i-1)[P_\infty] -2i[P_0] \\
 & \geq & \di_0(\psi_i) - 2g[P_\infty] + 2(g+i-1)[P_\infty] -2i[P_0] \\
 & = & \di_0(\psi_i) + 2(i-1)[P_\infty] - 2i[P_0].
 \end{eqnarray*}
-\todo{reference divisors}
 Since $i\geq 1$ we conclude that $\frac{\psi_i}{2yx^i}dx$ is regular on $U_1$.
 
 
@@ -310,12 +342,12 @@ Hence it only remains to show that $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i
 
 We define $A^i_{j+1}$ for $0 \leq j \leq 2g$, and $B_k^i$ for $1\leq k \leq g$, such that
 \[
-	S_i(x,y) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(B_g^i x^g + \ldots + B_1^i x).
+S_i(x,y) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(B_g^i x^g + \ldots + B_1^i x).
 \]
 Note that many of these coefficients may be zero.
 In particular we note that $B_i^i = 0$ for all $i$.
 If $i$ is even then $B_g^ix^g + \ldots + B_1^ix = H'x$.
-The differential of a polynomial in characateristic two has no odd powered terms, and hence multiplying by $x$ leaves no even terms. 
+The differential of a polynomial in characteristic two has no odd powered terms, and hence multiplying by $x$ leaves no even terms.
 Since we supposed that $i$ is even this means that $B_i^i = 0$.
 
 Similarly, if $i$ is odd then $B_g^ix^g + \ldots + B_1^ix = H'x + H$.
@@ -336,11 +368,11 @@ We can now define the following polynomials
 Clearly $\Phi_i = \Phi_i^x + y\Phi_i^y$ and $\Psi_i = \Psi_i^x + y\Psi_i^y$, and we will use this splitting of to show that $\Phi_i$ and $\Psi_i$ are regular on $U_2$ and $U_1$ respectively.
 
 We first compute the divisors associated to $\Phi_i$.
-Firstly, 
+Firstly,
 \begin{eqnarray*}
 \di \left( \frac{\Phi_i^x dx}{x^{i+1} H} \right) & = & \di(\Phi_i^x) + (R - 4[P_\infty]) - (2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R - (2g+2) [P_\infty]) \\
 & = & \di_0(\Phi_i^x) -d_\Phi^x[P_\infty] -2(i+1)[P_0] + 2(g+i)[P_\infty]\\
-& \geq & \di_0(\Phi_i^x) - 2(2g+1)[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\ 
+& \geq & \di_0(\Phi_i^x) - 2(2g+1)[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
 & = & \di_0(\Phi_i^x) - 2(i+1)[P_0] + 2(i-1-g)[P_\infty] \\
 & = & \di_0\left( \frac{\Phi_i^x}{x^{i+1}} \right) + \di_0( x^{i+1}) - 2(i+1)[P_0] + 2(i-g-1)[P_\infty] \\
 & = & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + 2(i-g-1)[P_\infty],
@@ -349,8 +381,8 @@ which is clearly positive on $U_2$.
 
 We now compute the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, namely
 \begin{eqnarray*}
-\di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right) & = &  (\di_0(y) - (2g+1)[P_\infty]) + \di(\Phi_i^y) + (R - 4[P_\infty]) -(2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R \\
-& &  - (2g+2)[P_\infty]) \\
+\di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right) & = & (\di_0(y) - (2g+1)[P_\infty]) + \di(\Phi_i^y) + (R - 4[P_\infty]) -(2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R \\
+& & - (2g+2)[P_\infty]) \\
 & = & \di_0(y) + \di(\Phi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
 & = & \di_0(y) + \di_0(\Phi_i^y) - 2d_\Phi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
 & = & \di_0(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}}\right) + 2(i+1)[P_0] -2(i+1)[P_0] + (2i-2d_\Phi^y - 1)[P_\infty]\\
@@ -368,8 +400,8 @@ We now complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 which is clearly positive on $U_1$.
 
 \begin{eqnarray*}
-\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right) & = &  \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) + R - 4[P_\infty] -2(i+1)[P_0] + 2(i+1)[P_\infty] - R \\
-& &  + (2g+2)[P_\infty] \\
+\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) + R - 4[P_\infty] -2(i+1)[P_0] + 2(i+1)[P_\infty] - R \\
+& & + (2g+2)[P_\infty] \\
 & = & \di_0(y) + \di(\Psi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
 & = & \di_0(y) + \di_0(\Psi_i^y) - 2d_\Psi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
 & \geq & \di_0(y) + \di_0(\Psi_i^y) -2(i-1)[P_\infty] -2(i+1)[P_0] + (2i-1)[P_\infty] \\
@@ -384,17 +416,140 @@ Again, it is clear that this differential is regular on $U_1$, and since we have
 
 \end{proof}
 
+\section{Computing the residue}
+
+We include the following lemma for the sake of completeness.
+
+\begin{lem}
+If $p \neq 2$ then ${\rm res}_{P_\infty}(\frac{1}{x}dx) = -2$.
+If $p=2$ then ${\rm res}_{P_\infty}\left(\frac{ydx}{xh(x)}\right) = 1$.
+\end{lem}
+
+\begin{proof}
+
+We first consider the case $p\neq 2$.
+To start with we note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$.
+Indeed we can compute the order of $t$ at $P_\infty$ as follows
+\begin{eqnarray}
+\ord_{P_\infty}(t) & = & \frac{1}{2}\ord_{P_\infty}(t^2) \\
+  & = & \frac{1}{2}\ord_{P_\infty}\left( \frac{f}{x^{2g+2}} \right) \\
+& = & \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}\ord_{P_\infty}(x^{2g+2})\\
+& = & -(2g+1) + (2g+2) \\
+& = & 1.
+\end{eqnarray}
+
+We now write $\frac{1}{x}dx$ in terms of $dt$.
+By the quotient rule we know that
+\begin{eqnarray*}
+dt^2 & = & d \left( \frac{f(x)}{x^{2g+2}} \right) \\
+& = & \frac{x^{2g+2}f' + x^{2g+1}f}{x^{4g+4}} dx \\
+& = & \frac{1}{x^{2g+2}} \left( f' + \frac{f}{x} \right) dx
+\end{eqnarray*}
+and it then follows that
+\[
+\frac{1}{x}dx = \frac{-2tx^{2g+1}}{\left(\frac{(2g+2)f}{x} - f'\right)} dt.
+\]
+
+
+We now let $h = \left(\frac{(2g+2)f}{x} - f'\right)$, and noting that the coefficient of $x^{2g}$ in $h$ is $(2g+2)a_{2g+1} - (2g+1)a_{2g+1} = a_{2g+1}$, we see that $h$ is a degree $2g$ polynomial in $x$.
+We wish to compute the coefficient of $t^{-1}$ in the expansion of $\frac{1}{x}dx$ at $P_\infty$ and computing the first coefficient of $\frac{h}{x^{2g+1}}$ is a key step.
+
+Now
+\[
+\frac{h}{x^{2g+1}} = \frac{a_{2g+1}x^{2g}}{x^{2g+1}} + \ldots = \frac{a_{2g+1}}{x} + \ldots
+\]
+Similarly
+\[
+t^2 = \frac{f}{x^{2g+2} } = \frac{a_{2g+1}}{x} + \ldots
+\]
+
+Since $\ord_{P_\infty}\left(\frac{h}{x^{2g+1}}\right) = 2$ we know that $\frac{h}{x^{2g+1}} = \sum_{j\geq 2} c_j t^j$ for some $c_j\in k$, and from the above computations we can see that $c_2 = 1$.
+We also know that $\frac{x^{2g+1}}{h} = \sum_{k\geq -2} d_kt^k$, for some $d_k\in k$, and clearly $d_{-2} = 1$.
+Now
+\[
+\frac{1}{x}dx = \left( -2t \cdot \sum_{i\geq -2} d_it^i\right) dt 
+\]
+so we see that the residue is $-2$.
+This complets the proof of the lemma when $p\neq 2$.
+
+We now turn to the case when $p=2$.
+We now wish to compute the residue of $\frac{ydx}{xH(x)}$ at $P_\infty$.
+We start by noting that $t = \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$; we check this by computing the divisor:
+\[
+\di(t) = \di_0(y) - (2g+1)[P_\infty] -(2g+2)[P_0] + (2g+2)[P_\infty] = \di_0(y)-(2g+2)[P_0] + [P_\infty].
+\]
+
+So clearly $t$ is a uniformising parameter at $P_\infty$.
+
+We now wish to write $\frac{y}{xH(x)}dx$ as $r(x,y)dt$ for some $r \in k(x,y)$.
+We first write $dy$ in terms of $dx$.
+Since
+\begin{eqnarray*}
+0 & = & dy^2 \\
+& = & d(F+yH) \\
+& = & F'dx + Hdy + yH'dx
+\end{eqnarray*}
+we conclude that
+\[
+dy = \left( \frac{F'+yH'}{H} \right) dx.
+\]
+We now rewrite $dt$ as follows:
+\begin{eqnarray*}
+dt & = & d\left( \frac{y}{x^{g+1}} \right) \\
+& = & yd\frac{1}{x^{g+1}} + \frac{1}{x^{g+1}}dy \\
+& = & \frac{1}{x^{g+1}} \left( \frac{(g+1)y}{x} + \frac{F'+yH'}{H} \right) dx \\
+& = & \frac{1}{x^{g+1}} \left( \frac{xF'}{y} + xH' + (g+1)H \right) \frac{y}{Hx} dx.
+\end{eqnarray*}
+
+In total we then have
+\[
+\frac{y}{xH(x)}dx = \frac{x^{g+1}y}{S_{g+1}(x,y)}dt
+\]
+where $S_{g+1}(x,y) = xF' + yxH' + (g+1)yH$.
+
+We know that $\frac{x^{g+1}y}{S_{g+1}(x,y)} = \sum_{i\geq -1} c_i t^i$, with $c_i \in k$, and we wish to compute $c_{-1}$.
+
+
+We shall do this by computing the coefficient of $t$ in the expansion $\frac{S_{g+1}(x,y)}{x^{g+1}y} = \sum_{i\geq 1}d_it^i$.
+We can split up $\frac{S_{g+1}(x,y)}{x^{g+1}y}$ in to three terms, namely $\frac{xF'}{x^{g+1}y}$, $\frac{yxH'}{x^{g+1}y}$ and $\frac{yH}{x^{g+1}y}$.
+Each of these terms can of course be written as a power series in $t$, but only the first term mentioned has order 1 at $P_\infty$, and hence this term will uniquely determine $d_1$.
+Suppose that $F = \alpha_{2g+1}x^{2g+1} + \alpha_{2g}x^{2g} + \ldots + \alpha_1x^1 + \alpha_0$.
+Then $xF'= \alpha_{2g+1}x^{2g+1} + \alpha_{2g-1}x^{2g-1} + \ldots + \alpha_1x^1$; i.e. the terms with an even power are removed.
+
+So the only term in $\frac{xF'}{x^{g+1}y}$ of order 1 at $P_\infty$ is $\frac{\alpha_{2g+1}x^{2g+1}}{x^{g+1}y} = \frac{\alpha_{2g+1}x^{g}}{y}$.
+Since
+\[
+\frac{\alpha_{2g+1}x^g}{y} = \frac{\alpha_{2g+1}}{x}t^{-1}
+\]
+and $\frac{1}{x} = \sum_{i\geq 2}e_it^i$ for some $e_i \in k$, if we compute $e_2$ then we will have effectively computed $d_1$.
+Now $t^2 = \frac{F }{x^{2g+2}}+ \frac{Hy}{x^{2g+2}}$, and clearly $\frac{Hy}{x^{2g+2}}$ has no terms of the form $\frac{c}{x}$ for some $c \in k$.
+On the other hand
+\[
+\frac{F}{x^{2g+2}} = \frac{\alpha_{2g+1}}{x} + \ldots
+\]
+Hence we conclude that $e_2 = \frac{1}{\alpha_{2g+1}}$.
+It follows that $d_1 = \alpha_{2g+1} \cdot \frac{1}{\alpha_{2g+1}} = 1$.
+
+
+We finally use this to compute $c_{-1}$.
+Since $1 = \frac{S_{g+1}(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{S_{g+1}(x,y)} = \left( \sum_{i\geq 1}d_it^i \right) \cdot \left( \sum_{i\geq -1}c_it^i\right)$, we conclude that $c_{-1} = \frac{1}{d_{1}} = 1$.
+
+
+
+
+
+\end{proof}
+
 
 
 \begin{comment}
 We define $\alpha^i_j$ and $\Alpha^i_{j+1}$ for $0 \leq j \leq 2g$, and $B_k^i$ for $1\leq k \leq g$, such that
 \[
-	$s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0 \ {\rm and } \ S_i(x) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(B_g^i x^i + \ldots + B_1^i x).
-\] 
+$s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0 \ {\rm and } \ S_i(x) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(B_g^i x^i + \ldots + B_1^i x).
+\]
 \end{comment}
 
 
-	
 
 
 \bibliography{/home/jtait/files/tex/Bibliography/biblio.bib}
