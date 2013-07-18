@@ -4,7 +4,7 @@
 % This is a simple template for a LaTeX document using the "article" class.
 % See "book", "report", "letter" for other types of document.
 
-\documentclass[11pt]{article} % use larger type; default would be 10pt
+\documentclass[draft, 11pt]{article} % use larger type; default would be 10pt
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
 
@@ -32,6 +32,14 @@
 \usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
 \usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
 % These packages are all incorporated in the memoir class to one degree or another...
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\microtypecontext{spacing=nonfrench}
+% activate={true,nocompatibility} - activate protrusion and expansion
+% final - enable microtype; use "draft" to disable
+% tracking=true, kerning=true, spacing=true - activate these techniques
+% factor=1100 - add 10% to the protrusion amount (default is 1000)
+% stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
 
 %%% HEADERS & FOOTERS
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
@@ -138,9 +146,9 @@ Since $U_1$ and $U_2$ are affine, this follows from Serre's affineness criterion
 
 
 Upon computing $H^1_{{\text dR}}(X/k)$ using this complex we see that it is the space
-\[
+\begin{equation}\label{derhamconditions}
 \{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1 - \omega_2\}
-\]
+\end{equation}
 
 quotiented by the subspace
 \[
@@ -159,7 +167,7 @@ Serre duality states that $H^0(X,\Omega_X)$ and $H^1(X,\cO_X)$ are dual to each 
 Details of the definition of ${\text Res}$ can be found in appendix B of \todo{in progress}
 \todo[inline]{add details - in particular, relate to the basis we have for de rham}
 
-\section{Basis of $H^1(X,\cO_X)$}
+\section{Basis of $H^1_{dR}(X/k)$}
 
 The bases of the $k$-vector spaces in \ref{ses} will be given in terms of the defining equations, so we describe these now.
 
@@ -194,8 +202,40 @@ Then
 R = \sum_{i=1}^d 2n_i[P_i] - (g+1-d)[P_\infty].
 \]
 
+We now compute the basis of $H^1(X,\cO_X)$, before explicitly stating the basis of $H^1_{dR}(X/k)$.\\
 
-In order to state the basis of $H^1(X,\cO_X)$, as well as to shorten the proof of the following proposition, we define the following polynomial and differentials.
+\begin{lem}\label{basish1}
+ 
+ The elements $\frac{y}{x}, \ldots , \frac{y}{x^g}$ form a basis of $H^1(X,\cO_x)$.
+ 
+\end{lem}
+\begin{proof}
+ 
+ Suppose that $\omega_i$ form a basis of $H^0(X,\cO_X)$, for $i \in \{ 1,\ldots , g\}$.
+To prove that the $\frac{y}{x^i}$ form a basis of $H^1(X,\cO_X)$ it is sufficient to show that ${\rm Res} \left( \omega_i, \frac{y}{x^i}\right)$ is non-zero for each $i$, by Serre duality. \todo{explain serre duality}
+
+ 
+If $p \neq 2$ then $\omega_i = \frac{x^{i-1}}{y}dx$ is a basis of $H^0(X, \Omega_X)$.
+Since ${\rm Res}(\omega_i, x^{-i}y) = {\rm res}(x^{-1}dx)$ can be calculated by summing the residues at the points $P \in U_1$, we now compute the divisor of $\frac{1}{x}dx$ to see where it can have non-zero residue.
+The divisor of $x^{-1}dx$ is
+\begin{eqnarray*}
+\di (x^{-1}dx) & = & \di(dx) - \di (x) \\
+& = & R - 4[P_\infty] - 2[P_0] + 2[P_\infty] \\
+& = & (R-[P_0]-[P_\infty]) - [P_0] - [P_\infty].
+\end{eqnarray*}
+Since $R -[P_0]-[P_\infty]$ is a positive divisor with no $[P_0]$ or $[P_\infty]$ terms we see that $x^{-1}dx$ has non-zero residue at both $P_0$ and $P_\infty$, and only at these points.
+
+If $p=2$ then a basis of $H^0(X,\Omega_X)$ is given by $\omega_i = \frac{x^{i-1}}{H(x)}dx$, and again we compute the divisor of $x^{-i}y\cdot \omega_i = \frac{y}{xH(x)}dx$.
+\begin{eqnarray*}
+\di\left( \frac{y}{xH(x)}dx \right) & = & \di(y) + \di(dx) - \di(x) - \di(H(x)) \\
+& = & \di_0(y) -2[P_0] -[P_\infty].
+\end{eqnarray*}
+We again see that there is a pole of precisely order one at $P_\infty$, and hence the residue at this point must be non-zero.
+
+\end{proof}
+
+
+In order to state the basis of $H^1_{dR}(X/k)$, as well as to shorten the proof of the following proposition, we define the following polynomial and differentials.
 Suppose that $1 \leq i \leq g$
 Firstly, when $p\neq 2$ we define
 \[
@@ -206,29 +246,40 @@ and if $p = 2$ we define
 S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)
 \].
 
-We then let $\phi_i$ and $\psi_i$ be all the terms of $s_i(x)$ with degrees greater than $g$ and less than or equal to $g$ respectively.
-Similarly, we let $\Phi_i$ and $\Psi_i$ be the monomials of $S_i(x,y)$ where the degree of the $x$ component is greater than or equal to $i$ and less than $i$ respectively.
+We then let $\phi_i(x)$ and $\psi_i(x)$ be all the terms of $s_i(x)$ with degrees greater than $g$ and less than or equal to $g$ respectively.
+Similarly, we let $\Phi_i(x,y)$ and $\Psi_i(x,y)$ be the monomials of $S_i(x,y)$ where the degree of the $x$ component is greater than or equal to $i$ and less than $i$ respectively.
 
-We can now give a basis for $H^1(X,\cO_X)$.\\
+We can now give a basis for $H^1_{dR}(X/k)$.\\
 
 \begin{prop}\label{basis}
 
-Let $i=1,\ldots, g$. If $p\neq 2$ then a basis of $H^1(X,\cO_X)$ is given by
-\[
-\left( \left( \frac{-\psi_i}{2yx^i}\right) dx, \left(\frac{\phi_i}{2yx^i}\right) dx, x^{-i}y\right)
-\]
+Let $i=1,\ldots, g$. If $p\neq 2$ then a basis of $H^1_{dR}(X/k)$ as a $k$ vector space is given by
+\begin{equation}\label{one}
+ \left( \left( \frac{-\psi_i(x)}{2yx^i}\right) dx, \left(\frac{\phi_i(x)}{2yx^i}\right) dx, x^{-i}y\right)
+\end{equation}
+and
+\begin{equation}\label{two}
+ \left( \frac{x^{i-1}}{y} dx , \frac{x^{i-1}}{y} dx, 0 \right).
+\end{equation}
 
-and if $p=2$ then a basis is given by
-\[
-\left( \left(\frac{-\Psi_i}{x^{i+1}H}\right) dx, \left( \frac{\Phi_i}{x^{i+1}H} \right) dx, x^{-i}y \right).
-\]
+If $p=2$ then a basis is given by
+\begin{equation}\label{three}
+\left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H} \right) dx, x^{-i}y \right)
+\end{equation}
+and
+\begin{equation}\label{four}
+ \left( \frac{x^{i-1}}{H} dx, \frac{x^{i-1}}{H} dx, 0 \right).
+\end{equation}
+
 \end{prop}
 
-Before proving this proposition we use it to prove our main theorem
+Before proving this proposition we use it to prove our main theorem\\
+
+
 \begin{thm}
 
 Suppose that $g \geq 2$.
-Then any group $G$ acting on $X$ acts faithfully on $H^1_{dR}(X/k)$, the first algebraic de Rham cohomology group of $X$.
+Then any group $G$ acting faithfully on $X$ also acts faithfully on $H^1_{dR}(X/k)$.
 
 \end{thm}
 \begin{proof}
@@ -237,7 +288,7 @@ Recall that $H^0(X,\Omega_X)$ injects in to $H^1_{dR}(X/k)$.
 Then if $p \neq 2$, or if $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $H^1_{dR}(X/k)$.
 
 We now suppose that $p=2$ and $G$ does contain a hyperelliptic involution $\sigma$.
-We see from the above proposition that the third entry in the basis of $H^1(X,\cO_X)$ given by \cech cohomology is $x^{-i}y$ for $1 \leq i \leq g$.
+We see from the above proposition that the third entry in part \eqref{three} of the basis of $H^1_{dR}(X/k)$ given by \cech cohomology is $x^{-i}y$ for $1 \leq i \leq g$.
 Now $\sigma(y) = y+ H$, and $\sigma$ preserves the cover $\mathcal U$, since it will fix the ramification points.
 Hence the action of $\sigma$ on the basis elements in Proposition \ref{basis} is just component wise, and in particular on the third component it is non-trivial.
 Hence the action of $G$ is faithful.
@@ -251,37 +302,20 @@ Hence the action of $G$ is faithful.
 We now prove Proposition \ref{basis}.
 
 \begin{proof}
+We make use of the fact that the short exact sequence \eqref{ses} splits, and that we know bases of the outer two terms.
 
-We start by showing that $x^{-i}y$ is a viable choice for the third component of both sets of bases.
+It is clear that \eqref{two} and \eqref{four} satisfy the conditions in \eqref{derhamconditions}, and it follows \cite[Thm 6.1]{faithfulaction} that they are the image of $H^0(X,\Omega_X)$ in $H^1_{dR}(X/k)$.
 
-From the earlier description of Serre duality, it is clear that if $\omega_i$ is a basis of $H^0(X, \Omega_X)$ then we require that the image of the residue map, ${\rm Res}(\omega_i, x^{-i}y)$ is non-zero.\todo{serre duality}
+It also follows from Lemma \ref{basish1} that \eqref{one} and \eqref{three} will surject on to $H^1(X,\cO_X)$ in the short exact sequence \eqref{ses}. 
+So it only remains to show that the first two terms in \eqref{one} and \eqref{three} satisfy the conditions of \eqref{derhamconditions}.
 
-If $p \neq 2$ then $\omega_i = \frac{x^{i-1}}{y}dx$ is a basis of $H^0(X, \Omega_X)$.
-Then ${\rm Res}(\omega_i, x^{-i}y) = {\rm res}(x^{-1}dx)$ should be non-zero on $U_1$ and $U_2$, or equivalently $x^{-1}dx$ should have a pole of order one at both $P_0$ and $P_\infty$ (recall that the differential needs to be regular on $U_1 \cap U_2$).
-The divisor of $x^{-1}dx$ is
-\begin{eqnarray*}
-\di (x^{-1}dx) & = & \di(dx) - \di (x) \\
-& = & R - 4[P_\infty] - 2[P_0] + 2[P_\infty] \\
-& = & (R-[P_0]-[P_\infty]) - [P_0] - [P_\infty].
-\end{eqnarray*}
-Since $R -[P_0]-[P_\infty]$ is a positive divisor with no $[P_0]$ or $[P_\infty]$ terms we see that $x^{-1}dx$ does indeed have a pole of order one at both $P_0$ and $P_\infty$.
 
-If $p=2$ then a basis of $H^0(X,\Omega_X)$ is given by $\omega_i = \frac{x^{i-1}}{H(x)}dx$, and again we compute the divisor of $x^{-i}y\cdot \omega_i = \frac{y}{xH(x)}dx$.
-\begin{eqnarray*}
-\di\left( \frac{y}{xH(x)}dx \right) & = & \di(y) + \di(dx) - \di(x) - \di(H(x)) \\
-& = & \di_0(y) -2[P_0] -[P_\infty].
-\end{eqnarray*}
-We again see that there is a pole of precisely order one at $P_\infty$, and hence the residue at this point must be non-zero.
-
-Now that we know $xy^{-i}$ is the third part of the triple making the basis, we need to find two differentials, one regular on $U_1$ and the other regular on $U_2$, such that their difference is $d(x^{-i}y)$.
-
-We again treat the cases $p=2$ and $p\neq 2$ separately.
-We start by observing that
+We start with the case $p\neq 2$, and observe that
 \begin{eqnarray*}
 \left( \frac{\phi_i}{2yx^i} - \frac{-\psi_i}{2yx^i} \right) dx & = & \frac{s_i(x)}{2yx^i} dx \\
 & = & \frac{1}{2yx^i} \left( f' - \frac{2if}{x} \right) dx \\
 & = & \frac{x}{2y} \left( \frac{f'}{x^{2i}}dx -\frac{2if}{x^{2i+1}} dx \right) \\
-& = & \frac{x}{2y} \left( fdx^{-2i} + \frac{1}{x^{2i}}df \right) \\
+& = & \frac{x}{2y} \left( fd(x^{-2i}) + \frac{1}{x^{2i}}df \right) \\
 & = & \frac{x}{2y}d(fx^{-2i}) \\
 & = & \frac{x}{2y} d(yx^{-i})^2 \\
 & = & d(yx^{-i}).
@@ -534,7 +568,7 @@ It follows that $d_1 = \alpha_{2g+1} \cdot \frac{1}{\alpha_{2g+1}} = 1$.
 We finally use this to compute $c_{-1}$.
 Since $1 = \frac{S_{g+1}(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{S_{g+1}(x,y)} = \left( \sum_{i\geq 1}d_it^i \right) \cdot \left( \sum_{i\geq -1}c_it^i\right)$, we conclude that $c_{-1} = \frac{1}{d_{1}} = 1$.
 
-
+\todo{clean up this last section}
 
 
 
