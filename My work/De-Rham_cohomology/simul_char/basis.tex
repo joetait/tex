@@ -211,7 +211,53 @@ We now compute the basis of $H^1(X,\cO_X)$, before explicitly stating the basis 
 \end{lem}
 \begin{proof}
  
- Suppose that $\omega_i$ form a basis of $H^0(X,\cO_X)$, for $i \in \{ 1,\ldots , g\}$.
+We prove this directly by \cech cohomology.
+By Leray's theorem \todo{citation} we know that $H^1(X,\cO_X) \cong \check{H}^1(\cU,\cO_X)$.
+The \cech complex is as follows:
+\begin{equation*}
+0 \xrightarrow \cO_X(U_1) \times \cO_X(U_2) \xrightarrow{d_0} \cO_X(U_1 \cap U_2) \xrightarrow_{d_1} 0.
+\end{equation*}
+
+So we wish to show that when $1 \leq i \leq g$ the elements $x^{-i}y$ form a basis of 
+\begin{equation*}
+\frac{\ker (d_1)}{\im (d_0)} = \frac{ \cO_X(U_1 \cap U_2)}{\im (d_1)}.
+\end{equation*}
+
+
+We first compute the divisor of $x^{-i}y$ in order to check that it is indeed regular on $U_1 \cap U_2$.
+
+When $p \neq 2$ then
+\begin{align*}
+    \di(x^{-i}y) & = \di(y) - \di(x^i) \\
+    & = R - 2(g+1)[P_\infty] - 2i[P_0] + 2i[P_\infty] \\
+    & = (R - [P_0] - [P_\infty]) -(2i-1)[P_0] - (2g +1 -2i)[P_\infty].
+\end{align*}
+
+On the other hand, if $p =2$ then 
+\begin{align*}
+    \di(x^{-i}y) & = \di(y) - \di(x^i) \\
+    & = \di_0(y) - (2g+1)[P_0] -2i[P_0] + 2i[P_\infty] \\
+    & = \di_0(y) -2i[P_0] - ( 2g + 1 -2i).
+\end{align*}
+So we see that, regardless of characteristic, the only poles are at $P_0$ and $P_\infty$, and hence $x^{-i}y \in \cO_X(U_1 \cap U_2)$.
+
+It remains to show that the elements are not in the image of $d_0$ and hence are non-zero in the first cohomology group.
+
+We  fix $i \in \{1, \ldots, g\}$ and suppose that there exists $f_1 \in \cO_X(U_1)$ and $f_2 \in \cO_X(U_2)$ such that their difference is $x^{-i}y$.
+
+
+If $p \neq 2$ then $f_1$ necessarily has a pole of order $1-2i$ at $P_0$.
+We write $f_1$ as $y \frac{p(x)}{q(x)}$, where $p(x)$ and $q(x)$ have no common factor.
+Note that we require a $y$ term since we have an odd order at $P_0$, and since $y^2$ is a function of $x$, we can assume that the power of $y$ is just 1.
+We also require $q(x)$ has a factor of $x^i$, and we let $q'(x) : = \frac{q(x)}{x^i}$.
+In order for this function to be in $\cO_X(U_1)$ we require that $\frac{p(x)}{q'(x)}$ of order at least $2i-2g-1$ at $P_\infty$, else we will have a pole at $P_\infty$.
+This is only possible if $\frac{p(x)}{q(x)}$ has a pole or poles at points other than $P_0$ and $P_\infty$, since $\deg(\di(f_1)) = 0$.
+Since $p$ and $q'$ are functions of $x$ these poles must be of even order, in particular they must be at least order 2.
+But since we have no zeroes of order greater than 1 from $y$ and $x^i$ (except at the points $P_0$ and $P_\infty$, which we are not considering), this contradicts $f_1$ being regular on $U_1$.
+
+Hence such an $f_1$ cannot exist, and the image of $x^{-i}y$ in $\check{H}^1(\cU,\cO_X)$ is non-zero (for all $i$).
+
+ Suppose that $\omega_s$ form a basis of $H^0(X,\cO_X)$, for $i \in \{ 1,\ldots , g\}$.
 To prove that the $\frac{y}{x^i}$ form a basis of $H^1(X,\cO_X)$ it is sufficient to show that ${\rm Res} \left( \omega_i, \frac{y}{x^i}\right)$ is non-zero for each $i$, by Serre duality. \todo{explain serre duality}
 
  
