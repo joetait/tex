@@ -257,27 +257,6 @@ But since we have no zeroes of order greater than 1 from $y$ and $x^i$ (except a
 
 Hence such an $f_1$ cannot exist, and the image of $x^{-i}y$ in $\check{H}^1(\cU,\cO_X)$ is non-zero (for all $i$).
 
- Suppose that $\omega_s$ form a basis of $H^0(X,\cO_X)$, for $i \in \{ 1,\ldots , g\}$.
-To prove that the $\frac{y}{x^i}$ form a basis of $H^1(X,\cO_X)$ it is sufficient to show that ${\rm Res} \left( \omega_i, \frac{y}{x^i}\right)$ is non-zero for each $i$, by Serre duality. \todo{explain serre duality}
-
- 
-If $p \neq 2$ then $\omega_i = \frac{x^{i-1}}{y}dx$ is a basis of $H^0(X, \Omega_X)$.
-Since ${\rm Res}(\omega_i, x^{-i}y) = {\rm res}(x^{-1}dx)$ can be calculated by summing the residues at the points $P \in U_1$, we now compute the divisor of $\frac{1}{x}dx$ to see where it can have non-zero residue.
-The divisor of $x^{-1}dx$ is
-\begin{eqnarray*}
-\di (x^{-1}dx) & = & \di(dx) - \di (x) \\
-& = & R - 4[P_\infty] - 2[P_0] + 2[P_\infty] \\
-& = & (R-[P_0]-[P_\infty]) - [P_0] - [P_\infty].
-\end{eqnarray*}
-Since $R -[P_0]-[P_\infty]$ is a positive divisor with no $[P_0]$ or $[P_\infty]$ terms we see that $x^{-1}dx$ has non-zero residue at both $P_0$ and $P_\infty$, and only at these points.
-
-If $p=2$ then a basis of $H^0(X,\Omega_X)$ is given by $\omega_i = \frac{x^{i-1}}{H(x)}dx$, and again we compute the divisor of $x^{-i}y\cdot \omega_i = \frac{y}{xH(x)}dx$.
-\begin{eqnarray*}
-\di\left( \frac{y}{xH(x)}dx \right) & = & \di(y) + \di(dx) - \di(x) - \di(H(x)) \\
-& = & \di_0(y) -2[P_0] -[P_\infty].
-\end{eqnarray*}
-We again see that there is a pole of precisely order one at $P_\infty$, and hence the residue at this point must be non-zero.
-
 \end{proof}
 
 
