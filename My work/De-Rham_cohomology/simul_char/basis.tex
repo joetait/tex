@@ -199,7 +199,7 @@ Finally, to define the ramification divisor we suppose that $H(x) = \prod_{i=1}^
 Then $a_i \in \mathbb P_k^1$ are the branch points of $x$ and we let $P_i \in X$ be the corresponding ramification points of $x$.
 Then
 \[
-R = \sum_{i=1}^d 2n_i[P_i] - (g+1-d)[P_\infty].
+R = \sum_{i=1}^d 2n_i[P_i] - 2(g+1-d)[P_\infty].
 \]
 
 We now compute the basis of $H^1(X,\cO_X)$, before explicitly stating the basis of $H^1_{dR}(X/k)$.\\
@@ -252,11 +252,14 @@ Note that we require a $y$ term since we have an odd order at $P_0$, and since $
 We also require $q(x)$ has a factor of $x^i$, and we let $q'(x) : = \frac{q(x)}{x^i}$.
 In order for this function to be in $\cO_X(U_1)$ we require that $\frac{p(x)}{q'(x)}$ of order at least $2i-2g-1$ at $P_\infty$, else we will have a pole at $P_\infty$.
 This is only possible if $\frac{p(x)}{q(x)}$ has a pole or poles at points other than $P_0$ and $P_\infty$, since $\deg(\di(f_1)) = 0$.
-Since $p$ and $q'$ are functions of $x$ these poles must be of even order, in particular they must be at least order 2.
-But since we have no zeroes of order greater than 1 from $y$ and $x^i$ (except at the points $P_0$ and $P_\infty$, which we are not considering), this contradicts $f_1$ being regular on $U_1$.
+The only zeroes of our function so far are at the ramification points, so clearly the poles of $\frac{{p(x)}{q'{(x)}$ must be at the ramification points too.
+Since $p$ and $q'$ are functions of $x$ any pole at a ramification point must be of even order; in particular they must be at least order 2.
+Since we have the zeroes at the ramification points of $y$ and $x^i$ are exactly order 1 (except at the points $P_0$ and $P_\infty$, which we are not considering), this contradicts $f_1$ being regular on $U_1$.
 
 Hence such an $f_1$ cannot exist, and the image of $x^{-i}y$ in $\check{H}^1(\cU,\cO_X)$ is non-zero (for all $i$).
 
+
+If $p=2$ then we use a similar proof, but 
 \end{proof}
 
 
