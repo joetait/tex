@@ -91,6 +91,9 @@
 \newcommand{\cD}{{\mathcal D}}
 \newcommand{\cU}{{\mathcal U}}
 \newcommand{\cech}{\v{C}ech }
+\newcommand{\h0}{H^0(X,\Omega_X)}
+\newcommand{\h1}{H^1(X,\mathcal{O}_X)}
+\newcommand{\cechh1}{\check{H}^1(\mathcal U,\mathcal O_X)}
 
 
 \DeclareMathOperator{\aut}{Aut}
@@ -116,17 +119,36 @@
 \section{Background}
 
 
-Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p$.
-By an automorphism of $ \mathbb P_k^1$ we may assume that 0 and $\infty$ are branch points, and we denote the corresponding ramification points in $X$ as $P_0$ and $P_\infty$ respectively.
+Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
+By an automorphism of $ \mathbb P_k^1$ we may assume that 0 and $\infty$ are branch points of the corresponding double cover $\pi : X \rightarrow \mathbb P_k^1$.
+We denote the ramification points in $X$ of 0 and $\infty$ by $P_0$ and $P_\infty$ respectively.
 
-We start by recalling how we define the algebraic de-Rham cohomology of $X$ via \cech cohomology.
-The de-Rham cohomology of an algebraic curve is the hypercohomology of the sheaves of differentials on the curve. Since a curve doesn't have differentials of degree greater than one, this is just the hypercohomology of the complex
+We will be using \cech cohomology to compute both $\h1$ and the de-Rham hypercohomology.
+We therefore recall the \cech cohomology relevant to both of these, starting with $\h1$.
+
+By Leray's theorem {\todo{find citation} and Serre's affineness criterion \todo{citation} we know that the first \cech cohomology group and $\h1$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
+Therefore the cover we shall be using is $U_1 = X\backslash \{ P_0 \}$ and $U_2 = X\backslash \{ P_\infty \}$, and we let ${\cal U} = \{ U_1, U_2\}$.
+Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$ given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
+It is this map which gives us the differential maps in the \cech cochain
+\begin{equation*}
+0 \rightarriow \cO_X(U_1)\times \cO_X(U_2) \xrightarrow{d} \cO_X(U_1 \cap U_2) \rightarrow 0.
+\end{equation*}
+
+Then $\cechh1 = \frac{\cO_X(U_1 \cap U_2)}{\im(d)}$ and hence
+\begin{equation}
+\begin{split}
+\h1 \cong \frac{\cO_X(U_1 \cap U_2)}{\im(d)}  \\
+& = \frac{\cO_X(U_1 \cap U_2)}{\{f_1 - f_2 | f_i \in \cO_X(U_i) \}}.
+\end{split}
+\end{equation}
+
+We now recall how we compute the algebraic de-Rham cohomology of $X$ via \cech cohomology.
+The de-Rham cohomology of an algebraic curve is the hypercohomology of the de Rham complex on $X$. 
+Since a curve doesn't have differentials of degree greater than one, this is just the hypercohomology of the complex
 \begin{equation}\label{res}
 0 \rightarrow \cO_X \rightarrow \Omega_X \rightarrow 0.
 \end{equation}
 
-The cover we are using for the \cech cohomology consists of just two open sets, $U_1 = X\backslash P_0$ and $U_2 = X\backslash P_\infty$, and we let ${\cal U} = \{ U_1, U_2\}$.
-Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$ given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
 It is this map that gives us the vertical differentials in the \cech complex of \ref{res}, which is:
 \[ \begin{array}{ccccccc}
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
