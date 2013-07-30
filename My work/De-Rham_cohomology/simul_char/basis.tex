@@ -91,9 +91,9 @@
 \newcommand{\cD}{{\mathcal D}}
 \newcommand{\cU}{{\mathcal U}}
 \newcommand{\cech}{\v{C}ech }
-\newcommand{\h0}{H^0(X,\Omega_X)}
-\newcommand{\h1}{H^1(X,\mathcal{O}_X)}
-\newcommand{\cechh1}{\check{H}^1(\mathcal U,\mathcal O_X)}
+\newcommand{\hzero}{{H^0(X,\Omega_X)}}
+\newcommand{\hone}{H^1(X,\mathcal{O}_X)}
+\newcommand{\cechhone}{\check{H}^1(\mathcal U,\mathcal O_X)}
 
 
 \DeclareMathOperator{\aut}{Aut}
@@ -103,6 +103,7 @@
 \DeclareMathOperator{\cha}{char}
 \DeclareMathOperator{\gal}{Gal}
 \DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Ima}{Im}
 
 %%% END Article customizations
 
@@ -123,24 +124,25 @@ Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 
 By an automorphism of $ \mathbb P_k^1$ we may assume that 0 and $\infty$ are branch points of the corresponding double cover $\pi : X \rightarrow \mathbb P_k^1$.
 We denote the ramification points in $X$ of 0 and $\infty$ by $P_0$ and $P_\infty$ respectively.
 
-We will be using \cech cohomology to compute both $\h1$ and the de-Rham hypercohomology.
-We therefore recall the \cech cohomology relevant to both of these, starting with $\h1$.
+We will be using \cech cohomology to compute both $\hone$ and the de-Rham hypercohomology.
+We therefore recall the \cech cohomology relevant to both of these, starting with $\hone$.
 
-By Leray's theorem {\todo{find citation} and Serre's affineness criterion \todo{citation} we know that the first \cech cohomology group and $\h1$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
+By Leray's theorem {\todo{find citation} and Serre's affineness criterion \todo{citation} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
 Therefore the cover we shall be using is $U_1 = X\backslash \{ P_0 \}$ and $U_2 = X\backslash \{ P_\infty \}$, and we let ${\cal U} = \{ U_1, U_2\}$.
 Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$ given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
 It is this map which gives us the differential maps in the \cech cochain
 \begin{equation*}
-0 \rightarriow \cO_X(U_1)\times \cO_X(U_2) \xrightarrow{d} \cO_X(U_1 \cap U_2) \rightarrow 0.
+0 \rightarrow \cO_X(U_1)\times \cO_X(U_2) \xrightarrow{d} \cO_X(U_1 \cap U_2) \rightarrow 0.
 \end{equation*}
 
-Then $\cechh1 = \frac{\cO_X(U_1 \cap U_2)}{\im(d)}$ and hence
+Then $\cechhone = \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}$ and hence
 \begin{equation}
 \begin{split}
-\h1 \cong \frac{\cO_X(U_1 \cap U_2)}{\im(d)}  \\
+\hone \cong \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}  \\
 & = \frac{\cO_X(U_1 \cap U_2)}{\{f_1 - f_2 | f_i \in \cO_X(U_i) \}}.
 \end{split}
 \end{equation}
+We will use this characterisation of $\hone$ later.
 
 We now recall how we compute the algebraic de-Rham cohomology of $X$ via \cech cohomology.
 The de-Rham cohomology of an algebraic curve is the hypercohomology of the de Rham complex on $X$. 
@@ -149,8 +151,8 @@ Since a curve doesn't have differentials of degree greater than one, this is jus
 0 \rightarrow \cO_X \rightarrow \Omega_X \rightarrow 0.
 \end{equation}
 
-It is this map that gives us the vertical differentials in the \cech complex of \ref{res}, which is:
-\[ \begin{array}{ccccccc}
+We then use the same open cover and the same differentials as defined earlier to give us the \cech complex of \eqref{res}, which is
+\begin{equation}\label{bicomplex} \begin{array}{ccccccc}
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
 0 & \rightarrow & \cO_X(U_0)\times \cO_X(U_1) & \rightarrow & \Omega_X(U_1)\times \Omega_X(U_2) & \rightarrow & 0 \\
@@ -159,9 +161,9 @@ It is this map that gives us the vertical differentials in the \cech complex of 
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 \end{array}
-\]
+\end{equation}
 where the horizontal arrows are the standard differential map $d$.
-By \cite[Cor. 12.4.7]{EGA0III}, the first sheaf cohomology group agrees with the first de Rham cohomology group.
+By \cite[Cor. 12.4.7]{EGA0III}, a generalisation of Leray's theorem, we know that the $\hone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}
 Note that this relies on ${\check H}^p({\mathcal U},\cO_X) $ being zero for all $p\geq 1$.
 Since $U_1$ and $U_2$ are affine, this follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.
 
@@ -237,12 +239,12 @@ We prove this directly by \cech cohomology.
 By Leray's theorem \todo{citation} we know that $H^1(X,\cO_X) \cong \check{H}^1(\cU,\cO_X)$.
 The \cech complex is as follows:
 \begin{equation*}
-0 \xrightarrow \cO_X(U_1) \times \cO_X(U_2) \xrightarrow{d_0} \cO_X(U_1 \cap U_2) \xrightarrow_{d_1} 0.
+0 \rightarrow \cO_X(U_1) \times \cO_X(U_2) \xrightarrow{d_0} \cO_X(U_1 \cap U_2) \xrightarrow{d_1} 0.
 \end{equation*}
 
 So we wish to show that when $1 \leq i \leq g$ the elements $x^{-i}y$ form a basis of 
 \begin{equation*}
-\frac{\ker (d_1)}{\im (d_0)} = \frac{ \cO_X(U_1 \cap U_2)}{\im (d_1)}.
+\frac{\ker (d_1)}{\Ima (d_0)} = \frac{ \cO_X(U_1 \cap U_2)}{\Ima (d_1)}.
 \end{equation*}
 
 
@@ -274,7 +276,7 @@ Note that we require a $y$ term since we have an odd order at $P_0$, and since $
 We also require $q(x)$ has a factor of $x^i$, and we let $q'(x) : = \frac{q(x)}{x^i}$.
 In order for this function to be in $\cO_X(U_1)$ we require that $\frac{p(x)}{q'(x)}$ of order at least $2i-2g-1$ at $P_\infty$, else we will have a pole at $P_\infty$.
 This is only possible if $\frac{p(x)}{q(x)}$ has a pole or poles at points other than $P_0$ and $P_\infty$, since $\deg(\di(f_1)) = 0$.
-The only zeroes of our function so far are at the ramification points, so clearly the poles of $\frac{{p(x)}{q'{(x)}$ must be at the ramification points too.
+The only zeroes of our function so far are at the ramification points, so clearly the poles of $\frac{p(x)}{q'(x)}$ must be at the ramification points too.
 Since $p$ and $q'$ are functions of $x$ any pole at a ramification point must be of even order; in particular they must be at least order 2.
 Since we have the zeroes at the ramification points of $y$ and $x^i$ are exactly order 1 (except at the points $P_0$ and $P_\infty$, which we are not considering), this contradicts $f_1$ being regular on $U_1$.
 
