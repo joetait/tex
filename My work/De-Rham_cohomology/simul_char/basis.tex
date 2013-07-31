@@ -93,7 +93,7 @@
 \newcommand{\cech}{\v{C}ech }
 \newcommand{\hzero}{{H^0(X,\Omega_X)}}
 \newcommand{\hone}{H^1(X,\mathcal{O}_X)}
-\newcommand{\cechhone}{\check{H}^1(\mathcal U,\mathcal O_X)}
+\newcommand{\\cechhone}{\check{H}^1(\mathcal U,\mathcal O_X)}
 
 
 \DeclareMathOperator{\aut}{Aut}
@@ -119,6 +119,7 @@
 
 \section{Background}
 
+\todo[inline]{check cech and derham cohomology are the right way round}
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
 By an automorphism of $ \mathbb P_k^1$ we may assume that 0 and $\infty$ are branch points of the corresponding double cover $\pi : X \rightarrow \mathbb P_k^1$.
@@ -135,7 +136,7 @@ It is this map which gives us the differential maps in the \cech cochain
 0 \rightarrow \cO_X(U_1)\times \cO_X(U_2) \xrightarrow{d} \cO_X(U_1 \cap U_2) \rightarrow 0.
 \end{equation*}
 
-Then $\cechhone = \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}$ and hence
+Then $\\cechhone = \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}$ and hence
 \begin{equation}
 \begin{split}
 \hone \cong \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}  \\
@@ -171,62 +172,66 @@ Since $U_1$ and $U_2$ are affine, this follows from Serre's affineness criterion
 
 Upon computing $H^1_{{\text dR}}(X/k)$ using this complex we see that it is the space
 \begin{equation}\label{derhamconditions}
-\{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1 - \omega_2\}
+\{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1|_{U_1\cap U_2} - \omega_2|_{U_1\cap U_2}\}
 \end{equation}
 
 quotiented by the subspace
 \[
-\{ (df_1, df_2, f_1-f_2)|f_i \in \cO_X(U_i)\}.
+\{ (df_1, df_2, f_1|_{U_1\cap U_2}-f_2|_{U_1\cap U_2})|f_i \in \cO_X(U_i)\}.
 \]
 
 We wish to compute a basis of $H^1_{{\text dR}}(X/k)$, in order that we can see how $G$ acts on $H^1_{{\text dR}}(X/k)$.
-To do this we will compute the basis of the two outer terms of the short exact sequence
+To do this we will compute bases for the two outer terms of the short exact sequence
 \begin{equation}\label{ses}
-0 \ra H^0(X,\Omega_X) \ra H^1_{dR}(X/k) \ra H^1(X,\cO_X) \ra 0.
+0 \ra H^0(X,\Omega_X) \ra \cechhone \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
-The basis of $H^0(X,\Omega_X)$ is already known in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute the basis of $H^1(X,\cO_X)$.
+A basis of $H^0(X,\Omega_X)$ is already known in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
 
 In order to do this we will need to use Serre duality, which we briefly remind the reader of presently.
 Serre duality states that $H^0(X,\Omega_X)$ and $H^1(X,\cO_X)$ are dual to each other, and that there is a canonical map ${\text Res}:H^0(X,\omega_X) \times H^1(X,\cO_X) \rightarrow k$.
 Details of the definition of ${\text Res}$ can be found in appendix B of \todo{in progress}
 \todo[inline]{add details - in particular, relate to the basis we have for de rham}
 
-\section{Basis of $H^1_{dR}(X/k)$}
+\section{Basis of $\cechhone$}
 
-The bases of the $k$-vector spaces in \ref{ses} will be given in terms of the defining equations, so we describe these now.
+The bases of the $k$-vector spaces in \eqref{ses} will be given in terms of defining equations, so we describe these now.
 
-If $p \neq 2$ then our extension of $k(x)$ will be $k(x,y)$ where $y$ satisfies
+If $p \neq 2$ then the extension $K(X)$ of $k(x)$ will be $k(x,y)$ where $y$ satisfies
 \[
 y^2 = f(x)
 \]
 for some polynomial $f \in k[x]$.
-Since we assumed that $\infty$ is a branch point $f(x)$ is necessarily of degree $2g+1$.
+Since we assumed that $\infty$ is a branch point $f(x)$ is necessarily of degree $2g+1$.\todo{reference}
 
-We recall that $\di (R) = \di(y) + 2(g+1)[P_\infty]$ and that $\di( dx) = R - 4[P_\infty]$.
+We let $R$ denote the ramification divisor of $\pi$.
+We recall that $R = \di(y) + 2(g+1)[P_\infty]$ and that $\di( dx) = R - 4[P_\infty]$.\todo{citations}
 
-On the other hand, if $p=2$, then our extension will be $k(x,y)$, this time with $y$ defined by
+On the other hand, if $p=2$, then the extension $K(X)$ of $k(x)$ will be $k(x,y)$, this time with $y$ defined by
 \[
 y^2 - H(x)y = F(x),
 \]
-where $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
+for polynomials $H(x), F(x) \in k[x]$, where $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
 Also, as noted in \cite[\S 6]{faithfulaction}, we may assume that $F(x)$ is not divisible by $x^2$.
+\todo[inline]{make citations above more precise and add statement re degree of F and H}
 
+We again let $R$ denote the ramification divisor---it will be clear which characteristic we are in whenever we refer to $R$, so there will be no confusion caused.
 We recall the following divisors, which we will make use of throughout this article:
-\begin{eqnarray*}
+\begin{align}
 \di (dx) & = & R - 4[P_\infty] \\
-\di (h(x)) & = & R - 2(g+1)[P_\infty] \\
-\di (x^i) & = & 2i[P_0] - 2i[P_\infty]\\
+\di (H(x)) & = & R - 2(g+1)[P_\infty] \\
+\di (x) & = & 2[P_0] - 2[P_\infty]\\
 \di (y) & = & \di_0(y) - (2g+1)[P_\infty],
-\end{eqnarray*}
+\end{align}
 where $\di_0$ of a function denotes the divisor of zeroes of a function, or the positive part of the divisor of the function.
-Finally, to define the ramification divisor we suppose that $H(x) = \prod_{i=1}^d (x-a_i)^{n_i}$ for some $d \leq g$.
+Finally, the ramification divisor we suppose that $H(x) = \prod_{i=1}^d (x-a_i)^{n_i}$ for some $d \leq g$, $a_i \in k$ and $n_i \geq i$.
 Then $a_i \in \mathbb P_k^1$ are the branch points of $x$ and we let $P_i \in X$ be the corresponding ramification points of $x$.
 Then
-\[
+\begin{equation}
 R = \sum_{i=1}^d 2n_i[P_i] - 2(g+1-d)[P_\infty].
-\]
+\end{equation}
+\todo{find citation}
 
-We now compute the basis of $H^1(X,\cO_X)$, before explicitly stating the basis of $H^1_{dR}(X/k)$.\\
+We now compute the basis of $H^1(X,\cO_X)$, before explicitly stating the basis of $\cechhone$.\\
 
 \begin{lem}\label{basish1}
  
@@ -287,25 +292,25 @@ If $p=2$ then we use a similar proof, but
 \end{proof}
 
 
-In order to state the basis of $H^1_{dR}(X/k)$, as well as to shorten the proof of the following proposition, we define the following polynomial and differentials.
+In order to state the basis of $\cechhone$, as well as to shorten the proof of the following proposition, we define the following polynomial and differentials.
 Suppose that $1 \leq i \leq g$
 Firstly, when $p\neq 2$ we define
 \[
-s_i(x) := f'(x) - \frac{2if}{x}
+s_i(x) := f'(x) - \frac{2if(x)}{x} \in k[x]
 \]
 and if $p = 2$ we define
 \[
-S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)
-\].
+S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)\in k[x] \oplus yk[x] \subseteq k(x,y).
+\]
 
-We then let $\phi_i(x)$ and $\psi_i(x)$ be all the terms of $s_i(x)$ with degrees greater than $g$ and less than or equal to $g$ respectively.
-Similarly, we let $\Phi_i(x,y)$ and $\Psi_i(x,y)$ be the monomials of $S_i(x,y)$ where the degree of the $x$ component is greater than or equal to $i$ and less than $i$ respectively.
+We decompose $s_i(x)$ in the form $s_i(x) = \phi_i(x) + \psi_i(x)$ with $\psi_i(x), \phi_i(x) \in k[x]$, such that $\deg(\psi_i(x) \leq g$ and $x^{g+1}$ divides $\phi_i(x)$.
+Similarly we decompose $S_i(x,y)$ in the form $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$ with $\Psi_i(x,y), \Phi_i(x,y) \in k[x] \oplus yk[x]$, such that the degree of $\pSi_i(x,y)$ is less than $i$ as a polynomial in $x$, and $x^i$ divides $\Phi_i(x,y)$.
 
-We can now give a basis for $H^1_{dR}(X/k)$.\\
+We can now give a basis for $\cechhone$.\\
 
 \begin{prop}\label{basis}
 
-Let $i=1,\ldots, g$. If $p\neq 2$ then a basis of $H^1_{dR}(X/k)$ as a $k$ vector space is given by
+Let $i=1,\ldots, g$. If $p\neq 2$ then a basis of $\cechhone$ as a $k$ vector space is given by
 \begin{equation}\label{one}
  \left( \left( \frac{-\psi_i(x)}{2yx^i}\right) dx, \left(\frac{\phi_i(x)}{2yx^i}\right) dx, x^{-i}y\right)
 \end{equation}
@@ -331,16 +336,16 @@ Before proving this proposition we use it to prove our main theorem\\
 \begin{thm}
 
 Suppose that $g \geq 2$.
-Then any group $G$ acting faithfully on $X$ also acts faithfully on $H^1_{dR}(X/k)$.
+Then any group $G$ acting faithfully on $X$ also acts faithfully on $\cechhone$.
 
 \end{thm}
 \begin{proof}
 
-Recall that $H^0(X,\Omega_X)$ injects in to $H^1_{dR}(X/k)$.
-Then if $p \neq 2$, or if $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $H^1_{dR}(X/k)$.
+Recall that $H^0(X,\Omega_X)$ injects in to $\cechhone$.
+Then if $p \neq 2$, or if $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\cechhone$.
 
 We now suppose that $p=2$ and $G$ does contain a hyperelliptic involution $\sigma$.
-We see from the above proposition that the third entry in part \eqref{three} of the basis of $H^1_{dR}(X/k)$ given by \cech cohomology is $x^{-i}y$ for $1 \leq i \leq g$.
+We see from the above proposition that the third entry in part \eqref{three} of the basis of $\cechhone$ given by \cech cohomology is $x^{-i}y$ for $1 \leq i \leq g$.
 Now $\sigma(y) = y+ H$, and $\sigma$ preserves the cover $\mathcal U$, since it will fix the ramification points.
 Hence the action of $\sigma$ on the basis elements in Proposition \ref{basis} is just component wise, and in particular on the third component it is non-trivial.
 Hence the action of $G$ is faithful.
@@ -356,7 +361,7 @@ We now prove Proposition \ref{basis}.
 \begin{proof}
 We make use of the fact that the short exact sequence \eqref{ses} splits, and that we know bases of the outer two terms.
 
-It is clear that \eqref{two} and \eqref{four} satisfy the conditions in \eqref{derhamconditions}, and it follows \cite[Thm 6.1]{faithfulaction} that they are the image of $H^0(X,\Omega_X)$ in $H^1_{dR}(X/k)$.
+It is clear that \eqref{two} and \eqref{four} satisfy the conditions in \eqref{derhamconditions}, and it follows \cite[Thm 6.1]{faithfulaction} that they are the image of $H^0(X,\Omega_X)$ in $\cechhone$.
 
 It also follows from Lemma \ref{basish1} that \eqref{one} and \eqref{three} will surject on to $H^1(X,\cO_X)$ in the short exact sequence \eqref{ses}. 
 So it only remains to show that the first two terms in \eqref{one} and \eqref{three} satisfy the conditions of \eqref{derhamconditions}.
