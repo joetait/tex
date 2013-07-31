@@ -93,7 +93,8 @@
 \newcommand{\cech}{\v{C}ech }
 \newcommand{\hzero}{{H^0(X,\Omega_X)}}
 \newcommand{\hone}{H^1(X,\mathcal{O}_X)}
-\newcommand{\\cechhone}{\check{H}^1(\mathcal U,\mathcal O_X)}
+\newcommand{\cechhone}{\check{H}^1(\mathcal U,\mathcal O_X)}
+\newcommand{\derhamone}{H_{\text {dR}}^1(X/k)}
 
 
 \DeclareMathOperator{\aut}{Aut}
@@ -306,123 +307,130 @@ S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)\in k[x] \oplus yk[x] \subseteq k(x,y).
 We decompose $s_i(x)$ in the form $s_i(x) = \phi_i(x) + \psi_i(x)$ with $\psi_i(x), \phi_i(x) \in k[x]$, such that $\deg(\psi_i(x) \leq g$ and $x^{g+1}$ divides $\phi_i(x)$.
 Similarly we decompose $S_i(x,y)$ in the form $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$ with $\Psi_i(x,y), \Phi_i(x,y) \in k[x] \oplus yk[x]$, such that the degree of $\pSi_i(x,y)$ is less than $i$ as a polynomial in $x$, and $x^i$ divides $\Phi_i(x,y)$.
 
-We can now give a basis for $\cechhone$.\\
+We can now give a basis for $\derhamone$, as a quotient of \eqref{derhamconditions}.
 
-\begin{prop}\label{basis}
+\begin{thm}\label{basis}
 
-Let $i=1,\ldots, g$. If $p\neq 2$ then a basis of $\cechhone$ as a $k$ vector space is given by
+If $p\neq 2$ then the residues of the elements 
 \begin{equation}\label{one}
- \left( \left( \frac{-\psi_i(x)}{2yx^i}\right) dx, \left(\frac{\phi_i(x)}{2yx^i}\right) dx, x^{-i}y\right)
+ \left( \left( \frac{\psi_i(x)}{2yx^i}\right) dx, \left(\frac{-\phi_i(x)}{2yx^i}\right) dx, x^{-i}y\right), i = 1, \ldots ,g,
 \end{equation}
-and
+as well as the residues of
 \begin{equation}\label{two}
- \left( \frac{x^{i-1}}{y} dx , \frac{x^{i-1}}{y} dx, 0 \right).
+ \left( \frac{x^{i}}{y} dx , \frac{x^{i}}{y} dx, 0 \right), i=0, \ldots ,g-1,
 \end{equation}
+form a basis of $\derhamone$.
 
-If $p=2$ then a basis is given by
+If $p=2$ then the residues of 
 \begin{equation}\label{three}
-\left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H} \right) dx, x^{-i}y \right)
+\left( \left(\frac{\Psi_i(x,y)}{x^{i+1}H}\right) dx, \left( \frac{-\Phi_i(x,y)}{x^{i+1}H} \right) dx, x^{-i}y \right), i = 1, \ldots, g,
 \end{equation}
-and
+as well as the residues of 
 \begin{equation}\label{four}
- \left( \frac{x^{i-1}}{H} dx, \frac{x^{i-1}}{H} dx, 0 \right).
+ \left( \frac{x^{i}}{H(x)} dx, \frac{x^{i}}{H(x)} dx, 0 \right), i =0, \ldots, g-1,
 \end{equation}
+form a basis of $\derhamone$
 
-\end{prop}
+\end{thm}
 
 Before proving this proposition we use it to prove our main theorem\\
 
 
-\begin{thm}
+\begin{cor}
 
-Suppose that $g \geq 2$.
-Then any group $G$ acting faithfully on $X$ also acts faithfully on $\cechhone$.
+If $G$ acts faithfully on $X$ also acts faithfully on $\cechhone$.
+\todo[inline]{how should G act}
 
-\end{thm}
+\end{cor}
 \begin{proof}
 
 Recall that $H^0(X,\Omega_X)$ injects in to $\cechhone$.
 Then if $p \neq 2$, or if $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\cechhone$.
 
 We now suppose that $p=2$ and $G$ does contain a hyperelliptic involution $\sigma$.
-We see from the above proposition that the third entry in part \eqref{three} of the basis of $\cechhone$ given by \cech cohomology is $x^{-i}y$ for $1 \leq i \leq g$.
+We see from the above theorem that the third entry in part \eqref{three} of the basis of $\cechhone$ given by \cech cohomology is $x^{-i}y$ for $1 \leq i \leq g$.
 Now $\sigma(y) = y+ H$, and $\sigma$ preserves the cover $\mathcal U$, since it will fix the ramification points.
 Hence the action of $\sigma$ on the basis elements in Proposition \ref{basis} is just component wise, and in particular on the third component it is non-trivial.
 Hence the action of $G$ is faithful.
-
+\todo[inline]{correct proof}
 \todo[inline]{check the last paragraph. In particular, read up about actions on Cech cohomology}
 
 \end{proof}
 
 \todo[inline]{look up classes of hyperelliptic curves whose auto groups are known, and see what else can be done}
 
-We now prove Proposition \ref{basis}.
+We now prove Theorem \ref{basis}.
 
 \begin{proof}
 We make use of the fact that the short exact sequence \eqref{ses} splits, and that we know bases of the outer two terms.
 
-It is clear that \eqref{two} and \eqref{four} satisfy the conditions in \eqref{derhamconditions}, and it follows \cite[Thm 6.1]{faithfulaction} that they are the image of $H^0(X,\Omega_X)$ in $\cechhone$.
+It is clear that \eqref{two} and \eqref{four} is an element of \eqref{derhamconditions}, and it follows from \cite[Thm 6.1]{faithfulaction} that they are the image of the basis of $H^0(X,\Omega_X)$ in $\cechhone$.\todo{more accurate citation}
 
-It also follows from Lemma \ref{basish1} that \eqref{one} and \eqref{three} will surject on to $H^1(X,\cO_X)$ in the short exact sequence \eqref{ses}. 
-So it only remains to show that the first two terms in \eqref{one} and \eqref{three} satisfy the conditions of \eqref{derhamconditions}.
+Moreover it is obvious that the elements \eqref{one} and \eqref{three} map to the basis of $\hone$ give in Lemma \cite{basish1} if they belong to \eqref{derhamconditions}.
+So it only remains to show that the first two terms in \eqref{one} and \eqref{three} belong to \eqref{derhamconditions}.
 
 
 We start with the case $p\neq 2$, and observe that
-\begin{eqnarray*}
-\left( \frac{\phi_i}{2yx^i} - \frac{-\psi_i}{2yx^i} \right) dx & = & \frac{s_i(x)}{2yx^i} dx \\
+\begin{align*}
+\left(  \frac{\psi_i(x)}{2yx^i}  - \frac{-\phi_i(x)}{2yx^i} \right) dx & = & \frac{s_i(x)}{2yx^i} dx \\
 & = & \frac{1}{2yx^i} \left( f' - \frac{2if}{x} \right) dx \\
-& = & \frac{x}{2y} \left( \frac{f'}{x^{2i}}dx -\frac{2if}{x^{2i+1}} dx \right) \\
-& = & \frac{x}{2y} \left( fd(x^{-2i}) + \frac{1}{x^{2i}}df \right) \\
-& = & \frac{x}{2y}d(fx^{-2i}) \\
-& = & \frac{x}{2y} d(yx^{-i})^2 \\
+& = & \frac{x^i}{2y} \left( \frac{f'}{x^{2i}}dx -\frac{2if}{x^{2i+1}} dx \right) \\
+& = & \frac{x^i}{2y} \left( fd(\frac{1}{x^{2i}}) + \frac{1}{x^{2i}}df \right) \\
+& = & \frac{x^i}{2y}d(fx^{-2i}) \\
+& = & \frac{x^i}{2y} d\left(yx^{-i}\right)^2 \\
 & = & d(yx^{-i}).
-\end{eqnarray*}
+\end{align*}
+\todo[inline]{explain penultimate line}
+This shows that the elements in \eqref{one} satisfy \eqref{derhamconditions}
 Hence it only remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_1$ and $U_2$ respectively.
 
 
 
-We define $\alpha^i_j$ for $1\leq j \leq 2g$, such that
+We define $\alpha^i_j \in k$ for $0\leq j \leq 2g$ by the equation
 \[
 s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0,
 \]
-and then
+so that
 \[
-\phi_i = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i = \alpha^i_gx^g + \ldots + \alpha^i_0.
+\phi_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i(x) = \alpha^i_gx^g + \ldots + \alpha^i_0.
 \]
 Note that it is possible for any of $\alpha_i^j$ to be zero. Indeed, it is possible for either $\phi_i$ or $\psi_i$ to be zero.
-Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi$ and $\psi$ we know that $0 < d_\phi \leq g$ and $g < d_\psi \geq 2g$ respectively.
+Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi$ and $\psi$ we know that $0 < d_\psi \leq g$ and $g < d_\phi \leq 2g$ respectively.
 Note that we have suppressed the $i$ index here since this will be clear from context.
+\todo[inline]{remove d psi, remove last line?}
 
 
 We now show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{\psi_i}{2yx^i}dx$ are regular on $U_2$ and $U_1$ respectively.
 We may assume that $\phi_i$ and $\psi_i$ are non-zero, since zero is regular everywhere.
-The divisor of $\frac{\phi_i}{2yx^i}dx$ is
+The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
 
-\begin{eqnarray*}
-\di\left( \frac{\phi_i}{2yx^i}dx \right) & = & \di(\phi_i) -\di(y) - \di(x^i) + \di (dx) \\
-& = & \di(\phi_i) - ( R - 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R - 4[P_\infty]) \\
-& = & \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + 2(g+1)[P_0] - 2d_\phi[P_\infty] - 2i[P_0] + 2(g+i-1)[P_\infty] \\
-& \geq & \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + 2(g+1)[P_0] - 4g[P_\infty] - 2i[P_0] + 2(g+i-1)[P_\infty] \\
-& = & \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0].
-\end{eqnarray*}
-which shows that it is regular on $U_2$, since $i \leq g$.
+\begin{align*}
+\di\left( \frac{-\phi_i}{2yx^i}dx \right) & =  \di(\phi_i) -\di(y) - \di(x^i) + \di (dx) \\
+& =  \di(\phi_i) - ( R - 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R - 4[P_\infty]) \\
+& =  \left( \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + 2(g+1)[P_0] - 2d_\phi[P_\infty]\right) - 2i[P_0] + 2(g+i-1)[P_\infty] \\
+& \geq  \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + 2(g+1)[P_0] - 4g[P_\infty] - 2i[P_0] + 2(g+i-1)[P_\infty] \\
+& =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0].
+\end{align*}
+which shows that it is regular on $U_2 = X\backslash \{P_\infty\}$, since $i \leq g$.
+\todo[inline]{cite divisors used}
 
 Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 
 \begin{eqnarray*}
-\di \left( \frac{\psi_i}{2yx^i}dx\right) & = & \di(\psi_i) - \di(y) - \di(x^i) + \di (dx) \\
-& = & \di (\psi_i ) -(R + 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R -4[P_\infty]) \\
-& = & \di(\psi_i) + 2(g+i-1)[P_\infty] -2i[P_0] \\
-& \geq & \di_0(\psi_i) - 2g[P_\infty] + 2(g+i-1)[P_\infty] -2i[P_0] \\
-& = & \di_0(\psi_i) + 2(i-1)[P_\infty] - 2i[P_0].
+\di \left( \frac{\psi_i}{2yx^i}dx\right) & =  \di(\psi_i) - \di(y) - \di(x^i) + \di (dx) \\
+& =  \di (\psi_i ) -(R - 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R -4[P_\infty]) \\
+& =  \di(\psi_i) + 2(g+i-1)[P_\infty] -2i[P_0] \\
+& \geq \left( \di_0(\psi_i) - 2g[P_\infty] \right) + 2(g+i-1)[P_\infty] -2i[P_0] \\
+& =  \di_0(\psi_i) + 2(i-1)[P_\infty] - 2i[P_0].
 \end{eqnarray*}
-Since $i\geq 1$ we conclude that $\frac{\psi_i}{2yx^i}dx$ is regular on $U_1$.
+Since $i\geq 1$ we conclude that $\frac{\psi_i}{2yx^i}dx$ is regular on $U_1 = X \backslash \{P_0\}$.
+\todo[inline]{cite divisors used}
 
 
 We now consider the case when $p=2$.
 We see that
 \begin{eqnarray*}
-\left( \left( \frac{\Phi_i}{x^{i+1}H} \right) - \left( \frac{- \Psi_i}{x^{i+1}H} \right) \right) dx & = & \frac{S_i(x,y)}{x^{i+1}H}dx \\
+\left( \left( \Psi_i}{x^{i+1}H} \right) - \left( \frac{- \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & = & \frac{S_i}{x^{i+1}H}dx \\
 & = & \left( \frac{F'}{x^iH} + \frac{yH'}{x^iH} + \frac{iy}{x^{i+1}} \right) dx \\
 & = & \frac{1}{x^i}\left( \frac{F' + yH'}{H} \right) dx \frac{iy}{x^{i+1}}dx \\
 & = & x^{-i}dy + ydx^{-i} \\
