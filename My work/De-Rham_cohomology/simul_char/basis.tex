@@ -368,21 +368,21 @@ We now prove Theorem \ref{basis}.
 \begin{proof}
 We make use of the fact that the short exact sequence \eqref{ses} splits as a sequence of vector spaces over $k$, and that we know bases of the outer two terms.
 
-It is clear that \eqref{two} and \eqref{four} is an element of \eqref{derhamconditions}, and it follows from \cite[Thm 6.1]{faithfulaction} that they are the image of the basis of $H^0(X,\Omega_X)$ in $\cechhone$.\todo{more accurate citation}
+It is clear that \eqref{two} and \eqref{four} is an element of \eqref{derhamconditions}, and it follows from \cite[Thm 6.1]{faithfulaction} that they are the image of the basis of $H^0(X,\Omega_X)$ in $\derhamhone$.\todo{more accurate citation}
 
-Moreover it is obvious that the elements \eqref{one} and \eqref{three} map to the basis of $\hone$ give in Lemma \cite{basish1} if they belong to \eqref{derhamconditions}.
+Moreover it is obvious that the elements \eqref{one} and \eqref{three} map to the basis of $\hone$ give in Lemma \ref{basish1} if they belong to \eqref{derhamconditions}.
 So it only remains to show that the first two terms in \eqref{one} and \eqref{three} belong to \eqref{derhamconditions}.
 
 
 We start with the case $p\neq 2$, and observe that
 \begin{align*}
-\left(  \frac{\psi_i(x)}{2yx^i}  - \frac{-\phi_i(x)}{2yx^i} \right) dx & = & \frac{s_i(x)}{2yx^i} dx \\
-& = & \frac{1}{2yx^i} \left( f' - \frac{2if}{x} \right) dx \\
-& = & \frac{x^i}{2y} \left( \frac{f'}{x^{2i}}dx -\frac{2if}{x^{2i+1}} dx \right) \\
-& = & \frac{x^i}{2y} \left( fd(\frac{1}{x^{2i}}) + \frac{1}{x^{2i}}df \right) \\
-& = & \frac{x^i}{2y}d(fx^{-2i}) \\
-& = & \frac{x^i}{2y} d\left(yx^{-i}\right)^2 \\
-& = & d(yx^{-i}).
+\left(  \frac{\psi_i(x)}{2yx^i}  - \frac{-\phi_i(x)}{2yx^i} \right) dx & =  \frac{s_i(x)}{2yx^i} dx \\
+& =  \frac{1}{2yx^i} \left( f' - \frac{2if}{x} \right) dx \\
+& =  \frac{x^i}{2y} \left( \frac{f'}{x^{2i}}dx -\frac{2if}{x^{2i+1}} dx \right) \\
+& =  \frac{x^i}{2y} \left( fd(\frac{1}{x^{2i}}) + \frac{1}{x^{2i}}df \right) \\
+& =  \frac{x^i}{2y}d(fx^{-2i}) \\
+& =  \frac{x^i}{2y} d\left(yx^{-i}\right)^2 \\
+& =  d(yx^{-i}).
 \end{align*}
 \todo[inline]{explain penultimate line}
 This shows that the elements in \eqref{one} satisfy \eqref{derhamconditions}
