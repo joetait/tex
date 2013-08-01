@@ -94,7 +94,7 @@
 \newcommand{\hzero}{{H^0(X,\Omega_X)}}
 \newcommand{\hone}{H^1(X,\mathcal{O}_X)}
 \newcommand{\cechhone}{\check{H}^1(\mathcal U,\mathcal O_X)}
-\newcommand{\derhamone}{H_{\text {dR}}^1(X/k)}
+\newcommand{\derhamhone}{H_{\text {dR}}^1(X/k)}
 
 
 \DeclareMathOperator{\aut}{Aut}
@@ -133,12 +133,13 @@ We therefore recall the \cech cohomology relevant to both of these, starting wit
 By Leray's theorem {\todo{find citation} and Serre's affineness criterion \todo{citation} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
 Therefore the cover we shall be using is $U_1 = X\backslash \{ P_0 \}$ and $U_2 = X\backslash \{ P_\infty \}$, and we let ${\cal U} = \{ U_1, U_2\}$.
 Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$ given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
-It is this map which gives us the differential maps in the \cech cochain
+In general we will not explicitly show that we are considering the restriction when applying this map, unless it is not clear from context.
+It is this map which gives us the differential map in the \cech cochain
 \begin{equation*}
 0 \rightarrow \cO_X(U_1)\times \cO_X(U_2) \xrightarrow{d} \cO_X(U_1 \cap U_2) \rightarrow 0.
 \end{equation*}
 
-Then $\\cechhone = \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}$ and hence
+Then $\cechhone = \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}$ and hence
 \begin{equation}
 \hone \cong \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}  
  = \frac{\cO_X(U_1 \cap U_2)}{\{f_1 - f_2 | f_i \in \cO_X(U_i) \}}.
@@ -164,13 +165,13 @@ We then use the same open cover and the same differentials as defined earlier to
 \end{array}
 \end{equation}
 where the horizontal arrows are the standard differential map $d$.
-By \cite[Cor. 12.4.7]{EGA0III}, a generalisation of Leray's theorem, we know that the $\hone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
-Note that this relies on ${\check H}^p({\mathcal U},\cO_X)$ and ${\check H}^p(\cU, \cO_X)$ being zero for all $p\geq 1$ ---
+By \cite[Cor. 12.4.7]{EGA0III}, a generalisation of Leray's theorem, we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
+Note that this relies on $\cechhone$ and ${\check H}^p(\cU, \Omega_X)$ being zero for all $p\geq 1$ ---
 since $U_1$ and $U_2$ are affine, this follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.
 
 
 
-Upon computing $H^1_{{\text dR}}(X/k)$ using this complex we see that it is the space
+Upon computing the first cohomology group of the total complex we see that $H^1_{{\text dR}}(X/k)$ is isomorphic to the space
 \begin{equation}\label{derhamconditions}
 \{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1|_{U_1\cap U_2} - \omega_2|_{U_1\cap U_2} \}
 \end{equation}
@@ -181,10 +182,10 @@ quotiented by the subspace
 \]
 In what follows we will not explicitly write when we are taking restrictions of elements, unless it appears that it will add clarity to the situation.
 
-We wish to compute a basis of $H^1_{{\text dR}}(X/k)$, in order that we can see how $G$ acts on $H^1_{{\text dR}}(X/k)$.
+We wish to compute a basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$.
 To do this we will compute bases for the two outer terms of the short exact sequence
 \begin{equation}\label{ses}
-0 \ra H^0(X,\Omega_X) \ra \cechhone \ra H^1(X,\cO_X) \ra 0.
+0 \ra H^0(X,\Omega_X) \ra \derhamhone \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
 A basis of $H^0(X,\Omega_X)$ is already known in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
 
@@ -193,7 +194,7 @@ Serre duality states that $H^0(X,\Omega_X)$ and $H^1(X,\cO_X)$ are dual to each 
 Details of the definition of ${\text Res}$ can be found in appendix B of \todo{in progress}
 \todo[inline]{add details - in particular, relate to the basis we have for de rham}
 
-\section{Basis of $\cechhone$}
+\section{Basis of $\derhamhone$}
 
 The bases of the $k$-vector spaces in \eqref{ses} will be given in terms of defining equations, so we describe these now.
 
@@ -233,7 +234,7 @@ R = \sum_{i=1}^d 2n_i[P_i] - 2(g+1-d)[P_\infty].
 \]
 \todo{reference}
 
-We now compute the basis of $H^1(X,\cO_X)$, before explicitly stating the basis of $\derhamone$.\\
+We now compute the basis of $H^1(X,\cO_X)$, before explicitly stating the basis of $\derhamhone$.\\
 \todo[inline]{not edited, since may use different proof}
 \begin{lem}\label{basish1}
  
@@ -294,7 +295,7 @@ If $p=2$ then we use a similar proof, but
 \end{proof}
 
 
-In order to state the basis of $\derhamone$, as well as to shorten the proof of the following proposition, we define the following polynomial and differentials.\todo{change all de rham cohomology symbols}
+In order to state the basis of $\derhamhone$, as well as to shorten the proof of the following proposition, we define the following polynomial and differentials.\todo{change all de rham cohomology symbols}
 Suppose that $1 \leq i \leq g$
 Firstly, when $p\neq 2$ we define
 \[
@@ -309,7 +310,7 @@ We now decompose these polynomials in to two parts, which will be used in the se
 Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x)$  and $\phi_i(x)$ are the unique polynomials in $k[x]$ such that $\deg(\phi_i (x)) \leq g$ and $x^{g+1}$ divides $\psi_i(x)$.
 Similarly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that the degree of $\Psi_i(x,y)$ has degree less than $i$ as a polynomial in $x$, and $\Phi_i(x,y)$ is divisible by $x^i$.
 
-Viewing $\derhamone$ as a quotient of \eqref{derhamconditions}, we now give a $k$-vector space basis of the space.
+Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $k$-vector space basis of the space.
 
 \begin{thm}\label{basis}
 
@@ -321,7 +322,7 @@ along with the residue classes of
 \begin{equation}\label{two}
  \left( \frac{x^{i}}{y} dx , \frac{x^{i}}{y} dx, 0 \right), i = 0,\ldots ,g-1,
 \end{equation}
-form a basis of $\derhamone$.
+form a basis of $\derhamhone$.
 
 On the other hand, if $p=2$ then the residue classes of the elements 
 \begin{equation}\label{three}
@@ -331,7 +332,7 @@ together with the residue classes of
 \begin{equation}\label{four}
  \left( \frac{x^{i}}{H(x)} dx, \frac{x^{i}}{H(x)} dx, 0 \right), i=0, \ldots, g-1,
 \end{equation}
-form a basis of $\derhamone$.
+form a basis of $\derhamhone$.
 
 \todo[inline]{check if the minus signs are the right way round, and that the elements are the right way round.}
 \end{thm}
@@ -341,17 +342,17 @@ Before proving this proposition we use it to prove our main theorem\\
 
 \begin{cor}
 
-If $G$ acts faithfully on $X$ also acts faithfully on $\cechhone$.
+If $G$ acts faithfully on $X$ also acts faithfully on $\derhamhone$.
 \todo[inline]{how should G act}
 
 \end{cor}
 \begin{proof}
 
-Recall that $H^0(X,\Omega_X)$ injects in to $\derhamone$.
-Then if $p \neq 2$, or if $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamone$.
+Recall that $H^0(X,\Omega_X)$ injects in to $\derhamhone$.
+Then if $p \neq 2$, or if $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
 
 We now suppose that $p=2$ and $G$ does contain a hyperelliptic involution $\sigma$.
-We see from the above theorem that the third entry in part \eqref{three} of the basis of $\derhamone$ given by \cech cohomology is $x^{-i}y$ for $1 \leq i \leq g$.
+We see from the above theorem that the third entry in part \eqref{three} of the basis of $\derhamhone$ given by \cech cohomology is $x^{-i}y$ for $1 \leq i \leq g$.
 Now $\sigma(y) = y+ H$, and $\sigma$ preserves the cover $\mathcal U$, since it will fix the ramification points.
 Hence the action of $\sigma$ on the basis elements in Proposition \ref{basis} is just component wise, and in particular on the third component it is non-trivial.
 Hence the action of $G$ is faithful.
@@ -433,7 +434,7 @@ Since $i\geq 1$ we conclude that $\frac{\psi_i}{2yx^i}dx$ is regular on $U_1 = X
 We now consider the case when $p=2$.
 We see that
 \begin{align*}
-\left( \left( \Psi_i}{x^{i+1}H} \right) - \left( \frac{- \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
+\left( \left( \frac{\Psi_i}{x^{i+1}H} \right) - \left(  \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
 & =  \left( \frac{F'}{x^iH} + \frac{yH'}{x^iH} + \frac{iy}{x^{i+1}} \right) dx \\
 & =  \frac{1}{x^i}\left( \frac{F' + yH'}{H} \right) dx + \frac{iy}{x^{i+1}}dx \\
 & =  x^{-i}dy + yd \left( x^{-i}\right) \\
