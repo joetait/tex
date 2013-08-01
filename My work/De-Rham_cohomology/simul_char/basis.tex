@@ -433,7 +433,7 @@ Since $i\geq 1$ we conclude that $\frac{\psi_i}{2yx^i}dx$ is regular on $U_1 = X
 We now consider the case when $p=2$.
 We see that
 \begin{align*}
-\left( \left( \Psi_i}{x^{i+1}H} \right) - \left( \frac{- \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
+\left( \left( \frac{ \Psi_i}{x^{i+1}H} \right) - \left( \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
 & =  \left( \frac{F'}{x^iH} + \frac{yH'}{x^iH} + \frac{iy}{x^{i+1}} \right) dx \\
 & =  \frac{1}{x^i}\left( \frac{F' + yH'}{H} \right) dx + \frac{iy}{x^{i+1}}dx \\
 & =  x^{-i}dy + yd \left( x^{-i}\right) \\
@@ -497,20 +497,21 @@ This completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \{P_0\}
 
 We now complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
-\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right) & =  \di(\Psi_i^x) + (R - 4[P_\infty]) - (2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R - 2(g+1)[P_\infty]) \\
+\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right) & =  \di(\Psi_i^x) + (R - 4[P_\infty]) - (2(i+1)[P_0] - 2(i+1)[P_\infty])\\
+&  - (R - 2(g+1)[P_\infty]) \\
 & \geq  \di_0(\Psi_i^x ) - 2i[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
 & =  \di_0(\Psi_i^x) - 2i[P_0] + 2(g+1)[P_\infty],
 \end{align*}
 which is clearly positive on $U_1$.
 
-\begin{eqnarray*}
-\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) + R - 4[P_\infty] -2(i+1)[P_0] + 2(i+1)[P_\infty] - R \\
-& & + (2g+2)[P_\infty] \\
-& = & \di_0(y) + \di(\Psi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
-& = & \di_0(y) + \di_0(\Psi_i^y) - 2d_\Psi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
-& \geq & \di_0(y) + \di_0(\Psi_i^y) -2(i-1)[P_\infty] -2(i+1)[P_0] + (2i-1)[P_\infty] \\
-& = & \di_0(y) + \di_0(\Psi_i^y) -2(i+1)[P_0] + [P_\infty].
-\end{eqnarray*}
+\begin{align*}
+\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right) & =  \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) + R - 4[P_\infty] -2(i+1)[P_0] \\ 
+& + 2(i+1)[P_\infty] - R + (2g+2)[P_\infty] \\
+& =  \di_0(y) + \di(\Psi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
+& =  \di_0(y) + \di_0(\Psi_i^y) - 2d_\Psi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
+& \geq  \di_0(y) + \di_0(\Psi_i^y) -2(i-1)[P_\infty] -2(i+1)[P_0] + (2i-1)[P_\infty] \\
+& =  \di_0(y) + \di_0(\Psi_i^y) -2(i+1)[P_0] + [P_\infty].
+\end{align*}
 \todo[inline]{edit as above}
 
 
