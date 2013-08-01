@@ -120,17 +120,15 @@
 
 \section{Background}
 
-\todo[inline]{check cech and derham cohomology are the right way round}
-\todo{hi}
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
 By an automorphism of $ \mathbb P_k^1$ we may assume that 0 and $\infty$ are branch points of the corresponding double cover $\pi : X \rightarrow \mathbb P_k^1$.
 We denote the ramification points in $X$ of 0 and $\infty$ by $P_0$ and $P_\infty$ respectively.
-We also suppose that we have a finite group $G$ acting on $X$. \todo{check how it should act - properly etc?}
+We also suppose that we have a finite group $G$ acting fatihfully on $X$.
 
 We will be using \cech cohomology to compute both $\hone$ and the de-Rham hypercohomology.
 We therefore recall the \cech cohomology relevant to both of these, starting with $\hone$.
 
-By Leray's theorem {\todo{find citation} and Serre's affineness criterion \todo{citation} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
+By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
 Therefore the cover we shall be using is $U_1 = X\backslash \{ P_0 \}$ and $U_2 = X\backslash \{ P_\infty \}$, and we let ${\cal U} = \{ U_1, U_2\}$.
 Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$ given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
 In general we will not explicitly show that we are considering the restriction when applying this map, unless it is not clear from context.
