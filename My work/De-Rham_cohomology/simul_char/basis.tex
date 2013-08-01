@@ -377,7 +377,7 @@ So it only remains to show that the first two terms in \eqref{one} and \eqref{th
 
 We start with the case $p\neq 2$, and observe that
 \begin{align*}
-\left(  \frac{\psi_i}{2yx^i}  - \frac{-\phi_i}{2yx^i} \right) dx & =  \frac{s_i}{2yx^i} dx \\
+\left(  \frac{\psi_i(x)}{2yx^i}  - \frac{-\phi_i(x)}{2yx^i} \right) dx & =  \frac{s_i(x)}{2yx^i} dx \\
 & =  \frac{1}{2yx^i} \left( f' - \frac{2if}{x} \right) dx \\
 & =  \frac{x^i}{2y} \left( \frac{f'}{x^{2i}}dx -\frac{2if}{x^{2i+1}} dx \right) \\
 & =  \frac{x^i}{2y} \left( fd(\frac{1}{x^{2i}}) + \frac{1}{x^{2i}}df \right) \\
@@ -435,7 +435,7 @@ Since $i\geq 1$ we conclude that $\frac{\psi_i}{2yx^i}dx$ is regular on $U_1 = X
 We now consider the case when $p=2$.
 We see that
 \begin{align*}
-\left( \left( \frac{\Psi_i}{x^{i+1}H} \right) - \left(  \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
+\left( \left( \frac{ \Psi_i}{x^{i+1}H} \right) - \left( \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
 & =  \left( \frac{F'}{x^iH} + \frac{yH'}{x^iH} + \frac{iy}{x^{i+1}} \right) dx \\
 & =  \frac{1}{x^i}\left( \frac{F' + yH'}{H} \right) dx + \frac{iy}{x^{i+1}}dx \\
 & =  x^{-i}dy + yd \left( x^{-i}\right) \\
@@ -462,13 +462,14 @@ So in this case we again see that $B_i^i = 0$.
 
 
 We can now define the following polynomials:
-\begin{eqnarray*}
+\begin{align*}
 \Phi_i^x & = & A^i_{2g+1}x^{2g+1} + \ldots + A^i_{i+1}x^{i+1} \\
 \Psi_i^x & = & A^i_ix^i + \ldots + A^i_1x \\
 \Phi_i^y & = & B_g^ix^g + \ldots B_{i+1}^ix^{i+1} \\
 \Psi_i^y & = & B_{i-1}^ix^{i-1} + \ldots + B_1^ix.
-\end{eqnarray*}
+\end{align*}
 
+We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
 
 Clearly $\Phi_i = \Phi_i^x + y\Phi_i^y$ and $\Psi_i = \Psi_i^x + y\Psi_i^y$, and we will use these splittings of to show that $\Phi_i$ and $\Psi_i$ are regular on $U_2$ and $U_1$ respectively.
 \todo[inline]{compute divisor of dx/xi+1H first?}
@@ -476,44 +477,42 @@ Clearly $\Phi_i = \Phi_i^x + y\Phi_i^y$ and $\Psi_i = \Psi_i^x + y\Psi_i^y$, and
 We first compute the divisors associated to $\Phi_i$.
 Firstly,
 \begin{align*}
-\di \left( \frac{\Phi_i^x dx}{x^{i+1} H} \right) & =  \di(\Phi_i^x) + (R - 4[P_\infty]) - (2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R - (2g+2) [P_\infty]) \\
-& =  \left( \di_0(\Phi_i^x) -d_\Phi^x[P_\infty]\right) -2(i+1)[P_0] + 2(g+i)[P_\infty]\\
-& \geq  \di_0(\Phi_i^x) - 2(2g+1)[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
-& =  \di_0(\Phi_i^x) - 2(i+1)[P_0] + 2(i-1-g)[P_\infty] \\
-& =  \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + 2(i-g-1)[P_\infty],
+\di \left( \frac{\Phi_i^x dx}{x^{i+1} H} \right)  = &  \di(\Phi_i^x) + (R - 4[P_\infty]) - (2(i+1)[P_0] - 2(i+1)[P_\infty])\\
+& - (R - (2g+2) [P_\infty]) \\
+ = & \left( \di_0(\Phi_i^x) -d_\Phi^x[P_\infty]\right) -2(i+1)[P_0] + 2(g+i)[P_\infty]\\
+ \geq & \di_0(\Phi_i^x) - 2(2g+1)[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
+ = &  \di_0(\Phi_i^x) - 2(i+1)[P_0] + 2(i-1-g)[P_\infty] \\
+ =  & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + 2(i-g-1)[P_\infty],
 \end{align*}
-\todo[inline]{define superscript x notation and cite divisors uses}
 which is clearly positive on $U_2 = X \backslash \{P_\infty\}$.
 
 We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, namely
-\todo{terms missing in first line?}
 \begin{align*}
-\di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right) & =  (\di_0(y) - (2g+1)[P_\infty]) + \di(\Phi_i^y) + (R - 4[P_\infty]) -(2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R \\
-&  - (2g+2)[P_\infty]) \\
-& =  \di_0(y) + \di(\Phi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
-& =  \di_0(y) + \di_0(\Phi_i^y) - 2d_\Phi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
-& =  \di_0(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (2i-2d_\Phi^y -1)[P_\infty]
+\di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right)  = & (\di_0(y) - (2g+1)[P_\infty]) + \di(\Phi_i^y) + (R - 4[P_\infty])\\
+& -(2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R  - (2g+2)[P_\infty]) \\
+ = & \di_0(y) + \di(\Phi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
+ = & \di_0(y) + \di_0(\Phi_i^y) - 2d_\Phi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
+ = & \di_0(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (2i-2d_\Phi^y -1)[P_\infty]
 \end{align*}
-\todo[inline]{define superscript y terms}
 This completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \{P_0\}$.
 
 We now complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
-\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right) & =  \di(\Psi_i^x) + (R - 4[P_\infty]) - (2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R - 2(g+1)[P_\infty]) \\
-& \geq  \di_0(\Psi_i^x ) - 2i[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
-& =  \di_0(\Psi_i^x) - 2i[P_0] + 2(g+1)[P_\infty],
+\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right)  = &  \di(\Psi_i^x) + (R - 4[P_\infty]) - (2(i+1)[P_0] - 2(i+1)[P_\infty])\\
+&  - (R - 2(g+1)[P_\infty]) \\
+ \geq &  \di_0(\Psi_i^x ) - 2i[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
+ = &  \di_0(\Psi_i^x) - 2i[P_0] + 2(g+1)[P_\infty],
 \end{align*}
 which is clearly positive on $U_1$.
 
-\begin{eqnarray*}
-\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right) & = & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) + R - 4[P_\infty] -2(i+1)[P_0] + 2(i+1)[P_\infty] - R \\
-& & + (2g+2)[P_\infty] \\
-& = & \di_0(y) + \di(\Psi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
-& = & \di_0(y) + \di_0(\Psi_i^y) - 2d_\Psi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
-& \geq & \di_0(y) + \di_0(\Psi_i^y) -2(i-1)[P_\infty] -2(i+1)[P_0] + (2i-1)[P_\infty] \\
-& = & \di_0(y) + \di_0(\Psi_i^y) -2(i+1)[P_0] + [P_\infty].
-\end{eqnarray*}
-\todo[inline]{edit as above}
+\begin{align*}
+\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) + R - 4[P_\infty] -2(i+1)[P_0] \\ 
+& + 2(i+1)[P_\infty] - R + (2g+2)[P_\infty] \\
+ =  & \di_0(y) + \di(\Psi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
+ = &  \di_0(y) + \di_0(\Psi_i^y) - 2d_\Psi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
+ \geq &  \di_0(y) + \di_0(\Psi_i^y) -2(i-1)[P_\infty] -2(i+1)[P_0] + (2i-1)[P_\infty] \\
+ =   &\di_0(y) + \di_0(\Psi_i^y) -2(i+1)[P_0] + [P_\infty].
+\end{align*}
 
 
 
