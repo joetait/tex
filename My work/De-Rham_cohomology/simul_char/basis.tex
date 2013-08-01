@@ -200,7 +200,7 @@ If $p \neq 2$ then the extension $K(X)$ of $k(x)$ will be $k(x,y)$ where $y$ sat
 \[
 y^2 = f(x)
 \]
-for some polynomial $f \in k[x]$.
+for some polynomial $f(x) \in k[x]$.
 \todo{consistent f(x) or just f}
 Since we assumed that $\infty$ is a branch point $f(x)$ is necessarily of degree $2g+1$.\todo{citation}
 
@@ -211,7 +211,7 @@ On the other hand, if $p=2$, then the extension $K(X)$ will be $k(x,y)$, this ti
 \[
 y^2 - H(x)y = F(x),
 \]
-for some $H,F \in k[x]$, such that $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
+for some $H(x),F(x) \in k[x]$, such that $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
 Also, as noted in \cite[\S 6]{faithfulaction}\todo{more accurate citation - may be best to reference 18 month}, we may assume that $F(x)$ is not divisible by $x^2$.
 
 Again, we let $R$ denote the ramification divisor, which we write explicilty below.
@@ -293,7 +293,7 @@ If $p=2$ then we use a similar proof, but
 \end{proof}
 
 
-In order to state the basis of $\derhamhone$, as well as to shorten the proof of the following proposition, we define the following polynomial and differentials.\todo{change all de rham cohomology symbols}
+In order to state the basis of $\derhamhone$, as well as to shorten the proof of the following proposition, we define the following polynomial and differentials. \todo{change all de rham cohomology symbols} 
 Suppose that $1 \leq i \leq g$
 Firstly, when $p\neq 2$ we define
 \[
@@ -305,11 +305,14 @@ S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)\in k[x]\oplus yk[x] \subseteq k(x,y).
 \]
 
 We now decompose these polynomials in to two parts, which will be used in the sequel.
-Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x)$  and $\phi_i(x)$ are the unique polynomials in $k[x]$ such that $\deg(\phi_i (x)) \leq g$ and $x^{g+1}$ divides $\psi_i(x)$.
+Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x), \phi_i(x) \in k[x]$ are the unique polynomials such that $\deg(\phi_i (x)) \leq g$ and $x^{g+1}$ divides $\psi_i(x)$.
+
+
+
 Similarly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that the degree of $\Psi_i(x,y)$ has degree less than $i$ as a polynomial in $x$, and $\Phi_i(x,y)$ is divisible by $x^i$.
 
 Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $k$-vector space basis of the space.
-
+\todo{sort out spacing around theorems etc}
 \begin{thm}\label{basis}
 
 If $p \neq 2$ then the residue classes of the elements 
@@ -374,7 +377,7 @@ So it only remains to show that the first two terms in \eqref{one} and \eqref{th
 
 We start with the case $p\neq 2$, and observe that
 \begin{align*}
-\left(  \frac{\psi_i(x)}{2yx^i}  - \frac{-\phi_i(x)}{2yx^i} \right) dx & =  \frac{s_i(x)}{2yx^i} dx \\
+\left(  \frac{\psi_i}{2yx^i}  - \frac{-\phi_i}{2yx^i} \right) dx & =  \frac{s_i}{2yx^i} dx \\
 & =  \frac{1}{2yx^i} \left( f' - \frac{2if}{x} \right) dx \\
 & =  \frac{x^i}{2y} \left( \frac{f'}{x^{2i}}dx -\frac{2if}{x^{2i+1}} dx \right) \\
 & =  \frac{x^i}{2y} \left( fd(\frac{1}{x^{2i}}) + \frac{1}{x^{2i}}df \right) \\
@@ -397,7 +400,7 @@ so that
 \phi_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i(x) = \alpha^i_gx^g + \ldots + \alpha^i_0.
 \]
 Note that it is possible for any of $\alpha_i^j$ to be zero. Indeed, it is possible for either $\phi_i$ or $\psi_i$ to be zero.
-Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi$ and $\psi$ we know that $0 < d_\psi \leq g$ and $g < d_\phi \leq 2g$ respectively.
+Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i$ and $\psi_i$ we know that $0 < d_\psi \leq g$ and $g < d_\phi \leq 2g$ respectively, for all $1 \leq i \leq g$
 Note that we have suppressed the $i$ index here since this will be clear from context.
 \todo[inline]{remove d psi, remove last line?}
 
