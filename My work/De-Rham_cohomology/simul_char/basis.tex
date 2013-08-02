@@ -205,8 +205,7 @@ for some polynomial $f(x) \in k[x]$.
 \todo{consistent f(x) or just f}
 Since we assumed that $\infty$ is a branch point $f(x)$ is necessarily of degree $2g+1$.\todo{citation}
 
-We let $R$ be the ramification divisor of $\pi$.
-We recall that 
+We let $R$ be the ramification divisor of $\pi$, and also recall that 
 \begin{equation}\label{pnot2divisors}
 \di(y)  = R - 2(g+1)[P_\infty] \text{ and that } \di( dx) = R - 4[P_\infty].
 \end{equation}
@@ -215,7 +214,7 @@ On the other hand, if $p=2$, then the extension $K(X)$ will be $k(x,y)$, this ti
 y^2 - H(x)y = F(x),
 \end{equation}
 for some $H(x),F(x) \in k[x]$, such that $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
-Also, as noted in \cite[\S 6]{faithfulaction}\todo{more accurate citation - may be best to reference 18 month}, we may assume that $F(x)$ is not divisible by $x^2$.
+From this condition we can, as noted in \cite[\S 6]{faithfulaction}\todo{more accurate citation - may be best to reference 18 month}, deduce that $F(x)$ is not divisible by $x^2$.
 
 Again, we let $R$ denote the ramification divisor, which we write explicilty below.
 In what follows it will be clear from context which characteristic we are in whenever referring to $R$, and hence which ramification divisor is being considered at any time.\todo{edit}
@@ -224,18 +223,18 @@ We now recall the following divisors, which we will make use of throughout this 
 \di (dx) & = R - 4[P_\infty] \label{divdxp=2}\\
 \di (H(x)) & = R - 2(g+1)[P_\infty] \label{divhp=2}\\
 \di (x) & = 2[P_0] - 2[P_\infty] \label{divxp=2}\\
-\di (y) & = \di_0(y) - (2g+1)[P_\infty] \label{divyp=2},
+\di (y) & = \di_0(y) - (2g+1)[P_\infty] \label{divyp=2}.
 \end{align}
-where $\di_0$ of a function denotes the divisor of zeroes of a function, or the positive part of the divisor of the function.
+Here $\di_0(f)$ denotes the divisor of zeroes of the function $f$.
 
 
 To state the ramification points, and for later use, we suppose that 
 \begin{equation}\label{hcoefficients}
 H(x) = \prod_{i=1}^d (x-a_i)^{n_i} = b_dx^d + \ldots + b_1x
 \end{equation}
-for some $d \leq g$, $a_i, b_i \in  k$ and $n_i \in \mathbb N$.
-Then the $a_i \in \mathbb P_k^1$ are the branch points of $x$ and we let $P_i \in X$ be the corresponding ramification points of $x$.
-Given this, we can now explicitly describe the ramification divisor
+for some $a_i, b_i \in  k$, $d \leq g$ and $n_i \in \mathbb N$.
+Then the $a_i \in \mathbb P_k^1$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points of $\pi$.
+Given this, we can now explicitly describe the ramification divisor as
 \[
 R = \sum_{i=1}^d 2n_i[P_i] - 2(g+1-d)[P_\infty].
 \]
@@ -304,7 +303,7 @@ If $p=2$ then we use a similar proof, but
 
 In order to state the basis of $\derhamhone$, as well as to shorten the proof of the following proposition, we define the following polynomial and differentials. \todo{change all de rham cohomology symbols} 
 Suppose that $1 \leq i \leq g$
-Firstly, when $p\neq 2$ we define
+Then, when $p\neq 2$ we define
 \[
 s_i(x) := f'(x) - \frac{2if(x)}{x} \in k[x]
 \]
@@ -318,7 +317,7 @@ Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x)
 
 
 
-Similarly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that the degree of $\Psi_i(x,y)$ has degree less than $i$ as a polynomial in $x$, and $\Phi_i(x,y)$ is divisible by $x^i$.
+Secondly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that the degree of $\Psi_i(x,y)$ has degree less than $i$ as a polynomial in $x$, and $\Phi_i(x,y)$ is divisible by $x^i$.
 
 Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $k$-vector space basis of the space.
 \todo{sort out spacing around theorems etc}
@@ -347,7 +346,7 @@ form a basis of $\derhamhone$.
 \todo[inline]{check if the minus signs are the right way round, and that the elements are the right way round.}
 \end{thm}
 
-Before proving this proposition we use it to prove our main theorem\\
+Before proving this proposition we use it to prove the following corollary.
 
 
 \begin{cor}
@@ -378,9 +377,9 @@ We now prove Theorem \ref{basis}.
 \begin{proof}
 We make use of the fact that the short exact sequence \eqref{ses} splits as a sequence of vector spaces over $k$, and that we know bases of the outer two terms.
 
-It is clear that \eqref{two} and \eqref{four} is an element of \eqref{derhamconditions}, and it follows from \cite[Thm 6.1]{faithfulaction} that they are the image of the basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
+It is clear that \eqref{two} and \eqref{four} are elements of \eqref{derhamconditions}, and it follows from \cite[Thm 6.1]{faithfulaction} that they are the image of the basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
 
-Moreover it is obvious that the elements \eqref{one} and \eqref{three} map to the basis of $\hone$ give in Lemma \ref{basish1} if they belong to \eqref{derhamconditions}.
+Moreover, it is obvious that the elements \eqref{one} and \eqref{three} map to the basis of $\hone$ given in Lemma \ref{basish1} if they belong to \eqref{derhamconditions}.
 So it only remains to show that the first two terms in \eqref{one} and \eqref{three} belong to \eqref{derhamconditions}.
 
 
@@ -396,11 +395,11 @@ We start with the case $p\neq 2$, and observe that
 \end{align*}
 with the penultimate line following from the defining equation \eqref{definingequationpnot2}.
 This shows that the elements in \eqref{one} satisfy \eqref{derhamconditions}.
-Hence it only remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_1$ and $U_2$ respectively.
+It remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_1$ and $U_2$ respectively.
 
 
 
-We define $\alpha^i_j \in k$ for $0\leq j \leq 2g$ by the equation
+In order to do this we define $\alpha^i_j \in k$ for $0\leq j \leq 2g$ by the equation
 \[
 s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0,
 \]
@@ -408,8 +407,8 @@ so that
 \[
 \phi_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i(x) = \alpha^i_gx^g + \ldots + \alpha^i_0.
 \]
-Note that it is possible for any of $\alpha_i^j$ to be zero. Indeed, it is possible for either $\phi_i$ or $\psi_i$ to be zero.
-Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i$ and $\psi_i$ we know that $0 < d_\psi \leq g$ and $g < d_\phi \leq 2g$ respectively, for all $1 \leq i \leq g$
+Note that it is possible for any of $\alpha_i^j$ to be zero. Indeed, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
+Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 < d_\psi \leq g$ and $g < d_\phi \leq 2g$ respectively, for all $1 \leq i \leq g$
 \todo[inline]{remove d psi, remove last line? - will keep for now in case useful later}
 
 
@@ -424,7 +423,7 @@ The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
 & \geq  \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + 2(g+1)[P_0] - 4g[P_\infty] - 2i[P_0] + 2(g+i-1)[P_\infty] \\
 & =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0],
 \end{align*}
-where the first line makes use of \eqref{pnot2divisors}
+where the first line makes use of \eqref{pnot2divisors}.
 Since $i \leq g$, this shows that the differential is regular on $U_2 = X\backslash \{P_\infty\}$.
 
 Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
@@ -436,7 +435,7 @@ Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 & \geq \left( \di_0(\psi_i) - 2g[P_\infty] \right) + 2(g+i-1)[P_\infty] -2i[P_0] \\
 & =  \di_0(\psi_i) + 2(i-1)[P_\infty] - 2i[P_0].
 \end{align*}
-Again, the first line uses \eqref{pnot2divisors}, and again since $i\geq 1$ we conclude that $\frac{\psi_i}{2yx^i}dx$ is regular on $U_1 = X \backslash \{P_0\}$.
+Again, the first line uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \{P_0\}$.
 
 
 We now consider the case when $p=2$.
@@ -444,12 +443,11 @@ We start by noting that when we take the differential of \eqref{definep=2} we de
 \[
 dF = d\left(y^2 + yH \right) = d(yH) = Hdy + ydH
 \]
-and from this it follows that
+and from this follows 
 \[
 dy = \left(\frac{F'-yH'}{H}dx\right).
 \]
-
-From this we see that
+Now we can see that
 \begin{align*}
 \left( \left( \frac{ \Psi_i}{x^{i+1}H} \right) - \left( \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
 & =  \left( \frac{F'}{x^iH} + \frac{yH'}{x^iH} + \frac{iy}{x^{i+1}} \right) dx \\
@@ -472,15 +470,15 @@ Similarly, if $i$ is odd then $B_g^ix^g + \ldots + B_1^ix = H'x + H$, and then t
 
 We can now define the following polynomials:
 \begin{align*}
-\Phi_i^x & =  A^i_{2g+1}x^{2g+1} + \ldots + A^i_{i+1}x^{i+1} \\
-\Psi_i^x & =  A^i_ix^i + \ldots + A^i_1x \\
-\Phi_i^y & =  B_g^ix^g + \ldots B_{i+1}^ix^{i+1} \\
-\Psi_i^y & =  B_{i-1}^ix^{i-1} + \ldots + B_1^ix.
+\Phi_i^x(x) & =  A^i_{2g+1}x^{2g+1} + \ldots + A^i_{i+1}x^{i+1} \\
+\Psi_i^x(x) & =  A^i_ix^i + \ldots + A^i_1x \\
+\Phi_i^y(x) & =  B_g^ix^g + \ldots B_{i+1}^ix^{i+1} \\
+\Psi_i^y(x) & =  B_{i-1}^ix^{i-1} + \ldots + B_1^ix.
 \end{align*}
 
 We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
 
-Clearly $\Phi_i = \Phi_i^x + y\Phi_i^y$ and $\Psi_i = \Psi_i^x + y\Psi_i^y$, and we will use these splittings of to show that $\Phi_i$ and $\Psi_i$ are regular on $U_2$ and $U_1$ respectively.
+Clearly $\Phi_i(x) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings of to show that $\Phi_i(x)$ and $\Psi_i(x)$ are regular on $U_2$ and $U_1$ respectively.\todo{not acutally phi and psi but the associated differentials}
 \todo[inline]{compute divisor of dx/xi+1H first?}
 
 We first compute the divisors associated to $\Phi_i$.
