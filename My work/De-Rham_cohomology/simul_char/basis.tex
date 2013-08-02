@@ -15,7 +15,6 @@
 %%% PAGE DIMENSIONS
 \usepackage{geometry} % to change the page dimensions
 \geometry{a4paper} % or letterpaper (US) or a5paper or....
-% \geometry{margins=2in} % for example, change the margins to 2 inches all round
 % \geometry{landscape} % set up the page for landscape
 % read geometry.pdf for detailed page layout information
 
@@ -65,6 +64,8 @@
 \usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{cabin}
 
 %Theorems and stuff
 \theoremstyle{plain}
@@ -208,9 +209,9 @@ We let $R$ be the ramification divisor of $\pi$.
 We recall that $R = \di(y) + 2(g+1)[P_\infty]$\todo{consider switching R and y} and that $\di( dx) = R - 4[P_\infty]$.
 
 On the other hand, if $p=2$, then the extension $K(X)$ will be $k(x,y)$, this time with $y$ defined by
-\[
+\begin{equation}\label{definep=2}
 y^2 - H(x)y = F(x),
-\]
+\end{equation}
 for some $H(x),F(x) \in k[x]$, such that $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
 Also, as noted in \cite[\S 6]{faithfulaction}\todo{more accurate citation - may be best to reference 18 month}, we may assume that $F(x)$ is not divisible by $x^2$.
 
@@ -433,16 +434,24 @@ Since $i\geq 1$ we conclude that $\frac{\psi_i}{2yx^i}dx$ is regular on $U_1 = X
 
 
 We now consider the case when $p=2$.
-We see that
+We start by noting that when we take the differential of \eqref{definep=2} we derive
+\[
+dF = d\left(y^2 + yH \right) = d(yH) = Hdy + ydH
+\]
+and from this it follows that
+\[
+dy = \left(\frac{F'-yH'}{H}dx\right).
+\]
+
+From this we see that
 \begin{align*}
 \left( \left( \frac{ \Psi_i}{x^{i+1}H} \right) - \left( \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
 & =  \left( \frac{F'}{x^iH} + \frac{yH'}{x^iH} + \frac{iy}{x^{i+1}} \right) dx \\
 & =  \frac{1}{x^i}\left( \frac{F' + yH'}{H} \right) dx + \frac{iy}{x^{i+1}}dx \\
 & =  x^{-i}dy + yd \left( x^{-i}\right) \\
-& =  dyx^{-i}.
+& =  dyx^{-i},
 \end{align*}
- \todo[inline]{explain penultimate line}
-Hence it only remains to show that $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_2$ and $U_1$ respectively.
+and so it only remains to show that $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_2$ and $U_1$ respectively.
 
 
 We define $A^i_{j+1} \in k$ for $0 \leq j \leq 2g$, and $B_k^i \in k$ for $1\leq k \leq g$ by the equation
@@ -463,10 +472,10 @@ So in this case we again see that $B_i^i = 0$.
 
 We can now define the following polynomials:
 \begin{align*}
-\Phi_i^x & = & A^i_{2g+1}x^{2g+1} + \ldots + A^i_{i+1}x^{i+1} \\
-\Psi_i^x & = & A^i_ix^i + \ldots + A^i_1x \\
-\Phi_i^y & = & B_g^ix^g + \ldots B_{i+1}^ix^{i+1} \\
-\Psi_i^y & = & B_{i-1}^ix^{i-1} + \ldots + B_1^ix.
+\Phi_i^x & =  A^i_{2g+1}x^{2g+1} + \ldots + A^i_{i+1}x^{i+1} \\
+\Psi_i^x & =  A^i_ix^i + \ldots + A^i_1x \\
+\Phi_i^y & =  B_g^ix^g + \ldots B_{i+1}^ix^{i+1} \\
+\Psi_i^y & =  B_{i-1}^ix^{i-1} + \ldots + B_1^ix.
 \end{align*}
 
 We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
