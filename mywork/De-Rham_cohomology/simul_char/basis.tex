@@ -65,7 +65,8 @@
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
 %\renewcommand{\familydefault}{\sfdefault}
-\usepackage{cabin}
+%\usepackage{cabin}
+\usepackage{kpfonts}
 %\usepackage[T1]{fontenc}
 
 %Theorems and stuff
@@ -252,7 +253,7 @@ We now compute the basis of $H^1(X,\cO_X)$, before explicitly stating the basis 
 \begin{proof}
  
 We prove this directly by \cech cohomology.
-By Leray's theorem \todo{citation} we know that $H^1(X,\cO_X) \cong \check{H}^1(\cU,\cO_X)$.
+By Leray's theorem we know that $H^1(X,\cO_X) \cong \check{H}^1(\cU,\cO_X)$.
 The \cech complex is as follows:
 \begin{equation*}
 0 \rightarrow \cO_X(U_1) \times \cO_X(U_2) \xrightarrow{d_0} \cO_X(U_1 \cap U_2) \xrightarrow{d_1} 0.
@@ -477,7 +478,6 @@ We can now define the following polynomials:
 We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
 
 Clearly $\Phi_i(x) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings of to show that $\frac{ \Phi_i(x) dx}{x^{i+1}H}$ and $\frac{\Psi_i(x) dx}{x^{i+1}H}$ are regular on $U_2$ and $U_1$ respectively.
-\todo[inline]{compute divisor of dx/xi+1H first?}
 
 We start by computing the divisor of $\frac{dx}{x^{i+1}H}$, since it is a common component to all the differentials we need to look at.
 This yields
@@ -509,7 +509,7 @@ We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, nam
 \end{align*}
 This completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \{P_0\}$.
 
-We now complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
+Now we complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
 \di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right)  = &  \di(\Psi_i^x)  - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
  \geq &  \di_0(\Psi_i^x ) - 2i[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
@@ -526,7 +526,6 @@ Similarly
  =   &\di_0(y) + \di_0(\Psi_i^y) -2(i+1)[P_0] + [P_\infty].
 \end{align*}
 In total, we have shown that the differential is regular on $U_1 = \backslash \{P_\infty \}$, and we have completed the proof.
-\todo[inline]{maybe jsut state which divisors are being used once at the start of the computations}
 
 
 \end{proof}
