@@ -132,14 +132,13 @@ We therefore recall the \cech cohomology relevant to both of these, starting wit
 
 By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
 Therefore the cover we shall be using is $U_1 = X\backslash \{ P_0 \}$ and $U_2 = X\backslash \{ P_\infty \}$, and we let ${\cal U} = \{ U_1, U_2\}$.
-Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$ given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
+Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$, given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
 In general we will not explicitly show that we are considering the restriction when applying this map, unless it is not clear from context.
-It is this map which gives us the differential map in the \cech cochain
+It is this map which gives us the differential $d$ in the \cech cochain
 \begin{equation*}
 0 \rightarrow \cO_X(U_1)\times \cO_X(U_2) \xrightarrow{d} \cO_X(U_1 \cap U_2) \rightarrow 0.
 \end{equation*}
-
-Then $\cechhone = \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}$ and hence
+The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}$ and hence
 \begin{equation}
 \hone \cong \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}  
  = \frac{\cO_X(U_1 \cap U_2)}{\{f_1 - f_2 | f_i \in \cO_X(U_i) \}}.
@@ -153,7 +152,7 @@ Since a curve doesn't have differentials of degree greater than one, this is jus
 0 \rightarrow \cO_X \rightarrow \Omega_X \rightarrow 0.
 \end{equation}
 
-We then use the same open cover and the same differentials as defined earlier to give us the \cech complex of \eqref{res}, which is
+We then use the open cover $\cal U$ and the \cech differentials as defined earlier to give us the \cech complex of \eqref{res}, which is
 \begin{equation}\label{bicomplex} \begin{array}{ccccccc}
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
@@ -173,12 +172,12 @@ since $U_1$ and $U_2$ are affine, this follows from Serre's affineness criterion
 
 Upon computing the first cohomology group of the total complex we see that $H^1_{{\text dR}}(X/k)$ is isomorphic to the space
 \begin{equation}\label{derhamconditions}
-\{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1|_{U_1\cap U_2} - \omega_2|_{U_1\cap U_2} \}
+\left\{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1|_{U_1\cap U_2} - \omega_2|_{U_1\cap U_2} \right\}
 \end{equation}
 
 quotiented by the subspace
 \[
-\{ (df_1, df_2, f_1|_{U_1\cap U_2} -f_2|_{U_1\cap U_2} )|f_i \in \cO_X(U_i)\}.
+\left\{  (df_1, df_2, f_1|_{U_1\cap U_2} -f_2|_{U_1\cap U_2} )|f_i \in \cO_X(U_i)\right\}.
 \]
 In what follows we will not explicitly write when we are taking restrictions of elements, unless it appears that it will add clarity to the situation.
 
@@ -186,7 +185,7 @@ We wish to compute a basis of $\derhamhone$ in order that we can see how $G$ act
 To do this we will compute bases for the two outer terms of the short exact sequence
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra \derhamhone \ra H^1(X,\cO_X) \ra 0.
-\end{equation}
+\end{equation}\todo{reference}
 A basis of $H^0(X,\Omega_X)$ is already known in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
 
 \begin{comment}
@@ -204,12 +203,14 @@ If $p \neq 2$ then the extension $K(X)$ of $k(x)$ will be $k(x,y)$ where $y$ sat
 y^2 = f(x)
 \end{equation}
 for some polynomial $f(x) \in k[x]$.
-Since we assumed that $\infty$ is a branch point $f(x)$ is necessarily of degree $2g+1$ (see, for example, \cite[Prop. 7.4.24]{liu}).
+Since we assumed that $\infty$ is a branch point then $f(x)$ is necessarily of degree $2g+1$ (see, for example, \cite[Prop. 7.4.24]{liu}).
 
 We let $R$ be the ramification divisor of $\pi$, and also recall that 
 \begin{equation}\label{pnot2divisors}
 \di(y)  = R - 2(g+1)[P_\infty] \text{ and that } \di( dx) = R - 4[P_\infty].
 \end{equation}
+
+
 On the other hand, if $p=2$, then the extension $K(X)$ will be $k(x,y)$, this time with $y$ defined by
 \begin{equation}\label{definep=2}
 y^2 - H(x)y = F(x),
@@ -226,18 +227,18 @@ We now recall the following divisors, which we will make use of throughout this 
 \di (x) & = 2[P_0] - 2[P_\infty] \label{divxp=2}\\
 \di (y) & = \di_0(y) - (2g+1)[P_\infty] \label{divyp=2}.
 \end{align}
-Here $\di_0(f)$ denotes the divisor of zeroes of the function $f$.
+Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
 
 
 To state the ramification points, and for later use, we suppose that 
 \begin{equation}\label{hcoefficients}
-H(x) = \prod_{i=1}^d (x-a_i)^{n_i} = b_dx^d + \ldots + b_1x
+H(x) = \prod_{i=1}^d (x-a_i)^{n_i} = x^d + b_{d-1}x^{d-1} + \ldots + b_1x
 \end{equation}
 for some $a_i, b_i \in  k$, $d \leq g$ and $n_i \in \mathbb N$.
 Then the $a_i \in \mathbb P_k^1$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points of $\pi$.
 Given this, we can now explicitly describe the ramification divisor as
 \[
-R = \sum_{i=1}^d 2n_i[P_i] - 2(g+1-d)[P_\infty].
+R = \sum_{i=1}^d 2n_i[P_i] + 2(g+1-d)[P_\infty].
 \]
 Details can be found in \cite[\S 6]{faithfulaction}.
 
@@ -303,7 +304,7 @@ If $p=2$ then we use a similar proof, but
 
 
 In order to state the basis of $\derhamhone$, as well as to shorten the proof of the following proposition, we define the following polynomial and differentials. 
-Suppose that $1 \leq i \leq g$
+We suppose that $1 \leq i \leq g$.
 Then, when $p\neq 2$ we define
 \[
 s_i(x) := f'(x) - \frac{2if(x)}{x} \in k[x]
