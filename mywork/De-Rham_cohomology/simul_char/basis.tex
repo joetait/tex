@@ -65,7 +65,7 @@
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
 %\renewcommand{\familydefault}{\sfdefault}
-\usepackage{kpfonts}
+\usepackage{cabin}
 %\usepackage[T1]{fontenc}
 
 %Theorems and stuff
@@ -315,7 +315,7 @@ S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)\in k[x]\oplus yk[x] \subseteq k(x,y).
 \]
 
 We now decompose these polynomials in to two parts, which will be used in the sequel.
-Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x), \phi_i(x) \in k[x]$ are the unique polynomials such that $\deg(\phi_i (x)) \leq g$ and $x^{g+1}$ divides $\psi_i(x)$.
+Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x), \phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\phi_i (x))$ is at most $g$ and $x^{g+1}$ divides $\psi_i(x)$.
 
 
 
@@ -352,7 +352,7 @@ Before proving this proposition we use it to prove the following corollary.
 
 \begin{cor}
 
-If $G$ acts faithfully on $X$ also acts faithfully on $\derhamhone$.
+If $G$ acts faithfully on $X$ then $G$ also acts faithfully on $\derhamhone$.
 
 \end{cor}
 \begin{proof}
@@ -377,8 +377,8 @@ We make use of the fact that the short exact sequence \eqref{ses} splits as a se
 
 It is clear that \eqref{two} and \eqref{four} are elements of \eqref{derhamconditions}, and it follows from \cite[Thm 6.1]{faithfulaction} that they are the image of the basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
 
-Moreover, it is obvious that the elements \eqref{one} and \eqref{three} map to the basis of $\hone$ given in Lemma \ref{basish1} if they belong to \eqref{derhamconditions}.
-So it only remains to show that the first two terms in \eqref{one} and \eqref{three} belong to \eqref{derhamconditions}.
+Moreover, it is obvious that if the elements \eqref{one} and \eqref{three} are in \eqref{derhamconditions} then they will map to the basis of $\hone$ given in Lemma \ref{basish1}.
+So it only remains to show that the first two terms in \eqref{one} and \eqref{three} do indeed belong to \eqref{derhamconditions}.
 
 
 We start with the case $p\neq 2$, and observe that
@@ -392,8 +392,8 @@ We start with the case $p\neq 2$, and observe that
 & =  d(yx^{-i}),
 \end{align*}
 with the penultimate line following from the defining equation \eqref{definingequationpnot2}.
-This shows that the elements in \eqref{one} satisfy \eqref{derhamconditions}.
-It remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_1$ and $U_2$ respectively.
+This shows that \eqref{one} satisfies one of the conditions to be in \eqref{derhamconditions}
+Now it remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_1$ and $U_2$ respectively.
 
 
 
@@ -422,7 +422,7 @@ The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
 & =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0],
 \end{align*}
 where the first line makes use of \eqref{pnot2divisors}.
-Since $i \leq g$, this shows that the differential is regular on $U_2 = X\backslash \{P_\infty\}$.
+Since $i \leq g$ clearly the differential is regular on $U_2 = X\backslash \{P_\infty\}$.
 
 Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 
@@ -433,7 +433,7 @@ Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 & \geq \left( \di_0(\psi_i) - 2g[P_\infty] \right) + 2(g+i-1)[P_\infty] -2i[P_0] \\
 & =  \di_0(\psi_i) + 2(i-1)[P_\infty] - 2i[P_0].
 \end{align*}
-Again, the first line uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \{P_0\}$.
+Again, the first line uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \{P_0\}$, concluding the $p=\neq 2$ case.
 
 
 We now consider the case when $p=2$.
@@ -462,7 +462,7 @@ S_i(x,y) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(B_g^i x^g + \ldots + B_1^i 
 \]
 Note that many of these coefficients may be zero.
 In particular we note that $B_i^i = 0$ for all $i$.
-If $i$ is even then $B_g^ix^g + \ldots + B_1^ix = H'x$ and so the coefficient of $x^i$ in $H'x$ is $ib_i = 0$.
+If $i$ is even then $B_g^ix^g + \ldots + B_1^ix = H'x$ and so the coefficient of $x^i$ in $H'x$ is $ib_i = 0$ (recall that we defined $b_i$ to be the coefficients of $H$ in \eqref{hcoefficients}).
 Similarly, if $i$ is odd then $B_g^ix^g + \ldots + B_1^ix = H'x + H$, and then the coefficient of $x^i$ is $ib_i+ ib_i = 2b_i = 0$.
 
 
@@ -479,49 +479,52 @@ We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^
 Clearly $\Phi_i(x) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings of to show that $\frac{ \Phi_i(x) dx}{x^{i+1}H}$ and $\frac{\Psi_i(x) dx}{x^{i+1}H}$ are regular on $U_2$ and $U_1$ respectively.
 \todo[inline]{compute divisor of dx/xi+1H first?}
 
-We first compute the divisors associated to $\Phi_i$.
+We start by computing the divisor of $\frac{dx}{x^{i+1}H}$, since it is a common component to all the differentials we need to look at.
+This yields
+\begin{align}
+\di \left( \frac{dx}{x^{i+1}H} \right) & = \di(dx) - \di (x^{i+1}) - \di (H) \nonumber \\
+& = (R-4[P_\infty]) - 2((i+1)[P_0] - (i+1)[P_\infty]) - (R - 2(g+1)[P_\infty]) \nonumber \\
+& = 2(g+i)[P_\infty] - 2(i+1)[P_0],
+\end{align}
+using \eqref{divdxp=2}, \eqref{divhp=2} and \eqref{divxp=2}.
+We now use this, along with \eqref{divyp=2} and the polynomials we defined in the preceding paragraphs to complete the proof.
+
+We begin by computing the divisors associated to $\Phi_i$.
 Firstly,
 \begin{align*}
-\di \left( \frac{\Phi_i^x dx}{x^{i+1} H} \right)  = &  \di(\Phi_i^x) + (R - 4[P_\infty]) - (2(i+1)[P_0] - 2(i+1)[P_\infty])\\
-& - (R - (2g+2) [P_\infty]) \\
+\di \left( \frac{\Phi_i^x dx}{x^{i+1} H} \right)  = &  \di(\Phi_i^x) -2(i+1)[P_0] + 2(g+i)[P_\infty]\\
  = & \left( \di_0(\Phi_i^x) -d_\Phi^x[P_\infty]\right) -2(i+1)[P_0] + 2(g+i)[P_\infty]\\
  \geq & \di_0(\Phi_i^x) - 2(2g+1)[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
  = &  \di_0(\Phi_i^x) - 2(i+1)[P_0] + 2(i-1-g)[P_\infty] \\
  =  & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + 2(i-g-1)[P_\infty],
 \end{align*}
-with the first line following from \eqref{divdxp=2}, \eqref{divhp=2} and \eqref{divxp=2}.
 From this we see that the differential is clearly regular on $U_2 = X \backslash \{P_\infty\}$.
 
 We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, namely
 \begin{align*}
-\di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right)  = & (\di_0(y) - (2g+1)[P_\infty]) + \di(\Phi_i^y) + (R - 4[P_\infty])\\
-& -(2(i+1)[P_0] - 2(i+1)[P_\infty]) - (R  - (2g+2)[P_\infty]) \\
+\di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right)  = & (\di_0(y) - (2g+1)[P_\infty]) + \di(\Phi_i^y) -2(i+1)[P_0] + 2(g+i)[P_\infty]\\
  = & \di_0(y) + \di(\Phi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
  = & \di_0(y) + \di_0(\Phi_i^y) - 2d_\Phi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
- = & \di_0(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (2i-2d_\Phi^y -1)[P_\infty],
+ = & \di_0(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (2i-2d_\Phi^y -1)[P_\infty].
 \end{align*}
-with the first line following from \eqref{divdxp=2}, \eqref{divhp=2}, \eqref{divxp=2}, \eqref{divyp=2}.
 This completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \{P_0\}$.
 
 We now complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
-\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right)  = &  \di(\Psi_i^x) + (R - 4[P_\infty]) - (2(i+1)[P_0] - 2(i+1)[P_\infty])\\
-&  - (R - 2(g+1)[P_\infty]) \\
+\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right)  = &  \di(\Psi_i^x)  - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
  \geq &  \di_0(\Psi_i^x ) - 2i[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
  = &  \di_0(\Psi_i^x) - 2i[P_0] + 2(g+1)[P_\infty],
 \end{align*}
-again using \eqref{divdxp=2}, \eqref{divhp=2}, \eqref{divxp=2}, and again it is clear that the divisor is positive on $U_1 = X \backslash \{P_\infty\}$.
+and it is clear that the divisor is positive on $U_1 = X \backslash \{P_\infty\}$.
 
 Similarly
 \begin{align*}
-\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) + R - 4[P_\infty] -2(i+1)[P_0] \\ 
-& + 2(i+1)[P_\infty] - R + (2g+2)[P_\infty] \\
+\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
  =  & \di_0(y) + \di(\Psi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
  = &  \di_0(y) + \di_0(\Psi_i^y) - 2d_\Psi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
  \geq &  \di_0(y) + \di_0(\Psi_i^y) -2(i-1)[P_\infty] -2(i+1)[P_0] + (2i-1)[P_\infty] \\
- =   &\di_0(y) + \di_0(\Psi_i^y) -2(i+1)[P_0] + [P_\infty], 
+ =   &\di_0(y) + \di_0(\Psi_i^y) -2(i+1)[P_0] + [P_\infty].
 \end{align*}
-which follows from \eqref{divdxp=2}, \eqref{divhp=2}, \eqref{divxp=2}, \eqref{divyp=2}.
 In total, we have shown that the differential is regular on $U_1 = \backslash \{P_\infty \}$, and we have completed the proof.
 \todo[inline]{maybe jsut state which divisors are being used once at the start of the computations}
 
