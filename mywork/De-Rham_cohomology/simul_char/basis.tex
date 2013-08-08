@@ -64,9 +64,9 @@
 \usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
-%\renewcommand{\familydefault}{\sfdefault}
-%\usepackage{cabin}
-\usepackage{kpfonts}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{cabin}
+%\usepackage{kpfonts}
 %\usepackage[T1]{fontenc}
 
 %Theorems and stuff
@@ -352,22 +352,25 @@ Before proving this proposition we use it to prove the following corollary.
 
 
 \begin{cor}
-
-If $G$ acts faithfully on $X$ then $G$ also acts faithfully on $\derhamhone$.
-
+If $G$ acts faithfully on $X$ then $G$ acts faithfully on $\derhamhone$ if and only if $p \neq 2$.
 \end{cor}
-\begin{proof}
 
+\begin{proof}
 Recall that $H^0(X,\Omega_X)$ injects in to $\derhamhone$.
 Then if $p \neq 2$, or if $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
 
 We now suppose that $p=2$ and $G$ does contain a hyperelliptic involution $\sigma$.
+By the same theorem from \cite{faithfulaction} as used in the last paragraph, we know that $G$ does not act faithfully on $\hzero$.
+Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully on $\hone$.
+In particular, $\sigma$ will act trivially on $\hone$.
+
+We can see exactly why this is from the view of \cech cohomology.
+If we fix a non-zero natural number $i$ then $\frac{y}[x^i}$, considered as an element of $\cO_X(U_1\cap U_2)$, is mapped to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. CONTINUE
+Then we know that $\sigma$ acts trivially on $H^1(X,\cO_X)$ since it acts trivially on the dual
 We see from the above theorem that the third entry in part \eqref{three} of the basis of $\derhamhone$ given by \cech cohomology is $x^{-i}y$ for $1 \leq i \leq g$.
 Now $\sigma(y) = y+ H$, and $\sigma$ preserves the cover $\mathcal U$, since it will fix the ramification points.
 Hence the action of $\sigma$ on the basis elements in Proposition \ref{basis} is just component wise, and in particular on the third component it is non-trivial.
 Hence the action of $G$ is faithful.
-\todo[inline]{correct proof}
-
 \end{proof}
 
 
