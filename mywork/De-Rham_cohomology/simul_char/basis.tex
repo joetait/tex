@@ -365,12 +365,30 @@ Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully 
 In particular, $\sigma$ will act trivially on $\hone$.
 
 We can see exactly why this is from the view of \cech cohomology.
-If we fix a non-zero natural number $i$ then $\frac{y}[x^i}$, considered as an element of $\cO_X(U_1\cap U_2)$, is mapped to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. CONTINUE
-Then we know that $\sigma$ acts trivially on $H^1(X,\cO_X)$ since it acts trivially on the dual
-We see from the above theorem that the third entry in part \eqref{three} of the basis of $\derhamhone$ given by \cech cohomology is $x^{-i}y$ for $1 \leq i \leq g$.
-Now $\sigma(y) = y+ H$, and $\sigma$ preserves the cover $\mathcal U$, since it will fix the ramification points.
-Hence the action of $\sigma$ on the basis elements in Proposition \ref{basis} is just component wise, and in particular on the third component it is non-trivial.
-Hence the action of $G$ is faithful.
+If we fix a non-zero natural number $i$ then $\frac{y}{x^i}$, considered as an element of $\cO_X(U_1\cap U_2)$, is mapped to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
+Now we can split $\frac{H(x)}{x^i}$ as follows, 
+\begin{equation*}
+\frac{H(x)}{x^i} =  \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i} - \left( - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i} \right),
+\end{equation*}
+and since this is clearly the difference of an element of $\cO_x(U_1)$ and an element of $\cO_x(U_2)$ we see that $\frac{H(x)}{x^i}$ is zero on $\hone$.
+We let 
+\[
+H_1(x) = \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i}
+\]
+and 
+\[
+H_2(x) = - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i}.
+\]
+
+Despite having a trivial action on both of the outside terms of \eqref{ses}, when we apply this action to $\derhamhone$ it is not trivial. 
+We can describe exactly how sigma acts on the elements of \eqref{three} using $H_1(x)$ and $H_2(x)$:
+\begin{multline}
+\sigma \left( \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right)\right) = \\
+ \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + d\left(H'_1(x)\right),  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ d\left(H'_2(x)\right) , x^{-i}y \right).
+\end{multline}
+Hence the action is trivial if and only if $d\left(H_1'(x)\right) = d\left(H_2'(x)\right) =0$.
+This cannot happen though, since we can always find an $i\leq d$ such that $i \not\equiv d\ \text{mod}\ 2$, and then $d\left(H_2(x)\right) = H_2'(x) \neq 0$.
+\todo[inline]{this is a lie if d is very small - i.e. one and maybe two. solve this}
 \end{proof}
 
 
