@@ -295,7 +295,7 @@ In order for this function to be in $\cO_X(U_1)$ we require that $\frac{p(x)}{q'
 This is only possible if $\frac{p(x)}{q(x)}$ has a pole or poles at points other than $P_0$ and $P_\infty$, since $\deg(\di(f_1)) = 0$.
 The only zeroes of our function so far are at the ramification points, so clearly the poles of $\frac{p(x)}{q'(x)}$ must be at the ramification points too.
 Since $p$ and $q'$ are functions of $x$ any pole at a ramification point must be of even order; in particular they must be at least order 2.
-Since we have the zeroes at the ramification points of $y$ and $x^i$ are exactly order 1 (except at the points $P_0$ and $P_\infty$, which we are not considering), this contradicts $f_1$ being regular on $U_1$.
+ince we have the zeroes at the ramification points of $y$ and $x^i$ are exactly order 1 (except at the points $P_0$ and $P_\infty$, which we are not considering), this contradicts $f_1$ being regular on $U_1$.
 
 Hence such an $f_1$ cannot exist, and the image of $x^{-i}y$ in $\check{H}^1(\cU,\cO_X)$ is non-zero (for all $i$).
 
@@ -311,9 +311,9 @@ Then, when $p\neq 2$ we define
 s_i(x) := f'(x) - \frac{2if(x)}{x} \in k[x]
 \]
 and if $p = 2$ we define
-\[
+\begin{equation}\label{capitals}
 S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)\in k[x]\oplus yk[x] \subseteq k(x,y).
-\]
+\end{equation}
 
 We now decompose these polynomials in to two parts, which will be used in the sequel.
 Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x), \phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\phi_i (x))$ is at most $g$ and $x^{g+1}$ divides $\psi_i(x)$.
@@ -553,18 +553,18 @@ In total, we have shown that the differential is regular on $U_1 = \backslash \{
 
 \section{Computing the residue}
 
-We include the following lemma for the sake of completeness.
+Introduction needs to be finalised once the proof in the previous section is completed.
 
+\todo[inline]{check that capital h has been used, check that I have been consistent with f(x) or just f}
 \begin{lem}
 If $p \neq 2$ then ${\rm res}_{P_\infty}(\frac{1}{x}dx) = -2$.
-If $p=2$ then ${\rm res}_{P_\infty}\left(\frac{ydx}{xh(x)}\right) = 1$.
+If $p=2$ then ${\rm res}_{P_\infty}\left(\frac{ydx}{xH(x)}\right) = 1$.
 \end{lem}
 
 \begin{proof}
 
 We first consider the case $p\neq 2$.
-To start with we note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$.
-Indeed we can compute the order of $t$ at $P_\infty$ as follows
+We note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$ as can be seen by computing the order of $t$ at $P_\infty$ as follows
 \begin{eqnarray}
 \ord_{P_\infty}(t) & = & \frac{1}{2}\ord_{P_\infty}(t^2) \\
   & = & \frac{1}{2}\ord_{P_\infty}\left( \frac{f}{x^{2g+2}} \right) \\
@@ -580,26 +580,20 @@ dt^2 & = & d \left( \frac{f(x)}{x^{2g+2}} \right) \\
 & = & \frac{x^{2g+2}f' + x^{2g+1}f}{x^{4g+4}} dx \\
 & = & \frac{1}{x^{2g+2}} \left( f' + \frac{f}{x} \right) dx
 \end{eqnarray*}
-and it then follows that
+from which we conclude that
 \[
 \frac{1}{x}dx = \frac{-2tx^{2g+1}}{\left(\frac{(2g+2)f}{x} - f'\right)} dt.
 \]
 
 
-We now let $h = \left(\frac{(2g+2)f}{x} - f'\right)$, and noting that the coefficient of $x^{2g}$ in $h$ is $(2g+2)a_{2g+1} - (2g+1)a_{2g+1} = a_{2g+1}$, we see that $h$ is a degree $2g$ polynomial in $x$.
-We wish to compute the coefficient of $t^{-1}$ in the expansion of $\frac{1}{x}dx$ at $P_\infty$ and computing the first coefficient of $\frac{h}{x^{2g+1}}$ is a key step.
+We now let $p(x) = \left(\frac{(2g+2)f(x)}{x} - f'(x)\right)$, and noting that the coefficient of $x^{2g}$ in $p(x)$ is $(2g+2)a_{2g+1} - (2g+1)a_{2g+1} = a_{2g+1}$, we see that $h(x)$ is a degree $2g$ polynomial in $x$.
+We wish to compute the coefficient of $t^{-1}$ in the expansion of $\frac{1}{x}dx$ at $P_\infty$ and for this we require the following expansions
+\begin{align}
+\frac{p(x)}{x^{2g+1}} = \frac{a_{2g+1}x^{2g}}{x^{2g+1}} + \ldots = \frac{a_{2g+1}}{x} + \ldots \qquad \text{and} \qquad t^2 = \frac{f}{x^{2g+2} } = \frac{a_{2g+1}}{x} + \ldots
+\end{align}
 
-Now
-\[
-\frac{h}{x^{2g+1}} = \frac{a_{2g+1}x^{2g}}{x^{2g+1}} + \ldots = \frac{a_{2g+1}}{x} + \ldots
-\]
-Similarly
-\[
-t^2 = \frac{f}{x^{2g+2} } = \frac{a_{2g+1}}{x} + \ldots
-\]
-
-Since $\ord_{P_\infty}\left(\frac{h}{x^{2g+1}}\right) = 2$ we know that $\frac{h}{x^{2g+1}} = \sum_{j\geq 2} c_j t^j$ for some $c_j\in k$, and from the above computations we can see that $c_2 = 1$.
-We also know that $\frac{x^{2g+1}}{h} = \sum_{k\geq -2} d_kt^k$, for some $d_k\in k$, and clearly $d_{-2} = 1$.
+Since $\ord_{P_\infty}\left(\frac{p(x)}{x^{2g+1}}\right) = 2$ we know that $\frac{p(x)}{x^{2g+1}} = \sum_{j\geq 2} c_j t^j$ for some $c_j\in k$, and from the above computations we can see that $c_2 = 1$.
+We also know that $\frac{x^{2g+1}}{p(x)} = \sum_{k\geq -2} d_kt^k$, for some $d_k\in k$, and clearly $d_{-2} = 1$.
 Now
 \[
 \frac{1}{x}dx = \left( -2t \cdot \sum_{i\geq -2} d_it^i\right) dt 
@@ -609,11 +603,12 @@ This complets the proof of the lemma when $p\neq 2$.
 
 We now turn to the case when $p=2$.
 We now wish to compute the residue of $\frac{ydx}{xH(x)}$ at $P_\infty$.
-We start by noting that $t = \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$; we check this by computing the divisor:
-\[
-\di(t) = \di_0(y) - (2g+1)[P_\infty] -(2g+2)[P_0] + (2g+2)[P_\infty] = \di_0(y)-(2g+2)[P_0] + [P_\infty].
-\]
-
+We start by noting that $t = \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$ which we check by computing the divisor:
+\begin{align*}
+\di(t) & = \di_0(y) - (2g+1)[P_\infty] -(2g+2)[P_0] + (2g+2)[P_\infty] \\
+& = \di_0(y)-(2g+2)[P_0] + [P_\infty],
+\end{align*}
+using \eqref{divxp=2} and \eqref{divyp=2}.
 So clearly $t$ is a uniformising parameter at $P_\infty$.
 
 We now wish to write $\frac{y}{xH(x)}dx$ as $r(x,y)dt$ for some $r \in k(x,y)$.
@@ -628,7 +623,8 @@ we conclude that
 \[
 dy = \left( \frac{F'+yH'}{H} \right) dx.
 \]
-We now rewrite $dt$ as follows:
+
+We also rewrite $dt$ as follows:
 \begin{eqnarray*}
 dt & = & d\left( \frac{y}{x^{g+1}} \right) \\
 & = & yd\frac{1}{x^{g+1}} + \frac{1}{x^{g+1}}dy \\
@@ -640,11 +636,9 @@ In total we then have
 \[
 \frac{y}{xH(x)}dx = \frac{x^{g+1}y}{S_{g+1}(x,y)}dt
 \]
-where $S_{g+1}(x,y) = xF' + yxH' + (g+1)yH$.
+where $S_{g+1}(x,y)$ is as defined in \eqref{capitals}.
 
 We know that $\frac{x^{g+1}y}{S_{g+1}(x,y)} = \sum_{i\geq -1} c_i t^i$, with $c_i \in k$, and we wish to compute $c_{-1}$.
-
-
 We shall do this by computing the coefficient of $t$ in the expansion $\frac{S_{g+1}(x,y)}{x^{g+1}y} = \sum_{i\geq 1}d_it^i$.
 We can split up $\frac{S_{g+1}(x,y)}{x^{g+1}y}$ in to three terms, namely $\frac{xF'}{x^{g+1}y}$, $\frac{yxH'}{x^{g+1}y}$ and $\frac{yH}{x^{g+1}y}$.
 Each of these terms can of course be written as a power series in $t$, but only the first term mentioned has order 1 at $P_\infty$, and hence this term will uniquely determine $d_1$.
@@ -667,9 +661,12 @@ It follows that $d_1 = \alpha_{2g+1} \cdot \frac{1}{\alpha_{2g+1}} = 1$.
 
 
 We finally use this to compute $c_{-1}$.
-Since $1 = \frac{S_{g+1}(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{S_{g+1}(x,y)} = \left( \sum_{i\geq 1}d_it^i \right) \cdot \left( \sum_{i\geq -1}c_it^i\right)$, we conclude that $c_{-1} = \frac{1}{d_{1}} = 1$.
+Since 
+\begin{equation*}
+1 = \frac{S_{g+1}(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{S_{g+1}(x,y)} = \left( \sum_{i\geq 1}d_it^i \right) \cdot \left( \sum_{i\geq -1}c_it^i\right)
+\end{equation*}
+we conclude that $c_{-1} = \frac{1}{d_{1}} = 1$.
 
-\todo{clean up this last section}
 
 
 
