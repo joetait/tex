@@ -64,9 +64,9 @@
 \usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage{cabin}
-%\usepackage{kpfonts}
+%\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{cabin}
+\usepackage{kpfonts}
 %\usepackage[T1]{fontenc}
 
 %Theorems and stuff
@@ -171,7 +171,7 @@ since $U_1$ and $U_2$ are affine, this follows from Serre's affineness criterion
 
 
 
-Upon computing the first cohomology group of the total complex we see that $H^1_{{\text dR}}(X/k)$ is isomorphic to the space
+After computing the first cohomology group of the total complex \eqref{bicomplex} we see that $H^1_{{\text dR}}(X/k)$ is isomorphic to the space
 \begin{equation}\label{derhamconditions}
 \left\{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1|_{U_1\cap U_2} - \omega_2|_{U_1\cap U_2} \right\}
 \end{equation}
@@ -243,7 +243,7 @@ R = \sum_{i=1}^d 2n_i[P_i] + 2(g+1-d)[P_\infty].
 \]
 Details can be found in \cite[\S 6]{faithfulaction}.
 
-We now compute the basis of $H^1(X,\cO_X)$, before explicitly stating the basis of $\derhamhone$.\\
+We now compute the basis of $H^1(X,\cO_X)$, and then state the basis of $\derhamhone$ in the following theorem.\\
 \todo[inline]{not edited, since may use different proof}
 \begin{lem}\label{basish1}
  
