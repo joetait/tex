@@ -279,7 +279,7 @@ On the other hand, if $p =2$ then
 \begin{align*}
     \di(x^{-i}y) & = \di(y) - \di(x^i) \\
     & = \di_0(y) - (2g+1)[P_0] -2i[P_0] + 2i[P_\infty] \\
-    & = \di_0(y) -2i[P_0] - ( 2g + 1 -2i).
+    & = \di_0(y) -2i[P_0] - ( 2g + 1 -2i)[P_\infty].
 \end{align*}
 So we see that, regardless of characteristic, the only poles are at $P_0$ and $P_\infty$, and hence $x^{-i}y \in \cO_X(U_1 \cap U_2)$.
 
@@ -685,13 +685,26 @@ $s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0 \ {\rm and } \ S_i(x) = A_{2
 
 
 \begin{note}
-For $p\neq 2$ the same basis should work. 
+For $\infty$ is not a branch point the same basis should work. 
 Consider $y^2 = f(x)$ where the degree of $f(x)$ is $2g+2$ (i.e. $\infty$ is not ramified), with projection map $\pi : X \rightarrow \mathbb P_k^1$.
-Then we can take the cover to be $U_1 := X \backslash \{\pi^{-1}(0)$ and $U_2 := X \backslash \{\pi^{-1}(\infty)}$.
+Then we can take the cover to be $U_1 := X \backslash \{\pi^{-1}(0)\}$ and $U_2 := X \backslash \{\pi^{-1}(\infty)\}$.
 Then we have $\frac{x^idx}{y} \cdot \frac{y}{x^{j}} = x^{i-j}dx$.
 The divisor of this is then $(i-j)D_0 -(i-j)D_\infty + R - 2D_\infty$.
-then if $i-j = -1$ this has poles at <F3><F2>
+Then if $i-j = -1$ this has poles at at all points supported at by $D_0$ and $D_\infty$.
 
+
+If $p=2$ and $\infty$ is not a branch point then we need to consider the defining equation $y^2 - h(x)y = f(x)$ where $\deg(h)=g+1$, and $\deg(f)$ can be anything from 0 to $2g+2$.
+From work (which I think was not in 18 month report), if we suppose that $P_\infty$ and $P_\infty'$ are the two points in the pre-image of $\infty \in \mathbb P_k^1$, then the divisor of $y$ is
+\[
+\di(y) = \di_0(y) +(g+1 - \deg(f))[P_\infty] - (g+1)[P_\infty'],
+\]
+up to parity of $P_\infty$ and $P_\infty'$.
+So then, after some computation, we get
+\[
+\di\left(\frac{yx^{i-j}}{H(x)}dx \right) = \di_0(y) + (i-j)D_0 + (g-1-(i-j))D_\infty + (g+1-\deg(f))[P_\infty] -(g+1)[P_\infty'].
+\]
+So if $i-j = -1$ we clearly have a pole of order 1 at $P_\infty'$.
+\end{note}
 
 \bibliography{biblio}
 \bibliographystyle{plain}
