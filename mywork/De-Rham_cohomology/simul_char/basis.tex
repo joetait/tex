@@ -492,13 +492,14 @@ Similarly, if $i$ is odd then $B_g^ix^g + \ldots + B_1^ix = H'x + H$, and then t
 
 
 We can now define the following polynomials:
-\begin{align*}
+\begin{equation}\label{Split}
+\begin{split}
 \Phi_i^x(x) & =  A^i_{2g+1}x^{2g+1} + \ldots + A^i_{i+1}x^{i+1} \\
 \Psi_i^x(x) & =  A^i_ix^i + \ldots + A^i_1x \\
 \Phi_i^y(x) & =  B_g^ix^g + \ldots B_{i+1}^ix^{i+1} \\
 \Psi_i^y(x) & =  B_{i-1}^ix^{i-1} + \ldots + B_1^ix.
-\end{align*}
-
+\end{split}
+\end{equation}
 We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
 
 Clearly $\Phi_i(x) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings of to show that $\frac{ \Phi_i(x) dx}{x^{i+1}H}$ and $\frac{\Psi_i(x) dx}{x^{i+1}H}$ are regular on $U_2$ and $U_1$ respectively.
@@ -701,15 +702,23 @@ From work (which I think was not in 18 month report), if we suppose that $P_\inf
 \]
 up to parity of $P_\infty$ and $P_\infty'$.
 So then, after some computation, we get
-\[
-\di\left(\frac{yx^{i-j}}{H(x)}dx \right) = \di_0(y) + (i-j)D_0 + (g-1-(i-j))D_\infty + (g+1-\deg(f))[P_\infty] -(g+1)[P_\infty'].
-\]
+\begin{multline*}
+\di\left(\frac{yx^{i-j}}{H(x)}dx \right) = \di_0(y) + (i-j)D_0 + (g-1-(i-j))D_\infty \\ + (g+1-\deg(f))[P_\infty] -(g+1)[P_\infty'].
+\end{multline*}
 So if $i-j = -1$ we clearly have a pole of order 1 at $P_\infty'$.
 \end{note}
 
 Now a short note about whether the main theorem still holds if we do not specify the ramification points.
 \begin{note}
+Clearly when $p\neq 2$ the same basis holds. In the proof we use the fact that $\phi_i$ has a factor of at least $x^{g+1}$, giving a sufficient zero at $P_0$.
+This factor is still in the polynomial if we increase its potential degree.
+Of course, we may have to replace $P_0$ with $D_0$, but the essential point still holds.
+Similarly, after possibly replacing $P_\infty$ by $D_\infty$ we have almost the same argument for $\psi_i$.
+So the basis is the same when $p\neq2$.
 
+When $p=2$ the basis is also the same.
+We first note that whilst the degree of the highest and lowest ordered terms may change in \eqref{Split}, it is still the case that te coefficient $B_i^i =0$, using exactly the same arguments.
+This allows us to use essentially the same arguments, again with the exception of changing $P_\infty$ and $P_0$ to $D_\infty$ and $D_0$.
 \end{note}
 
 \bibliography{biblio}
