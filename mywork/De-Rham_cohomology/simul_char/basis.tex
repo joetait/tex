@@ -125,17 +125,17 @@
 \section{Background}
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
-By an automorphism of $ \mathbb P_k^1$ we may assume that 0 and $\infty$ are branch points of the corresponding double cover $\pi : X \rightarrow \mathbb P_k^1$.
-We denote the ramification points in $X$ of 0 and $\infty$ by $P_0$ and $P_\infty$ respectively.
+We let $\pi \colon X \rightarrow \mathbb P_k^1$ be the corresponding degree two map.
 We also suppose that we have a finite group $G$ acting fatihfully on $X$.
 
 We will be using \cech cohomology to compute both $\hone$ and the de-Rham hypercohomology.
 We therefore recall the \cech cohomology relevant to both of these, starting with $\hone$.
 
 By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
-Therefore the cover we shall be using is $U_1 = X\backslash \{ P_0 \}$ and $U_2 = X\backslash \{ P_\infty \}$, and we let ${\cal U} = \{ U_1, U_2\}$.
+The cover we shall be using is $U_1 = X\backslash \pi^{-1}(0)$ and $U_2 = X\backslash  \pi^{-1}(\infty) $, both of which are affine sets.
+We let ${\cal U} = \{ U_1, U_2\}$.
 Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$, given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
-In general we will not explicitly show that we are considering the restriction when applying this map, unless it is not clear from context.
+In general we will not explicitly show that we are considering the restriction when applying this map, unless it adds clarity.
 It is this map which gives us the differential $d$ in the \cech cochain
 \begin{equation*}
 0 \rightarrow \cO_X(U_1)\times \cO_X(U_2) \xrightarrow{d} \cO_X(U_1 \cap U_2) \rightarrow 0.
@@ -176,15 +176,13 @@ After computing the first cohomology group of the total complex \eqref{bicomplex
 \begin{equation}\label{derhamconditions}
 \left\{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1|_{U_1\cap U_2} - \omega_2|_{U_1\cap U_2} \right\}
 \end{equation}
-
 quotiented by the subspace
 \[
 \left\{  (df_1, df_2, f_1|_{U_1\cap U_2} -f_2|_{U_1\cap U_2} )|f_i \in \cO_X(U_i)\right\}.
 \]
-In what follows we will not explicitly write when we are taking restrictions of elements, unless it appears that it will add clarity to the situation.
 
-We wish to compute a basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$.
-To do this we will compute bases for the two outer terms of the short exact sequence
+We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$.
+To do this we will compute $k$-bases for the two outer terms of the short exact sequence
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra \derhamhone \ra H^1(X,\cO_X) \ra 0.
 \end{equation}\todo{reference}
@@ -205,11 +203,19 @@ If $p \neq 2$ then the extension $K(X)$ of $k(x)$ will be $k(x,y)$ where $y$ sat
 y^2 = f(x)
 \end{equation}
 for some polynomial $f(x) \in k[x]$.
-Since we assumed that $\infty$ is a branch point then $f(x)$ is necessarily of degree $2g+1$ (see, for example, \cite[Prop. 7.4.24]{liu}).
 
-We let $R$ be the ramification divisor of $\pi$, and also recall that 
+For any $a\in \mathbb P_k^1$ we let $D_a$ denote the divisor $\pi^*([a])$.
+Hence we have
+\begin{equation}\label{divisorofpoints}
+D_a= 
+\begin{cases}
+ [P_a] & \text{if $a$ is a branch point;} \\
+ [P_a] + [P_a'] & \text{otherwise.}
+\end{cases}
+\end{equation}
+We then let $R$ be the ramification divisor of $\pi$, and recall that 
 \begin{equation}\label{pnot2divisors}
-\di(y)  = R - 2(g+1)[P_\infty] \text{ and that } \di( dx) = R - 4[P_\infty].
+\di(y)  = R - (g+1)D_\infty \text{ and that } \di( dx) = R - 2D_\infty.
 \end{equation}
 
 
@@ -218,16 +224,16 @@ On the other hand, if $p=2$, then the extension $K(X)$ will be $k(x,y)$, this ti
 y^2 - H(x)y = F(x),
 \end{equation}
 for some $H(x),F(x) \in k[x]$, such that $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
-From this condition we can, as noted in \cite[\S 6]{faithfulaction}\todo{more accurate citation, reference 18 month. check if needed}, deduce that $F(x)$ is not divisible by $x^2$.
+
 
 Again, we let $R$ denote the ramification divisor, which we write explicilty below.
 In what follows it will be clear from context which characteristic we are in whenever referring to $R$, and hence which ramification divisor is being considered at any time.
 We now recall the following divisors, which we will make use of throughout this article:
 \begin{align}
-\di (dx) & = R - 4[P_\infty] \label{divdxp=2}\\
-\di (H(x)) & = R - 2(g+1)[P_\infty] \label{divhp=2}\\
-\di (x) & = 2[P_0] - 2[P_\infty] \label{divxp=2}\\
-\di (y) & = \di_0(y) - (2g+1)[P_\infty] \label{divyp=2}.
+\di (dx) & = R - 2D_\infty \label{divdxp=2}\\
+\di (H(x)) & = R - (g+1)D_\infty \label{divhp=2}\\
+\di (x) & = D_0 - D_\infty \label{divxp=2}\\
+\di (y) & = \di_0(y) - (2g+1)D_\infty \label{divyp=2}.
 \end{align}
 Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
 
@@ -240,7 +246,7 @@ for some $a_i, b_i \in  k$, $d \leq g$ and $n_i \in \mathbb N$.
 Then the $a_i \in \mathbb P_k^1$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points of $\pi$.
 Given this, we can now explicitly describe the ramification divisor as
 \[
-R = \sum_{i=1}^d 2n_i[P_i] + 2(g+1-d)[P_\infty].
+R = \sum_{i=1}^d 2n_i[P_i] + (g+1-d)D_\infty.
 \]
 Details can be found in \cite[\S 6]{faithfulaction}.
 
@@ -271,15 +277,15 @@ We first compute the divisor of $x^{-i}y$ in order to check that it is indeed re
 When $p \neq 2$ then
 \begin{align*}
     \di(x^{-i}y) & = \di(y) - \di(x^i) \\
-    & = R - 2(g+1)[P_\infty] - 2i[P_0] + 2i[P_\infty] \\
-    & = (R - [P_0] - [P_\infty]) -(2i-1)[P_0] - (2g +1 -2i)[P_\infty].
+    & = R - (g+1)D_\infty - iD_0 + iD_\infty \\
+    & = (R - D_0 - D_\infty) -(2i-1)D_0 - (2g +1 -2i)D_\infty.
 \end{align*}
 
 On the other hand, if $p =2$ then 
 \begin{align*}
     \di(x^{-i}y) & = \di(y) - \di(x^i) \\
-    & = \di_0(y) - (2g+1)[P_0] -2i[P_0] + 2i[P_\infty] \\
-    & = \di_0(y) -2i[P_0] - ( 2g + 1 -2i)[P_\infty].
+    & = \di_0(y) - (2g+1)D_0 -iD_0 + iD_\infty \\
+    & = \di_0(y) -iD_0 - ( 2g + 1 -2i)D_\infty.
 \end{align*}
 So we see that, regardless of characteristic, the only poles are at $P_0$ and $P_\infty$, and hence $x^{-i}y \in \cO_X(U_1 \cap U_2)$.
 
@@ -441,10 +447,10 @@ The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
 
 \begin{align*}
 \di\left( \frac{-\phi_i}{2yx^i}dx \right) & =  \di(\phi_i) -\di(y) - \di(x^i) + \di (dx) \\
-& =  \di(\phi_i) - ( R - 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R - 4[P_\infty]) \\
-& =  \left( \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + 2(g+1)[P_0] - 2d_\phi[P_\infty]\right) - 2i[P_0] + 2(g+i-1)[P_\infty] \\
-& \geq  \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + 2(g+1)[P_0] - 4g[P_\infty] - 2i[P_0] + 2(g+i-1)[P_\infty] \\
-& =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + 2(i-g-1)[P_\infty] + 2(g-i+1)[P_0],
+& =  \di(\phi_i) - ( R - (g+1)D_\infty) - (iD_0 - iD_\infty) + (R - 2D_\infty) \\
+& =  \left( \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + (g+1)D_0 - d_\phi D_\infty\right) - iD_0 + (g+i-1)D_\infty \\
+& \geq  \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + (g+1)D_0 - 2gD_\infty - iD_0 + (g+i-1)D_\infty \\
+& =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + (i-g-1)D_\infty + (g-i+1)D_0,
 \end{align*}
 where the first line makes use of \eqref{pnot2divisors}.
 Since $i \leq g$ clearly the differential is regular on $U_2 = X\backslash \{P_\infty\}$.
@@ -453,10 +459,10 @@ Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 
 \begin{align*}
 \di \left( \frac{\psi_i}{2yx^i}dx\right) & =  \di(\psi_i) - \di(y) - \di(x^i) + \di (dx) \\
-& =  \di (\psi_i ) -(R - 2(g+1)[P_\infty]) - (2i[P_0] - 2i[P_\infty]) + (R -4[P_\infty]) \\
-& =  \di(\psi_i) + 2(g+i-1)[P_\infty] -2i[P_0] \\
-& \geq \left( \di_0(\psi_i) - 2g[P_\infty] \right) + 2(g+i-1)[P_\infty] -2i[P_0] \\
-& =  \di_0(\psi_i) + 2(i-1)[P_\infty] - 2i[P_0].
+& =  \di (\psi_i ) -(R - (g+1)D_\infty) - (iD_0 - iD_\infty) + (R -2D_\infty) \\
+& =  \di(\psi_i) + (g+i-1)D_\infty -iD_0 \\
+& \geq \left( \di_0(\psi_i) - gD_\infty \right) + (g+i-1)D_\infty -iD_0 \\
+& =  \di_0(\psi_i) + (i-1)D_\infty - iD_0.
 \end{align*}
 Again, the first line uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \{P_0\}$, concluding the $p=\neq 2$ case.
 
@@ -508,8 +514,8 @@ We start by computing the divisor of $\frac{dx}{x^{i+1}H}$, since it is a common
 This yields
 \begin{align}
 \di \left( \frac{dx}{x^{i+1}H} \right) & = \di(dx) - \di (x^{i+1}) - \di (H) \nonumber \\
-& = (R-4[P_\infty]) - 2((i+1)[P_0] - (i+1)[P_\infty]) - (R - 2(g+1)[P_\infty]) \nonumber \\
-& = 2(g+i)[P_\infty] - 2(i+1)[P_0],
+& = R-2D_\infty) - ((i+1)D_0 - (i+1)D_\infty) - (R - (g+1)D_\infty) \nonumber \\
+& = (g+i)D_\infty - (i+1)D_0,
 \end{align}
 using \eqref{divdxp=2}, \eqref{divhp=2} and \eqref{divxp=2}.
 We now use this, along with \eqref{divyp=2} and the polynomials we defined in the preceding paragraphs to complete the proof.
@@ -517,38 +523,38 @@ We now use this, along with \eqref{divyp=2} and the polynomials we defined in th
 We begin by computing the divisors associated to $\Phi_i$.
 Firstly,
 \begin{align*}
-\di \left( \frac{\Phi_i^x dx}{x^{i+1} H} \right)  = &  \di(\Phi_i^x) -2(i+1)[P_0] + 2(g+i)[P_\infty]\\
- = & \left( \di_0(\Phi_i^x) -d_\Phi^x[P_\infty]\right) -2(i+1)[P_0] + 2(g+i)[P_\infty]\\
- \geq & \di_0(\Phi_i^x) - 2(2g+1)[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
- = &  \di_0(\Phi_i^x) - 2(i+1)[P_0] + 2(i-1-g)[P_\infty] \\
- =  & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + 2(i-g-1)[P_\infty],
+\di \left( \frac{\Phi_i^x dx}{x^{i+1} H} \right)  = &  \di(\Phi_i^x) -(i+1)D_0 + (g+i)D_\infty\\
+ = & \left( \di_0(\Phi_i^x) -d_\Phi^xD_\infty\right) -(i+1)D_0 + (g+i)D_\infty\\
+ \geq & \di_0(\Phi_i^x) - (2g+1)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
+ = &  \di_0(\Phi_i^x) - (i+1)D_0 + (i-1-g)D_\infty \\
+ =  & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + (i-g-1)D_\infty,
 \end{align*}
 From this we see that the differential is clearly regular on $U_2 = X \backslash \{P_\infty\}$.
 
 We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, namely
 \begin{align*}
-\di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right)  = & (\di_0(y) - (2g+1)[P_\infty]) + \di(\Phi_i^y) -2(i+1)[P_0] + 2(g+i)[P_\infty]\\
- = & \di_0(y) + \di(\Phi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
- = & \di_0(y) + \di_0(\Phi_i^y) - 2d_\Phi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
- = & \di_0(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (2i-2d_\Phi^y -1)[P_\infty].
+\di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right)  = & (\di_0(y) - (2g+1)D_\infty) + \di(\Phi_i^y) -(i+1)D_0 + (g+i)D_\infty\\
+ = & \di_0(y) + \di(\Phi_i^y) -(i+1)D_0 + (2i -1)D_\infty \\
+ = & \di_0(y) + \di_0(\Phi_i^y) - d_\Phi^yD_\infty - (i+1)D_0 + (2i-1)D_\infty \\
+ = & \di_0(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (2i-2d_\Phi^y -1)D_\infty.
 \end{align*}
 This completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \{P_0\}$.
 
 Now we complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
-\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right)  = &  \di(\Psi_i^x)  - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
- \geq &  \di_0(\Psi_i^x ) - 2i[P_\infty] - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
- = &  \di_0(\Psi_i^x) - 2i[P_0] + 2(g+1)[P_\infty],
+\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right)  = &  \di(\Psi_i^x)  - (i+1)D_0 + (g+i)D_\infty \\
+ \geq &  \di_0(\Psi_i^x ) - iD_\infty - (i+1)D_0 + (g+i)D_\infty \\
+ = &  \di_0(\Psi_i^x) - iD_0 + (g+1)D_\infty,
 \end{align*}
 and it is clear that the divisor is positive on $U_1 = X \backslash \{P_\infty\}$.
 
 Similarly
 \begin{align*}
-\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) - 2(i+1)[P_0] + 2(g+i)[P_\infty] \\
- =  & \di_0(y) + \di(\Psi_i^y) -2(i+1)[P_0] + (2i -1)[P_\infty] \\
- = &  \di_0(y) + \di_0(\Psi_i^y) - 2d_\Psi^y[P_\infty] - 2(i+1)[P_0] + (2i-1)[P_\infty] \\
- \geq &  \di_0(y) + \di_0(\Psi_i^y) -2(i-1)[P_\infty] -2(i+1)[P_0] + (2i-1)[P_\infty] \\
- =   &\di_0(y) + \di_0(\Psi_i^y) -2(i+1)[P_0] + [P_\infty].
+\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di_0(y) - (2g+1)D_\infty + \di(\Psi_i^y) - (i+1)D_0 + (g+i)D_\infty \\
+ =  & \di_0(y) + \di(\Psi_i^y) -(i+1)D_0 + (2i -1)D_\infty \\
+ = &  \di_0(y) + \di_0(\Psi_i^y) - d_\Psi^yD_\infty - (i+1)D_0 + (2i-1)D_\infty \\
+ \geq &  \di_0(y) + \di_0(\Psi_i^y) -(i-1)D_\infty -(i+1)D_0 + (2i-1)D_\infty \\
+ =   &\di_0(y) + \di_0(\Psi_i^y) -(i+1)D_0 + D_\infty.
 \end{align*}
 In total, we have shown that the differential is regular on $U_1 = \backslash \{P_\infty \}$, and we have completed the proof.
 
@@ -609,8 +615,8 @@ We now turn to the case when $p=2$.
 We now wish to compute the residue of $\frac{ydx}{xH(x)}$ at $P_\infty$.
 We start by noting that $t = \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$ which we check by computing the divisor:
 \begin{align*}
-\di(t) & = \di_0(y) - (2g+1)[P_\infty] -(2g+2)[P_0] + (2g+2)[P_\infty] \\
-& = \di_0(y)-(2g+2)[P_0] + [P_\infty],
+\di(t) & = \di_0(y) - (2g+1)D_\infty -(g+1)D_0 + (g+1)D_\infty \\
+& = \di_0(y)-(g+1)D_0 + D_\infty,
 \end{align*}
 using \eqref{divxp=2} and \eqref{divyp=2}.
 So clearly $t$ is a uniformising parameter at $P_\infty$.
@@ -698,12 +704,12 @@ Then if $i-j = -1$ this has poles at at all points supported at by $D_0$ and $D_
 If $p=2$ and $\infty$ is not a branch point then we need to consider the defining equation $y^2 - h(x)y = f(x)$ where $\deg(h)=g+1$, and $\deg(f)$ can be anything from 0 to $2g+2$.
 From work (which I think was not in 18 month report), if we suppose that $P_\infty$ and $P_\infty'$ are the two points in the pre-image of $\infty \in \mathbb P_k^1$, then the divisor of $y$ is
 \[
-\di(y) = \di_0(y) +(g+1 - \deg(f))[P_\infty] - (g+1)[P_\infty'],
+\di(y) = \di_0(y) +(g+1 - \deg(f))D_\infty - (g+1)[P_\infty'],
 \]
 up to parity of $P_\infty$ and $P_\infty'$.
 So then, after some computation, we get
 \begin{multline*}
-\di\left(\frac{yx^{i-j}}{H(x)}dx \right) = \di_0(y) + (i-j)D_0 + (g-1-(i-j))D_\infty \\ + (g+1-\deg(f))[P_\infty] -(g+1)[P_\infty'].
+\di\left(\frac{yx^{i-j}}{H(x)}dx \right) = \di_0(y) + (i-j)D_0 + (g-1-(i-j))D_\infty \\ + (g+1-\deg(f))D_\infty -(g+1)[P_\infty'].
 \end{multline*}
 So if $i-j = -1$ we clearly have a pole of order 1 at $P_\infty'$.
 \end{note}
