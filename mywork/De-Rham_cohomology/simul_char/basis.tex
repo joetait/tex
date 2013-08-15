@@ -202,7 +202,7 @@ If $p \neq 2$ then the extension $K(X)$ of $k(x)$ will be $k(x,y)$ where $y$ sat
 \begin{equation}\label{definingequationpnot2}
 y^2 = f(x)
 \end{equation}
-for some polynomial $f(x) \in k[x]$.
+for some polynomial $f(x) \in k[x]$, of degree $2g+1$ or $2g+2$ \todo{reference}.
 
 For any $a\in \mathbb P_k^1$ we let $D_a$ denote the divisor $\pi^*([a])$.
 Hence we have
@@ -224,6 +224,8 @@ On the other hand, if $p=2$, then the extension $K(X)$ will be $k(x,y)$, this ti
 y^2 - H(x)y = F(x),
 \end{equation}
 for some $H(x),F(x) \in k[x]$, such that $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
+Here we require that $\deg(H(x)) \leq g+1$, with equality if and only $\infty$ is not a branch point, and $\deg(F(x)) \leq 2g+2$, and in particular $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point. \todo{reference and check whether if and only if for F}
+
 
 
 Again, we let $R$ denote the ramification divisor, which we write explicilty below.
@@ -233,8 +235,15 @@ We now recall the following divisors, which we will make use of throughout this 
 \di (dx) & = R - 2D_\infty \label{divdxp=2}\\
 \di (H(x)) & = R - (g+1)D_\infty \label{divhp=2}\\
 \di (x) & = D_0 - D_\infty \label{divxp=2}\\
-\di (y) & = \di_0(y) - (2g+1)D_\infty \label{divyp=2}.
 \end{align}
+We also use the divisor of $y$, which depends on whether or not $\infty$ is a branch point, as follows:
+\begin{equation*}
+\di(y) = \begin{cases}
+ \di_0(y) -(2g+1)[P_\infty] & \text{if $infty$ is a branch point} \\
+ \di_0(y) +(g+1-deg(f))[P_\infty] - (g+1)[P_\infty] & \text{otherwise.}
+\end{cases}
+\en{equation*}
+\todo{finished here}
 Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
 
 
