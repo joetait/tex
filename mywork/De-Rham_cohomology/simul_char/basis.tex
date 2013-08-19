@@ -542,12 +542,11 @@ From this we see that the differential is clearly regular on $U_2 = X \backslash
 
 We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, namely
 \begin{align*}
-\di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right)  = & (\di_0(y) - (2g+1)D_\infty) + \di(\Phi_i^y) -(i+1)D_0 + (g+i)D_\infty\\
- = & \di_0(y) + \di(\Phi_i^y) -(i+1)D_0 + (2i -1)D_\infty \\
- = & \di_0(y) + \di_0(\Phi_i^y) - d_\Phi^yD_\infty - (i+1)D_0 + (2i-1)D_\infty \\
- = & \di_0(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (2i-2d_\Phi^y -1)D_\infty.
+\di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right)  = & \di(y) + \di(\Phi_i^y) -(i+1)D_0 + (g+i)D_\infty\\
+ = & \di(y) + \di_0(\Phi_i^y) - d_\Phi^yD_\infty -(i+1)D_0 + (g+i)D_\infty \\
+ = & \di(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (g-d_\Phi^y -1)D_\infty.
 \end{align*}
-This completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \{P_0\}$.
+Since $y$ and $\frac{\Phi_i^y}{x^{i+1}}$ both only have poles at points in $\pi^{-1}(\infty)$, this completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \pi^{-1}(0)$.
 
 Now we complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
@@ -555,9 +554,10 @@ Now we complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
  \geq &  \di_0(\Psi_i^x ) - iD_\infty - (i+1)D_0 + (g+i)D_\infty \\
  = &  \di_0(\Psi_i^x) - iD_0 + (g+1)D_\infty,
 \end{align*}
-and it is clear that the divisor is positive on $U_1 = X \backslash \{P_\infty\}$.
+and it is clear that the divisor is positive on $U_1 = X \backslash \pi^{-1}(0)$.
 
-Similarly
+For the other half of the differential we need to take cases.
+If we assume that $\infty$ is branch point then we see that
 \begin{align*}
 \di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di_0(y) - (2g+1)D_\infty + \di(\Psi_i^y) - (i+1)D_0 + (g+i)D_\infty \\
  =  & \di_0(y) + \di(\Psi_i^y) -(i+1)D_0 + (2i -1)D_\infty \\
@@ -565,7 +565,14 @@ Similarly
  \geq &  \di_0(y) + \di_0(\Psi_i^y) -(i-1)D_\infty -(i+1)D_0 + (2i-1)D_\infty \\
  =   &\di_0(y) + \di_0(\Psi_i^y) -(i+1)D_0 + D_\infty.
 \end{align*}
-In total, we have shown that the differential is regular on $U_1 = \backslash \{P_\infty \}$, and we have completed the proof.
+which is clearly positive on $U_1$.
+If, on the other hand, $\infty$ is not a branch point then we have
+\begin{align*}
+\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di(y) + \di(\Psi_i^y) - (i+1)D_0 + (g+i)D_\infty \\
+= & \di(y) + \di_0(\Psi_i^y) - (i+1)D_0 + (g+i - d_\Psi^y)D_\infty \\
+\geq & \di(y) + \di_0(\Psi_i^y) - (i+1)D_0 + (g+1)D_\infty. \\
+\end{align*}
+Since we know from \todo{reference} that $y$ cannot have a pole of order greather $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential is regular on $U_1 = X \backslash \pi^{-1}(0)$, and we have completed the proof.
 
 
 \end{proof}
