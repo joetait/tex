@@ -242,16 +242,16 @@ We also use the divisor of $y$, which depends on whether or not $\infty$ is a br
  \di_0(y) -(2g+1)[P_\infty] & \text{if $infty$ is a branch point} \\
  \di_0(y) +(g+1-deg(f))[P_\infty] - (g+1)[P_\infty] & \text{otherwise.}
 \end{cases}
-\en{equation*}
-\todo{finished here}
+\end{equation*}
 Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
+\todo{check this area especially}
 
 
 To state the ramification points, and for later use, we suppose that 
 \begin{equation}\label{hcoefficients}
 H(x) = \prod_{i=1}^d (x-a_i)^{n_i} = x^d + b_{d-1}x^{d-1} + \ldots + b_1x
 \end{equation}
-for some $a_i, b_i \in  k$, $d \leq g$ and $n_i \in \mathbb N$.
+for some $a_i, b_i \in  k$, $d \leq g+1$ and $n_i \in \mathbb N$.
 Then the $a_i \in \mathbb P_k^1$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points of $\pi$.
 Given this, we can now explicitly describe the ramification divisor as
 \[
@@ -437,16 +437,16 @@ Now it remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}d
 
 
 
-In order to do this we define $\alpha^i_j \in k$ for $0\leq j \leq 2g$ by the equation
+In order to do this we define $\alpha^i_j \in k$ for $0\leq j \leq 2g+1$ by the equation
 \[
-s_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_0,
+s_i(x) = \alpha^i_{2g+1}x^{2g+1} + \ldots + \alpha^i_0,
 \]
 so that
 \[
-\phi_i(x) = \alpha^i_{2g}x^{2g} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i(x) = \alpha^i_gx^g + \ldots + \alpha^i_0.
+\phi_i(x) = \alpha^i_{2g+1}x^{2g+1} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i(x) = \alpha^i_gx^g + \ldots + \alpha^i_0.
 \]
 Note that it is possible for any of $\alpha_i^j$ to be zero. Indeed, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
-Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 < d_\psi \leq g$ and $g < d_\phi \leq 2g$ respectively, for all $1 \leq i \leq g$
+Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 < d_\psi \leq g+1$ and $g < d_\phi \leq 2g$ respectively, for all $1 \leq i \leq g$
 \todo[inline]{remove d psi, remove last line? - will keep for now in case useful later}
 
 
@@ -461,8 +461,8 @@ The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
 & \geq  \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + (g+1)D_0 - 2gD_\infty - iD_0 + (g+i-1)D_\infty \\
 & =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + (i-g-1)D_\infty + (g-i+1)D_0,
 \end{align*}
-where the first line makes use of \eqref{pnot2divisors}.
-Since $i \leq g$ clearly the differential is regular on $U_2 = X\backslash \{P_\infty\}$.
+where the first line makes use of \eqref{pnot2divisors}.\todo{check reference is right}
+Since $i \leq g$ clearly the differential is regular on $U_2 = X\backslash \{\pi^{-1}(\infty)\}$.\todo{remove braces?}
 
 Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 
@@ -473,7 +473,7 @@ Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 & \geq \left( \di_0(\psi_i) - gD_\infty \right) + (g+i-1)D_\infty -iD_0 \\
 & =  \di_0(\psi_i) + (i-1)D_\infty - iD_0.
 \end{align*}
-Again, the first line uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \{P_0\}$, concluding the $p=\neq 2$ case.
+Again, the first line uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \{\pi^{-1}(0)\}$, concluding the $p\neq 2$ case.\todo{check reference}
 
 
 We now consider the case when $p=2$.
@@ -496,23 +496,23 @@ Now we can see that
 and so it only remains to show that $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_2$ and $U_1$ respectively.
 
 
-We define $A^i_{j+1} \in k$ for $0 \leq j \leq 2g$, and $B_k^i \in k$ for $1\leq k \leq g$ by the equation
+We define $A^i_{j+1} \in k$ for $0 \leq j \leq 2g+1$, and $B_k^i \in k$ for $1\leq k \leq g$ by the equation
 \[
-S_i(x,y) = A_{2g+1}^ix^{2g+1} + \ldots + A^i_1 x + y(B_g^i x^g + \ldots + B_1^i x).
+S_i(x,y) = A_{2g+2}^ix^{2g+2} + \ldots + A^i_1 x + y(B_g+1^i x^g+1 + \ldots + B_1^i x + B_0^i).
 \]
 Note that many of these coefficients may be zero.
 In particular we note that $B_i^i = 0$ for all $i$.
-If $i$ is even then $B_g^ix^g + \ldots + B_1^ix = H'x$ and so the coefficient of $x^i$ in $H'x$ is $ib_i = 0$ (recall that we defined $b_i$ to be the coefficients of $H$ in \eqref{hcoefficients}).
-Similarly, if $i$ is odd then $B_g^ix^g + \ldots + B_1^ix = H'x + H$, and then the coefficient of $x^i$ is $ib_i+ ib_i = 2b_i = 0$.
+If $i$ is even then $B_{g+1}^ix^{g+1} + \ldots + B_1^ix + B_0^i = H'x$ and so the coefficient of $x^i$ in $H'x$ is $ib_i = 0$ (recall that we defined $b_i$ to be the coefficients of $H$ in \eqref{hcoefficients}).
+Similarly, if $i$ is odd then $B_{g+1}^ix^{g+1} + \ldots + B_1^ix + B_0^i = H'x + H$, and then the coefficient of $x^i$ is $ib_i+ ib_i = 2b_i = 0$.
 
 
 We can now define the following polynomials:
 \begin{equation}\label{Split}
 \begin{split}
-\Phi_i^x(x) & =  A^i_{2g+1}x^{2g+1} + \ldots + A^i_{i+1}x^{i+1} \\
+\Phi_i^x(x) & =  A^i_{2g+2}x^{2g+2} + \ldots + A^i_{i+1}x^{i+1} \\
 \Psi_i^x(x) & =  A^i_ix^i + \ldots + A^i_1x \\
 \Phi_i^y(x) & =  B_g^ix^g + \ldots B_{i+1}^ix^{i+1} \\
-\Psi_i^y(x) & =  B_{i-1}^ix^{i-1} + \ldots + B_1^ix.
+\Psi_i^y(x) & =  B_{i-1}^ix^{i-1} + \ldots + B_1^ix + B_0^i.
 \end{split}
 \end{equation}
 We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
@@ -538,7 +538,7 @@ Firstly,
  = &  \di_0(\Phi_i^x) - (i+1)D_0 + (i-1-g)D_\infty \\
  =  & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + (i-g-1)D_\infty,
 \end{align*}
-From this we see that the differential is clearly regular on $U_2 = X \backslash \{P_\infty\}$.
+From this we see that the differential is clearly regular on $U_2 = X \backslash \pi^{-1}(\infty)$.
 
 We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, namely
 \begin{align*}
