@@ -185,7 +185,7 @@ We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$
 To do this we will compute $k$-bases for the two outer terms of the short exact sequence
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra \derhamhone \ra H^1(X,\cO_X) \ra 0.
-\end{equation}\todo{reference}
+\end{equation}
 A basis of $H^0(X,\Omega_X)$ is already known in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
 
 \begin{comment}
@@ -202,7 +202,7 @@ If $p \neq 2$ then the extension $K(X)$ of $k(x)$ will be $k(x,y)$ where $y$ sat
 \begin{equation}\label{definingequationpnot2}
 y^2 = f(x)
 \end{equation}
-for some polynomial $f(x) \in k[x]$, of degree $2g+1$ or $2g+2$ \todo{reference}.
+for some polynomial $f(x) \in k[x]$, of degree $2g+1$ or $2g+2$ \cite[Prop 7.4.24]{liu}.
 
 For any $a\in \mathbb P_k^1$ we let $D_a$ denote the divisor $\pi^*([a])$.
 Hence we have
@@ -224,7 +224,7 @@ On the other hand, if $p=2$, then the extension $K(X)$ will be $k(x,y)$, this ti
 y^2 - H(x)y = F(x),
 \end{equation}
 for some $H(x),F(x) \in k[x]$, such that $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
-Here we require that $\deg(H(x)) \leq g+1$, with equality if and only $\infty$ is not a branch point, and $\deg(F(x)) \leq 2g+2$, and in particular $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point. \todo{reference and check whether if and only if for F}
+Here we require that $\deg(H(x)) \leq g+1$, with equality if and only $\infty$ is not a branch point, and $\deg(F(x)) \leq 2g+2$, and in particular $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point  \cite[Prop 7.4.24]{liu}.
 
 
 
@@ -237,14 +237,13 @@ We now recall the following divisors, which we will make use of throughout this 
 \di (x) & = D_0 - D_\infty \label{divxp=2}\\
 \end{align}
 We also use the divisor of $y$, which depends on whether or not $\infty$ is a branch point, as follows:
-\begin{equation*}
+\begin{equation}\label{divyp=2}
 \di(y) = \begin{cases}
- \di_0(y) -(2g+1)[P_\infty] & \text{if $infty$ is a branch point} \\
- \di_0(y) +(g+1-deg(f))[P_\infty] - (g+1)[P_\infty] & \text{otherwise.}
+ \di_0(y) -(2g+1)[P_\infty] & \text{if $\infty$ is a branch point} \\
+ \di_0(y) +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] & \text{otherwise.}
 \end{cases}
-\end{equation*}
+\end{equation}
 Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
-\todo{check this area especially}
 
 
 To state the ramification points, and for later use, we suppose that 
@@ -357,18 +356,15 @@ On the other hand, if $p=2$ then the residue classes of the elements
 \end{equation}
 together with the residue classes of 
 \begin{equation}\label{four}
- \left( \frac{x^{i}}{H(x)} dx, \frac{x^{i}}{H(x)} dx, 0 \right), i=0, \ldots, g-1,
+\left( \frac{x^{i}}{H(x)} dx, \frac{x^{i}}{H(x)} dx, 0 \right), i=0, \ldots, g-1,
 \end{equation}
 form a basis of $\derhamhone$.
-
-\todo[inline]{check if the minus signs are the right way round, and that the elements are the right way round.}
 \end{thm}
 
 Before proving this proposition we use it to prove the following corollary.
 
-
 \begin{cor}
-If $G$ acts faithfully on $X$ then $G$ acts faithfully on $\derhamhone$ if and only if $p \neq 2$.
+If $G$ acts faithfully on $X$ then $G$ acts faithfully on $\derhamhone$.
 \end{cor}
 
 \begin{proof}
@@ -380,13 +376,13 @@ By the same theorem from \cite{faithfulaction} as used in the last paragraph, we
 Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully on $\hone$.
 In particular, $\sigma$ will act trivially on $\hone$.
 
-We can see exactly why this is from the view of \cech cohomology.
+We can see exactly why this is from the view of \cech cohomology, and this will also help to determine the action on $\derhamhone$.
 If we fix a non-zero natural number $i$ then $\frac{y}{x^i}$, considered as an element of $\cO_X(U_1\cap U_2)$, is mapped to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
 Now we can split $\frac{H(x)}{x^i}$ as follows, 
 \begin{equation*}
 \frac{H(x)}{x^i} =  \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i} - \left( - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i} \right),
 \end{equation*}
-and since this is clearly the difference of an element of $\cO_x(U_1)$ and an element of $\cO_x(U_2)$ we see that $\frac{H(x)}{x^i}$ is zero on $\hone$.
+and since this is clearly the difference of an element of $\cO_x(U_1)$ and an element of $\cO_x(U_2)$ we see that $\frac{H(x)}{x^i}$ is zero in $\hone$.
 We let 
 \[
 H_1(x) = \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i}
@@ -395,6 +391,7 @@ and
 \[
 H_2(x) = - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i}.
 \]
+\todo{this can be made shorter/rearranged - kept for now as may be useful}
 
 Despite having a trivial action on both of the outside terms of \eqref{ses}, when we apply this action to $\derhamhone$ it is not trivial. 
 We can describe exactly how sigma acts on the elements of \eqref{three} using $H_1(x)$ and $H_2(x)$:
@@ -405,11 +402,9 @@ We can describe exactly how sigma acts on the elements of \eqref{three} using $H
 Hence the action is trivial if and only if $d\left(H_1'(x)\right) = d\left(H_2'(x)\right) =0$.
 This cannot happen though, since we can always find an $i\leq d$ such that $i \not\equiv d\ \text{mod}\ 2$, and then $d\left(H_2(x)\right) = H_2'(x) \neq 0$.
 \todo[inline]{this is a lie if d is very small - i.e. one and maybe two. solve this}
-\todo{the above is not all necessary, but why the action is trivial is included since it may be useful later, and is vaguely relevant here}
 \end{proof}
 
 
-\todo{need to check that statement of corollary matches proof}
 We now prove Theorem \ref{basis}.
 
 \begin{proof}
@@ -433,7 +428,7 @@ We start with the case $p\neq 2$, and observe that
 \end{align*}
 with the penultimate line following from the defining equation \eqref{definingequationpnot2}.
 This shows that \eqref{one} satisfies one of the conditions to be in \eqref{derhamconditions}
-Now it remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_1$ and $U_2$ respectively.
+Now it remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_2$ and $U_1$ respectively.
 
 
 
@@ -447,7 +442,7 @@ so that
 \]
 Note that it is possible for any of $\alpha_i^j$ to be zero. Indeed, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
 Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 < d_\psi \leq g+1$ and $g < d_\phi \leq 2g$ respectively, for all $1 \leq i \leq g$
-\todo[inline]{remove d psi, remove last line? - will keep for now in case useful later}
+\todo{remove d psi? - will keep for now in case useful later}
 
 
 We now show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{\psi_i}{2yx^i}dx$ are regular on $U_2$ and $U_1$ respectively.
@@ -461,8 +456,8 @@ The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
 & \geq  \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + (g+1)D_0 - 2gD_\infty - iD_0 + (g+i-1)D_\infty \\
 & =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + (i-g-1)D_\infty + (g-i+1)D_0,
 \end{align*}
-where the first line makes use of \eqref{pnot2divisors}.\todo{check reference is right}
-Since $i \leq g$ clearly the differential is regular on $U_2 = X\backslash \{\pi^{-1}(\infty)\}$.\todo{remove braces?}
+where the first line makes use of \eqref{pnot2divisors}.
+Since $i \leq g$ clearly the differential is regular on $U_2 = X\backslash \pi^{-1}(\infty)$.
 
 Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 
@@ -473,7 +468,7 @@ Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 & \geq \left( \di_0(\psi_i) - gD_\infty \right) + (g+i-1)D_\infty -iD_0 \\
 & =  \di_0(\psi_i) + (i-1)D_\infty - iD_0.
 \end{align*}
-Again, the first line uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \{\pi^{-1}(0)\}$, concluding the $p\neq 2$ case.\todo{check reference}
+Again, the first line uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \pi^{-1}(0)$, concluding the $p\neq 2$ case.
 
 
 We now consider the case when $p=2$.
@@ -546,7 +541,7 @@ We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, nam
  = & \di(y) + \di_0(\Phi_i^y) - d_\Phi^yD_\infty -(i+1)D_0 + (g+i)D_\infty \\
  = & \di(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (g-d_\Phi^y -1)D_\infty.
 \end{align*}
-Since $y$ and $\frac{\Phi_i^y}{x^{i+1}}$ both only have poles at points in $\pi^{-1}(\infty)$, this completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \pi^{-1}(0)$.
+Since $y$ and $\frac{\Phi_i^y}{x^{i+1}}$ both only have poles at points in $\pi^{-1}(\infty)$, this completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \pi^{-1}(\infty)$.
 
 Now we complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
@@ -572,7 +567,7 @@ If, on the other hand, $\infty$ is not a branch point then we have
 = & \di(y) + \di_0(\Psi_i^y) - (i+1)D_0 + (g+i - d_\Psi^y)D_\infty \\
 \geq & \di(y) + \di_0(\Psi_i^y) - (i+1)D_0 + (g+1)D_\infty. \\
 \end{align*}
-Since we know from \todo{reference} that $y$ cannot have a pole of order greather $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential is regular on $U_1 = X \backslash \pi^{-1}(0)$, and we have completed the proof.
+Since we know from \eqref{divyp=2} that $y$ cannot have a pole of order greater $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential is regular on $U_1 = X \backslash \pi^{-1}(0)$, and we have completed the proof.
 
 
 \end{proof}
@@ -581,7 +576,6 @@ Since we know from \todo{reference} that $y$ cannot have a pole of order greathe
 
 Introduction needs to be finalised once the proof in the previous section is completed.
 
-\todo[inline]{check that capital h has been used, check that I have been consistent with f(x) or just f}
 \begin{lem}
 If $p \neq 2$ then ${\rm res}_{P_\infty}(\frac{1}{x}dx) = -2$.
 If $p=2$ then ${\rm res}_{P_\infty}\left(\frac{ydx}{xH(x)}\right) = 1$.
@@ -742,6 +736,30 @@ When $p=2$ the basis is also the same.
 We first note that whilst the degree of the highest and lowest ordered terms may change in \eqref{Split}, it is still the case that te coefficient $B_i^i =0$, using exactly the same arguments.
 This allows us to use essentially the same arguments, again with the exception of changing $P_\infty$ and $P_0$ to $D_\infty$ and $D_0$.
 \end{note}
+
+\begin{note}[Why action on H one is trivial]
+We suppose that $p=2$ and $G$ does contain a hyperelliptic involution $\sigma$.
+By the main theorem from \cite{faithfulaction}, we know that $G$ does not act faithfully on $\hzero$.
+Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully on $\hone$.
+In particular, $\sigma$ will act trivially on $\hone$.
+
+We can see exactly why this is from the view of \cech cohomology.
+If we fix a non-zero natural number $i$ then $\frac{y}{x^i}$, considered as an element of $\cO_X(U_1\cap U_2)$, is mapped to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
+Now we can split $\frac{H(x)}{x^i}$ as follows, 
+\begin{equation*}
+\frac{H(x)}{x^i} =  \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i} - \left( - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i} \right),
+\end{equation*}
+and since this is clearly the difference of an element of $\cO_x(U_1)$ and an element of $\cO_x(U_2)$ we see that $\frac{H(x)}{x^i}$ is zero on $\hone$.
+We let 
+\[
+H_1(x) = \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i}
+\]
+and 
+\[
+H_2(x) = - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i}.
+\]
+\end{note}
+
 
 \bibliography{biblio}
 \bibliographystyle{plain}
