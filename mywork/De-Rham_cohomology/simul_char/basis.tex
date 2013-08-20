@@ -166,7 +166,7 @@ We then use the open cover $\cal U$ and the \cech differentials as defined earli
 \end{array}
 \end{equation}
 where the horizontal arrows are the standard differential map.
-By a generalisation of Leray's theorem --- \cite[Cor. 12.4.7]{EGA0III} --- we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.\todo{change}
+By a generalisation of Leray's theorem \cite[Cor. 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
 Note that this relies on $\cechhone$ and ${\check H}^p(\cU, \Omega_X)$ being zero for all $p\geq 1$ ---
 since $U_1$ and $U_2$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.
 
@@ -391,7 +391,7 @@ and
 \[
 H_2(x) = - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i}.
 \]
-\todo{this can be made shorter/rearranged - kept for now as may be useful}
+\todo{this can be made shorter/ rearranged - kept for now as may be useful}
 
 Despite having a trivial action on both of the outside terms of \eqref{ses}, when we apply this action to $\derhamhone$ it is not trivial. 
 We can describe exactly how sigma acts on the elements of \eqref{three} using $H_1(x)$ and $H_2(x)$:
@@ -400,7 +400,7 @@ We can describe exactly how sigma acts on the elements of \eqref{three} using $H
  \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + d\left(H'_1(x)\right),  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ d\left(H'_2(x)\right) , x^{-i}y \right).
 \end{multline}
 Hence the action is trivial if and only if $d\left(H_1'(x)\right) = d\left(H_2'(x)\right) =0$.
-This cannot happen though, since we can always find an $i\in \{1,2}$ such that $i \not\equiv d\ \text{mod}\ 2$, and then $d\left(H_2(x)\right) = H_2'(x) \neq 0$, as we can see from the leading term (unless of course $d$ is 1 or zero, in which case $d\left(H_1(x)\right) \neq 0$).
+This cannot happen though, since we can always find an $i\in \{1,2\}$ such that $i \not\equiv d\ \text{mod}\ 2$, and then $d\left(H_2(x)\right) = H_2'(x) \neq 0$, as we can see from the leading term (unless of course $d$ is 1 or zero, in which case $d\left(H_1(x)\right) \neq 0$).
 \end{proof}
 
 
@@ -539,10 +539,9 @@ We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, nam
 \di\left(\frac{y\Phi_i^y dx}{x^{i+1}H} \right)  = & \di(y) + \di(\Phi_i^y) -(i+1)D_0 + (g+i)D_\infty\\
  = & \di(y) + \di_0(\Phi_i^y) - d_\Phi^yD_\infty -(i+1)D_0 + (g+i)D_\infty \\
  \geq & \di(y) + \di_0(\Phi_i^y) - (g+1)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
- = & \di(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right). 
+ = & \di(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (i-1)D_\infty.
 \end{align*}
-\todo{check above computations}
-Since $y$ and $\frac{\Phi_i^y}{x^{i+1}}$ both only have poles at points in $\pi^{-1}(\infty)$, this completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \pi^{-1}(\infty)$.
+Since both $y$ and $\frac{\Phi_i^y}{x^{i+1}}$ only have poles at points in $\pi^{-1}(\infty)$, this completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \pi^{-1}(\infty)$.
 
 Now we complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
@@ -716,7 +715,7 @@ Then if $i-j = -1$ this has poles at at all points supported at by $D_0$ and $D_
 If $p=2$ and $\infty$ is not a branch point then we need to consider the defining equation $y^2 - h(x)y = f(x)$ where $\deg(h)=g+1$, and $\deg(f)$ can be anything from 0 to $2g+2$.
 From work (which I think was not in 18 month report), if we suppose that $P_\infty$ and $P_\infty'$ are the two points in the pre-image of $\infty \in \mathbb P_k^1$, then the divisor of $y$ is
 \[
-\di(y) = \di_0(y) +(g+1 - \deg(f))D_\infty - (g+1)[P_\infty'],
+\di(y) = \di_0(y) +(g+1 - \deg(f))[P_\infty] - (g+1)[P_\infty'],
 \]
 up to parity of $P_\infty$ and $P_\infty'$.
 So then, after some computation, we get
@@ -737,29 +736,6 @@ So the basis is the same when $p\neq2$.
 When $p=2$ the basis is also the same.
 We first note that whilst the degree of the highest and lowest ordered terms may change in \eqref{Split}, it is still the case that te coefficient $B_i^i =0$, using exactly the same arguments.
 This allows us to use essentially the same arguments, again with the exception of changing $P_\infty$ and $P_0$ to $D_\infty$ and $D_0$.
-\end{note}
-
-\begin{note}[Why action on H one is trivial]
-We suppose that $p=2$ and $G$ does contain a hyperelliptic involution $\sigma$.
-By the main theorem from \cite{faithfulaction}, we know that $G$ does not act faithfully on $\hzero$.
-Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully on $\hone$.
-In particular, $\sigma$ will act trivially on $\hone$.
-
-We can see exactly why this is from the view of \cech cohomology.
-If we fix a non-zero natural number $i$ then $\frac{y}{x^i}$, considered as an element of $\cO_X(U_1\cap U_2)$, is mapped to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
-Now we can split $\frac{H(x)}{x^i}$ as follows, 
-\begin{equation*}
-\frac{H(x)}{x^i} =  \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i} - \left( - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i} \right),
-\end{equation*}
-and since this is clearly the difference of an element of $\cO_x(U_1)$ and an element of $\cO_x(U_2)$ we see that $\frac{H(x)}{x^i}$ is zero on $\hone$.
-We let 
-\[
-H_1(x) = \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i}
-\]
-and 
-\[
-H_2(x) = - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i}.
-\]
 \end{note}
 
 
