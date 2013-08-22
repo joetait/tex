@@ -262,61 +262,49 @@ We now compute the basis of $H^1(X,\cO_X)$, and then state the basis of $\derham
 \todo[inline]{not edited, since may use different proof}
 \begin{lem}\label{basish1}
  
- The elements $\frac{y}{x}, \ldots , \frac{y}{x^g}$ form a basis of $H^1(X,\cO_X)$.
+ The elements $\frac{y}{x}, \ldots , \frac{y}{x^g}$, restricted to $U_1$, form a basis of $H^1(X,\cO_X)$.
  
 \end{lem}
 \begin{proof}
- 
-We prove this directly by \cech cohomology.
-By Leray's theorem we know that $H^1(X,\cO_X) \cong \check{H}^1(\cU,\cO_X)$.
-The \cech complex is as follows:
-\begin{equation*}
-0 \rightarrow \cO_X(U_1) \times \cO_X(U_2) \xrightarrow{d_0} \cO_X(U_1 \cap U_2) \xrightarrow{d_1} 0.
-\end{equation*}
-
-So we wish to show that when $1 \leq i \leq g$ the elements $x^{-i}y$ form a basis of 
-\begin{equation*}
-\frac{\ker (d_1)}{\Ima (d_0)} = \frac{ \cO_X(U_1 \cap U_2)}{\Ima (d_1)}.
-\end{equation*}
-
-
-We first compute the divisor of $x^{-i}y$ in order to check that it is indeed regular on $U_1 \cap U_2$.
-
-When $p \neq 2$ then
+We use Serre duality and the fact that we already know a basis of $\hzero$.\todo{introduce Serre dual}
+Recall that if $p\neq 2$ then for $i \in \{0,\ldots, g-1\}$ the element $\omega_i = \frac{x^i}{y}dx$ form a basis of $\hzero$.
+Then for $j\in \{1, \ldots, g\}$  we consider the pair $\langle x^iy^{-1}dx, yx^{-j}|_{U_1}\rangle$, which maps to the residue of $x^{i-j}dx|_{U_1}$.\todo{introduce angle brackets. check restriction is right}
+In general, the divisor of $\frac{i-j}dx$ when $p\neq 2$ is
 \begin{align*}
-    \di(x^{-i}y) & = \di(y) - \di(x^i) \\
-    & = R - (g+1)D_\infty - iD_0 + iD_\infty \\
-    & = (R - D_0 - D_\infty) -(2i-1)D_0 - (2g +1 -2i)D_\infty.
+\di(x^{i-j}dx) & = R - 2D_\infty +(i-j)D_0 - (i-j)D_\infty \\
+& = R + (i-j)D_0 - (i-j+2)D_\infty.
 \end{align*}
+Now if $\infty$ is a branch point, then we can see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one).
+In this case the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$, which is precisely the $j$ we have allowed.
 
-On the other hand, if $p =2$ then 
+On the other hand, if $\infty$ is not a branch point we have two poles of order one, at $P_\infty$ and $P_\infty'$.
+Since we have two poles we need to check that the residues at these poles do not cancel to zero.
+This is equivalent to checking that the residue is non-zero at the points in $X\backslash U_1$ (of which there are only two --- $P_0$ and $P_0'$).
+We can see from the divisor that both of these points are also poles when $i-j=-1$, so we need to compute both of these.
+Fortunately, they are largely symmetric.
+We note that $t=y-\sqrt{f(0)}$ and $s=y+\sqrt{f(0)}$ are uniformising parameters at $P_0$ and $P_0'$ respectively.\todo{define p0 and p0' earlier}
+We also note that since
+\[
+2ydy = dy^2 = df = f'dx
+\]
+then
+\[
+dy=\frac{f'}{2y}dx.
+\]
+We then rewrite the expansion of $\frac{1}{x}dx$ (i.e. $x^{i-j}dx$ when $i-j=-1$) as follows
 \begin{align*}
-    \di(x^{-i}y) & = \di(y) - \di(x^i) \\
-    & = \di_0(y) - (2g+1)D_0 -iD_0 + iD_\infty \\
-    & = \di_0(y) -iD_0 - ( 2g + 1 -2i)D_\infty.
+\frac{1}{x}dx & = \sum_{i\geq -1}c_it^i dt
+& = \sum_{i\geq -1}c_it^i d(y-\sqrt{f(0)})
+& = \sum_{i\geq -1}c_it^i dy
+& = \sum_{i\geq -1}c_it^i \frac{f'}{2y}dx.
 \end{align*}
-So we see that, regardless of characteristic, the only poles are at $P_0$ and $P_\infty$, and hence $x^{-i}y \in \cO_X(U_1 \cap U_2)$.
-
-It remains to show that the elements are not in the image of $d_0$ and hence are non-zero in the first cohomology group.
-
-We  fix $i \in \{1, \ldots, g\}$ and suppose that there exists $f_1 \in \cO_X(U_1)$ and $f_2 \in \cO_X(U_2)$ such that their difference is $x^{-i}y$.
-
-
-If $p \neq 2$ then $f_1$ necessarily has a pole of order $1-2i$ at $P_0$.
-We write $f_1$ as $y \frac{p(x)}{q(x)}$, where $p(x)$ and $q(x)$ have no common factor.
-Note that we require a $y$ term since we have an odd order at $P_0$, and since $y^2$ is a function of $x$, we can assume that the power of $y$ is just 1.
-We also require $q(x)$ has a factor of $x^i$, and we let $q'(x) : = \frac{q(x)}{x^i}$.
-In order for this function to be in $\cO_X(U_1)$ we require that $\frac{p(x)}{q'(x)}$ of order at least $2i-2g-1$ at $P_\infty$, else we will have a pole at $P_\infty$.
-This is only possible if $\frac{p(x)}{q(x)}$ has a pole or poles at points other than $P_0$ and $P_\infty$, since $\deg(\di(f_1)) = 0$.
-The only zeroes of our function so far are at the ramification points, so clearly the poles of $\frac{p(x)}{q'(x)}$ must be at the ramification points too.
-Since $p$ and $q'$ are functions of $x$ any pole at a ramification point must be of even order; in particular they must be at least order 2.
-ince we have the zeroes at the ramification points of $y$ and $x^i$ are exactly order 1 (except at the points $P_0$ and $P_\infty$, which we are not considering), this contradicts $f_1$ being regular on $U_1$.
-
-Hence such an $f_1$ cannot exist, and the image of $x^{-i}y$ in $\check{H}^1(\cU,\cO_X)$ is non-zero (for all $i$).
-
-
-If $p=2$ then we use a similar proof, but 
+Now that both sides are in terms of the same differential we can match coefficients to discover the value of $c_{-1}$.
+We remark that at this point the exact same computations yield
+\[
+\frac{1}{x}dx = \sum_{i\geq -1}d_is^i \frac{f'}{2y}dx.
+\]
 \end{proof}
+
 
 
 In order to state the basis of $\derhamhone$, as well as to shorten the proof of the following proposition, we define the following polynomials and differentials. 
