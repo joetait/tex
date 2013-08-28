@@ -64,9 +64,9 @@
 \usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
-%\renewcommand{\familydefault}{\sfdefault}
-%\usepackage{cabin}
-\usepackage{libertine}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{cabin}
+%\usepackage{libertine}
 %\usepackage[T1]{fontenc}
 
 %Theorems and stuff
@@ -258,20 +258,33 @@ R = \sum_{i=1}^d 2n_i[P_i] + (g+1-d)D_\infty.
 \]
 Details can be found in \cite[\S 6]{faithfulaction}.
 
-Having given the details of the curves, we now recall Serre duality, which we will shortly use to find a basis of $\hone$.
+Having given the details of the curves, we now recall Serre duality, which we will use shortly to find a basis of $\hone$.
+We recall that an {\sl ad\`ele} or {\sl r\'epartition} is a family of elements $\{r_P\}_{P_\in X}$ such that $r_P \in \cO_P$ for almost all $P\in X$, as in \cite[Chap. II, \S 5]{algebraicgroupsandclassfields}.
+We let $R$ denote the space of ad\`eles, and given a divisor $D$ we let $R(D)$ be the space of ad\`eles $r = \{r_P\}$ such that $\ord_P(r_P) \geq n_P$, where $n_P$ is the coefficient of $[P]$ in $D$.
+Note that one can embed the function field $K(X)$ in to $R$ by, for any $f \in K(X)$, setting $r_P = f$ for all $P\in X$.
+Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to the quotient $R/(R(0) + K(X))$.
+We then define the duality map in terms of ad\`eles.
 
+Given some differential $\omega \in \hzero$ and some ad\`ele $r \in \hone$ we define 
+\[
+\langle \omega, r \rangle := \sum_{P\in X} \res_{P}( r_P\omega).
+\]
+Then if we fix any $\omega \in \hzero$ we get a map $\theta(\omega):\hone \rightarrow k$ given by $\theta(\omega)(r) = \langle \omega, r \rangle$.
+Similarly, if we fix some $r \in \hone$ we get a map $\varphi(r):\hzero \rightarrow k$.
+Now the duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that the maps $\theta$ and $\varphi$ are isomorphisms and that the spaces are dual.
 
-We now compute the basis of $H^1(X,\cO_X)$, and then state the basis of $\derhamhone$ in the following theorem.\\
-\todo[inline]{not edited, since may use different proof}
+\todo[inline]{using repartitions, would it be better to say that the restriction to U1 is like taking a repartition equal to f everywhere except P0, where we just pick some non-zero value}
+
+We now compute the basis of $H^1(X,\cO_X)$, and then state the basis of $\derhamhone$ in the following theorem.
 \begin{lem}\label{basish1}
  
  The elements $\frac{y}{x}, \ldots , \frac{y}{x^g}$, restricted to $U_1$, form a basis of $H^1(X,\cO_X)$.
  
 \end{lem}
 \begin{proof}
-We use Serre duality and the fact that we already know a basis of $\hzero$.\todo{introduce Serre dual}
+We use Serre duality and the fact that we already know a basis of $\hzero$.
 Recall that if $p\neq 2$ then for $i \in \{0,\ldots, g-1\}$ the element $\omega_i = \frac{x^i}{y}dx$ form a basis of $\hzero$.
-Then for $j\in \{1, \ldots, g\}$  we consider the pair $\langle x^iy^{-1}dx, yx^{-j}|_{U_1}\rangle$, which maps to the residue of $x^{i-j}dx|_{U_1}$.\todo{introduce angle brackets. check restriction is right}
+Then for $j\in \{1, \ldots, g\}$  we consider the pair $\langle x^iy^{-1}dx, yx^{-j}|_{U_1}\rangle$, which maps to the residue of $x^{i-j}dx|_{U_1}$.
 In general, the divisor of $\frac{i-j}dx$ when $p\neq 2$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
@@ -322,7 +335,7 @@ We notice at this point that by almost the same calculations when expanding abou
 d_{-1}s^{-1}\frac{f'}{2y} = \frac{d_{-1}f'(2f-2y\sqrt{f(0)}}{f^2 - f\cdot f(0)}.
 \]
 Using the same argument as before we dispense of the $y$ term, and hence $d_{-1}$ is determined uniquely by the $\frac{1}{x}$ terms in $\frac{2d_{-1}f' \cdot f}{4(f^2-f\cdot f(0))}$.
-Since $c_{-1}$ and $d_{-1}$ are determined by the same *equation*\todo{not an equation. Property?}, they must take the same value. 
+Since $c_{-1}$ and $d_{-1}$ are determined in the same way, they must take the same value. 
 Since the charactersitic is not 2, and since $c_{-1} \neq 0$, we conclude that $\text{Res}_{X\backslash U_2}(x^{-1}dx = 2c_{-1} )\neq 0$.
 This completes the proof when $p \neq 2$.
 
@@ -613,21 +626,21 @@ If $p=2$ then ${\rm res}_{P_\infty}\left(\frac{ydx}{xH(x)}\right) = 1$.
 
 We first consider the case $p\neq 2$.
 We note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$ as can be seen by computing the order of $t$ at $P_\infty$ as follows
-\begin{eqnarray}
-\ord_{P_\infty}(t) & = & \frac{1}{2}\ord_{P_\infty}(t^2) \\
-  & = & \frac{1}{2}\ord_{P_\infty}\left( \frac{f}{x^{2g+2}} \right) \\
-& = & \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}\ord_{P_\infty}(x^{2g+2})\\
-& = & -(2g+1) + (2g+2) \\
-& = & 1.
-\end{eqnarray}
+\begin{align}
+\ord_{P_\infty}(t) & =  \frac{1}{2}\ord_{P_\infty}(t^2) \\
+  & =  \frac{1}{2}\ord_{P_\infty}\left( \frac{f}{x^{2g+2}} \right) \\
+& =  \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}\ord_{P_\infty}(x^{2g+2})\\
+& =  -(2g+1) + (2g+2) \\
+& =  1.
+\end{align}
 
 We now write $\frac{1}{x}dx$ in terms of $dt$.
 By the quotient rule we know that
-\begin{eqnarray*}
-dt^2 & = & d \left( \frac{f(x)}{x^{2g+2}} \right) \\
-& = & \frac{x^{2g+2}f' + x^{2g+1}f}{x^{4g+4}} dx \\
-& = & \frac{1}{x^{2g+2}} \left( f' + \frac{f}{x} \right) dx
-\end{eqnarray*}
+\begin{align*}
+dt^2 & =  d \left( \frac{f(x)}{x^{2g+2}} \right) \\
+& =  \frac{x^{2g+2}f' + x^{2g+1}f}{x^{4g+4}} dx \\
+& =  \frac{1}{x^{2g+2}} \left( f' + \frac{f}{x} \right) dx
+\end{align*}
 from which we conclude that
 \[
 \frac{1}{x}dx = \frac{-2tx^{2g+1}}{\left(\frac{(2g+2)f}{x} - f'\right)} dt.
@@ -662,23 +675,23 @@ So clearly $t$ is a uniformising parameter at $P_\infty$.
 We now wish to write $\frac{y}{xH(x)}dx$ as $r(x,y)dt$ for some $r \in k(x,y)$.
 We first write $dy$ in terms of $dx$.
 Since
-\begin{eqnarray*}
-0 & = & dy^2 \\
-& = & d(F+yH) \\
-& = & F'dx + Hdy + yH'dx
-\end{eqnarray*}
+\begin{align*}
+0 & =  dy^2 \\
+& =  d(F+yH) \\
+& =  F'dx + Hdy + yH'dx
+\end{align*}
 we conclude that
 \[
 dy = \left( \frac{F'+yH'}{H} \right) dx.
 \]
 
 We also rewrite $dt$ as follows:
-\begin{eqnarray*}
-dt & = & d\left( \frac{y}{x^{g+1}} \right) \\
-& = & yd\frac{1}{x^{g+1}} + \frac{1}{x^{g+1}}dy \\
-& = & \frac{1}{x^{g+1}} \left( \frac{(g+1)y}{x} + \frac{F'+yH'}{H} \right) dx \\
-& = & \frac{1}{x^{g+1}} \left( \frac{xF'}{y} + xH' + (g+1)H \right) \frac{y}{Hx} dx.
-\end{eqnarray*}
+\begin{align*}
+dt & =  d\left( \frac{y}{x^{g+1}} \right) \\
+& =  yd\frac{1}{x^{g+1}} + \frac{1}{x^{g+1}}dy \\
+& =  \frac{1}{x^{g+1}} \left( \frac{(g+1)y}{x} + \frac{F'+yH'}{H} \right) dx \\
+& =  \frac{1}{x^{g+1}} \left( \frac{xF'}{y} + xH' + (g+1)H \right) \frac{y}{Hx} dx.
+\end{align*}
 
 In total we then have
 \[
