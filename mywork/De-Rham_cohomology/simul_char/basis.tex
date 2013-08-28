@@ -236,7 +236,7 @@ We now recall the following divisors, which we will make use of throughout this 
 \di (H(x)) & = R - (g+1)D_\infty \label{divhp=2}\\
 \di (x) & = D_0 - D_\infty \label{divxp=2}.
 \end{align}
-We also use the divisor of $y$, which depends on whether or not $\infty$ is a branch point, as follows:
+We also use the divisor of $y$, which is as follows:
 \begin{equation}\label{divyp=2}
 \di(y) = \begin{cases}
  \di_0(y) -(2g+1)[P_\infty] & \text{if $\infty$ is a branch point} \\
@@ -259,19 +259,20 @@ R = \sum_{i=1}^d 2n_i[P_i] + (g+1-d)D_\infty.
 Details can be found in \cite[\S 6]{faithfulaction}.
 
 Having given the details of the curves, we now recall Serre duality, which we will use shortly to find a basis of $\hone$.
-We recall that an {\sl ad\`ele} or {\sl r\'epartition} is a family of elements $\{r_P\}_{P_\in X}$ such that $r_P \in \cO_P$ for almost all $P\in X$, as in \cite[Chap. II, \S 5]{algebraicgroupsandclassfields}.
-We let $R$ denote the space of ad\`eles, and given a divisor $D$ we let $R(D)$ be the space of ad\`eles $r = \{r_P\}$ such that $\ord_P(r_P) \geq n_P$, where $n_P$ is the coefficient of $[P]$ in $D$.
-Note that one can embed the function field $K(X)$ in to $R$ by, for any $f \in K(X)$, setting $r_P = f$ for all $P\in X$.
-Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to the quotient $R/(R(0) + K(X))$.
-We then define the duality map in terms of ad\`eles.
+We recall that an {\sl ad\`ele} or {\sl r\'epartition} is a family of elements $\{r_P\}_{P\in X}$ such that $r_P \in \cO_P$ for almost all $P\in X$, as in \cite[Chap. II, \S 5]{algebraicgroupsandclassfields}.
+We let $R$ denote the space of ad\`eles, and given a divisor $D = \sum n_P[P]$ we let $R(D)$ be the space of ad\`eles $r = \{r_P\}$ such that $\ord_P(r_P) \geq n_P$.
+Note that one can embed the function field $K(X)$ in to $R$.
+Given any $f \in K(X)$ one defines $r \in R$ by setting $r_P = f$ for all $P \in X$, and this is clearly an injection.
+Given this we can see that the quotient $R/(R(0) + K(X))$ is well defined, and Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to this quotient.
 
+We now define the duality map in terms of ad\`eles.
 Given some differential $\omega \in \hzero$ and some ad\`ele $r \in \hone$ we define 
 \[
 \langle \omega, r \rangle := \sum_{P\in X} \res_{P}( r_P\omega).
 \]
 Then if we fix any $\omega \in \hzero$ we get a map $\theta(\omega):\hone \rightarrow k$ given by $\theta(\omega)(r) = \langle \omega, r \rangle$.
 Similarly, if we fix some $r \in \hone$ we get a map $\varphi(r):\hzero \rightarrow k$.
-Now the duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that the maps $\theta$ and $\varphi$ are isomorphisms and that the spaces are dual.
+The duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that the maps $\theta$ and $\varphi$ are isomorphisms and that the spaces $\hzero$ and $\hone$ are dual.
 
 \todo[inline]{using repartitions, would it be better to say that the restriction to U1 is like taking a repartition equal to f everywhere except P0, where we just pick some non-zero value}
 
@@ -283,9 +284,9 @@ We now compute the basis of $H^1(X,\cO_X)$, and then state the basis of $\derham
 \end{lem}
 \begin{proof}
 We use Serre duality and the fact that we already know a basis of $\hzero$.
-Recall that if $p\neq 2$ then for $i \in \{0,\ldots, g-1\}$ the element $\omega_i = \frac{x^i}{y}dx$ form a basis of $\hzero$.
+Recall that if $p\neq 2$ then for $i \in \{0,\ldots, g-1\}$ the elements $\omega_i = x^iy^{-1}dx$ form a basis of $\hzero$.
 Then for $j\in \{1, \ldots, g\}$  we consider the pair $\langle x^iy^{-1}dx, yx^{-j}|_{U_1}\rangle$, which maps to the residue of $x^{i-j}dx|_{U_1}$.
-In general, the divisor of $\frac{i-j}dx$ when $p\neq 2$ is
+In general, the divisor of $x^{i-j}dx$ when $p\neq 2$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
 \di(x^{i-j}dx) & = R - 2D_\infty +(i-j)D_0 - (i-j)D_\infty \\
@@ -293,13 +294,13 @@ In general, the divisor of $\frac{i-j}dx$ when $p\neq 2$ is
 \end{split}
 \end{equation}
 Now if $\infty$ is a branch point, then we can see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one).
-In this case the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$, which is precisely the $j$ we have allowed.
+Then the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$ (i.e. $j \in \{1, \ldots, g\}$).
 
-On the other hand, if $\infty$ is not a branch point we have two poles of order one, at $P_\infty$ and $P_\infty'$.
+On the other hand, if $\infty$ is not a branch point we have two poles of order one, $P_\infty$ and $P_\infty'$.
 Since we have two poles we need to check that the residues at these poles do not cancel to zero.
 This is equivalent to checking that the residue is non-zero at the points in $X\backslash U_1$ (of which there are at most two --- $P_0$ and $P_0'$).
-If 0 is a branch point then we have a pole at $P_0$ of order one when $i-j=-1$, and hence a non-zero residue, and we are done.
-On the other hand if 0 is not a branch point then when $i-j=-1$ we have a pole at both of these, so we need to check that the residues do not cancel.
+If $0$ is a branch point then we have a pole at $P_0$ of order one when $i-j=-1$, and hence a non-zero residue, and we are done.
+On the other hand if $0$ is not a branch point then when $i-j=-1$ we have a pole at both of these, so we need to check that the residues do not cancel.
 Fortunately, they are largely symmetric.
 We note that $t=y-\sqrt{f(0)}$ and $s=y+\sqrt{f(0)}$ are uniformising parameters at $P_0$ and $P_0'$ respectively.
 We also note that since
@@ -312,9 +313,9 @@ dy=\frac{f'}{2y}dx.
 \]
 We then rewrite the expansion of $\frac{1}{x}dx$ (i.e. $x^{i-j}dx$ when $i-j=-1$) as follows
 \begin{align*}
-\frac{1}{x}dx & = \sum_{i\geq -1}c_it^i dt
-& = \sum_{i\geq -1}c_it^i d(y-\sqrt{f(0)})
-& = \sum_{i\geq -1}c_it^i dy
+\frac{1}{x}dx & = \sum_{i\geq -1}c_it^i dt \\
+& = \sum_{i\geq -1}c_it^i d\left(y-\sqrt{f(0)}\right)\\
+& = \sum_{i\geq -1}c_it^i dy \\
 & = \sum_{i\geq -1}c_it^i \frac{f'}{2y}dx.
 \end{align*}
 Now that both sides are in terms of the same differential we can match coefficients to discover the value of $c_{-1}$.
@@ -324,25 +325,25 @@ We remark that at this point the exact same computations yield
 \]
 Now the left hand side has a pole at $P_0$ and the only term on the right hand side that can also have a pole at $P_0$ is 
 \[
-c_{-1}t^{-1}\frac{f'}{2y} = \frac{c_{-1}f'}{2y^2 - 2y\sqrt{(f(0)}} = \frac{c_{-1}f'(2f+2y\sqrt{f(0)}}{4(f^2-f\cdot f(0)}.
+c_{-1}t^{-1}\frac{f'}{2y} = \frac{c_{-1}f'}{2y^2 - 2y\sqrt{(f(0)}} = \frac{c_{-1}f'\left( 2f+2y\sqrt{f(0)}\right) }{4(f^2-f\cdot f(0))}.
 \]
 We will use the fact that this is the only part of the sum that can contain a term of the form $\frac{1}{x}$ to compute $c_{-1}$.
-Clearly no part of $\frac{2c_{-1}f'y\sqrt{f(0)}}{4(f^2-f\cdot f(0)}$ can contain a $\frac{1}{x}$ term, since there is no way of removing the $y$.
-This leads us to consider just $\frac{2c_{-1}f'\cdot f}{4(f^2-f\cdot f(0)}$.
+Clearly no part of $\frac{2c_{-1}f'y\sqrt{f(0)}}{4(f^2-f\cdot f(0))}$ can contain a $\frac{1}{x}$ term, since there is no way of removing the $y$.
+This means we just need to compute the $\frac{1}{x}$ terms in $\frac{c_{-1}f'\cdot f}{2(f^2-f\cdot f(0))}$ and compare coefficients to work out $c_{-1}$.
 
 We notice at this point that by almost the same calculations when expanding about $P_0'$ we get the following
 \[
-d_{-1}s^{-1}\frac{f'}{2y} = \frac{d_{-1}f'(2f-2y\sqrt{f(0)}}{f^2 - f\cdot f(0)}.
+d_{-1}s^{-1}\frac{f'}{2y} = \frac{d_{-1}f'\left(2f-2y\sqrt{f(0)}\right) }{4(f^2 - f\cdot f(0))}.
 \]
 Using the same argument as before we dispense of the $y$ term, and hence $d_{-1}$ is determined uniquely by the $\frac{1}{x}$ terms in $\frac{2d_{-1}f' \cdot f}{4(f^2-f\cdot f(0))}$.
 Since $c_{-1}$ and $d_{-1}$ are determined in the same way, they must take the same value. 
-Since the charactersitic is not 2, and since $c_{-1} \neq 0$, we conclude that $\text{Res}_{X\backslash U_2}(x^{-1}dx = 2c_{-1} )\neq 0$.
+Since the charactersitic is not 2, and since $c_{-1} \neq 0$, we conclude that $\res_{X\backslash U_2}(x^{-1}dx) = 2c_{-1} \neq 0$.
 This completes the proof when $p \neq 2$.
 
 We now suppose that $p=2$.
 Again, if $i-j=-1$ and $\infty$ is branch point then we again have a pole of order one at $P_\infty$, and hence a non-zero residue there.
-Also, even if $\infty$ is not a branch point it still suffices to compute the residue on $X\backslash U_2$, and we see that if 0 is a branch point this is non-zero.
-So we again need only consider the case when both $\infty$ and 0 are not branch points.\todo{complete this case}
+Also, even if $\infty$ is not a branch point it still suffices to compute the residue on $X\backslash U_2$, and we see that if $0$ is a branch point this is non-zero.
+So we again need only consider the case when both $\infty$ and $0$ are not branch points.\todo{complete this case}
 
 
 {\sl Problem - can't complete the square. The problem would be if  the $c_{-1}$ and $d_{-1}$ in 
