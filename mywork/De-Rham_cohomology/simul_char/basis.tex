@@ -347,6 +347,50 @@ Again, if $i-j=-1$ and $\infty$ is branch point then we again have a pole of ord
 Also, even if $\infty$ is not a branch point it still suffices to compute the residue on $X\backslash U_2$, and we see that if $0$ is a branch point this is non-zero.
 So we again need only consider the case when both $\infty$ and $0$ are not branch points.\todo{complete this case}
 
+We start by noticing that if we let $P_0 = (0,a)$ and $P_0' = (0,a+H(0))$ then we know that $y-1$ and $y-(a+H(0))$ are uniformising parameters at $P_0$ and $P_0'$ respectively.
+So to work out the residue of $\frac{1}{x}dx$ at $P_0$ we wish to find the $c_{-1}$ coefficient in the expansion
+\begin{align*}
+\frac{1}{x}dx & = \sum_{i \geq -1} c_i s^i d(y-a) \\
+& = \sum_{i\geq -1} c_i s^i dy \\
+& = \sum_{i \geq -1} c_i s^i \left(\frac{F' - yH'}{H} \right) dx,
+\end{align*}
+where the last line follows from. \todo{find reference}
+Now $\left(\frac{F' -yH'}{H}\right)$ cannot have a pole at $0$, so the only term which can contain a $\frac{1}{x}$ term is the $i=-1$ term.
+We will use this and compare the coefficients to work out the residue at the points. \todo{coem back and describe what I actually do when I have done it}
+
+In other words we wish to find the $\frac{1}{x}$ term in 
+\[
+c_{-1}s^{-1}\left(\frac{F' - yH'}{H} \right) = \frac{c_{-1}}{y-a} \left( \frac{F' - yH'}{H} \right).
+\]
+We would like to remove the $y$ term from the denominator of this.
+After noticing that 
+\[
+(y-1)(y-(H+a)) = y^2 - yH - a(H-a) = F- a(H-a)
+\]
+we clearly see that 
+\begin{align*}
+\frac{c_{-1}}{y-a} \left( \frac{F' - yH'}{H} \right) & = c_{-1} \left( \frac{(F'-yH')(y-(H+a))}{H(F-aH(H+a))} \right) \\
+& = c_{-1} \left( \frac{F'y - F'(H+a) - (F -yH)H' - ayHH'(H-a)}{H(F-aH(H+a))} \right) \\
+& = \frac{c_{-1}(F'(H+a) - FH')}{H(F-aH(H+a))} + \frac{c_{-1}y(F' - HH' - aHH'(H-a))}{H(F-aH(H+a))},
+\end{align*}
+where we have collected together the $y$ terms, since clearly they cannot contain a $\frac{1}{x}$ term.
+
+We then perform a similar operation on the equivalent term for the expansion around $P_0'$, which is
+\[
+\frac{d_{-1}(F' - yH')}{H(y - (H(0) - a))}.
+\]
+As before, we remove the $y$ term from the denominator, this time using the identity
+\[
+(y-(H(0)+a))(y - (H+H(0)+a)) = y^2 - yH - (H(0) - a)(H - H(0) - a).
+\]
+From this we can then derive \todo{define s and t}
+\begin{align*}
+d_{-1}t^{-1} \left( \frac{F' - yH'}{H} \right)  = & d_{-1}\left( \frac{(F'  - yH')(y+ H + H' + a)}{H(y^2 - yH -(H(0)-a)(H - H(0) -a ))} \right) \\
+ =&  \frac{d_{-1}(HF' + F'H' + aF' - FHH')}{H(F-(H(0) - a)(H - H(0) - a))}  \\
+& - \frac{d_{-1}y(F'  - H^2H' - HH' - {H'}^2 - ayH')}{H(F - (H(0) - a)( H - H(0) - a))}.
+\end{align*}
+
+
 
 {\sl Problem - can't complete the square. The problem would be if the $c_{-1}$ and $d_{-1}$ in 
 \[
