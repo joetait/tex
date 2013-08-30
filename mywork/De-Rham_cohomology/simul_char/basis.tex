@@ -365,13 +365,13 @@ c_{-1}s^{-1}\left(\frac{F' - yH'}{H} \right) = \frac{c_{-1}}{y-a} \left( \frac{F
 We would like to remove the $y$ term from the denominator of this.
 After noticing that 
 \[
-(y-1)(y-(H+a)) = y^2 - yH - a(H-a) = F- a(H-a)
+(y-a)(y-(H+a)) = y^2 - yH - a(H-a) = F- a(H-a)
 \]
 we clearly see that 
 \begin{align*}
-\frac{c_{-1}}{y-a} \left( \frac{F' - yH'}{H} \right) & = c_{-1} \left( \frac{(F'-yH')(y-(H+a))}{H(F-aH(H+a))} \right) \\
-& = c_{-1} \left( \frac{F'y - F'(H+a) - (F -yH)H' - ayHH'(H-a)}{H(F-aH(H+a))} \right) \\
-& = \frac{c_{-1}(F'(H+a) - FH')}{H(F-aH(H+a))} + \frac{c_{-1}y(F' - HH' - aHH'(H-a))}{H(F-aH(H+a))},
+\frac{c_{-1}}{y-a} \left( \frac{F' - yH'}{H} \right) & = c_{-1} \left( \frac{(F'-yH')(y-(H+a))}{H(F-a(H+a))} \right) \\
+& = c_{-1} \left( \frac{F'y - F'(H+a) - (F -yH)H' - ayH'(H-a)}{H(F-a(H+a))} \right) \\
+& = \frac{c_{-1}(F'(H+a) - FH')}{H(F-a(H+a))} + \frac{c_{-1}y(F' - HH' - aHH'(H-a))}{H(F-a(H+a))},
 \end{align*}
 where we have collected together the $y$ terms, since clearly they cannot contain a $\frac{1}{x}$ term.
 
@@ -386,8 +386,8 @@ As before, we remove the $y$ term from the denominator, this time using the iden
 From this we can then derive \todo{define s and t}
 \begin{align*}
 d_{-1}t^{-1} \left( \frac{F' - yH'}{H} \right)  = & d_{-1}\left( \frac{(F'  - yH')(y+ H + H' + a)}{H(y^2 - yH -(H(0)-a)(H - H(0) -a ))} \right) \\
- =&  \frac{d_{-1}(HF' + F'H' + aF' - FHH')}{H(F-(H(0) - a)(H - H(0) - a))}  \\
-& - \frac{d_{-1}y(F'  - H^2H' - HH' - {H'}^2 - ayH')}{H(F - (H(0) - a)( H - H(0) - a))}.
+ =&  \frac{d_{-1}(HF' + F'H' + aF' - FH')}{H(F-(H(0) - a)(H - H(0) - a))}  \\
+& - \frac{d_{-1}y(F'  - HH' - HH' - {H'}^2 - aH')}{H(F - (H(0) - a)( H - H(0) - a))}.
 \end{align*}
 
 
