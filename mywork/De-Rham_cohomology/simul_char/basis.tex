@@ -244,6 +244,15 @@ We also use the divisor of $y$, which is as follows:
 \end{cases}
 \end{equation}
 Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
+Finally, we will compute the divisor of $dy$.
+We start by noting that when we take the differential of \eqref{definep=2} we derive
+\[
+dF = d\left(y^2 + yH \right) = d(yH) = Hdy + ydH
+\]
+and from this follows 
+\begin{equation}\label{divdyp=2}
+dy = \left(\frac{F'-yH'}{H}dx\right).
+\end{equation}
 
 
 To state the ramification points, and for later use, we suppose that 
@@ -352,7 +361,7 @@ So to work out the residue of $\frac{1}{x}dx$ at $P_0$ we wish to find the $c_{-
 & = \sum_{i\geq -1} c_i s^i dy \\
 & = \sum_{i \geq -1} c_i s^i \left(\frac{F' - yH'}{H} \right) dx,
 \end{align*}
-where the last line follows from. \todo{find reference}
+where the last line follows from \eqref{divdyp=2}.
 Now $\left(\frac{F' -yH'}{H}\right)$ cannot have a pole at $0$, so the only term which can contain a $\frac{1}{x}$ term is the $i=-1$ term.
 We will use this and compare the coefficients to work out the residue at the points. \todo{coem back and describe what I actually do when I have done it}
 
@@ -383,9 +392,9 @@ As before, we remove the $y$ term from the denominator, this time using the iden
 \]
 From this we can then derive. 
 \begin{align*}
-d_{-1}t^{-1} \left( \frac{F' - yH'}{H} \right)  = & d_{-1}\left( \frac{(F'  - yH')(y+ H + H' + a)}{H(y^2 - yH -(H(0)-a)(H - H(0) -a ))} \right) \\
- =&  \frac{d_{-1}(HF' + F'H' + aF' - FH')}{H(F-(H(0) - a)(H - H(0) - a))}  \\
-& - \frac{d_{-1}y(F'  - HH' - HH' - {H'}^2 - aH')}{H(F - (H(0) - a)( H - H(0) - a))}.
+d_{-1}t^{-1} \left( \frac{F' - yH'}{H} \right)  = & d_{-1}\left( \frac{(F'  - yH')(y+ H + H(0) + a)}{H(y^2 - yH -(H(0)-a)(H - H(0) -a ))} \right) \\
+ =&  \frac{d_{-1}(HF' + F'H(0) + aF' - FH')}{H(F-(H(0) - a)(H - H(0) - a))}  \\
+& - \frac{d_{-1}y(F' - H'H(0) - aH')}{H(F - (H(0) - a)( H - H(0) - a))}.
 \end{align*}
 
 
@@ -556,14 +565,6 @@ Again, the first line uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclud
 
 
 We now consider the case when $p=2$.
-We start by noting that when we take the differential of \eqref{definep=2} we derive
-\[
-dF = d\left(y^2 + yH \right) = d(yH) = Hdy + ydH
-\]
-and from this follows 
-\[
-dy = \left(\frac{F'-yH'}{H}dx\right).
-\]
 Now we can see that
 \begin{align*}
 \left( \left( \frac{ \Psi_i}{x^{i+1}H} \right) - \left( \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
