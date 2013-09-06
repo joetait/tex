@@ -799,7 +799,7 @@ For each $i \in \{ 1, \ldots , g\}$ we let
 \end{equation*}
 We then note that 
 \[
-\omega_{11}(dx) = d( \omega_{11}(x) = d\left( \frac{4}{x} \right) = \frac{-4}{x^2}dx.
+\omega_{11}(dx) = d( \omega_{11}(x)) = d\left( \frac{4}{x} \right) = \frac{-4}{x^2}dx.
 \]
 If we recall that 
 \[
@@ -818,18 +818,29 @@ From this we obtain the identity
 y^2 = \frac{x^6 f \left(\frac{4}{x} \right)}{8^2}.
 \end{equation*}
 From this we obtain
-\begin{equation*}
-dy = \frac{1}{2y \cdot 8^2} \left( f'\left(\frac{4}{x} \right) x^6 dx + 6 f\left( \frac{4}{x} \right) x^5  \right) dx
-\end{equation*}
+\begin{align*}
+dy & = \frac{1}{2y \cdot 8^2} \left( f'\left(\frac{4}{x} \right) x^6 d\left(  \frac{4}{x} \right) + 6 f\left( \frac{4}{x} \right) x^5  \right) dx \\
+& = \frac{1}{2y \cdot 8^2} \left( f'\left(\frac{4}{x} \right) \cdot (-4 x^4) dx + 6 f\left( \frac{4}{x} \right) x^5  \right) dx \\
+\end{align*}
 
 We can then use this to compute $d (\omega_{11}(x^{-i}y)) = d \left( \frac{8yx^{i-3}}{4^i} \right)$, which we now do:
 \begin{align*}
 d\left( \frac{8yx^{i-3}}{4^i} \right) & = \frac{8}{4^i} \left( x^{i-3}dy + ydx^{i-3} \right) \\
-& = \frac{8}{4^i} \left( \frac{x^{i-3}}{2y8^2} \left( f'\left( \frac{4}{x}  \right) x^6 + 6x^5 f\left( {4}{x} \right) \right) + (i-3)x^{i-4}y \right) dx \\
-& = \frac{8}{4^i} \left( \frac{1}{2y8^2} \left( f'\left( \frac{4}{x} \right) x^{i+3} + 6x^{i+2} f\left( \frac{4}{x} \right) \right) \frac{(i-3)x^{i-4}x^6f \left( \frac{4}{x} \right)  }{y8^2} \right)  \\
-& = \frac{8}{4^i} \cdot \frac{x^{i+3}}{2y8^2} \left( f' \left( \frac{4}{x} \right)  + \frac{6}{x} f \left( \frac{4}{x} \right)  + \frac{2(i-3)f \left( \frac{4}{x} \right)  }{y8^2} \right) dx \\
-& = \frac{x^{i+3}}{2 \cdot 4^i \cdot 8 \cdot y} \left( f'\left( \frac{4}{x} \right)  + \frac{ 2i f \left( \frac{4}{x} \right) }{x} \right) dx.
+& = \frac{8}{4^i} \left( \frac{x^{i-3}}{2y8^2} \left( \frac{-4}{x^2} \cdot f'\left( \frac{4}{x}  \right) x^6 + 6x^5 f\left( {4}{x} \right) \right) + (i-3)x^{i-4}y \right) dx \\
+& = \frac{8}{4^i} \left( \frac{1}{2y8^2} \left(\frac{-4}{x^2} \cdot  f'\left( \frac{4}{x} \right) x^{i+3} + 6x^{i+2} f\left( \frac{4}{x} \right) \right) + \frac{(i-3)x^{i-4}x^6f \left( \frac{4}{x} \right)  }{y8^2} \right) dx \\
+& = \frac{8}{4^i} \cdot \frac{x^{i+3}}{2y8^2} \left(\frac{-4}{x^2} \cdot  f' \left( \frac{4}{x} \right)  + \frac{6}{x} f \left( \frac{4}{x} \right)  + \frac{2(i-3)f \left( \frac{4}{x} \right)  }{x} \right) dx \\
+& = \frac{x^{i+3}}{2 \cdot 4^i \cdot 8 \cdot y} \left(\frac{-4}{x^2} \cdot  f'\left( \frac{4}{x} \right)  + \frac{ 2i f \left( \frac{4}{x} \right) }{x} \right) dx \\
+& = \frac{x^{i+1}}{4^{i+1}y} \left( f' \left(\frac{4}{x} \right) + \frac{2if \left( \frac{4}{x} \right) x}{4} \right) dx.
 \end{align*}
+\todo{double check the signs here, also, missing a factor fo two}Note that the function before $dx$ here is precisely $\omega_{11}\left(\frac{s_i(x)}{2yx^i} \right)$.
+
+This shows that
+\[
+\left( \omega_{11} \left( \left( \frac{s_i(x)}{2yx^i} \right) dx \right) , 0, \omega_{11}( x^{-i}y)\right)
+\]
+is the zero element in $\derhamhone$.
+
+This then lets us see that one of the basis elements associated to $\hone$ can be written in terms of $\nu_i$ after applying $\omega_{11}$. \todo{do this}
 
 \begin{note}
 By the action of $\omega_{11}$ we have $\frac{8^2y^2}{x^6} = f\left(\frac{4}{x} \right)$.
