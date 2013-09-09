@@ -806,10 +806,12 @@ If we recall that
 s_i(x) = \alpha_{2g+2}^ix^{2g+2} + \ldots + \alpha_0^i
 \]
 then we can see that the $\omega_{11}$ acts as follows:
-\begin{align*}
+\begin{equation}\label{omega11action}
+\begin{split}
 \omega_{11} (\nu_i) & = \left( \sum_{j = g+1}^{2g+2} \left( \frac{\alpha_j^i 4^{j-i}x^3}{2x^{j-i}y} \right) \frac{-4}{x^2} dx, \sum_{j = 0}^{g} \left(\frac{\alpha_j^i 4^{j-i} x^3}{2x^{j-i}y} \right) \frac{-4}{x^2}dx , \frac{8yx^i}{4^i x^3} \right) \\
 & = \left( \sum_{j=g+1}^{2g+2} \left( \frac{\alpha_j4^{i-j+1}}{2yx^{j-i-1}} \right)dx, \sum_{j = 0}^{g} \left( \frac{-\alpha_j^i 4^{j-i+1}}{2yx^{j-i-1}} \right) dx, \frac{2yx^{i-3}}{4^{i-1}} \right).
-\end{align*}
+\end{split}
+\end{equation}
 
 Now it appears that these terms are similar to those of $s_i \left( \frac{4}{x} \right)$, so it would be good to see if we can somehow write $y^2$ in terms of  some function of $\omega_{11}(x) = \frac{4}{x}$.
 We can do this, since of course $\omega_{11}(y)^2 = \omega_{11}(y^2) = \omega_{11}(f(x)) = \omega_{11}\left( f \left(\frac{4}{x} \right) \right)$.
@@ -840,8 +842,10 @@ This shows that
 \]
 is the zero element in $\derhamhone$.
 
-This then lets us see that one of the basis elements associated to $\hone$ can be written in terms of $\nu_i$ after applying $\omega_{11}$. \todo{do this}
-
+We will now finally show that the basis of $\hone$ in $\derhamhone$ is not stable under the group action --- in particular, it is not stable under the action of $\omega_{11}$.
+Now we fix $i = g-1$.
+We can then clealry see from \eqref{omega11action} that if $\alpha_{g}^i$ is zero all the $x$ terms in the second co-ordinate will have degree at most $g-1$.
+Since $g =2$, we can compute this by \todo{$s_i$ should only go up to order 2g+1 - check this has been done}
 \begin{note}
 By the action of $\omega_{11}$ we have $\frac{8^2y^2}{x^6} = f\left(\frac{4}{x} \right)$.
 \end{note}
