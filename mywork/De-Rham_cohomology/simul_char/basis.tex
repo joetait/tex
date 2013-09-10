@@ -810,7 +810,7 @@ s_i(x) = \alpha_{2g+1}^ix^{2g+1} + \ldots + \alpha_0^i
 then we can see that the $\omega_2$ acts as follows:
 \begin{equation}\label{omega11action}
 \begin{split}
-\omega_2 (\nu_i) & = \left( \sum_{j = g+1}^{2g+1} \left( \frac{\alpha_j^i 4^{j-i}x^3}{2x^{j-i}y} \right) \frac{-4}{x^2} dx, \sum_{j = 0}^{g} \left(\frac{\alpha_j^i 4^{j-i} x^3}{2x^{j-i}y} \right) \frac{-4}{x^2}dx , \frac{8yx^i}{4^i x^3} \right) \\
+\omega_2 (\nu_i) & = \left( -\sum_{j = g+1}^{2g+1} \left( \frac{\alpha_j^i 4^{j-i}x^3}{2x^{j-i}y} \right) \frac{-4}{x^2} dx, \sum_{j = 0}^{g} \left(\frac{\alpha_j^i 4^{j-i} x^3}{2x^{j-i}y} \right) \frac{-4}{x^2}dx , \frac{8yx^i}{4^i x^3} \right) \\
 & = \left( \sum_{j=g+1}^{2g+1} \left( \frac{\alpha_j4^{i-j+1}}{2yx^{j-i-1}} \right)dx, \sum_{j = 0}^{g} \left( \frac{-\alpha_j^i 4^{j-i+1}}{2yx^{j-i-1}} \right) dx, \frac{2yx^{i-3}}{4^{i-1}} \right).
 \end{split}
 \end{equation}
@@ -823,22 +823,22 @@ y^2 = \frac{x^6 f \left(\frac{4}{x} \right)}{8^2}.
 \end{equation*}
 From this we obtain
 \begin{align*}
-dy & = \frac{1}{2y \cdot 8^2} \left( f'\left(\frac{4}{x} \right) x^6 d\left(  \frac{4}{x} \right) + 6 f\left( \frac{4}{x} \right) x^5  \right) dx \\
-& = \frac{1}{2y \cdot 8^2} \left( f'\left(\frac{4}{x} \right) \cdot (-4 x^4) dx + 6 f\left( \frac{4}{x} \right) x^5  \right) dx \\
+dy & = \frac{1}{2y \cdot 8^2} \left( f'\left(\frac{4}{x} \right) x^6 d\left(  \frac{4}{x} \right) + 6 f\left( \frac{4}{x} \right) x^5 dx \right) \\
+& = \frac{1}{2y \cdot 8^2} \left( f'\left(\frac{4}{x} \right) \cdot (-4 x^4) + 6 f\left( \frac{4}{x} \right) x^5  \right) dx \\
 \end{align*}
 
 We can then use this to compute $d (\omega_2(x^{-i}y)) = d \left( \frac{8yx^{i-3}}{4^i} \right)$, which we now do:
 \begin{align*}
 d\left( \frac{8yx^{i-3}}{4^i} \right) & = \frac{8}{4^i} \left( x^{i-3}dy + ydx^{i-3} \right) \\
-& = \frac{8}{4^i} \left( \frac{x^{i-3}}{2y8^2} \left( \frac{-4}{x^2} \cdot f'\left( \frac{4}{x}  \right) x^6 + 6x^5 f\left( {4}{x} \right) \right) + (i-3)x^{i-4}y \right) dx \\
+& = \frac{8}{4^i} \left( \frac{x^{i-3}}{2y8^2} \left( \frac{-4}{x^2} \cdot f'\left( \frac{4}{x}  \right) x^6 + 6x^5 f\left( \frac{4}{x} \right) \right) + (i-3)x^{i-4}y \right) dx \\
 & = \frac{8}{4^i} \left( \frac{1}{2y8^2} \left(\frac{-4}{x^2} \cdot  f'\left( \frac{4}{x} \right) x^{i+3} + 6x^{i+2} f\left( \frac{4}{x} \right) \right) + \frac{(i-3)x^{i-4}x^6f \left( \frac{4}{x} \right)  }{y8^2} \right) dx \\
 & = \frac{8}{4^i} \cdot \frac{x^{i+3}}{2y8^2} \left(\frac{-4}{x^2} \cdot  f' \left( \frac{4}{x} \right)  + \frac{6}{x} f \left( \frac{4}{x} \right)  + \frac{2(i-3)f \left( \frac{4}{x} \right)  }{x} \right) dx \\
 & = \frac{x^{i+3}}{2 \cdot 4^i \cdot 8 \cdot y} \left(\frac{-4}{x^2} \cdot  f'\left( \frac{4}{x} \right)  + \frac{ 2i f \left( \frac{4}{x} \right) }{x} \right) dx \\
-& = \frac{x^{i+1}}{4^{i+1}y} \left( f' \left(\frac{4}{x} \right) + \frac{2if \left( \frac{4}{x} \right) x}{4} \right) dx.
+& = \frac{x^{i+1}}{4^{i+1}y} \left( -f' \left(\frac{4}{x} \right) + \frac{2if \left( \frac{4}{x} \right) x}{4} \right) dx.
 \end{align*}
-\todo{double check the signs here, also, missing a factor fo two}Note that the function before $dx$ here is precisely $\omega_2\left(\frac{s_i(x)}{2yx^i} \right)$.
+\todo[noline]{Apart from the minus sign in front of $f' \left( \frac{4}{x} \right)$ and a factor of two almost matches up - check computations}Note that the function before $dx$ here is precisely $\omega_2\left(\frac{s_i(x)}{2yx^i} \right)$.
 
-This shows that
+This (almost) shows that
 \[
 \left( \omega_2 \left( \left( \frac{s_i(x)}{2yx^i} \right) dx \right) , 0, \omega_2( x^{-i}y)\right)
 \]
@@ -847,7 +847,6 @@ is the zero element in $\derhamhone$.
 We will now finally show that the basis of $\hone$ in $\derhamhone$ is not stable under the group action --- in particular, it is not stable under the action of $\omega_2$.
 Now we fix $i = g-1$.
 We can then clealry see from \eqref{omega11action} that if $\alpha_{g}^i$ is zero all the $x$ terms in the second co-ordinate will have degree at most $g-1$.
-Since $g =2$, we can compute this by \todo{$s_i$ should only go up to order 2g+1 - check this has been done}
 \begin{note}
 By the action of $\omega_2$ we have $\frac{8^2y^2}{x^6} = f\left(\frac{4}{x} \right)$.
 \end{note}
