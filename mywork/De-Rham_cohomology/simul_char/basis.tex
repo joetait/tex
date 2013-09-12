@@ -64,8 +64,8 @@
 \usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage{cabin}
+%\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{cabin}
 %\usepackage{libertine}
 %\usepackage[T1]{fontenc}
 
@@ -136,7 +136,7 @@ We therefore recall the \cech cohomology relevant to both of these, starting wit
 By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
 The cover we shall be using is $U_1 = X\backslash \pi^{-1}(0)$ and $U_2 = X\backslash  \pi^{-1}(\infty) $, both of which are affine sets.
 We let ${\cal U} = \{ U_1, U_2\}$.
-Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_1) \rightarrow {\cal F}(U_0 \cap U_1)$, given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_0 \cap U_1} - f_1|_{U_0 \cap U_1}$.
+Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_1) \times {\cal F} (U_2) \rightarrow {\cal F}(U_1 \cap U_2)$, given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_1 \cap U_2} - f_1|_{U_1 \cap U_2}$.
 In general we will not explicitly show that we are considering the restriction when applying this map, unless it adds clarity.
 It is this map which gives us the differential $d$ in the \cech cochain
 \begin{equation*}
@@ -160,7 +160,7 @@ We then use the open cover $\cal U$ and the \cech differentials as defined earli
 \begin{equation}\label{bicomplex} \begin{array}{ccccccc}
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
-0 & \rightarrow & \cO_X(U_0)\times \cO_X(U_1) & \rightarrow & \Omega_X(U_1)\times \Omega_X(U_2) & \rightarrow & 0 \\
+0 & \rightarrow & \cO_X(U_1)\times \cO_X(U_2) & \rightarrow & \Omega_X(U_1)\times \Omega_X(U_2) & \rightarrow & 0 \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
 0 & \rightarrow & \cO_X(U_1 \cap U_2) & \rightarrow & \Omega_X(U_1 \cap U_2) & \rightarrow & 0 \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
@@ -174,21 +174,21 @@ since $U_1$ and $U_2$ are affine, this again follows from Serre's affineness cri
 
 
 
-After computing the first cohomology group of the total complex \eqref{bicomplex} we see that $H^1_{{\text dR}}(X/k)$ is isomorphic to the space
+After computing the first cohomology group of the total complex of \eqref{bicomplex} we see that $H^1_{{\text dR}}(X/k)$ is isomorphic to the space
 \begin{equation}\label{derhamconditions}
 \left\{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1|_{U_1\cap U_2} - \omega_2|_{U_1\cap U_2} \right\}
 \end{equation}
 quotiented by the subspace
-\[
+\begin{equation}\label{quotient}
 \left\{  (df_1, df_2, f_1|_{U_1\cap U_2} -f_2|_{U_1\cap U_2} )|f_i \in \cO_X(U_i)\right\}.
-\]
+\end{equation}
 
 We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$.
 To do this we will compute $k$-bases for the two outer terms of the short exact sequence
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra \derhamhone \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
-A basis of $H^0(X,\Omega_X)$ is already known in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
+A basis of $H^0(X,\Omega_X)$ is already available in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
 
 \begin{comment}
 In order to do this we will need to use Serre duality, which we briefly remind the reader of presently.
@@ -207,7 +207,7 @@ y^2 = f(x)
 for some polynomial $f(x) \in k[x]$, of degree $2g+1$ or $2g+2$ \cite[Prop 7.4.24]{liu}.
 
 For any $a\in \mathbb P_k^1$ we let $D_a$ denote the divisor $\pi^*([a])$.
-Hence we have
+Hence 
 \begin{equation}\label{divisorofpoints}
 D_a= 
 \begin{cases}
@@ -217,7 +217,7 @@ D_a=
 \end{equation}
 We then let $R$ be the ramification divisor of $\pi$, and recall that 
 \begin{equation}\label{pnot2divisors}
-\di(y)  = R - (g+1)D_\infty \text{ and that } \di( dx) = R - 2D_\infty.
+\di(y)  = R - (g+1)D_\infty \text{ and } \di( dx) = R - 2D_\infty.
 \end{equation}
 
 
@@ -271,7 +271,7 @@ Details can be found in \cite[\S 6]{faithfulaction}.
 
 Having given the details of the curves, we now recall Serre duality, which we will use shortly to find a basis of $\hone$.
 We recall that an {\sl ad\`ele} or {\sl r\'epartition} is a family of elements $\{r_P\}_{P\in X}$ such that $r_P \in \cO_P$ for almost all $P\in X$, as in \cite[Chap. II, \S 5]{algebraicgroupsandclassfields}.
-We let $R$ denote the space of ad\`eles, and given a divisor $D = \sum n_P[P]$ we let $R(D)$ be the space of ad\`eles $r = \{r_P\}$ such that $\ord_P(r_P) \geq n_P$.
+We let $R$ denote the space of ad\`eles, and given a divisor $D = \sum n_P[P]$ we let $R(D)$ be the space of ad\`eles $r = \{r_P\}$ such that $\ord_P(r_P) \geq n_P$ for all $P \in X$.
 Note that one can embed the function field $K(X)$ in to $R$.
 Given any $f \in K(X)$ one defines $r \in R$ by setting $r_P = f$ for all $P \in X$, and this is clearly an injection.
 Given this we can see that the quotient $R/(R(0) + K(X))$ is well defined, and Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to this quotient.
@@ -297,7 +297,7 @@ We now compute the basis of $H^1(X,\cO_X)$, and then state the basis of $\derham
 We use Serre duality and the fact that we already know a basis of $\hzero$.
 Recall that if $p\neq 2$ then for $i \in \{0,\ldots, g-1\}$ the elements $\omega_i = x^iy^{-1}dx$ form a basis of $\hzero$.
 Then for $j\in \{1, \ldots, g\}$  we consider the pair $\langle x^iy^{-1}dx, yx^{-j}|_{U_1}\rangle$, which maps to the residue of $x^{i-j}dx|_{U_1}$.
-In general, the divisor of $x^{i-j}dx$ when $p\neq 2$ is
+In general, the divisor of $x^{i-j}dx$ (when not resctricted to $U_1$) when $p\neq 2$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
 \di(x^{i-j}dx) & = R - 2D_\infty +(i-j)D_0 - (i-j)D_\infty \\
@@ -305,7 +305,7 @@ In general, the divisor of $x^{i-j}dx$ when $p\neq 2$ is
 \end{split}
 \end{equation}
 Now if $\infty$ is a branch point, then we can see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one).
-Then the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$ (i.e. $j \in \{1, \ldots, g\}$).
+Since there are no other poles on $U_1$ the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$ (i.e. $j \in \{1, \ldots, g\}$).
 
 On the other hand, if $\infty$ is not a branch point we have two poles of order one, $P_\infty$ and $P_\infty'$.
 Since we have two poles we need to check that the residues at these poles do not cancel to zero.
@@ -327,20 +327,21 @@ We then rewrite the expansion of $\frac{1}{x}dx$ (i.e. $x^{i-j}dx$ when $i-j=-1$
 \frac{1}{x}dx & = \sum_{i\geq -1}c_it^i dt \\
 & = \sum_{i\geq -1}c_it^i d\left(y-\sqrt{f(0)}\right)\\
 & = \sum_{i\geq -1}c_it^i dy \\
-& = \sum_{i\geq -1}c_it^i \frac{f'}{2y}dx.
+& = \sum_{i\geq -1}c_it^i \frac{f'}{2y}dx,
 \end{align*}
+where $c_i \in k$.
 Now that both sides are in terms of the same differential we can match coefficients to discover the value of $c_{-1}$.
 We remark that at this point the exact same computations yield
 \[
 \frac{1}{x}dx = \sum_{i\geq -1}d_is^i \frac{f'}{2y}dx.
 \]
-Now the left hand side has a pole at $P_0$ and the only term on the right hand side that can also have a pole at $P_0$ is 
+Now $\frac{1}{x}$ has a pole at $P_0$ and the coefficient of $dx$ on the right hand side that can also have a pole at $P_0$ is 
 \[
 c_{-1}t^{-1}\frac{f'}{2y} = \frac{c_{-1}f'}{2y^2 - 2y\sqrt{(f(0)}} = \frac{c_{-1}f'\left( 2f+2y\sqrt{f(0)}\right) }{4(f^2-f\cdot f(0))}.
 \]
-We will use the fact that this is the only part of the sum that can contain a term of the form $\frac{1}{x}$ to compute $c_{-1}$.
+We will use the fact that this is the only part of the sum that can contain a term of the form $\frac{1}{x}$ to compute the residue.
 Clearly no part of $\frac{2c_{-1}f'y\sqrt{f(0)}}{4(f^2-f\cdot f(0))}$ can contain a $\frac{1}{x}$ term, since there is no way of removing the $y$.
-This means we just need to compute the $\frac{1}{x}$ terms in $\frac{c_{-1}f'\cdot f}{2(f^2-f\cdot f(0))}$ and compare coefficients to work out $c_{-1}$.
+This means we just need to compute the $\frac{1}{x}$ terms in $\frac{c_{-1}f'\cdot f}{2(f^2-f\cdot f(0))}$ and compare coefficients to show the residue is non-zero on $X \backslash U_1$.
 
 We notice at this point that by almost the same calculations when expanding about $P_0'$ we get the following
 \[
@@ -356,15 +357,15 @@ Again, if $i-j=-1$ and $\infty$ is branch point then we again have a pole of ord
 Also, even if $\infty$ is not a branch point it still suffices to compute the residue on $X\backslash U_2$, and we see that if $0$ is a branch point this is non-zero.
 So we again need only consider the case when both $\infty$ and $0$ are not branch points.
 
-We start by noticing that if we let $P_0 = (0,a)$ and $P_0' = (0,a+H(0))$ then we know that $s=y-1$ and $t=y-(a+H(0))$ are uniformising parameters at $P_0$ and $P_0'$ respectively.
+We start by noticing that if we let $P_0 = (0,a)$ and $P_0' = (0,a+H(0))$ then we know that $s=y-a$ and $t=y-(a+H(0))$ are uniformising parameters at $P_0$ and $P_0'$ respectively.
 So to work out the residue of $\frac{1}{x}dx$ at $P_0$ we wish to find the $c_{-1}$ coefficient in the expansion
 \begin{align*}
 \frac{1}{x}dx & = \sum_{i \geq -1} c_i s^i d(y-a) \\
 & = \sum_{i\geq -1} c_i s^i dy \\
 & = \sum_{i \geq -1} c_i s^i \left(\frac{F' - yH'}{H} \right) dx,
 \end{align*}
-where the last line follows from \eqref{divdyp=2}.
-Now $\left(\frac{F' -yH'}{H}\right)$ cannot have a pole at $0$, so the only term which can contain a $\frac{1}{x}$ term is the $i=-1$ term.
+where the last line follows from \eqref{divdyp=2} and $c_i \in k$.
+Now $\left(\frac{F' -yH'}{H}\right)$ cannot have a pole at $0$ since $H(0) \neq 0$, so the only part of the series which can contain a $\frac{1}{x}$ term is the $i=-1$ term.
 We will use this and compare the coefficients to work out the residue at the points. \todo{coem back and describe what I actually do when I have done it}
 
 In other words we wish to find the $\frac{1}{x}$ term in 
@@ -379,8 +380,8 @@ After noticing that
 we clearly see that 
 \begin{align*}
 \frac{c_{-1}}{y-a} \left( \frac{F' - yH'}{H} \right) & = c_{-1} \left( \frac{(F'-yH')(y-(H+a))}{H(F-a(H+a))} \right) \\
-& = c_{-1} \left( \frac{F'y - F'(H+a) - (F -yH)H' - ayH'(H-a)}{H(F-a(H+a))} \right) \\
-& = \frac{c_{-1}(F'(H+a) - FH')}{H(F-a(H+a))} + \frac{c_{-1}y(F' - HH' - aHH'(H-a))}{H(F-a(H+a))},
+& = c_{-1} \left( \frac{F'y - F'(H+a) - (F -yH)H' - yH'(H-a)}{H(F-a(H+a))} \right) \\
+& = \frac{c_{-1}(F'(H+a) - FH')}{H(F-a(H+a))} + \frac{c_{-1}y(F' - aH')}{H(F-a(H+a))},
 \end{align*}
 where we have collected together the $y$ terms, since clearly they cannot contain a $\frac{1}{x}$ term.
 
@@ -389,12 +390,13 @@ We then perform a similar operation on the equivalent term for the expansion aro
 \frac{d_{-1}(F' - yH')}{H(y - (H(0) - a))}.
 \]
 As before, we remove the $y$ term from the denominator, this time using the identity
-\[
-(y-(H(0)+a))(y - (H+H(0)+a)) = y^2 - yH - (H(0) - a)(H - H(0) - a).
-\]
+\begin{align*}
+(y-(H(0)+a))(y - (H+H(0)+a)) &  = y^2 - yH - (H(0) - a)(H - H(0) - a) \\
+& = F - (H(0)-a)(H - H(0) - a).
+\end{align*}
 From this we can then derive. 
 \begin{align*}
-d_{-1}t^{-1} \left( \frac{F' - yH'}{H} \right)  = & d_{-1}\left( \frac{(F'  - yH')(y+ H + H(0) + a)}{H(y^2 - yH -(H(0)-a)(H - H(0) -a ))} \right) \\
+d_{-1}t^{-1} \left( \frac{F' - yH'}{H} \right)  = & d_{-1}\left( \frac{(F'  - yH')(y+ H + H(0) + a)}{H(F -(H(0)-a)(H - H(0) -a ))} \right) \\
  =&  \frac{d_{-1}(HF' + F'H(0) + aF' - FH')}{H(F-(H(0) - a)(H - H(0) - a))}  \\
 & - \frac{d_{-1}y(F' - H'H(0) - aH')}{H(F - (H(0) - a)( H - H(0) - a))}.
 \end{align*}
@@ -415,7 +417,7 @@ Hunch - if one of the residues is $a$ the other is likely $a+1$.}
 
 
 
-In order to state the basis of $\derhamhone$, as well as to shorten the proof of the following proposition, we define the following polynomials and differentials. 
+In order to state the basis of $\derhamhone$, as well as to shorten the proof of the following proposition, we define the following polynomials. 
 We suppose that $1 \leq i \leq g$.
 Then when $p\neq 2$ we define
 \[
@@ -437,7 +439,7 @@ Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $
 
 If $p \neq 2$ then the residue classes of the elements 
 \begin{equation}\label{one}
- \left( \left( \frac{-\psi_i(x)}{2yx^i}\right) dx, \left(\frac{\phi_i(x)}{2yx^i}\right) dx, x^{-i}y\right), i=1, \ldots ,g,
+ \left( \left( \frac{\psi_i(x)}{2yx^i}\right) dx, \left(\frac{-\phi_i(x)}{2yx^i}\right) dx, x^{-i}y\right), i=1, \ldots ,g,
 \end{equation}
 along with the residue classes of 
 \begin{equation}\label{two}
@@ -447,7 +449,7 @@ form a basis of $\derhamhone$.
 
 On the other hand, if $p=2$ then the residue classes of the elements 
 \begin{equation}\label{three}
-\left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right), i =1, \ldots , g,
+\left( \left(\frac{\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right), i =1, \ldots , g,
 \end{equation}
 together with the residue classes of 
 \begin{equation}\label{four}
@@ -459,15 +461,15 @@ form a basis of $\derhamhone$.
 Before proving this proposition we use it to prove the following corollary.
 
 \begin{cor}
-The action of $G$ on $\derhamhone$ is faithful.
+The action of $G$ on $\derhamhone$ is faithful unless both $p=2$.
 \end{cor}
 
 \begin{proof}
 Recall that $H^0(X,\Omega_X)$ injects in to $\derhamhone$.
-Then if $p \neq 2$, or if $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
+Then if $p \neq 2$ it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
 
-We now suppose that $p=2$ and $G$ does contain a hyperelliptic involution $\sigma$.
-By the same theorem from \cite{faithfulaction} as used in the last paragraph, we know that $G$ does not act faithfully on $\hzero$.
+We now suppose that $p=2$ and we denote the hyperelliptic involution in $G$ by $\sigma$.
+By the same theorem from \cite{faithfulaction} as used in the last paragraph, we know that $G$, and in particular $\sigma$, does not act faithfully on $\hzero$.
 Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully on $\hone$.
 In particular, $\sigma$ will act trivially on $\hone$.
 
@@ -480,22 +482,30 @@ Now we can split $\frac{H(x)}{x^i}$ as follows,
 and since this is clearly the difference of an element of $\cO_x(U_1)$ and an element of $\cO_x(U_2)$ we see that $\frac{H(x)}{x^i}$ is zero in $\hone$.
 We let 
 \[
-H_1(x) = \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i}
+{}_iH_1(x) = \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i}
 \]
 and 
 \[
-H_2(x) = - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i}.
+{}_iH_2(x) = - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i}.
 \]
 \todo{this can be made shorter/ rearranged - kept for now as may be useful}
 
-Despite having a trivial action on both of the outside terms of \eqref{ses}, when we apply this action to $\derhamhone$ it is not trivial. 
-We can describe exactly how sigma acts on the elements of \eqref{three} using $H_1(x)$ and $H_2(x)$:
+We can now describe exactly how sigma acts on the elements of \eqref{three} using ${}_iH_1(x)$ and ${}_iH_2(x)$:
 \begin{multline}
 \sigma \left( \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right)\right) = \\
- \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + H'_1(x)dx,  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ H'_2(x)dx, x^{-i}y \right).
+ \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + {}_iH'_1(x)dx,  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ {}_iH'_2(x)dx, x^{-i}(y+H(x)) \right).
 \end{multline}
-Hence the action is trivial if and only if $H_1'(x)dx = H_2'(x)dx =0$.\todo{should probably add some notation to index the i on these polynomails}
-This cannot happen though, since we can always find an $i\in \{0,1\}$ such that $i \not\equiv d\ \text{mod}\ 2$, and then $d\left(H_2(x)\right) = H_2'(x) \neq 0$, as we can see from the leading term (unless of course $d$ is zero, in which case $d\left(H_1(x)\right) \neq 0$).
+So the action on the basis elements in \eqref{three} is equivalent to adding 
+\[
+\left( {}_iH_1'dx, {}_iH_2'dx, x^{-i}(y + H(x) \right),
+\]
+which clearly satisfies the conditions of \eqref{quotient} and hence is zero.
+So the actio of the involution is trivial.
+We can then see from the proof of the aforementioned theorem in \cite{faithfulaction} that the entire action is trivial, and hence not faithful.
+\begin{comment}
+Hence the action is trivial if and only if ${}_iH_1'(x)dx = {}_iH_2'(x)dx =0$.\todo{should probably add some notation to index the i on these polynomails}
+This cannot happen though, since we can always find an $l\in \{0,1\}$ such that $l \not\equiv d\ \text{mod}\ 2$, and then $d\left({}_iH_2(x)\right) = {}_iH_2'(x)dx \neq 0$, as we can see from the leading term (unless of course $d$ is zero, in which case $d\left({}_iH_1(x)\right) \neq 0$).
+\end{comment}
 \end{proof}
 
 
@@ -534,12 +544,12 @@ so that
 \[
 \phi_i(x) = \alpha^i_{2g+1}x^{2g+1} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i(x) = \alpha^i_gx^g + \ldots + \alpha^i_0.
 \]
-Note that it is possible for any of $\alpha_i^j$ to be zero. Indeed, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
-Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 < d_\psi \leq g+1$ and $g < d_\phi \leq 2g+1$ respectively, for all $1 \leq i \leq g$
+Note that it is possible for any of $\alpha^i_j$ to be zero. Indeed, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
+Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 < d_\psi \leq g+1$ and $g < d_\phi \leq 2g+1$ for all $1 \leq i \leq g$.
 \todo{remove d psi? - will keep for now in case useful later}
 
 
-We now show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{\psi_i}{2yx^i}dx$ are regular on $U_2$ and $U_1$ respectively.
+We now show that $\frac{-\phi_i}{2yx^i}dx$ and $\frac{\psi_i}{2yx^i}dx$ are regular on $U_2$ and $U_1$ respectively.
 We may assume that $\phi_i$ and $\psi_i$ are non-zero, since zero is regular everywhere.
 The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
 
@@ -565,8 +575,8 @@ Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 Again, the first line uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
 
 
-We now consider the case when $p=2$.
-Now we can see that
+We now suppose that $p=2$.
+We can see that
 \begin{align*}
 \left( \left( \frac{ \Psi_i}{x^{i+1}H} \right) - \left( \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
 & =  \left( \frac{F'}{x^iH} + \frac{yH'}{x^iH} + \frac{iy}{x^{i+1}} \right) dx \\
@@ -584,7 +594,7 @@ S_i(x,y) = A_{2g+2}^ix^{2g+2} + \ldots + A^i_1 x + y(B_{g+1}^i x^{g+1} + \ldots 
 Note that many of these coefficients may be zero.
 In particular we note that $B_i^i = 0$ for all $i$.
 If $i$ is even then $B_{g+1}^ix^{g+1} + \ldots + B_1^ix + B_0^i = H'x$ and so the coefficient of $x^i$ in $H'x$ is $ib_i = 0$ (recall that we defined $b_i$ to be the coefficients of $H$ in \eqref{hcoefficients}).
-Similarly, if $i$ is odd then $B_{g+1}^ix^{g+1} + \ldots + B_1^ix + B_0^i = H'x + H$, and then the coefficient of $x^i$ is $ib_i+ ib_i = 2b_i = 0$.
+Similarly, if $i$ is odd then $B_{g+1}^ix^{g+1} + \ldots + B_1^ix + B_0^i = H'x + H$, and then the coefficient of $x^i$ is $ib_i+ ib_i = 2ib_i = 0$.
 
 
 We can now define the following polynomials:
@@ -665,6 +675,7 @@ Thus we have completed the proof.
 Introduction needs to be finalised once the proof in the previous section is completed.
 
 \begin{lem}
+Suppose that $\infty\in \mathbb P_k^1$ is a branch point.
 If $p \neq 2$ then ${\rm res}_{P_\infty}(\frac{1}{x}dx) = -2$.
 If $p=2$ then ${\rm res}_{P_\infty}\left(\frac{ydx}{xH(x)}\right) = 1$.
 \end{lem}
