@@ -122,7 +122,7 @@
 \begin{document}
 \maketitle
 
-\listoftodos
+%\listoftodos
 
 \section{Background}
 
@@ -297,7 +297,7 @@ We now compute the basis of $H^1(X,\cO_X)$, and then state the basis of $\derham
 We use Serre duality and the fact that we already know a basis of $\hzero$.
 Recall that if $p\neq 2$ then for $i \in \{0,\ldots, g-1\}$ the elements $\omega_i = x^iy^{-1}dx$ form a basis of $\hzero$.
 Then for $j\in \{1, \ldots, g\}$  we consider the pair $\langle x^iy^{-1}dx, yx^{-j}|_{U_1}\rangle$, which maps to the residue of $x^{i-j}dx|_{U_1}$.
-In general, the divisor of $x^{i-j}dx$ (when not resctricted to $U_1$) when $p\neq 2$ is
+In general, the divisor of $x^{i-j}dx$ (when not restricted to $U_1$) when $p\neq 2$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
 \di(x^{i-j}dx) & = R - 2D_\infty +(i-j)D_0 - (i-j)D_\infty \\
@@ -366,7 +366,7 @@ So to work out the residue of $\frac{1}{x}dx$ at $P_0$ we wish to find the $c_{-
 \end{align*}
 where the last line follows from \eqref{divdyp=2} and $c_i \in k$.
 Now $\left(\frac{F' -yH'}{H}\right)$ cannot have a pole at $0$ since $H(0) \neq 0$, so the only part of the series which can contain a $\frac{1}{x}$ term is the $i=-1$ term.
-We will use this and compare the coefficients to work out the residue at the points. \todo{coem back and describe what I actually do when I have done it}
+We will use this and compare the coefficients to work out the residue at the points. \todo{come back and describe what I actually do when I have done it}
 
 In other words we wish to find the $\frac{1}{x}$ term in 
 \[
@@ -500,7 +500,7 @@ So the action on the basis elements in \eqref{three} is equivalent to adding
 \left( {}_iH_1'dx, {}_iH_2'dx, x^{-i}H(x) \right),
 \]
 which clearly satisfies the conditions of \eqref{quotient} and hence is zero.
-So the actio of the involution $\sigma$ is trivial and hence the action of the group is not faithful.
+So the action of the involution $\sigma$ is trivial and hence the action of the group is not faithful.
 \begin{comment}
 Hence the action is trivial if and only if ${}_iH_1'(x)dx = {}_iH_2'(x)dx =0$.\todo{should probably add some notation to index the i on these polynomails}
 This cannot happen though, since we can always find an $l\in \{0,1\}$ such that $l \not\equiv d\ \text{mod}\ 2$, and then $d\left({}_iH_2(x)\right) = {}_iH_2'(x)dx \neq 0$, as we can see from the leading term (unless of course $d$ is zero, in which case $d\left({}_iH_1(x)\right) \neq 0$).
