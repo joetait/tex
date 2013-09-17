@@ -21,7 +21,7 @@
 
 \usepackage{graphicx} % support the \includegraphics command and options
 
-\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
 %%% PACKAGES
 \usepackage{mathtools}
@@ -80,11 +80,13 @@
 \newcommand{\cL}{{\mathcal L}}
 \newcommand{\cA}{{\mathcal A}}
 \newcommand{\cD}{{\mathcal D}}
+\newcommand{\cU}{{\mathcal U}}
 \newcommand{\cech}{\v{C}ech }
 \newcommand{\hzero}{{H^0(X,\Omega_X)}}
 \newcommand{\hone}{H^1(X,\mathcal{O}_X)}
 \newcommand{\cechhone}{\check{H}^1(\mathcal U,\mathcal O_X)}
 \newcommand{\derhamhone}{H_{\text {dR}}^1(X/k)}
+\newcommand{\cechderhamhone}{\check{H}_{\text {dR}}^1(X/k)}
 
 
 \DeclareMathOperator{\aut}{Aut}
@@ -155,6 +157,26 @@ In this case we can explicitly write down the the part of the basis of $\derhamh
 \left( \frac{x^2+x^1}{y} dx, \frac{2x^4}{y} dx, \frac{y}{x} \right) \text{ and } \left( \frac{2(x + 1)}{y} dx, \frac{x^3}{y} dx, \frac{y}{x^2} \right).
 \]
 
+{\bf How does the group act on the cover?}
+
+We recall that $U_1 = X \backslash \pi^{_1}(0)$ and $U_2 = X \backslash \pi^{-1}(\infty)$.
+We will focus on how $\tau$ acts on the space initially, since this is the element whose order is divisible by the characterisitc, and hence most likely to make this interesting.
+In this case it is clear that $\tau(U_2) = U_2$.
+However, $\tau$ does not fix $U_1$. 
+Note that the two points in $\pi^{-1}(0)$ are $(0,1)$ and $(0,2)$.
+Clearly $\tau$ maps these to $(1,1)$ and $(1,2)$, so it must map something else to $(0,1)$ and $(0,2)$, and hence does not fix the subspace.
+In a similar manner to \cite{canonicalrepresentation} we will define a new open set $U_3 := \tau(U_1)$, so $U_1 = \tau^{-1}(U_3) = \tau^2(U_3)$.
+We let $\mathcal U' = \{ U_2, U_3\}$ and $\mathcal U'' = \mathcal U \cup \mathcal U'$.
+
+Now since $\mathcal U''$ is a refinement of $\mathcal U$, and since $\derhamhone (\mathcal U) \cong \derhamhone (X)$, we know that $\derhamhone (\mathcal U) \cong \derhamhone (\cU'')$.
+We then have the following commutative diagram:
+\[
+\begin{array}{ccc}
+\cechderhamhone (\cU) & \overset{\rho}{\leftarrow} & \cechderhamhone (\cU'') \\
+\tau \uparrow & & \downarrow  \rho \\
+\cechderhamhone(\cU) & \overset{\tau}{\rightarrow} & \cechderhamhone(\cU')
+\end{array}
+\]
 
 \bibliography{biblio}
 \bibliographystyle{plain}
