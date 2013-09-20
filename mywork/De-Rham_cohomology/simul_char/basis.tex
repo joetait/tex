@@ -285,7 +285,7 @@ Then if we fix any $\omega \in \hzero$ we get a map $\theta(\omega):\hone \right
 Similarly, if we fix some $r \in \hone$ we get a map $\varphi(r):\hzero \rightarrow k$.
 The duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that the maps $\theta$ and $\varphi$ are isomorphisms and that the spaces $\hzero$ and $\hone$ are dual.
 
-\todo[inline]{using repartitions, would it be better to say that the restriction to U1 is like taking a repartition equal to f everywhere except P0, where we just pick some non-zero value}
+\todo[inline]{using repartitions, it may be better to say that the restriction to U1 is like taking a repartition equal to f everywhere except P0, where we just pick some non-zero value}
 
 We now compute the basis of $H^1(X,\cO_X)$, and then state the basis of $\derhamhone$ in the following theorem.
 \begin{lem}\label{basish1}
@@ -342,7 +342,6 @@ c_{-1}t^{-1}\frac{f'}{2y} = \frac{c_{-1}f'}{2y^2 - 2y\sqrt{(f(0)}} = \frac{c_{-1
 We will use the fact that this is the only part of the sum that can contain a term of the form $\frac{1}{x}$ to compute the residue.
 Clearly no part of $\frac{2c_{-1}f'y\sqrt{f(0)}}{4(f^2-f\cdot f(0))}$ can contain a $\frac{1}{x}$ term, since there is no way of removing the $y$.
 This means we just need to compute the $\frac{1}{x}$ terms in $\frac{c_{-1}f'\cdot f}{2(f^2-f\cdot f(0))}$ and compare coefficients to show the residue is non-zero on $X \backslash U_1$.
-\todo[inline]{Maybe I could just use $x$ as a UP at 0, and simplify the whole thing to a few lines}
 
 We notice at this point that by almost the same calculations when expanding about $P_0'$ we get the following
 \[
@@ -352,6 +351,7 @@ Using the same argument as before we dispense of the $y$ term, and hence $d_{-1}
 Since $c_{-1}$ and $d_{-1}$ are determined in the same way, they must take the same value. 
 Since the charactersitic is not 2, and since $c_{-1} \neq 0$, we conclude that $\res_{X\backslash U_2}(x^{-1}dx) = 2c_{-1} \neq 0$.
 This completes the proof when $p \neq 2$.
+\todo[inline]{Maybe I could just use $x$ as a UP at 0, and simplify the whole thing to a few lines}
 
 We now suppose that $p=2$.
 Again, if $i-j=-1$ and $\infty$ is branch point then we again have a pole of order one at $P_\infty$, and hence a non-zero residue there.
@@ -424,7 +424,7 @@ Then when $p\neq 2$ we define
 \[
 s_i(x) := f'(x) - \frac{2if(x)}{x} \in k[x]
 \]
-\todo[noline]{what about $x^{-1}$ term in $p \neq 2$ when 0 is unramified - probably just remove it}and when $p = 2$ we define
+\todo{just realised this may have a $\frac{1}{x}$ term - note for future}and when $p = 2$ we define
 \begin{equation}\label{capitals}
 S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)\in k[x]\oplus yk[x] \subseteq k(x,y).
 \end{equation}
@@ -503,7 +503,7 @@ So the action on the basis elements in \eqref{three} is equivalent to adding
 which clearly satisfies the conditions of \eqref{quotient} and hence is zero.
 So the action of the involution $\sigma$ is trivial and hence the action of the group is not faithful.
 \begin{comment}
-Hence the action is trivial if and only if ${}_iH_1'(x)dx = {}_iH_2'(x)dx =0$.\todo{should probably add some notation to index the i on these polynomails}
+Hence the action is trivial if and only if ${}_iH_1'(x)dx = {}_iH_2'(x)dx =0$.
 This cannot happen though, since we can always find an $l\in \{0,1\}$ such that $l \not\equiv d\ \text{mod}\ 2$, and then $d\left({}_iH_2(x)\right) = {}_iH_2'(x)dx \neq 0$, as we can see from the leading term (unless of course $d$ is zero, in which case $d\left({}_iH_1(x)\right) \neq 0$).
 \end{comment}
 \end{proof}
@@ -673,6 +673,7 @@ Thus we have completed the proof.
 \section{Computing the residue}
 
 Introduction needs to be finalised once the proof in the previous section is completed.
+In particular, if the exact residue can be computed then we may as well do so.
 
 \begin{lem}
 Suppose that $\infty\in \mathbb P_k^1$ is a branch point.
@@ -790,6 +791,7 @@ we conclude that $c_{-1} = \frac{1}{d_{1}} = 1$.
 
 
 \end{proof}
+\begin{comment}
 
 \section{Stability of modular curves in characteristic greater than 2}
 In this section we consider some modular hyperelliptic curves and how their automorphism groups at on the first de-Rham cohomology group of the curves.
@@ -896,7 +898,7 @@ When $p=2$ the basis is also the same.
 We first note that whilst the degree of the highest and lowest ordered terms may change in \eqref{Split}, it is still the case that te coefficient $B_i^i =0$, using exactly the same arguments.
 This allows us to use essentially the same arguments, again with the exception of changing $P_\infty$ and $P_0$ to $D_\infty$ and $D_0$.
 \end{note}
-
+\end{comment}
 
 
 \bibliography{biblio}
