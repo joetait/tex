@@ -1,4 +1,4 @@
-\section{Dimension Formulae}\label{dimsection}
+\section{Dimension formulae}\label{dimsection}
 
 
 
@@ -710,7 +710,7 @@ In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representative
 
   \newpage
   
-    \section{The Main Theorem}\label{maintheoremsection}
+    \section{The main theorem}\label{maintheoremsection}
   In this section we prove the main theorem of the report, describing exactly when $G$ will act faithfully on $H^0(X,\Omega_X^{\otimes m})$.
   \vskip1em
 
@@ -851,19 +851,17 @@ This curve then has a corresponding degree two extension $k(x,y)$ of the rationa
 for some $f(x)\in k[x]$ with no repeated roots (see, for example, \cite[7.4.3]{liu}).
 Also, the degree of $f(x)$ must be $2g+1$ or $2g+2$, as will be shown in the next paragraph.
 In the first case then $\infty \in \mathbb P_k^1$ will be a branch point, where as in the second case it is not.
-However, since there are only a finite number of branch points, if $\infty$ is ramified we can find an automorphism of $\mathbb P_k^1$ which will map $\infty$ to a different point, and not map any of the other branch points to $\infty$.
-So we can assume that $\infty$ is not a branch point, and that the degree of $f(x)$ is $2g+2$.
 
 We now show some preliminary results about $x$. 
-Firstly, $x$ is ramified at precisely $2g + 2$ ramification points.
+Firstly, $x$ is ramified at precisely $2g + 2$ branch points.
 This follows from computing the degree of the ramification divisor $R$ of $x$.
 By the Riemann-Hurwitz formula, Corollary \ref{hur},
 \[ 
 \deg(R) = 2g -2 +2\cdot 2 = 2g + 2.
 \]
 Since $x$ is of degree $2$ and at most tamely ramified, the coefficients of the ramification divisor are $1$ (see the start of Section \ref{dimsection}), and hence $R = p_1 + \ldots + p_{2g+2}$, for distinct $p_i\in X$.
-We let $a_i = x(p_i)$.
-Since $\infty \notin \{a_1,\ldots ,a_{2g+2}\}$ then the divisor of poles of $x$ is $\di_{\infty}(x) = p + q$ for some $p \neq q $ in $X$.
+We let $a_i = x(p_i)$ and $D_i = \div_{a_i}(x)$.
+Moreover, for a general point $a \in \mathbb P_k^1$ we let $D_a = \div_x(x)$.
 We now show that the ramification points correspond to the zeroes of $f(x)$.
 Since there are no repeated roots in $f(x)$, then \eqref{definingequation} defines a non-singular affine curve $X'$, with a degree two projection $x': X'\rightarrow \mathbb A_k^1$.
 Clearly for any point $a\in \mathbb A_k^1$ which is not a solution to $f(x)$, then there are two points in the pre-image, namely $(a,\pm \sqrt{a})$, and the point is not ramified.

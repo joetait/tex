@@ -4,7 +4,7 @@
 % This is a simple template for a LaTeX document using the "article" class.
 % See "book", "report", "letter" for other types of document.
 
-\documentclass[draft, 11pt]{article} % use larger type; default would be 10pt
+\documentclass[11pt]{article} % use larger type; default would be 10pt
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
 
@@ -32,8 +32,8 @@
 \usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
 % These packages are all incorporated in the memoir class to one degree or another...
 
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
-\microtypecontext{spacing=nonfrench}
+%\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+%\microtypecontext{spacing=nonfrench}
 % activate={true,nocompatibility} - activate protrusion and expansion
 % final - enable microtype; use "draft" to disable
 % tracking=true, kerning=true, spacing=true - activate these techniques
@@ -56,7 +56,7 @@
 \usepackage{mathrsfs}
 \usepackage{amsopn}
 \usepackage{amssymb}
-\usepackage{natbib}
+%\usepackage{natbib}
 % (This matches ConTeXt defaults)
 
 %%% ToC (table of contents) APPEARANCE
@@ -114,23 +114,26 @@
 
 %%% The "real" document content comes below...
 
-\title{Group actions on de-Rham cohomology of hyperelliptic curves}
-\author{}
+\title{Actions on spaces of differentials on algebraic curves}
+\author{Joseph Tait}
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed
 
 \begin{document}
 \maketitle
-
+\newpage
 %\listoftodos
+
+\tableofcontents
 
 \include{./Introduction/Introduction}
 \include{./hurwitzstuff/hurwitz}
 \include{./dimension/dimensionformulae}
+\include{./valentinimadan/valandmad}
 \include{./simul_char/basis}
 
+\bibliographystyle{amsalpha}
 \bibliography{biblio}
-\bibliographystyle{plain}
 
 
 \end{document}
