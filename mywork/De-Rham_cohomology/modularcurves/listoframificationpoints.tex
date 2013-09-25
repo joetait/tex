@@ -248,6 +248,18 @@ f_{23} & = f_{13} - f_{12} \\
 This will not work since we have a pole at both points in $ \pi^{-1}(0)$.
 
 
+Since the above did not work, try something else.
+We already have obvious choices for $f_{12i}$ and $f_{23i}$, namely $\frac{y}{x^i}$ and $\frac{-y}{(x-1)^i}$ respectively.
+Let's see if they are suitable - i.e. if $f_{13i}=f_{12i} + f_{23i}$ is regular on $U_1 \cap U_3$.
+When $i=2$ this is $\frac{y}{x^2} - \frac{y}{(x-1)^2}$.
+We can compute the poles of this more easily by computing the pole of its square.
+When $i=2$ this is
+\begin{align*}
+\left( \ffrac{y}{x^2} - \frac{y}{(x-1)^2} \right)^2 & = \frac{y^2}{x^4} + \frac{y^2}{(x-1)^4} - \frac{2y^2}{x^2(x-1)^2} \\
+& = \frac{((x-1)^4 + x^2 - 2x^2(x-1)^2)y^2}{x^4(x-1)^4} \\
+& = \frac{(x^2-x+1)f(x)}{(x-1)^4x^4},
+\end{align*}
+from which one can clearly see that the function is regular on $U_1 \cap U_3$.
 
 
 
