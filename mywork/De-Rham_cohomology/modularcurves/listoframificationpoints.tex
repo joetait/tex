@@ -302,13 +302,20 @@ The only condition that it remains to check is that $d(f_{132}) = \omega_1 - \om
 First we compute $d(f_{132})$, which is
 \begin{align*}
 d(f_{132})  & =  d \left( \frac{y}{x^2} - \frac{y}{(x-1)^2} \right) \\
-& =  \left( \frac{1}{x^2} - \frac{1}{(x-1)^2} \right) dy + y \left( d \left( \frac{1}{x^2} \right) + d \left( \frac{1}{(x-1)^2} \right) \right) \\
-&=  \frac{f'}{2y} \left( \frac{1}{x^2} - {1}{(x-1)^2} \right) dx + y \left( \frac{1}{x^3} + \frac{1}{(x-1)^3} \right) dx \\
-&=  \frac{1}{2y} \left( f'\left( \frac{(x-1)^2 - x^2}{x^2(x-1)^2} \right) - f \left( \frac{(x-1)^3 + x^3}{(x-1)^3x^3} \right) \right) dx \\
-&=  \frac{1}{2yx^3(x-1)^3} ( xf'(x-1)((x-1)^2-x^2) - f((x-1)^3 + x^3) ) \\
-&=  \frac{1}{2yx^3(x-1)^3} (x^9 - x^7 + x^6 - x^5 + x^4 - x^3 + x^2 + 1)dx.
+& =  \left( \frac{1}{x^2} - \frac{1}{(x-1)^2} \right) dy + y \left( d \left( \frac{1}{x^2} \right) - d \left( \frac{1}{(x-1)^2} \right) \right) \\
+&=  \frac{f'}{2y} \left( \frac{1}{x^2} - {1}{(x-1)^2} \right) dx + y \left( \frac{1}{x^3} - \frac{1}{(x-1)^3} \right) dx \\
+&=  \frac{1}{2y} \left( f'\left( \frac{(x-1)^2 - x^2}{x^2(x-1)^2} \right) - f \left( \frac{(x-1)^3 - x^3}{(x-1)^3x^3} \right) \right) dx \\
+&=  \frac{1}{2yx^3(x-1)^3} ( xf'(x-1)((x-1)^2-x^2) + f ) \\
+&=  \frac{1}{2yx^3(x-1)^3} ( x^4 + x^3 + x^2 + 1)dx.
 \end{align*}
 
+Now we compute $\omega_1 - \omega_3$, which is
+\begin{align*}
+\omega_1 - \omega_3 & = \frac{x^3 + x^2 + 1}{yx^3}dx -  \frac{1}{2y(x-1)^3}(2x^3-x^2-x-1)dx \\
+& = (\frac{1}{2yx^3(x-1)^3} (2(x-1)^3(x^3 + x^2 + 1) - x^3(2x^2 - x^2 - x - 1)) dx \\
+& = \frac{1}{2yx^3(x-1)^3} (x^4 + x^3 + x^2 + 1) dx.
+\end{align*}
+Hence we see that the functions and differentials above give us an element of $\cechderhamhone(\cU '')$.
 
 
 \bibliography{biblio}
