@@ -684,9 +684,11 @@ Thus we have completed the proof.
 
 Introduction needs to be finalised once the proof in the previous section is completed.
 In particular, if the exact residue can be computed then we may as well do so.
+Currently we are assuming in this section that $\infty$ and 0 are a branch point.
 
+\todo[inline]{emphasise/mention that the basis is dual}
 \begin{lem}
-Suppose that $\infty\in \mathbb P_k^1$ is a branch point.
+Suppose that $\infty\in \mathbb P_k^1$ is a branch point of $\pi$.
 If $p \neq 2$ then ${\rm res}_{P_\infty}(\frac{1}{x}dx) = -2$.
 If $p=2$ then ${\rm res}_{P_\infty}\left(\frac{ydx}{xH(x)}\right) = 1$.
 \end{lem}
@@ -706,13 +708,13 @@ We note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$ a
 We now write $\frac{1}{x}dx$ in terms of $dt$.
 By the quotient rule we know that
 \begin{align*}
-dt^2 & =  d \left( \frac{f(x)}{x^{2g+2}} \right) \\
+dt^2 & =  d \left( \frac{f}{x^{2g+2}} \right) \\
 & =  \frac{x^{2g+2}f' + x^{2g+1}f}{x^{4g+4}} dx \\
 & =  \frac{1}{x^{2g+2}} \left( f' + \frac{f}{x} \right) dx
 \end{align*}
-from which we conclude that
+\todo{check the above computation - missed coefficient of x2g+1}from which we conclude that
 \[
-\frac{1}{x}dx = \frac{-2tx^{2g+1}}{\left(\frac{(2g+2)f}{x} - f'\right)} dt.
+\frac{1}{x}dx = \frac{2tx^{2g+1}}{\left(\frac{f' - (2g+2)f}{x} \right)} dt.
 \]
 
 
@@ -728,15 +730,15 @@ Now
 \[
 \frac{1}{x}dx = \left( -2t \cdot \sum_{i\geq -2} d_it^i\right) dt 
 \]
-so we see that the residue is $-2$.
+so we see that $\res_{P_\infty}\left( \frac{1}{x} dx\right) = 2$.
 This completes the proof of the lemma when $p\neq 2$.
 
 We now turn to the case when $p=2$.
 We now wish to compute the residue of $\frac{ydx}{xH(x)}$ at $P_\infty$.
 We start by noting that $t = \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$ which we check by computing the divisor:
 \begin{align*}
-\di(t) & = \di_0(y) - (2g+1)D_\infty -(g+1)D_0 + (g+1)D_\infty \\
-& = \di_0(y)-(g+1)D_0 + D_\infty,
+\di(t) & = \di_0(y) - (2g+1)[P_\infty] -(g+1)D_0 + (g+1)D_\infty \\
+& = \di_0(y)-(g+1)D_0 + [P_\infty],
 \end{align*}
 using \eqref{divxp=2} and \eqref{divyp=2}.
 So clearly $t$ is a uniformising parameter at $P_\infty$.
@@ -768,10 +770,10 @@ In total we then have
 \]
 where $S_{g+1}(x,y)$ is as defined in \eqref{capitals}.
 
-We know that $\frac{x^{g+1}y}{S_{g+1}(x,y)} = \sum_{i\geq -1} c_i t^i$, with $c_i \in k$, and we wish to compute $c_{-1}$.
-We shall do this by computing the coefficient of $t$ in the expansion $\frac{S_{g+1}(x,y)}{x^{g+1}y} = \sum_{i\geq 1}d_it^i$.
-We can split up $\frac{S_{g+1}(x,y)}{x^{g+1}y}$ in to three terms, namely $\frac{xF'}{x^{g+1}y}$, $\frac{yxH'}{x^{g+1}y}$ and $\frac{yH}{x^{g+1}y}$.
-Each of these terms can of course be written as a power series in $t$, but only the first term mentioned has order 1 at $P_\infty$, and hence this term will uniquely determine $d_1$.
+We know\todo{citation} that $\frac{x^{g+1}y}{S_{g+1}(x,y)} = \sum_{i\geq -1} c_i t^i$, with $c_i \in k$, and we wish to compute $c_{-1}$.
+We shall do this by computing the coefficient $d_1$ of $t$ in the expansion $\frac{S_{g+1}(x,y)}{x^{g+1}y} = \sum_{i\geq 1}d_it^i$.
+We can split up $\frac{S_{g+1}(x,y)}{x^{g+1}y}$ into three terms, namely $\frac{xF'}{x^{g+1}y}$, $\frac{yxH'}{x^{g+1}y}$ and $\frac{yH}{x^{g+1}y}$.\todo{missing factor of $g+1$}
+Each of these terms can of course be written as a power series in $t$, but only the first term mentioned has order 1 at $P_\infty$\todo{explain this}, and hence this term will uniquely determine $d_1$.
 Suppose that $F = \alpha_{2g+1}x^{2g+1} + \alpha_{2g}x^{2g} + \ldots + \alpha_1x^1 + \alpha_0$.
 Then $xF'= \alpha_{2g+1}x^{2g+1} + \alpha_{2g-1}x^{2g-1} + \ldots + \alpha_1x^1$; i.e. the terms with an even power are removed.
 
@@ -781,21 +783,14 @@ Since
 \frac{\alpha_{2g+1}x^g}{y} = \frac{\alpha_{2g+1}}{x}t^{-1}
 \]
 and $\frac{1}{x} = \sum_{i\geq 2}e_it^i$ for some $e_i \in k$, if we compute $e_2$ then we will have effectively computed $d_1$.
-Now $t^2 = \frac{F }{x^{2g+2}}+ \frac{Hy}{x^{2g+2}}$, and clearly $\frac{Hy}{x^{2g+2}}$ has no terms of the form $\frac{c}{x}$ for some $c \in k$.
+Now $t^2 = \frac{F }{x^{2g+2}}+ \frac{Hy}{x^{2g+2}}$, and clearly $\frac{Hy}{x^{2g+2}}$ has no terms of the form\todo{explain this - also, wording} $\frac{c}{x}$ for some $c \in k$.
 On the other hand
 \[
 \frac{F}{x^{2g+2}} = \frac{\alpha_{2g+1}}{x} + \ldots
 \]
 Hence we conclude that $e_2 = \frac{1}{\alpha_{2g+1}}$.
 It follows that $d_1 = \alpha_{2g+1} \cdot \frac{1}{\alpha_{2g+1}} = 1$.
-
-
-We finally use this to compute $c_{-1}$.
-Since 
-\begin{equation*}
-1 = \frac{S_{g+1}(x,y)}{x^{g+1}y}\cdot \frac{x^{g+1}y}{S_{g+1}(x,y)} = \left( \sum_{i\geq 1}d_it^i \right) \cdot \left( \sum_{i\geq -1}c_it^i\right)
-\end{equation*}
-we conclude that $c_{-1} = \frac{1}{d_{1}} = 1$.
+We finally use this to conclude that $c_{-1} = \frac{1}{d_{1}} = 1$.
 
 
 
