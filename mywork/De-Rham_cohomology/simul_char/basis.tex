@@ -30,6 +30,7 @@
 \usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
 \usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
 \usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+%\usepackage{hyperref}
 % These packages are all incorporated in the memoir class to one degree or another...
 
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
@@ -127,17 +128,17 @@
 \section{Background}
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
-We let $\pi \colon X \rightarrow \mathbb P_k^1$ be the corresponding degree two map.
+We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$.
 We also suppose that we have a finite group $G$ acting faithfully on $X$.
 
-In a similar vein to \cite{canonicalrepresentation}, we will be using \cech cohomology to compute both $\hone$ and the de-Rham hypercohomology.
+In a similar vein to \cite{canonicalrepresentation}, we will be using \cech cohomology to compute both $\hone$ and the de-Rham hypercohomology, denoted $\derhamhone$.
 We therefore recall the \cech cohomology relevant to both of these, starting with $\hone$.
 
 By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
 The cover we shall be using is $U_1 = X\backslash \pi^{-1}(0)$ and $U_2 = X\backslash  \pi^{-1}(\infty) $, both of which are affine sets.
-We let ${\cal U} = \{ U_1, U_2\}$.
-Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_1) \times {\cal F} (U_2) \rightarrow {\cal F}(U_1 \cap U_2)$, given by taking the difference, $(f_0,f_1) \mapsto f_0|_{U_1 \cap U_2} - f_1|_{U_1 \cap U_2}$.
-In general we will not explicitly show that we are considering the restriction when applying this map, unless it adds clarity.
+We let ${\cal U} = \{ U_1, U_2\}$.\todo{check indices}
+Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_1) \times {\cal F} (U_2) \rightarrow {\cal F}(U_1 \cap U_2)$, given by taking the difference, $(f_1,f_2) \mapsto f_1|_{U_1 \cap U_2} - f_2|_{U_1 \cap U_2}$.
+In general we will not explicitly show \todo{wording}that we are considering the restriction when applying this map, unless it adds clarity.
 It is this map which gives us the differential $d$ in the \cech cochain
 \begin{equation*}
 0 \rightarrow \cO_X(U_1)\times \cO_X(U_2) \xrightarrow{d} \cO_X(U_1 \cap U_2) \rightarrow 0.
@@ -147,14 +148,15 @@ The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_1 \cap U_
 \hone \cong \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}  
  = \frac{\cO_X(U_1 \cap U_2)}{\{f_1 - f_2 | f_i \in \cO_X(U_i) \}}.
 \end{equation}
-We will use this characterisation of $\hone$ later.
+We will use this characterisation of $\hone$ later.\todo{repetition}
 
-We now recall how we compute the algebraic de-Rham cohomology of $X$ via \cech cohomology.
+We now recall how to compute the algebraic de-Rham cohomology of $X$ via \cech cohomology.
 The de-Rham cohomology of an algebraic curve is the hypercohomology of the de Rham complex on $X$. 
 Since a curve doesn't have differentials of degree greater than one, this is just the hypercohomology of the complex
 \begin{equation}\label{res}
 0 \rightarrow \cO_X \rightarrow \Omega_X \rightarrow 0.
 \end{equation}
+\todo{explain the map here}
 
 We then use the open cover $\cal U$ and the \cech differentials as defined earlier to give us the \cech complex of \eqref{res}, which is
 \begin{equation}\label{bicomplex} \begin{array}{ccccccc}
@@ -168,9 +170,9 @@ We then use the open cover $\cal U$ and the \cech differentials as defined earli
 \end{array}
 \end{equation}
 where the horizontal arrows are the standard differential map.
-By a generalisation of Leray's theorem \cite[Cor. 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
+By a generalisation of Leray's theorem \cite[Cor 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
 Note that this relies on $\cechhone$ and ${\check H}^p(\cU, \Omega_X)$ being zero for all $p\geq 1$ ---
-since $U_1$ and $U_2$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.
+since $U_1$ and $U_2$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.\todo{check that cal U is correct, not U1 and U2}
 
 
 
@@ -183,12 +185,13 @@ quotiented by the subspace
 \left\{  (df_1, df_2, f_1|_{U_1\cap U_2} -f_2|_{U_1\cap U_2} )|f_i \in \cO_X(U_i)\right\}.
 \end{equation}
 
-We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$.
+We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$ and to study the $k[G]$-module structure.\todo{are these reasons the only ones? Are they correct?}
 To do this we will compute $k$-bases for the two outer terms of the short exact sequence
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra \derhamhone \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
-A basis of $H^0(X,\Omega_X)$ is already available in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
+
+\todo{prove this is an SES/explain the maps}A basis of $H^0(X,\Omega_X)$ is already available in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
 
 \begin{comment}
 In order to do this we will need to use Serre duality, which we briefly remind the reader of presently.
@@ -198,9 +201,9 @@ Details of the definition of ${\text Res}$ can be found in appendix B of \todo{i
 \end{comment}
 \section{Basis of $\derhamhone$}
 
-The bases of the $k$-vector spaces in \eqref{ses} will be given in terms of defining equations, so we describe these now.
+The bases of the $k$-vector spaces in \eqref{ses} will be given in terms of defining equations of the hyperelliptic curve $X$, so we describe these now.
 
-If $p \neq 2$ then the extension $K(X)$ of $k(x)$ will be $k(x,y)$ where $y$ satisfies
+If $p \neq 2$ then the extension $K(X)$ of $K(\mathbb P_k^1) = k(x)$ will be $k(x,y)$ where $y$ satisfies
 \begin{equation}\label{definingequationpnot2}
 y^2 = f(x)
 \end{equation}
@@ -211,17 +214,22 @@ Hence
 \begin{equation}\label{divisorofpoints}
 D_a= 
 \begin{cases}
- [P_a] & \text{if $a$ is a branch point;} \\
+ 2[P_a] & \text{if $a$ is a branch point;} \\
  [P_a] + [P_a'] & \text{otherwise.}
 \end{cases}
 \end{equation}
-We then let $R$ be the ramification divisor of $\pi$, and recall that 
+with $P_a, P_a' \in X$.
+With this notation we clearly have
+\begin{equation}\label{divxp=2}
+\di (x)  = D_0 - D_\infty.
+\end{equation}
+We then let $R$ be the ramification divisor of $\pi$, and recall that \todo{citation}
 \begin{equation}\label{pnot2divisors}
 \di(y)  = R - (g+1)D_\infty \text{ and } \di( dx) = R - 2D_\infty.
 \end{equation}
 
 
-If $p=2$, then the extension $K(X)$ will be $k(x,y)$, this time with $y$ defined by
+If $p=2$, then the extension $K(X)$ will be $k(x,y)$, this time with $y$ satisfying the equation
 \begin{equation}\label{definep=2}
 y^2 - H(x)y = F(x),
 \end{equation}
@@ -230,21 +238,20 @@ We require that $\deg(H(x)) \leq g+1$, with equality if and only $\infty$ is not
 
 
 
-Again, we let $R$ denote the ramification divisor, which we write explicilty below, and $D_a = \pi^*([a])$.
-In what follows it will be clear from context which characteristic we are in whenever referring to these divisors, so no confusion should arise from the mixed notation.
-We now recall the following divisors, which we will make use of throughout this article:
+Again, we let $R$ denote the ramification divisor, which we write explicitly below, and $D_a = \pi^*([a])$.
+We now recall \todo{put in citation}the following divisors, which we will make use of throughout this article:
 \begin{align}
 \di (dx) & = R - 2D_\infty \label{divdxp=2}\\
-\di (H(x)) & = R - (g+1)D_\infty \label{divhp=2}\\
-\di (x) & = D_0 - D_\infty \label{divxp=2}.
+\di (H(x)) & = R - (g+1)D_\infty \label{divhp=2}
 \end{align}
-We also use the divisor of $y$, which is as follows:
+We also use the divisor of $y$, which is as follows:\todo{citation, check wording}
 \begin{equation}\label{divyp=2}
 \di(y) = \begin{cases}
  \di_0(y) -(2g+1)[P_\infty] & \text{if $\infty$ is a branch point} \\
  \di_0(y) +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] & \text{otherwise.}
 \end{cases}
 \end{equation}
+\todo[inline]{define Pinfty'?? check the above, possibly prove}
 Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
 Finally, we will compute the divisor of $dy$.
 We start by noting that when we take the differential of \eqref{definep=2} we derive
@@ -253,7 +260,7 @@ dF = d\left(y^2 + yH \right) = d(yH) = Hdy + ydH
 \]
 and from this follows 
 \begin{equation}\label{divdyp=2}
-dy = \left(\frac{F'-yH'}{H}dx\right).
+dy = \frac{F'-yH'}{H}dx.
 \end{equation}
 
 
@@ -262,17 +269,18 @@ To state the ramification points, and for later use, we suppose that
 H(x) = \prod_{i=1}^d (x-a_i)^{n_i} = x^d + b_{d-1}x^{d-1} + \ldots + b_1x
 \end{equation}
 for some $a_i, b_i \in  k$, $d \leq g+1$ and $n_i \in \mathbb N$.
-Then the $a_i \in \mathbb P_k^1$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points of $\pi$.
+Then the $a_i \in \mathbb P_k^1$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points above $a_i$.
+\todo[inline]{comment - ai are branch point of pi in Ak1 (contained in Pk1). Why do we need to do this}
 Given this, we can write the ramification divisor as
 \[
 R = \sum_{i=1}^d 2n_i[P_i] + (g+1-d)D_\infty.
 \]
-Details can be found in \cite[\S 6]{faithfulaction}.
+Details can be found in \cite[\S 6]{faithfulaction}.\todo{will end up being references to other parts of thesis}
 
-Having given the details of the curves, we now recall Serre duality, which we will use shortly to find a basis of $\hone$.
-We recall that an {\sl ad\`ele} or {\sl r\'epartition} is a family of elements $\{r_P\}_{P\in X}$ such that $r_P \in \cO_P$ for almost all $P\in X$, as in \cite[Chap. II, \S 5]{algebraicgroupsandclassfields}.
-We let $R$ denote the space of ad\`eles, and given a divisor $D = \sum n_P[P]$ we let $R(D)$ be the space of ad\`eles $r = \{r_P\}$ such that $\ord_P(r_P) \geq n_P$ for all $P \in X$.
-Note that one can embed the function field $K(X)$ in to $R$.
+We now recall Serre duality, which we will use shortly to find a basis of $\hone$.
+We recall\todo{cite when in thesis} that an {\sl ad\`ele} or {\sl r\'epartition} is a collection $\{r_P\}_{P\in X}$ of elements of $K(X)$ such that $r_P \in \cO_P$ for almost all $P\in X$, as in \cite[Chap. II, \S 5]{algebraicgroupsandclassfields}.
+We let $R$\todo{change notation} denote the space of ad\`eles, and given a divisor $D = \sum n_P[P]$ we let $R(D)$ be the space of ad\`eles $r = \{r_P\}$ such that $\ord_P(r_P) \geq -n_P$ for all $P \in X$.
+Note that one can embed the function field $K(X)$ into $R$.
 Given any $f \in K(X)$ one defines $r \in R$ by setting $r_P = f$ for all $P \in X$, and this is clearly an injection.
 Given this we can see that the quotient $R/(R(0) + K(X))$ is well defined, and Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to this quotient.
 
@@ -283,15 +291,13 @@ Given some differential $\omega \in \hzero$ and some ad\`ele $r \in \hone$ we de
 \]
 Then if we fix any $\omega \in \hzero$ we get a map $\theta(\omega):\hone \rightarrow k$ given by $\theta(\omega)(r) = \langle \omega, r \rangle$.
 Similarly, if we fix some $r \in \hone$ we get a map $\varphi(r):\hzero \rightarrow k$.
-The duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that the maps $\theta$ and $\varphi$ are isomorphisms and that the spaces $\hzero$ and $\hone$ are dual.
+The duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that the maps $\theta$ and $\varphi$ are isomorphisms meaning that the spaces $\hzero$ and $\hone$ are dual.
 
 \todo[inline]{using repartitions, it may be better to say that the restriction to U1 is like taking a repartition equal to f everywhere except P0, where we just pick some non-zero value}
 
-We now compute the basis of $H^1(X,\cO_X)$, and then state the basis of $\derhamhone$ in the following theorem.
+We now compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.\todo{come back to this and make notes}
 \begin{lem}\label{basish1}
- 
  The elements $\frac{y}{x}, \ldots , \frac{y}{x^g}$, restricted to $U_1$, form a basis of $H^1(X,\cO_X)$.
- 
 \end{lem}
 \begin{proof}
 We use Serre duality and the fact that we already know a basis of $\hzero$.
@@ -349,7 +355,7 @@ d_{-1}s^{-1}\frac{f'}{2y} = \frac{d_{-1}f'\left(2f-2y\sqrt{f(0)}\right) }{4(f^2 
 \]
 Using the same argument as before we dispense of the $y$ term, and hence $d_{-1}$ is determined uniquely by the $\frac{1}{x}$ terms in $\frac{2d_{-1}f' \cdot f}{4(f^2-f\cdot f(0))}$.
 Since $c_{-1}$ and $d_{-1}$ are determined in the same way, they must take the same value. 
-Since the charactersitic is not 2, and since $c_{-1} \neq 0$, we conclude that $\res_{X\backslash U_2}(x^{-1}dx) = 2c_{-1} \neq 0$.
+Since the characteristic is not 2, and since $c_{-1} \neq 0$, we conclude that $\res_{X\backslash U_2}(x^{-1}dx) = 2c_{-1} \neq 0$.
 This completes the proof when $p \neq 2$.
 \todo[inline]{Maybe I could just use $x$ as a UP at 0, and simplify the whole thing to a few lines}
 
@@ -418,7 +424,7 @@ Hunch - if one of the residues is $a$ the other is likely $a+1$.}
 
 
 
-In order to state the basis of $\derhamhone$, as well as to shorten the proof of the following proposition, we define the following polynomials. 
+In order to state a basis of $\derhamhone$, as well as to shorten the proof of the following theorem, we define the following polynomials. 
 We suppose that $1 \leq i \leq g$.
 Then when $p\neq 2$ we define
 \[
@@ -429,13 +435,13 @@ s_i(x) := f'(x) - \frac{2if(x)}{x} \in k[x]
 S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)\in k[x]\oplus yk[x] \subseteq k(x,y).
 \end{equation}
 
-We now decompose these polynomials in to two parts, which will be used in the sequel.
+We now decompose these polynomials into two parts, which will be used in the sequel.
 Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x), \phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\psi_i (x)$ is at most $g$ and $x^{g+1}$ divides $\phi_i(x)$.
 
 
-Secondly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that the degree of $\Psi_i(x,y)$ has degree less than $i$ as a polynomial in $x$, and $\Phi_i(x,y)$ is divisible by $x^i$.
+Secondly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that the degree of $\Psi_i(x,y)$ has degree less than $i$ as a polynomial in $x$, and $\Phi_i(x,y)$ is divisible by $x^i$.\todo{change paragraph, in particular "as a polynomial in x" part}
 
-Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $k$-vector space basis of the space.
+Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $k$-vector space basis of $\derhamhone$.
 \begin{thm}\label{basis}
 
 If $p \neq 2$ then the residue classes of the elements 
@@ -459,20 +465,20 @@ together with the residue classes of
 form a basis of $\derhamhone$.
 \end{thm}
 
-Before proving this proposition we use it to prove the following corollary.
+Before proving this theorem we use it to prove the following corollary.
+\todo[inline]{check proof and proposition in general}
 
 \begin{cor}
-The action of $G$ on $\derhamhone$ is faithful unless $p=2$.
+The action of $G$ on $\derhamhone$ is faithful unless $G$ contains a hyperelliptic involution and $p=2$.
 \end{cor}
 
 \begin{proof}
-Recall that $H^0(X,\Omega_X)$ injects in to $\derhamhone$.
-Then if $p \neq 2$ it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
+Recall that $H^0(X,\Omega_X)$ injects into $\derhamhone$.
+Then if $p \neq 2$ or $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.\todo{use internal reference in thesis}
 
-We now suppose that $p=2$ and we denote the hyperelliptic involution in $G$ by $\sigma$.
-By the same theorem from \cite{faithfulaction} as used in the last paragraph, we know that $G$, and in particular $\sigma$, does not act faithfully on $\hzero$.
+We now suppose that $p=2$ and that $G$ contains a hyperelliptic involution, which we denote by $\sigma$.
+By the same theorem from \cite{faithfulaction}\todo{reference thesis} as used in the last paragraph, we know that $\sigma$ acts trivially on $\hzero$.
 Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully on $\hone$.
-In particular, $\sigma$ will act trivially on $\hone$.
 
 We can see exactly why this is from the view of \cech cohomology, and this will also help to determine the action on $\derhamhone$.
 If we fix a natural number $i$ then $\frac{y}{x^i}$, considered as an element of $\cO_X(U_1\cap U_2)$, is mapped to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
@@ -480,7 +486,8 @@ Now we can split $\frac{H(x)}{x^i}$ as follows,
 \begin{equation*}
 \frac{H(x)}{x^i} =  \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i} - \left( - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i} \right),
 \end{equation*}
-and since this is clearly the difference of an element of $\cO_x(U_1)$ and an element of $\cO_x(U_2)$ we see that $\frac{H(x)}{x^i}$ is zero in $\hone$.
+and since this is clearly the difference of an element of $\cO_X(U_1)$ and an element of $\cO_X(U_2)$ we see that $\frac{H(x)}{x^i}$ is zero in $\hone$.
+\todo[inline]{look at alternative proof}
 We let 
 \[
 {}_iH_1(x) = \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i}
@@ -501,7 +508,7 @@ So the action on the basis elements in \eqref{three} is equivalent to adding
 \left( {}_iH_1'dx, {}_iH_2'dx, x^{-i}H(x) \right),
 \]
 which clearly satisfies the conditions of \eqref{quotient} and hence is zero.
-So the action of the involution $\sigma$ is trivial and hence the action of the group is not faithful.
+So the action of the involution $\sigma$ on $\derhamhone$ is trivial and hence the action of the group $G$ is not faithful.
 \begin{comment}
 Hence the action is trivial if and only if ${}_iH_1'(x)dx = {}_iH_2'(x)dx =0$.
 This cannot happen though, since we can always find an $l\in \{0,1\}$ such that $l \not\equiv d\ \text{mod}\ 2$, and then $d\left({}_iH_2(x)\right) = {}_iH_2'(x)dx \neq 0$, as we can see from the leading term (unless of course $d$ is zero, in which case $d\left({}_iH_1(x)\right) \neq 0$).
@@ -514,10 +521,11 @@ We now prove Theorem \ref{basis}.
 \begin{proof}
 We make use of the fact that the short exact sequence \eqref{ses} splits as a sequence of vector spaces over $k$, and that we know bases of the outer two terms.
 
-It is clear that \eqref{two} and \eqref{four} are elements of \eqref{derhamconditions}, and it follows from \cite[Thm 6.1]{faithfulaction} that they are the image of the basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
+It is clear that \eqref{two} and \eqref{four} are elements of \eqref{derhamconditions}, and it follows from \cite[Thm 6.1]{faithfulaction} that they are the image of the basis of $H^0(X,\Omega_X)$ in $\derhamhone$.\todo{swap the order of these statements?}
 
 Moreover, it is obvious that if the elements \eqref{one} and \eqref{three} are in \eqref{derhamconditions} then they will map to the basis of $\hone$ given in Lemma \ref{basish1}.
-So we need only show that the first two terms in \eqref{one} and \eqref{three} do indeed belong to \eqref{derhamconditions}.
+So we need only show that the first two terms in \eqref{one} and \eqref{three} do indeed belong to \eqref{derhamconditions}.\todo{change wording}
+For the rest of the tproof we fix $i \in \{1, \ldots ,g}$.
 
 
 We start with the case $p\neq 2$, and observe that
@@ -527,16 +535,16 @@ We start with the case $p\neq 2$, and observe that
 & =  \frac{x^i}{2y} \left( \frac{f'}{x^{2i}}dx -\frac{2if}{x^{2i+1}} dx \right) \\
 & =  \frac{x^i}{2y} \left( fd\left(\frac{1}{x^{2i}}\right) + \frac{1}{x^{2i}}df \right) \\
 & =  \frac{x^i}{2y}d(fx^{-2i}) \\
-& =  \frac{x^i}{2y} d\left(yx^{-i}\right)^2 \\
+& =  \frac{x^i}{2y} d\left(\left(yx^{-i}\right)^2\right) \\
 & =  d(yx^{-i}),
 \end{align*}
 with the penultimate line following from the defining equation \eqref{definingequationpnot2}.
-This shows that \eqref{one} satisfies one of the conditions to be in \eqref{derhamconditions}.
+This shows that the elements \eqref{one} satisfy one of the conditions to be in \eqref{derhamconditions}.\todo{change wording}
 Now it remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_2$ and $U_1$ respectively.
+\todo[inline]{recall that y/xi is reg on U! intersect U2??}
 
 
-
-In order to do this we define $\alpha^i_j \in k$ for $0\leq j \leq 2g+1$ by the equation
+In order to do this we define $\alpha^i_j \in k$ for $0\leq j \leq 2g+1$ by the equation\todo{change superscript to something else?}
 \[
 s_i(x) = \alpha^i_{2g+1}x^{2g+1} + \ldots + \alpha^i_0,
 \]
@@ -557,11 +565,11 @@ The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
 \di\left( \frac{-\phi_i}{2yx^i}dx \right) & =  \di(\phi_i) -\di(y) - \di(x^i) + \di (dx) \\
 & =  \di(\phi_i) - ( R - (g+1)D_\infty) - (iD_0 - iD_\infty) + (R - 2D_\infty) \\
 & =  \left( \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + (g+1)D_0 - d_\phi D_\infty\right) - iD_0 + (g+i-1)D_\infty \\
-& \geq  \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + (g+1)D_0 - 2gD_\infty - iD_0 + (g+i-1)D_\infty \\
-& =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + (i-g-1)D_\infty + (g-i+1)D_0,
+& \geq  \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + (g+1)D_0 - (2g+1)D_\infty - iD_0 + (g+i-1)D_\infty \\
+& =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + (i-g-2)D_\infty + (g-i+1)D_0,
 \end{align*}
-where the first line makes use of \eqref{pnot2divisors}.
-Since $i \leq g$ the differential is regular on $U_2 = X\backslash \pi^{-1}(\infty)$.
+where the second equality makes use of \eqref{pnot2divisors}.
+Since $i \leq g$ the differential $\frac{-\phi_}{2yx^i}dx$ is regular on $U_2 = X\backslash \pi^{-1}(\infty)$.
 
 Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 
@@ -569,32 +577,33 @@ Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 \di \left( \frac{\psi_i}{2yx^i}dx\right) & =  \di(\psi_i) - \di(y) - \di(x^i) + \di (dx) \\
 & =  \di (\psi_i ) -(R - (g+1)D_\infty) - (iD_0 - iD_\infty) + (R -2D_\infty) \\
 & =  \di(\psi_i) + (g+i-1)D_\infty -iD_0 \\
+& =  (\di_0(\psi_i) -d_\psi D_\infty) + (g+i-1)D_\infty -iD_0 \\
 & \geq \left( \di_0(\psi_i) - gD_\infty \right) + (g+i-1)D_\infty -iD_0 \\
 & =  \di_0(\psi_i) + (i-1)D_\infty - iD_0.
 \end{align*}
-Again, the first line uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
+Again, the second equality uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
 
 
-We now suppose that $p=2$.
-We can see that
+We now suppose that $p=2$.\todo{remind that signs don't matter?}
+We see that
 \begin{align*}
 \left( \left( \frac{ \Psi_i}{x^{i+1}H} \right) - \left( \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
 & =  \left( \frac{F'}{x^iH} + \frac{yH'}{x^iH} + \frac{iy}{x^{i+1}} \right) dx \\
 & =  \frac{1}{x^i}\left( \frac{F' + yH'}{H} \right) dx + \frac{iy}{x^{i+1}}dx \\
 & =  x^{-i}dy + yd \left( x^{-i}\right) \\
-& =  dyx^{-i},
+& =  d\left( yx^{-i}\right),
 \end{align*}
-and so it only remains to show that $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_2$ and $U_1$ respectively.
+\todo{refer to 15}and so, as in the case $p \neq 2$, it only remains to show that for each $i\in {1, \ldots, g}$ the differentials $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_2$ and $U_1$ respectively.\todo{consider wording}
 
 
-We define $A^i_{j+1} \in k$ for $0 \leq j \leq 2g+2$, and $B_k^i \in k$ for $1\leq k \leq g+1$ by the equation
+We define $A^i_{j+1} \in k$ for $0 \leq j \leq 2g+2$, and $B_k^i \in k$\todo{maybe don't use superscript} for $1\leq k \leq g+1$ by the equation
 \[
 S_i(x,y) = A_{2g+2}^ix^{2g+2} + \ldots + A^i_1 x + y(B_{g+1}^i x^{g+1} + \ldots + B_1^i x + B_0^i).
 \]
 Note that many of these coefficients may be zero.
-In particular we note that $B_i^i = 0$ for all $i$.
+In particular we note that $B_i^i = 0$ for all $i$.\todo{colon?}
 If $i$ is even then $B_{g+1}^ix^{g+1} + \ldots + B_1^ix + B_0^i = H'x$ and so the coefficient of $x^i$ in $H'x$ is $ib_i = 0$ (recall that we defined $b_i$ to be the coefficients of $H$ in \eqref{hcoefficients}).
-Similarly, if $i$ is odd then $B_{g+1}^ix^{g+1} + \ldots + B_1^ix + B_0^i = H'x + H$, and then the coefficient of $x^i$ is $ib_i+ ib_i = 2ib_i = 0$.
+Similarly, if $i$ is odd then $B_{g+1}^ix^{g+1} + \ldots + B_1^ix + B_0^i = H'x + H$, and then the coefficient of $x^i$ is $ib_i+ ib_i = 2ib_i = 0$.\todo{make one sentence}
 
 
 We can now define the following polynomials:
@@ -608,13 +617,13 @@ We can now define the following polynomials:
 \end{equation}
 We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
 
-Clearly $\Phi_i(x) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings of to show that $\frac{ \Phi_i(x) dx}{x^{i+1}H}$ and $\frac{\Psi_i(x) dx}{x^{i+1}H}$ are regular on $U_2$ and $U_1$ respectively.
+Clearly $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x) dx}{x^{i+1}H}$ and $\frac{\Psi_i(x) dx}{x^{i+1}H}$ are regular on $U_2$ and $U_1$ respectively.
 
 We start by computing the divisor of $\frac{dx}{x^{i+1}H}$, since it is a common component to all the differentials we need to look at.
 This yields
 \begin{align}
 \di \left( \frac{dx}{x^{i+1}H} \right) & = \di(dx) - \di (x^{i+1}) - \di (H) \nonumber \\
-& = R-2D_\infty) - ((i+1)D_0 - (i+1)D_\infty) - (R - (g+1)D_\infty) \nonumber \\
+& = (R-2D_\infty) - ((i+1)D_0 - (i+1)D_\infty) - (R - (g+1)D_\infty) \nonumber \\
 & = (g+i)D_\infty - (i+1)D_0,
 \end{align}
 using \eqref{divdxp=2}, \eqref{divhp=2} and \eqref{divxp=2}.
@@ -629,7 +638,7 @@ Firstly,
  = &  \di_0(\Phi_i^x) - (i+1)D_0 + (i-2-g)D_\infty \\
  =  & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + (i-g-2)D_\infty,
 \end{align*}
-From this we see that the differential is clearly regular on $U_2 = X \backslash \pi^{-1}(\infty)$.
+From this we see that the differential $\frac{\phi_i^xdx}{x^{i+1}H}$ is clearly regular on $U_2 = X \backslash \pi^{-1}(\infty)$.\todo{consider consistency of putting differential in frac or not}
 
 We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, namely
 \begin{align*}
@@ -638,33 +647,34 @@ We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, nam
  \geq & \di(y) + \di_0(\Phi_i^y) - (g+1)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
  = & \di(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (i-1)D_\infty.
 \end{align*}
-Since both $y$ and $\frac{\Phi_i^y}{x^{i+1}}$ only have poles at points in $\pi^{-1}(\infty)$, this completes the proof that $\Phi_i$ is regular on $U_2 = X \backslash \pi^{-1}(\infty)$.
+\todo{refer to 14}Since $y$ only has poles at points in $\pi^{-1}(\infty)$, this completes the proof that $\frac{\Phi_i dx}{x^{i+1}H}$ is regular on $U_2 = X \backslash \pi^{-1}(\infty)$.
 
 Now we complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
-\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right)  = &  \di(\Psi_i^x)  - (i+1)D_0 + (g+i)D_\infty \\
+\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right)  = &  \\di(\Psi_i^x)  - (i+1)D_0 + (g+i)D_\infty \\
+& = (di_0(\Psi_i^x) -d_\psi^xD_\infty) - (i+1)D_0 + (g+i)D_\infty \\
  \geq &  \di_0(\Psi_i^x ) - iD_\infty - (i+1)D_0 + (g+i)D_\infty \\
- = &  \di_0(\Psi_i^x) - iD_0 + (g+1)D_\infty,
+ = &  \di_0(\Psi_i^x) - (i+1)D_0 + gD_\infty,
 \end{align*}
 and it is clear that the divisor is positive on $U_1 = X \backslash \pi^{-1}(0)$.
 
-For the other half of the differential we need to take cases.
-If we assume that $\infty$ is branch point then we see that
+For the other half of the differential we need to consider seperate cases.
+If we assume that $\infty$ is branch point then we see that\todo{refer to 14}
 \begin{align*}
-\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di_0(y) - (2g+1)D_\infty + \di(\Psi_i^y) - (i+1)D_0 + (g+i)D_\infty \\
- =  & \di_0(y) + \di(\Psi_i^y) -(i+1)D_0 + (2i -1)D_\infty \\
- = &  \di_0(y) + \di_0(\Psi_i^y) - d_\Psi^yD_\infty - (i+1)D_0 + (2i-1)D_\infty \\
- \geq &  \di_0(y) + \di_0(\Psi_i^y) -(i-1)D_\infty -(i+1)D_0 + (2i-1)D_\infty \\
- =   &\di_0(y) + \di_0(\Psi_i^y) -(i+1)D_0 + D_\infty,
+\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) - (i+1)D_0 + (g+i)[P_\infty] \\
+ =  & \di_0(y) + \di(\Psi_i^y) -(i+1)D_0 + (2i -1)[P_\infty] \\
+ = &  \di_0(y) + \di_0(\Psi_i^y) - d_\Psi^y[P_\infty] - (i+1)D_0 + (2i-1)[P_\infty] \\
+ \geq &  \di_0(y) + \di_0(\Psi_i^y) -(i-1)[P_\infty] -(i+1)D_0 + (2i-1)[P_\infty] \\
+ =   &\di_0(y) + \di_0(\Psi_i^y) -(i+1)D_0 + [P_\infty],
 \end{align*}
 which is clearly positive on $U_1$.
-If, on the other hand, $\infty$ is not a branch point then we have
+On the other hand, if $\infty$ is not a branch point then we have
 \begin{align*}
 \di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di(y) + \di(\Psi_i^y) - (i+1)D_0 + (g+i)D_\infty \\
 = & \di(y) + \di_0(\Psi_i^y) - (i+1)D_0 + (g+i - d_\Psi^y)D_\infty \\
 \geq & \di(y) + \di_0(\Psi_i^y) - (i+1)D_0 + (g+1)D_\infty. \\
 \end{align*}
-Since we know from \eqref{divyp=2} that $y$ cannot have a pole of order greater $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential is regular on $U_1 = X \backslash \pi^{-1}(0)$.
+Since we know from \eqref{divyp=2} that $y$ cannot have a pole of order greater $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential $\frac{y\psi_i^y dx}{x^{i+1}H}$ is regular on $U_1 = X \backslash \pi^{-1}(0)$.
 Thus we have completed the proof.
 
 
@@ -719,7 +729,7 @@ Now
 \frac{1}{x}dx = \left( -2t \cdot \sum_{i\geq -2} d_it^i\right) dt 
 \]
 so we see that the residue is $-2$.
-This complets the proof of the lemma when $p\neq 2$.
+This completes the proof of the lemma when $p\neq 2$.
 
 We now turn to the case when $p=2$.
 We now wish to compute the residue of $\frac{ydx}{xH(x)}$ at $P_\infty$.
@@ -859,7 +869,7 @@ is the zero element in $\derhamhone$.
 
 We will now finally show that the basis of $\hone$ in $\derhamhone$ is not stable under the group action --- in particular, it is not stable under the action of $\omega_2$.
 Now we fix $i = g-1$.
-We can then clealry see from \eqref{omega11action} that if $\alpha_{g}^i$ is zero all the $x$ terms in the second co-ordinate will have degree at most $g-1$.
+We can then clearly see from \eqref{omega11action} that if $\alpha_{g}^i$ is zero all the $x$ terms in the second co-ordinate will have degree at most $g-1$.
 \begin{note}
 By the action of $\omega_2$ we have $\frac{8^2y^2}{x^6} = f\left(\frac{4}{x} \right)$.
 \end{note}
@@ -895,7 +905,7 @@ Similarly, after possibly replacing $P_\infty$ by $D_\infty$ we have almost the 
 So the basis is the same when $p\neq2$.
 
 When $p=2$ the basis is also the same.
-We first note that whilst the degree of the highest and lowest ordered terms may change in \eqref{Split}, it is still the case that te coefficient $B_i^i =0$, using exactly the same arguments.
+We first note that whilst the degree of the highest and lowest ordered terms may change in \eqref{Split}, it is still the case that the coefficient $B_i^i =0$, using exactly the same arguments.
 This allows us to use essentially the same arguments, again with the exception of changing $P_\infty$ and $P_0$ to $D_\infty$ and $D_0$.
 \end{note}
 \end{comment}
