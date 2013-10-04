@@ -127,6 +127,8 @@
 
 \section{Background}
 
+\todo[inline]{changed indices, check that this has not left inconsistencies}
+
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
 We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$.
 We also suppose that we have a finite group $G$ acting faithfully on $X$.
@@ -135,54 +137,53 @@ In a similar vein to \cite{canonicalrepresentation}, we will be using \cech coho
 We therefore recall the \cech cohomology relevant to both of these, starting with $\hone$.
 
 By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
-The cover we shall be using is $U_1 = X\backslash \pi^{-1}(0)$ and $U_2 = X\backslash  \pi^{-1}(\infty) $, both of which are affine sets.
-We let ${\cal U} = \{ U_1, U_2\}$.\todo{check indices}
-Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_1) \times {\cal F} (U_2) \rightarrow {\cal F}(U_1 \cap U_2)$, given by taking the difference, $(f_1,f_2) \mapsto f_1|_{U_1 \cap U_2} - f_2|_{U_1 \cap U_2}$.
-In general we will not explicitly show \todo{wording}that we are considering the restriction when applying this map, unless it adds clarity.
+The cover we shall be using is $U_0 = X\backslash \pi^{-1}(0)$ and $U_\infty = X\backslash  \pi^{-1}(\infty) $, both of which are affine sets.
+We let ${\cal U} = \{ U_0, U_\infty\}$.
+Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, given by taking the difference, $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
+In general we will suppress the notation denoting the restriction map.\todo{wording}
 It is this map which gives us the differential $d$ in the \cech cochain
 \begin{equation*}
-0 \rightarrow \cO_X(U_1)\times \cO_X(U_2) \xrightarrow{d} \cO_X(U_1 \cap U_2) \rightarrow 0.
+0 \rightarrow \cO_X(U_0)\times \cO_X(U_\infty) \xrightarrow{d} \cO_X(U_0 \cap U_\infty) \rightarrow 0.
 \end{equation*}
-The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}$ and hence
+The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(d)}$ and hence
 \begin{equation}
-\hone \cong \frac{\cO_X(U_1 \cap U_2)}{\Ima(d)}  
- = \frac{\cO_X(U_1 \cap U_2)}{\{f_1 - f_2 | f_i \in \cO_X(U_i) \}}.
+\hone \cong \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(d)}  
+ = \frac{\cO_X(U_0 \cap U_\infty)}{\{f_0 - f_\infty | f_i \in \cO_X(U_i) \}}.
 \end{equation}
-We will use this characterisation of $\hone$ later.\todo{repetition}
 
 We now recall how to compute the algebraic de-Rham cohomology of $X$ via \cech cohomology.
 The de-Rham cohomology of an algebraic curve is the hypercohomology of the de Rham complex on $X$. 
 Since a curve doesn't have differentials of degree greater than one, this is just the hypercohomology of the complex
 \begin{equation}\label{res}
-0 \rightarrow \cO_X \rightarrow \Omega_X \rightarrow 0.
+0 \rightarrow \cO_X \xrightarrow{d} \Omega_X \rightarrow 0.
 \end{equation}
-\todo{explain the map here}
+The map $d$ is the differential map $f \mapsto df$.\todo{define differential?}
 
 We then use the open cover $\cal U$ and the \cech differentials as defined earlier to give us the \cech complex of \eqref{res}, which is
 \begin{equation}\label{bicomplex} \begin{array}{ccccccc}
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
-0 & \rightarrow & \cO_X(U_1)\times \cO_X(U_2) & \rightarrow & \Omega_X(U_1)\times \Omega_X(U_2) & \rightarrow & 0 \\
+0 & \rightarrow & \cO_X(U_0)\times \cO_X(U_\infty) & \rightarrow & \Omega_X(U_0)\times \Omega_X(U_\infty) & \rightarrow & 0 \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
-0 & \rightarrow & \cO_X(U_1 \cap U_2) & \rightarrow & \Omega_X(U_1 \cap U_2) & \rightarrow & 0 \\
+0 & \rightarrow & \cO_X(U_0 \cap U_\infty) & \rightarrow & \Omega_X(U_0 \cap U_\infty) & \rightarrow & 0 \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 \end{array}
 \end{equation}
 where the horizontal arrows are the standard differential map.
 By a generalisation of Leray's theorem \cite[Cor 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
-Note that this relies on $\cechhone$ and ${\check H}^p(\cU, \Omega_X)$ being zero for all $p\geq 1$ ---
-since $U_1$ and $U_2$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.\todo{check that cal U is correct, not U1 and U2}
+Note that this requires, for any $\sigma$ in the nerve of $\cU$, and any $P \geq 1$, ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero ---
+since $U_0$ and $U_\infty$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.\todo{check about $H^1$}
 
 
 
 After computing the first cohomology group of the total complex of \eqref{bicomplex} we see that $H^1_{{\text dR}}(X/k)$ is isomorphic to the space
 \begin{equation}\label{derhamconditions}
-\left\{(\omega_1, \omega_2, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_1 \cap U_2), df_{12} = \omega_1|_{U_1\cap U_2} - \omega_2|_{U_1\cap U_2} \right\}
+\left\{(\omega_0, \omega_\infty, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_0 \cap U_\infty), df_{12} = \omega_0|_{U_0\cap U_\infty} - \omega_\infty|_{U_0\cap U_\infty} \right\}
 \end{equation}
 quotiented by the subspace
 \begin{equation}\label{quotient}
-\left\{  (df_1, df_2, f_1|_{U_1\cap U_2} -f_2|_{U_1\cap U_2} )|f_i \in \cO_X(U_i)\right\}.
+\left\{  (df_0, df_\infty, f_0|_{U_0\cap U_\infty} -f_\infty|_{U_0\cap U_\infty} )|f_i \in \cO_X(U_i)\right\}.
 \end{equation}
 
 We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$ and to study the $k[G]$-module structure.\todo{are these reasons the only ones? Are they correct?}
@@ -297,13 +298,13 @@ The duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} state
 
 We now compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.\todo{come back to this and make notes}
 \begin{lem}\label{basish1}
- Via the isomorphism \todo{reference 1} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_1$\todo{should this be $U_1 \cap U_2$}, form a basis of $H^1(X,\cO_X)$.
+ Via the isomorphism \todo{reference 1} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0$\todo{should this be $U_0 \cap U_\infty$}, form a basis of $H^1(X,\cO_X)$.
 \end{lem}
 \begin{proof}
 \todo[inline]{show functions are  regular on intersection}
 We use Serre duality and the fact that if $p\neq 2$ the elements $\omega_i = x^iy^{-1}dx$, where $i \in \{0,\ldots, g-1\}$, form a basis of $\hzero$.
-Then for $j\in \{1, \ldots, g\}$  we consider $\langle x^iy^{-1}dx, yx^{-j}|_{U_1}\rangle$\todo{translate in to adeles}, which is equal to the residue of $x^{i-j}dx|_{U_1}$.\todo{explain this sentence, in particular the equality}
-In general, the divisor of $x^{i-j}dx$ (when not restricted to $U_1$) when $p\neq 2$ is
+Then for $j\in \{1, \ldots, g\}$  we consider $\langle x^iy^{-1}dx, yx^{-j}|_{U_0}\rangle$\todo{translate in to adeles}, which is equal to the residue of $x^{i-j}dx|_{U_0}$.\todo{explain this sentence, in particular the equality}
+In general, the divisor of $x^{i-j}dx$ (when not restricted to $U_0$) when $p\neq 2$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
 \di(x^{i-j}dx) & = R - 2D_\infty +(i-j)D_0 - (i-j)D_\infty \\
@@ -311,12 +312,12 @@ In general, the divisor of $x^{i-j}dx$ (when not restricted to $U_1$) when $p\ne
 \end{split}
 \end{equation}
 \todo{cite 9 and recall formula for div x}Now if $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one).
-Since there are no other poles on $U_1$ the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$ (i.e. $j \in \{1, \ldots, g\}$).\todo{more details, clearer etc}
+Since there are no other poles on $U_0$ the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$ (i.e. $j \in \{1, \ldots, g\}$).\todo{more details, clearer etc}
 
 \todo[inline]{let $\alpha:X \ra Y$ be an isom of curves, $\omega$ a diff on $Y$ and $P\in X$. Then $\res_{\alpha(P)}(\omega) = \res_P(\pi^*\omega)$. Let $\alpha$ be the hyperelliptic involution, and we see that $Res_{P_\infty} (\omega ) = \res_{P_\infty'}(\omega)$.}
 On the other hand, if $\infty$ is not a branch point we have two poles of order one, $P_\infty$ and $P_\infty'$.
 Since we have two poles we need to check that the residues at these poles do not cancel to zero.
-This is equivalent to checking that the residue is non-zero at the points in $X\backslash U_1$ (of which there are at most two --- $P_0$ and $P_0'$).
+This is equivalent to checking that the residue is non-zero at the points in $X\backslash U_0$ (of which there are at most two --- $P_0$ and $P_0'$).
 If $0$ is a branch point then we have a pole at $P_0$ of order one when $i-j=-1$, and hence a non-zero residue, and we are done.
 On the other hand if $0$ is not a branch point then when $i-j=-1$ we have a pole at both of these, so we need to check that the residues do not cancel.
 Fortunately, they are largely symmetric.
@@ -348,7 +349,7 @@ c_{-1}t^{-1}\frac{f'}{2y} = \frac{c_{-1}f'}{2y^2 - 2y\sqrt{(f(0)}} = \frac{c_{-1
 \]
 We will use the fact that this is the only part of the sum that can contain a term of the form $\frac{1}{x}$ to compute the residue.
 Clearly no part of $\frac{2c_{-1}f'y\sqrt{f(0)}}{4(f^2-f\cdot f(0))}$ can contain a $\frac{1}{x}$ term, since there is no way of removing the $y$.
-This means we just need to compute the $\frac{1}{x}$ terms in $\frac{c_{-1}f'\cdot f}{2(f^2-f\cdot f(0))}$ and compare coefficients to show the residue is non-zero on $X \backslash U_1$.
+This means we just need to compute the $\frac{1}{x}$ terms in $\frac{c_{-1}f'\cdot f}{2(f^2-f\cdot f(0))}$ and compare coefficients to show the residue is non-zero on $X \backslash U_0$.
 
 We notice at this point that by almost the same calculations when expanding about $P_0'$ we get the following
 \[
@@ -356,14 +357,14 @@ d_{-1}s^{-1}\frac{f'}{2y} = \frac{d_{-1}f'\left(2f-2y\sqrt{f(0)}\right) }{4(f^2 
 \]
 Using the same argument as before we dispense of the $y$ term, and hence $d_{-1}$ is determined uniquely by the $\frac{1}{x}$ terms in $\frac{2d_{-1}f' \cdot f}{4(f^2-f\cdot f(0))}$.
 Since $c_{-1}$ and $d_{-1}$ are determined in the same way, they must take the same value. 
-Since the characteristic is not 2, and since $c_{-1} \neq 0$, we conclude that $\res_{X\backslash U_2}(x^{-1}dx) = 2c_{-1} \neq 0$.
+Since the characteristic is not 2, and since $c_{-1} \neq 0$, we conclude that $\res_{X\backslash U_\infty}(x^{-1}dx) = 2c_{-1} \neq 0$.
 This completes the proof when $p \neq 2$.
 \todo[inline]{Maybe I could just use $x$ as a UP at 0, and simplify the whole thing to a few lines}
 
 \todo[inline]{section missing}
 We now suppose that $p=2$.
 Again, if $i-j=-1$ and $\infty$ is branch point then we again have a pole of order one at $P_\infty$, and hence a non-zero residue there.
-Also, even if $\infty$ is not a branch point it still suffices to compute the residue on $X\backslash U_2$, and we see that if $0$ is a branch point this is non-zero.
+Also, even if $\infty$ is not a branch point it still suffices to compute the residue on $X\backslash U_\infty$, and we see that if $0$ is a branch point this is non-zero.
 So we again need only consider the case when both $\infty$ and $0$ are not branch points.
 
 We start by noticing that if we let $P_0 = (0,a)$ and $P_0' = (0,a+H(0))$ then we know that $s=y-a$ and $t=y-(a+H(0))$ are uniformising parameters at $P_0$ and $P_0'$ respectively.
@@ -483,12 +484,12 @@ By the same theorem from \cite{faithfulaction}\todo{reference thesis} as used in
 Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully on $\hone$.
 
 We can see exactly why this is from the view of \cech cohomology, and this will also help to determine the action on $\derhamhone$.
-If we fix a natural number $i$ then $\frac{y}{x^i}$, considered as an element of $\cO_X(U_1\cap U_2)$, is mapped to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
+If we fix a natural number $i$ then $\frac{y}{x^i}$, considered as an element of $\cO_X(U_0\cap U_\infty)$, is mapped to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
 Now we can split $\frac{H(x)}{x^i}$ as follows, 
 \begin{equation*}
 \frac{H(x)}{x^i} =  \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i} - \left( - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i} \right),
 \end{equation*}
-and since this is clearly the difference of an element of $\cO_X(U_1)$ and an element of $\cO_X(U_2)$ we see that $\frac{H(x)}{x^i}$ is zero in $\hone$.
+and since this is clearly the difference of an element of $\cO_X(U_0)$ and an element of $\cO_X(U_\infty)$ we see that $\frac{H(x)}{x^i}$ is zero in $\hone$.
 \todo[inline]{look at alternative proof}
 We let 
 \[
@@ -542,7 +543,7 @@ We start with the case $p\neq 2$, and observe that
 \end{align*}
 with the penultimate line following from the defining equation \eqref{definingequationpnot2}.
 This shows that the elements \eqref{one} satisfy one of the conditions to be in \eqref{derhamconditions}.\todo{change wording}
-Now it remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_2$ and $U_1$ respectively.
+Now it remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_\infty$ and $U_0$ respectively.
 \todo[inline]{recall that y/xi is reg on U! intersect U2??}
 
 
@@ -559,7 +560,7 @@ Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\
 \todo{remove d psi? - will keep for now in case useful later}
 
 
-We now show that $\frac{-\phi_i}{2yx^i}dx$ and $\frac{\psi_i}{2yx^i}dx$ are regular on $U_2$ and $U_1$ respectively.
+We now show that $\frac{-\phi_i}{2yx^i}dx$ and $\frac{\psi_i}{2yx^i}dx$ are regular on $U_\infty$ and $U_0$ respectively.
 We may assume that $\phi_i$ and $\psi_i$ are non-zero, since zero is regular everywhere.
 The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
 
@@ -571,7 +572,7 @@ The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
 & =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + (i-g-2)D_\infty + (g-i+1)D_0,
 \end{align*}
 where the second equality makes use of \eqref{pnot2divisors}.
-Since $i \leq g$ the differential $\frac{-\phi_i}{2yx^i}dx$ is regular on $U_2 = X\backslash \pi^{-1}(\infty)$.
+Since $i \leq g$ the differential $\frac{-\phi_i}{2yx^i}dx$ is regular on $U_\infty = X\backslash \pi^{-1}(\infty)$.
 
 Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 
@@ -583,7 +584,7 @@ Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 & \geq \left( \di_0(\psi_i) - gD_\infty \right) + (g+i-1)D_\infty -iD_0 \\
 & =  \di_0(\psi_i) + (i-1)D_\infty - iD_0.
 \end{align*}
-Again, the second equality uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_1 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
+Again, the second equality uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
 
 
 We now suppose that $p=2$.\todo{remind that signs don't matter?}
@@ -595,7 +596,7 @@ We see that
 & =  x^{-i}dy + yd \left( x^{-i}\right) \\
 & =  d\left( yx^{-i}\right),
 \end{align*}
-\todo{refer to 15}and so, as in the case $p \neq 2$, it only remains to show that for each $i\in {1, \ldots, g}$ the differentials $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_2$ and $U_1$ respectively.\todo{consider wording}
+\todo{refer to 15}and so, as in the case $p \neq 2$, it only remains to show that for each $i\in {1, \ldots, g}$ the differentials $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_\infty$ and $U_0$ respectively.\todo{consider wording}
 
 
 We define $A^i_{j+1} \in k$ for $0 \leq j \leq 2g+2$, and $B_k^i \in k$\todo{maybe don't use superscript} for $1\leq k \leq g+1$ by the equation
@@ -619,7 +620,7 @@ We can now define the following polynomials:
 \end{equation}
 We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
 
-Clearly $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x) dx}{x^{i+1}H}$ and $\frac{\Psi_i(x) dx}{x^{i+1}H}$ are regular on $U_2$ and $U_1$ respectively.
+Clearly $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x) dx}{x^{i+1}H}$ and $\frac{\Psi_i(x) dx}{x^{i+1}H}$ are regular on $U_\infty$ and $U_0$ respectively.
 
 We start by computing the divisor of $\frac{dx}{x^{i+1}H}$, since it is a common component to all the differentials we need to look at.
 This yields
@@ -640,7 +641,7 @@ Firstly,
  = &  \di_0(\Phi_i^x) - (i+1)D_0 + (i-2-g)D_\infty \\
  =  & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + (i-g-2)D_\infty,
 \end{align*}
-From this we see that the differential $\frac{\phi_i^xdx}{x^{i+1}H}$ is clearly regular on $U_2 = X \backslash \pi^{-1}(\infty)$.\todo{consider consistency of putting differential in frac or not}
+From this we see that the differential $\frac{\phi_i^xdx}{x^{i+1}H}$ is clearly regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.\todo{consider consistency of putting differential in frac or not}
 
 We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, namely
 \begin{align*}
@@ -649,7 +650,7 @@ We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, nam
  \geq & \di(y) + \di_0(\Phi_i^y) - (g+1)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
  = & \di(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (i-1)D_\infty.
 \end{align*}
-\todo{refer to 14}Since $y$ only has poles at points in $\pi^{-1}(\infty)$, this completes the proof that $\frac{\Phi_i dx}{x^{i+1}H}$ is regular on $U_2 = X \backslash \pi^{-1}(\infty)$.
+\todo{refer to 14}Since $y$ only has poles at points in $\pi^{-1}(\infty)$, this completes the proof that $\frac{\Phi_i dx}{x^{i+1}H}$ is regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
 
 Now we complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
@@ -658,7 +659,7 @@ Now we complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
  \geq &  \di_0(\Psi_i^x ) - iD_\infty - (i+1)D_0 + (g+i)D_\infty \\
  = &  \di_0(\Psi_i^x) - (i+1)D_0 + gD_\infty,
 \end{align*}
-and it is clear that the divisor is positive on $U_1 = X \backslash \pi^{-1}(0)$.
+and it is clear that the divisor is positive on $U_0 = X \backslash \pi^{-1}(0)$.
 
 For the other half of the differential we need to consider seperate cases.
 If we assume that $\infty$ is branch point then we see that\todo{refer to 14}
@@ -669,14 +670,14 @@ If we assume that $\infty$ is branch point then we see that\todo{refer to 14}
  \geq &  \di_0(y) + \di_0(\Psi_i^y) -(i-1)[P_\infty] -(i+1)D_0 + (2i-1)[P_\infty] \\
  =   &\di_0(y) + \di_0(\Psi_i^y) -(i+1)D_0 + [P_\infty],
 \end{align*}
-which is clearly positive on $U_1$.
+which is clearly positive on $U_0$.
 On the other hand, if $\infty$ is not a branch point then we have
 \begin{align*}
 \di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di(y) + \di(\Psi_i^y) - (i+1)D_0 + (g+i)D_\infty \\
 = & \di(y) + \di_0(\Psi_i^y) - (i+1)D_0 + (g+i - d_\Psi^y)D_\infty \\
 \geq & \di(y) + \di_0(\Psi_i^y) - (i+1)D_0 + (g+1)D_\infty. \\
 \end{align*}
-Since we know from \eqref{divyp=2} that $y$ cannot have a pole of order greater $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential $\frac{y\psi_i^y dx}{x^{i+1}H}$ is regular on $U_1 = X \backslash \pi^{-1}(0)$.
+Since we know from \eqref{divyp=2} that $y$ cannot have a pole of order greater $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential $\frac{y\psi_i^y dx}{x^{i+1}H}$ is regular on $U_0 = X \backslash \pi^{-1}(0)$.
 Thus we have completed the proof.
 
 
@@ -874,7 +875,7 @@ By the action of $\omega_2$ we have $\frac{8^2y^2}{x^6} = f\left(\frac{4}{x} \ri
 \begin{note}
 For $\infty$ is not a branch point the same basis should work. 
 Consider $y^2 = f(x)$ where the degree of $f(x)$ is $2g+2$ (i.e. $\infty$ is not ramified), with projection map $\pi : X \rightarrow \mathbb P_k^1$.
-Then we can take the cover to be $U_1 := X \backslash \{\pi^{-1}(0)\}$ and $U_2 := X \backslash \{\pi^{-1}(\infty)\}$.
+Then we can take the cover to be $U_0 := X \backslash \{\pi^{-1}(0)\}$ and $U_\infty := X \backslash \{\pi^{-1}(\infty)\}$.
 Then we have $\frac{x^idx}{y} \cdot \frac{y}{x^{j}} = x^{i-j}dx$.
 The divisor of this is then $(i-j)D_0 -(i-j)D_\infty + R - 2D_\infty$.
 Then if $i-j = -1$ this has poles at at all points supported at by $D_0$ and $D_\infty$.
