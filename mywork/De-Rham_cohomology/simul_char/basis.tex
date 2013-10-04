@@ -123,7 +123,7 @@
 \begin{document}
 \maketitle
 
-%\listoftodos
+\listoftodos
 
 \section{Background}
 
@@ -297,12 +297,12 @@ The duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} state
 
 We now compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.\todo{come back to this and make notes}
 \begin{lem}\label{basish1}
- The elements $\frac{y}{x}, \ldots , \frac{y}{x^g}$, restricted to $U_1$, form a basis of $H^1(X,\cO_X)$.
+ Via the isomorphism \todo{reference 1} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_1$\todo{should this be $U_1 \cap U_2$}, form a basis of $H^1(X,\cO_X)$.
 \end{lem}
 \begin{proof}
-We use Serre duality and the fact that we already know a basis of $\hzero$.
-Recall that if $p\neq 2$ then for $i \in \{0,\ldots, g-1\}$ the elements $\omega_i = x^iy^{-1}dx$ form a basis of $\hzero$.
-Then for $j\in \{1, \ldots, g\}$  we consider the pair $\langle x^iy^{-1}dx, yx^{-j}|_{U_1}\rangle$, which maps to the residue of $x^{i-j}dx|_{U_1}$.
+\todo[inline]{show functions are  regular on intersection}
+We use Serre duality and the fact that if $p\neq 2$ the elements $\omega_i = x^iy^{-1}dx$, where $i \in \{0,\ldots, g-1\}$, form a basis of $\hzero$.
+Then for $j\in \{1, \ldots, g\}$  we consider $\langle x^iy^{-1}dx, yx^{-j}|_{U_1}\rangle$\todo{translate in to adeles}, which is equal to the residue of $x^{i-j}dx|_{U_1}$.\todo{explain this sentence, in particular the equality}
 In general, the divisor of $x^{i-j}dx$ (when not restricted to $U_1$) when $p\neq 2$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
@@ -310,9 +310,10 @@ In general, the divisor of $x^{i-j}dx$ (when not restricted to $U_1$) when $p\ne
 & = R + (i-j)D_0 - (i-j+2)D_\infty.
 \end{split}
 \end{equation}
-Now if $\infty$ is a branch point, then we can see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one).
-Since there are no other poles on $U_1$ the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$ (i.e. $j \in \{1, \ldots, g\}$).
+\todo{cite 9 and recall formula for div x}Now if $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one).
+Since there are no other poles on $U_1$ the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$ (i.e. $j \in \{1, \ldots, g\}$).\todo{more details, clearer etc}
 
+\todo[inline]{let $\alpha:X \ra Y$ be an isom of curves, $\omega$ a diff on $Y$ and $P\in X$. Then $\res_{\alpha(P)}(\omega) = \res_P(\pi^*\omega)$. Let $\alpha$ be the hyperelliptic involution, and we see that $Res_{P_\infty} (\omega ) = \res_{P_\infty'}(\omega)$.}
 On the other hand, if $\infty$ is not a branch point we have two poles of order one, $P_\infty$ and $P_\infty'$.
 Since we have two poles we need to check that the residues at these poles do not cancel to zero.
 This is equivalent to checking that the residue is non-zero at the points in $X\backslash U_1$ (of which there are at most two --- $P_0$ and $P_0'$).
@@ -359,6 +360,7 @@ Since the characteristic is not 2, and since $c_{-1} \neq 0$, we conclude that $
 This completes the proof when $p \neq 2$.
 \todo[inline]{Maybe I could just use $x$ as a UP at 0, and simplify the whole thing to a few lines}
 
+\todo[inline]{section missing}
 We now suppose that $p=2$.
 Again, if $i-j=-1$ and $\infty$ is branch point then we again have a pole of order one at $P_\infty$, and hence a non-zero residue there.
 Also, even if $\infty$ is not a branch point it still suffices to compute the residue on $X\backslash U_2$, and we see that if $0$ is a branch point this is non-zero.
@@ -525,7 +527,7 @@ It is clear that \eqref{two} and \eqref{four} are elements of \eqref{derhamcondi
 
 Moreover, it is obvious that if the elements \eqref{one} and \eqref{three} are in \eqref{derhamconditions} then they will map to the basis of $\hone$ given in Lemma \ref{basish1}.
 So we need only show that the first two terms in \eqref{one} and \eqref{three} do indeed belong to \eqref{derhamconditions}.\todo{change wording}
-For the rest of the tproof we fix $i \in \{1, \ldots ,g}$.
+For the rest of the tproof we fix $i \in \{1, \ldots ,g\}$.
 
 
 We start with the case $p\neq 2$, and observe that
@@ -569,7 +571,7 @@ The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
 & =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + (i-g-2)D_\infty + (g-i+1)D_0,
 \end{align*}
 where the second equality makes use of \eqref{pnot2divisors}.
-Since $i \leq g$ the differential $\frac{-\phi_}{2yx^i}dx$ is regular on $U_2 = X\backslash \pi^{-1}(\infty)$.
+Since $i \leq g$ the differential $\frac{-\phi_i}{2yx^i}dx$ is regular on $U_2 = X\backslash \pi^{-1}(\infty)$.
 
 Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 
