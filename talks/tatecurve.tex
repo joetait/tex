@@ -1,0 +1,217 @@
+\documentclass{beamer}
+
+%\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+%}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%   TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[The Tate Curve]{The moduli space of complex elliptic curves and its relation to the Tate curve} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Joe Tait} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of Southampton \\ % Your institution for the title page
+\medskip
+\textit{joe.tait@soton.ac.uk} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\frame{
+\titlepage % Print the title page as the first slide
+}
+
+\frame{
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+}
+
+%----------------------------------------------------------------------------------------
+%   PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Motivation} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+\subsection{} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+\frame{
+\frametitle{Diophantine equations}
+Diophantine equations are equations in which only integer solutions are allowed.
+They are a part of classical number theory.
+
+The simplest cases are linear, of the form
+\begin{block}{Linear case}
+\[
+aX + bY = c \qquad a,b,c \in \mathbb Z, \qquad a\ \text{or}\ b \neq 0.
+\]
+\end{block}
+The next simplest case is quadratic, which can be classified as 
+\begin{block}{Quadratic case}
+\[ aX^2 + bY^2  = C \qquad \text{ellipse} \]
+\[ aX^2 - b Y^2  = C \qquad \text{hyperbola} \]
+\[ aX + BY^2  = C \qquad \text{parabola} \]
+\end{block}
+The third case of this (much less easy to solve) are cubic Diophantine equations, which are elliptic curves.
+}
+ \frame{
+\frametitle{Curves}
+Another classical area is the study of algebraic curves.
+Falting's theorem gives another reason as to why we may wish to study elliptic curves
+\begin{theorem}[Falting's Theorem (1983)/Mordell Conjecture (1922)]
+Let $C$ be a non-singular algebraic curve over $\mathbb Q$ of genus $g$.
+Then the set of rational points of $C$ are determined as followed:
+\begin{itemize}
+\item $g=0$: No points or infinitely many.
+\item $g=1$: No points or $C$ is an elliptic curve. If $C$ is an elliptic curve then the rational points form a finitely generated abelian group.
+\item $g>1$: $C$ has finitely many rational points.
+\end{itemize}
+\end{theorem}
+}
+
+%----------------------------------------------------------------------------------------------------------------
+\section{Descriptions of elliptic curves}
+%----------------------------------------------------------------------------------------------------------------
+
+\subsection{Analytic approach}
+
+\frame{
+\frametitle{Riemann Surface}
+We will start with the following definition of an elliptic curve
+\begin{definition}[Elliptic curve]
+An elliptic curve is a compact Riemann Surface (compact one-dimensional manifold over $\mathbb C$) of genus 1 along with a choice of a distinguished point $P \in X$.
+\end{definition}
+
+Any such Riemann surface is isomorphic to $\mathbb C$ quotiented by a lattice $\Lambda$.
+This lattice can be written as 
+\[
+\Lambda = \lambda_1 \mathbb Z \oplus \lambda_2 \mathbb Z
+\]
+where $\rm{Im} \left( \frac{\lambda_1}{\lambda_2} \right) \neq 0$.
+
+If we specify that $\rm{Im} \left( \frac{\lambda_2}{\lambda_1} \right) > 0$ the we have a {\em framed lattice}.
+}
+
+\frame{
+\frametitle{Moduli space of elliptic curves}
+Clearly framed lattice can be written in the form $\Lambda = \mathbb Z \oplus \tau \mathbb Z$, where $ \tau$ lies in the upper half plane, $\mathbb H$.
+This leads us to the following proposition
+\begin{theorem}
+There exists a natural bijection between the following sets
+\[
+\mathbb H \leftrightarrow \left\{ \text{isomorphism classes of framed lattices} \right\} \leftrightarrow \left\{ \text{ isomorphism classes of framed elliptic curves} \right\}.
+\]
+\end{theorem}
+Of course there is a natural action of $SL_2(\mathbb Z)$ on $\mathbb H$.
+In fact, this action gives us the exact moduli space we desire.
+\begin{theorem}
+The set of isomorphism classes is the quotient 
+\[
+SL_2(\mathbb Z)\backslash \left\{ \text{ isomorphism classes of framed lattices }\right \}.
+\]
+\end{theorem}
+}
+
+\subsection{Algebraic approach}
+
+\frame{
+\frametitle{Weierstrass ${\cal P}$-function}
+We now consider the transition from the analytic view to the more algebraic view of elliptic curves.
+Let $\Lambda \subset \mathbb C$ be a lattice.
+\begin{definition}
+The Weierstrass ${\cal P}$-function (relative to $\Lambda$) is defined as
+\[ 
+{\cal P}(z) = \frac{1}{z^2} + \sum_{\omega \in \Lambda \backslash \{ 0 \}} \left( \frac{1}{(z-\omega)^2}  - \frac{1}{\omega^2} \right)
+\]
+\end{definition}
+
+\begin{theorem}
+The Weierstrass $\cal P$-function converges everywhere on $\mathbb C / \Lambda$ and has an order two pole at each lattice point.
+\end{theorem}
+}
+
+\frame{
+\frametitle{From analysis to algebra}
+It then follows that the function
+\[
+f(z) = {\cal P}'(z) -4{\cal P}(z)^3 + 60 G_4 {\cal P}(z) + 160G_6 \qquad \left( G_{2k} = \sum_{\omega \in \Lambda \backslash \{ 0 \}} \frac{1}{\omega^2}\right)
+\]
+is constant.
+By Liouville's theorem we hence deduce that $f(z)$ is in fact zero, and hence this is a defining function for a variety.
+%We make this explicit in the following theorem.
+\begin{theorem}
+Let $g_2 = 60 G_4, g_3 = 140G_6$ and $E$ be the elliptic curve defined over $\mathbb C$ by 
+\[
+y^2 = x^3 - g_2 x - g_3.
+\]
+Then the map 
+\[
+\phi: \mathbb C / \Lambda \rightarrow E \qquad \phi \colon z \mapsto [{\cal P}(z): {\cal P}'(z) :1]
+\]
+is an isomorphism of complex Lie algebras.
+\end{theorem}
+}
+\end{document}
