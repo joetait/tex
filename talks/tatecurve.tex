@@ -58,6 +58,7 @@
 
 %\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 %}
+\newtheorem{proposition}{Proposition}
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
@@ -102,25 +103,26 @@ University of Southampton \\ % Your institution for the title page
 \frametitle{Diophantine equations}
 Diophantine equations are equations in which only integer solutions are allowed.
 They are a part of classical number theory.
+\pause
 
-The simplest cases are linear, of the form
+The simplest cases are linear, of the form:
 \begin{block}{Linear case}
 \[
 aX + bY = c \qquad a,b,c \in \mathbb Z, \qquad a\ \text{or}\ b \neq 0.
 \]
-\end{block}
-The next simplest case is quadratic, which can be classified as 
+\end{block}\pause
+The next simplest case is quadratic, which can be classified as: 
 \begin{block}{Quadratic case}
 \[ aX^2 + bY^2  = C \qquad \text{ellipse} \]
 \[ aX^2 - b Y^2  = C \qquad \text{hyperbola} \]
 \[ aX + BY^2  = C \qquad \text{parabola} \]
-\end{block}
-The third case of this (much less easy to solve) are cubic Diophantine equations, which are elliptic curves.
+\end{block}\pause
+The third case (much less easy to solve) consists of cubic Diophantine equations, which are elliptic curves.
 }
  \frame{
 \frametitle{Curves}
 Another classical area is the study of algebraic curves.
-Falting's theorem gives another reason as to why we may wish to study elliptic curves
+Falting's theorem gives another reason as to why we may wish to study elliptic curves.
 \begin{theorem}[Falting's Theorem (1983)/Mordell Conjecture (1922)]
 Let $C$ be a non-singular algebraic curve over $\mathbb Q$ of genus $g$.
 Then the set of rational points of $C$ are determined as followed:
@@ -140,10 +142,10 @@ Then the set of rational points of $C$ are determined as followed:
 
 \frame{
 \frametitle{Riemann Surface}
-We will start with the following definition of an elliptic curve
+We will start with the following definition of an elliptic curve:
 \begin{definition}[Elliptic curve]
-An elliptic curve is a compact Riemann Surface (compact one-dimensional manifold over $\mathbb C$) of genus 1 along with a choice of a distinguished point $P \in X$.
-\end{definition}
+An elliptic curve is a compact Riemann Surface (compact one\kern1pt -dimensional manifold over $\mathbb C$) of genus 1 along with a distinguished point $P \in X$.
+\end{definition}\pause
 
 Any such Riemann surface is isomorphic to $\mathbb C$ quotiented by a lattice $\Lambda$.
 This lattice can be written as 
@@ -151,24 +153,24 @@ This lattice can be written as
 \Lambda = \lambda_1 \mathbb Z \oplus \lambda_2 \mathbb Z
 \]
 where $\rm{Im} \left( \frac{\lambda_1}{\lambda_2} \right) \neq 0$.
-
-If we specify that $\rm{Im} \left( \frac{\lambda_2}{\lambda_1} \right) > 0$ the we have a {\em framed lattice}.
+\pause
+If we specify that $\rm{Im} \left( \frac{\lambda_2}{\lambda_1} \right) > 0$ then we have a {\em framed lattice}.
 }
 
 \frame{
 \frametitle{Moduli space of elliptic curves}
 Clearly framed lattice can be written in the form $\Lambda = \mathbb Z \oplus \tau \mathbb Z$, where $ \tau$ lies in the upper half plane, $\mathbb H$.
 This leads us to the following proposition
-\begin{theorem}
+\begin{proposition}
 There exists a natural bijection between the following sets
-\[
-\mathbb H \leftrightarrow \left\{ \text{isomorphism classes of framed lattices} \right\} \leftrightarrow \left\{ \text{ isomorphism classes of framed elliptic curves} \right\}.
-\]
-\end{theorem}
+\begin{multline*}
+\mathbb H \leftrightarrow \left\{ \text{isomorphism classes of framed lattices} \right\} \\ \leftrightarrow \left\{ \text{ isomorphism classes of framed elliptic curves} \right\}.
+\end{multline*}
+\end{proposition}\pause
 Of course there is a natural action of $SL_2(\mathbb Z)$ on $\mathbb H$.
 In fact, this action gives us the exact moduli space we desire.
 \begin{theorem}
-The set of isomorphism classes is the quotient 
+The set of isomorphism classes of elliptic curves is isomorphic the quotient 
 \[
 SL_2(\mathbb Z)\backslash \left\{ \text{ isomorphism classes of framed lattices }\right \}.
 \]
@@ -178,29 +180,29 @@ SL_2(\mathbb Z)\backslash \left\{ \text{ isomorphism classes of framed lattices 
 \subsection{Algebraic approach}
 
 \frame{
-\frametitle{Weierstrass ${\cal P}$-function}
+\frametitle{Weierstrass ${\wp}$-function}
 We now consider the transition from the analytic view to the more algebraic view of elliptic curves.
 Let $\Lambda \subset \mathbb C$ be a lattice.
 \begin{definition}
-The Weierstrass ${\cal P}$-function (relative to $\Lambda$) is defined as
+The Weierstrass ${\wp}$-function (relative to $\Lambda$) is defined as
 \[ 
-{\cal P}(z) = \frac{1}{z^2} + \sum_{\omega \in \Lambda \backslash \{ 0 \}} \left( \frac{1}{(z-\omega)^2}  - \frac{1}{\omega^2} \right)
+{\wp}(z) = \frac{1}{z^2} + \sum_{\omega \in \Lambda \backslash \{ 0 \}} \left( \frac{1}{(z-\omega)^2}  - \frac{1}{\omega^2} \right)
 \]
-\end{definition}
+\end{definition}\pause
 
-\begin{theorem}
-The Weierstrass $\cal P$-function converges everywhere on $\mathbb C / \Lambda$ and has an order two pole at each lattice point.
-\end{theorem}
+\begin{proposition}
+The Weierstrass $\wp$-function converges everywhere on $\mathbb C / \Lambda$ and is meromorphic with an order two pole at each lattice point, and no other poles.
+\end{proposition}
 }
 
 \frame{
 \frametitle{From analysis to algebra}
 It then follows that the function
 \[
-f(z) = {\cal P}'(z) -4{\cal P}(z)^3 + 60 G_4 {\cal P}(z) + 160G_6 \qquad \left( G_{2k} = \sum_{\omega \in \Lambda \backslash \{ 0 \}} \frac{1}{\omega^2}\right)
+f(z) = {\wp}'(z) -4{\wp}(z)^3 + 60 G_4 {\wp}(z) + 160G_6 \qquad \left( G_{2k} = \sum_{\omega \in \Lambda \backslash \{ 0 \}} \frac{1}{\omega^2}\right)
 \]
 is constant.
-By Liouville's theorem we hence deduce that $f(z)$ is in fact zero, and hence this is a defining function for a variety.
+By Liouville's theorem we hence deduce that $f(z)$ is in fact zero, and hence this is a defining function for a variety.\pause
 %We make this explicit in the following theorem.
 \begin{theorem}
 Let $g_2 = 60 G_4, g_3 = 140G_6$ and $E$ be the elliptic curve defined over $\mathbb C$ by 
@@ -209,9 +211,21 @@ y^2 = x^3 - g_2 x - g_3.
 \]
 Then the map 
 \[
-\phi: \mathbb C / \Lambda \rightarrow E \qquad \phi \colon z \mapsto [{\cal P}(z): {\cal P}'(z) :1]
+\phi: \mathbb C / \Lambda \rightarrow E \qquad \phi \colon z \mapsto [{\wp}(z): {\wp}'(z) :1]
 \]
 is an isomorphism of complex Lie algebras.
 \end{theorem}
+}
+
+\section{Invariants}
+
+\frame{
+\frametitle{Invariants}
+There are many important invariants of elliptic curves, and we briefly list some of these.
+Let $E$ be the elliptic curve defined by $y^2 = 4x^3 - g_2x - g_3$.\pause
+\begin{itemize} 
+\item The discriminant of $E$ is $\Delta = -16(4g_2^3 + 27g_3^2)$. This determines whether or not $E$ is smooth.\pause
+\item The $j$-invariant of $E$ is $1728 \frac{g_3^3}{\Delta}$. Two elliptic curves are isomorphic if and only they have the same $j$-invariant.\pause
+\end{itemize}
 }
 \end{document}
