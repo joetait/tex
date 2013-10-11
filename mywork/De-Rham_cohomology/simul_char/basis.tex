@@ -33,8 +33,8 @@
 %\usepackage{hyperref}
 % These packages are all incorporated in the memoir class to one degree or another...
 
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
-\microtypecontext{spacing=nonfrench}
+%\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+%\microtypecontext{spacing=nonfrench}
 % activate={true,nocompatibility} - activate protrusion and expansion
 % final - enable microtype; use "draft" to disable
 % tracking=true, kerning=true, spacing=true - activate these techniques
@@ -57,7 +57,7 @@
 \usepackage{mathrsfs}
 \usepackage{amsopn}
 \usepackage{amssymb}
-\usepackage{natbib}
+%\usepackage{natbib}
 % (This matches ConTeXt defaults)
 
 %%% ToC (table of contents) APPEARANCE
@@ -128,7 +128,8 @@
 
 \section{Background}
 
-\todo[inline]{changed indices, check that this has not left inconsistencies}
+\todo[inline]{changed indices, check that this has not left inconsistencies. In particular, check $f_{12}$}
+\todo[inline]{change references to preprint when in thesis}
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
 We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$.
@@ -180,9 +181,9 @@ since $U_0$ and $U_\infty$ are affine, this again follows from Serre's affinenes
 
 After computing the first cohomology group of the total complex of \eqref{bicomplex} we see that $H^1_{{\text dR}}(X/k)$ is isomorphic to the space
 \begin{equation}\label{derhamconditions}
-\left\{(\omega_0, \omega_\infty, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_0 \cap U_\infty), df_{12} = \omega_0|_{U_0\cap U_\infty} - \omega_\infty|_{U_0\cap U_\infty} \right\}
+\left\{(\omega_0, \omega_\infty, f_{0,\infty}) | \omega_i\in \Omega_{X/k}(U_i), f_{0,\infty}\in \cO_X(U_0 \cap U_\infty), df_{0,\infty} = \omega_0|_{U_0\cap U_\infty} - \omega_\infty|_{U_0\cap U_\infty} \right\}
 \end{equation}
-\todo{edit $f_{12}$}quotiented by the subspace
+quotiented by the subspace
 \begin{equation}\label{quotient}
 \left\{  (df_0, df_\infty, f_0|_{U_0\cap U_\infty} -f_\infty|_{U_0\cap U_\infty} )|f_i \in \cO_X(U_i)\right\}.
 \end{equation}
@@ -227,6 +228,7 @@ Details of the definition of ${\text Res}$ can be found in appendix B of \todo{i
 \section{Basis of $\derhamhone$}
 
 The bases of the $k$-vector spaces in \eqref{ses} will be given in terms of defining equations of the hyperelliptic curve $X$, so we describe these now.
+Regardless of characteristic we will denote by $P_a$ and $P_a'$ the elements of $\pi^{_1}(a)$ for any $a \in k$ (if $a$ is a branch point then $\pi^{-1}(a)$ only has one element, which we denote $P_a$.)
 
 If $p \neq 2$ then the extension $K(X)$ of $K(\mathbb P_k^1) = k(x)$ will be $k(x,y)$ where $y$ satisfies
 \begin{equation}\label{definingequationpnot2}
@@ -248,7 +250,7 @@ With this notation we clearly have
 \begin{equation}\label{divxp=2}
 \di (x)  = D_0 - D_\infty.
 \end{equation}
-We then let $R$ be the ramification divisor of $\pi$, and recall that \todo{citation}
+We then let $R$ be the ramification divisor of $\pi$, and recall from \cite[\S 6]{faithfulaction} that
 \begin{equation}\label{pnot2divisors}
 \di(y)  = R - (g+1)D_\infty \text{ and } \di( dx) = R - 2D_\infty.
 \end{equation}
@@ -264,19 +266,20 @@ We require that $\deg(H(x)) \leq g+1$, with equality if and only $\infty$ is not
 
 
 Again, we let $R$ denote the ramification divisor, which we write explicitly below, and $D_a = \pi^*([a])$.
-We now recall \todo{put in citation}the following divisors, which we will make use of throughout this article:
+We now recall the following divisors from \cite[\S 6]{faithfulaction}, which we will make use of throughout this article:
 \begin{align}
 \di (dx) & = R - 2D_\infty \label{divdxp=2}\\
 \di (H(x)) & = R - (g+1)D_\infty \label{divhp=2}
 \end{align}
-We also use the divisor of $y$, which is as follows:\todo{citation, check wording}
+We also make use of the following identity\todo{cite when in thesis}
 \begin{equation}\label{divyp=2}
 \di(y) = \begin{cases}
- \di_0(y) -(2g+1)[P_\infty] & \text{if $\infty$ is a branch point} \\
+ \di_0(y) -(2g+1)[P_\infty] & \text{if $\infty$ is a branch point,} \\
  \di_0(y) +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] & \text{otherwise.}
 \end{cases}
 \end{equation}
-\todo[inline]{define Pinfty'?? check the above, possibly prove}
+Note that the second case is not symmetric, which implies a choice with respect to $P_\infty'$ and $P_\infty$.
+This will not affect the rest of the article, since we will not need to choose between the points at anytime, so the choice is arbitrary.\todo{rephrase}
 Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
 Finally, we will compute the divisor of $dy$.
 We start by noting that when we take the differential of \eqref{definep=2} we derive
@@ -934,7 +937,7 @@ This allows us to use essentially the same arguments, again with the exception o
 
 
 \bibliography{biblio}
-\bibliographystyle{plain}
+\bibliographystyle{amsalpha}
 
 
 \end{document}
