@@ -65,8 +65,8 @@
 \usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
-%\renewcommand{\familydefault}{\sfdefault}
-%\usepackage{cabin}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{cabin}
 %\usepackage{libertine}
 %\usepackage[T1]{fontenc}
 
@@ -100,6 +100,7 @@
 \newcommand{\hone}{H^1(X,\mathcal{O}_X)}
 \newcommand{\cechhone}{\check{H}^1(\mathcal U,\mathcal O_X)}
 \newcommand{\derhamhone}{H_{\text {dR}}^1(X/k)}
+\newcommand{\cechhzero}{{\check{H}^0(X,\Omega_X)}}
 
 
 \DeclareMathOperator{\aut}{Aut}
@@ -140,7 +141,7 @@ By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite
 The cover we shall be using is $U_0 = X\backslash \pi^{-1}(0)$ and $U_\infty = X\backslash  \pi^{-1}(\infty) $, both of which are affine sets.
 We let ${\cal U} = \{ U_0, U_\infty\}$.
 Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, given by taking the difference, $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
-In general we will suppress the notation denoting the restriction map.\todo{wording}
+In general we will suppress the notation denoting the restriction map. \todo{wording}
 It is this map which gives us the differential $d$ in the \cech cochain
 \begin{equation*}
 0 \rightarrow \cO_X(U_0)\times \cO_X(U_\infty) \xrightarrow{d} \cO_X(U_0 \cap U_\infty) \rightarrow 0.
@@ -157,7 +158,7 @@ Since a curve doesn't have differentials of degree greater than one, this is jus
 \begin{equation}\label{res}
 0 \rightarrow \cO_X \xrightarrow{d} \Omega_X \rightarrow 0.
 \end{equation}
-The map $d$ is the differential map $f \mapsto df$.\todo{define differential?}
+The map $d$ is the differential map $f \mapsto df$.
 
 We then use the open cover $\cal U$ and the \cech differentials as defined earlier to give us the \cech complex of \eqref{res}, which is
 \begin{equation}\label{bicomplex} \begin{array}{ccccccc}
@@ -172,8 +173,8 @@ We then use the open cover $\cal U$ and the \cech differentials as defined earli
 \end{equation}
 where the horizontal arrows are the standard differential map.
 By a generalisation of Leray's theorem \cite[Cor 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
-Note that this requires, for any $\sigma$ in the nerve of $\cU$, and any $P \geq 1$, ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero ---
-since $U_0$ and $U_\infty$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.\todo{check about $H^1$}
+Note that this requires, for any $\sigma$ in the nerve of $\cU$ and any $p \geq 1$, ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero ---
+since $U_0$ and $U_\infty$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.
 
 
 
@@ -181,18 +182,41 @@ After computing the first cohomology group of the total complex of \eqref{bicomp
 \begin{equation}\label{derhamconditions}
 \left\{(\omega_0, \omega_\infty, f_{12}) | \omega_i\in \Omega_{X/k}(U_i), f_{12}\in \cO_X(U_0 \cap U_\infty), df_{12} = \omega_0|_{U_0\cap U_\infty} - \omega_\infty|_{U_0\cap U_\infty} \right\}
 \end{equation}
-quotiented by the subspace
+\todo{edit $f_{12}$}quotiented by the subspace
 \begin{equation}\label{quotient}
 \left\{  (df_0, df_\infty, f_0|_{U_0\cap U_\infty} -f_\infty|_{U_0\cap U_\infty} )|f_i \in \cO_X(U_i)\right\}.
 \end{equation}
 
-We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$ and to study the $k[G]$-module structure.\todo{are these reasons the only ones? Are they correct?}
+We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$ and to study the $k[G]$-module structure.
 To do this we will compute $k$-bases for the two outer terms of the short exact sequence
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra \derhamhone \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
+We briefly examine this sequence.
+Firstly, $\cechhzero \cong \hzero$ is the kernel of
+\[
+0 \ra \Omega_X(U_0) \times \Omega_X(U_\infty) \ra \Omega_X(U_0 \cap U_\infty ) \ra 0,
+\]
+i.e. elements of the form $(\omega, \omega)$.
+Hence we have an obvious injection $\hone \ra \derhamhone$ given by
+\[
+(\omega, \omega) \mapsto (\omega, \omega, 0).
+\]
+On the other hand, we have an obvious surjection $\derhamhone \ra \hone$ given by
+\[
+(\omega_0, \omega_\infty, f_{0, \infty}) \mapsto f_{0, \infty}.
+\]
+We now check that these maps make \eqref{ses} in to an exact sequence.
+If $(\omega_0, \omega_\infty, f_{0,\infty})$ is in the kernel of $\derhamhone \ra \hone$ then there exist $f_0 \in \cO_X(U_0)$ and $f_\infty \in \cO_X(U_\infty)$ such that $f_{0,\infty} = f_0 - f_\infty$.
+Then 
+\begin{align*}
+(\omega_0 , \omega_\infty, f_{0, \infty}) & =  (\omega_0 , \omega_\infty, f_{0, \infty}) - (df_0, df_\infty, f_{0, \infty}) \\
+& = (\omega_0 - df_0, \omega_\infty - df_\infty, 0)
+\end{align*}
+where the first equality follows from \eqref{quotient}.
+By \eqref{derhamconditions} we know that $(\omega_0 - df_0)  - (\omega_\infty - df_\infty) = 0$,  and hence $(\omega_0, \omega_\infty, f_{0, \infty})$ is in the image of $\hzero \ra \derhamhone$.
 
-\todo{prove this is an SES/explain the maps}A basis of $H^0(X,\Omega_X)$ is already available in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
+A basis of $H^0(X,\Omega_X)$ is already available in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
 
 \begin{comment}
 In order to do this we will need to use Serre duality, which we briefly remind the reader of presently.
