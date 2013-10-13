@@ -141,14 +141,13 @@ We therefore recall the \cech cohomology relevant to both of these, starting wit
 By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
 The cover we shall be using is $U_0 = X\backslash \pi^{-1}(0)$ and $U_\infty = X\backslash  \pi^{-1}(\infty) $, both of which are affine sets.
 We let ${\cal U} = \{ U_0, U_\infty\}$.
-Given any sheaf $\cal F$ on $X$ we have a canonical map ${\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, given by taking the difference, $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
-In general we will suppress the notation denoting the restriction map. \todo{wording}
-It is this map which gives us the differential $d$ in the \cech cochain
+Given any sheaf $\cal F$ on $X$ we have a canonical map $d\colon {\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, given by taking the difference, $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$ (in general we will suppress the notation denoting the restriction map). 
+Via this map we have the following cochain
 \begin{equation*}
 0 \rightarrow \cO_X(U_0)\times \cO_X(U_\infty) \xrightarrow{d} \cO_X(U_0 \cap U_\infty) \rightarrow 0.
 \end{equation*}
 The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(d)}$ and hence
-\begin{equation}
+\begin{equation}\label{cechhone}
 \hone \cong \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(d)}  
  = \frac{\cO_X(U_0 \cap U_\infty)}{\{f_0 - f_\infty | f_i \in \cO_X(U_i) \}}.
 \end{equation}
@@ -219,12 +218,6 @@ By \eqref{derhamconditions} we know that $(\omega_0 - df_0)  - (\omega_\infty - 
 
 A basis of $H^0(X,\Omega_X)$ is already available in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
 
-\begin{comment}
-In order to do this we will need to use Serre duality, which we briefly remind the reader of presently.
-Serre duality states that $H^0(X,\Omega_X)$ and $H^1(X,\cO_X)$ are dual to each other, and that there is a canonical map ${\text Res}:H^0(X,\omega_X) \times H^1(X,\cO_X) \rightarrow k$.
-Details of the definition of ${\text Res}$ can be found in appendix B of \todo{in progress}
-\todo[inline]{add details - in particular, relate to the basis we have for de rham}
-\end{comment}
 \section{Basis of $\derhamhone$}
 
 The bases of the $k$-vector spaces in \eqref{ses} will be given in terms of defining equations of the hyperelliptic curve $X$, so we describe these now.
@@ -278,9 +271,10 @@ We also make use of the following identity\todo{cite when in thesis}
  \di_0(y) +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] & \text{otherwise.}
 \end{cases}
 \end{equation}
+Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
 Note that the second case is not symmetric, which implies a choice with respect to $P_\infty'$ and $P_\infty$.
 This will not affect the rest of the article, since we will not need to choose between the points at anytime, so the choice is arbitrary.\todo{rephrase}
-Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
+
 Finally, we will compute the divisor of $dy$.
 We start by noting that when we take the differential of \eqref{definep=2} we derive
 \[
@@ -297,20 +291,19 @@ To state the ramification points, and for later use, we suppose that
 H(x) = \prod_{i=1}^d (x-a_i)^{n_i} = x^d + b_{d-1}x^{d-1} + \ldots + b_1x
 \end{equation}
 for some $a_i, b_i \in  k$, $d \leq g+1$ and $n_i \in \mathbb N$.
-Then the $a_i \in \mathbb P_k^1$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points above $a_i$.
-\todo[inline]{comment - ai are branch point of pi in Ak1 (contained in Pk1). Why do we need to do this}
+Then the $a_i \in \mathbb A_k^1 \subset \mathbb P_1^k$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points above $a_i$.
 Given this, we can write the ramification divisor as
 \[
 R = \sum_{i=1}^d 2n_i[P_i] + (g+1-d)D_\infty.
 \]
-Details can be found in \cite[\S 6]{faithfulaction}.\todo{will end up being references to other parts of thesis}
+Details can be found in \cite[\S 6]{faithfulaction}.
 
 We now recall Serre duality, which we will use shortly to find a basis of $\hone$.
-We recall\todo{cite when in thesis} that an {\sl ad\`ele} or {\sl r\'epartition} is a collection $\{r_P\}_{P\in X}$ of elements of $K(X)$ such that $r_P \in \cO_P$ for almost all $P\in X$, as in \cite[Chap. II, \S 5]{algebraicgroupsandclassfields}.
-We let $R$\todo{change notation} denote the space of ad\`eles, and given a divisor $D = \sum n_P[P]$ we let $R(D)$ be the space of ad\`eles $r = \{r_P\}$ such that $\ord_P(r_P) \geq -n_P$ for all $P \in X$.
-Note that one can embed the function field $K(X)$ into $R$.
-Given any $f \in K(X)$ one defines $r \in R$ by setting $r_P = f$ for all $P \in X$, and this is clearly an injection.
-Given this we can see that the quotient $R/(R(0) + K(X))$ is well defined, and Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to this quotient.
+We recall \todo{cite when in thesis. Will change $r$ notation then.} that an {\sl ad\`ele} or {\sl r\'epartition} is a collection $\{r_P\}_{P\in X}$ of elements of $K(X)$ such that $r_P \in \cO_P$ for almost all $P\in X$, as in \cite[Chap. II, \S 5]{algebraicgroupsandclassfields}.
+We let $A$ denote the space of ad\`eles, and given a divisor $D = \sum n_P[P]$ we let $A(D)$ be the space of ad\`eles $r = \{r_P\}$ such that $\ord_P(r_P) \geq -n_P$ for all $P \in X$.
+Note that one can embed the function field $K(X)$ into $A$.
+Given any $f \in K(X)$ one defines $r \in A$ by setting $r_P = f$ for all $P \in X$, and this is clearly an injection.
+Given this we can see that the quotient $A/(A(0) + K(X))$ is well defined, and Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to this quotient.
 
 We now define the duality map in terms of ad\`eles.
 Given some differential $\omega \in \hzero$ and some ad\`ele $r \in \hone$ we define 
@@ -323,9 +316,9 @@ The duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} state
 
 \todo[inline]{using repartitions, it may be better to say that the restriction to U1 is like taking a repartition equal to f everywhere except P0, where we just pick some non-zero value}
 
-We now compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.\todo{come back to this and make notes}
+We now compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.
 \begin{lem}\label{basish1}
- Via the isomorphism \todo{reference 1} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0$\todo{should this be $U_0 \cap U_\infty$}, form a basis of $H^1(X,\cO_X)$.
+ Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0$\todo{should this be $U_0 \cap U_\infty$}, form a basis of $H^1(X,\cO_X)$.
 \end{lem}
 \begin{proof}
 \todo[inline]{show functions are  regular on intersection}
@@ -469,7 +462,7 @@ We now decompose these polynomials into two parts, which will be used in the seq
 Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x), \phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\psi_i (x)$ is at most $g$ and $x^{g+1}$ divides $\phi_i(x)$.
 
 
-Secondly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that the degree of $\Psi_i(x,y)$ has degree less than $i$ as a polynomial in $x$, and $\Phi_i(x,y)$ is divisible by $x^i$.\todo{change paragraph, in particular "as a polynomial in x" part}
+Secondly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that $x^i$ does not divide any monomial of $\Psi_i(x,y)$, and $\Phi_i(x,y)$ is divisible by $x^i$.
 
 Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $k$-vector space basis of $\derhamhone$.
 \begin{thm}\label{basis}
@@ -504,10 +497,10 @@ The action of $G$ on $\derhamhone$ is faithful unless $G$ contains a hyperellipt
 
 \begin{proof}
 Recall that $H^0(X,\Omega_X)$ injects into $\derhamhone$.
-Then if $p \neq 2$ or $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.\todo{use internal reference in thesis}
+Then if $p \neq 2$ or $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
 
 We now suppose that $p=2$ and that $G$ contains a hyperelliptic involution, which we denote by $\sigma$.
-By the same theorem from \cite{faithfulaction}\todo{reference thesis} as used in the last paragraph, we know that $\sigma$ acts trivially on $\hzero$.
+By the same theorem from \cite{faithfulaction} as used in the last paragraph, we know that $\sigma$ acts trivially on $\hzero$.
 Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully on $\hone$.
 
 We can see exactly why this is from the view of \cech cohomology, and this will also help to determine the action on $\derhamhone$.
@@ -520,13 +513,24 @@ and since this is clearly the difference of an element of $\cO_X(U_0)$ and an el
 \todo[inline]{look at alternative proof}
 We let 
 \[
-{}_iH_1(x) = \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i}
+{}_iH_1(x) = b_{i-1}x^{i-1} + \ldots + b_1x
 \]
 and 
 \[
-{}_iH_2(x) = - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i}.
+{}_iH_2(x) = - x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i.
 \]
 \todo{this can be made shorter/ rearranged - kept for now as may be useful}
+
+We now study the action of $\sigma$ on the entries in \eqref{three}.
+Firstly we see that
+\begin{align*}
+\simga \left( \left( \frac{-\psi_i(x,y)}{x^{i+1}H(x)} \right) dx\right) & = \left( \frac{-\sigma(\psi(x,y))}{x^{i+1} H(x)} \right) dx \\
+& = \left( \frac{-\psi(x,y)}{x^{i+1}H(x)} \right)dx + \left(\frac{H(x)(x{}_iH_1'(x) + i{}_iH_1'(x))}{x^{i+1}H(x)}\right) \\
+& = \left( \frac{-\psi(x,y)}{x^{i+1}H(x)} \right)dx + \left(\frac{x{}_iH_1'(x) + i{}_iH_1(x)}{x^{i+1}}\right) \\
+\end{align*}
+\todo{reference second line}Now if $i$ is even the second term in the last line is $\frac{x{}_iH_1'(x)}{x^{i+1}} = \frac{ {}_iH_1'(x)}{x^i}$.
+If $i$ is odd then when differentiating $\frac{ {}_iH_1(x)}{x^{i}}$ we expect all the odd powers of ${}_iH_1(x)$ to disappear, since after dividing by $x^i$ they will become even.\todo{rephrase}
+
 
 We can now describe exactly how sigma acts on the elements of \eqref{three} using ${}_iH_1(x)$ and ${}_iH_2(x)$:
 \begin{multline}
