@@ -524,7 +524,7 @@ and
 We now study the action of $\sigma$ on the entries in \eqref{three}.
 Firstly we see that
 \begin{align*}
-\simga \left( \left( \frac{-\psi_i(x,y)}{x^{i+1}H(x)} \right) dx\right) & = \left( \frac{-\sigma(\psi(x,y))}{x^{i+1} H(x)} \right) dx \\
+\sigma \left( \left( \frac{-\psi_i(x,y)}{x^{i+1}H(x)} \right) dx\right) & = \left( \frac{-\sigma(\psi(x,y))}{x^{i+1} H(x)} \right) dx \\
 & = \left( \frac{-\psi(x,y)}{x^{i+1}H(x)} \right)dx + \left(\frac{H(x)(x{}_iH_1'(x) + i{}_iH_1'(x))}{x^{i+1}H(x)}\right) \\
 & = \left( \frac{-\psi(x,y)}{x^{i+1}H(x)} \right)dx + \left(\frac{x{}_iH_1'(x) + i{}_iH_1(x)}{x^{i+1}}\right) \\
 \end{align*}
@@ -618,7 +618,8 @@ Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 Again, the second equality uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
 
 
-We now suppose that $p=2$.\todo{remind that signs don't matter?}
+We now suppose that $p=2$;
+We will use the fact that we can change signs as convenient.
 We see that
 \begin{align*}
 \left( \left( \frac{ \Psi_i}{x^{i+1}H} \right) - \left( \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
@@ -627,26 +628,25 @@ We see that
 & =  x^{-i}dy + yd \left( x^{-i}\right) \\
 & =  d\left( yx^{-i}\right),
 \end{align*}
-\todo{refer to 15}and so, as in the case $p \neq 2$, it only remains to show that for each $i\in {1, \ldots, g}$ the differentials $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_\infty$ and $U_0$ respectively.\todo{consider wording}
+with the fourth equality following from \eqref{divdyp=2}.
+Hence it only remains to show that for each $i\in {1, \ldots, g}$ the differentials $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_\infty$ and $U_0$ respectively.\todo{consider wording}
 
 
-We define $A^i_{j+1} \in k$ for $0 \leq j \leq 2g+2$, and $B_k^i \in k$\todo{maybe don't use superscript} for $1\leq k \leq g+1$ by the equation
+We define ${}_iA_{j+1} \in k$ for $0 \leq j \leq 2g+2$, and ${}_iB_k \in k$ for $1\leq k \leq g+1$ by the equation
 \[
-S_i(x,y) = A_{2g+2}^ix^{2g+2} + \ldots + A^i_1 x + y(B_{g+1}^i x^{g+1} + \ldots + B_1^i x + B_0^i).
+S_i(x,y) = {}_iA_{2g+2}x^{2g+2} + \ldots + {}_iA_1 x + y({}_iB_{g+1} x^{g+1} + \ldots + {}_iB_1 x + {}_iB_0).
 \]
 Note that many of these coefficients may be zero.
-In particular we note that $B_i^i = 0$ for all $i$.\todo{colon?}
-If $i$ is even then $B_{g+1}^ix^{g+1} + \ldots + B_1^ix + B_0^i = H'x$ and so the coefficient of $x^i$ in $H'x$ is $ib_i = 0$ (recall that we defined $b_i$ to be the coefficients of $H$ in \eqref{hcoefficients}).
-Similarly, if $i$ is odd then $B_{g+1}^ix^{g+1} + \ldots + B_1^ix + B_0^i = H'x + H$, and then the coefficient of $x^i$ is $ib_i+ ib_i = 2ib_i = 0$.\todo{make one sentence}
+In particular we remark that the $x^i$ term of $xH'(x) + iH(x)$ is exactly zero, since it is precisely $ib_ix^{i-1}\cdot x + ib_i x^i = 2ib_ix^i = 0$.
 
 
 We can now define the following polynomials:
 \begin{equation}\label{Split}
 \begin{split}
-\Phi_i^x(x) & =  A^i_{2g+2}x^{2g+2} + \ldots + A^i_{i+1}x^{i+1} \\
-\Psi_i^x(x) & =  A^i_ix^i + \ldots + A^i_1x \\
-\Phi_i^y(x) & =  B_g^ix^g + \ldots B_{i+1}^ix^{i+1} \\
-\Psi_i^y(x) & =  B_{i-1}^ix^{i-1} + \ldots + B_1^ix + B_0^i.
+\Phi_i^x(x) & =  {}_iA_{2g+2}x^{2g+2} + \ldots + {}_iA_{i+1}x^{i+1} \\
+\Psi_i^x(x) & =  {}_iA_ix^i + \ldots + {}_iA_1x \\
+\Phi_i^y(x) & =  {}_iB_gx^g + \ldots {}_iB_{i+1}x^{i+1} \\
+\Psi_i^y(x) & =  {}_iB_{i-1}x^{i-1} + \ldots + {}_iB_1x + {}_iB_0.
 \end{split}
 \end{equation}
 We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
@@ -681,19 +681,19 @@ We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, nam
  \geq & \di(y) + \di_0(\Phi_i^y) - (g+1)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
  = & \di(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (i-1)D_\infty.
 \end{align*}
-\todo{refer to 14}Since $y$ only has poles at points in $\pi^{-1}(\infty)$, this completes the proof that $\frac{\Phi_i dx}{x^{i+1}H}$ is regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
+From \eqref{divyp=2} $y$ only has poles at points in $\pi^{-1}(\infty)$, and hence this completes the proof that $\frac{\Phi_i dx}{x^{i+1}H}$ is regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
 
 Now we complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
-\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right)  = &  \\di(\Psi_i^x)  - (i+1)D_0 + (g+i)D_\infty \\
-& = (di_0(\Psi_i^x) -d_\psi^xD_\infty) - (i+1)D_0 + (g+i)D_\infty \\
- \geq &  \di_0(\Psi_i^x ) - iD_\infty - (i+1)D_0 + (g+i)D_\infty \\
- = &  \di_0(\Psi_i^x) - (i+1)D_0 + gD_\infty,
+\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right)  & =   \di(\Psi_i^x)  - (i+1)D_0 + (g+i)D_\infty \\
+& = (\di_0(\Psi_i^x) -d_\psi^xD_\infty) - (i+1)D_0 + (g+i)D_\infty \\
+ & \geq   \di_0(\Psi_i^x ) - iD_\infty - (i+1)D_0 + (g+i)D_\infty \\
+ & =   \di_0(\Psi_i^x) - (i+1)D_0 + gD_\infty,
 \end{align*}
 and it is clear that the divisor is positive on $U_0 = X \backslash \pi^{-1}(0)$.
 
 For the other half of the differential we need to consider seperate cases.
-If we assume that $\infty$ is branch point then we see that\todo{refer to 14}
+If we assume that $\infty$ is branch point then  using \eqref{divyp=2} we see that
 \begin{align*}
 \di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) - (i+1)D_0 + (g+i)[P_\infty] \\
  =  & \di_0(y) + \di(\Psi_i^y) -(i+1)D_0 + (2i -1)[P_\infty] \\
