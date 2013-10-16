@@ -524,22 +524,30 @@ and
 We now study the action of $\sigma$ on the entries in \eqref{three}.
 Firstly we see that
 \begin{align*}
-\sigma \left( \left( \frac{-\psi_i(x,y)}{x^{i+1}H(x)} \right) dx\right) & = \left( \frac{-\sigma(\psi(x,y))}{x^{i+1} H(x)} \right) dx \\
-& = \left( \frac{-\psi(x,y)}{x^{i+1}H(x)} \right)dx + \left(\frac{H(x)(x{}_iH_1'(x) + i{}_iH_1'(x))}{x^{i+1}H(x)}\right) \\
-& = \left( \frac{-\psi(x,y)}{x^{i+1}H(x)} \right)dx + \left(\frac{x{}_iH_1'(x) + i{}_iH_1(x)}{x^{i+1}}\right) \\
+\sigma \left( \left( \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx\right) & = \left( \frac{-\sigma(\Psi(x,y))}{x^{i+1} H(x)} \right) dx \\
+& = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + \left(\frac{H(x)(x{}_iH_1'(x) + i{}_iH_1'(x))}{x^{i+1}H(x)}\right)  dx\\
+& = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + \left(\frac{x{}_iH_1'(x) + i{}_iH_1(x)}{x^{i+1}}\right) dx \\
+& = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + \left( \frac{{}_iH_1'(x)}{x^i}dx + \frac{i{}_iH)1'(x)}{x^{i+1}}dx \right) \\
+& = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + \left( \frac{1}{x^i}d\left( {}_iH_1(x) \right) + {}_iH_1(x) d \left( \frac{1}{x^i} \right) \right) \\
+& = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + d\left( \frac{{}_iH_1(x)}{x^i} \right),
 \end{align*}
-\todo{reference second line}Now if $i$ is even the second term in the last line is $\frac{x{}_iH_1'(x)}{x^{i+1}} = \frac{ {}_iH_1'(x)}{x^i}$.
-If $i$ is odd then when differentiating $\frac{ {}_iH_1(x)}{x^{i}}$ we expect all the odd powers of ${}_iH_1(x)$ to disappear, since after dividing by $x^i$ they will become even.\todo{rephrase}
+\todo{reference second line}
+
+Similarly we can derive
+\begin{equation*}
+\sigma \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} dx \right)  = \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx + d \left( \frac{{}_iH_2(x)}{x^i} \right).
+\end{equation*}
+Lastly, it is clear that $\sigma(x^{-i}y) = x^{-i}(y+H(x))$.
 
 
 We can now describe exactly how sigma acts on the elements of \eqref{three} using ${}_iH_1(x)$ and ${}_iH_2(x)$:
 \begin{multline}
 \sigma \left( \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right)\right) = \\
- \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + {}_iH'_1(x)dx,  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ {}_iH'_2(x)dx, x^{-i}(y+H(x)) \right).
+ \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + \frac{{}_iH'_1(x)}{x^i}dx,  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ \frac{{}_iH'_2(x)}{x^i} dx, x^{-i}(y+H(x)) \right).
 \end{multline}
 So the action on the basis elements in \eqref{three} is equivalent to adding 
 \[
-\left( {}_iH_1'dx, {}_iH_2'dx, x^{-i}H(x) \right),
+\left( \frac{{}_iH_1'}{x^i}dx, \frac{{}_iH_2'}{x^i}dx, x^{-i}H(x) \right),
 \]
 which clearly satisfies the conditions of \eqref{quotient} and hence is zero.
 So the action of the involution $\sigma$ on $\derhamhone$ is trivial and hence the action of the group $G$ is not faithful.
