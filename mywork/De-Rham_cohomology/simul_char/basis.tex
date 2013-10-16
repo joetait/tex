@@ -128,7 +128,6 @@
 
 \section{Background}
 
-\todo[inline]{changed indices, check that this has not left inconsistencies. In particular, check $f_{12}$}
 \todo[inline]{change references to preprint when in thesis}
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
@@ -272,8 +271,7 @@ We also make use of the following identity\todo{cite when in thesis}
 \end{cases}
 \end{equation}
 Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
-Note that the second case is not symmetric, which implies a choice with respect to $P_\infty'$ and $P_\infty$.
-This will not affect the rest of the article, since we will not need to choose between the points at anytime, so the choice is arbitrary.\todo{rephrase}
+Note that the second case is not symmetric, which implies a choice with respect to $P_\infty'$ and $P_\infty$, but this will not affect future computations.
 
 Finally, we will compute the divisor of $dy$.
 We start by noting that when we take the differential of \eqref{definep=2} we derive
@@ -321,17 +319,26 @@ We now compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone
  Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0$\todo{should this be $U_0 \cap U_\infty$}, form a basis of $H^1(X,\cO_X)$.
 \end{lem}
 \begin{proof}
-\todo[inline]{show functions are  regular on intersection}
+We first check that the functions are indeed regular on $U_0 \cap U_\infty$ by computing their divisors. 
+For $p \neq 2$ this is
+\begin{align*}
+\di \left( \frac{y}{x^i} \right) & = \di (y) - \di ( x^i) \\
+& = R - (g+1)D_\infty - iD_0 + iD_\infty \\
+& = R - iD_0 - (g+1 - i)D_\infty, 
+\end{align*}
+and since $R$ is a positive divisor this is clearly positive on $U_0 \cap U_\infty$.
+
+
 We use Serre duality and the fact that if $p\neq 2$ the elements $\omega_i = x^iy^{-1}dx$, where $i \in \{0,\ldots, g-1\}$, form a basis of $\hzero$.
 Then for $j\in \{1, \ldots, g\}$  we consider $\langle x^iy^{-1}dx, yx^{-j}|_{U_0}\rangle$\todo{translate in to adeles}, which is equal to the residue of $x^{i-j}dx|_{U_0}$.\todo{explain this sentence, in particular the equality}
-In general, the divisor of $x^{i-j}dx$ (when not restricted to $U_0$) when $p\neq 2$ is
+We see from \eqref{divxp=2} and \eqref{pnot2divisors} that the divisor of $x^{i-j}dx$ when $p\neq 2$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
 \di(x^{i-j}dx) & = R - 2D_\infty +(i-j)D_0 - (i-j)D_\infty \\
 & = R + (i-j)D_0 - (i-j+2)D_\infty.
 \end{split}
 \end{equation}
-\todo{cite 9 and recall formula for div x}Now if $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one).
+Now if $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one).
 Since there are no other poles on $U_0$ the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$ (i.e. $j \in \{1, \ldots, g\}$).\todo{more details, clearer etc}
 
 \todo[inline]{let $\alpha:X \ra Y$ be an isom of curves, $\omega$ a diff on $Y$ and $P\in X$. Then $\res_{\alpha(P)}(\omega) = \res_P(\pi^*\omega)$. Let $\alpha$ be the hyperelliptic involution, and we see that $Res_{P_\infty} (\omega ) = \res_{P_\infty'}(\omega)$.}
@@ -382,7 +389,23 @@ This completes the proof when $p \neq 2$.
 \todo[inline]{Maybe I could just use $x$ as a UP at 0, and simplify the whole thing to a few lines}
 
 \todo[inline]{section missing}
-We now suppose that $p=2$.
+We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldots , g\}$ the function $\frac{y}{x^i}$ is regular on $U_0 \cap U_\infty$ by computing the divisor
+\begin{equation*}
+\di \left( \frac{y}{x^i} \right)  =  \begin{cases}
+\di_0(y) -iD_0 -(2g+1 - 2i)[P_\infty] \\
+ \di_0(y) - iD_0 +(g+1-\deg(F(x) + i))[P_\infty] - (g+1-i)[P_\infty'].
+\end{cases}
+\end{equation*}
+Note that this makes use of \eqref{divyp=2} and \eqref{divxp=2}, and is clearly positive on $U_0 \cap U_\infty$.
+
+Next we recall from \cite{faithfulaction} that a basis of $\hone$ is given by $\frac{x^i dx}{H(x)}$.
+We then compute the divisor of $\frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}$, which is
+\begin{align*}
+\di\left( \frac{yx^{i-j}dx}{H(x)} \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
+& = \di_0(y) - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty - R + dD_\infty
+\end{align*}
+\todo{finish this}
+
 Again, if $i-j=-1$ and $\infty$ is branch point then we again have a pole of order one at $P_\infty$, and hence a non-zero residue there.
 Also, even if $\infty$ is not a branch point it still suffices to compute the residue on $X\backslash U_\infty$, and we see that if $0$ is a branch point this is non-zero.
 So we again need only consider the case when both $\infty$ and $0$ are not branch points.
