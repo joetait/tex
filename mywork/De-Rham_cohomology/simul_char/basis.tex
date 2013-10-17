@@ -305,9 +305,9 @@ Given this we can see that the quotient $A/(A(0) + K(X))$ is well defined, and S
 
 We now define the duality map in terms of ad\`eles.
 Given some differential $\omega \in \hzero$ and some ad\`ele $r \in \hone$ we define 
-\[
+\begin{equation}\label{residuemap}
 \langle \omega, r \rangle := \sum_{P\in X} \res_{P}( r_P\omega).
-\]
+\end{equation}
 Then if we fix any $\omega \in \hzero$ we get a map $\theta(\omega):\hone \rightarrow k$ given by $\theta(\omega)(r) = \langle \omega, r \rangle$.
 Similarly, if we fix some $r \in \hone$ we get a map $\varphi(r):\hzero \rightarrow k$.
 The duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that the maps $\theta$ and $\varphi$ are isomorphisms meaning that the spaces $\hzero$ and $\hone$ are dual.
@@ -330,7 +330,11 @@ and since $R$ is a positive divisor this is clearly positive on $U_0 \cap U_\inf
 
 
 We use Serre duality and the fact that if $p\neq 2$ the elements $\omega_i = x^iy^{-1}dx$, where $i \in \{0,\ldots, g-1\}$, form a basis of $\hzero$.
-Then for $j\in \{1, \ldots, g\}$  we consider $\langle x^iy^{-1}dx, yx^{-j}|_{U_0}\rangle$\todo{translate in to adeles}, which is equal to the residue of $x^{i-j}dx|_{U_0}$.\todo{explain this sentence, in particular the equality}
+As we saw above, we can embed $K(X)$ in to $A$, the space of ad\`eles.
+We can extend this embedding to the restrictions of elements of $K(X)$.
+Let $f \in K(X)$ and $U \subseteq X$.
+Then let $r_P = f$ if $P \in U$, and $r_P = 1$ otherwise.
+Using this embedding we can consider $yx^{-i}|_{U_0}$ as an ad\`ele and hence consider $\langle x^iy^{-1}dx, yx^{-j}|_{U_0}\rangle = \sum_{P\in U_0} \res_{P} x^{i-j}dx)$ for $j \in \{1, \ldots, g\}$. 
 We see from \eqref{divxp=2} and \eqref{pnot2divisors} that the divisor of $x^{i-j}dx$ when $p\neq 2$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
@@ -339,6 +343,9 @@ We see from \eqref{divxp=2} and \eqref{pnot2divisors} that the divisor of $x^{i-
 \end{split}
 \end{equation}
 Now if $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one).
+Since the differential has no other poles on $U_0$ it follows that $\sum_{P \in U_0} \res_P(x^{-1}dx) = \res_{P_\infty}(x^{-1}dx) \neq 0$.
+As described in the paragraph preceding this lemma, the map $ \langle , \rangle\colon \hzero \cross \hone \ra k$ is a dual map.
+We have shown that for $i \in \{0, \ldots, g-1\}$ the product $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$, hence forms a dual basis, hence a basis. \todo{finish}
 Since there are no other poles on $U_0$ the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$ (i.e. $j \in \{1, \ldots, g\}$).\todo{more details, clearer etc}
 
 \todo[inline]{let $\alpha:X \ra Y$ be an isom of curves, $\omega$ a diff on $Y$ and $P\in X$. Then $\res_{\alpha(P)}(\omega) = \res_P(\pi^*\omega)$. Let $\alpha$ be the hyperelliptic involution, and we see that $Res_{P_\infty} (\omega ) = \res_{P_\infty'}(\omega)$.}
@@ -388,7 +395,6 @@ Since the characteristic is not 2, and since $c_{-1} \neq 0$, we conclude that $
 This completes the proof when $p \neq 2$.
 \todo[inline]{Maybe I could just use $x$ as a UP at 0, and simplify the whole thing to a few lines}
 
-\todo[inline]{section missing}
 We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldots , g\}$ the function $\frac{y}{x^i}$ is regular on $U_0 \cap U_\infty$ by computing the divisor
 \begin{equation*}
 \di \left( \frac{y}{x^i} \right)  =  \begin{cases}
@@ -402,9 +408,25 @@ Next we recall from \cite{faithfulaction} that a basis of $\hone$ is given by $\
 We then compute the divisor of $\frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}$, which is
 \begin{align*}
 \di\left( \frac{yx^{i-j}dx}{H(x)} \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
-& = \di_0(y) - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty - R + dD_\infty
+& = \di_0(y) - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty \\
+& \qquad - R + (g+1)D_\infty\\
+& = \di_0(y) + (2j-3-2i)[P_\infty] + (i-j)D_0
 \end{align*}
-\todo{finish this}
+when $P_\infty$ is a ramification point.
+So we see that there is a pole of order one at $P_\infty$ if $2j - 3 - 2i = -1$, and hence if $j = i+1$.
+Since $i$ ranges from $0$ to $g-1$ we see that for $1\leq j \leq g$ the elements $\frac{y}{x^j}$ form a basis of $\hone$.
+
+If $\infty \in \mathbb P_k^1$ is not a branch point then we see that the divisor of $\frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}$ is
+\begin{align*}
+\di\left( \frac{yx^{i-j}dx}{H(x)} \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
+& = \di_0(y) + (g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] + (i-j)D_0 \\
+& \qquad - (i-j)D_\infty + R - 2D_\infty - R + (g+1)D_\infty \\
+& = \di_0(y) + (j+g-i-\deg(F(x)))[P_\infty] + (j - i -2)[P_\infty'] + (i-j)D_0.
+\end{align*}
+Clearly if $j=i+1$ we have a pole of order one at $P_\infty'$.
+Moreover, if this is the case and $g+(j-i) = g+1 \geq \deg(F(x))$ then this is the only pole in $U_0$, and hence the residue is non-zero.
+This leaves the case $g+1 < \deg(F(x))$, where we have poles at both $P_\infty$ and $P_\infty'$, and hence need to show that the residues at these two points do not add to zero.
+
 
 Again, if $i-j=-1$ and $\infty$ is branch point then we again have a pole of order one at $P_\infty$, and hence a non-zero residue there.
 Also, even if $\infty$ is not a branch point it still suffices to compute the residue on $X\backslash U_\infty$, and we see that if $0$ is a branch point this is non-zero.
@@ -512,7 +534,6 @@ form a basis of $\derhamhone$.
 \end{thm}
 
 Before proving this theorem we use it to prove the following corollary.
-\todo[inline]{check proof and proposition in general}
 
 \begin{cor}
 The action of $G$ on $\derhamhone$ is faithful unless $G$ contains a hyperelliptic involution and $p=2$.
@@ -554,7 +575,7 @@ Firstly we see that
 & = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + \left( \frac{1}{x^i}d\left( {}_iH_1(x) \right) + {}_iH_1(x) d \left( \frac{1}{x^i} \right) \right) \\
 & = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + d\left( \frac{{}_iH_1(x)}{x^i} \right),
 \end{align*}
-\todo{reference second line}
+where the second equality follows from \eqref{capitals} and the fact that $\sigma(y) = y + H(x)$.
 
 Similarly we can derive
 \begin{equation*}
@@ -586,11 +607,11 @@ We now prove Theorem \ref{basis}.
 \begin{proof}
 We make use of the fact that the short exact sequence \eqref{ses} splits as a sequence of vector spaces over $k$, and that we know bases of the outer two terms.
 
-It is clear that \eqref{two} and \eqref{four} are elements of \eqref{derhamconditions}, and it follows from \cite[Thm 6.1]{faithfulaction} that they are the image of the basis of $H^0(X,\Omega_X)$ in $\derhamhone$.\todo{swap the order of these statements?}
+It is clear that \eqref{two} and \eqref{four} are elements of \eqref{derhamconditions}, and it follows from \cite[Thm 6.1]{faithfulaction} that they are the image of the basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
 
 Moreover, it is obvious that if the elements \eqref{one} and \eqref{three} are in \eqref{derhamconditions} then they will map to the basis of $\hone$ given in Lemma \ref{basish1}.
-So we need only show that the first two terms in \eqref{one} and \eqref{three} do indeed belong to \eqref{derhamconditions}.\todo{change wording}
-For the rest of the tproof we fix $i \in \{1, \ldots ,g\}$.
+So we need only show that the first two terms in \eqref{one} and \eqref{three} satisfy the conditions stated in \eqref{derhamconditions} to be in $\derhamhone$.
+For the rest of the proof we fix $i \in \{1, \ldots ,g\}$.
 
 
 We start with the case $p\neq 2$, and observe that
@@ -604,20 +625,19 @@ We start with the case $p\neq 2$, and observe that
 & =  d(yx^{-i}),
 \end{align*}
 with the penultimate line following from the defining equation \eqref{definingequationpnot2}.
-This shows that the elements \eqref{one} satisfy one of the conditions to be in \eqref{derhamconditions}.\todo{change wording}
-Now it remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_\infty$ and $U_0$ respectively.
-\todo[inline]{recall that y/xi is reg on U! intersect U2??}
+This shows that the elements \eqref{one} satisfy the condition of \eqref{derhamconditions} that $df_{0, \infty} = \omega_0 - \omega_\infty$.
+Since we saw in the proof of Lemma \ref{basish1} that $\frac{y}{x^i}$ is regular on $U_0\cap U_\infty$ it only remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_\infty$ and $U_0$ respectively.
 
 
-In order to do this we define $\alpha^i_j \in k$ for $0\leq j \leq 2g+1$ by the equation\todo{change superscript to something else?}
+In order to do this we define ${}_i\alpha_j \in k$ for $0\leq j \leq 2g+1$ by the equation
 \[
-s_i(x) = \alpha^i_{2g+1}x^{2g+1} + \ldots + \alpha^i_0,
+s_i(x) = {}_i\alpha_{2g+1}x^{2g+1} + \ldots + {}_i\alpha_0,
 \]
 so that
 \[
-\phi_i(x) = \alpha^i_{2g+1}x^{2g+1} + \ldots + \alpha^i_{g+1}x^{g+1} \ {\rm and } \ \psi_i(x) = \alpha^i_gx^g + \ldots + \alpha^i_0.
+\phi_i(x) = {}_i\alpha_{2g+1}x^{2g+1} + \ldots + {}_i\alpha_{g+1}x^{g+1} \ {\rm and } \ \psi_i(x) = {}_i\alpha_gx^g + \ldots + {}_i\alpha_0.
 \]
-Note that it is possible for any of $\alpha^i_j$ to be zero. Indeed, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
+Note that it is possible for any of ${}_i\alpha_j$ to be zero. Indeed, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
 Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 < d_\psi \leq g+1$ and $g < d_\phi \leq 2g+1$ for all $1 \leq i \leq g$.
 \todo{remove d psi? - will keep for now in case useful later}
 
@@ -649,8 +669,8 @@ Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
 Again, the second equality uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
 
 
-We now suppose that $p=2$;
-We will use the fact that we can change signs as convenient.
+We now suppose that $p=2$.
+We will use the fact that we can change signs as is convenient.
 We see that
 \begin{align*}
 \left( \left( \frac{ \Psi_i}{x^{i+1}H} \right) - \left( \frac{\Phi_i}{x^{i+1}H} \right) \right) dx & =  \frac{S_i}{x^{i+1}H}dx \\
@@ -660,7 +680,8 @@ We see that
 & =  d\left( yx^{-i}\right),
 \end{align*}
 with the fourth equality following from \eqref{divdyp=2}.
-Hence it only remains to show that for each $i\in {1, \ldots, g}$ the differentials $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_\infty$ and $U_0$ respectively.\todo{consider wording}
+We have also already seen in the proof of Lemma \ref{basish1} that $\frac{y}{x^i}$ is regular on $U_0 \cap U_\infty$.
+So in order to prove that for $i\in {1, \ldots, g}$ the elements of \eqref{three} are satisify the conditions of \eqref{derhamconditions} it only remains to show that the differentials $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_\infty$ and $U_0$ respectively.
 
 
 We define ${}_iA_{j+1} \in k$ for $0 \leq j \leq 2g+2$, and ${}_iB_k \in k$ for $1\leq k \leq g+1$ by the equation
