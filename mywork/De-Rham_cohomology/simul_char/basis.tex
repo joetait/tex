@@ -344,11 +344,19 @@ We see from \eqref{divxp=2} and \eqref{pnot2divisors} that the divisor of $x^{i-
 \end{equation}
 Now if $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one).
 Since the differential has no other poles on $U_0$ it follows that $\sum_{P \in U_0} \res_P(x^{-1}dx) = \res_{P_\infty}(x^{-1}dx) \neq 0$.
-As described in the paragraph preceding this lemma, the map $ \langle , \rangle\colon \hzero \cross \hone \ra k$ is a dual map.
-We have shown that for $i \in \{0, \ldots, g-1\}$ the product $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$, hence forms a dual basis, hence a basis. \todo{finish}
-Since there are no other poles on $U_0$ the residue is necessarily non-zero and hence the elements $yx^{-j}$ form a basis for $j= i+1$ (i.e. $j \in \{1, \ldots, g\}$).\todo{more details, clearer etc}
+As described in the paragraph preceding this lemma, the map $ \langle , \rangle \colon \hzero \times \hone \ra k$ is a dual map.
+We have shown that for $i \in \{0, \ldots, g-1\}$ the product $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$.
+Hence the elements $\frac{y}{x^j}$ form a (dual) basis for $j \in \{1, \ldots , g\}$.
 
 \todo[inline]{let $\alpha:X \ra Y$ be an isom of curves, $\omega$ a diff on $Y$ and $P\in X$. Then $\res_{\alpha(P)}(\omega) = \res_P(\pi^*\omega)$. Let $\alpha$ be the hyperelliptic involution, and we see that $Res_{P_\infty} (\omega ) = \res_{P_\infty'}(\omega)$.}
+On the other hand, if $\infty$ is not a branch point then we see from \eqref{residuedivisor} that $x^{-1}dx$ has poles at both $P_\infty$ and $P_\infty'$.
+Hence $\sum_{P \in U_0}\res_P(x^{-1}dx) = \res_{P_\infty}(x^{-1}dx) + \res_{P_\infty'}(x^{-1}dx)$.
+Since we assumed $p=2$ it is sufficient to show that $\res_{P_\infty}(x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$ in order to prove that $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$, and hence that $\frac{y}{x^j}$, $1 \leq j \leq g$, is a dual basis of $\frac{x^i}{y}dx$, $0 \leq i \leq g-1$.
+
+We can easily show this using the hyperelliptic involution $\sigma$.
+Recall that \todo{finish this}
+
+\begin{comment}
 On the other hand, if $\infty$ is not a branch point we have two poles of order one, $P_\infty$ and $P_\infty'$.
 Since we have two poles we need to check that the residues at these poles do not cancel to zero.
 This is equivalent to checking that the residue is non-zero at the points in $X\backslash U_0$ (of which there are at most two --- $P_0$ and $P_0'$).
@@ -393,6 +401,7 @@ Using the same argument as before we dispense of the $y$ term, and hence $d_{-1}
 Since $c_{-1}$ and $d_{-1}$ are determined in the same way, they must take the same value. 
 Since the characteristic is not 2, and since $c_{-1} \neq 0$, we conclude that $\res_{X\backslash U_\infty}(x^{-1}dx) = 2c_{-1} \neq 0$.
 This completes the proof when $p \neq 2$.
+\end{comment}
 \todo[inline]{Maybe I could just use $x$ as a UP at 0, and simplify the whole thing to a few lines}
 
 We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldots , g\}$ the function $\frac{y}{x^i}$ is regular on $U_0 \cap U_\infty$ by computing the divisor
