@@ -351,10 +351,17 @@ Hence the elements $\frac{y}{x^j}$ form a (dual) basis for $j \in \{1, \ldots , 
 \todo[inline]{let $\alpha:X \ra Y$ be an isom of curves, $\omega$ a diff on $Y$ and $P\in X$. Then $\res_{\alpha(P)}(\omega) = \res_P(\pi^*\omega)$. Let $\alpha$ be the hyperelliptic involution, and we see that $Res_{P_\infty} (\omega ) = \res_{P_\infty'}(\omega)$.}
 On the other hand, if $\infty$ is not a branch point then we see from \eqref{residuedivisor} that $x^{-1}dx$ has poles at both $P_\infty$ and $P_\infty'$.
 Hence $\sum_{P \in U_0}\res_P(x^{-1}dx) = \res_{P_\infty}(x^{-1}dx) + \res_{P_\infty'}(x^{-1}dx)$.
-Since we assumed $p=2$ it is sufficient to show that $\res_{P_\infty}(x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$ in order to prove that $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$, and hence that $\frac{y}{x^j}$, $1 \leq j \leq g$, is a dual basis of $\frac{x^i}{y}dx$, $0 \leq i \leq g-1$.
+Since we assumed $p=2$ it is sufficient to show that $\res_{P_\infty}(x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$ in order to prove that $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$.
 
-We can easily show this using the hyperelliptic involution $\sigma$.
-Recall that \todo{finish this}
+We can show this using the hyperelliptic involution $\sigma$.
+Suppose we have an isomorphism of curves $\phi\colon W \ra V$ and we consider some differential $\omega$ on $V$.
+Then if we fix a point $P \in W$ it follows that
+\[
+\res_P(\phi^*(\omega)) = \res_P(\omega \circ \phi) = \res_{\phi(P)}(\omega).
+\]
+In particular, if we consider the differential $x^{-1}dx$ and the isomorphism $\sigma\colon X \ra X$, then we see that $\res_{P_\infty} (x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$.
+
+Hence $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$ and so $\frac{y}{x^j}$, $1 \leq j \leq g$, is a dual basis of $\frac{x^i}{y}dx$, $0 \leq i \leq g-1$.
 
 \begin{comment}
 On the other hand, if $\infty$ is not a branch point we have two poles of order one, $P_\infty$ and $P_\infty'$.
