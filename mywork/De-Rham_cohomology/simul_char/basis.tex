@@ -128,6 +128,7 @@
 
 \section{Background}
 
+\todo[inline]{consider consistency of putting differential in frac or not}
 \todo[inline]{change references to preprint when in thesis}
 
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
@@ -348,7 +349,7 @@ As described in the paragraph preceding this lemma, the map $ \langle , \rangle 
 We have shown that for $i \in \{0, \ldots, g-1\}$ the product $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$.
 Hence the elements $\frac{y}{x^j}$ form a (dual) basis for $j \in \{1, \ldots , g\}$.
 
-\todo[inline]{let $\alpha:X \ra Y$ be an isom of curves, $\omega$ a diff on $Y$ and $P\in X$. Then $\res_{\alpha(P)}(\omega) = \res_P(\pi^*\omega)$. Let $\alpha$ be the hyperelliptic involution, and we see that $Res_{P_\infty} (\omega ) = \res_{P_\infty'}(\omega)$.}
+
 On the other hand, if $\infty$ is not a branch point then we see from \eqref{residuedivisor} that $x^{-1}dx$ has poles at both $P_\infty$ and $P_\infty'$.
 Hence $\sum_{P \in U_0}\res_P(x^{-1}dx) = \res_{P_\infty}(x^{-1}dx) + \res_{P_\infty'}(x^{-1}dx)$.
 Since we assumed $p=2$ it is sufficient to show that $\res_{P_\infty}(x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$ in order to prove that $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$.
@@ -361,7 +362,7 @@ Then if we fix a point $P \in W$ it follows that
 \]
 In particular, if we consider the differential $x^{-1}dx$ and the isomorphism $\sigma\colon X \ra X$, then we see that $\res_{P_\infty} (x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$.
 
-Hence $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$ and so $\frac{y}{x^j}$, $1 \leq j \leq g$, is a dual basis of $\frac{x^i}{y}dx$, $0 \leq i \leq g-1$.
+Hence $\langle x^iy^{-1}dx, \left. yx^{-(i+1)}\right|_{U_0} \rangle \neq 0$ and so $\frac{y}{x^j}$, $1 \leq j \leq g$, is a dual basis of $\frac{x^i}{y}dx$, $0 \leq i \leq g-1$.
 
 \begin{comment}
 On the other hand, if $\infty$ is not a branch point we have two poles of order one, $P_\infty$ and $P_\infty'$.
@@ -409,7 +410,6 @@ Since $c_{-1}$ and $d_{-1}$ are determined in the same way, they must take the s
 Since the characteristic is not 2, and since $c_{-1} \neq 0$, we conclude that $\res_{X\backslash U_\infty}(x^{-1}dx) = 2c_{-1} \neq 0$.
 This completes the proof when $p \neq 2$.
 \end{comment}
-\todo[inline]{Maybe I could just use $x$ as a UP at 0, and simplify the whole thing to a few lines}
 
 We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldots , g\}$ the function $\frac{y}{x^i}$ is regular on $U_0 \cap U_\infty$ by computing the divisor
 \begin{equation*}
@@ -457,7 +457,7 @@ So to work out the residue of $\frac{1}{x}dx$ at $P_0$ we wish to find the $c_{-
 \end{align*}
 where the last line follows from \eqref{divdyp=2} and $c_i \in k$.
 Now $\left(\frac{F' -yH'}{H}\right)$ cannot have a pole at $0$ since $H(0) \neq 0$, so the only part of the series which can contain a $\frac{1}{x}$ term is the $i=-1$ term.
-We will use this and compare the coefficients to work out the residue at the points. \todo{come back and describe what I actually do when I have done it}
+We will use this and compare the coefficients to work out the residue at the points. 
 
 In other words we wish to find the $\frac{1}{x}$ term in 
 \[
@@ -514,7 +514,7 @@ Then when $p\neq 2$ we define
 \[
 s_i(x) := f'(x) - \frac{2if(x)}{x} \in k[x]
 \]
-\todo{just realised this may have a $\frac{1}{x}$ term - note for future}and when $p = 2$ we define
+and when $p = 2$ we define
 \begin{equation}\label{capitals}
 S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)\in k[x]\oplus yk[x] \subseteq k(x,y).
 \end{equation}
@@ -570,7 +570,6 @@ Now we can split $\frac{H(x)}{x^i}$ as follows,
 \frac{H(x)}{x^i} =  \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i} - \left( - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i} \right),
 \end{equation*}
 and since this is clearly the difference of an element of $\cO_X(U_0)$ and an element of $\cO_X(U_\infty)$ we see that $\frac{H(x)}{x^i}$ is zero in $\hone$.
-\todo[inline]{look at alternative proof}
 We let 
 \[
 {}_iH_1(x) = b_{i-1}x^{i-1} + \ldots + b_1x
@@ -579,7 +578,6 @@ and
 \[
 {}_iH_2(x) = - x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i.
 \]
-\todo{this can be made shorter/ rearranged - kept for now as may be useful}
 
 We now study the action of $\sigma$ on the entries in \eqref{three}.
 Firstly we see that
@@ -740,7 +738,7 @@ Firstly,
  = &  \di_0(\Phi_i^x) - (i+1)D_0 + (i-2-g)D_\infty \\
  =  & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + (i-g-2)D_\infty,
 \end{align*}
-From this we see that the differential $\frac{\phi_i^xdx}{x^{i+1}H}$ is clearly regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.\todo{consider consistency of putting differential in frac or not}
+From this we see that the differential $\frac{\phi_i^xdx}{x^{i+1}H}$ is clearly regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
 
 We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, namely
 \begin{align*}
@@ -788,11 +786,11 @@ Introduction needs to be finalised once the proof in the previous section is com
 In particular, if the exact residue can be computed then we may as well do so.
 Currently we are assuming in this section that $\infty$ and 0 are a branch point.
 
-\todo[inline]{emphasise/mention that the basis is dual}
 \begin{lem}
 Suppose that $\infty\in \mathbb P_k^1$ is a branch point of $\pi$.
 If $p \neq 2$ then ${\rm res}_{P_\infty}(\frac{1}{x}dx) = -2$.
 If $p=2$ then ${\rm res}_{P_\infty}\left(\frac{ydx}{xH(x)}\right) = 1$.
+In particular, this shows that the basis of $\hone$ in Lemma \ref{basish1} is dual to the basis given for $\hzero$ in \cite{faithfulaction}.
 \end{lem}
 
 \begin{proof}
@@ -811,10 +809,10 @@ We now write $\frac{1}{x}dx$ in terms of $dt$.
 By the quotient rule we know that
 \begin{align*}
 dt^2 & =  d \left( \frac{f}{x^{2g+2}} \right) \\
-& =  \frac{x^{2g+2}f' + x^{2g+1}f}{x^{4g+4}} dx \\
-& =  \frac{1}{x^{2g+2}} \left( f' + \frac{f}{x} \right) dx
+& =  \frac{x^{2g+2}f' - (2g+2)x^{2g+1}f}{x^{4g+4}} dx \\
+& =  \frac{1}{x^{2g+2}} \left( f' - \frac{(2g+2)f}{x} \right) dx
 \end{align*}
-\todo{check the above computation - missed coefficient of x2g+1}from which we conclude that
+from which we conclude that
 \[
 \frac{1}{x}dx = \frac{2tx^{2g+1}}{\left(\frac{f' - (2g+2)f}{x} \right)} dt.
 \]
@@ -872,10 +870,16 @@ In total we then have
 \]
 where $S_{g+1}(x,y)$ is as defined in \eqref{capitals}.
 
-We know\todo{citation} that $\frac{x^{g+1}y}{S_{g+1}(x,y)} = \sum_{i\geq -1} c_i t^i$, with $c_i \in k$, and we wish to compute $c_{-1}$.
+Since we saw in the proof of Lemma \ref{basish1} that $\frac{y}{xH(x)}dx$ has a pole of order at $P_\infty$, we have the Taylor expansion $\frac{x^{g+1}y}{S_{g+1}(x,y)} = \sum_{i\geq -1} c_i t^i$, with $c_i \in k$, and we wish to compute $c_{-1}$.
 We shall do this by computing the coefficient $d_1$ of $t$ in the expansion $\frac{S_{g+1}(x,y)}{x^{g+1}y} = \sum_{i\geq 1}d_it^i$.
-We can split up $\frac{S_{g+1}(x,y)}{x^{g+1}y}$ into three terms, namely $\frac{xF'}{x^{g+1}y}$, $\frac{yxH'}{x^{g+1}y}$ and $\frac{yH}{x^{g+1}y}$.\todo{missing factor of $g+1$}
-Each of these terms can of course be written as a power series in $t$, but only the first term mentioned has order 1 at $P_\infty$\todo{explain this}, and hence this term will uniquely determine $d_1$.
+We can split up $\frac{S_{g+1}(x,y)}{x^{g+1}y}$ into three terms, namely $\frac{xF'}{x^{g+1}y}$, $\frac{yxH'}{x^{g+1}y}$ and $\frac{(g+1)yH}{x^{g+1}y}$.
+Each of these terms can of course be written as a power series in $t$.
+However, to compute $d_1$ we need only compute the coefficient of $t$ in these power series.
+Since $\infty$ is a branch point then $H$ has degree at most $g$ (and hence $xH'$ also has degree at most $g$).
+It then follows that the order of both $\frac{xH'}{x^{g+1}}$ and $\frac{(g+1)H}{x^{g+1}}$ at $P_\infty$ is at least 2, and hence the coefficient of $t$ in their power series expansion is zero.
+The order of $\frac{xF'}{x^{g+1}y}$ at $P_\infty$ on the other hand is precisely 1, and hence the coefficient of $t$ in the power series expansion of $\frac{xF'}{x^{g+1}y}$ will determine $d_1$.
+
+
 Suppose that $F = \alpha_{2g+1}x^{2g+1} + \alpha_{2g}x^{2g} + \ldots + \alpha_1x^1 + \alpha_0$.
 Then $xF'= \alpha_{2g+1}x^{2g+1} + \alpha_{2g-1}x^{2g-1} + \ldots + \alpha_1x^1$; i.e. the terms with an even power are removed.
 
@@ -885,7 +889,7 @@ Since
 \frac{\alpha_{2g+1}x^g}{y} = \frac{\alpha_{2g+1}}{x}t^{-1}
 \]
 and $\frac{1}{x} = \sum_{i\geq 2}e_it^i$ for some $e_i \in k$, if we compute $e_2$ then we will have effectively computed $d_1$.
-Now $t^2 = \frac{F }{x^{2g+2}}+ \frac{Hy}{x^{2g+2}}$, and clearly $\frac{Hy}{x^{2g+2}}$ has no terms of the form\todo{explain this - also, wording} $\frac{c}{x}$ for some $c \in k$.
+Now $t^2 = \frac{F }{x^{2g+2}}+ \frac{Hy}{x^{2g+2}}$, and clearly $\frac{Hy}{x^{2g+2}}$ has no monomial term of the form $\frac{c}{x}$ with $c \in k$.
 On the other hand
 \[
 \frac{F}{x^{2g+2}} = \frac{\alpha_{2g+1}}{x} + \ldots
