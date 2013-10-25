@@ -116,7 +116,7 @@
 
 %%% The "real" document content comes below...
 
-\title{Group actions on de-Rham cohomology of hyperelliptic curves}
+\title{Group actions on de Rham cohomology of hyperelliptic curves}
 \author{}
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed
@@ -135,14 +135,14 @@ Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 
 We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$.
 We also suppose that we have a finite group $G$ acting faithfully on $X$.
 
-In a similar vein to \cite{canonicalrepresentation}, we will be using \cech cohomology to compute both $\hone$ and the de-Rham hypercohomology, denoted $\derhamhone$.
+In a similar vein to \cite{canonicalrepresentation}, we will be using \cech cohomology to compute both $\hone$ and the de Rham hypercohomology, denoted $\derhamhone$.
 We therefore recall the \cech cohomology relevant to both of these, starting with $\hone$.
 
 By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
-The cover we shall be using is $U_0 = X\backslash \pi^{-1}(0)$ and $U_\infty = X\backslash  \pi^{-1}(\infty) $, both of which are affine sets.
-We let ${\cal U} = \{ U_0, U_\infty\}$.
-Given any sheaf $\cal F$ on $X$ we have a canonical map $d\colon {\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, given by taking the difference, $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$ (in general we will suppress the notation denoting the restriction map). 
-Via this map we have the following cochain
+In general we let $U_a = X \backslash \pi^{-1}(a)$ for any $a \in \mathbb P_k^1$ and we let ${\cal U} = \{ U_0, U_\infty\}$.
+Given any sheaf $\cal F$ on $X$ we have a canonical map $d\colon {\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, defined by $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
+In general we will suppress the notation denoting the restriction map.
+Via this differential we have the following cochain
 \begin{equation*}
 0 \rightarrow \cO_X(U_0)\times \cO_X(U_\infty) \xrightarrow{d} \cO_X(U_0 \cap U_\infty) \rightarrow 0.
 \end{equation*}
@@ -152,15 +152,15 @@ The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_0 \cap U_
  = \frac{\cO_X(U_0 \cap U_\infty)}{\{f_0 - f_\infty | f_i \in \cO_X(U_i) \}}.
 \end{equation}
 
-We now recall how to compute the algebraic de-Rham cohomology of $X$ via \cech cohomology.
-The de-Rham cohomology of an algebraic curve is the hypercohomology of the de Rham complex on $X$. 
-Since a curve doesn't have differentials of degree greater than one, this is just the hypercohomology of the complex
+We now recall how to compute the algebraic de Rham cohomology of $X$ via \cech cohomology.
+We now consider the de Rham cohomology of $X$, which is the hypercohomology of the de Rham complex of $X$.
+Since a curve doesn't have differentials of degree greater than one, this is the hypercohomology of the complex
 \begin{equation}\label{res}
 0 \rightarrow \cO_X \xrightarrow{d} \Omega_X \rightarrow 0.
 \end{equation}
-The map $d$ is the differential map $f \mapsto df$.
+Here $d$ denotes the differential map $f \mapsto df$.\todo{cite}
 
-We then use the open cover $\cal U$ and the \cech differentials as defined earlier to give us the \cech complex of \eqref{res}, which is
+We then use the cover $\cal U$ and the \cech differentials as defined earlier to give us the \cech complex of \eqref{res}, which is
 \begin{equation}\label{bicomplex} \begin{array}{ccccccc}
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 ~ & ~ & \downarrow & ~ & \downarrow & ~ & ~ \\
@@ -171,9 +171,8 @@ We then use the open cover $\cal U$ and the \cech differentials as defined earli
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 \end{array}
 \end{equation}
-where the horizontal arrows are the standard differential map.
-By a generalisation of Leray's theorem \cite[Cor 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
-Note that this requires, for any $\sigma$ in the nerve of $\cU$ and any $p \geq 1$, ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero ---
+\todo{put d's above arrows}By a generalisation of Leray's theorem \cite[Cor 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
+Note that this requires, for any $\sigma$ in the nerve of $\cU$ and any $p \geq 1$, ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero ---\todo{continue from here finish}
 since $U_0$ and $U_\infty$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.
 
 
@@ -905,7 +904,7 @@ We finally use this to conclude that $c_{-1} = \frac{1}{d_{1}} = 1$.
 \begin{comment}
 
 \section{Stability of modular curves in characteristic greater than 2}
-In this section we consider some modular hyperelliptic curves and how their automorphism groups at on the first de-Rham cohomology group of the curves.
+In this section we consider some modular hyperelliptic curves and how their automorphism groups at on the first de Rham cohomology group of the curves.
 The automorphism groups of these curves can be found in \cite{automorphismshyperellipticmodular}.
 We start by considering the curve $X_0(22)$, which can defined by the equation
 \begin{equation*}
