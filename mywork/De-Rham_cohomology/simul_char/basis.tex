@@ -172,7 +172,7 @@ We then use the cover $\cal U$ and the \cech differentials as defined earlier to
 \end{array}
 \end{equation}
 \todo{put d's above arrows}By a generalisation of Leray's theorem \cite[Cor 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
-Note that this requires, for any $\sigma$ in the nerve of $\cU$ and any $p \geq 1$, ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero ---\todo{continue from here finish}
+Note that this requires ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero for any $\sigma$ in the nerve of $\cU$ and any $p \geq 1$ ---
 since $U_0$ and $U_\infty$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.
 
 
@@ -191,13 +191,14 @@ To do this we will compute $k$-bases for the two outer terms of the short exact 
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra \derhamhone \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
+
 We briefly examine this sequence.
 Firstly, $\cechhzero \cong \hzero$ is the kernel of
 \[
 0 \ra \Omega_X(U_0) \times \Omega_X(U_\infty) \ra \Omega_X(U_0 \cap U_\infty ) \ra 0,
 \]
 i.e. elements of the form $(\omega, \omega)$.
-Hence we have an obvious injection $\hone \ra \derhamhone$ given by
+Hence we can define an injection $\hone \ra \derhamhone$ given by
 \[
 (\omega, \omega) \mapsto (\omega, \omega, 0).
 \]
@@ -213,14 +214,15 @@ Then
 & = (\omega_0 - df_0, \omega_\infty - df_\infty, 0)
 \end{align*}
 where the first equality follows from \eqref{quotient}.
-By \eqref{derhamconditions} we know that $(\omega_0 - df_0)  - (\omega_\infty - df_\infty) = 0$,  and hence $(\omega_0, \omega_\infty, f_{0, \infty})$ is in the image of $\hzero \ra \derhamhone$.
+By \eqref{derhamconditions} we know that $(\omega_0 - df_0)  - (\omega_\infty - df_\infty) = d0 = 0$,  and hence $(\omega_0, \omega_\infty, f_{0, \infty})$ is in the image of $\hzero \ra \derhamhone$.
 
-A basis of $H^0(X,\Omega_X)$ is already available in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.
+A basis of $H^0(X,\Omega_X)$ is already available in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.\todo{move elsewhere}
 
 \section{Basis of $\derhamhone$}
 
 The bases of the $k$-vector spaces in \eqref{ses} will be given in terms of defining equations of the hyperelliptic curve $X$, so we describe these now.
-Regardless of characteristic we will denote by $P_a$ and $P_a'$ the elements of $\pi^{_1}(a)$ for any $a \in k$ (if $a$ is a branch point then $\pi^{-1}(a)$ only has one element, which we denote $P_a$.)
+Throughout we will denote by $P_a$ and $P_a'$ the unique elements of $\pi^{-1}(a)$ for any point $a \in \mathbb P_k^1$ that is not a branch point.
+If $a \in \mathbb P_k^1$ is a branch point we denote the unique point in $\pi^{-1}(a)$ by $P_a$.
 
 If $p \neq 2$ then the extension $K(X)$ of $K(\mathbb P_k^1) = k(x)$ will be $k(x,y)$ where $y$ satisfies
 \begin{equation}\label{definingequationpnot2}
@@ -233,8 +235,8 @@ Hence
 \begin{equation}\label{divisorofpoints}
 D_a= 
 \begin{cases}
- 2[P_a] & \text{if $a$ is a branch point;} \\
- [P_a] + [P_a'] & \text{otherwise.}
+ 2[P_a] & \text{if $a$ is a branch point} \\
+ [P_a] + [P_a'] & \text{otherwise,}
 \end{cases}
 \end{equation}
 with $P_a, P_a' \in X$.
@@ -248,7 +250,7 @@ We then let $R$ be the ramification divisor of $\pi$, and recall from \cite[\S 6
 \end{equation}
 
 
-If $p=2$, then the extension $K(X)$ will be $k(x,y)$, this time with $y$ satisfying the equation
+If $p=2$, then the extension $K(X)$ of $k(x)$ will be $k(x,y)$, this time with $y$ satisfying the equation
 \begin{equation}\label{definep=2}
 y^2 - H(x)y = F(x),
 \end{equation}
@@ -271,7 +273,7 @@ We also make use of the following identity\todo{cite when in thesis}
 \end{cases}
 \end{equation}
 Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
-Note that the second case is not symmetric, which implies a choice with respect to $P_\infty'$ and $P_\infty$, but this will not affect future computations.
+Note that the second case is not symmetric, which implies a choice with respect to $P_\infty'$ and $P_\infty$, but this will not affect future computations.\todo{prove divisor of $y$}
 
 Finally, we will compute the divisor of $dy$.
 We start by noting that when we take the differential of \eqref{definep=2} we derive
@@ -289,19 +291,19 @@ To state the ramification points, and for later use, we suppose that
 H(x) = \prod_{i=1}^d (x-a_i)^{n_i} = x^d + b_{d-1}x^{d-1} + \ldots + b_1x
 \end{equation}
 for some $a_i, b_i \in  k$, $d \leq g+1$ and $n_i \in \mathbb N$.
-Then the $a_i \in \mathbb A_k^1 \subset \mathbb P_1^k$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points above $a_i$.
+Then the $a_i \in \mathbb A_k^1 \subset \mathbb P_k^1$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points above $a_i$.
 Given this, we can write the ramification divisor as
 \[
 R = \sum_{i=1}^d 2n_i[P_i] + (g+1-d)D_\infty.
 \]
 Details can be found in \cite[\S 6]{faithfulaction}.
 
-We now recall Serre duality, which we will use shortly to find a basis of $\hone$.
+We now recall some facts regarding Serre duality, which we will use shortly to find a basis of $\hone$.
 We recall \todo{cite when in thesis. Will change $r$ notation then.} that an {\sl ad\`ele} or {\sl r\'epartition} is a collection $\{r_P\}_{P\in X}$ of elements of $K(X)$ such that $r_P \in \cO_P$ for almost all $P\in X$, as in \cite[Chap. II, \S 5]{algebraicgroupsandclassfields}.
 We let $A$ denote the space of ad\`eles, and given a divisor $D = \sum n_P[P]$ we let $A(D)$ be the space of ad\`eles $r = \{r_P\}$ such that $\ord_P(r_P) \geq -n_P$ for all $P \in X$.
 Note that one can embed the function field $K(X)$ into $A$.
 Given any $f \in K(X)$ one defines $r \in A$ by setting $r_P = f$ for all $P \in X$, and this is clearly an injection.
-Given this we can see that the quotient $A/(A(0) + K(X))$ is well defined, and Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to this quotient.
+Given this we can see that the quotient $A/(A(0) + K(X))$ is well defined, and Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to this quotient.\todo{rewrite paragraph}
 
 We now define the duality map in terms of ad\`eles.
 Given some differential $\omega \in \hzero$ and some ad\`ele $r \in \hone$ we define 
