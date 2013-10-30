@@ -4,7 +4,7 @@
 % This is a simple template for a LaTeX document using the "article" class.
 % See "book", "report", "letter" for other types of document.
 
-\documentclass[draft, 11pt]{article} % use larger type; default would be 10pt
+\documentclass[11pt]{article} % use larger type; default would be 10pt
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
 
@@ -63,10 +63,10 @@
 %%% ToC (table of contents) APPEARANCE
 \usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
 \usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
-\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
-\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage{cabin}
+%\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+%\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+%\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{cabin}
 %\usepackage{libertine}
 %\usepackage[T1]{fontenc}
 
@@ -140,15 +140,15 @@ We therefore recall the \cech cohomology relevant to both of these, starting wit
 
 By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
 In general we let $U_a = X \backslash \pi^{-1}(a)$ for any $a \in \mathbb P_k^1$ and we let ${\cal U} = \{ U_0, U_\infty\}$.
-Given any sheaf $\cal F$ on $X$ we have a canonical map $d\colon {\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, defined by $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
+Given any sheaf $\cal F$ on $X$ we have a canonical map $\check{d}\colon {\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, defined by $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
 In general we will suppress the notation denoting the restriction map.
 Via this differential we have the following cochain
 \begin{equation*}
-0 \rightarrow \cO_X(U_0)\times \cO_X(U_\infty) \xrightarrow{d} \cO_X(U_0 \cap U_\infty) \rightarrow 0.
+0 \rightarrow \cO_X(U_0)\times \cO_X(U_\infty) \xrightarrow{\check{d}} \cO_X(U_0 \cap U_\infty) \rightarrow 0.
 \end{equation*}
-The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(d)}$ and hence
+The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(\check{d})}$ and hence
 \begin{equation}\label{cechhone}
-\hone \cong \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(d)}  
+\hone \cong \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(\check{d})}  
  = \frac{\cO_X(U_0 \cap U_\infty)}{\{f_0 - f_\infty | f_i \in \cO_X(U_i) \}}.
 \end{equation}
 
@@ -171,7 +171,7 @@ We then use the cover $\cal U$ and the \cech differentials as defined earlier to
 ~ & ~ & 0 & ~ & 0 & ~ & ~ \\
 \end{array}
 \end{equation}
-\todo{put d's above arrows}By a generalisation of Leray's theorem \cite[Cor 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
+By a generalisation of Leray's theorem \cite[Cor 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
 Note that this requires ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero for any $\sigma$ in the nerve of $\cU$ and any $p \geq 1$ ---
 since $U_0$ and $U_\infty$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.
 
@@ -191,8 +191,9 @@ To do this we will compute $k$-bases for the two outer terms of the short exact 
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra \derhamhone \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
+A basis of $H^0(X,\Omega_X)$ is already available in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$, which we do in the next section.
 
-We briefly examine this sequence.
+Before the next section we briefly discuss the exact sequence \eqref{ses}.
 Firstly, $\cechhzero \cong \hzero$ is the kernel of
 \[
 0 \ra \Omega_X(U_0) \times \Omega_X(U_\infty) \ra \Omega_X(U_0 \cap U_\infty ) \ra 0,
@@ -216,7 +217,6 @@ Then
 where the first equality follows from \eqref{quotient}.
 By \eqref{derhamconditions} we know that $(\omega_0 - df_0)  - (\omega_\infty - df_\infty) = d0 = 0$,  and hence $(\omega_0, \omega_\infty, f_{0, \infty})$ is in the image of $\hzero \ra \derhamhone$.
 
-A basis of $H^0(X,\Omega_X)$ is already available in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$.\todo{move elsewhere}
 
 \section{Basis of $\derhamhone$}
 
@@ -273,7 +273,7 @@ If $\gamma_i$ is not a branch point then let $Q_i = (\gamma_i, 0)$ and $Q_i' = (
 Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i$.
 
 
-\begin{lemma}
+\begin{lem}
 The divisor of $y$ is
 \begin{equation}\label{divyp=2}
 \di(y) = \begin{cases}
@@ -281,7 +281,7 @@ The divisor of $y$ is
  \sum_{i=1}^l m_i[Q_i] +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] & \text{otherwise.}
 \end{cases}
 \end{equation}
-\end{lemma}
+\end{lem}
 \begin{proof}
 We first show that the divisor of the zeroes of $y$ is $\sum_{i=1}^l m_i [Q_i]$, regardless of whether $\infty \in \mathbb P_k^1$ is a branch point.
 
@@ -360,6 +360,7 @@ We let $A$ denote the space of ad\`eles, and given a divisor $D = \sum n_P[P]$ w
 Note that one can embed the function field $K(X)$ into $A$.
 Given any $f \in K(X)$ one defines $r \in A$ by setting $r_P = f$ for all $P \in X$, and this is clearly an injection.
 Given this we can see that the quotient $A/(A(0) + K(X))$ is well defined, and Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to this quotient.
+Note that we can extend this embedding to $\left. f \right|_U$ for any $f\in K(X)$ and any open subset $U \subseteq X$ by letting $r_P = f$ if $P \in U$, and $r_P = 1$ otherwise.
 
 We now define the duality map in terms of ad\`eles.
 Given some differential $\omega \in \hzero$ and some ad\`ele $r \in \hone$ we define 
@@ -387,10 +388,8 @@ Since $R$ is a positive divisor this is clearly positive on $U_0 \cap U_\infty$.
 
 
 We use Serre duality and the fact that for $i= 0, \ldots, g-1$ the elements $\omega_i = x^iy^{-1}dx$ form a basis of $\hzero$.
-As we saw above, we can embed $K(X)$ in to $A$, the space of ad\`eles.
-We can extend this embedding to $\left. f \right|_U$ for any $f\in K(X)$ and any open subset $U \subseteq X$.
-We do this by letting $r_P = f$ if $P \in U$, and $r_P = 1$ otherwise.
-Using this embedding we can consider $yx^{-i}|_{U_0}$ as an ad\`ele and hence consider $\langle x^iy^{-1}dx, yx^{-j}|_{U_0}\rangle = \sum_{P\in U_0} \res_{P} (x^{i-j}dx)$ for $j \in \{1, \ldots, g\}$. 
+As we saw above, we can embed elements of $K(X)$ and their restrictions in to $A$, the space of ad\`eles.
+Using this we can consider $yx^{-i}|_{U_0}$ as an ad\`ele and hence consider $\langle x^iy^{-1}dx, yx^{-j}|_{U_0}\rangle = \sum_{P\in U_0} \res_{P} (x^{i-j}dx)$ for $j \in \{1, \ldots, g\}$. 
 We see from \eqref{divxp=2} and \eqref{pnot2divisors} that the divisor of $x^{i-j}dx$ when $p\neq 2$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
@@ -548,16 +547,6 @@ d_{-1}t^{-1} \left( \frac{F' - yH'}{H} \right)  = & d_{-1}\left( \frac{(F'  - yH
 
 
 
-{\sl Problem - can't complete the square. The problem would be if the $c_{-1}$ and $d_{-1}$ in 
-\[
-c_{-1}\frac{1}{y-a}\left(\frac{F'+yH'}{H}\right) \text{ and } d_{-1}\frac{1}{y-a-H(0)}\left(\frac{F'+yH'}{H}\right)
-\]
-were equal, where $a$ is one of the points above $0\in \mathbb P_k^1$.
-
-Ideas - Try equating the two (they should both be equal to $\frac{1}{x}$).
-Make sure there is no way of writing as a square to get rid of $y$.
-
-Hunch - if one of the residues is $a$ the other is likely $a+1$.}
 \end{proof}
 
 
