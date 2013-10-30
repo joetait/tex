@@ -265,15 +265,71 @@ We now recall the following divisors from \cite[\S 6]{faithfulaction}, which we 
 \di (dx) & = R - 2D_\infty \label{divdxp=2}\\
 \di (H(x)) & = R - (g+1)D_\infty \label{divhp=2}
 \end{align}
-We also make use of the following identity\todo{cite when in thesis}
+Finally, we also make use of the divisor of $y$. 
+In order to define this we need to distinguish the zeroes of $F(x)$.
+Suppose that $F(x)$ has $l \leq \deg(F)$ distinct zeroes, and let $\gamma_1, \ldots, \gamma_l \in k \subseteq \mathbb P_k^1$ be these zeroes.
+Then if $\gamma_i$ is a branch point let $Q_i = (\gamma_i, 0)$ be the unique point in the pre-image $\pi^{-1}(\gamma_i)$.
+If $\gamma_i$ is not a branch point then let $Q_i = (\gamma_i, 0)$ and $Q_i' = (\gamma_i, H(\gamma_i))$ be the unique points that form the pre-image $\pi^{-1}(\gamma_i)$.
+Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i$.
+
+
+\begin{lemma}
+The divisor of $y$ is
 \begin{equation}\label{divyp=2}
 \di(y) = \begin{cases}
- \di_0(y) -(2g+1)[P_\infty] & \text{if $\infty$ is a branch point,} \\
- \di_0(y) +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] & \text{otherwise.}
+ \sum_{i=1}^l m_i[Q_i] -(2g+1)[P_\infty] & \text{if $\infty$ is a branch point,} \\
+ \sum_{i=1}^l m_i[Q_i] +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] & \text{otherwise.}
 \end{cases}
 \end{equation}
-Here $\di_0(y)$ denotes the divisor of zeroes of the function $y$.
-Note that the second case is not symmetric, which implies a choice with respect to $P_\infty'$ and $P_\infty$, but this will not affect future computations.\todo{prove divisor of $y$}
+\end{lemma}
+\begin{proof}
+We first show that the divisor of the zeroes of $y$ is $\sum_{i=1}^l m_i [Q_i]$, regardless of whether $\infty \in \mathbb P_k^1$ is a branch point.
+
+It is clear that the zeroes of $y$ must occur in the affine part of the curve $X$ defined by \eqref{definep=2} i.e. in $U_\infty$.
+Suppose $P\in U_\infty$.
+If $\left. F \right|_P \neq 0$ then it follows that $y \neq 0$, since $F(x) = y (y + H(x))$.
+
+So now we suppose that $P= Q_i = (\gamma_i, 0)$ is an unramified point in $U_\infty$.
+Then $H(\gamma_i) \neq 0$ and $\left. y \right|_P = 0$, so $y + H(x)$ is a unit at $P$.
+Since $y(y+H(x)) = F(x)$ we find that
+\begin{equation}\label{unramifiedcoefficient}
+\ord_P(y) = \ord_P\left( \frac{F(x)}{y + H(x)} \right) = \ord_P(F(x)) - \ord_P(y+H(x)) = m_i.
+\end{equation}
+
+We now look at when $P = Q_i = (\gamma_i, 0)$ is a ramification point.
+Since $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ cannot share roots, we see that $P$ being a ramification point implies $m_i = 1$.
+Hence we let $\tilde F(x) = \frac{F(x)}{x- \gamma_i}$, which is a unit at $P$.
+We also let $\tilde H(x) = \frac{H(x)}{x- \gamma_i}$.
+Now $y^2 = F(x) - y H(x) = (x- \gamma_i) (\tilde F(x) - y \tilde H(x))$, and hence
+\[
+\ord_P(y^2 ) = \ord_P(x-\gamma_i) + \ord_P(\tilde F(x) - y \tilde H(x)).
+\]
+Since $\ord_P(x-\gamma_i) = 2$ and $\ord_P(\tilde F(x) - y \tilde H(x)) \geq$, we know that $\ord_P(y) \geq 1$.
+Hence $\left. (y \tilde H(x)) \right|_P = 0$, and since $\tilde F(x)$ is a unit at $P$, we conclude that $\tilde F(x) - y \tilde H(x)$ is a unit at $P$.
+Hence we see that $\ord_P(y^2) = 2$, and so $\ord_P(y) = 1 = m_i$.
+So we see that the divisor of zeroes of $y$ is precisely $\sum_{i=1}^l m_i [Q_i]$.
+
+We now consider the poles of $y$.
+Clearly if $\infty$ is a branch point we know that $\deg(F(x)) = 2g+1$ and hence $\sum_{i=1}^l m_i = 2g+1$.
+Since $y$ can only have a pole at $P_\infty$, we conclude that the degree of this pole is $2g+1$, and hence
+\[
+\di(y) = \sum_{i=1}^l m_i [Q_i] - (2g+1)[P_\infty]
+\]
+when $\infty$ is a branch point.
+
+If $\infty$ is a branch point then there are two points at which $y$ may have a pole, namely $P_\infty$ and $P_\infty'$.
+We consider three cases, and remind the reader that $\ord_{P_\infty}(y + H(x)) = \ord_{P_\infty'}(y)$, using the automorphism given by $y \mapsto y+H(x)$.
+Firstly, we suppose that $\ord_{P_\infty}(y) < -(g+1) < -g = \ord_{P_\infty}(H(x))$.
+Then $ \ord_{P_\infty}(y) = \ord_{P_\infty}(y+H(x))$.
+But this contradicts $\ord_{P_\infty}(y) + \ord_{P_\infty}(y+H(x)) = \ord_{P_\infty}(F(x))$, since the left hand side is less than $-2(g+1)$, which is the minimum value of the right hand side.
+
+On the other hand, if $\ord_{P_\infty} (y) = -(g+1)$, we see that since $y(y+H(x)) = F(x)$ it follows that $-(g+1) + \ord_{P_\infty}(y+H(x) = \ord_{P_\infty}(F(x))$, and hence $\ord_{P_\infty}(y+H(x)) = -\deg(F(x)) + g + 1$.
+
+Finally, if $\ord_{P_\infty}(y) > -(g+1)$, then since $\ord_{P_\infty}(H(x)) = -(g+1)$ it follows that $\ord_{P_\infty} (y+H(x)) = -(g+1)$.
+Then, from a similar computation to that in the previous paragraph we see that $\ord_{P_\infty}(y) = -\deg(F(x)) + g +1$, completing the proof.
+\end{proof}
+
+
 
 Finally, we will compute the divisor of $dy$.
 We start by noting that when we take the differential of \eqref{definep=2} we derive
