@@ -317,6 +317,95 @@ Now we compute $\omega_1 - \omega_3$, which is
 \end{align*}
 Hence we see that the functions and differentials above give us an element of $\cechderhamhone(\cU '')$.
 
+
+\begin{lem}
+The following is a legitimate element of $\cechderhamhone(\cU '')$:
+\[
+\left(  \frac{x^3 + x^2 + 1}{yx^2}dx, \frac{x^3}{2y}dx, \frac{1}{2y(x-1)^3} \cdot (2x^3 - x^2 - x -1 )dx, \frac{y}{x^2}, \left(\frac{y}{x^2} - \frac{y}{(x-1)^2} \right) dx, \frac{-y}{(x-1)^2} \right).
+\]
+\end{lem}
+\begin{proof}
+We start by checking that each element is regular on the appropriate open set (recall that $U_1 = X \backslash \pi^{-1}(0), U_2=X \backslash \pi^{-1}(\infty) $ and $U_3 = X \backslash \pi^{-1}(1)$.
+Firstly, we see that $\frac{x^3+x^2+1}{yx^2}dx$ is regular on $U_1$, as can be seen by computing the divisor
+\[
+\di\left(\frac{x^3 + x^2 + 1}{yx^2}dx\right) = \di_0(...) - 3D_\infty -R + 3D_\infty -2D_0 + 2D_\infty - 2D_\infty + R = \di_0(...) -2D_0.
+\]
+
+Secondly we see that $\frac{x^3}{2y} dx$ is regular on $U_2$ since
+\[
+\di\left( \frac{x^3}{2y}dx \right) = 3D_0 - 3D_\infty - R + 3D_\infty +R -2D_\infty = 3D_0 - 2D_\infty.
+\]
+
+
+The last differential we need to check is $\frac{x^3 + x^2 + x+ 1}{2y(x-1)^3}dx$, which has divisor
+\[
+\di_0(x^3+x^2+x+1) - 3D_\infty - R + 3D_\infty + 3D_\infty - 3D_1 -2D_\infty + R = \d_0(x^3+x^2+x+1) + D_\infty - 3D_1.
+\]
+
+Now we check the functions, starting with showing that $\frac{y}{x^2}$ is regular on $U_1 \cap U_2$. 
+This follows from computing the divisor as
+\[
+\di\left( \frac{y}{x^2} \right)  = R - 3D_\infty + 2D_\infty - 2D_0 = R - D_\infty - 2D_0.
+\]
+
+Next we check that $-\left(\frac{y}{x^2} - \frac{y}{(x-1)^2}$ is regular on $U_1 \cap U_3$ by computing the divisor of its square, which is
+\[
+f \left( \frac{1}{x^4} + \frac{1}{(x-1)^4} - \frac{2}{x^2(x-1)^2} \right)  = f \left( \frac{(x-1)^4 + x^4 -2x^2(x-1)^2}{x^4(x-)^4} \right = f \left( \frac{x^2 -x +1}{x^4(x-1)^4} \right).
+\]
+Then we see that
+\[
+\di\left( f \left(\frac{x^2-x+1}{x^4(x-1)^4} \right) \right) = 2R - 6D_\infty - 2D_\infty + \di_0(x^2-x+1) +4D_\infty -4D_0 +4D_\infty - 4D_1 = 2R+ \di_0(x^2-x+1) -4D_0 -4D_1.
+\]
+Since the divisor of $-\left(\frac{y}{x^2} - \frac{y}{(x-1)^2}$ is half of the divisor above, we see it is regular on the desired set.
+
+Lastly, we check that $\frac{-y}{(x-1)^2$ is regular on $U_2 \cap U_3$, again by computing the divisor, which is
+\[
+\di \left( \frac{-y}{(x-1)^2} \right) = R - 3D_\infty + 2D_\infty - 2D_1 = R - D_\infty - 2D_1.
+\]
+
+So now we need to check the relations between the functions and differentials.
+Firstly, we check that $f_{23} - f_{13} + f_{12} =0$, i.e.
+\[
+\frac{y}{x^2} - \left( \frac{y}{x^2} - \frac{y}{(x-1)^2} \right) - \frac{y}{(x-1)^2} =0,
+\]
+which is clearly true.
+
+We know from previous results that $df_{12} = \omega_ 1- \omega_2$.
+
+Now we check that $d \left( \frac{y}{x^2} - \frac{y}{(x-1)^2} \right) = \omega_1 - \omega_3$, and we start by computing the left hand side, as follows:
+\begin{align}
+d \left( \frac{y}{x^2} - \frac{y}{(x-1)^2} \right) & = d \left( \frac{y}{x^2} \right) - d \left ( \frac{y}{(x-1)^2} \right) \\
+& = \frac{1}{x^2}dy + y d\frac{1}{x^2} - yd\frac{1}{(x-1)^2} - \frac{1}{(x-1^2} dy \\
+&  = \frac{f'}{2y} \left( \frac{1}{x^2} - \frac{1}{(x-1)^2} \right) dx + y \left( \frac{-1}{x^3(x-1)^3} \right)dx \\
+& = \frac{1}{2yx^3(x-1)^3} (x(x-1)(x+1)f' +f) dx \\
+& = \frac{1}{2yx^3(x-1)^3} (x^4+x^3+x^2+1)dx.
+\end{align}
+
+On the other hand
+\begin{align}
+\omega_1 - \omega_3 & = \left( \frac{x^3 + x^2 +1}{yx^3} \right)dx -  \frac{1}{2y(x-1)^3} (2x^3-x^2-x-1)dx \\
+& = \frac{1}{2yx^3(x-1)^3} (2(x-1)^3(x^3+x^2+1) - 2x^6 +x^5 +x^4 + x^3)dx \\
+& = \frac{1}{2yx^3(x-1)^3} ( x^4+x^3+x^2+1)dx.
+\end{align}
+
+
+This leaves one more relation to check, namely that $df_{23} = \omega_2 - \omega_3$.
+To start with we note that 
+\begin{align}
+d\left( \frac{y}{(x-1)^2} \right) & = \frac{1}{(x-1)^2} dy + yd\left( \frac{1}{(x-1)^2} \right) \\
+& = \frac{f'}{2y(x-1)^2}dx + \frac{y}{(x-1)^3}dx \\
+& = \frac{1}{2y(x-1)^3} \left( f'(x-1) -f\right)dx \\
+& = \frac{2x^6-x^2-x-1}{2y(x-1)^3}dx.
+\end{align}
+So $d\left( \frac{-y}{(x-1)^2} \right)  = \frac{x^6+x^2+x+1}{2y(x-1)^3}dx$.
+
+On the other hand
+\begin{align}
+\omega_2 - \omega_3 & = \frac{x^3}{2y}dx - \frac{1}{2y(x-1)^3} \cdot (2x^3 - x^2 - x -1 )dx\\
+& = \frac{1}{2yx^3(x-1)^3} \left( x^3(x-1)^3 +x^3+x^2+x+1 \right) dx \\
+& = \frac{1}{2yx^3(x-1)^3}(x^6 +x^2+x+1)dx.
+\end{align}
+
 Need to find one more element. Based on \cite{canonicalrepresentation} we will see if $-\left(\frac{y}{x-1} - \frac{y}{(x-1)^2}\right)$ could be a legitimate element as $f_{231}$.
 Firstly, we note that
 \begin{equation*}
