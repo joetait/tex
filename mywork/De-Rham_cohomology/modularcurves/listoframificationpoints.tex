@@ -321,7 +321,7 @@ Hence we see that the functions and differentials above give us an element of $\
 \begin{lem}
 The following is a legitimate element of $\cechderhamhone(\cU '')$:
 \[
-\left(  \frac{x^3 + x^2 + 1}{yx^2}dx, \frac{x^3}{2y}dx, \frac{1}{2y(x-1)^3} \cdot (2x^3 - x^2 - x -1 )dx, \frac{y}{x^2}, \left(\frac{y}{x^2} - \frac{y}{(x-1)^2} \right) dx, \frac{-y}{(x-1)^2} \right).
+\left(  \frac{x^3 + x^2 + 1}{yx^3}dx, \frac{x^3}{2y}dx, \frac{1}{2y(x-1)^3} \cdot (2x^3 - x^2 - x -1 )dx, \frac{y}{x^2}, \left(\frac{y}{x^2} - \frac{y}{(x-1)^2} \right) dx, \frac{-y}{(x-1)^2} \right).
 \]
 \end{lem}
 \begin{proof}
@@ -339,7 +339,7 @@ Secondly we see that $\frac{x^3}{2y} dx$ is regular on $U_2$ since
 
 The last differential we need to check is $\frac{x^3 + x^2 + x+ 1}{2y(x-1)^3}dx$, which has divisor
 \[
-\di_0(x^3+x^2+x+1) - 3D_\infty - R + 3D_\infty + 3D_\infty - 3D_1 -2D_\infty + R = \d_0(x^3+x^2+x+1) + D_\infty - 3D_1.
+\di_0(x^3+x^2+x+1) - 3D_\infty - R + 3D_\infty + 3D_\infty - 3D_1 -2D_\infty + R = \di_0(x^3+x^2+x+1) + D_\infty - 3D_1.
 \]
 
 Now we check the functions, starting with showing that $\frac{y}{x^2}$ is regular on $U_1 \cap U_2$. 
@@ -348,17 +348,17 @@ This follows from computing the divisor as
 \di\left( \frac{y}{x^2} \right)  = R - 3D_\infty + 2D_\infty - 2D_0 = R - D_\infty - 2D_0.
 \]
 
-Next we check that $-\left(\frac{y}{x^2} - \frac{y}{(x-1)^2}$ is regular on $U_1 \cap U_3$ by computing the divisor of its square, which is
+Next we check that $-\left(\frac{y}{x^2} - \frac{y}{(x-1)^2}\right)$ is regular on $U_1 \cap U_3$ by computing the divisor of its square, which is
 \[
-f \left( \frac{1}{x^4} + \frac{1}{(x-1)^4} - \frac{2}{x^2(x-1)^2} \right)  = f \left( \frac{(x-1)^4 + x^4 -2x^2(x-1)^2}{x^4(x-)^4} \right = f \left( \frac{x^2 -x +1}{x^4(x-1)^4} \right).
+f \left( \frac{1}{x^4} + \frac{1}{(x-1)^4} - \frac{2}{x^2(x-1)^2} \right)  = f \left( \frac{(x-1)^4 + x^4 -2x^2(x-1)^2}{x^4(x-)^4} \right) = f \left( \frac{x^2 -x +1}{x^4(x-1)^4} \right).
 \]
 Then we see that
 \[
 \di\left( f \left(\frac{x^2-x+1}{x^4(x-1)^4} \right) \right) = 2R - 6D_\infty - 2D_\infty + \di_0(x^2-x+1) +4D_\infty -4D_0 +4D_\infty - 4D_1 = 2R+ \di_0(x^2-x+1) -4D_0 -4D_1.
 \]
-Since the divisor of $-\left(\frac{y}{x^2} - \frac{y}{(x-1)^2}$ is half of the divisor above, we see it is regular on the desired set.
+Since the divisor of $-\left(\frac{y}{x^2} - \frac{y}{(x-1)^2}\right)$ is half of the divisor above, we see it is regular on the desired set.
 
-Lastly, we check that $\frac{-y}{(x-1)^2$ is regular on $U_2 \cap U_3$, again by computing the divisor, which is
+Lastly, we check that $\frac{-y}{(x-1)^2}$ is regular on $U_2 \cap U_3$, again by computing the divisor, which is
 \[
 \di \left( \frac{-y}{(x-1)^2} \right) = R - 3D_\infty + 2D_\infty - 2D_1 = R - D_\infty - 2D_1.
 \]
@@ -405,6 +405,7 @@ On the other hand
 & = \frac{1}{2yx^3(x-1)^3} \left( x^3(x-1)^3 +x^3+x^2+x+1 \right) dx \\
 & = \frac{1}{2yx^3(x-1)^3}(x^6 +x^2+x+1)dx.
 \end{align}
+\end{proof}
 
 Need to find one more element. Based on \cite{canonicalrepresentation} we will see if $-\left(\frac{y}{x-1} - \frac{y}{(x-1)^2}\right)$ could be a legitimate element as $f_{231}$.
 Firstly, we note that
@@ -415,7 +416,7 @@ Firstly, we note that
 Next we check that $f_{131} = f_{121} + f_{231}$, as follows 
 \begin{align*}
 \left( \frac{y}{x} - \frac{y(x-2)}{(x-1)^2} \right)^2 & = f \left( \frac{1}{x^2} - \frac{(x-2)^2}{(x-1)^4} \right) - \frac{2(x-2)}{(x-1)^2x} \\
-& = frac{f}{x^2(x-1)^4}.
+& = \frac{f}{x^2(x-1)^4}.
 \end{align*}
 Clearly this has no poles in $U_1 \cap U_3$, as desired.
 
