@@ -320,16 +320,17 @@ Hence we see that the functions and differentials above give us an element of $\
 
 \begin{lem}
 The following elements form a basis of the $k$-vector space $\cechderhamhone(\cU '')$:
-\[
-\left(  \frac{x^3 + x^2 + 1}{yx^3}dx, \frac{x^3}{2y}dx, \frac{2x^3 - x^2 - x -1 }{2y(x-1)^3} dx, \frac{y}{x^2}, \left(\frac{y}{x^2} - \frac{y}{(x-1)^2} \right) dx, \frac{-y}{(x-1)^2} \right)
-\]
+\begin{equation}\label{basis1}
+\left(  \frac{x^3 + x^2 + 1}{yx^3}dx, \frac{x^3}{2y}dx, \frac{2x^3 - x^2 - x -1 }{2y(x-1)^3} dx, \frac{y}{x^2}, \left(\frac{y}{x^2} - \frac{y}{(x-1)^2} \right) , \frac{-y}{(x-1)^2} \right)
+\end{equation}
 and 
-\[
+\begin{equation}\label{basis2}
 \left( \frac{x^3+1}{2yx^2}dx, \frac{x^4+x^2}{y}dx, \frac{2x^4 + x^3 + x^2}{2y(x-1)^3}, \frac{y}{x}, \frac{y}{x} - \left(\frac{y}{x-1} - \frac{y}{(x-1)^2} \right), - \left( \frac{y}{x-1} - \frac{y}{(x-1)^2} \right)\right).
-\]
+\end{equation}
 \end{lem}
 \begin{proof}
-We start by checking that each element is regular on the appropriate open set (recall that $U_1 = X \backslash \pi^{-1}(0), U_2=X \backslash \pi^{-1}(\infty) $ and $U_3 = X \backslash \pi^{-1}(1)$.
+Clearly \eqref{basis1} and \eqref{basis2} are linearly independent over $k$, so we need only show that they are legitimite elements of $\derhamhone(X/k)(\cU'')$.
+We start by showing that \eqref{basis1} satisfies the conditions of \eqref{u``conditions}, and we begin this by checking that each element is regular on the appropriate open set (recall that $U_1 = X \backslash \pi^{-1}(0), U_2=X \backslash \pi^{-1}(\infty) $ and $U_3 = X \backslash \pi^{-1}(1)$).
 Firstly, we see that $\frac{x^3+x^2+1}{yx^2}dx$ is regular on $U_1$, as can be seen by computing the divisor
 \[
 \di\left(\frac{x^3 + x^2 + 1}{yx^2}dx\right) = \di_0(...) - 3D_\infty -R + 3D_\infty -2D_0 + 2D_\infty - 2D_\infty + R = \di_0(...) -2D_0.
@@ -409,6 +410,28 @@ On the other hand
 & = \frac{1}{2yx^3(x-1)^3} \left( x^3(x-1)^3 +x^3+x^2+x+1 \right) dx \\
 & = \frac{1}{2yx^3(x-1)^3}(x^6 +x^2+x+1)dx.
 \end{align}
+So we conclude that \eqref{basis1} is a legitimate element of $\derhamhone(X/k)(\cU``)$.
+
+We now consider \eqref{basis2}, and as we before we start by showing each entry is regular on the appropriate set.
+We already know that $\frac{y}{x}$ is regular on $U_1 \cap U_2$.
+Next we look note that
+\[
+\frac{y}{x-1} - \frac{y}{(x-1)^2} = \frac{y(x+1)}{(x-1)^2}
+\]
+and the divisor of this is
+\[
+\di\left( \frac{y(x+1)}{(x-1)^2} \right)  = R - 3D_\infty + D_{-1} - D_\infty + 2D_\infty - 2D_1 = R - 2D_\infty + D_{-1} - 2D_1
+\]
+so clearly this function is regular on $U_2 \cap U_3$.
+Lastly we consider the divisor
+\begin{align}
+\di\left( \frac{y}{x} - y\frac{x+1}{(x-1)^2} \right) & = \di \left( \frac{y}{(x-1)^2x} \\
+& = R - 3D_\infty + 2D_\infty - 2D_1 + D_\infty - D_0 \\
+& = R -2D_1 -D_0
+\end{align}
+which is clearly positive on $U_1 \cap U_3$.
+
+
 \end{proof}
 
 Need to find one more element. Based on \cite{canonicalrepresentation} we will see if $-\left(\frac{y}{x-1} - \frac{y}{(x-1)^2}\right)$ could be a legitimate element as $f_{231}$.
