@@ -319,9 +319,13 @@ Hence we see that the functions and differentials above give us an element of $\
 
 
 \begin{lem}
-The following is a legitimate element of $\cechderhamhone(\cU '')$:
+The following elements form a basis of the $k$-vector space $\cechderhamhone(\cU '')$:
 \[
-\left(  \frac{x^3 + x^2 + 1}{yx^3}dx, \frac{x^3}{2y}dx, \frac{1}{2y(x-1)^3} \cdot (2x^3 - x^2 - x -1 )dx, \frac{y}{x^2}, \left(\frac{y}{x^2} - \frac{y}{(x-1)^2} \right) dx, \frac{-y}{(x-1)^2} \right).
+\left(  \frac{x^3 + x^2 + 1}{yx^3}dx, \frac{x^3}{2y}dx, \frac{2x^3 - x^2 - x -1 }{2y(x-1)^3} dx, \frac{y}{x^2}, \left(\frac{y}{x^2} - \frac{y}{(x-1)^2} \right) dx, \frac{-y}{(x-1)^2} \right)
+\]
+and 
+\[
+\left( \frac{x^3+1}{2yx^2}dx, \frac{x^4+x^2}{y}dx, \frac{2x^4 + x^3 + x^2}{2y(x-1)^3}, \frac{y}{x}, \frac{y}{x} - \left(\frac{y}{x-1} - \frac{y}{(x-1)^2} \right), - \left( \frac{y}{x-1} - \frac{y}{(x-1)^2} \right)\right).
 \]
 \end{lem}
 \begin{proof}
@@ -459,7 +463,7 @@ From this we can compute what $\omega_3$ should be, which is
 
 We next check that this is regular on $U_3 = X \backslash \pi^{-1}(1)$, a condition it must satisfy, by computing the divisor of the differential, which is
 \begin{align}
-\di( \omega_3 ) = 3D_\infty -R+3D_\infty - 3D_1 + \di_0(2x^4+x^3+x^2) - 4D_\infty +R -2D_\infty \\
+\di( \omega_3 ) & = 3D_\infty -R+3D_\infty - 3D_1 + \di_0(2x^4+x^3+x^2) - 4D_\infty +R -2D_\infty \\
 & = \di_0(2x^4 + x^3 +x^2) -3D_1,
 \end{align}
 and hence the differential is regular on $U_3$.
