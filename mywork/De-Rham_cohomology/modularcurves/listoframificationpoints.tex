@@ -317,6 +317,7 @@ Now we compute $\omega_1 - \omega_3$, which is
 \end{align*}
 Hence we see that the functions and differentials above give us an element of $\cechderhamhone(\cU '')$.
 
+\pagebreak
 
 \begin{lem}
 The following elements form a basis of the $k$-vector space $\cechderhamhone(\cU '')$:
@@ -414,7 +415,7 @@ So we conclude that \eqref{basis1} is a legitimate element of $\derhamhone(X/k)(
 
 We now consider \eqref{basis2}, and as we before we start by showing each entry is regular on the appropriate set.
 We already know that $\frac{y}{x}$ is regular on $U_1 \cap U_2$.
-Next we look note that
+Next we note that
 \[
 \frac{y}{x-1} - \frac{y}{(x-1)^2} = \frac{y(x+1)}{(x-1)^2}
 \]
@@ -425,12 +426,62 @@ and the divisor of this is
 so clearly this function is regular on $U_2 \cap U_3$.
 Lastly we consider the divisor
 \begin{align}
-\di\left( \frac{y}{x} - y\frac{x+1}{(x-1)^2} \right) & = \di \left( \frac{y}{(x-1)^2x} \\
+\di\left( \frac{y}{x} - y\frac{x+1}{(x-1)^2} \right) & = \di \left( \frac{y}{(x-1)^2x} \right) \\
 & = R - 3D_\infty + 2D_\infty - 2D_1 + D_\infty - D_0 \\
 & = R -2D_1 -D_0
 \end{align}
 which is clearly positive on $U_1 \cap U_3$.
 
+We also need to check that the differentials are regular on the appropriate sets.
+We already know from previous work that the first two entries in \eqref{basis2} are regular on $U_1$ and $U_2$ respectively.
+We now check that the third entry is regular on $U_3$ by computing the divisor, as follows:
+\begin{align}
+\di\left( \frac{2x^4+x^3+x^2}{2y(x-1)^3}dx \right) & = \di_0(2x^4+x^3+x^2) - 4D_\infty+ 3D_\infty - R + 3D_\infty - 3D_1 +R - 2D_\infty \\
+& = \di_0(2x^4 + x^3 + x^2) - 3D_1.
+\end{align}
+This is clearly positive on $U_3$ and hence all the entries in \eqref{basis2} are regular on the requisite open sets.
+
+We now check the relations between the functions and differentials.
+Firstly, is is clear that
+\[
+\frac{y}{x} - \left( \frac{y}{x} - \left( \frac{y}{x-1} - \frac{y}{(x-1)^2} \right) \right) +  \left( - \left( \frac{y}{x-1} - \frac{y}{(x-1)^2} \right) \right)  = 0.
+\]
+
+Again, we know from previous work that
+\[
+d \left( \frac{y}{x} \right) = \frac{x^3+1}{2yx^2}dx + \frac{x^4 + x^2}{2y}dx.
+\]
+
+Before checking the last two relations we compute the differentials of the last two entries in \eqref{basis2}.
+Firstly
+\begin{align}
+d \left(  \frac{y(x+1)}{(x-1)^2} \right) & = \frac{1}{(x-1)^2}d(y(x+1)) + y(x+1)d \left( \frac{1}{(x-1)^2} \right) \\
+& = \frac{x+1}{(x-1)^2} dy + \frac{y}{(x-1)^2}dx + \frac{y(x+1)}{(x-1)^3} dx \\
+& = \frac{1}{2y(x-1)^3} ( f'(x+1)(x-1) - (x-1)f - (x+1)f)dx \\
+& = \frac{x^7 + x^5 + x^4 + x^3}{2y(x-1)^3}dx
+\end{align}
+and secondly
+\begin{align}
+d \left( \frac{y}{x(x-1)^2} \right) & = \frac{1}{(x-1)^2x}dy + yd\left( \frac{1}{(x-1)^2x} \right) \\
+& = \frac{f'}{2y(x-1)^2x}dx + \frac{y}{(x-1)^2}d \left( \frac{1}{x} \right) + \frac{y}{x} d \left( \frac{1}{(x-1)^2} \right) \\
+& = \frac{f'}{2y(x-1)^2x}dx - \frac{y}{(x-1)^2x^2}dx + \frac{y}{x(x-1)^3} dx \\
+& = \frac{1}{(2y(x-1)^3x^2}(x(x-1)f' + f(x+1) - fx) dx \\
+& = \frac{1}{y(x-1)^3x^2}(x^6 + x^5 + x^4 + x^3)dx.
+\end{align}
+
+Then we can see that
+\begin{align}
+\frac{x^4 + x^2}{y}dx - \frac{2x^4 + x^3 + x^2}{2y(x-1)^3}dx & = \frac{1}{2y(x-1)^3}(2(x-1)^3(x^4+ x^2) + x^4-x^3 - x^2)dx \\
+& = \frac{1}{2y(x-1)^3}(2x^7 + 2x^5 + 2x^4 + 2x^3)dx \\
+& = d \left(-\left( \frac{y(x+1)}{(x-1)^2} \right) \right).
+\end{align}
+
+We finally check the last relation, which is
+\begin{align}
+\frac{x^3+1}{2yx^2}dx - \frac{1}{2y(x-1)^3}(2x^4 + x^3 + x^2)dx & = \frac{1}{2yx^2(x-1)^3}((x-1)^3(x+1)^3 + x^6 + 2x^5 + 2x^4) dx \\
+& = \frac{1}{2yx^2(x-1)^3}(2x^6 + 2x^5 + 2x^4 +2)dx \\
+& = d\left(\frac{y}{x(x-1)^2} \right).
+\end{align}
 
 \end{proof}
 
