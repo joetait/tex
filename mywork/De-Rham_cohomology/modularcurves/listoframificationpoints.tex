@@ -484,6 +484,7 @@ We finally check the last relation, which is
 \end{align}
 
 \end{proof}
+\begin{comment}
 
 Need to find one more element. Based on \cite{canonicalrepresentation} we will see if $-\left(\frac{y}{x-1} - \frac{y}{(x-1)^2}\right)$ could be a legitimate element as $f_{231}$.
 Firstly, we note that
@@ -550,7 +551,27 @@ Now we need to check that this also works with $d(f_{13}) = \omega_1 - \omega_3$
 & = d(f_{13}).
 \end{align}
 Hence the elements above form another (clearly linearly independent element) of $\derhamhone_{X/k}(\cU'')$.
+\end{comment}
 
+Now we need to see how the group element acts on this basis.
+To start, we recall the action on $x$ is 
+\[
+\tau:x \mapsto x+1.
+\]
+
+We also need to work out how $\tau$ acts on $y$.
+Since we know the action on $x$ and $y^2 = f(x)$ we see that $\tau(y^2) = f(x)+x^3$.
+It may also be useful to note that $\tau(f') = f'$, and also that $\tau(d(y^2)) = d(y^2)$.
+We will use the equality $\tau(y)^2 = y^2 + x^3$ to show that there is not element of $K(X)$ which $\tau$ can map $y$ to.
+We know that any element of $K(X)$ can be written in the form $yg_1(x) + g_2(x)$ for some $g_1, g_2 \in k(x)$.
+In particular, we suppose that $\tau(y)  = yg_1(x) + g_2(x)$.
+Then $(yg_1(x) + g_2(x))^2 = y^2g_1(x)^2 + 2yg_1(x)g_2(x) + g_2(x)^2$, and if this is to equal $y^2 + x^3$ then we must have $2yg_1(x)g_2(x) = 0$.
+Hence one of $g_1$ or $g_2$ is zero. 
+By considering the degrees of the two polynomials we see that $g_1$ must have degree at most 1.
+But there is no constant $a$ such that $ay^2 = y^2 + x^3$.
+Hence we must have $g_1 = 0$.
+So we need to see if there exists some $g_2(x)$ such that $g_2(x)^2 = f(x) + x^3 = x^6 + 2x^4 + 2x^3 + 2x^2 + 1$.
+By multiplying out $(ax^3 + bx^2 + cx^ + d)^2$ and comparing coefficients we see that this is not possible.
 \bibliography{biblio}
 \bibliographystyle{amsalpha}
 
