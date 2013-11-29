@@ -572,6 +572,22 @@ But there is no constant $a$ such that $ay^2 = y^2 + x^3$.
 Hence we must have $g_1 = 0$.
 So we need to see if there exists some $g_2(x)$ such that $g_2(x)^2 = f(x) + x^3 = x^6 + 2x^4 + 2x^3 + 2x^2 + 1$.
 By multiplying out $(ax^3 + bx^2 + cx^ + d)^2$ and comparing coefficients we see that this is not possible.
+
+This isn't a group action because we are using the wrong model for the curve.
+We should be using a model in which all powers are even.
+If we map $x$ to $x$ plus a constant $c$, and then set $y^2$ equal $f(x+c)$, we get an isomorphic function field.
+Note that $f(x-1) = x^6 + 2x^4 + 2x^2 + 2$.
+Then if we now set $f(x) = x^6 + 2x^4 + 2x^2 + 2$ then we see that $f*(x) = x^6 + x^4 + x^2 + 2$.
+Then if we compute $f*(x+c) - f*(x)$ we see that
+\[
+f*(x) - f*(x+c) = (2c^3+c)x^3 + (c^3+2c)x + c^6 + c^4 + c^2.
+\]
+Clearly if $c=1$ then all of these coefficients are zero.
+
+Hence we have an action given by $x \mapsto x+1$ and $y \mapsto y$.
+We need to check that the image of the basis in the above lemma under the map $x  \mapsto x-1$ is still a basis when $y^2 = f*(x)$ (where this is our newly defined $f(x)$).
+
+
 \bibliography{biblio}
 \bibliographystyle{amsalpha}
 
