@@ -588,6 +588,31 @@ Hence we have an action given by $x \mapsto x+1$ and $y \mapsto y$.
 We need to check that the image of the basis in the above lemma under the map $x  \mapsto x-1$ is still a basis when $y^2 = f*(x)$ (where this is our newly defined $f(x)$).
 
 
+From now on we let $f= x^6 + x^4 + x^2 + 2$, and note that then $f' = x^3 + 2x$.
+Then we also note that
+\[
+s_2(x) = f'-\frac{f}{x} = 2\right(x^5 + 2x+ \frac{1}{x}\left)
+\]
+and
+\[
+s_1(x) = f' + \frac{f}{x} = x^5 + 2x^3 + \frac{2}{x}.
+\]
+
+We firstly claim that
+\[
+\left( \frac{2x^2 + 2}{2yx^3}dx, \frac{x^3}{y}dx, \frac{x^3 + x^2 + x + 1}{2y(x-1)^3}dx, \frac{y}{x^2}, \left( \frac{y}{x^2} - \frac{y}{(x-1)^2}\right), \frac{-y}{(x-1)^2}\right)
+\]
+is an element of $\derhamhone$, where $X$ is now defined by our new $f$.
+From previous paper and lemma we the only condiations to check are that $df_{13} = \omega_1 - \omega_3$ and $df_{23} = \omega_2 - \omega_3$.
+
+We see from the proof of the earlier lemma that
+\begin{align}
+df_{13} & = \frac{1}{2yx^3(x-1)^3} (x(x-1)(x+1)f' + f)dx \\
+& = \frac{1}{2yx^3(x-1)^3}(2x^6 + 2x^4 + 2x^2 + 2)dx \\
+& = \frac{1}{2yx^3(x-1)^3}((x^5 + x^3 + 2x^2 + 2) + 2(x^6 + x^5 + x^4 + x^3))dx \\
+& = \omega_1 - \omega_3.
+\end{align}
+
 \bibliography{biblio}
 \bibliographystyle{amsalpha}
 
