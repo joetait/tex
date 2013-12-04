@@ -572,12 +572,12 @@ We now decompose these polynomials into two parts, which will be used in the seq
 Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x)\in k(x)$ and $\phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\psi_i (x)$ is at most $g+1$ and $x^{g+2}$ divides $\phi_i(x)$.
 
 
-Secondly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that $x^i$ does not divide any monomial of $\Psi_i(x,y)$, and $\Phi_i(x,y)$ is divisible by $x^i$.
+Secondly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that $\Phi_i(x,y)$ is divisible by $x^i$ and no monomial of $\Psi_i(x,y)$ has a factor of $x^i$.
 
 Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $k$-vector space basis of $\derhamhone$.
 \begin{thm}\label{basis}
 
-If $p \neq 2$ then the residue classes of the elements 
+If $p \neq 2$ then the residue classes of 
 \begin{equation}\label{one}
  \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right), i=1, \ldots ,g,
 \end{equation}
@@ -601,63 +601,63 @@ form a basis of $\derhamhone$.
 Before proving this theorem we use it to prove the following corollary.
 
 \begin{cor}
-The action of $G$ on $\derhamhone$ is faithful unless $G$ contains a hyperelliptic involution and $p=2$, in which case the action is trivial.
+The action of $G$ on $\derhamhone$ is faithful unless $G$ contains a hyperelliptic involution and $p=2$, in which case the action of the involution $\sigma:(x,y) \mapsto (x,y+H(x))$ is trivial.
 \end{cor}
 
 \begin{proof}
 Recall that $H^0(X,\Omega_X)$ injects into $\derhamhone$.
-Then if $p \neq 2$ or $G$ does not contain a hyperelliptic involution, it follows from the main theorem of \cite{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
+Then if $p \neq 2$ or $G$ does not contain a hyperelliptic involution it follows from \cite[Thm. 4.2]{faithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
 
 We now suppose that $p=2$ and that $G$ contains a hyperelliptic involution, which we denote by $\sigma$.
 By the same theorem from \cite{faithfulaction} as used in the last paragraph, we know that $\sigma$ acts trivially on $\hzero$.
-Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully on $\hone$.
 
-We can study exactly why this is from the view of \cech cohomology, and this will also help to determine the action on $\derhamhone$.
-If we fix a natural number $i$ then $\frac{y}{x^i}$, considered as an element of $\cO_X(U_0\cap U_\infty)$, is mapped to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
+Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully on $\hone$.
+We can study exactly why this is from the view of \cech cohomology, and this will also help to determine the action of $\sigma$ on $\derhamhone$.
+If we fix a natural number $i\in \{1, \ldots ,g\}$ then $\sigma$ maps $\frac{y}{x^i}$ to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
 Now we can split $\frac{H(x)}{x^i}$ as follows, 
 \begin{equation*}
-\frac{H(x)}{x^i} =  \frac{b_{i-1}x^{i-1} + \ldots + b_1x}{x^i} - \left( - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i} \right),
+\frac{H(x)}{x^i} =  \frac{b_{i-1}x^{i-1} + \ldots + b_1x + b_0}{x^i} - \left( - \frac{x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i}{x^i} \right),
 \end{equation*}
 and since this is clearly the difference of an element of $\cO_X(U_0)$ and an element of $\cO_X(U_\infty)$ we see that $\frac{H(x)}{x^i}$ is zero in $\hone$.
 We let 
 \[
-{}_iH_1(x) = b_{i-1}x^{i-1} + \ldots + b_1x
+H_{1,i}(x) = b_{i-1}x^{i-1} + \ldots + b_1x
 \]
 and 
 \[
-{}_iH_2(x) = - x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i.
+H_{2,i}(x) = -( x^d + b_{d-1}x^{d-1} + \ldots + b_ix^i).
 \]
 
 We now consider the action of $\sigma$ on the entries in \eqref{three}.
 Firstly we see that
 \begin{align*}
-\sigma \left( \left( \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx\right) & = \left( \frac{-\sigma(\Psi(x,y))}{x^{i+1} H(x)} \right) dx \\
-& = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + \left(\frac{H(x)(x{}_iH_1'(x) + i{}_iH_1'(x))}{x^{i+1}H(x)}\right)  dx\\
-& = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + \left(\frac{x{}_iH_1'(x) + i{}_iH_1(x)}{x^{i+1}}\right) dx \\
-& = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + \left( \frac{{}_iH_1'(x)}{x^i}dx + \frac{i{}_iH)1'(x)}{x^{i+1}}dx \right) \\
-& = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + \left( \frac{1}{x^i}d\left( {}_iH_1(x) \right) + {}_iH_1(x) d \left( \frac{1}{x^i} \right) \right) \\
-& = \left( \frac{-\Psi(x,y)}{x^{i+1}H(x)} \right)dx + d\left( \frac{{}_iH_1(x)}{x^i} \right),
+\sigma \left( \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} dx\right) & = \frac{-\sigma(\Psi_i(x,y))}{x^{i+1} H(x)} dx \\
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} + \frac{H(x)(xH_{1,i}'(x) + iH_{1,i}'(x))}{x^{i+1}H(x)}dx\\
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} + \frac{xH_{1,i}'(x) + iH_{1,i}(x)}{x^{i+1}}dx \\
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} +  \frac{H_{1,i}'(x)}{x^i}dx + \frac{iH_{1,i}'(x)}{x^{i+1}}dx \\
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} +  \frac{1}{x^i}d\left( H_{1,i}(x) \right) + H_{1,i}(x) d \left( \frac{1}{x^i} \right) \\
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} + \left( \frac{H_{1,i}(x)}{x^i} \right),
 \end{align*}
 where the second equality follows from \eqref{capitals} and the fact that $\sigma(y) = y + H(x)$.
 
 Similarly we can derive
 \begin{equation*}
-\sigma \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} dx \right)  = \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx + d \left( \frac{{}_iH_2(x)}{x^i} \right).
+\sigma \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} dx \right)  = \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx + d \left( \frac{{}_iH_{2,i}(x)}{x^i} \right).
 \end{equation*}
 Lastly, it is clear that $\sigma(x^{-i}y) = x^{-i}(y+H(x))$.
 
 
-We can now describe exactly how sigma acts on the elements of \eqref{three} using ${}_iH_1(x)$ and ${}_iH_2(x)$:
+We can now describe exactly how sigma acts on the elements of \eqref{three} using $H_{1,i}(x)$ and $H_{2,i}(x)$:
 \begin{multline}
 \sigma \left( \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right)\right) = \\
- \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + d\left(\frac{{}_iH'_1(x)}{x^i}\right),  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ d\left(\frac{{}_iH'_2(x)}{x^i} \right), x^{-i}(y+H(x)) \right).
+ \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + d\left(\frac{H'_{1,i}(x)}{x^i}\right),  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ d\left(\frac{H'_{2,i}(x)}{x^i} \right), \frac{y+H(x)}{x^i} \right).
 \end{multline}
-So the action on the basis elements in \eqref{three} is equivalent to adding 
+So the action of $\sigma$ on the basis elements in \eqref{three} amounts to adding 
 \[
-\left( d\left(\frac{{}_iH_1'}{x^i}\right), d\left(\frac{{}_iH_2'}{x^i}\right), x^{-i}H(x) \right),
+\left( d\left(\frac{H_{1,i}'}{x^i}\right), d\left(\frac{H_{2,i}'}{x^i}\right), \frac{H(x)}{x^i} \right),
 \]
 which clearly satisfies the conditions of \eqref{quotient} and hence is zero.
-So the action of the involution $\sigma$ on $\derhamhone$ is trivial and hence the action of the group $G$ is not faithful.
+So the action of the involution $\sigma$ on $\derhamhone$ is trivial and hence the action of the group $G$ is not faithful.\todo{consider computing the action when $p\neq 2$}
 \begin{comment}
 Hence the action is trivial if and only if ${}_iH_1'(x)dx = {}_iH_2'(x)dx =0$.
 This cannot happen though, since we can always find an $l\in \{0,1\}$ such that $l \not\equiv d\ \text{mod}\ 2$, and then $d\left({}_iH_2(x)\right) = {}_iH_2'(x)dx \neq 0$, as we can see from the leading term (unless of course $d$ is zero, in which case $d\left({}_iH_1(x)\right) \neq 0$).
@@ -830,6 +830,7 @@ Thus we have completed the proof.
 \end{proof}
 
 \section{Computing the residue}
+\todo[inline]{check that don't need to change any basis elements after multiplying $s_i$ by $x$}
 
 Introduction needs to be finalised once the proof in the previous section is completed.
 In particular, if the exact residue can be computed then we may as well do so.
