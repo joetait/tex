@@ -142,7 +142,7 @@ By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite
 In general we let $U_a = X \backslash \pi^{-1}(a)$ for any $a \in \mathbb P_k^1$ and we let ${\cal U} = \{ U_0, U_\infty\}$.
 Given any sheaf $\cal F$ on $X$ we have a canonical map $\check{d}\colon {\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, defined by $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
 In general we will suppress the notation denoting the restriction map.
-Via this differential we have the following cochain
+Via this differential we have the following cochain complex
 \begin{equation*}
 0 \rightarrow \cO_X(U_0)\times \cO_X(U_\infty) \xrightarrow{\check{d}} \cO_X(U_0 \cap U_\infty) \rightarrow 0.
 \end{equation*}
@@ -177,7 +177,7 @@ since $U_0$ and $U_\infty$ are affine, this again follows from Serre's affinenes
 
 
 
-After computing the first cohomology group of the total complex of \eqref{bicomplex} we see that $H^1_{{\text dR}}(X/k)$ is isomorphic to the space
+After computing the first cohomology group of the total complex of \eqref{bicomplex} we see that $\derhamhone$ is isomorphic to the space
 \begin{equation}\label{derhamconditions}
 \left\{(\omega_0, \omega_\infty, f_{0,\infty}) | \omega_i\in \Omega_{X/k}(U_i), f_{0,\infty}\in \cO_X(U_0 \cap U_\infty), df_{0,\infty} = \omega_0|_{U_0\cap U_\infty} - \omega_\infty|_{U_0\cap U_\infty} \right\}
 \end{equation}
@@ -191,6 +191,7 @@ To do this we will compute $k$-bases for the two outer terms of the short exact 
 \begin{equation}\label{ses}
 0 \ra H^0(X,\Omega_X) \ra \derhamhone \ra H^1(X,\cO_X) \ra 0.
 \end{equation}
+\todo[inline]{make this in to a lemma?}
 A basis of $H^0(X,\Omega_X)$ is already available in the literature (see, for example, \cite[Prop. 7.4.26]{liu}) so we need only compute a basis of $H^1(X,\cO_X)$, which we do in the next section.
 
 Before the next section we briefly discuss the exact sequence \eqref{ses}.
@@ -199,11 +200,12 @@ Firstly, $\cechhzero \cong \hzero$ is the kernel of
 0 \ra \Omega_X(U_0) \times \Omega_X(U_\infty) \ra \Omega_X(U_0 \cap U_\infty ) \ra 0,
 \]
 i.e. elements of the form $(\omega, \omega)$.
-Hence we can define an injection $\hone \ra \derhamhone$ given by
+Hence we can define an injection $\hzero \ra \derhamhone$ given by\todo{justify why an injection}
 \[
 (\omega, \omega) \mapsto (\omega, \omega, 0).
 \]
-On the other hand, we have an obvious surjection $\derhamhone \ra \hone$ given by
+\todo[inline]{change the above to just $\omega$, not $(\omega,\omega)$}
+On the other hand, we have an obvious surjection $\derhamhone \ra \hone$ induced by\todo{justify why a surjection}
 \[
 (\omega_0, \omega_\infty, f_{0, \infty}) \mapsto f_{0, \infty}.
 \]
@@ -215,7 +217,7 @@ Then
 & = (\omega_0 - df_0, \omega_\infty - df_\infty, 0)
 \end{align*}
 where the first equality follows from \eqref{quotient}.
-By \eqref{derhamconditions} we know that $(\omega_0 - df_0)  - (\omega_\infty - df_\infty) = d0 = 0$,  and hence $(\omega_0, \omega_\infty, f_{0, \infty})$ is in the image of $\hzero \ra \derhamhone$.
+By \eqref{derhamconditions} we know that $(\omega_0 - df_0)  - (\omega_\infty - df_\infty) = d0 = 0$ on $U_0 \cap U_\infty$,  and hence $(\omega_0, \omega_\infty, f_{0, \infty})$ is in the image of $\hzero \ra \derhamhone$.
 
 
 \section{Basis of $\derhamhone$}
@@ -223,15 +225,7 @@ By \eqref{derhamconditions} we know that $(\omega_0 - df_0)  - (\omega_\infty - 
 The bases of the $k$-vector spaces in \eqref{ses} will be given in terms of defining equations of the hyperelliptic curve $X$, so we describe these now.
 Throughout we will denote by $P_a$ and $P_a'$ the unique elements of $\pi^{-1}(a)$ for any point $a \in \mathbb P_k^1$ that is not a branch point.
 If $a \in \mathbb P_k^1$ is a branch point we denote the unique point in $\pi^{-1}(a)$ by $P_a$.
-
-If $p \neq 2$ then the extension $K(X)$ of $K(\mathbb P_k^1) = k(x)$ will be $k(x,y)$ where $y$ satisfies
-\begin{equation}\label{definingequationpnot2}
-y^2 = f(x)
-\end{equation}
-for some polynomial $f(x) \in k[x]$, of degree $2g+1$ or $2g+2$ \cite[Prop 7.4.24]{liu}.
-
-For any $a\in \mathbb P_k^1$ we let $D_a$ denote the divisor $\pi^*([a])$.
-Hence 
+We also define $D_a$ to be the divisor $\pi*([a])$ for any $a \in \mathbb P_k^1$, and hence
 \begin{equation}\label{divisorofpoints}
 D_a= 
 \begin{cases}
@@ -239,14 +233,26 @@ D_a=
  [P_a] + [P_a'] & \text{otherwise,}
 \end{cases}
 \end{equation}
-with $P_a, P_a' \in X$.
 With this notation we clearly have
 \begin{equation}\label{divxp=2}
-\di (x)  = D_0 - D_\infty.
+\di (x)  = D_0 - D_\infty
 \end{equation}
-We then let $R$ be the ramification divisor of $\pi$, and recall from \cite[\S 6]{faithfulaction} that
+regardless of the characteristic of $k$.
+Also, as in \cite[\S 6]{faithfulaction}, we have
+\[
+\di(dx) = R - 2D_\infty,
+\]
+again regardless of characteristic.
+
+If $p \neq 2$ then the extension $K(X)$ of $K(\mathbb P_k^1) = k(x)$ will be $k(x,y)$ where $y$ satisfies
+\begin{equation}\label{definingequationpnot2}
+y^2 = f(x)
+\end{equation}
+for some polynomial $f(x) \in k[x]$, of degree $2g+1$ or $2g+2$ \cite[Prop 7.4.24]{liu}.
+
+We let $R$ be the ramification divisor of $\pi$, and recall from \cite[\S 6]{faithfulaction} that
 \begin{equation}\label{pnot2divisors}
-\di(y)  = R - (g+1)D_\infty \text{ and } \di( dx) = R - 2D_\infty.
+\di(y)  = R - (g+1)D_\infty.
 \end{equation}
 
 
@@ -258,42 +264,41 @@ for some $H(x),F(x) \in k[x]$, such that $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ shar
 We require that $\deg(H(x)) \leq g+1$, with equality if and only $\infty$ is not a branch point, and that $\deg(F(x)) \leq 2g+2$ with $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point  \cite[Prop 7.4.24]{liu}.
 
 
-
-Again, we let $R$ denote the ramification divisor, which we write explicitly below, and $D_a = \pi^*([a])$.
-We now recall the following divisors from \cite[\S 6]{faithfulaction}, which we will make use of throughout this article:
-\begin{align}
-\di (dx) & = R - 2D_\infty \label{divdxp=2}\\
-\di (H(x)) & = R - (g+1)D_\infty \label{divhp=2}
-\end{align}
+We now recall the divisor of $H(x)$ from \cite[\S 6]{faithfulaction}:
+\begin{equation}
+\di (H(x))  = R - (g+1)D_\infty. \label{divhp=2}
+\end{equation}
 Finally, we also make use of the divisor of $y$. 
-In order to define this we need to distinguish the zeroes of $F(x)$.
+In order to describe this we need to distinguish the zeroes of $F(x)$.
 Suppose that $F(x)$ has $l \leq \deg(F)$ distinct zeroes, and let $\gamma_1, \ldots, \gamma_l \in k \subseteq \mathbb P_k^1$ be these zeroes.
 Then if $\gamma_i$ is a branch point let $Q_i = (\gamma_i, 0)$ be the unique point in the pre-image $\pi^{-1}(\gamma_i)$.
 If $\gamma_i$ is not a branch point then let $Q_i = (\gamma_i, 0)$ and $Q_i' = (\gamma_i, H(\gamma_i))$ be the unique points that form the pre-image $\pi^{-1}(\gamma_i)$.
 Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i$.
 
 
-\begin{lem}
-The divisor of $y$ is
+\begin{prop}
+Suppose that $p=2$.
+Then, without loss of generality, the divisor of $y$ is
 \begin{equation}\label{divyp=2}
 \di(y) = \begin{cases}
  \sum_{i=1}^l m_i[Q_i] -(2g+1)[P_\infty] & \text{if $\infty$ is a branch point,} \\
  \sum_{i=1}^l m_i[Q_i] +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] & \text{otherwise.}
 \end{cases}
 \end{equation}
-\end{lem}
+\end{prop}
 \begin{proof}
 We first show that the divisor of the zeroes of $y$ is $\sum_{i=1}^l m_i [Q_i]$, regardless of whether $\infty \in \mathbb P_k^1$ is a branch point.
 
 It is clear that the zeroes of $y$ must occur in the affine part of the curve $X$ defined by \eqref{definep=2} i.e. in $U_\infty$.
 Suppose $P\in U_\infty$.
 If $\left. F \right|_P \neq 0$ then it follows that $y \neq 0$, since $F(x) = y (y + H(x))$.
+Hence $\di_0(y)$ has zero coefficients for any point in $U_\infty$ other than the $Q_i$.\todo{check that $\di_0$ is defined}
 
 So now we suppose that $P= Q_i = (\gamma_i, 0)$ is an unramified point in $U_\infty$.
 Then $H(\gamma_i) \neq 0$ and $\left. y \right|_P = 0$, so $y + H(x)$ is a unit at $P$.
 Since $y(y+H(x)) = F(x)$ we find that
 \begin{equation}\label{unramifiedcoefficient}
-\ord_P(y) = \ord_P\left( \frac{F(x)}{y + H(x)} \right) = \ord_P(F(x)) - \ord_P(y+H(x)) = m_i.
+\ord_P(y) = \ord_P\left( \frac{F(x)}{y + H(x)} \right) = \ord_P(F(x)) = m_i.
 \end{equation}
 
 We now look at when $P = Q_i = (\gamma_i, 0)$ is a ramification point.
@@ -304,7 +309,7 @@ Now $y^2 = F(x) - y H(x) = (x- \gamma_i) (\tilde F(x) - y \tilde H(x))$, and hen
 \[
 \ord_P(y^2 ) = \ord_P(x-\gamma_i) + \ord_P(\tilde F(x) - y \tilde H(x)).
 \]
-Since $\ord_P(x-\gamma_i) = 2$ and $\ord_P(\tilde F(x) - y \tilde H(x)) \geq$, we know that $\ord_P(y) \geq 1$.
+Since $\ord_P(x-\gamma_i) = 2$ and $\ord_P(\tilde F(x) - y \tilde H(x)) \geq$ we know that $\ord_P(y) \geq 1$.
 Hence $\left. (y \tilde H(x)) \right|_P = 0$, and since $\tilde F(x)$ is a unit at $P$, we conclude that $\tilde F(x) - y \tilde H(x)$ is a unit at $P$.
 Hence we see that $\ord_P(y^2) = 2$, and so $\ord_P(y) = 1 = m_i$.
 So we see that the divisor of zeroes of $y$ is precisely $\sum_{i=1}^l m_i [Q_i]$.
@@ -323,7 +328,7 @@ Firstly, we suppose that $\ord_{P_\infty}(y) < -(g+1) < -g = \ord_{P_\infty}(H(x
 Then $ \ord_{P_\infty}(y) = \ord_{P_\infty}(y+H(x))$.
 But this contradicts $\ord_{P_\infty}(y) + \ord_{P_\infty}(y+H(x)) = \ord_{P_\infty}(F(x))$, since the left hand side is less than $-2(g+1)$, which is the minimum value of the right hand side.
 
-On the other hand, if $\ord_{P_\infty} (y) = -(g+1)$, we see that since $y(y+H(x)) = F(x)$ it follows that $-(g+1) + \ord_{P_\infty}(y+H(x) = \ord_{P_\infty}(F(x))$, and hence $\ord_{P_\infty}(y+H(x)) = -\deg(F(x)) + g + 1$.
+On the other hand, if $\ord_{P_\infty} (y) = -(g+1)$, we see that since $y(y+H(x)) = F(x)$ it follows that $-(g+1) + \ord_{P_\infty}(y+H(x)) = \ord_{P_\infty}(F(x))$, and hence $\ord_{P_\infty}(y+H(x)) = -\deg(F(x)) + g + 1$.
 
 Finally, if $\ord_{P_\infty}(y) > -(g+1)$, then since $\ord_{P_\infty}(H(x)) = -(g+1)$ it follows that $\ord_{P_\infty} (y+H(x)) = -(g+1)$.
 Then, from a similar computation to that in the previous paragraph we see that $\ord_{P_\infty}(y) = -\deg(F(x)) + g +1$, completing the proof.
@@ -332,7 +337,7 @@ Then, from a similar computation to that in the previous paragraph we see that $
 
 
 Finally, we will compute the divisor of $dy$.
-We start by noting that when we take the differential of \eqref{definep=2} we derive
+We start by noting that when we take the differential of \eqref{definep=2} we obtain
 \[
 dF = d\left(y^2 + yH \right) = d(yH) = Hdy + ydH
 \]
@@ -360,7 +365,8 @@ We let $A$ denote the space of ad\`eles, and given a divisor $D = \sum n_P[P]$ w
 Note that one can embed the function field $K(X)$ into $A$.
 Given any $f \in K(X)$ one defines $r \in A$ by setting $r_P = f$ for all $P \in X$, and this is clearly an injection.
 Given this we can see that the quotient $A/(A(0) + K(X))$ is well defined, and Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to this quotient.
-Note that we can extend this embedding to $\left. f \right|_U$ for any $f\in K(X)$ and any open subset $U \subseteq X$ by letting $r_P = f$ if $P \in U$, and $r_P = 1$ otherwise.
+Note that we can extend this embedding to $\cO_X(U)$ for any open set $U \subseteq X$.
+Suppose that $\left. f \right|_U\in cO_X(U)$ and then let $r_P = f$ if $P \in U$, and $r_P = 1$ otherwise.
 
 We now define the duality map in terms of ad\`eles.
 Given some differential $\omega \in \hzero$ and some ad\`ele $r \in \hone$ we define 
@@ -375,7 +381,7 @@ The duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} state
 
 We now compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.
 \begin{lem}\label{basish1}
- Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0$\todo{should this be $U_0 \cap U_\infty$}, form a basis of $H^1(X,\cO_X)$.
+ Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0$\todo{should this be $U_0 \cap U_\infty$}, form a basis of $H^1(X,\cO_X)$.\todo{check over this letter}
 \end{lem}
 \begin{proof}
 We start by considering the case $p \neq 2$ and first check that the functions are indeed regular on $U_0 \cap U_\infty$ (as required by \eqref{derhamconditions}) by computing their divisors:
@@ -555,15 +561,15 @@ In order to state a basis of $\derhamhone$, as well as to shorten the proof of t
 We suppose that $1 \leq i \leq g$.
 Then when $p\neq 2$ we define
 \[
-s_i(x) := f'(x) - \frac{2if(x)}{x} \in k(x)
+s_i(x) := xf'(x) - 2if(x) \in k[x]
 \]
 and when $p = 2$ we define
 \begin{equation}\label{capitals}
-S_i(x,y) := xF'(x) + xyH'(x) + iyH(x)\in k[x]\oplus yk[x] \subseteq k(x,y).
+S_i(x,y) := xF'(x) + y(xH'(x) + iH(x))\in k[x]\oplus yk[x] \subseteq k(x,y).
 \end{equation}
 
 We now decompose these polynomials into two parts, which will be used in the sequel.
-Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x)\in k(x)$ and $\phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\psi_i (x)$ is at most $g$ and $x^{g+1}$ divides $\phi_i(x)$.
+Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x)\in k(x)$ and $\phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\psi_i (x)$ is at most $g+1$ and $x^{g+2}$ divides $\phi_i(x)$.
 
 
 Secondly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that $x^i$ does not divide any monomial of $\Psi_i(x,y)$, and $\Phi_i(x,y)$ is divisible by $x^i$.
@@ -573,7 +579,7 @@ Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $
 
 If $p \neq 2$ then the residue classes of the elements 
 \begin{equation}\label{one}
- \left( \left( \frac{\psi_i(x)}{2yx^i}\right) dx, \left(\frac{-\phi_i(x)}{2yx^i}\right) dx, x^{-i}y\right), i=1, \ldots ,g,
+ \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right), i=1, \ldots ,g,
 \end{equation}
 along with the residue classes of 
 \begin{equation}\label{two}
@@ -673,7 +679,7 @@ For the rest of the proof we fix $i \in \{1, \ldots ,g\}$.
 
 We start with the case $p\neq 2$, and observe that
 \begin{align*}
-\left(  \frac{\psi_i(x)}{2yx^i}  - \frac{-\phi_i(x)}{2yx^i} \right) dx & =  \frac{s_i(x)}{2yx^i} dx \\
+\left(  \frac{\psi_i(x)}{2yx^{i+1}}  - \frac{-\phi_i(x)}{2yx^{i+1}} \right) dx & =  \frac{s_i(x)}{2yx^{i+1}} dx \\
 & =  \frac{1}{2yx^i} \left( f' - \frac{2if}{x} \right) dx \\
 & =  \frac{x^i}{2y} \left( \frac{f'}{x^{2i}}dx -\frac{2if}{x^{2i+1}} dx \right) \\
 & =  \frac{x^i}{2y} \left( fd\left(\frac{1}{x^{2i}}\right) + \frac{1}{x^{2i}}df \right) \\
@@ -683,47 +689,47 @@ We start with the case $p\neq 2$, and observe that
 \end{align*}
 with the penultimate line following from the defining equation \eqref{definingequationpnot2}.
 This shows that the elements \eqref{one} satisfy $df_{0, \infty} = \omega_0 - \omega_\infty$, one of the conditions of \eqref{derhamconditions}.
-Since we saw in the proof of Lemma \ref{basish1} that $\frac{y}{x^i}$ is regular on $U_0\cap U_\infty$ it only remains to show that $\frac{\phi_i}{2yx^i}dx$ and $\frac{-\psi_i}{2yx^i}dx$ are regular on $U_\infty$ and $U_0$ respectively.
+Since we saw in the proof of Lemma \ref{basish1} that $\frac{y}{x^i}$ is regular on $U_0\cap U_\infty$ it only remains to show that $\frac{\phi_i}{2yx^{i+1}}dx$ and $\frac{-\psi_i}{2yx^{i+1}}dx$ are regular on $U_\infty$ and $U_0$ respectively.
 
 
-In order to do this we define ${}_i\alpha_j \in k$ for $0\leq j \leq 2g+1$ to satisfy the equation
+In order to do this we define $\alpha_{j,i} \in k$ for $0\leq j \leq 2g+2$ to satisfy the equation
 \[
-s_i(x) = {}_i\alpha_{2g+1}x^{2g+1} + \ldots + {}_i\alpha_0,
+s_i(x) = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{0,i},
 \]
 so that
 \[
-\phi_i(x) = {}_i\alpha_{2g+1}x^{2g+1} + \ldots + {}_i\alpha_{g+1}x^{g+1} \ {\rm and } \ \psi_i(x) = {}_i\alpha_gx^g + \ldots + {}_i\alpha_0.
+\phi_i(x) = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{g+2,i}x^{g+2} \ {\rm and } \ \psi_i(x) = \alpha_{g+1,i}x^{g+1} + \ldots + \alpha_{0,i}.
 \]
-Note that it is possible for any of ${}_i\alpha_j$ to be zero. Indeed, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
-Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 < d_\psi \leq g+1$ and $g < d_\phi \leq 2g+1$ for all $1 \leq i \leq g$.
+Note that it is possible for any of $\alpha_{j,i}$ to be zero. Indeed, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
+Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 \leq d_\psi \leq g+1$ and $g+1 < d_\phi \leq 2g+2$ for all $1 \leq i \leq g$.
 \todo{remove d psi? - will keep for now in case useful later}
 
 
-We now show that $\frac{-\phi_i}{2yx^i}dx$ and $\frac{\psi_i}{2yx^i}dx$ are regular on $U_\infty$ and $U_0$ respectively.
+We now show that $\frac{-\phi_i}{2yx^{i+1}}dx$ and $\frac{\psi_i}{2yx^{i+1}}dx$ are regular on $U_\infty$ and $U_0$ respectively.
 We may assume that $\phi_i$ and $\psi_i$ are non-zero, since the zero function is regular everywhere.
-The divisor of $\frac{-\phi_i}{2yx^i}dx$ is
+The divisor of $\frac{-\phi_i}{2yx^{i+1}}dx$ is
 
 \begin{align*}
-\di\left( \frac{-\phi_i}{2yx^i}dx \right) & =  \di(\phi_i) -\di(y) - \di(x^i) + \di (dx) \\
-& =  \di(\phi_i) - ( R - (g+1)D_\infty) - (iD_0 - iD_\infty) + (R - 2D_\infty) \\
-& =  \left( \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + (g+1)D_0 - d_\phi D_\infty\right) - iD_0 + (g+i-1)D_\infty \\
-& \geq  \di_0\left( \frac{\phi_i}{x^{g+1}}\right) + (g+1)D_0 - (2g+1)D_\infty - iD_0 + (g+i-1)D_\infty \\
-& =  \di_0\left( \frac{\phi_i}{x^{g+1}} \right) + (i-g-2)D_\infty + (g-i+1)D_0,
+\di\left( \frac{-\phi_i}{2yx^{i+1}}dx \right) & =  \di(\phi_i) -\di(y) - \di(x^{i+1}) + \di (dx) \\
+& =  \di(\phi_i) - ( R - (g+1)D_\infty) - ((i+1)D_0 - (i+1)D_\infty) + (R - 2D_\infty) \\
+& =  \left( \di_0\left( \frac{\phi_i}{x^{g+2}}\right) + (g+2)D_0 - d_\phi D_\infty\right) - (i+1)D_0 + (g+i)D_\infty \\
+& \geq  \di_0\left( \frac{\phi_i}{x^{g+2}}\right) + (g+2)D_0 - (2g+2)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
+& =  \di_0\left( \frac{\phi_i}{x^{g+2}} \right) + (i-g-2)D_\infty + (g-i+1)D_0,
 \end{align*}
 where the second equality makes use of \eqref{pnot2divisors}.
-Since $i \leq g$ the differential $\frac{-\phi_i}{2yx^i}dx$ is regular on $U_\infty = X\backslash \pi^{-1}(\infty)$.
+Since $i \leq g$ the differential $\frac{-\phi_i}{2yx^{i+1}}dx$ is regular on $U_\infty = X\backslash \pi^{-1}(\infty)$.
 
-Similarly the divisor of $\frac{\psi_i}{2yx^i}dx$ is
+Similarly the divisor of $\frac{\psi_i}{2yx^{i+1}}dx$ is
 
 \begin{align*}
-\di \left( \frac{\psi_i}{2yx^i}dx\right) & =  \di(\psi_i) - \di(y) - \di(x^i) + \di (dx) \\
-& =  \di (\psi_i ) -(R - (g+1)D_\infty) - (iD_0 - iD_\infty) + (R -2D_\infty) \\
-& =  \di(\psi_i) + (g+i-1)D_\infty -iD_0 \\
-& =  (\di_0(\psi_i) -d_\psi D_\infty) + (g+i-1)D_\infty -iD_0 \\
-& \geq \left( \di_0(\psi_i) - gD_\infty \right) + (g+i-1)D_\infty -iD_0 \\
-& =  \di_0(\psi_i) + (i-1)D_\infty - iD_0.
+\di \left( \frac{\psi_i}{2yx^{i+1}}dx\right) & =  \di(\psi_i) - \di(y) - \di(x^{i+1}) + \di (dx) \\
+& =  \di (\psi_i ) -(R - (g+1)D_\infty) - ((i+1)D_0 - (i+1)D_\infty) + (R -2D_\infty) \\
+& =  \di(\psi_i) + (g+i)D_\infty -(i+1)D_0 \\
+& =  (\di_0(\psi_i) -d_\psi D_\infty) + (g+i)D_\infty -(i+1)D_0 \\
+& \geq \left( \di_0(\psi_i) - (g+1)D_\infty \right) + (g+i)D_\infty -(i+1)D_0 \\
+& =  \di_0(\psi_i) + (i-1)D_\infty - (i+1)D_0.
 \end{align*}
-Again, the second equality uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^i}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
+Again, the second equality uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^{i+1}}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
 
 
 We now suppose that $p=2$.
