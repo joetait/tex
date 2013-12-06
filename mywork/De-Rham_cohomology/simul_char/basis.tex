@@ -673,8 +673,8 @@ We make use of the fact that the short exact sequence \eqref{ses} splits as a se
 It is clear that the elements in \eqref{two} and \eqref{four} are elements of the space \eqref{derhamconditions}. 
 In fact, it follows from \cite[Thm 6.1]{faithfulaction} that they are the image of a basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
 
-Moreover, it is obvious that if the elements \eqref{one} and \eqref{three} are in \eqref{derhamconditions} then they will map to the basis of $\hone$ given in Lemma \ref{basish1}.
-So we need only show that the first two terms in \eqref{one} and \eqref{three} satisfy the conditions stated in \eqref{derhamconditions} to be in $\derhamhone$.
+Moreover, it is obvious that if the elements in \eqref{one} and \eqref{three} are well defined elements of the space \eqref{derhamconditions} then they will map to the basis of $\hone$ given in Lemma \ref{basish1}.
+So we need only show that the terms in \eqref{one} and \eqref{three} satisfy the conditions stated in \eqref{derhamconditions}.
 For the rest of the proof we fix $i \in \{1, \ldots ,g\}$.
 
 
@@ -689,7 +689,7 @@ We start with the case $p\neq 2$, and observe that
 & =  d(yx^{-i}),
 \end{align*}
 with the penultimate line following from the defining equation \eqref{definingequationpnot2}.
-This shows that the elements \eqref{one} satisfy $df_{0, \infty} = \omega_0 - \omega_\infty$, one of the conditions of \eqref{derhamconditions}.
+This shows that the elements in \eqref{one} satisfy $df_{0, \infty} = \omega_0 - \omega_\infty$, one of the conditions of \eqref{derhamconditions}.
 Since we saw in the proof of Lemma \ref{basish1} that $\frac{y}{x^i}$ is regular on $U_0\cap U_\infty$ it only remains to show that $\frac{\phi_i}{2yx^{i+1}}dx$ and $\frac{-\psi_i}{2yx^{i+1}}dx$ are regular on $U_\infty$ and $U_0$ respectively.
 
 
@@ -701,8 +701,8 @@ so that
 \[
 \phi_i(x) = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{g+2,i}x^{g+2} \ {\rm and } \ \psi_i(x) = \alpha_{g+1,i}x^{g+1} + \ldots + \alpha_{0,i}.
 \]
-Note that it is possible for any of $\alpha_{j,i}$ to be zero. Indeed, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
-Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 \leq d_\psi \leq g+1$ and $g+1 < d_\phi \leq 2g+2$ for all $1 \leq i \leq g$.
+Note that it is possible for any of $\alpha_{j,i}$ to be zero. In fact, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
+Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 \leq d_\psi \leq g+1$ and $g+1 < d_\phi \leq 2g+2$.
 \todo{remove d psi? - will keep for now in case useful later}
 
 
@@ -717,7 +717,7 @@ The divisor of $\frac{-\phi_i}{2yx^{i+1}}dx$ is
 & \geq  \di_0\left( \frac{\phi_i}{x^{g+2}}\right) + (g+2)D_0 - (2g+2)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
 & =  \di_0\left( \frac{\phi_i}{x^{g+2}} \right) + (i-g-2)D_\infty + (g-i+1)D_0,
 \end{align*}
-where the second equality makes use of \eqref{pnot2divisors}.
+where the second equality makes use of \eqref{dixp=2} and \eqref{pnot2divisors}.
 Since $i \leq g$ the differential $\frac{-\phi_i}{2yx^{i+1}}dx$ is regular on $U_\infty = X\backslash \pi^{-1}(\infty)$.
 
 Similarly the divisor of $\frac{\psi_i}{2yx^{i+1}}dx$ is
@@ -730,7 +730,7 @@ Similarly the divisor of $\frac{\psi_i}{2yx^{i+1}}dx$ is
 & \geq \left( \di_0(\psi_i) - (g+1)D_\infty \right) + (g+i)D_\infty -(i+1)D_0 \\
 & =  \di_0(\psi_i) + (i-1)D_\infty - (i+1)D_0.
 \end{align*}
-Again, the second equality uses \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^{i+1}}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
+Again, the second equality uses \eqref{divxp=2} and \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^{i+1}}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
 
 
 We now suppose that $p=2$.
@@ -748,12 +748,12 @@ We have also already seen in the proof of Lemma \ref{basish1} that $\frac{y}{x^i
 So in order to prove that for $i\in \{1, \ldots, g\}$ the elements of \eqref{three} are satisify the conditions of \eqref{derhamconditions} it only remains to show that the differentials $\frac{\Phi_i}{x^{i+1}H}dx$ and $\frac{\Psi_i}{x^{i+1}H}dx$ are regular on $U_\infty$ and $U_0$ respectively.
 
 
-We define ${}_iA_{j} \in k$ for $1 \leq j \leq 2g+2$, and ${}_iB_k \in k$ for $1\leq k \leq g+1$ by the equation
+We define $A_{j,i} \in k$ for $1 \leq j \leq 2g+2$, and $B_{k,i} \in k$ for $0\leq k \leq g+1$ by the equation
 \[
-S_i(x,y) = {}_iA_{2g+2}x^{2g+2} + \ldots + {}_iA_1 x + y({}_iB_{g+1} x^{g+1} + \ldots + {}_iB_1 x + {}_iB_0).
+S_i(x,y) = A_{2g+2,i}x^{2g+2} + \ldots + A_{1,i} x + y(B_{g+1,i} x^{g+1} + \ldots + B_{1,i} x + B_{0,i}).
 \]
 Note that many of these coefficients may be zero.
-In particular we remark that the $x^i$ term of $xH'(x) + iH(x)$ is exactly zero, since it is precisely $x \cdot ib_ix^{i-1} + ib_i x^i = 2ib_ix^i = 0$.
+In particular we remark that the $x^i$ term of $xH'(x) + iH(x)$, and hence $B_{i,i}$, is always zero, since it is precisely $x \cdot B_{i,i}x^{i-1} + B_{i,i} x^i = 2B_{i,i}x^i = 0$.
 
 
 We can now define the following polynomials:
