@@ -361,9 +361,9 @@ Details can be found in \cite[\S 6]{faithfulaction}.
 
 \todo[inline]{Explanation of Serre Duality}
 We start by noting that we have a short exact sequence of sheaves
-\[
+\begin{equation}\label{serredualityses}
 0 \rightarrow \cO_X \rightarrow {\cal K}_X \rightarrow {\cal K}_X/\cO_X \rightarrow 0,
-\]
+\end{equation}
 where $\cal K_X$ is the constant sheaf $K(X)$.
 In fact, by \cite[Chap II, ex. 1.16]{hart}, we see that this is a flasque resolution of $\cO_X$.
 
@@ -371,36 +371,40 @@ Clearly the sheaf $K_x/\cO_P$ is a sheaf on the singleton $\{P\}$, which has a n
 Hence for each $P$ we have the induced sheaf $i_*\left(K_X/\cO_P\right)$ on $X$.
 Then if we consider the direct sum of these sheaves over $X$ we have the following isomorphism
 \[
-{\cal K}_X/\cO_X \cong \oplus_{P\in X} i_*(K_X/\cO_P).
-\]\todo{give explicit isomorphism}
+{\cal K}_X/\cO_X \cong \bigoplus_{P\in X} i_*(K_X/\cO_P).
+\]
+This can be seen by considering the stalks of both sides, which are clearly isomorphic.
 
 It is now clear that tensoring the short exact sequence above by $\Omega_X$ gives us
 \[
-0 \rightarrow \Omega_X \rightarrow \Omega_X \otimes {\cal K}_X \rightarrow \oplus_{P\in X} i_*(\Omega_K/\Omega_P) \rightarrow 0,
+0 \rightarrow \Omega_X \rightarrow \Omega_X \otimes {\cal K}_X \rightarrow \bigoplus_{P\in X} i_*(\Omega_K/\Omega_P) \rightarrow 0,
 \]
 another flasque resolution, this time of $\Omega_X$.\todo{define $\Omega_K$, justify last term}
 
 Now we can take the \cech complex of this over our cover $\cU$, which is
-\begin{equation}label{dualitydiagram}\begin{array}{ccccccccc}
-0 & \rightarrow & \Omega_X(U_0)\times \Omega_X(U_\infty) & \rightarrow & \Omega_K\times \Omega_K & \rightarrow & \left( \oplus_{P \in U_0} \Omega_K/\Omega_P\right) \times \left( \oplus_{P\in U_\infty} \Omega_K / \Omega_P \right) & \rightarrow & 0 \\
-~ & ~ & d_1 \downarrow & ~ & d_2 \downarrow & ~ & d_3 \downarrow & ~ & ~ \\
-0 &\rightarrow & \Omega_X(U_0 \cap U_\infty) & \rightarrow & \Omega_K & \rightarrow & \bigoplus_{P \in U_0 \cap U_\infty} \Omega_K/\Omega_P & \ra & 0.
+\begin{equation}\label{dualitydiagram}\begin{array}{ccccc}
+ \Omega_X(U_0)\times \Omega_X(U_\infty) & \hookrightarrow & \Omega_K\times \Omega_K & \twoheadrightarrow & \left( \bigoplus \limits_{P \in U_0} \Omega_K/\Omega_P\right) \times \left( \bigoplus \limits_{P\in U_\infty} \Omega_K / \Omega_P \right) \\
+d_1 \downarrow & ~ & d_2 \downarrow & ~ & d_3 \downarrow \\
+\Omega_X(U_0 \cap U_\infty) & \hookrightarrow & \Omega_K & \twoheadrightarrow & \bigoplus\limits_{P \in U_0 \cap U_\infty} \Omega_K/\Omega_P.
 \end{array}
 \end{equation}\todo{define $\Omega_K$}
 By the snake lemma we have differential map from $\delta \colon \ker (d_3) \rightarrow {\rm coker}(d_1)$.
 
 The entire exact sequence given by the snake lemma is
 \[
-0 \rightarrow \hzero \ra \Omega_K \ra \oplus_{P \in X}\Omega_K/\Omega_P \ra \hone \ra 0.
+0 \rightarrow \hzero \ra \Omega_K \ra \bigoplus_{P \in X}\Omega_K/\Omega_P \ra \hone \ra 0.
 \]
+We know that the cohomology vanishes after $\hone$ by Serre's affineness criteria.
 The fact that $\hone \cong \ker(d_1)$ and $\hone \cong {\rm coker}(d_1)$ follows from the definition of $\hone$ and $\hzero$ in terms of \cech  cohomology given above.
 The map $d_2\colon \Omega_K \times \Omega_K \ra \Omega_2$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$, and hence the kernel is formed precisely by the elements $(\omega, \omega)$.
 This shows that $\ker (d_2) \cong \Omega_K$.
-Lastly, $d_3$ is similarly defined by $d_3\colon (\omega, \psi) \mapsto \omega|_{U_0 \cap U_\infty} - \psi|_{U_0 \cap U_\infty}$.\todo{explain what the kernel is}
+Lastly, $d_3$ is similarly defined by $d_3\colon (\omega, \psi) \mapsto \omega|_{U_0 \cap U_\infty} - \psi|_{U_0 \cap U_\infty}$.
+Hence the kernel of $d_3$ is formed of those elements which agree on $U_1 \cap U_3$.
 
 Given a point $P\in X$ we have the a map $\res_P \colon \Omega_K \ra k$\todo{define properly}.
-This also gives a well defined map on the quotient $\res_P \colon \omega_K/\Omega_P \ra k$.\todo{show this, sort out dual notation for res}
-Since we know that $\sum_{P\in X}\res_P(\omega) = 0$ for any $\omega \in \Omega_K$ (by \cite[Chap. III, Thm. 7.14.2]{hart}) the map $\res\colon \bigoplus_{P \in X} \ra k$ given by $\sum_{P\in X} \res_P(\omega_P)$ vanishes on the the image of $\Omega_K$.\todo{check that the res map is defined properly}
+This also gives a well defined map on the quotient $\res_P \colon \Omega_K/\Omega_P \ra k$, since by definition elements of $\Omega_P$ do not have a pole at $P$, and hence have zero residue at $P$.
+Therefore $\Omega_P$ is contained in the kernel of $\res\colon \Omega_K \ra k$.
+Since we know that $\sum_{P\in X}\res_P(\omega) = 0$ for any $\omega \in \Omega_K$ (by \cite[Chap. III, Thm. 7.14.2]{hart}) the map $\res\colon \bigoplus_{P \in X} \Omega_K/\Omega_P \ra k$ given by $\sum_{P\in X} \res_P(\omega_P)$ vanishes on the the image of $\Omega_K$.\todo{check that the res map is defined properly}
 Hence this map passes to the quotient and we can define
 \[
 \res\colon \hone \ra k.
@@ -408,7 +412,7 @@ Hence this map passes to the quotient and we can define
 
 Using \eqref{dualitydiagram} we can study this map.
 Given a cocycle in $\hone$ we take a representative $f \in \Omega_X(U_0 \cap U_\infty)$.
-This then injects in to $\Omega_K$, and since $d_2$ is surjective\todo{justify this earlier using Serre's affinenes} we know it is in the image of $d_2$, and hence can choose an element of $\Omega_K \times \Omega_K$ mapping to $f$.
+This then injects in to $\Omega_K$, and since $d_2$ is surjective we know it is in the image of $d_2$, and hence can choose an element of $\Omega_K \times \Omega_K$ mapping to $f$.
 In particular, we could choose $(f,0)$.
 This then maps to $(f|_{U_0}, 0)$, which is why we need only consider residue on $U_0$ to compute the resolution.\todo{tidy this up}
 \todo[inline]{End of Serre duality}
