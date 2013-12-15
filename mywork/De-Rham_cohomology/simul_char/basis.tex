@@ -101,6 +101,7 @@
 \newcommand{\cechhone}{\check{H}^1(\mathcal U,\mathcal O_X)}
 \newcommand{\derhamhone}{H_{\text {dR}}^1(X/k)}
 \newcommand{\cechhzero}{{\check{H}^0(X,\Omega_X)}}
+\newcommand{\ubar}{\underset{\bar{}}}
 
 
 \DeclareMathOperator{\aut}{Aut}
@@ -362,18 +363,28 @@ Details can be found in \cite[\S 6]{faithfulaction}.
 \todo[inline]{Explanation of Serre Duality}
 We start by noting that we have a short exact sequence of sheaves
 \begin{equation}\label{serredualityses}
-0 \rightarrow \cO_X \rightarrow {\cal K}_X \rightarrow {\cal K}_X/\cO_X \rightarrow 0,
+0 \rightarrow \Omega_X \rightarrow \underline{\Omega}_{K(X)} \rightarrow \underline{\Omega}_{K(X)}/\Omega_X \rightarrow 0,
 \end{equation}
-where $\cal K_X$ is the constant sheaf $K(X)$.
-In fact, by \cite[Chap II, ex. 1.16]{hart}, we see that this is a flasque resolution of $\cO_X$.
+where $\underline{\Omega}_{K(X)}$ is the constant sheaf of the module of differentials of $K(X)$ over $k$, which we denote $\Omega_{K(X)}$.
+By \cite[Chap II, ex. 1.16]{hart} we see that \eqref{serredualityses} is a flasque resolution of $\Omega_X$.
 
-Clearly the sheaf $K_x/\cO_P$ is a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
+Clearly the sheaf $\Omega_{K(X)}/\Omega_P$\todo{is $\Omega_P$ standard enough notation?} is a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
 Hence for each $P$ we have the induced sheaf $i_*\left(K_X/\cO_P\right)$ on $X$.
 Then if we consider the direct sum of these sheaves over $X$ we have the following isomorphism
-\[
-{\cal K}_X/\cO_X \cong \bigoplus_{P\in X} i_*(K_X/\cO_P).
-\]
-This can be seen by considering the stalks of both sides, which are clearly isomorphic.
+\begin{equation}\label{sheafisomorphism}
+\underline{\Omega}_{K(X)}/\Omega_X\cong \bigoplus_{P\in X} i_*(K_X/\cO_P).
+\end{equation}
+We construct this by first constructing a map from $\underline{\Omega}_{K(X)}/\Omega_P$ in to the product $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_P\right)$, and then showing that this map has finite support.
+
+Given $i\colon \{P\} \hookrightarrow X$, we see that
+\begin{align}
+i^*\left(\underline{\Omega}_{K(X)}/\Omega_X\right) & = \left(\underline{\Omega}_{K(X)}/\Omega_X\right)_P \\
+& = \underline{\Omega}_{K(X),P}/\Omega_{X,P} \\
+& = \Omega_{K(X)}/\Omega_P.
+\end{align}
+Hence for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^*(f) \in i_*\left( \Omega_{P(X)}/\Omega_P\right)$, and this map is an isomorphism.
+We then recall that for any $f \in \Omega_{K(X)}$ we have $f \in \Omega_P$  for all but a finite number of points $P \in X$.
+Combining the above yields the isomorphism in \eqref{sheafisomorphism} is 
 
 It is now clear that tensoring the short exact sequence above by $\Omega_X$ gives us
 \[
