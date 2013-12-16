@@ -360,13 +360,13 @@ R = \sum_{i=1}^d 2n_i[P_i] + (g+1-d)D_\infty.
 \]
 Details can be found in \cite[\S 6]{faithfulaction}.
 
-\todo[inline]{Explanation of Serre Duality}
-We start by noting that we have a short exact sequence of sheaves
+We now take a brief detour to recall some of the details of Serre duality.
+We let $\underline{\Omega}_{K(X)}$ be the constant sheaf of $\Omega_{K(X)}$, the module of differentials of $K(X)$ over $k$.
+Then the short exact sequence
 \begin{equation}\label{serredualityses}
 0 \rightarrow \Omega_X \rightarrow \underline{\Omega}_{K(X)} \rightarrow \underline{\Omega}_{K(X)}/\Omega_X \rightarrow 0,
 \end{equation}
-where $\underline{\Omega}_{K(X)}$ is the constant sheaf of the module of differentials of $K(X)$ over $k$, which we denote $\Omega_{K(X)}$.
-By \cite[Chap II, ex. 1.16]{hart} we see that \eqref{serredualityses} is a flasque resolution of $\Omega_X$.
+is a flasque resolution of $\Omega_X$ by \cite[Chap II, ex. 1.16]{hart}.
 
 Clearly the sheaf $\Omega_{K(X)}/\Omega_P$\todo{is $\Omega_P$ standard enough notation?} is a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
 Hence for each $P$ we have the induced sheaf $i_*\left(K_X/\cO_P\right)$ on $X$.
@@ -382,7 +382,7 @@ i^*\left(\underline{\Omega}_{K(X)}/\Omega_X\right) & = \left(\underline{\Omega}_
 & = \underline{\Omega}_{K(X),P}/\Omega_{X,P} \\
 & = \Omega_{K(X)}/\Omega_P.
 \end{align}
-Hence for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^*(f) \in i_*\left( \Omega_{P(X)}/\Omega_P\right)$, and this map is an isomorphism.
+Hence for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^*(f) \in i_*\left( \Omega_{P(X)}/\Omega_P\right)$\todo{check if I can write $f$ for $i_*i^*(f)$}, and this map is an isomorphism.
 We then recall that for any $f \in \Omega_{K(X)}$ we have $f \in \Omega_P$  for all but a finite number of points $P \in X$.
 Combining the above yields the isomorphism in \eqref{sheafisomorphism} is 
 
@@ -412,10 +412,10 @@ This shows that $\ker (d_2) \cong \Omega_K$.
 Lastly, $d_3$ is similarly defined by $d_3\colon (\omega, \psi) \mapsto \omega|_{U_0 \cap U_\infty} - \psi|_{U_0 \cap U_\infty}$.
 Hence the kernel of $d_3$ is formed of those elements which agree on $U_1 \cap U_3$.
 
-Given a point $P\in X$ we have the a map $\res_P \colon \Omega_K \ra k$\todo{define properly}.
-This also gives a well defined map on the quotient $\res_P \colon \Omega_K/\Omega_P \ra k$, since by definition elements of $\Omega_P$ do not have a pole at $P$, and hence have zero residue at $P$.
+Given a point $P\in X$ we have the a map $\res_P \colon \Omega_K \ra k$, as defined in \cite[Chap III, Thm. 7.14.1]{hart}.
+This also gives a well defined map on the quotient $\res_P \colon \Omega_K/\Omega_P \ra k$, since by definition elements of $\Omega_P$ have zero residue at $P$.
 Therefore $\Omega_P$ is contained in the kernel of $\res\colon \Omega_K \ra k$.
-Since we know that $\sum_{P\in X}\res_P(\omega) = 0$ for any $\omega \in \Omega_K$ (by \cite[Chap. III, Thm. 7.14.2]{hart}) the map $\res\colon \bigoplus_{P \in X} \Omega_K/\Omega_P \ra k$ given by $\sum_{P\in X} \res_P(\omega_P)$ vanishes on the the image of $\Omega_K$.\todo{check that the res map is defined properly}
+Since we know that $\sum_{P\in X}\res_P(\omega) = 0$ for any $\omega \in \Omega_K$ (by \cite[Chap. III, Thm. 7.14.2]{hart}) the map $\res\colon \bigoplus_{P \in X} \Omega_K/\Omega_P \ra k$ given by $\sum_{P\in X} \res_P(\omega_P)$ vanishes on the the image of $\Omega_K$.
 Hence this map passes to the quotient and we can define
 \[
 \res\colon \hone \ra k.
@@ -426,27 +426,7 @@ Given a cocycle in $\hone$ we take a representative $f \in \Omega_X(U_0 \cap U_\
 This then injects in to $\Omega_K$, and since $d_2$ is surjective we know it is in the image of $d_2$, and hence can choose an element of $\Omega_K \times \Omega_K$ mapping to $f$.
 In particular, we could choose $(f,0)$.
 This then maps to $(f|_{U_0}, 0)$, which is why we need only consider residue on $U_0$ to compute the resolution.\todo{tidy this up}
-\todo[inline]{End of Serre duality}
 
-We now recall some facts regarding Serre duality, which we will use shortly to find a basis of $\hone$.
-We recall \todo{cite when in thesis. Will change $r$ notation then.} that an {\sl ad\`ele} or {\sl r\'epartition} is a collection $\{r_P\}_{P\in X}$ of elements of $K(X)$ such that $r_P \in \cO_P$ for almost all $P\in X$, as in \cite[Chap. II, \S 5]{algebraicgroupsandclassfields}.
-We let $A$ denote the space of ad\`eles, and given a divisor $D = \sum n_P[P]$ we let $A(D)$ be the space of ad\`eles $r = \{r_P\}$ such that $\ord_P(r_P) \geq -n_P$ for all $P \in X$.
-Note that one can embed the function field $K(X)$ into $A$.
-Given any $f \in K(X)$ one defines $r \in A$ by setting $r_P = f$ for all $P \in X$, and this is clearly an injection.
-Given this we can see that the quotient $A/(A(0) + K(X))$ is well defined, and Serre shows in \cite[Prop. 3, Chap II]{algebraicgroupsandclassfields} that $\hone$ is isomorphic to this quotient.
-Note that we can extend this embedding to $\cO_X(U)$ for any open set $U \subseteq X$.
-Suppose that $\left. f \right|_U\in cO_X(U)$ and then let $r_P = f$ if $P \in U$, and $r_P = 1$ otherwise.
-
-We now define the duality map in terms of ad\`eles.
-Given some differential $\omega \in \hzero$ and some ad\`ele $r \in \hone$ we define 
-\begin{equation}\label{residuemap}
-\langle \omega, r \rangle := \sum_{P\in X} \res_{P}( r_P\omega).
-\end{equation}
-Then if we fix any $\omega \in \hzero$ we get a map $\theta(\omega):\hone \rightarrow k$ given by $\theta(\omega)(r) = \langle \omega, r \rangle$.
-Similarly, if we fix some $r \in \hone$ we get a map $\varphi(r):\hzero \rightarrow k$.
-The duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that the maps $\theta$ and $\varphi$ are isomorphisms meaning that the spaces $\hzero$ and $\hone$ are dual.
-
-\todo[inline]{using repartitions, it may be better to say that the restriction to U1 is like taking a repartition equal to f everywhere except P0, where we just pick some non-zero value}
 
 We now compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.
 \begin{lem}\label{basish1}
