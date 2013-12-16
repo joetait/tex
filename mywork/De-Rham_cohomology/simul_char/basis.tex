@@ -159,7 +159,7 @@ Since a curve doesn't have differentials of degree greater than one, this is the
 \begin{equation}\label{res}
 0 \rightarrow \cO_X \xrightarrow{d} \Omega_X \rightarrow 0.
 \end{equation}
-Here $d$ denotes the differential map $f \mapsto df$.\todo{cite}
+Here $d$ denotes the differential map $f \mapsto df$, as defined in \cite[Chap II, \S 8, Pg. 172]{hart}.
 
 We then use the cover $\cal U$ and the \cech differentials as defined earlier to give us the \cech complex of \eqref{res}, which is
 \begin{equation}\label{bicomplex} \begin{array}{ccccccc}
@@ -200,12 +200,17 @@ Firstly, $\cechhzero \cong \hzero$ is the kernel of
 \[
 0 \ra \Omega_X(U_0) \times \Omega_X(U_\infty) \ra \Omega_X(U_0 \cap U_\infty ) \ra 0,
 \]
-i.e. elements of the form $(\omega, \omega)$.
-Hence we can define an injection $\hzero \ra \derhamhone$ given by\todo{justify why an injection}
+i.e.\ elements of the form $(\omega, \omega)$, which we will just write as $\omega$.
+Hence we can define a map $\hzero \ra \derhamhone$ given by
 \[
-(\omega, \omega) \mapsto (\omega, \omega, 0).
+\omega \mapsto (\omega, \omega, 0).
 \]
-\todo[inline]{change the above to just $\omega$, not $(\omega,\omega)$}
+This is in fact an injection.
+Indeed, if we suppose that some $\omega\in \hzero$ maps to $0 \in \derhamhone$ then we must be able to find some $f_i\in \cO_X(U_i)$ such that $(\omega, \omega, 0) = (df_0, df_\infty, f_0|_{U_0\cap U_\infty} - f_\infty|_{U_0\cap U_\infty})$.
+Since a non-zero rational function can only have finitely many zeroes, we conclude that $f_0 = f_\infty$ everywhere.
+We then conclude that $f_0 = f_\infty$ is a constant function, since $f_0$ and $f_\infty$ are regular on $U_0$ and $U_\infty$ respectively, and these sets cover $X$.
+Finally, we conclude that $\omega = df_0 = df_\infty = 0$, since the differential of a constant function is always zero.
+
 On the other hand, we have an obvious surjection $\derhamhone \ra \hone$ induced by\todo{justify why a surjection}
 \[
 (\omega_0, \omega_\infty, f_{0, \infty}) \mapsto f_{0, \infty}.
@@ -293,7 +298,7 @@ We first show that the divisor of the zeroes of $y$ is $\sum_{i=1}^l m_i [Q_i]$,
 It is clear that the zeroes of $y$ must occur in the affine part of the curve $X$ defined by \eqref{definep=2} i.e. in $U_\infty$.
 Suppose $P\in U_\infty$.
 If $\left. F \right|_P \neq 0$ then it follows that $y \neq 0$, since $F(x) = y (y + H(x))$.
-Hence $\di_0(y)$ has zero coefficients for any point in $U_\infty$ other than the $Q_i$.\todo{check that $\di_0$ is defined}
+Hence $\di_0(y)$, the divisor of zeroes of $y$, has zero coefficients for any point in $U_\infty$ other than the $Q_i$.
 
 So now we suppose that $P= Q_i = (\gamma_i, 0)$ is an unramified point in $U_\infty$.
 Then $H(\gamma_i) \neq 0$ and $\left. y \right|_P = 0$, so $y + H(x)$ is a unit at $P$.
@@ -368,72 +373,80 @@ Then the short exact sequence
 \end{equation}
 is a flasque resolution of $\Omega_X$ by \cite[Chap II, ex. 1.16]{hart}.
 
-Clearly the sheaf $\Omega_{K(X)}/\Omega_P$\todo{is $\Omega_P$ standard enough notation?} is a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
-Hence for each $P$ we have the induced sheaf $i_*\left(K_X/\cO_P\right)$ on $X$.
+Clearly the sheaf $\Omega_{K(X)}/\Omega_{X,P}$ is a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
+Hence for each $P\in X$ we have the induced sheaf $i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ on $X$.
 Then if we consider the direct sum of these sheaves over $X$ we have the following isomorphism
 \begin{equation}\label{sheafisomorphism}
-\underline{\Omega}_{K(X)}/\Omega_X\cong \bigoplus_{P\in X} i_*(K_X/\cO_P).
+\underline{\Omega}_{K(X)}/\Omega_X\cong \bigoplus_{P\in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right).
 \end{equation}
-We construct this by first constructing a map from $\underline{\Omega}_{K(X)}/\Omega_P$ in to the product $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_P\right)$, and then showing that this map has finite support.
+We prove the above isomorphism exists by first constructing a map from $\underline{\Omega}_{K(X)}/\Omega_{X,P}$ in to the product $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$, and then showing that this map has finite support.
 
 Given $i\colon \{P\} \hookrightarrow X$, we see that
 \begin{align}
 i^*\left(\underline{\Omega}_{K(X)}/\Omega_X\right) & = \left(\underline{\Omega}_{K(X)}/\Omega_X\right)_P \\
 & = \underline{\Omega}_{K(X),P}/\Omega_{X,P} \\
-& = \Omega_{K(X)}/\Omega_P.
+& = \Omega_{K(X)}/\Omega_{X,P}.
 \end{align}
-Hence for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^*(f) \in i_*\left( \Omega_{P(X)}/\Omega_P\right)$\todo{check if I can write $f$ for $i_*i^*(f)$}, and this map is an isomorphism.
-We then recall that for any $f \in \Omega_{K(X)}$ we have $f \in \Omega_P$  for all but a finite number of points $P \in X$.
-Combining the above yields the isomorphism in \eqref{sheafisomorphism} is 
+Hence for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^*(f) \in i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$\todo{check if I can write $f$ for $i_*i^*(f)$}, and this map is an isomorphism.
+We then recall that for any $f \in \Omega_{K(X)}$ we have $f \in \Omega_{X,P}$  for all but a finite number of points $P \in X$, and hence the image of any such $f$ in $\prod_{P\in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors.
+Combining the above yields the isomorphism in \eqref{sheafisomorphism}.
 
-It is now clear that tensoring the short exact sequence above by $\Omega_X$ gives us
-\[
-0 \rightarrow \Omega_X \rightarrow \Omega_X \otimes {\cal K}_X \rightarrow \bigoplus_{P\in X} i_*(\Omega_K/\Omega_P) \rightarrow 0,
-\]
-another flasque resolution, this time of $\Omega_X$.\todo{define $\Omega_K$, justify last term}
 
 Now we can take the \cech complex of this over our cover $\cU$, which is
 \begin{equation}\label{dualitydiagram}\begin{array}{ccccc}
- \Omega_X(U_0)\times \Omega_X(U_\infty) & \hookrightarrow & \Omega_K\times \Omega_K & \twoheadrightarrow & \left( \bigoplus \limits_{P \in U_0} \Omega_K/\Omega_P\right) \times \left( \bigoplus \limits_{P\in U_\infty} \Omega_K / \Omega_P \right) \\
+ \Omega_X(U_0)\times \Omega_X(U_\infty) & \hookrightarrow & \Omega_{K(X)}\times \Omega_{K(X)} & \twoheadrightarrow & \left( \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus \limits_{P\in U_\infty} \Omega_{K(X)} / \Omega_{X,P} \right) \\
 d_1 \downarrow & ~ & d_2 \downarrow & ~ & d_3 \downarrow \\
-\Omega_X(U_0 \cap U_\infty) & \hookrightarrow & \Omega_K & \twoheadrightarrow & \bigoplus\limits_{P \in U_0 \cap U_\infty} \Omega_K/\Omega_P.
+\Omega_X(U_0 \cap U_\infty) & \hookrightarrow & \Omega_{K(X)} & \twoheadrightarrow & \bigoplus\limits_{P \in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P}.
 \end{array}
-\end{equation}\todo{define $\Omega_K$}
-By the snake lemma we have differential map from $\delta \colon \ker (d_3) \rightarrow {\rm coker}(d_1)$.
+\end{equation}
+By the snake lemma we have differential map from $\delta \colon \ker (d_3) \rightarrow \operatorname {coker}(d_1)$.
 
-The entire exact sequence given by the snake lemma is
+The exact sequence of kernels and cokernels given by the snake lemma is
 \[
-0 \rightarrow \hzero \ra \Omega_K \ra \bigoplus_{P \in X}\Omega_K/\Omega_P \ra \hone \ra 0.
+0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta} \hone \ra 0.
 \]
 We know that the cohomology vanishes after $\hone$ by Serre's affineness criteria.
 The fact that $\hone \cong \ker(d_1)$ and $\hone \cong {\rm coker}(d_1)$ follows from the definition of $\hone$ and $\hzero$ in terms of \cech  cohomology given above.
-The map $d_2\colon \Omega_K \times \Omega_K \ra \Omega_2$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$, and hence the kernel is formed precisely by the elements $(\omega, \omega)$.
-This shows that $\ker (d_2) \cong \Omega_K$.
-Lastly, $d_3$ is similarly defined by $d_3\colon (\omega, \psi) \mapsto \omega|_{U_0 \cap U_\infty} - \psi|_{U_0 \cap U_\infty}$.
-Hence the kernel of $d_3$ is formed of those elements which agree on $U_1 \cap U_3$.
+The map $d_2\colon \Omega_{K(X)} \times \Omega_{K(X)} \ra \Omega_2$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$, and hence the kernel is formed precisely by the elements $(\omega, \omega)$.
+Hence the map $(\omega, \omega) \mapsto \omega$ gives an isomorphism from $\ker(d_2)$ to $\Omega_{K(X)}$.
+Lastly, $d_3$ is similarly defined by $d_3\colon (\omega_1, \omega_2) \mapsto \omega_1|_{U_0 \cap U_\infty} - \omega_2|_{U_0 \cap U_\infty}$.
+Hence the kernel of $d_3$ is formed of those differentials which agree on $U_0 \cap U_\infty$.
 
 Given a point $P\in X$ we have the a map $\res_P \colon \Omega_K \ra k$, as defined in \cite[Chap III, Thm. 7.14.1]{hart}.
 This also gives a well defined map on the quotient $\res_P \colon \Omega_K/\Omega_P \ra k$, since by definition elements of $\Omega_P$ have zero residue at $P$.
-Therefore $\Omega_P$ is contained in the kernel of $\res\colon \Omega_K \ra k$.
-Since we know that $\sum_{P\in X}\res_P(\omega) = 0$ for any $\omega \in \Omega_K$ (by \cite[Chap. III, Thm. 7.14.2]{hart}) the map $\res\colon \bigoplus_{P \in X} \Omega_K/\Omega_P \ra k$ given by $\sum_{P\in X} \res_P(\omega_P)$ vanishes on the the image of $\Omega_K$.
-Hence this map passes to the quotient and we can define
+Therefore $\Omega_P$ is contained in the kernel of $\res_P\colon \Omega_K \ra k$.
+Since we know that $\sum_{P\in X}\res_P(\omega) = 0$ for any $\omega \in \Omega_K$ (by \cite[Chap. III, Thm. 7.14.2]{hart}) the map $t \colon \bigoplus_{P \in X} \Omega_K/\Omega_P \ra k$ given by $\sum_{P\in X} \res_P(\omega_P)$ vanishes on the the image of $\Omega_K$.
+Hence this map passes to the quotient and we can define the trace map
 \[
-\res\colon \hone \ra k.
+t \colon \hone \ra k.
 \]
 
-Using \eqref{dualitydiagram} we can study this map.
+Using \eqref{dualitydiagram} we can study the map $t$.
 Given a cocycle in $\hone$ we take a representative $f \in \Omega_X(U_0 \cap U_\infty)$.
 This then injects in to $\Omega_K$, and since $d_2$ is surjective we know it is in the image of $d_2$, and hence can choose an element of $\Omega_K \times \Omega_K$ mapping to $f$.
 In particular, we could choose $(f,0)$.
-This then maps to $(f|_{U_0}, 0)$, which is why we need only consider residue on $U_0$ to compute the resolution.\todo{tidy this up}
+This then maps to $(f|_{U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right)$.
+By commutativity of the diagram this maps to zero in $\bigoplus_{P \in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P}$, and hence by exactness there exists an element of the kernel mapping to $(f|_{U_0},0)$.
+So $f|_{U_0}$ agrees with zero in the quotient $\Omega_{K(X)}/\Omega_{X,P}$ at all points $P \in U_0$ except $P \in \pi^{-1}(\infty)$.
+Hence $\res_P(f) = 0$ except at $P \in \pi^{-1}(\infty)$, and so to compute $t(P)$ is suffices to compute the resiude of $P$ at all points in $\pi^{-1}(\infty)$.
 
+We now further recall that we can use this trace map to show that $\hzero$ and $\hone$ are dual.
+Given some $\omega \in \hzero$ and $f\in\hone$ we define
+\[
+\langle \omega, f\rangle := \sum_{P \in X} \res_P (f\omega).
+\]
+Thus if we fix any $\omega \in \hone$ we produce a map $\theta(\omega)\colon \hone \ra k$, given by $\theta(\omega)(f) = \langle \omega , f\rangle$.
+Similarly, if we fix any $f \in \hone$ we get a map $\psi(f) \colon \hzero \ra k$.
+Finally, Serre's duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that $\psi$ and $\theta$ are isomorphisms and are dual to each other, and hence that the spaces $\hone$ and $\hzero$ are dual.
 
-We now compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.
+We now use this fact to compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.
+
 \begin{lem}\label{basish1}
- Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0$\todo{should this be $U_0 \cap U_\infty$}, form a basis of $H^1(X,\cO_X)$.\todo{check over this letter}
+ Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0 \cap U_\infty$, form a basis of $H^1(X,\cO_X)$.\todo{check over this letter}
 \end{lem}
 \begin{proof}
-We start by considering the case $p \neq 2$ and first check that the functions are indeed regular on $U_0 \cap U_\infty$ (as required by \eqref{derhamconditions}) by computing their divisors:
+We start by considering the case $p \neq 2$ and first check that the functions are indeed regular on $U_0 \cap U_\infty$ (as required by \eqref{derhamconditions}) by computing their divisors.
+By \eqref{divxp=2} and \eqref{pnot2divisors} we see that
 \begin{align*}
 \di \left( \frac{y}{x^i} \right) & = \di (y) - \di ( x^i) \\
 & = R - (g+1)D_\infty - iD_0 + iD_\infty \\
@@ -442,9 +455,8 @@ We start by considering the case $p \neq 2$ and first check that the functions a
 Since $R$ is a positive divisor this is clearly positive on $U_0 \cap U_\infty$.
 
 
-We use Serre duality and the fact that for $i= 0, \ldots, g-1$ the elements $\omega_i = x^iy^{-1}dx$ form a basis of $\hzero$.
-As we saw above, we can embed elements of $K(X)$ and their restrictions in to $A$, the space of ad\`eles.
-Using this we can consider $yx^{-i}|_{U_0}$ as an ad\`ele and hence consider $\langle x^iy^{-1}dx, yx^{-j}|_{U_0}\rangle = \sum_{P\in U_0} \res_{P} (x^{i-j}dx)$ for $j \in \{1, \ldots, g\}$. 
+We use Serre duality and the fact that for $i= 1, \ldots, g$ the elements $\omega_i = x^iy^{-1}dx$ form a basis of $\hzero$ (see, for example, \cite[Chap 7, Prop. 4.26]{liu}).
+We will show that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in X}\res_P(x^{i-j}dx)$ is non-zero for $j = i+1$.
 We see from \eqref{divxp=2} and \eqref{pnot2divisors} that the divisor of $x^{i-j}dx$ when $p\neq 2$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
