@@ -245,9 +245,9 @@ With this notation we clearly have
 \end{equation}
 regardless of the characteristic of $k$.
 Also, as in \cite[\S 6]{faithfulaction}, we have
-\[
+\begin{equation}\label{differentialdivisor}
 \di(dx) = R - 2D_\infty,
-\]
+\end{equation}
 again regardless of characteristic.
 
 If $p \neq 2$ then the extension $K(X)$ of $K(\mathbb P_k^1) = k(x)$ will be $k(x,y)$ where $y$ satisfies
@@ -271,8 +271,8 @@ We require that $\deg(H(x)) \leq g+1$, with equality if and only $\infty$ is not
 
 
 We now recall the divisor of $H(x)$ from \cite[\S 6]{faithfulaction}:
-\begin{equation}
-\di (H(x))  = R - (g+1)D_\infty. \label{divhp=2}
+\begin{equation}\label{divisorofH}
+\di (H(x))  = R - (g+1)D_\infty. 
 \end{equation}
 Finally, we also make use of the divisor of $y$. 
 In order to describe this we need to distinguish the zeroes of $F(x)$.
@@ -410,7 +410,9 @@ The fact that $\hone \cong \ker(d_1)$ and $\hone \cong {\rm coker}(d_1)$ follows
 The map $d_2\colon \Omega_{K(X)} \times \Omega_{K(X)} \ra \Omega_2$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$, and hence the kernel is formed precisely by the elements $(\omega, \omega)$.
 Hence the map $(\omega, \omega) \mapsto \omega$ gives an isomorphism from $\ker(d_2)$ to $\Omega_{K(X)}$.
 Lastly, $d_3$ is similarly defined by $d_3\colon (\omega_1, \omega_2) \mapsto \omega_1|_{U_0 \cap U_\infty} - \omega_2|_{U_0 \cap U_\infty}$.
-Hence the kernel of $d_3$ is formed of those differentials which agree on $U_0 \cap U_\infty$.
+Hence the kernel of $d_3$ is formed of pairs of differentials which agree on $U_0 \cap U_\infty$.
+Moreover, if $(\omega_1, \omega_2 ) \in \ker(d_3)$ then $\omega_1$ can take any value on $\pi^{-1}(\infty)$, independently of $\omega_2$, and similarly $\omega_2$ can take any value on $\pi^{-1}(0)$; i.\ e.\ we have unique differential at each point $P \in X$.
+Hence $\ker(d_3) \cong \bigoplus_{P \in X} \left( \Omega_{K(X)}/ \Omega_{X,P}\right)$.
 
 Given a point $P\in X$ we have the a map $\res_P \colon \Omega_K \ra k$, as defined in \cite[Chap III, Thm. 7.14.1]{hart}.
 This also gives a well defined map on the quotient $\res_P \colon \Omega_K/\Omega_P \ra k$, since by definition elements of $\Omega_P$ have zero residue at $P$.
@@ -445,7 +447,7 @@ We now use this fact to compute a basis of $H^1(X,\cO_X)$, and then state a basi
  Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0 \cap U_\infty$, form a basis of $H^1(X,\cO_X)$.\todo{check over this letter}
 \end{lem}
 \begin{proof}
-We start by considering the case $p \neq 2$ and first check that the functions are indeed regular on $U_0 \cap U_\infty$ (as required by \eqref{derhamconditions}) by computing their divisors.
+We start by considering the case $p \neq 2$ and first check that the functions are indeed regular on $U_0 \cap U_\infty$ (as required by \eqref{cechhone}) by computing their divisors.
 By \eqref{divxp=2} and \eqref{pnot2divisors} we see that
 \begin{align*}
 \di \left( \frac{y}{x^i} \right) & = \di (y) - \di ( x^i) \\
@@ -456,18 +458,24 @@ Since $R$ is a positive divisor this is clearly positive on $U_0 \cap U_\infty$.
 
 
 We use Serre duality and the fact that for $i= 1, \ldots, g$ the elements $\omega_i = x^iy^{-1}dx$ form a basis of $\hzero$ (see, for example, \cite[Chap 7, Prop. 4.26]{liu}).
-We will show that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in X}\res_P(x^{i-j}dx)$ is non-zero for $j = i+1$.
-We see from \eqref{divxp=2} and \eqref{pnot2divisors} that the divisor of $x^{i-j}dx$ when $p\neq 2$ is
+We will show that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in X}\res_P(x^{i-j}dx)$ is non-zero if and only if $j = i+1$.
+We see from \eqref{divxp=2} and \eqref{pnot2divisors} that the divisor of $x^{i-j}dx$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
 \di(x^{i-j}dx) & = R - 2D_\infty +(i-j)D_0 - (i-j)D_\infty \\
 & = R + (i-j)D_0 - (i-j+2)D_\infty.
 \end{split}
 \end{equation}
-Now if $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one) and hence $\res_{P_\infty}(\left(x^{-1}dx\right) \neq 0$.
+Now if $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one) and hence $\res_{P_\infty}\left(x^{i-j}dx\right)  = \res_{P_\infty}\left(x^{-1}dx\right) \neq 0$.
 Since the differential has no other poles on $U_0$ it follows that $\sum_{P \in U_0} \res_P(x^{-1}dx)  \neq 0$.
-As described in the paragraph preceding this lemma, the scalar product $ \langle , \rangle \colon \hzero \times \hone \ra k$ puts $\hzero$ and $\hone$ dual to each other.
+We described in the paragraph preceding this theorem that Serre duality gives us a dual map $\langle, \rangle \colon \hone \times \hzero \ra k$.\todo{check that this has been done}
 We have shown that for $i \in \{0, \ldots, g-1\}$ the product $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$.
+
+We now also check that if $i \neq j-1$ then $\langle x^iy^{-1}dx, yx^{-j} \rangle = 0$.
+We see from the divisor above that if $i-j \leq -2$ then there is zero at $P_\infty$, and hence the residue at $P_\infty$ is zero.
+On the other hand, if $i-j \geq 0$ then there is still a pole at $P_\infty$, though the order is less than $-1$.
+However, the residue is still zero, since $i-j > -1$ implies there is no pole, and hence zero residue, at the point(s) in $\pi^{-1}(0)$.
+It then follows from the residue theorem and the fact that we can see from its divisor that $x^{i-j}dx$ cannot have any other poles, that the residue on $U_\infty$, which equals the residue at $P_\infty$, is zero.
 Hence the elements $\frac{y}{x^j}$ form a (dual) basis for $j \in \{1, \ldots , g\}$.
 
 
@@ -480,77 +488,37 @@ Suppose we have an isomorphism of curves $\phi\colon W \ra V$ and we consider so
 Then if we fix a point $P \in W$ it follows that
 \[
 \res_P(\phi^*(\omega)) = \res_P(\omega \circ \phi) = \res_{\phi(P)}(\omega).
-\]
+\]\todo{change notation, maybe delete middle equality}
 In particular, if we consider the differential $x^{-1}dx$ and the isomorphism $\sigma\colon X \ra X$, then we see that $\res_{P_\infty} (x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$.
-Hence $\langle x^iy^{-1}dx, \left. yx^{-(i+1)}\right|_{U_0} \rangle \neq 0$ and so for $1 \leq j \leq g$ the elements $\frac{y}{x^j}$  form a basis dual to $\frac{x^i}{y}dx$ for $0 \leq i \leq g-1$.
+Hence $\langle x^iy^{-1}dx, \left. yx^{-(i+1)}\right|_{U_0} \rangle \neq 0$ and so for $1 \leq j \leq g$ the residue classes of $\frac{y}{x^j}$  form a basis dual to $\frac{x^i}{y}dx$ for $0 \leq i \leq g-1$.
 
-\begin{comment}
-On the other hand, if $\infty$ is not a branch point we have two poles of order one, $P_\infty$ and $P_\infty'$.
-Since we have two poles we need to check that the residues at these poles do not cancel to zero.
-This is equivalent to checking that the residue is non-zero at the points in $X\backslash U_0$ (of which there are at most two --- $P_0$ and $P_0'$).
-If $0$ is a branch point then we have a pole at $P_0$ of order one when $i-j=-1$, and hence a non-zero residue, and we are done.
-On the other hand if $0$ is not a branch point then when $i-j=-1$ we have a pole at both of these, so we need to check that the residues do not cancel.
-Fortunately, they are largely symmetric.
-We note that $t=y-\sqrt{f(0)}$ and $s=y+\sqrt{f(0)}$ are uniformising parameters at $P_0$ and $P_0'$ respectively.
-We also note that since
-\[
-2ydy = dy^2 = df = f'dx
-\]
-then
-\[
-dy=\frac{f'}{2y}dx.
-\]
-We then rewrite the expansion of $\frac{1}{x}dx$ (i.e. $x^{i-j}dx$ when $i-j=-1$) as follows
-\begin{align*}
-\frac{1}{x}dx & = \sum_{i\geq -1}c_it^i dt \\
-& = \sum_{i\geq -1}c_it^i d\left(y-\sqrt{f(0)}\right)\\
-& = \sum_{i\geq -1}c_it^i dy \\
-& = \sum_{i\geq -1}c_it^i \frac{f'}{2y}dx,
-\end{align*}
-where $c_i \in k$.
-Now that both sides are in terms of the same differential we can match coefficients to discover the value of $c_{-1}$.
-We remark that at this point the exact same computations yield
-\[
-\frac{1}{x}dx = \sum_{i\geq -1}d_is^i \frac{f'}{2y}dx.
-\]
-Now $\frac{1}{x}$ has a pole at $P_0$ and the coefficient of $dx$ on the right hand side that can also have a pole at $P_0$ is 
-\[
-c_{-1}t^{-1}\frac{f'}{2y} = \frac{c_{-1}f'}{2y^2 - 2y\sqrt{(f(0)}} = \frac{c_{-1}f'\left( 2f+2y\sqrt{f(0)}\right) }{4(f^2-f\cdot f(0))}.
-\]
-We will use the fact that this is the only part of the sum that can contain a term of the form $\frac{1}{x}$ to compute the residue.
-Clearly no part of $\frac{2c_{-1}f'y\sqrt{f(0)}}{4(f^2-f\cdot f(0))}$ can contain a $\frac{1}{x}$ term, since there is no way of removing the $y$.
-This means we just need to compute the $\frac{1}{x}$ terms in $\frac{c_{-1}f'\cdot f}{2(f^2-f\cdot f(0))}$ and compare coefficients to show the residue is non-zero on $X \backslash U_0$.
-
-We notice at this point that by almost the same calculations when expanding about $P_0'$ we get the following
-\[
-d_{-1}s^{-1}\frac{f'}{2y} = \frac{d_{-1}f'\left(2f-2y\sqrt{f(0)}\right) }{4(f^2 - f\cdot f(0))}.
-\]
-Using the same argument as before we dispense of the $y$ term, and hence $d_{-1}$ is determined uniquely by the $\frac{1}{x}$ terms in $\frac{2d_{-1}f' \cdot f}{4(f^2-f\cdot f(0))}$.
-Since $c_{-1}$ and $d_{-1}$ are determined in the same way, they must take the same value. 
-Since the characteristic is not 2, and since $c_{-1} \neq 0$, we conclude that $\res_{X\backslash U_\infty}(x^{-1}dx) = 2c_{-1} \neq 0$.
-This completes the proof when $p \neq 2$.
-\end{comment}
 
 We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldots , g\}$ the function $\frac{y}{x^i}$ is regular on $U_0 \cap U_\infty$ by computing the divisor
 \begin{equation*}
 \di \left( \frac{y}{x^i} \right)  =  \begin{cases}
-\di_0(y) -iD_0 -(2g+1 - 2i)[P_\infty] \\
- \di_0(y) - iD_0 +(g+1-\deg(F(x) + i))[P_\infty] - (g+1-i)[P_\infty'].
+\sum_{i=1}^l m_i[Q_i] -iD_0 -(2g+1 - 2i)[P_\infty] & \text{if $\infty$ is a branch point} \\
+\sum_{i=1}^l m_i[Q_i] - iD_0 +(g+1-\deg(F(x)) + i)[P_\infty] - (g+1-i)[P_\infty'] & \text{otherwise}.
 \end{cases}
 \end{equation*}
 Note that this makes use of \eqref{divyp=2} and \eqref{divxp=2}, and is clearly positive on $U_0 \cap U_\infty$.
 
-Next we recall from \cite{faithfulaction} that in this case a basis of $\hone$ is given by $\frac{x^i dx}{H(x)}$.
-We then compute the divisor of $\left( \frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}\right)$, which is
+Next we recall from \cite[\S 6]{faithfulaction} that in this case a basis of $\hone$ is given by $\frac{x^i dx}{H(x)}$ for $i \in \{ 1, \ldots, g\}$.
+We then compute the divisor of $\left( \frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}\right)$ using  \eqref{divxp=2}, \eqref{differentialdivisor} \eqref{divisorofH} and \eqref{divyp=2}, which is
 \begin{align*}
 \di\left( \frac{yx^{i-j}dx}{H(x)} \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
-& = \di_0(y) - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty \\
+& = \sum_{i=1}^l m_i[Q_i] - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty \\
 & \qquad - R + (g+1)D_\infty\\
-& = \di_0(y) + (2j-3-2i)[P_\infty] + (i-j)D_0
+& = \sum_{i=1}^l m_i[Q_i] + (2j-3-2i)[P_\infty] + (i-j)D_0
 \end{align*}
 when $P_\infty$ is a ramification point.
 So we see that there is a pole of order one at $P_\infty$ if $2j - 3 - 2i = -1$, or equivalently if $j = i+1$.
-Since $i$ ranges from $0$ to $g-1$ we see that for $1\leq j \leq g$ the elements $\frac{y}{x^j}$ form a basis of $\hone$.
+If $j=i+1$ the divisor is positive everywhere else on $U_0$\todo{check that this is the right set, and that the right set is used throughout}, and hence $\langle \frac{y}{x^j}, \frac{x^idx}{H(x)} \rangle \neq =0$\todo{check entries in right order}\todo{remove dx from top of fraction?}. 
+
+We also need to check that if $j \neq i+1$ then $\langle \frac{y}{x^j}, \frac{x^idx}{H(x)} \rangle = 0$.
+Indeed, if $j-i \geq 2$ then clearly we do not have a pole at $P_\infty$.
+On the other hand, if $j-i \leq 0$ then the differential is regular at all $P \in \pi^{-1}(0)$.
+Hence it's residue on $U_\infty$ is zero, and it then follows from the residue theorem \todo{citation} that the residue at $P_\infty$ is also zero.
+Finally, since $i$ ranges from $0$ to $g-1$ we see that for $1\leq j \leq g$ the residue classes of $\frac{y}{x^j}$ form a basis of $\hone$.
 
 If $\infty \in \mathbb P_k^1$ is not a branch point then we see that the divisor of $\frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}$ is
 \begin{align*}
