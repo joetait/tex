@@ -503,7 +503,7 @@ We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldo
 Note that this makes use of \eqref{divyp=2} and \eqref{divxp=2}, and is clearly positive on $U_0 \cap U_\infty$.
 
 Next we recall from \cite[\S 6]{faithfulaction} that in this case a basis of $\hone$ is given by $\frac{x^i dx}{H(x)}$ for $i \in \{ 1, \ldots, g\}$.
-We then compute the divisor of $\left( \frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}\right)$ using  \eqref{divxp=2}, \eqref{differentialdivisor} \eqref{divisorofH} and \eqref{divyp=2}, which is
+We then compute the divisor of $\left( \frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}\right)$ using \eqref{divxp=2}, \eqref{differentialdivisor} \eqref{divisorofH} and \eqref{divyp=2}, which is
 \begin{align*}
 \di\left( \frac{yx^{i-j}dx}{H(x)} \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
 & = \sum_{i=1}^l m_i[Q_i] - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty \\
@@ -520,66 +520,27 @@ On the other hand, if $j-i \leq 0$ then the differential is regular at all $P \i
 Hence it's residue on $U_\infty$ is zero, and it then follows from the residue theorem \todo{citation} that the residue at $P_\infty$ is also zero.
 Finally, since $i$ ranges from $0$ to $g-1$ we see that for $1\leq j \leq g$ the residue classes of $\frac{y}{x^j}$ form a basis of $\hone$.
 
-If $\infty \in \mathbb P_k^1$ is not a branch point then we see that the divisor of $\frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}$ is
+If $\infty \in \mathbb P_k^1$ is not a branch point then using \eqref{divxp=2}, \eqref{differentialdivisor} \eqref{divisorofH} and \eqref{divyp=2}, the divisor of $\frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}$ is
 \begin{align*}
 \di\left( \frac{yx^{i-j}dx}{H(x)} \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
-& = \di_0(y) + (g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] + (i-j)D_0 \\
+& = \sum_{i=1}^l m_i[Q_i] + (g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] + (i-j)D_0 \\
 & \qquad - (i-j)D_\infty + R - 2D_\infty - R + (g+1)D_\infty \\
-& = \di_0(y) + (j+g-i-\deg(F(x)))[P_\infty] + (j - i -2)[P_\infty'] + (i-j)D_0.
+& = \sum_{i=1}^l m_i[Q_i] + (j+2g-i-\deg(F(x)))[P_\infty] + (j - i -2)[P_\infty'] + (i-j)D_0.
 \end{align*}
 Clearly if $j=i+1$ we have a pole of order one at $P_\infty'$.
-Moreover, if this is the case and $g+(j-i) = g+1 \geq \deg(F(x))$ then this is the only pole in $U_0$, and hence the residue is non-zero.
-This leaves the case $g+1 < \deg(F(x))$, where we have poles at both $P_\infty$ and $P_\infty'$, and hence need to show that the residues at these two points do not add to zero.
+Moreover, if this is the case and $2g+(j-i) = 2g+1 \geq \deg(F(x))$ then this is the only pole in $U_0$, and hence the residue is non-zero.
+This leaves the case $2g+2 =  \deg(F(x))$, where we have poles of order one at both $P_\infty$ and $P_\infty'$, and hence need to show that the residues at these two points do not add to zero.
 
+First recall that in charactersitic two we have an involution $\sigma \colon X \ra X$ given by $(x,y) \mapsto (x, y + H(x))$.
+As noted earlier, we then know that $\res_P(\delta^*(\omega) = \res_{\delta(P)}(\omega)$ for any $P \in X$ and $\omega$.
+We use this at $P_0$, since the residue on $\pi^{-1}(\infty)$ is precisely the negative of the residue on $U_\infty$, and we see from the divisor that the only poles occur at $P_0$ and $P_0' = \delta (P_0)$.
+Then since $\delta \left( \frac{yx^{i-j}dx}{H(x)} \right) = \frac{(y+H(x))x^{i-j}dx}{H(x)} = \frac{yx^{i-j}dx}{H(x)} + x^{i-j}dx$, it follows that $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) = \res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right)$ if and only if $\res_{P_0}(x^{i-j}dx) = 0$.
+Since $x$ is a uniformising parameter at $P_0$ the clearly $\res_{P_0}(x^{i-j}dx) \neq 0$ if and only if $i-j = -1$.
+Hence $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) \neq \res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right)$ if and only $i-j=-1$, and since we are in characteristic two this implies that $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) +neq \res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right) \neq 0$.
 
 Again, if $i-j=-1$ and $\infty$ is branch point then we again have a pole of order one at $P_\infty$, and hence a non-zero residue there.
 Also, even if $\infty$ is not a branch point it still suffices to compute the residue on $X\backslash U_\infty$, and we see that if $0$ is a branch point this is non-zero.
 So we again need only consider the case when both $\infty$ and $0$ are not branch points.
-
-We start by noticing that if we let $P_0 = (0,a)$ and $P_0' = (0,a+H(0))$ then we know that $s=y-a$ and $t=y-(a+H(0))$ are uniformising parameters at $P_0$ and $P_0'$ respectively.
-So to work out the residue of $\frac{1}{x}dx$ at $P_0$ we wish to find the $c_{-1}$ coefficient in the expansion
-\begin{align*}
-\frac{1}{x}dx & = \sum_{i \geq -1} c_i s^i d(y-a) \\
-& = \sum_{i\geq -1} c_i s^i dy \\
-& = \sum_{i \geq -1} c_i s^i \left(\frac{F' - yH'}{H} \right) dx,
-\end{align*}
-where the last line follows from \eqref{divdyp=2} and $c_i \in k$.
-Now $\left(\frac{F' -yH'}{H}\right)$ cannot have a pole at $0$ since $H(0) \neq 0$, so the only part of the series which can contain a $\frac{1}{x}$ term is the $i=-1$ term.
-We will use this and compare the coefficients to work out the residue at the points. 
-
-In other words we wish to find the $\frac{1}{x}$ term in 
-\[
-c_{-1}s^{-1}\left(\frac{F' - yH'}{H} \right) = \frac{c_{-1}}{y-a} \left( \frac{F' - yH'}{H} \right).
-\]
-We would like to remove the $y$ term from the denominator of this.
-After noticing that 
-\[
-(y-a)(y-(H+a)) = y^2 - yH - a(H-a) = F- a(H-a)
-\]
-we clearly see that 
-\begin{align*}
-\frac{c_{-1}}{y-a} \left( \frac{F' - yH'}{H} \right) & = c_{-1} \left( \frac{(F'-yH')(y-(H+a))}{H(F-a(H+a))} \right) \\
-& = c_{-1} \left( \frac{F'y - F'(H+a) - (F -yH)H' - yH'(H-a)}{H(F-a(H+a))} \right) \\
-& = \frac{c_{-1}(F'(H+a) - FH')}{H(F-a(H+a))} + \frac{c_{-1}y(F' - aH')}{H(F-a(H+a))},
-\end{align*}
-where we have collected together the $y$ terms, since clearly they cannot contain a $\frac{1}{x}$ term.
-
-We then perform a similar operation on the equivalent term for the expansion around $P_0'$, which is
-\[
-\frac{d_{-1}(F' - yH')}{H(y - (H(0) - a))}.
-\]
-As before, we remove the $y$ term from the denominator, this time using the identity
-\begin{align*}
-(y-(H(0)+a))(y - (H+H(0)+a)) &  = y^2 - yH - (H(0) - a)(H - H(0) - a) \\
-& = F - (H(0)-a)(H - H(0) - a).
-\end{align*}
-From this we can then derive. 
-\begin{align*}
-d_{-1}t^{-1} \left( \frac{F' - yH'}{H} \right)  = & d_{-1}\left( \frac{(F'  - yH')(y+ H + H(0) + a)}{H(F -(H(0)-a)(H - H(0) -a ))} \right) \\
- =&  \frac{d_{-1}(HF' + F'H(0) + aF' - FH')}{H(F-(H(0) - a)(H - H(0) - a))}  \\
-& - \frac{d_{-1}y(F' - H'H(0) - aH')}{H(F - (H(0) - a)( H - H(0) - a))}.
-\end{align*}
-
 
 
 \end{proof}
