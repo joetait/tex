@@ -369,24 +369,24 @@ We now take a brief detour to recall some of the details of Serre duality.
 We let $\underline{\Omega}_{K(X)}$ be the constant sheaf of $\Omega_{K(X)}$, the module of differentials of $K(X)$ over $k$.
 Then the short exact sequence
 \begin{equation}\label{serredualityses}
-0 \rightarrow \Omega_X \rightarrow \underline{\Omega}_{K(X)} \rightarrow \underline{\Omega}_{K(X)}/\Omega_X \rightarrow 0,
+0 \rightarrow \Omega_X \rightarrow \underline{\Omega}_{K(X)} \rightarrow \underline{\Omega}_{K(X)}/\Omega_X \rightarrow 0
 \end{equation}
 is a flasque resolution of $\Omega_X$ by \cite[Chap II, ex. 1.16]{hart}.
 
 Clearly the sheaf $\Omega_{K(X)}/\Omega_{X,P}$ is a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
 Hence for each $P\in X$ we have the induced sheaf $i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ on $X$.
-Then if we consider the direct sum of these sheaves over $X$ we have the following isomorphism
+Then if we consider the direct sum of these induced sheaves over all points $P\in X$ we have the following isomorphism
 \begin{equation}\label{sheafisomorphism}
 \underline{\Omega}_{K(X)}/\Omega_X\cong \bigoplus_{P\in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right).
 \end{equation}
 We prove the above isomorphism exists by first constructing a map from $\underline{\Omega}_{K(X)}/\Omega_{X,P}$ in to the product $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$, and then showing that this map has finite support.
 
-Given $i\colon \{P\} \hookrightarrow X$, we see that
-\begin{align}
+Given $i\colon \{P\} \hookrightarrow X$ we have the following equalities
+\begin{align*}
 i^*\left(\underline{\Omega}_{K(X)}/\Omega_X\right) & = \left(\underline{\Omega}_{K(X)}/\Omega_X\right)_P \\
 & = \underline{\Omega}_{K(X),P}/\Omega_{X,P} \\
 & = \Omega_{K(X)}/\Omega_{X,P}.
-\end{align}
+\end{align*}
 Hence for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^*(f) \in i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$\todo{check if I can write $f$ for $i_*i^*(f)$}, and this map is an isomorphism.
 We then recall that for any $f \in \Omega_{K(X)}$ we have $f \in \Omega_{X,P}$  for all but a finite number of points $P \in X$, and hence the image of any such $f$ in $\prod_{P\in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors.
 Combining the above yields the isomorphism in \eqref{sheafisomorphism}.
@@ -398,14 +398,15 @@ Now we can take the \cech complex of this over our cover $\cU$, which is
 d_1 \downarrow & ~ & d_2 \downarrow & ~ & d_3 \downarrow \\
 \Omega_X(U_0 \cap U_\infty) & \hookrightarrow & \Omega_{K(X)} & \twoheadrightarrow & \bigoplus\limits_{P \in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P}.
 \end{array}
-\end{equation}
+\end{equation}\todo{change from array}
 By the snake lemma we have differential map from $\delta \colon \ker (d_3) \rightarrow \operatorname {coker}(d_1)$.
-
 The exact sequence of kernels and cokernels given by the snake lemma is
 \[
-0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta} \hone \ra 0.
+0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta} \hone \ra 0,
 \]
-We know that the cohomology vanishes after $\hone$ by Serre's affineness criteria.
+which we explain below.
+
+We know that the cohomology of $\cO_X$ vanishes after $\hone$ by Serre's affineness criteria, see \cite[Thm 5.2.23]{liu}.
 The fact that $\hone \cong \ker(d_1)$ and $\hone \cong {\rm coker}(d_1)$ follows from the definition of $\hone$ and $\hzero$ in terms of \cech  cohomology given above.
 The map $d_2\colon \Omega_{K(X)} \times \Omega_{K(X)} \ra \Omega_2$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$, and hence the kernel is formed precisely by the elements $(\omega, \omega)$.
 Hence the map $(\omega, \omega) \mapsto \omega$ gives an isomorphism from $\ker(d_2)$ to $\Omega_{K(X)}$.
