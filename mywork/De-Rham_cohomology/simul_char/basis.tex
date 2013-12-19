@@ -407,31 +407,44 @@ The exact sequence of kernels and cokernels given by the snake lemma is
 which we explain below.
 
 We know that the cohomology of $\cO_X$ vanishes after $\hone$ by Serre's affineness criteria, see \cite[Thm 5.2.23]{liu}.
-The fact that $\hone \cong \ker(d_1)$ and $\hone \cong {\rm coker}(d_1)$ follows from the definition of $\hone$ and $\hzero$ in terms of \cech  cohomology given above.
-The map $d_2\colon \Omega_{K(X)} \times \Omega_{K(X)} \ra \Omega_2$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$, and hence the kernel is formed precisely by the elements $(\omega, \omega)$.
-Hence the map $(\omega, \omega) \mapsto \omega$ gives an isomorphism from $\ker(d_2)$ to $\Omega_{K(X)}$.
+The fact that $\hone \cong \ker(d_1)$ and $\hone \cong {\rm coker}(d_1)$ follows from the above discussion of \cech cohomology.
+The map $d_2\colon \Omega_{K(X)} \times \Omega_{K(X)} \ra \Omega_{K(X)}$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$, and hence the kernel is formed precisely by the elements $(\omega, \omega)$.
+So the map $(\omega, \omega) \mapsto \omega$ gives an isomorphism from $\ker(d_2)$ to $\Omega_{K(X)}$.
 Lastly, $d_3$ is similarly defined by $d_3\colon (\omega_1, \omega_2) \mapsto \omega_1|_{U_0 \cap U_\infty} - \omega_2|_{U_0 \cap U_\infty}$.
 Hence the kernel of $d_3$ is formed of pairs of differentials which agree on $U_0 \cap U_\infty$.
 Moreover, if $(\omega_1, \omega_2 ) \in \ker(d_3)$ then $\omega_1$ can take any value on $\pi^{-1}(\infty)$, independently of $\omega_2$, and similarly $\omega_2$ can take any value on $\pi^{-1}(0)$; i.\ e.\ we have unique differential at each point $P \in X$.
-Hence $\ker(d_3) \cong \bigoplus_{P \in X} \left( \Omega_{K(X)}/ \Omega_{X,P}\right)$.
+Hence $\ker(d_3) \cong \bigoplus_{P \in X} \left( \Omega_{K(X)}/ \Omega_{X,P}\right)$.\todo{improve}
 
-Given a point $P\in X$ we have the a map $\res_P \colon \Omega_K \ra k$, as defined in \cite[Chap III, Thm. 7.14.1]{hart}.
-This also gives a well defined map on the quotient $\res_P \colon \Omega_K/\Omega_P \ra k$, since by definition elements of $\Omega_P$ have zero residue at $P$.
-Therefore $\Omega_P$ is contained in the kernel of $\res_P\colon \Omega_K \ra k$.
-Since we know that $\sum_{P\in X}\res_P(\omega) = 0$ for any $\omega \in \Omega_K$ (by \cite[Chap. III, Thm. 7.14.2]{hart}) the map $t \colon \bigoplus_{P \in X} \Omega_K/\Omega_P \ra k$ given by $\sum_{P\in X} \res_P(\omega_P)$ vanishes on the the image of $\Omega_K$.
+We now define the trace map $t\colon \hone \ra k$.
+Given a point $P\in X$ we have the residue map $\res_P \colon \Omega_K \ra k$, as defined in \cite[Chap III, Thm. 7.14.1]{hart}.
+This also gives a well defined map on the quotient $\res_P \colon \Omega_K/\Omega_P \ra k$, since by definition elements of $\Omega_P$ have zero residue at $P$, and so $\Omega_P \subseteq \ker \left(\res_P\right)$.
+Since we know that $\sum_{P\in X}\res_P(\omega) = 0$ for any $\omega \in \Omega_K$ by the residue theorem \cite[Chap. III, Thm. 7.14.2]{hart},  it follows that the map $t \colon \bigoplus_{P \in X} \Omega_K/\Omega_P \ra k$ given by $\sum_{P\in X} \res_P(\omega_P)$ vanishes on the the image of $\Omega_K$.
 Hence this map passes to the quotient and we can define the trace map
 \[
-t \colon \hone \ra k.
+t \colon H^1\left(X, \Omega_X\right) \ra k,\ \bar \omega \mapsto \sum_{P \in X} \res_P(\bar \omega).
 \]
 
 Using \eqref{dualitydiagram} we can study the map $t$.
-Given a cocycle in $\hone$ we take a representative $f \in \Omega_X(U_0 \cap U_\infty)$.
-This then injects in to $\Omega_K$, and since $d_2$ is surjective we know it is in the image of $d_2$, and hence can choose an element of $\Omega_K \times \Omega_K$ mapping to $f$.
-In particular, we could choose $(f,0)$.
-This then maps to $(f|_{U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right)$.
-By commutativity of the diagram this maps to zero in $\bigoplus_{P \in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P}$, and hence by exactness there exists an element of the kernel mapping to $(f|_{U_0},0)$.
-So $f|_{U_0}$ agrees with zero in the quotient $\Omega_{K(X)}/\Omega_{X,P}$ at all points $P \in U_0$ except $P \in \pi^{-1}(\infty)$.
-Hence $\res_P(f) = 0$ except at $P \in \pi^{-1}(\infty)$, and so to compute $t(P)$ is suffices to compute the resiude of $P$ at all points in $\pi^{-1}(\infty)$.
+Given a cocycle in $\bar \omega in \hone$ we take a representative $\omega \in \Omega_X(U_0 \cap U_\infty)$.
+This then injects in to $\Omega_K$, and since $d_2$ is surjective we know it is in the image of $d_2$, and hence can choose an element of $\Omega_K \times \Omega_K$ mapping to $\omega$.
+In particular, we could choose $(\omega,0)$.
+This then maps to $(\omega|_{U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right)$.
+By commutativity of the diagram this maps to zero in $\bigoplus_{P \in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P}$, and hence by exactness there exists an element of the kernel mapping to $(\omega|_{U_0},0)$, say $\psi$.
+Since $\omega$ is regular on $U_0 \cap U_\infty$, and $0$ is regular on $U_\infty$, then $\res_P(\psi) = 0$, except possibly for $P \in \pi^{-1}(\infty)$.
+So to compute $t(\bar \omega)$ is suffices to compute the resiude of $\omega$ at all points in $\pi^{-1}(\infty)$.
+
+We now use this trace map to show that $\hone$ and $\hzero$ dual.
+There exists a canonical map 
+\begin{equation}\label{productmap}
+\hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, f) \mapsto f \cdot \omega|_{U_0 \cap U_\infty}.
+\end{equation}
+We first check that this is well defined.
+Elements of $\hzero$ are pairs $(\omega_0, \omega_\infty) \in \Omega_X(U_0) \times \Omega_X(U_\infty)$ that agree on $U_0 \cap U_\infty$.
+In particular, element since both $\omega_0$ and $\omega_\infty$ are regular on $U_0 \cap U_\infty$ for all such pairs, so are all elements of $\hzero$.
+Elements of $\hone$ are also regular on $U_0 \cap U_\infty$, since $\hone$ is a quotient of $\cO_X(U_0 \cap U_\infty)$.
+Hence the product $f \omega$ in \eqref{productmap} is regular on $U_0 \cap U_\infty$.
+Moreover, if $f \in \cO_X(U_1 \cap U_\infty)$ is a representative of zero in $\hone$, i.\ e.\ $f = f_0 - f_\infty$ for $f_i \in \cO_X(U_i)$, and $\omega  \in \hzero$ then $f \omega|_{\U_0 \cap U_\infty} = f_0\omega|_{U_0 \cap U_\infty} - f_\infty \omega|_{U_0 \cap U_\infty}$, and $f_i \omega|_{U_0\cap U_\infty} \in \Omega_X(U_i)$ for $i\in \{0, \infty}$.
+So the map is well defined on the quotients.
 
 We now further recall that we can use this trace map to show that $\hzero$ and $\hone$ are dual.
 Given some $\omega \in \hzero$ and $f\in\hone$ we define
