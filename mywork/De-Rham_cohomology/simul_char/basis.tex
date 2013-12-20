@@ -211,10 +211,11 @@ Since a non-zero rational function can only have finitely many zeroes, we conclu
 We then conclude that $f_0 = f_\infty$ is a constant function, since $f_0$ and $f_\infty$ are regular on $U_0$ and $U_\infty$ respectively, and these sets cover $X$.
 Finally, we conclude that $\omega = df_0 = df_\infty = 0$, since the differential of a constant function is always zero.
 
-On the other hand, we have an obvious surjection $\derhamhone \ra \hone$ induced by\todo{justify why a surjection}
+On the other hand, we have a surjection $\derhamhone \ra \hone$ induced by
 \[
 (\omega_0, \omega_\infty, f_{0, \infty}) \mapsto f_{0, \infty}.
-\]
+\]\todo{show this is surjective}
+
 We now check that these maps make \eqref{ses} in to an exact sequence.
 If $(\omega_0, \omega_\infty, f_{0,\infty})$ is in the kernel of $\derhamhone \ra \hone$ then there exist $f_0 \in \cO_X(U_0)$ and $f_\infty \in \cO_X(U_\infty)$ such that $f_{0,\infty} = f_0 - f_\infty$.
 Then 
@@ -440,20 +441,20 @@ There exists a canonical map
 \end{equation}
 We first check that this is well defined.
 Elements of $\hzero$ are pairs $(\omega_0, \omega_\infty) \in \Omega_X(U_0) \times \Omega_X(U_\infty)$ that agree on $U_0 \cap U_\infty$.
-In particular, element since both $\omega_0$ and $\omega_\infty$ are regular on $U_0 \cap U_\infty$ for all such pairs, so are all elements of $\hzero$.
+In particular, since both $\omega_0$ and $\omega_\infty$ are regular on $U_0 \cap U_\infty$ for all such pairs, so are all elements of $\hzero$.
 Elements of $\hone$ are also regular on $U_0 \cap U_\infty$, since $\hone$ is a quotient of $\cO_X(U_0 \cap U_\infty)$.
 Hence the product $f \omega$ in \eqref{productmap} is regular on $U_0 \cap U_\infty$.
-Moreover, if $f \in \cO_X(U_1 \cap U_\infty)$ is a representative of zero in $\hone$, i.\ e.\ $f = f_0 - f_\infty$ for $f_i \in \cO_X(U_i)$, and $\omega  \in \hzero$ then $f \omega|_{\U_0 \cap U_\infty} = f_0\omega|_{U_0 \cap U_\infty} - f_\infty \omega|_{U_0 \cap U_\infty}$, and $f_i \omega|_{U_0\cap U_\infty} \in \Omega_X(U_i)$ for $i\in \{0, \infty}$.
+Moreover, if $f \in \cO_X(U_1 \cap U_\infty)$ is a representative of zero in $\hone$, i.e.~$f = f_0 - f_\infty$ for $f_i \in \cO_X(U_i)$, and $\omega  \in \hzero$ then $f \omega|_{U_0 \cap U_\infty} = f_0\omega|_{U_0 \cap U_\infty} - f_\infty \omega|_{U_0 \cap U_\infty}$, and $f_i \omega|_{U_0\cap U_\infty} \in \Omega_X(U_i)$ for $i\in \{0, \infty\}$.
 So the map is well defined on the quotients.
 
-We now further recall that we can use this trace map to show that $\hzero$ and $\hone$ are dual.
-Given some $\omega \in \hzero$ and $f\in\hone$ we define
+We now combine the product map in \eqref{productmap} with the trace map to get a map 
 \[
-\langle \omega, f\rangle := \sum_{P \in X} \res_P (f\omega).
+\hzero \times \hone \ra k, \ \langle \omega, f\rangle \mapsto  \sum_{P \in X} \res_P (f\omega).
 \]
 Thus if we fix any $\omega \in \hone$ we produce a map $\theta(\omega)\colon \hone \ra k$, given by $\theta(\omega)(f) = \langle \omega , f\rangle$.
 Similarly, if we fix any $f \in \hone$ we get a map $\psi(f) \colon \hzero \ra k$.
-Finally, Serre's duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that $\psi$ and $\theta$ are isomorphisms and are dual to each other, and hence that the spaces $\hone$ and $\hzero$ are dual.
+Serre's duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that $\psi$ and $\theta$ are isomorphisms and are dual to each other, and hence that the spaces $\hone$ and $\hzero$ are dual.
+
 
 We now use this fact to compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.
 
@@ -482,7 +483,7 @@ We see from \eqref{divxp=2} and \eqref{pnot2divisors} that the divisor of $x^{i-
 \end{equation}
 Now if $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one) and hence $\res_{P_\infty}\left(x^{i-j}dx\right)  = \res_{P_\infty}\left(x^{-1}dx\right) \neq 0$.
 Since the differential has no other poles on $U_0$ it follows that $\sum_{P \in U_0} \res_P(x^{-1}dx)  \neq 0$.
-We described in the paragraph preceding this theorem that Serre duality gives us a dual map $\langle, \rangle \colon \hone \times \hzero \ra k$.\todo{check that this has been done}
+We described in the paragraph preceding this theorem that Serre duality gives us a dual map $\langle, \rangle \colon \hone \times \hzero \ra k$.
 We have shown that for $i \in \{0, \ldots, g-1\}$ the product $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$.
 
 We now also check that if $i \neq j-1$ then $\langle x^iy^{-1}dx, yx^{-j} \rangle = 0$.
