@@ -206,10 +206,16 @@ Hence we can define a map $\hzero \ra \derhamhone$ given by
 \omega \mapsto (\omega, \omega, 0).
 \]
 This is in fact an injection.
-Indeed, if we suppose that some $\omega\in \hzero$ maps to $0 \in \derhamhone$ then we must be able to find some $f_i\in \cO_X(U_i)$ such that $(\omega, \omega, 0) = (df_0, df_\infty, f_0|_{U_0\cap U_\infty} - f_\infty|_{U_0\cap U_\infty})$.
-Since a non-zero rational function can only have finitely many zeroes, we conclude that $f_0 = f_\infty$ everywhere.
-We then conclude that $f_0 = f_\infty$ is a constant function, since $f_0$ and $f_\infty$ are regular on $U_0$ and $U_\infty$ respectively, and these sets cover $X$.
-Finally, we conclude that $\omega = df_0 = df_\infty = 0$, since the differential of a constant function is always zero.
+Indeed, if we suppose that some $\omega\in \hzero$ maps to $0 \in \derhamhone$ then we must be able to find some $f_i\in \cO_X(U_i)$ such that $(\omega|_{U_0}, \omega_{U_\infty}, 0) = (df_0, df_\infty, f_0|_{U_0\cap U_\infty} - f_\infty|_{U_0\cap U_\infty})$.
+Since $f_0$ and $f_\infty$ agree on $U_0 \cap U_\infty$ we can define a global section $f$ such that $f|_{U_0} = f_0$ and $f|_{U_\infty} = f_ \infty$ by 
+\begin{equation}
+f(x) = \begin{cases}
+f_0(x) & \text{if}\ x \in U_0 \\
+f_\infty(x) & \text{if}\ x \in U_\infty.
+\end{cases}
+\end{equation}
+Since $f$ is regular everywhere it follows that it is constant.
+Hence $\omega_{U_0} = df_0 = df|_{U_0} = 0$, and similarly $\omega_{U_\infty} = 0$.
 
 On the other hand, we have a surjection $\derhamhone \ra \hone$ induced by
 \[
@@ -376,24 +382,24 @@ is a flasque resolution of $\Omega_X$ by \cite[Chap II, ex. 1.16]{hart}.
 
 Clearly the sheaf $\Omega_{K(X)}/\Omega_{X,P}$ is a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
 Hence for each $P\in X$ we have the induced sheaf $i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ on $X$.
-Then if we consider the direct sum of these induced sheaves over all points $P\in X$ we have the following isomorphism
+If we consider the direct sum of these induced sheaves over all points $P\in X$ we have the following isomorphism
 \begin{equation}\label{sheafisomorphism}
 \underline{\Omega}_{K(X)}/\Omega_X\cong \bigoplus_{P\in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right).
 \end{equation}
-We prove the above isomorphism exists by first constructing a map from $\underline{\Omega}_{K(X)}/\Omega_{X,P}$ in to the product $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$, and then showing that this map has finite support.
+We show that the above isomorphism exists by first constructing a map from $\underline{\Omega}_{K(X)}/\Omega_{X,P}$ in to the product $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$, and then showing that this map has finite support.
 
 Given $i\colon \{P\} \hookrightarrow X$ we have the following equalities
 \begin{align*}
 i^*\left(\underline{\Omega}_{K(X)}/\Omega_X\right) & = \left(\underline{\Omega}_{K(X)}/\Omega_X\right)_P \\
 & = \underline{\Omega}_{K(X),P}/\Omega_{X,P} \\
 & = \Omega_{K(X)}/\Omega_{X,P}.
-\end{align*}
-Hence for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^*(f) \in i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$\todo{check if I can write $f$ for $i_*i^*(f)$}, and this map is an isomorphism.
+\end{align*}\todo{should I mention anything to do with $i^{-1}$ for first equality?}
+Hence for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^*(f) \in i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$\todo{check if I can write $f$ for $i_*i^*(f)$}.
 We then recall that for any $f \in \Omega_{K(X)}$ we have $f \in \Omega_{X,P}$  for all but a finite number of points $P \in X$, and hence the image of any such $f$ in $\prod_{P\in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors.
 Combining the above yields the isomorphism in \eqref{sheafisomorphism}.
 
 
-Now we can take the \cech complex of this over our cover $\cU$, which is
+Now we can take the \cech complex of \eqref{serredualityses} over our cover $\cU$, yielding
 \begin{equation}\label{dualitydiagram}\begin{array}{ccccc}
  \Omega_X(U_0)\times \Omega_X(U_\infty) & \hookrightarrow & \Omega_{K(X)}\times \Omega_{K(X)} & \twoheadrightarrow & \left( \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus \limits_{P\in U_\infty} \Omega_{K(X)} / \Omega_{X,P} \right) \\
 d_1 \downarrow & ~ & d_2 \downarrow & ~ & d_3 \downarrow \\
@@ -405,20 +411,27 @@ The exact sequence of kernels and cokernels given by the snake lemma is
 \[
 0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta} \hone \ra 0,
 \]
-which we explain below.
+which we examine below.
 
 We know that the cohomology of $\cO_X$ vanishes after $\hone$ by Serre's affineness criteria, see \cite[Thm 5.2.23]{liu}.
 The fact that $\hone \cong \ker(d_1)$ and $\hone \cong {\rm coker}(d_1)$ follows from the above discussion of \cech cohomology.
 The map $d_2\colon \Omega_{K(X)} \times \Omega_{K(X)} \ra \Omega_{K(X)}$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$, and hence the kernel is formed precisely by the elements $(\omega, \omega)$.
 So the map $(\omega, \omega) \mapsto \omega$ gives an isomorphism from $\ker(d_2)$ to $\Omega_{K(X)}$.
-Lastly, $d_3$ is similarly defined by $d_3\colon (\omega_1, \omega_2) \mapsto \omega_1|_{U_0 \cap U_\infty} - \omega_2|_{U_0 \cap U_\infty}$.
-Hence the kernel of $d_3$ is formed of pairs of differentials which agree on $U_0 \cap U_\infty$.
-Moreover, if $(\omega_1, \omega_2 ) \in \ker(d_3)$ then $\omega_1$ can take any value on $\pi^{-1}(\infty)$, independently of $\omega_2$, and similarly $\omega_2$ can take any value on $\pi^{-1}(0)$; i.\ e.\ we have unique differential at each point $P \in X$.
-Hence $\ker(d_3) \cong \bigoplus_{P \in X} \left( \Omega_{K(X)}/ \Omega_{X,P}\right)$.\todo{improve}
+Lastly, $d_3$ is similarly defined by $(\omega_1, \omega_2) \mapsto \omega_1|_{U_0 \cap U_\infty} - \omega_2|_{U_0 \cap U_\infty}$.
+Hence the kernel of $d_3$ is formed of pairs $(\omega_1, \omega_2) \in \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus_{P \in  U_\infty} \Omega_{K(X)}/\Omega_{X,P}$ such that $\omega_1$ and $\omega_2$ agree on $U_0 \cap U_\infty$.
+In particular, no restriction is put on $\omega_1$ at points in $\pi^{-1}(\infty)$ and similarly no restriction is put on $\omega_2$ at points in $\pi^{-1}(0)$.
+Hence the map $\ker(d_3) \ra \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}$ given by $(\omega_1, \omega_2) \mapsto \omega$, where 
+\begin{equation}
+\omega(x) = \begin{cases}
+\omega_1(x) & \text{if}\ x \in U_0 \\
+\omega_2(x) & \text{otherwise},
+\end{cases}
+\end{equation}
+is an isomorphism.
 
 We now define the trace map $t\colon \hone \ra k$.
 Given a point $P\in X$ we have the residue map $\res_P \colon \Omega_K \ra k$, as defined in \cite[Chap III, Thm. 7.14.1]{hart}.
-This also gives a well defined map on the quotient $\res_P \colon \Omega_K/\Omega_P \ra k$, since by definition elements of $\Omega_P$ have zero residue at $P$, and so $\Omega_P \subseteq \ker \left(\res_P\right)$.
+This also gives a well defined map on the quotient $\res_P \colon \Omega_K/\Omega_P \ra k$, since elements of $\Omega_P$ have zero residue at $P$, and so $\Omega_P \subseteq \ker \left(\res_P\right)$.
 Since we know that $\sum_{P\in X}\res_P(\omega) = 0$ for any $\omega \in \Omega_K$ by the residue theorem \cite[Chap. III, Thm. 7.14.2]{hart},  it follows that the map $t \colon \bigoplus_{P \in X} \Omega_K/\Omega_P \ra k$ given by $\sum_{P\in X} \res_P(\omega_P)$ vanishes on the the image of $\Omega_K$.
 Hence this map passes to the quotient and we can define the trace map
 \[
@@ -426,13 +439,13 @@ t \colon H^1\left(X, \Omega_X\right) \ra k,\ \bar \omega \mapsto \sum_{P \in X} 
 \]
 
 Using \eqref{dualitydiagram} we can study the map $t$.
-Given a cocycle in $\bar \omega in \hone$ we take a representative $\omega \in \Omega_X(U_0 \cap U_\infty)$.
+Given a cocycle in $\bar \omega \in \hone$ we take a representative $\omega \in \Omega_X(U_0 \cap U_\infty)$.
 This then injects in to $\Omega_K$, and since $d_2$ is surjective we know it is in the image of $d_2$, and hence can choose an element of $\Omega_K \times \Omega_K$ mapping to $\omega$.
 In particular, we could choose $(\omega,0)$.
 This then maps to $(\omega|_{U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right)$.
 By commutativity of the diagram this maps to zero in $\bigoplus_{P \in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P}$, and hence by exactness there exists an element of the kernel mapping to $(\omega|_{U_0},0)$, say $\psi$.
-Since $\omega$ is regular on $U_0 \cap U_\infty$, and $0$ is regular on $U_\infty$, then $\res_P(\psi) = 0$, except possibly for $P \in \pi^{-1}(\infty)$.
-So to compute $t(\bar \omega)$ is suffices to compute the resiude of $\omega$ at all points in $\pi^{-1}(\infty)$.
+Since $\omega$ is regular on $U_0 \cap U_\infty$, and $0$ is regular on $U_\infty$, then $\res_P(\psi) = 0$ for all $P \in U_\infty$.
+So to compute $t(\bar \omega)$ it suffices to compute the resiude of $\omega$ (or equivalently $\psi$) at all points in $\pi^{-1}(\infty)$.
 
 We now use this trace map to show that $\hone$ and $\hzero$ dual.
 There exists a canonical map 
@@ -441,19 +454,19 @@ There exists a canonical map
 \end{equation}
 We first check that this is well defined.
 Elements of $\hzero$ are pairs $(\omega_0, \omega_\infty) \in \Omega_X(U_0) \times \Omega_X(U_\infty)$ that agree on $U_0 \cap U_\infty$.
-In particular, since both $\omega_0$ and $\omega_\infty$ are regular on $U_0 \cap U_\infty$ for all such pairs, so are all elements of $\hzero$.
+In particular all elements of $\hzero$ are regular on $U_0 \cap U_\infty$.
 Elements of $\hone$ are also regular on $U_0 \cap U_\infty$, since $\hone$ is a quotient of $\cO_X(U_0 \cap U_\infty)$.
 Hence the product $f \omega$ in \eqref{productmap} is regular on $U_0 \cap U_\infty$.
-Moreover, if $f \in \cO_X(U_1 \cap U_\infty)$ is a representative of zero in $\hone$, i.e.~$f = f_0 - f_\infty$ for $f_i \in \cO_X(U_i)$, and $\omega  \in \hzero$ then $f \omega|_{U_0 \cap U_\infty} = f_0\omega|_{U_0 \cap U_\infty} - f_\infty \omega|_{U_0 \cap U_\infty}$, and $f_i \omega|_{U_0\cap U_\infty} \in \Omega_X(U_i)$ for $i\in \{0, \infty\}$.
-So the map is well defined on the quotients.
+Moreover, if $f \in \cO_X(U_0 \cap U_\infty)$ is a representative of zero in $\hone$, i.e.~$f = f_0 - f_\infty$ for $f_i \in \cO_X(U_i)$, and $\omega  \in \hzero$ then $f \omega|_{U_0 \cap U_\infty} = f_0\omega|_{U_0 \cap U_\infty} - f_\infty \omega|_{U_0 \cap U_\infty}$, and $f_i \omega|_{U_0\cap U_\infty} \in \Omega_X(U_i)$ for $i\in \{0, \infty\}$.
+Hence $f\omega$ is zero in $H^1(X,\Omega_X)$ and the map is well defined.
 
 We now combine the product map in \eqref{productmap} with the trace map to get a map 
 \[
 \hzero \times \hone \ra k, \ \langle \omega, f\rangle \mapsto  \sum_{P \in X} \res_P (f\omega).
 \]
-Thus if we fix any $\omega \in \hone$ we produce a map $\theta(\omega)\colon \hone \ra k$, given by $\theta(\omega)(f) = \langle \omega , f\rangle$.
+Thus if we fix any $\omega \in \hzero$ we produce a map $\theta(\omega)\colon \hone \ra k$, given by $\theta(\omega)(f) = \langle \omega , f\rangle$.
 Similarly, if we fix any $f \in \hone$ we get a map $\psi(f) \colon \hzero \ra k$.
-Serre's duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that $\psi$ and $\theta$ are isomorphisms and are dual to each other, and hence that the spaces $\hone$ and $\hzero$ are dual.
+Serre's duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that $\psi$ and $\theta$ are isomorphisms\todo{add "of the hom sets"?} and are dual to each other, and hence that the spaces $\hone$ and $\hzero$ are dual.
 
 
 We now use this fact to compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.
@@ -472,8 +485,9 @@ By \eqref{divxp=2} and \eqref{pnot2divisors} we see that
 Since $R$ is a positive divisor this is clearly positive on $U_0 \cap U_\infty$.
 
 
-We use Serre duality and the fact that for $i= 1, \ldots, g$ the elements $\omega_i = x^iy^{-1}dx$ form a basis of $\hzero$ (see, for example, \cite[Chap 7, Prop. 4.26]{liu}).
+Recall that for $i= 0, \ldots, g-1$ the elements $\omega_i = x^iy^{-1}dx$ form a basis of $\hzero$ (see, for example, \cite[Chap 7, Prop. 4.26]{liu}).
 We will show that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in X}\res_P(x^{i-j}dx)$ is non-zero if and only if $j = i+1$.
+It will then follow from the above discussion of Serre duality that $\left. \frac{y}{x^j}\right|_{U_0\cap U_\infty}$ forms a basis for $j=1, \ldots g$.
 We see from \eqref{divxp=2} and \eqref{pnot2divisors} that the divisor of $x^{i-j}dx$ is
 \begin{equation}\label{residuedivisor}
 \begin{split}
@@ -483,15 +497,14 @@ We see from \eqref{divxp=2} and \eqref{pnot2divisors} that the divisor of $x^{i-
 \end{equation}
 Now if $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor has a $[P_\infty]$ term with coefficient one) and hence $\res_{P_\infty}\left(x^{i-j}dx\right)  = \res_{P_\infty}\left(x^{-1}dx\right) \neq 0$.
 Since the differential has no other poles on $U_0$ it follows that $\sum_{P \in U_0} \res_P(x^{-1}dx)  \neq 0$.
-We described in the paragraph preceding this theorem that Serre duality gives us a dual map $\langle, \rangle \colon \hone \times \hzero \ra k$.
-We have shown that for $i \in \{0, \ldots, g-1\}$ the product $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$.
+We have shown that for $i \in \{0, \ldots, g-1\}$ the product $\langle x^iy^{-1}dx, yx^{-(i+1)} \rangle \neq 0$.
 
 We now also check that if $i \neq j-1$ then $\langle x^iy^{-1}dx, yx^{-j} \rangle = 0$.
-We see from the divisor above that if $i-j \leq -2$ then there is zero at $P_\infty$, and hence the residue at $P_\infty$ is zero.
+We see from the divisor above that if $i-j \leq -2$ then $x^{i-j}dx$ is regular at $P_\infty$, and hence the residue at $P_\infty$ is zero.
 On the other hand, if $i-j \geq 0$ then there is still a pole at $P_\infty$, though the order is less than $-1$.
-However, the residue is still zero, since $i-j > -1$ implies there is no pole, and hence zero residue, at the point(s) in $\pi^{-1}(0)$.
-It then follows from the residue theorem and the fact that we can see from its divisor that $x^{i-j}dx$ cannot have any other poles, that the residue on $U_\infty$, which equals the residue at $P_\infty$, is zero.
-Hence the elements $\frac{y}{x^j}$ form a (dual) basis for $j \in \{1, \ldots , g\}$.
+However since $i-j > -1$ there is no pole, and hence zero residue, at the point(s) in $\pi^{-1}(0)$.
+It then follows from the residue theorem (and the fact that $x^{i-j}dx$ cannot have any other poles) that the residue on $U_\infty$, which is the negative of the residue at $P_\infty$, is zero.
+Hence the elements $\frac{y}{x^j}$ form a (dual) basis for $j \in \{1, \ldots , g\}$ if $\infty$ is a branch point.
 
 
 On the other hand, if $\infty$ is not a branch point then we see from \eqref{residuedivisor} that we still have order one poles at both $P_\infty$ and $P_\infty'$ if and only if $i-j=-1$.
@@ -499,13 +512,12 @@ In this case we see that there are still no poles in $U_0\backslash \pi^{-1}(\in
 As we assumed $p\neq 2$ it is sufficient to show that $\res_{P_\infty}(x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$ in order to prove that $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$.
 
 We can show this using the hyperelliptic involution $\sigma$.
-Suppose we have an isomorphism of curves $\phi\colon W \ra V$ and we consider some differential $\omega$ on $V$.
-Then if we fix a point $P \in W$ it follows that
+Given any $P \in X$ and any differential $\omega$ we have
 \[
-\res_P(\phi^*(\omega)) = \res_P(\omega \circ \phi) = \res_{\phi(P)}(\omega).
+\res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega).
 \]\todo{change notation, maybe delete middle equality}
-In particular, if we consider the differential $x^{-1}dx$ and the isomorphism $\sigma\colon X \ra X$, then we see that $\res_{P_\infty} (x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$.
-Hence $\langle x^iy^{-1}dx, \left. yx^{-(i+1)}\right|_{U_0} \rangle \neq 0$ and so for $1 \leq j \leq g$ the residue classes of $\frac{y}{x^j}$  form a basis dual to $\frac{x^i}{y}dx$ for $0 \leq i \leq g-1$.
+In particular, if $\omega = x^{-1}dx$ and $P = P_\infty$, then we see that $\res_{P_\infty} (x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$, since $\sigma (x^{-1}dx) = x^{-1}dx$.
+Hence $\langle x^iy^{-1}dx, yx^{-(i+1)}\rangle \neq 0$ and so for $1 \leq j \leq g$ the residue classes of $\frac{y}{x^j}$  form a basis dual to $\frac{x^i}{y}dx$ for $0 \leq i \leq g-1$.
 
 
 We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldots , g\}$ the function $\frac{y}{x^i}$ is regular on $U_0 \cap U_\infty$ by computing the divisor
@@ -515,9 +527,9 @@ We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldo
 \sum_{i=1}^l m_i[Q_i] - iD_0 +(g+1-\deg(F(x)) + i)[P_\infty] - (g+1-i)[P_\infty'] & \text{otherwise}.
 \end{cases}
 \end{equation*}
-Note that this makes use of \eqref{divyp=2} and \eqref{divxp=2}, and is clearly positive on $U_0 \cap U_\infty$.
+Note that this follows from \eqref{divyp=2} and \eqref{divxp=2}, and is clearly positive on $U_0 \cap U_\infty$.
 
-Next we recall from \cite[\S 6]{faithfulaction} that in this case a basis of $\hone$ is given by $\frac{x^i dx}{H(x)}$ for $i \in \{ 1, \ldots, g\}$.
+Next we recall from \cite[\S 6]{faithfulaction} that in this case a basis of $\hzero$ is given by $\frac{x^i dx}{H(x)}$ for $i \in \{ 0, \ldots, g-1\}$.
 We then compute the divisor of $\left( \frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}\right)$ using \eqref{divxp=2}, \eqref{differentialdivisor} \eqref{divisorofH} and \eqref{divyp=2}, which is
 \begin{align*}
 \di\left( \frac{yx^{i-j}dx}{H(x)} \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
@@ -527,12 +539,12 @@ We then compute the divisor of $\left( \frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}\r
 \end{align*}
 when $P_\infty$ is a ramification point.
 So we see that there is a pole of order one at $P_\infty$ if $2j - 3 - 2i = -1$, or equivalently if $j = i+1$.
-If $j=i+1$ the divisor is positive everywhere else on $U_0$\todo{check that this is the right set, and that the right set is used throughout}, and hence $\langle \frac{y}{x^j}, \frac{x^idx}{H(x)} \rangle \neq =0$\todo{check entries in right order}\todo{remove dx from top of fraction?}. 
+If $j=i+1$ the divisor is positive everywhere else on $U_0$, and hence $\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \rangle \neq 0$. 
 
-We also need to check that if $j \neq i+1$ then $\langle \frac{y}{x^j}, \frac{x^idx}{H(x)} \rangle = 0$.
+We also need to check that if $j \neq i+1$ then $\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \rangle = 0$.
 Indeed, if $j-i \geq 2$ then clearly we do not have a pole at $P_\infty$.
-On the other hand, if $j-i \leq 0$ then the differential is regular at all $P \in \pi^{-1}(0)$.
-Hence it's residue on $U_\infty$ is zero, and it then follows from the residue theorem \todo{citation} that the residue at $P_\infty$ is also zero.
+On the other hand, if $j-i \leq 0$ then the differential is regular on $U_0$.
+Hence it's residue on $U_\infty$ is zero, and it then follows from the residue theorem that the residue at $P_\infty$ is also zero.
 Finally, since $i$ ranges from $0$ to $g-1$ we see that for $1\leq j \leq g$ the residue classes of $\frac{y}{x^j}$ form a basis of $\hone$.
 
 If $\infty \in \mathbb P_k^1$ is not a branch point then using \eqref{divxp=2}, \eqref{differentialdivisor} \eqref{divisorofH} and \eqref{divyp=2}, the divisor of $\frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}$ is
@@ -547,17 +559,11 @@ Moreover, if this is the case and $2g+(j-i) = 2g+1 \geq \deg(F(x))$ then this is
 This leaves the case $2g+2 =  \deg(F(x))$, where we have poles of order one at both $P_\infty$ and $P_\infty'$, and hence need to show that the residues at these two points do not add to zero.
 
 First recall that in charactersitic two we have an involution $\sigma \colon X \ra X$ given by $(x,y) \mapsto (x, y + H(x))$.
-As noted earlier, we then know that $\res_P(\delta^*(\omega) = \res_{\delta(P)}(\omega)$ for any $P \in X$ and $\omega$.
-We use this at $P_0$, since the residue on $\pi^{-1}(\infty)$ is precisely the negative of the residue on $U_\infty$, and we see from the divisor that the only poles occur at $P_0$ and $P_0' = \delta (P_0)$.
-Then since $\delta \left( \frac{yx^{i-j}dx}{H(x)} \right) = \frac{(y+H(x))x^{i-j}dx}{H(x)} = \frac{yx^{i-j}dx}{H(x)} + x^{i-j}dx$, it follows that $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) = \res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right)$ if and only if $\res_{P_0}(x^{i-j}dx) = 0$.
-Since $x$ is a uniformising parameter at $P_0$ the clearly $\res_{P_0}(x^{i-j}dx) \neq 0$ if and only if $i-j = -1$.
-Hence $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) \neq \res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right)$ if and only $i-j=-1$, and since we are in characteristic two this implies that $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) +neq \res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right) \neq 0$.
-
-Again, if $i-j=-1$ and $\infty$ is branch point then we again have a pole of order one at $P_\infty$, and hence a non-zero residue there.
-Also, even if $\infty$ is not a branch point it still suffices to compute the residue on $X\backslash U_\infty$, and we see that if $0$ is a branch point this is non-zero.
-So we again need only consider the case when both $\infty$ and $0$ are not branch points.
-
-
+As noted earlier, we then know that $\res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega)$ for any $P \in X$ and $\omega\in \hzero$.
+We use this at $P_0$, since the residue on $\pi^{-1}(\infty)$ is precisely the negative of the residue on $U_\infty$, and we see from the divisor that the only poles occur at $P_0$ and $P_0' = \sigma (P_0)$.
+Then since $\sigma \left( \frac{yx^{i-j}dx}{H(x)} \right) = \frac{(y+H(x))x^{i-j}dx}{H(x)} = \frac{yx^{i-j}dx}{H(x)} + x^{i-j}dx$, it follows that $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) = \res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right)$ if and only if $\res_{P_0}(x^{i-j}dx) = 0$.
+Since $x$ is a uniformising parameter at $P_0$ then $\res_{P_0}(x^{i-j}dx) \neq 0$ if and only if $i-j = -1$.
+Hence $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) \neq \res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right)$ if and only $i-j=-1$, and since we are assuming $\cha(k) = 2$ this implies that $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) +\res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right) \neq 0$.
 \end{proof}
 
 
