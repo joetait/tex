@@ -515,8 +515,8 @@ We can show this using the hyperelliptic involution $\sigma$.
 Given any $P \in X$ and any differential $\omega$ we have
 \[
 \res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega).
-\]\todo{change notation, maybe delete middle equality}
-In particular, if $\omega = x^{-1}dx$ and $P = P_\infty$, then we see that $\res_{P_\infty} (x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$, since $\sigma (x^{-1}dx) = x^{-1}dx$.
+\]
+In particular, if we let $\omega = x^{-1}dx$ and $P = P_\infty$, then we see that $\res_{P_\infty} (x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$, since $\sigma (x^{-1}dx) = x^{-1}dx$.
 Hence $\langle x^iy^{-1}dx, yx^{-(i+1)}\rangle \neq 0$ and so for $1 \leq j \leq g$ the residue classes of $\frac{y}{x^j}$  form a basis dual to $\frac{x^i}{y}dx$ for $0 \leq i \leq g-1$.
 
 
@@ -529,10 +529,10 @@ We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldo
 \end{equation*}
 Note that this follows from \eqref{divyp=2} and \eqref{divxp=2}, and is clearly positive on $U_0 \cap U_\infty$.
 
-Next we recall from \cite[\S 6]{faithfulaction} that in this case a basis of $\hzero$ is given by $\frac{x^i dx}{H(x)}$ for $i \in \{ 0, \ldots, g-1\}$.
-We then compute the divisor of $\left( \frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}\right)$ using \eqref{divxp=2}, \eqref{differentialdivisor} \eqref{divisorofH} and \eqref{divyp=2}, which is
+Next we recall from \cite[\S 6]{faithfulaction} that in this case a basis of $\hzero$ is given by $\frac{x^i}{H(x)}dx$ for $i \in \{ 0, \ldots, g-1\}$.
+We then compute the divisor of $\left( \frac{y}{x^j} \cdot \frac{x^i}{H(x)}dx\right)$ using \eqref{divxp=2}, \eqref{differentialdivisor} \eqref{divisorofH} and \eqref{divyp=2}, which is
 \begin{align*}
-\di\left( \frac{yx^{i-j}dx}{H(x)} \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
+\di\left( \frac{yx^{i-j}}{H(x)}dx \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
 & = \sum_{i=1}^l m_i[Q_i] - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty \\
 & \qquad - R + (g+1)D_\infty\\
 & = \sum_{i=1}^l m_i[Q_i] + (2j-3-2i)[P_\infty] + (i-j)D_0
@@ -547,9 +547,9 @@ On the other hand, if $j-i \leq 0$ then the differential is regular on $U_0$.
 Hence it's residue on $U_\infty$ is zero, and it then follows from the residue theorem that the residue at $P_\infty$ is also zero.
 Finally, since $i$ ranges from $0$ to $g-1$ we see that for $1\leq j \leq g$ the residue classes of $\frac{y}{x^j}$ form a basis of $\hone$.
 
-If $\infty \in \mathbb P_k^1$ is not a branch point then using \eqref{divxp=2}, \eqref{differentialdivisor} \eqref{divisorofH} and \eqref{divyp=2}, the divisor of $\frac{y}{x^j} \cdot \frac{x^i dx}{H(x)}$ is
+If $\infty \in \mathbb P_k^1$ is not a branch point then using \eqref{divxp=2}, \eqref{differentialdivisor} \eqref{divisorofH} and \eqref{divyp=2}, the divisor of $\frac{y}{x^j} \cdot \frac{x^i }{H(x)}dx$ is
 \begin{align*}
-\di\left( \frac{yx^{i-j}dx}{H(x)} \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
+\di\left( \frac{yx^{i-j}}{H(x)}dx \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
 & = \sum_{i=1}^l m_i[Q_i] + (g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] + (i-j)D_0 \\
 & \qquad - (i-j)D_\infty + R - 2D_\infty - R + (g+1)D_\infty \\
 & = \sum_{i=1}^l m_i[Q_i] + (j+2g-i-\deg(F(x)))[P_\infty] + (j - i -2)[P_\infty'] + (i-j)D_0.
@@ -561,9 +561,9 @@ This leaves the case $2g+2 =  \deg(F(x))$, where we have poles of order one at b
 First recall that in charactersitic two we have an involution $\sigma \colon X \ra X$ given by $(x,y) \mapsto (x, y + H(x))$.
 As noted earlier, we then know that $\res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega)$ for any $P \in X$ and $\omega\in \hzero$.
 We use this at $P_0$, since the residue on $\pi^{-1}(\infty)$ is precisely the negative of the residue on $U_\infty$, and we see from the divisor that the only poles occur at $P_0$ and $P_0' = \sigma (P_0)$.
-Then since $\sigma \left( \frac{yx^{i-j}dx}{H(x)} \right) = \frac{(y+H(x))x^{i-j}dx}{H(x)} = \frac{yx^{i-j}dx}{H(x)} + x^{i-j}dx$, it follows that $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) = \res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right)$ if and only if $\res_{P_0}(x^{i-j}dx) = 0$.
+Then since $\sigma \left( \frac{yx^{i-j}}{H(x)}dx \right) = \frac{(y+H(x))x^{i-j}}{H(x)}dx = \frac{yx^{i-j}}{H(x)}dx + x^{i-j}dx$, it follows that $\res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) = \res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only if $\res_{P_0}(x^{i-j}dx) = 0$.
 Since $x$ is a uniformising parameter at $P_0$ then $\res_{P_0}(x^{i-j}dx) \neq 0$ if and only if $i-j = -1$.
-Hence $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) \neq \res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right)$ if and only $i-j=-1$, and since we are assuming $\cha(k) = 2$ this implies that $\res_{P_0} \left( \frac{yx^{i-j}dx}{H(x)} \right) +\res_{P_0'} \left( \frac{yx^{i-j}dx}{H(x)} \right) \neq 0$.
+Hence $\res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq \res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only $i-j=-1$, and since we are assuming $\cha(k) = 2$ this implies that $\res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) +\res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq 0$.
 \end{proof}
 
 
@@ -643,17 +643,17 @@ We now consider the action of $\sigma$ on the entries in \eqref{three}.
 Firstly we see that
 \begin{align*}
 \sigma \left( \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} dx\right) & = \frac{-\sigma(\Psi_i(x,y))}{x^{i+1} H(x)} dx \\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} + \frac{H(x)(xH_{1,i}'(x) + iH_{1,i}'(x))}{x^{i+1}H(x)}dx\\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} + \frac{xH_{1,i}'(x) + iH_{1,i}(x)}{x^{i+1}}dx \\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} +  \frac{H_{1,i}'(x)}{x^i}dx + \frac{iH_{1,i}'(x)}{x^{i+1}}dx \\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} +  \frac{1}{x^i}d\left( H_{1,i}(x) \right) + H_{1,i}(x) d \left( \frac{1}{x^i} \right) \\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} + \left( \frac{H_{1,i}(x)}{x^i} \right),
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{H(x)(xH_{1,i}'(x) + iH_{1,i}'(x))}{x^{i+1}H(x)}dx\\
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{xH_{1,i}'(x) + iH_{1,i}(x)}{x^{i+1}}dx \\
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx +  \frac{H_{1,i}'(x)}{x^i}dx + \frac{iH_{1,i}'(x)}{x^{i+1}}dx \\
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx +  \frac{1}{x^i}d\left( H_{1,i}(x) \right) + H_{1,i}(x) d \left( \frac{1}{x^i} \right) \\
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + d\left( \frac{H_{1,i}(x)}{x^i} \right),
 \end{align*}
 where the second equality follows from \eqref{capitals} and the fact that $\sigma(y) = y + H(x)$.
 
 Similarly we can derive
 \begin{equation*}
-\sigma \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} dx \right)  = \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx + d \left( \frac{{}_iH_{2,i}(x)}{x^i} \right).
+\sigma \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} dx \right)  = \frac{\Phi_i(x,y)}{x^{i+1}H(x)} dx + d \left( \frac{{}_iH_{2,i}(x)}{x^i} \right).
 \end{equation*}
 Lastly, it is clear that $\sigma(x^{-i}y) = x^{-i}(y+H(x))$.
 
@@ -669,11 +669,22 @@ So the action of $\sigma$ on the basis elements in \eqref{three} amounts to addi
 \]
 which clearly satisfies the conditions of \eqref{quotient} and hence is zero.
 So the action of the involution $\sigma$ on $\derhamhone$ is trivial and hence the action of the group $G$ is not faithful.\todo{consider computing the action when $p\neq 2$}
-\begin{comment}
-Hence the action is trivial if and only if ${}_iH_1'(x)dx = {}_iH_2'(x)dx =0$.
-This cannot happen though, since we can always find an $l\in \{0,1\}$ such that $l \not\equiv d\ \text{mod}\ 2$, and then $d\left({}_iH_2(x)\right) = {}_iH_2'(x)dx \neq 0$, as we can see from the leading term (unless of course $d$ is zero, in which case $d\left({}_iH_1(x)\right) \neq 0$).
-\end{comment}
 \end{proof}
+
+\begin{rem}
+We briefly study the action of $\sigma$ on the elements \eqref{one} (when $p\neq 2$).
+When $p \neq 2$ then $\sigma$ acts by $(x,y) \mapsto (x,-y)$.
+If we let
+\[
+\nu_i = \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right)
+\]
+then 
+\begin{equation}
+\sigma(\nu_i) = -\nu_i = \nu_i - 2\nu_i.
+\end{equation}
+Since we are assuming that $p\neq 2$ it follows that $2\nu_i \neq =0$ for $i = 1, \ldots , g$.
+In particular we note that the action on the elements \eqref{one} is non-trivial.
+\end{rem}
 
 
 We now prove Theorem \ref{basis}.
@@ -728,7 +739,7 @@ The divisor of $\frac{-\phi_i}{2yx^{i+1}}dx$ is
 & \geq  \di_0\left( \frac{\phi_i}{x^{g+2}}\right) + (g+2)D_0 - (2g+2)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
 & =  \di_0\left( \frac{\phi_i}{x^{g+2}} \right) + (i-g-2)D_\infty + (g-i+1)D_0,
 \end{align*}
-where the second equality makes use of \eqref{dixp=2} and \eqref{pnot2divisors}.
+where the second equality makes use of \eqref{divxp=2} and \eqref{pnot2divisors}.
 Since $i \leq g$ the differential $\frac{-\phi_i}{2yx^{i+1}}dx$ is regular on $U_\infty = X\backslash \pi^{-1}(\infty)$.
 
 Similarly the divisor of $\frac{\psi_i}{2yx^{i+1}}dx$ is
@@ -778,28 +789,28 @@ We can now define the following polynomials:
 \end{equation}
 We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
 
-Clearly $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x) dx}{x^{i+1}H}$ and $\frac{\Psi_i(x) dx}{x^{i+1}H}$ are regular on $U_\infty$ and $U_0$ respectively.
+Clearly $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x) }{x^{i+1}H}dx$ and $\frac{\Psi_i(x) }{x^{i+1}H}dx$ are regular on $U_\infty$ and $U_0$ respectively.
 
-We start by computing the divisor of $\frac{dx}{x^{i+1}H}$, since it is a common component to all the differentials we need to look at.
+We start by computing the divisor of $\frac{1}{x^{i+1}H}dx$, since it is a common component to all the differentials we need to look at.
 This yields
 \begin{align}
-\di \left( \frac{dx}{x^{i+1}H} \right) & = \di(dx) - \di (x^{i+1}) - \di (H) \nonumber \\
+\di \left( \frac{1}{x^{i+1}H}dx \right) & = \di(dx) - \di (x^{i+1}) - \di (H) \nonumber \\
 & = (R-2D_\infty) - ((i+1)D_0 - (i+1)D_\infty) - (R - (g+1)D_\infty) \nonumber \\
 & = (g+i)D_\infty - (i+1)D_0,
 \end{align}
-using \eqref{divdxp=2}, \eqref{divhp=2} and \eqref{divxp=2}.
+using \eqref{differentialdivisor}, \eqref{divisorofH} and \eqref{divxp=2}.
 We now use this along with \eqref{divyp=2} and the polynomials we defined in the preceding paragraphs to complete the proof.
 
 We begin by computing the divisors associated to $\Phi_i$.
 Firstly,
 \begin{align*}
-\di \left( \frac{\Phi_i^x dx}{x^{i+1} H} \right)  = &  \di(\Phi_i^x) -(i+1)D_0 + (g+i)D_\infty\\
+\di \left( \frac{\Phi_i^x }{x^{i+1} H}dx \right)  = &  \di(\Phi_i^x) -(i+1)D_0 + (g+i)D_\infty\\
  = & \left( \di_0(\Phi_i^x) -d_\Phi^xD_\infty\right) -(i+1)D_0 + (g+i)D_\infty\\
  \geq & \di_0(\Phi_i^x) - (2g+2)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
  = &  \di_0(\Phi_i^x) - (i+1)D_0 + (i-2-g)D_\infty \\
  =  & \di_0 \left( \frac{\Phi_i^x}{x^{i+1}} \right) + (i-g-2)D_\infty.
 \end{align*}
-From this we see that the differential $\frac{\Phi_i^xdx}{x^{i+1}H}$ is clearly regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
+From this we see that the differential $\frac{\Phi_i^x}{x^{i+1}H}dx$ is clearly regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
 
 We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, namely
 \begin{align*}
@@ -808,11 +819,11 @@ We now compute the divisor of the other half of $\frac{\Phi_i}{x^{i+1}H}dx$, nam
  \geq & \di(y) + \di_0(\Phi_i^y) - (g+1)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
  = & \di(y) + \di_0\left(\frac{\Phi_i^y}{x^{i+1}} \right) + (i-1)D_\infty.
 \end{align*}
-From \eqref{divyp=2} we see that $y$ only has poles at points in $\pi^{-1}(\infty)$, and hence this completes the proof that $\frac{\Phi_i dx}{x^{i+1}H}$ is regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
+From \eqref{divyp=2} we see that $y$ only has poles at points in $\pi^{-1}(\infty)$, and hence this completes the proof that $\frac{\Phi_i }{x^{i+1}H}dx$ is regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
 
 Now we complete the same computations on $\Psi_i$, starting with $\Psi_i^x$:
 \begin{align*}
-\di\left( \frac{\Psi_i^x dx}{x^{i+1}H} \right)  & =   \di(\Psi_i^x)  - (i+1)D_0 + (g+i)D_\infty \\
+\di\left( \frac{\Psi_i^x }{x^{i+1}H}dx \right)  & =   \di(\Psi_i^x)  - (i+1)D_0 + (g+i)D_\infty \\
 & = (\di_0(\Psi_i^x) -d_\Psi^xD_\infty) - (i+1)D_0 + (g+i)D_\infty \\
  & \geq   \di_0(\Psi_i^x ) - iD_\infty - (i+1)D_0 + (g+i)D_\infty \\
  & =   \di_0(\Psi_i^x) - (i+1)D_0 + gD_\infty,
@@ -822,7 +833,7 @@ and it is clear that the divisor is positive on $U_0 = X \backslash \pi^{-1}(0)$
 For the other half of the differential we need to consider seperate cases.
 If we assume that $\infty$ is branch point then  using \eqref{divyp=2} we see that
 \begin{align*}
-\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) - (i+1)D_0 + (g+i)[P_\infty] \\
+\di\left(\frac{y\Psi_i^y }{x^{i+1}H}dx \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y) - (i+1)D_0 + (g+i)[P_\infty] \\
  =  & \di_0(y) + \di(\Psi_i^y) -(i+1)D_0 + (2i -1)[P_\infty] \\
  = &  \di_0(y) + \di_0(\Psi_i^y) - d_\Psi^y[P_\infty] - (i+1)D_0 + (2i-1)[P_\infty] \\
  \geq &  \di_0(y) + \di_0(\Psi_i^y) -(i-1)[P_\infty] -(i+1)D_0 + (2i-1)[P_\infty] \\
@@ -831,11 +842,11 @@ If we assume that $\infty$ is branch point then  using \eqref{divyp=2} we see th
 which is clearly positive on $U_0$.
 On the other hand, if $\infty$ is not a branch point then we have
 \begin{align*}
-\di\left(\frac{y\Psi_i^y dx}{x^{i+1}H} \right)  =  & \di(y) + \di(\Psi_i^y) - (i+1)D_0 + (g+i)D_\infty \\
+\di\left(\frac{y\Psi_i^y }{x^{i+1}H}dx \right)  =  & \di(y) + \di(\Psi_i^y) - (i+1)D_0 + (g+i)D_\infty \\
 = & \di(y) + \di_0(\Psi_i^y) - (i+1)D_0 + (g+i - d_\Psi^y)D_\infty \\
 \geq & \di(y) + \di_0(\Psi_i^y) - (i+1)D_0 + (g+1)D_\infty. \\
 \end{align*}
-Since we know from \eqref{divyp=2} that $y$ cannot have a pole of order greater $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential $\frac{y\Psi_i^y dx}{x^{i+1}H}$ is regular on $U_0 = X \backslash \pi^{-1}(0)$.
+Since we know from \eqref{divyp=2} that $y$ cannot have a pole of order greater $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential $\frac{y\Psi_i^y }{x^{i+1}H}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$.
 Thus we have completed the proof.
 
 
@@ -851,7 +862,7 @@ Currently we are assuming in this section that $\infty$ and 0 are a branch point
 \begin{lem}
 Suppose that $\infty\in \mathbb P_k^1$ is a branch point of $\pi$.
 If $p \neq 2$ then ${\rm res}_{P_\infty}(\frac{1}{x}dx) = -2$.
-If $p=2$ then ${\rm res}_{P_\infty}\left(\frac{ydx}{xH(x)}\right) = 1$.
+If $p=2$ then ${\rm res}_{P_\infty}\left(\frac{y}{xH(x)}dx\right) = 1$.
 In particular, this shows that the basis of $\hone$ in Lemma \ref{basish1} is dual to the basis given for $\hzero$ in \cite{faithfulaction}.
 \end{lem}
 
@@ -896,7 +907,7 @@ so we see that $\res_{P_\infty}\left( \frac{1}{x} dx\right) = 2$.
 This completes the proof of the lemma when $p\neq 2$.
 
 We now turn to the case when $p=2$.
-We now wish to compute the residue of $\frac{ydx}{xH(x)}$ at $P_\infty$.
+We now wish to compute the residue of $\frac{y}{xH(x)}dx$ at $P_\infty$.
 We start by noting that $t = \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$ which we check by computing the divisor:
 \begin{align*}
 \di(t) & = \di_0(y) - (2g+1)[P_\infty] -(g+1)D_0 + (g+1)D_\infty \\
