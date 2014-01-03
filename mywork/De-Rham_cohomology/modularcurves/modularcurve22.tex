@@ -1,0 +1,731 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[draft, 11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{mathtools}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage[obeyDraft]{todonotes}
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+%\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%Theorems and stuff
+\theoremstyle{plain}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{thm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{ex}[defn]{Example}
+\newtheorem*{unnumthm}{Theorem}
+\newtheorem{defnlem}[defn]{Definition/Lemma}
+\newtheorem{defnthm}[defn]{Theorem/Definition}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\mathcal L}}
+\newcommand{\cA}{{\mathcal A}}
+\newcommand{\cD}{{\mathcal D}}
+\newcommand{\cU}{{\mathcal U}}
+\newcommand{\cech}{\v{C}ech }
+\newcommand{\hzero}{{H^0(X,\Omega_X)}}
+\newcommand{\hone}{H^1(X,\mathcal{O}_X)}
+\newcommand{\cechhone}{\check{H}^1(\mathcal U,\mathcal O_X)}
+\newcommand{\derhamhone}{H_{\text {dR}}^1(X/k)}
+\newcommand{\cechderhamhone}{\check{H}_{\text {dR}}^1(X/k)}
+
+
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+\DeclareMathOperator{\Tr}{Tr}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{title}
+\author{J. Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+\section{$X_0(22)$ in characteristic three}
+We suppose that $k$ is characteristic 3 and then we consider the curve $X_0(22)$, where the affine part of the curve is defined by the equation
+\begin{equation}\label{x22}
+y^2 = (x^3+ 4x^2 + 8x + 4)( x^3 + 8x^2 + 16x + 16).
+\end{equation}
+By \cite{automorphismshyperellipticmodular} we see that in this case the automorphism group of $X_0(22)$ is $D_6$ (where $D_n$ denotes the group of order $2n$).
+This arises from $C_2 \rtimes (C_2 \times C_3)$, where the first $C_2$ is the involution, and hence $C_2 \times C_3$ is the reduced automorphism group.
+Furthermore, from \cite{automorphismgrouphyperelliptic}, we discover how the group $C_2 \times C_3$ acts.
+
+{\bf From here on is just my best guess from the Konotgeorgis and Yang paper}
+The non-exceptional automorphism group is $\ZZ_2 \times \ZZ_2$.
+One of these elements is of course the involution.
+The other is described by 
+\[
+w_2:(x,y) \mapsto \left( \frac{4}{x}, \frac{8y}{x^3} \right).
+\]
+
+Now from the first two paragraphs of \cite[\S 3.3]{automorphismshyperellipticmodular} I think that the reduced group is given by the group of order two generated by $w_2$ and another group of order three (denoted $E$ in the paper).
+How does this group $E \cong C_3$ act?
+
+It is stated that $E$ will fix either $\infty$ or 0.
+If it fixes $\infty$ then an arbitrary element $\tau \in E$ can be described by $\tau \colon x \mapsto  x+ c( \tau)$ for some $c (\tau) \in k$.
+It is then stated that in this case, $c$ is a root of $G_1(x):= f(x + c_i) - f(x)$, but what $c_i$ is is not specified.
+
+If $E$ fixes 0 then we are told that $f^*(x) := a_0^{-1}x^s f\left( \frac{1}{x} \right)$ defines an isomorphic curve to $f(x)$, so we can consider this curve instead, and then we are in the previous case again.
+
+From \cite[Table 7]{automorphismshyperellipticmodular} we see that $G_2 = 0$, so $0$ is not fixed, but $G_1 \neq 0$, so $\infty$ is fixed by $E$.
+In particular we are given that
+\begin{equation*}
+G_1(x) = (2c^3+2c)x^3 + (2c^3 + c) x + c^6 + 2c^4 + 2c^2
+\end{equation*}
+we need to find the $c$ in this equation.
+
+However, once we expand \eqref{x22} to 
+\begin{equation}
+x^6 + 2x^4 + x^3 + 2x^2 + 1
+\end{equation}
+we see that any such $c$ will satisfy the equation, we may as well assume that $c=1$ and see what happens.
+In this case the equation comes out to be just $x^3+1$, and the solutions are the roots of unity.
+Hence we can choose our generater of $C_3$ to be $\tau \colon x \mapsto x+1$.
+
+
+{\bf How does this act on the basis of $\derhamhone$. Also, how does it affect the cover $\cal U$.}
+
+In this case we can explicitly write down the the part of the basis of $\derhamhone$ that maps to $\hone$, which is formed of
+\[
+\left( \frac{x^2+x^1}{y} dx, \frac{2x^4}{y} dx, \frac{y}{x} \right) \text{ and } \left( \frac{2(x + 1)}{y} dx, \frac{x^3}{y} dx, \frac{y}{x^2} \right).
+\]
+
+{\bf How does the group act on the cover?}
+
+We recall that $U_1 = X \backslash \pi^{_1}(0)$ and $U_2 = X \backslash \pi^{-1}(\infty)$.
+We will focus on how $\tau$ acts on the space initially, since this is the element whose order is divisible by the characteristic, and hence most likely to make this interesting.
+In this case it is clear that $\tau(U_2) = U_2$.
+However, $\tau$ does not fix $U_1$. 
+Note that the two points in $\pi^{-1}(0)$ are $(0,1)$ and $(0,2)$.
+Clearly $\tau$ maps these to $(1,1)$ and $(1,2)$, so it must map something else to $(0,1)$ and $(0,2)$, and hence does not fix the subspace.
+In a similar manner to \cite{canonicalrepresentation} we will define a new open set $U_3 := \tau(U_1)$, so $U_1 = \tau^{-1}(U_3) = \tau^2(U_3)$.
+We let $\mathcal U' = \{ U_2, U_3\}$ and $\mathcal U'' = \mathcal U \cup \mathcal U'$.
+
+Now since $\mathcal U''$ is a refinement of $\mathcal U$, and since $\derhamhone (\mathcal U) \cong \derhamhone (X)$, we know that $\derhamhone (\mathcal U) \cong \derhamhone (\cU'')$.
+We then have the following commutative diagram:
+\[
+\begin{array}{ccc}
+\cechderhamhone (\cU) & \overset{\rho}{\leftarrow} & \cechderhamhone (\cU'') \\
+\tau \uparrow & & \downarrow  \rho' \\
+\cechderhamhone(\cU) & \overset{\tau}{\rightarrow} & \cechderhamhone(\cU')
+\end{array}
+\]
+where $\rho$ and $\rho'$ are the restriction maps.
+Since these are isomorphisms we see that if we compute how $\tau$ acts on $\cechderhamhone (\cU')$ then we can see how it acts on $\cechderhamhone(\cU)$.
+
+{\bf Finding a basis of $\cechderhamhone (\cU '')$}
+
+Since the isomorphism goes via $\cechderhamhone (\cU'')$ we wish to find a basis of this space.
+We should first describe the space --- it is precisely the vector space
+\begin{multline}\label{u''conditions}
+\{ ( \omega_1, \omega_2, \omega_3, f_{12}, f_{13}, f_{23}) | \omega_j \in \Omega_X(U_j), f_{jk} \in \cO_X(U_j \cap U_k),\\ df_{jk} = \omega_j - \omega_k, f_{23} - f_{13} + f_{12} = 0\}
+\end{multline}
+quotiented by the subspace generated by
+\begin{equation*}
+\{ (df_1, df_2, df_3, f_1-f_2, f_1-f_3, f_2-f_3) | f_j \in \cO_X(U_j) \}.
+\end{equation*}
+
+We actually just want to find a basis for the part that will project on to $\cechderhamhone (\cU')$, and in order to do this we start by determining a basis of $\cechhone (\cU')$.
+
+When looking for a basis of $\cechhone (\cU)$ we found $g_i$ such that $\langle x^iy^{-1}dx, g_i \rangle$ had non-zero residue on $U_1$, and such that $g_i$ was regular on $U_1 \cap U_2$.
+We now do the same but replacing $U_2$ by $U_3$.
+So naively we guess that $g_i = \frac{-y}{(x-1)^i}$.
+Then we can check that $f_{13} = f_{12} + f_{23}$ is regular at $\infty$ (i.e. regular on $U_1 \cap U_3$) by computing the residue at $\infty$.
+If $i = 1$ then the residue of both $f_{12}$  at $\infty$ is 1 and $f_{23}$.
+To see this we can consider the uniformising parameter $\frac{1}{x}$.
+Then $\left( \frac{y}{x^2} \right)^2 = \frac{f}{x^4}$.
+The only term of this with a pole at $\infty$ is $\frac{x^6}{x^4}= \frac{1}{x^2}$, which when expanded as a sum
+\[
+\sum_{i=-2} c_i x^i
+\]
+has $c_{-2} = 1$, so the residue of $\frac{y}{x^2}$ is $\pm 1$.
+Similarly when we consider $\left( \frac{y}{(x-1)^2} \right)^2 = \frac{f}{x^4 - x^3 - x +1}$ we see that only the $x^6$ term has a pole at $\infty$.
+So the square of the residue is determined by the $-2$ term in the expansion of $\frac{x^6}{x^4 - x^3 - x +1}$, and this in turn is determined by the first term in expansion of $\frac{x^4 - x^3 - x +1}{x^6}$. 
+We then see that clearly this term is 1, and hence the residue of $\frac{y}{(x-1)^2}$ is $\pm 1$.
+So after a sign change we have that the function 
+\[
+\frac{y}{x^2}  - \frac{y}{(x-1)^2}
+\]
+does note have a pole at $\infty$.
+\todo[inline]{can I do this by just counting zeroes and poles. Also, need to check that there are not other poles that have appeared}.
+
+
+
+
+
+Indeed, if we then consider $\langle x^iy^{-1}dx, g_i \rangle$ we get $\frac{1}{(x-1)}dx$.
+The divisor of this is
+\[
+\di \left( \frac{1}{x-1}dx \right) = R - D_\infty - D_1.
+\]
+So we have order one poles at $P_0, P_0', P_\infty$ and $P_\infty'$.
+So now we just have to check that the residue at $P_1$ is not the negative of the residue at $P_1'$.
+This is obvious, since $x-1$ is a uniformising parameter at both $P_1$ and $P_1'$, and since $d(x-1) = dx$ we see that the coefficient at both points will just be one.\todo{check this}
+
+So far, assuming that the previous functions work we have
+\begin{align*}
+\omega_{1i} & = \frac{-\psi(x)}{2yx^i} dx \\
+\omega_{2i} & = \frac{\phi(x)}{2yx^i} dx \\
+f_{12i} & = \frac{y}{x^i} \\
+f_{13i} & = \frac{y}{x^i(x-1)}.
+\end{align*}
+
+From this we will have defined $f_{23i}$, and then we can check if this is possible (i.e. if it is regular on $U_2 \cap U_3$).
+By \eqref{u''conditions} we see that
+\begin{align*}
+f_{23} & = f_{13} - f_{12} \\
+& = \frac{y}{x^i(x-1)} - \frac{y}{x^i} \\
+& = \frac{y}{x^i} \left( \frac{2-x}{x-1} \right).
+\end{align*}
+This will not work since we have a pole at both points in $ \pi^{-1}(0)$.
+
+
+Since the above did not work, try something else.
+We already have obvious choices for $f_{12i}$ and $f_{23i}$, namely $\frac{y}{x^i}$ and $\frac{-y}{(x-1)^i}$ respectively.
+Let's see if they are suitable - i.e. if $f_{13i}=f_{12i} + f_{23i}$ is regular on $U_1 \cap U_3$.
+When $i=2$ this is $\frac{y}{x^2} - \frac{y}{(x-1)^2}$.
+We can compute the poles of this more easily by computing the pole of its square.
+When $i=2$ this is
+\begin{align*}
+\left( \frac{y}{x^2} - \frac{y}{(x-1)^2} \right)^2 & = \frac{y^2}{x^4} + \frac{y^2}{(x-1)^4} - \frac{2y^2}{x^2(x-1)^2} \\
+& = \frac{((x-1)^4 + x^4 - 2x^2(x-1)^2)y^2}{x^4(x-1)^4} \\
+& = \frac{(x^2-x+1)f(x)}{(x-1)^4x^4},
+\end{align*}
+from which one can clearly see that the function is regular on $U_1 \cap U_3$.
+
+
+Now we check whether the differentials work for this particular choice of functions.
+We start by noting that 
+\begin{equation*}
+f' = 2x^3 + x
+\end{equation*}
+and hence that
+\begin{align*}
+s_2(x) & = f' - \frac{f}{x} \\
+& = 2\left(x^5 + x^2 + x + \frac{1}{x} \right).
+\end{align*}
+
+We also compute the differential of $\frac{y}{(x-1)^2}$, which is
+\begin{align*}
+d\left( \frac{y}{(x-1)^2} \right) & = \frac{1}{(x-1)^2}dy + y d \left( \frac{1}{(x-1)^2} \right) \\
+& = \frac{f'}{2y(x-1)^2}dx - \frac{2y}{(x-1)^3}dx \\
+& = \frac{1}{2y(x-1)^2} \left( f' - \frac{f}{x-1} \right) dx.
+\end{align*}
+Also $\phi_2(x) = 2x^5 = -x^5$, so $\omega_1 = \frac{x^3}{2y}dx$ when $i=2$.
+
+
+Combining all of the above we compute what our divisor should be, namely
+\begin{align*}
+\omega_{32} &  = d\left( \frac{y}{(x-1)^2} \right) + \frac{x^3}{2y}dx \\
+& = \frac{1}{2y(x-1)^3} \left( f'(x-1) - f + x^3(x-1)^3 \right) dx
+& = \frac{1}{2y(x-1)^3}(2x^3-x^2-x-1)dx
+\end{align*}
+\todo{check signs are all correct!!}
+ 
+We can then compute the divisor of this, which, if we let $g(x) = 2x^3 - x^2 -x -1$, is
+\begin{align*}
+\di(g(x)) + \di( dx) - \di (y) - \di ((x-1)^3)  & =  \di_0(g(x)) - 3D_\infty + R - 2D_\infty - R  \\
+& + 3D_\infty + 3D_\infty - 3D_1 \\
+ & =  \di_0(g(x)) + D_\infty - 3D_1.
+\end{align*}
+So the only poles of this differential occur at the points in $\pi^{-1}(1)$, and hence the differential is regular on $U_3$.
+
+The only condition that it remains to check is that $d(f_{132}) = \omega_1 - \omega_3$.
+First we compute $d(f_{132})$, which is
+\begin{align*}
+d(f_{132})  & =  d \left( \frac{y}{x^2} - \frac{y}{(x-1)^2} \right) \\
+& =  \left( \frac{1}{x^2} - \frac{1}{(x-1)^2} \right) dy + y \left( d \left( \frac{1}{x^2} \right) - d \left( \frac{1}{(x-1)^2} \right) \right) \\
+&=  \frac{f'}{2y} \left( \frac{1}{x^2} - {1}{(x-1)^2} \right) dx + y \left( \frac{1}{x^3} - \frac{1}{(x-1)^3} \right) dx \\
+&=  \frac{1}{2y} \left( f'\left( \frac{(x-1)^2 - x^2}{x^2(x-1)^2} \right) - f \left( \frac{(x-1)^3 - x^3}{(x-1)^3x^3} \right) \right) dx \\
+&=  \frac{1}{2yx^3(x-1)^3} ( xf'(x-1)((x-1)^2-x^2) + f ) \\
+&=  \frac{1}{2yx^3(x-1)^3} ( x^4 + x^3 + x^2 + 1)dx.
+\end{align*}
+
+Now we compute $\omega_1 - \omega_3$, which is
+\begin{align*}
+\omega_1 - \omega_3 & = \frac{x^3 + x^2 + 1}{yx^3}dx -  \frac{1}{2y(x-1)^3}(2x^3-x^2-x-1)dx \\
+& = (\frac{1}{2yx^3(x-1)^3} (2(x-1)^3(x^3 + x^2 + 1) - x^3(2x^2 - x^2 - x - 1)) dx \\
+& = \frac{1}{2yx^3(x-1)^3} (x^4 + x^3 + x^2 + 1) dx.
+\end{align*}
+Hence we see that the functions and differentials above give us an element of $\cechderhamhone(\cU '')$.
+
+\pagebreak
+
+\begin{lem}
+The following elements form a basis of the $k$-vector space $\cechderhamhone(\cU '')$:
+\begin{equation}\label{basis1}
+\left(  \frac{x^3 + x^2 + 1}{yx^3}dx, \frac{x^3}{2y}dx, \frac{2x^3 - x^2 - x -1 }{2y(x-1)^3} dx, \frac{y}{x^2}, \left(\frac{y}{x^2} - \frac{y}{(x-1)^2} \right) , \frac{-y}{(x-1)^2} \right)
+\end{equation}
+and 
+\begin{equation}\label{basis2}
+\left( \frac{x^3+1}{2yx^2}dx, \frac{x^4+x^2}{y}dx, \frac{2x^4 + x^3 + x^2}{2y(x-1)^3}, \frac{y}{x}, \frac{y}{x} - \left(\frac{y}{x-1} - \frac{y}{(x-1)^2} \right), - \left( \frac{y}{x-1} - \frac{y}{(x-1)^2} \right)\right).
+\end{equation}
+\end{lem}
+\begin{proof}
+Clearly \eqref{basis1} and \eqref{basis2} are linearly independent over $k$, so we need only show that they are legitimite elements of $\derhamhone(X/k)(\cU'')$.
+We start by showing that \eqref{basis1} satisfies the conditions of \eqref{u``conditions}, and we begin this by checking that each element is regular on the appropriate open set (recall that $U_1 = X \backslash \pi^{-1}(0), U_2=X \backslash \pi^{-1}(\infty) $ and $U_3 = X \backslash \pi^{-1}(1)$).
+Firstly, we see that $\frac{x^3+x^2+1}{yx^2}dx$ is regular on $U_1$, as can be seen by computing the divisor
+\[
+\di\left(\frac{x^3 + x^2 + 1}{yx^2}dx\right) = \di_0(...) - 3D_\infty -R + 3D_\infty -2D_0 + 2D_\infty - 2D_\infty + R = \di_0(...) -2D_0.
+\]
+
+Secondly we see that $\frac{x^3}{2y} dx$ is regular on $U_2$ since
+\[
+\di\left( \frac{x^3}{2y}dx \right) = 3D_0 - 3D_\infty - R + 3D_\infty +R -2D_\infty = 3D_0 - 2D_\infty.
+\]
+
+
+The last differential we need to check is $\frac{x^3 + x^2 + x+ 1}{2y(x-1)^3}dx$, which has divisor
+\[
+\di_0(x^3+x^2+x+1) - 3D_\infty - R + 3D_\infty + 3D_\infty - 3D_1 -2D_\infty + R = \di_0(x^3+x^2+x+1) + D_\infty - 3D_1.
+\]
+
+Now we check the functions, starting with showing that $\frac{y}{x^2}$ is regular on $U_1 \cap U_2$. 
+This follows from computing the divisor as
+\[
+\di\left( \frac{y}{x^2} \right)  = R - 3D_\infty + 2D_\infty - 2D_0 = R - D_\infty - 2D_0.
+\]
+
+Next we check that $-\left(\frac{y}{x^2} - \frac{y}{(x-1)^2}\right)$ is regular on $U_1 \cap U_3$ by computing the divisor of its square, which is
+\[
+f \left( \frac{1}{x^4} + \frac{1}{(x-1)^4} - \frac{2}{x^2(x-1)^2} \right)  = f \left( \frac{(x-1)^4 + x^4 -2x^2(x-1)^2}{x^4(x-)^4} \right) = f \left( \frac{x^2 -x +1}{x^4(x-1)^4} \right).
+\]
+Then we see that
+\[
+\di\left( f \left(\frac{x^2-x+1}{x^4(x-1)^4} \right) \right) = 2R - 6D_\infty - 2D_\infty + \di_0(x^2-x+1) +4D_\infty -4D_0 +4D_\infty - 4D_1 = 2R+ \di_0(x^2-x+1) -4D_0 -4D_1.
+\]
+Since the divisor of $-\left(\frac{y}{x^2} - \frac{y}{(x-1)^2}\right)$ is half of the divisor above, we see it is regular on the desired set.
+
+Lastly, we check that $\frac{-y}{(x-1)^2}$ is regular on $U_2 \cap U_3$, again by computing the divisor, which is
+\[
+\di \left( \frac{-y}{(x-1)^2} \right) = R - 3D_\infty + 2D_\infty - 2D_1 = R - D_\infty - 2D_1.
+\]
+
+So now we need to check the relations between the functions and differentials.
+Firstly, we check that $f_{23} - f_{13} + f_{12} =0$, i.e.
+\[
+\frac{y}{x^2} - \left( \frac{y}{x^2} - \frac{y}{(x-1)^2} \right) - \frac{y}{(x-1)^2} =0,
+\]
+which is clearly true.
+
+We know from previous results that $df_{12} = \omega_ 1- \omega_2$.
+
+Now we check that $d \left( \frac{y}{x^2} - \frac{y}{(x-1)^2} \right) = \omega_1 - \omega_3$, and we start by computing the left hand side, as follows:
+\begin{align}
+d \left( \frac{y}{x^2} - \frac{y}{(x-1)^2} \right) & = d \left( \frac{y}{x^2} \right) - d \left ( \frac{y}{(x-1)^2} \right) \\
+& = \frac{1}{x^2}dy + y d\frac{1}{x^2} - yd\frac{1}{(x-1)^2} - \frac{1}{(x-1^2} dy \\
+&  = \frac{f'}{2y} \left( \frac{1}{x^2} - \frac{1}{(x-1)^2} \right) dx + y \left( \frac{-1}{x^3(x-1)^3} \right)dx \\
+& = \frac{1}{2yx^3(x-1)^3} (x(x-1)(x+1)f' +f) dx \\
+& = \frac{1}{2yx^3(x-1)^3} (x^4+x^3+x^2+1)dx.
+\end{align}
+
+On the other hand
+\begin{align}
+\omega_1 - \omega_3 & = \left( \frac{x^3 + x^2 +1}{yx^3} \right)dx -  \frac{1}{2y(x-1)^3} (2x^3-x^2-x-1)dx \\
+& = \frac{1}{2yx^3(x-1)^3} (2(x-1)^3(x^3+x^2+1) - 2x^6 +x^5 +x^4 + x^3)dx \\
+& = \frac{1}{2yx^3(x-1)^3} ( x^4+x^3+x^2+1)dx.
+\end{align}
+
+
+This leaves one more relation to check, namely that $df_{23} = \omega_2 - \omega_3$.
+To start with we note that 
+\begin{align}
+d\left( \frac{y}{(x-1)^2} \right) & = \frac{1}{(x-1)^2} dy + yd\left( \frac{1}{(x-1)^2} \right) \\
+& = \frac{f'}{2y(x-1)^2}dx + \frac{y}{(x-1)^3}dx \\
+& = \frac{1}{2y(x-1)^3} \left( f'(x-1) -f\right)dx \\
+& = \frac{2x^6-x^2-x-1}{2y(x-1)^3}dx.
+\end{align}
+So $d\left( \frac{-y}{(x-1)^2} \right)  = \frac{x^6+x^2+x+1}{2y(x-1)^3}dx$.
+
+On the other hand
+\begin{align}
+\omega_2 - \omega_3 & = \frac{x^3}{2y}dx - \frac{1}{2y(x-1)^3} \cdot (2x^3 - x^2 - x -1 )dx\\
+& = \frac{1}{2yx^3(x-1)^3} \left( x^3(x-1)^3 +x^3+x^2+x+1 \right) dx \\
+& = \frac{1}{2yx^3(x-1)^3}(x^6 +x^2+x+1)dx.
+\end{align}
+So we conclude that \eqref{basis1} is a legitimate element of $\derhamhone(X/k)(\cU``)$.
+
+We now consider \eqref{basis2}, and as we before we start by showing each entry is regular on the appropriate set.
+We already know that $\frac{y}{x}$ is regular on $U_1 \cap U_2$.
+Next we note that
+\[
+\frac{y}{x-1} - \frac{y}{(x-1)^2} = \frac{y(x+1)}{(x-1)^2}
+\]
+and the divisor of this is
+\[
+\di\left( \frac{y(x+1)}{(x-1)^2} \right)  = R - 3D_\infty + D_{-1} - D_\infty + 2D_\infty - 2D_1 = R - 2D_\infty + D_{-1} - 2D_1
+\]
+so clearly this function is regular on $U_2 \cap U_3$.
+Lastly we consider the divisor
+\begin{align}
+\di\left( \frac{y}{x} - y\frac{x+1}{(x-1)^2} \right) & = \di \left( \frac{y}{(x-1)^2x} \right) \\
+& = R - 3D_\infty + 2D_\infty - 2D_1 + D_\infty - D_0 \\
+& = R -2D_1 -D_0
+\end{align}
+which is clearly positive on $U_1 \cap U_3$.
+
+We also need to check that the differentials are regular on the appropriate sets.
+We already know from previous work that the first two entries in \eqref{basis2} are regular on $U_1$ and $U_2$ respectively.
+We now check that the third entry is regular on $U_3$ by computing the divisor, as follows:
+\begin{align}
+\di\left( \frac{2x^4+x^3+x^2}{2y(x-1)^3}dx \right) & = \di_0(2x^4+x^3+x^2) - 4D_\infty+ 3D_\infty - R + 3D_\infty - 3D_1 +R - 2D_\infty \\
+& = \di_0(2x^4 + x^3 + x^2) - 3D_1.
+\end{align}
+This is clearly positive on $U_3$ and hence all the entries in \eqref{basis2} are regular on the requisite open sets.
+
+We now check the relations between the functions and differentials.
+Firstly, is is clear that
+\[
+\frac{y}{x} - \left( \frac{y}{x} - \left( \frac{y}{x-1} - \frac{y}{(x-1)^2} \right) \right) +  \left( - \left( \frac{y}{x-1} - \frac{y}{(x-1)^2} \right) \right)  = 0.
+\]
+
+Again, we know from previous work that
+\[
+d \left( \frac{y}{x} \right) = \frac{x^3+1}{2yx^2}dx + \frac{x^4 + x^2}{2y}dx.
+\]
+
+Before checking the last two relations we compute the differentials of the last two entries in \eqref{basis2}.
+Firstly
+\begin{align}
+d \left(  \frac{y(x+1)}{(x-1)^2} \right) & = \frac{1}{(x-1)^2}d(y(x+1)) + y(x+1)d \left( \frac{1}{(x-1)^2} \right) \\
+& = \frac{x+1}{(x-1)^2} dy + \frac{y}{(x-1)^2}dx + \frac{y(x+1)}{(x-1)^3} dx \\
+& = \frac{1}{2y(x-1)^3} ( f'(x+1)(x-1) - (x-1)f - (x+1)f)dx \\
+& = \frac{x^7 + x^5 + x^4 + x^3}{2y(x-1)^3}dx
+\end{align}
+and secondly
+\begin{align}
+d \left( \frac{y}{x(x-1)^2} \right) & = \frac{1}{(x-1)^2x}dy + yd\left( \frac{1}{(x-1)^2x} \right) \\
+& = \frac{f'}{2y(x-1)^2x}dx + \frac{y}{(x-1)^2}d \left( \frac{1}{x} \right) + \frac{y}{x} d \left( \frac{1}{(x-1)^2} \right) \\
+& = \frac{f'}{2y(x-1)^2x}dx - \frac{y}{(x-1)^2x^2}dx + \frac{y}{x(x-1)^3} dx \\
+& = \frac{1}{(2y(x-1)^3x^2}(x(x-1)f' + f(x+1) - fx) dx \\
+& = \frac{1}{y(x-1)^3x^2}(x^6 + x^5 + x^4 + x^3)dx.
+\end{align}
+
+Then we can see that
+\begin{align}
+\frac{x^4 + x^2}{y}dx - \frac{2x^4 + x^3 + x^2}{2y(x-1)^3}dx & = \frac{1}{2y(x-1)^3}(2(x-1)^3(x^4+ x^2) + x^4-x^3 - x^2)dx \\
+& = \frac{1}{2y(x-1)^3}(2x^7 + 2x^5 + 2x^4 + 2x^3)dx \\
+& = d \left(-\left( \frac{y(x+1)}{(x-1)^2} \right) \right).
+\end{align}
+
+We finally check the last relation, which is
+\begin{align}
+\frac{x^3+1}{2yx^2}dx - \frac{1}{2y(x-1)^3}(2x^4 + x^3 + x^2)dx & = \frac{1}{2yx^2(x-1)^3}((x-1)^3(x+1)^3 + x^6 + 2x^5 + 2x^4) dx \\
+& = \frac{1}{2yx^2(x-1)^3}(2x^6 + 2x^5 + 2x^4 +2)dx \\
+& = d\left(\frac{y}{x(x-1)^2} \right).
+\end{align}
+
+\end{proof}
+\begin{comment}
+
+Need to find one more element. Based on \cite{canonicalrepresentation} we will see if $-\left(\frac{y}{x-1} - \frac{y}{(x-1)^2}\right)$ could be a legitimate element as $f_{231}$.
+Firstly, we note that
+\begin{equation*}
+\frac{y}{x-1} - \frac{y}{(x-1)^2} = y \left( \frac{x-2}{(x-1)^2} \right).
+\end{equation*}
+
+Next we check that $f_{131} = f_{121} + f_{231}$, as follows 
+\begin{align*}
+\left( \frac{y}{x} - \frac{y(x-2)}{(x-1)^2} \right)^2 & = f \left( \frac{1}{x^2} - \frac{(x-2)^2}{(x-1)^4} - \frac{2(x-2)}{(x-1)^2x} \right) \\
+& = \frac{f}{x^2(x-1)^4}.
+\end{align*}
+Clearly this has no poles in $U_1 \cap U_3$, as desired.
+
+Now we want to check that this would form a basis of $\cechhone (\cU ')$.
+
+So we have
+\[
+s_1(x) = f'-\frac{2f}{x}  = x^5 + x^3 + x^2 + x^{-1}.
+\]
+
+Hence we may suppose that $\omega_1 = \frac{x^3+1}{2yx^2}dx$ and $\omega_2 = \frac{x^4+x^2}{y}$
+
+We know that $df_{12} =  \omega_1 - \omega_2$ from previous work.
+We can also compute the differentials of $f_{23}$ and $f_{13}$ to compute $\omega_3$ and then check that the value works, as follows:
+\begin{align}
+d(-f_{23}) & = d \left( \frac{y(x+1)}{(x-1)^2} \right) \\
+& = \frac{1}{(x-1)^2} d(y(x+1)) + y(x+1)dx\left( \frac{1}{(x-1)^2} \right) \\
+& = \frac{x+1}{(x-1)^2}dy + \frac{y}{(x-1)^2}dx(x+1) + \frac{y(x+1)}{(x-1)^3}dx \\
+& = \frac{1}{2y(x-1)^3} \left( f'(x+1)(x-1) - (x-1)f -f(x+1)\right)dx \\
+& = \frac{1}{2y(x-1)^3} \left( x^7 + x^5 + x^4 + x^3 \right) dx
+\end{align}
+and also
+\begin{align}
+d(f_{13}) & = d \left( \frac{y}{x} + \left( \frac{y}{(x-1)^2} - \frac{y}{x-1} \right) \right)\\
+& = d \left( \frac{y}{(x-1)^2x} \right) \\
+& = \frac{1}{(x-1)^2x} dy + yd\left( \frac{1}{(x-1)^2x} \right) \\
+& = \frac{f'}{2y(x-1)^2x}dx + \frac{y}{(x-1)^2}d \left( \frac{1}{x} \right) + \frac{y}{x} d\left( \frac{1}{(x-1)^2} \right) \\
+& = \frac{f'}{2y(x-1)^2x}dx - \frac{y}{(x-1)^2x^2}dx + \frac{y}{x(x-1)^3} dx \\
+& = \frac{1}{2y(x-1)^3x^2} \left( x(x-1)f' + f(x-1) -fx \right) dx \\
+& = \frac{1}{y(x-1)^3x^2} \left( x^6 + x^5 + x^4 + 1\right) dx
+\end{align}
+
+From this we can compute what $\omega_3$ should be, which is
+\begin{align}
+\omega_3 & = \omega_2 - d\left(f_{23} \right) \\
+& = \frac{x^4 + x^2}{y}dx + \frac{1}{2y(x-1)^3}\left( x^7 + x^5 + x^4 x^3\right) dx \\
+& = \frac{1}{2y(x-1)^3} (2(x-1)^3(x^4+x^2) + x^7 + x^5 + x^4 + x^3) dx \\
+& = \frac{1}{2y(x-1)^3}(2x^4+x^3+x^2)dx.
+\end{align}
+
+We next check that this is regular on $U_3 = X \backslash \pi^{-1}(1)$, a condition it must satisfy, by computing the divisor of the differential, which is
+\begin{align}
+\di( \omega_3 ) & = 3D_\infty -R+3D_\infty - 3D_1 + \di_0(2x^4+x^3+x^2) - 4D_\infty +R -2D_\infty \\
+& = \di_0(2x^4 + x^3 +x^2) -3D_1,
+\end{align}
+and hence the differential is regular on $U_3$.
+
+Now we need to check that this also works with $d(f_{13}) = \omega_1 - \omega_3$ by computing the right hand side, as follows
+\begin{align}
+\omega_1 - \omega_3 & = \frac{x^3+1}{2yx^2}dx - \frac{1}{2y(x-1)^3}( 2x^4+x^3+x^2) dx \\
+& = \frac{1}{2yx^2(x-1)^3} ( (x-1)^3(x+1)^3 + x^6 + 2x^5 + 2x^4 ) dx \\
+& = \frac{1}{2yx^2(x-1)^3}(2x^6+2x^5 + 2x^4 + 2) dx\\
+& = d(f_{13}).
+\end{align}
+Hence the elements above form another (clearly linearly independent element) of $\derhamhone_{X/k}(\cU'')$.
+\end{comment}
+
+Now we need to see how the group element acts on this basis.
+To start, we recall the action on $x$ is 
+\[
+\tau:x \mapsto x+1.
+\]
+
+We also need to work out how $\tau$ acts on $y$.
+Since we know the action on $x$ and $y^2 = f(x)$ we see that $\tau(y^2) = f(x)+x^3$.
+It may also be useful to note that $\tau(f') = f'$, and also that $\tau(d(y^2)) = d(y^2)$.
+We will use the equality $\tau(y)^2 = y^2 + x^3$ to show that there is not element of $K(X)$ which $\tau$ can map $y$ to.
+We know that any element of $K(X)$ can be written in the form $yg_1(x) + g_2(x)$ for some $g_1, g_2 \in k(x)$.
+In particular, we suppose that $\tau(y)  = yg_1(x) + g_2(x)$.
+Then $(yg_1(x) + g_2(x))^2 = y^2g_1(x)^2 + 2yg_1(x)g_2(x) + g_2(x)^2$, and if this is to equal $y^2 + x^3$ then we must have $2yg_1(x)g_2(x) = 0$.
+Hence one of $g_1$ or $g_2$ is zero. 
+By considering the degrees of the two polynomials we see that $g_1$ must have degree at most 1.
+But there is no constant $a$ such that $ay^2 = y^2 + x^3$.
+Hence we must have $g_1 = 0$.
+So we need to see if there exists some $g_2(x)$ such that $g_2(x)^2 = f(x) + x^3 = x^6 + 2x^4 + 2x^3 + 2x^2 + 1$.
+By multiplying out $(ax^3 + bx^2 + cx^ + d)^2$ and comparing coefficients we see that this is not possible.
+
+This isn't a group action because we are using the wrong model for the curve.
+We should be using a model in which all powers are even.
+If we map $x$ to $x$ plus a constant $c$, and then set $y^2$ equal $f(x+c)$, we get an isomorphic function field.
+Note that $f(x-1) = x^6 + 2x^4 + 2x^2 + 2$.
+Then if we now set $f(x) = x^6 + 2x^4 + 2x^2 + 2$ then we see that $f*(x) = x^6 + x^4 + x^2 + 2$.
+Then if we compute $f*(x+c) - f*(x)$ we see that
+\[
+f*(x) - f*(x+c) = (2c^3+c)x^3 + (c^3+2c)x + c^6 + c^4 + c^2.
+\]
+Clearly if $c=1$ then all of these coefficients are zero.
+
+Hence we have an action given by $x \mapsto x+1$ and $y \mapsto y$.
+We need to check that the image of the basis in the above lemma under the map $x  \mapsto x-1$ is still a basis when $y^2 = f*(x)$ (where this is our newly defined $f(x)$).
+
+
+From now on we let $f= x^6 + x^4 + x^2 + 2$, and note that then $f' = x^3 + 2x$.
+Then we also note that
+\[
+s_2(x) = f'-\frac{f}{x} = 2\left(x^5 + 2x+ \frac{1}{x}\right)
+\]
+and
+\[
+s_1(x) = f' + \frac{f}{x} = x^5 + 2x^3 + \frac{2}{x}.
+\]
+
+We firstly claim that
+\[
+\left( \frac{2x^2 + 2}{2yx^3}dx, \frac{x^3}{y}dx, \frac{x^3 + x^2 + x + 1}{2y(x-1)^3}dx, \frac{y}{x^2}, \left( \frac{y}{x^2} - \frac{y}{(x-1)^2}\right), \frac{-y}{(x-1)^2}\right)
+\]
+is an element of $\derhamhone$, where $X$ is now defined by our new $f$.
+Note that this would correspond to \eqref{basis1} in the above lemma.
+From previous paper and lemma we the only condiations to check are that $df_{13} = \omega_1 - \omega_3$ and $df_{23} = \omega_2 - \omega_3$.
+
+We see from the proof of the earlier lemma that
+\begin{align}
+df_{13} & = \frac{1}{2yx^3(x-1)^3} (x(x-1)(x+1)f' + f)dx \\
+& = \frac{1}{2yx^3(x-1)^3}(2x^6 + 2x^4 + 2x^2 + 2)dx \\
+& = \frac{1}{2yx^3(x-1)^3}((x^5 + x^3 + 2x^2 + 2) + 2(x^6 + x^5 + x^4 + x^3))dx \\
+& = \omega_1 - \omega_3.
+\end{align}
+
+We also see that
+\begin{align}
+df_{23} & = \frac{1}{2y(x-1)^3}(f-(x-1)f')dx \\
+& = \frac{1}{2y(x-1)^3}(x^6 + x^3 + 2x^2 + 2x+ 2)dx \\
+& = \frac{1}{2y(x-1)^3}(x^3(x-1)^3 - x^3 - x^2 - x - 1) dx \\
+& = \left(\frac{x^3}{y} - \frac{x^3 + x^2 + x+1}{2y(x-1)^3}\right) dx \\
+& = \omega_2 - \omega_3.
+\end{align}
+
+So this is a legitimate element of our new $\derhamhone$.
+
+The second element that forms the basis of $\derhamhone$ with this new $f$ is
+\[
+\left( \frac{1}{yx^2}dx, \frac{x^4+2x^2}{y}dx, \frac{x^4 + 2x^3 + x^2}{2y(x-1)^3}dx, \frac{y}{x}, \frac{y}{x(x-1)^2}, \frac{-y(x+1)}{(x-1)^2} \right).
+\]
+
+If we note that
+\[
+\frac{-y(x+1)}{(x-1)^2} = - \left( \frac{y}{x-1} - \frac{y}{(x-1)^2} \right)
+\]
+and
+\[
+\frac{y}{x(x-1)^2} = \left(\frac{y}{x} - \left( \frac{y}{x-1} - \frac{y}{(x-1)^2} \right)\right)
+\]
+it is clear that $f_{13}$ and $f_{23}$ are regular on $U_1 \cap U_3$ and $U_2 \cap U_3$ respectively.
+It is also clear that $f_{12} - f_{13} + f_{23} = 0$.
+
+Given that
+\begin{align}
+\di \left( \frac{x^4 + 2x^3 + x^2}{2y(x-1)^3}dx \right) & = \di( x^4 + 2x^3+x^2) - \di(y) - \di(x^3-1) + \di(dx) \\
+& = \di_0(x^4+2x^3+x^2) - 4D_\infty - R + 3D_\infty - 3D_{-1} + 3D_\infty + R - 2D_\infty \\
+& = \di_0(x^4+2x^3+x^2) -3D_{-1}
+\end{align}
+we can also clearly see that $\omega_3$ is regular on $U_3$.
+
+We now check the final relations, starting with $df_{13} = \omega_1 - \omega_3$, as follows
+\begin{align}
+df_{13} & = d \left( \frac{y}{x(x-1)^2} \right) \\
+& = \frac{1}{x(x-1)^2}dy + y d \left( \frac{1}{x(x-1)^2} \right) \\
+& = \frac{f'}{2yx(x-1)^2}dx + \frac{y}{x^2(x-1)^3}dx \\
+& = \frac{2x^6 + x^5 + x^4 + 2x^3 + 1}{2yx^2(x-1)^3} dx\\
+& = \frac{2(x^3-1)}{2yx^2(x-1)^3}dx - \frac{x^6 + 2x^5 + 2x^4}{2yx^2(x-1)^3}dx \\
+& = \omega_1 - \omega_3.
+\end{align}
+
+The final relation to show is $f_{23} = \omega_2 - \omega_3$.
+We can see that this is satisfied since on the one hand
+\begin{align}
+- df_{23} & = d \left( \frac{y(x+1)}{(x-1)^2} \right) \\
+& = \frac{x+1}{(x-1)^2}dy + y d \left( \frac{x+1}{(x-1)^2}dx \right) \\
+& = \frac{f'(x+1)}{2y(x-1)^2}dx - \frac{yx}{(x-1)^3} dx \\
+& = \frac{f'(x^2-1) +fx}{2y(x-1)^3}dx \\
+& = \frac{x^7 + 2x^5 + 2x^3}{2y(x-1)^3}dx
+\end{align}
+and on the other hand
+\begin{align}
+\omega_2 - \omega_3 & = \frac{x^4 + 2x^2}{y}dx - \frac{x^4 + 2x^3 + x^2}{2y(x-1)^3} dx \\
+& = \frac{2(x^4 + 2x^2)(x-1)^3 + 2x^4 + x^3 + 2x^2}{2y(x-1)^3}dx \\
+& = \frac{2x^7 + x^5 + 2x^3}{2y(x-1)^3}dx.
+\end{align}
+Hence
+\[
+df_{23} = \omega_2 - \omega_3
+\]
+and we see that the above is an element of $\derhamhone$.
+
+\begin{thm}
+The elements
+\[
+\left( \frac{1}{yx^2}dx, \frac{x^4+2x^2}{y}dx, \frac{x^4 + 2x^3 + x^2}{2y(x-1)^3}dx, \frac{y}{x}, \frac{y}{x(x-1)^2}, \frac{-y(x+1)}{(x-1)^2} \right)
+\]
+and
+\[
+\left( \frac{2x^2 + 2}{2yx^3}dx, \frac{x^3}{y}dx, \frac{x^3 + x^2 + x + 1}{2y(x-1)^3}dx, \frac{y}{x^2}, \left( \frac{y}{x^2} - \frac{y}{(x-1)^2}\right), \frac{-y}{(x-1)^2}\right)
+\]
+form a basis for $\derhamhone$.
+\end{thm}
+
+We now consider how the group acts on this basis.
+The action we are considering is $\sigma\colon x \mapsto x+1$.
+\newpage
+We let 
+\[
+\nu_1 = \left( \frac{x^4 + 2x^2}{y}dx , \frac{x^4 + 2x^3 + x^2}{2y(x-1)^3}dx, \frac{2y(x+1)}{(x-1)^2} \right)
+\]
+and
+\[
+\nu_2 = \left( \frac{x^3}{y}dx, \frac{ x^3 + x^2 + x + 1}{2y(x-1)}dx, \frac{2y}{(x-1)^2} \right).
+\]
+Then
+\begin{align*}
+\sigma(\nu_1) = & \left( \frac{x^4+x^2+1}{2yx^3}dx, \frac{x^4 + x^3 + 2x^2 + 2x}{y}dx, \frac{2y(x+2)}{x^2} \right)\\
+= & \left( \left( \frac{x}{2y} + \frac{1}{2yx} + \frac{1}{2yx^3}\right) dx, \frac{x^4 + x^3 + 2x^2 + 2x}{y}dx, \frac{2y}{x} + \frac{y}{x^2} \right)
+\end{align*}
+and
+\begin{align*}
+\sigma(\nu_2) = &  \left( \frac{(x+1)^3}{y}dx, \frac{x^3 + x^2 + 1}{2yx^3}dx, \frac{2y}{x^2} \right)\\
+= & \left( \left( \frac{x^3}{y} + \frac{1}{y}\right)dx, \left(\frac{1}{2y}dx + \frac{1}{2yx} + \frac{1}{2yx^3}\right)dx, \frac{2y}{x^2} \right).
+\end{align*}
+
+We wish to write these elements in terms of the basis elements 
+\begin{align*}
+\tau_1 = & \left( \frac{1}{y}dx, \frac{1}{y}dx, 0 \right) \\
+\tau_2 = & \left( \frac{x}{y}dx, \frac{x}{y}dx, 0 \right) \\
+\eta_1 = & \left( \frac{1}{yx^2}dx, \frac{x^4 + 2x^2}{y}dx, \frac{y}{x} \right) \\
+\eta_2 = & \left( \frac{x^2 + 1}{yx^3}dx, \frac{x^3}{y}dx, \frac{y}{x^2} \right).
+\end{align*}
+
+
+
+\bibliography{biblio}
+\bibliographystyle{amsalpha}
+
+
+\end{document}
