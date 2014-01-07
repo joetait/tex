@@ -144,8 +144,8 @@ We compute that
 \[
 f(x+c) - f(x) = (2c^3+c)x^3 + (c^3 + 2c)x + c^6 + c^4 + c^2.
 \]
-This clearly equals zero if $c=1$.
-Then \cite[\S 3.3]{automorphismshyperellipticmodular} tells us that $\sigma \colon (x,y) \mapsto (x+1, y)$ is an automorphism of $X$.
+This clearly equals zero if $c=1$ or if $c=2$.
+Then \cite[\S 3.3]{automorphismshyperellipticmodular} tells us that $\sigma \colon (x,y) \mapsto (x+1, y)$ and $\sigma \colon (x,y) \mapsto (x+2,y)$ are automorphisms of $X$.
 
 Now we wish to see how our element of order three acts on $\derhamhone$ of our new (isomorphic) curve.
 However, since the basis we have already computed is not stable under this action (in particular, the open set $U_0$ is not preserved) we must refine our cover.
@@ -160,9 +160,8 @@ quotiented by the subspace
 \[
 \left\{ df_0, df_\infty, df_1, f_0- f_\infty, f_0 - f_1, f_\infty - f_1 \right\}.
 \]
-\todo[inline]{Change statement - the below is not a basis, but just elements that project on to the basis we already have when restricting to the previous cover}
 \begin{prop}
-The residue classes of the elements 
+The residue classes of
 \[
 \nu_1 = \left(\frac{1}{yx^2}dx, \frac{x^4 + 2x^2}{y}dx, \frac{x^4 + 2x^3 +  x^2}{2y(x-1)^3}dx, \frac{y}{x}, \frac{y}{x(x-1)^2}, frac{2y(x+1)}{(x-1)^2} \right)
 \]
@@ -170,16 +169,14 @@ and
 \[
 \nu_2 = \left( \frac{x^2 + 2}{yx^3}, \frac{x^3}{y}dx, \frac{x^3 + x^2 + x+ 1}{2y(x-1)^3}dx, \frac{y}{x^2}, \frac{xy +1}{x^2(x-1)^2}, \frac{2y}{(x-1)^2} \right)
 \]
-of $\cechderhamhone(\cU'')$ form a basis of $\cechderhamhone (\cU'')$ as a $k$-vector space.
-Moreover, the canonical projections on to $\cechderhamhone(\cU)$ and $\cechderhamhone(\cU')$ form bases of these $k$-vector spaces too.
+are well defined elements of $\cechderhamhone(\cU'')$.
+Moreover, the canonical projections on to $\cechderhamhone(\cU)$ are the first two basis elements described in the previous theorem.\todo{reference previous theorem when combined with other work}
 \end{prop}
 \begin{proof}
-\todo[inline]{why is the space dimension two?}
 We let $\omega_{ji}$ and $f_{jki}$ be the elements of $\nu_i$, so that
 \[
 \nu_i = (\omega_{0i}, \omega_{\infty i}, \omega_{1i}, f_{0\infty i}, f_{01i}, f_{infty 1 i} ).
 \]
-Linear independence is clear in both cases.\todo{improve this}
 In both cases we know that the first, second and fourth entry satisfy the conditions required from previous work.\todo{add reference when combined with other work}
 We then show that the rest of the conditions are also satisfied, starting with the first element.
 We first check that the elements are regular on the appropriate sets by computing their divisors, which are as follows
@@ -281,8 +278,19 @@ which completes the proof.
 
 \end{proof}
 
-Now we consider the group action of this.
-Since the image $\sigma (U_0)$ is equal to $U_1$ it follows that $\sigma$ will map from $\derhamhone(cU')$ to $\derhamhone(\cU)$, and hence we can compute the group action by studying $\sigma \colon (\omega_{2i}, \omega_{3i}, f_{23i}) \mapsto (\sigma(\omega_{3i}), \sigma (\omega_{2i}, \sigma(f_{23i}))$.
+We are now in a position to study the group action on $\cechderhamhone(\cU)$.
+First note that $\sigma(U_\infty) = U_\infty$, so this part of the cover $\cU$ is preserved.
+However, we can easily see that $\sigma(U_0) = U_1$, and hence we have the following commutative diagram
+\[
+\begin{array}{ccc}
+\derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\rho} & \cechderhamhone(\cU'')  \\
+\sigma\uparrow & ~ & \rho'\downarrow  \\
+\derhamhone \cong \cechderhamhone(\cU)  & \xrightarrow{\sigma} & \cechderhamhone(\cU')
+\end{array}
+\]
+
+\todo[inline]{From this point there must be a mistake, since we will shortly see that the action is not closed}
+Since the image $\sigma (U_0)$ is equal to $U_1$ it follows that $\sigma$ will map from $\derhamhone(\cU')$ to $\derhamhone(\cU)$, and hence we can compute the group action by studying $\sigma \colon (\omega_{2i}, \omega_{3i}, f_{23i}) \mapsto (\sigma(\omega_{3i}), \sigma (\omega_{2i}), \sigma(f_{23i}))$.
 
 When we compute this action we see that
 \[
@@ -290,8 +298,10 @@ When we compute this action we see that
 \]
 and that
 \[
-\sigma\left( \frac{x^3}{y}dx, \frac{x^3 + x^2 + x + 1}{2y(x-1)^3}dx, \frac{2y}{(x-1)^2} \right = \left( \frac{x^3 + x^2 + 1}{2yx^3}dx, \frac{x^3 + 1}{y}dx, \frac{2y}{x^2}\right).
+\sigma\left( \frac{x^3}{y}dx, \frac{x^3 + x^2 + x + 1}{2y(x-1)^3}dx, \frac{2y}{(x-1)^2} \right) = \left( \frac{x^3 + x^2 + 1}{2yx^3}dx, \frac{x^3 + 1}{y}dx, \frac{2y}{x^2}\right).
 \]
+
+We wish to write the above elements in terms of the basis elements for $\cechderhamhone(\cU)$ that we have already discovered.
 
 
 \bibliography{biblio}
