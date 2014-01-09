@@ -320,6 +320,25 @@ However, this is clearly not an element of $\cechderhamhone(\cU)$, since the
 \frac{x^2+x+1}{yx^3}dx - \frac{2x^4}{y}dx \neq 0
 \]
 
+\section{Modular curve $X_0(50)$}
+We now consider the modular curve $X_0(50)$.
+When $\cha(k) = 3$ we see from \cite[Table 1]{\automorphismshyperellipticmodular} that the automorphism group is $D_6$, the dihedral group with 12 elements.
+We see from \cite[Table 2]{automorphismshyperellipticmodular} that this has 
+\[
+y^2 = f(x) = x^6 + 2x^5 + 2x^3 + 2 + 1
+\]
+as a defining equation.
+
+However, as in the last equation we need to write this in the form $\sum_i=0^3 a_{2i}x^{2i}$ for some $a_i \in k$.
+\todo[inline]{Not sure what automorphism can be used to remove the $x^5$ term}
+We can deduce this, up to a constant, from the \cite[Table 7]{automorphismshyperellipticmodular}; namely $f(x) = 2x^6 + x^4 +2x^2$.
+We can also deduce that the automorphism of order three is $x \mapsto x+i$, where $i^2 = -1$.
+Indeed, we can easily verify that $2x^6 + x^4 + 2x^2 = 2(x+i)^6 + (x+i)^4 + 2(x+i)^2$.
+However, without being sure of what the constant term is we cannot compute the basis.
+
+\section{Modular curve $X_0(28)$}
+
+
 
 \bibliography{biblio}
 \bibliographystyle{amsalpha}
