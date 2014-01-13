@@ -322,7 +322,6 @@ However, this is clearly not an element of $\cechderhamhone(\cU)$, since the
 
 A similar computation for $\sigma(\nu_1)$ shows us that this is also not an element of $\cechderhamhone(\cU)$.
 
-\begin{comment}
 \section{Modular curve $X_0(50)$}
 We now consider the modular curve $X_0(50)$.
 When $\cha(k) = 3$ we see from \cite[Table 1]{automorphismshyperellipticmodular} that the automorphism group is $D_6$, the dihedral group with 12 elements.
@@ -340,8 +339,33 @@ Indeed, we can easily verify that $2x^6 + x^4 + 2x^2 = 2(x+i)^6 + (x+i)^4 + 2(x+
 However, without being sure of what the constant term is we cannot compute the basis.
 
 \section{Modular curve $X_0(28)$}
+Let $k$ be an algebraically closed field of characteristic three.
+We now consider the modular curve $X_0(28)$, which by \cite[Table 1]{automorphismshyperellipticmodular} has defining equation 
+\begin{align}
+y^2 &  = (x^2 + 1)(x^2 + x+2)(x^2-x+2) \\
+& = x^6 + x^4 + x^2 + 1.
+\end{align}
+We also see from \cite[Table 1]{automorphismshyperellipticmodular} that the automorphism group when $\cha(k) = 3$ is $GL_2(\mathbb F_3)$.
 
-\end{comment}
+We start by computing explicitly what this action.
+\todo[inline]{There appear to be some issues in the case of the generic automorphism group. In Table 1 the group is listed as $D_6$, yet in 3.1 it is claimed that the reduced group is $\ZZ_2$. Also, there are three generators listed in Table 2, but they are all of order 2. Check this with Bernhard}
+\todo[inline]{Given that the explicit elements on the generic fibre are all of order two, and that on page 154 it is mentioned that the reduced group on the generic fibre is $D_4$, I am guessing that the automorphism group is meant to be $D_8$ (or $D_4$?)}
+
+Although the automorphism group is said to be $GL_2(\mathbb F_3)$, we need only find one element that acts in the correct way to show that the sequence in \cite{derhamactions} does not split.
+We can construct at least one such element in the same way that we did for $X_0(22)$.
+We already have our defining equation in the form
+\[
+y^2 = \sum_{i=0}^3 a_{2i}x^{2i}.
+\]
+When we compute $f(x+c) - f(x)$ we get $(2c^3+c)x^3 + (c^3 + 2c)x + (c^6 + c^4 + c^2)$.
+If we set $c=1$ then all the coefficients are clearly zero.
+So the map $x \mapsto x+1$ is an isomorphism of our curve.
+
+We now compute what the basis elements of $\derhamhone$ are, using \cite[Thm. 2.3]{derhamactions}.
+
+
+
+
 
 
 \bibliography{biblio}
