@@ -342,7 +342,7 @@ However, without being sure of what the constant term is we cannot compute the b
 Let $k$ be an algebraically closed field of characteristic three.
 We now consider the modular curve $X_0(28)$, which by \cite[Table 1]{automorphismshyperellipticmodular} has defining equation 
 \begin{align}
-y^2 &  = (x^2 + 1)(x^2 + x+2)(x^2-x+2) \\
+y^2 &  = (x^2 + 1)(x^2 + x+2)(x^2+2x+2) \\
 & = x^6 + x^4 + x^2 + 1.
 \end{align}
 We also see from \cite[Table 1]{automorphismshyperellipticmodular} that the automorphism group when $\cha(k) = 3$ is $GL_2(\mathbb F_3)$.
@@ -358,11 +358,40 @@ We already have our defining equation in the form
 y^2 = \sum_{i=0}^3 a_{2i}x^{2i}.
 \]
 When we compute $f(x+c) - f(x)$ we get $(2c^3+c)x^3 + (c^3 + 2c)x + (c^6 + c^4 + c^2)$.
-If we set $c=1$ then all the coefficients are clearly zero.
-So the map $x \mapsto x+1$ is an isomorphism of our curve.
+If we set $c=1$ or $c=2$ then all the coefficients are clearly zero.
+So the map $\sigma \colon x \mapsto x-1$ is an isomorphism of our curve.
 
 We now compute what the basis elements of $\derhamhone$ are, using \cite[Thm. 2.3]{derhamactions}.
+We first note that if $f(x) = x^6 + x^4 + x^2 +1$ then $f'(x) = x^3 + 2x$.
+Hence
+\begin{align}
+s_1 & = xf'(x) -2f(x) = x^6 + 2x^4 + 1 \\
+s_2 & = xf'(x) - f(x) = 2x^6 + x^2 + 2.
+\end{align}
+Then it follows that the first two basis elements in \cite[Thm. 2.3]{derhamactions} are
+\begin{align}
+\left( \frac{1}{2yx^2}dx, \frac{x^6 + 2x^4}{2yx^2}dx, \frac{y}{x} \right) & = \left( \frac{1}{2yx^2}dx, \frac{x^4+2x^2}{2y}dx, \frac{y}{x} \right) \label{28basisone} \\
+\left( \frac{x^2 + 2}{2yx^3}dx, \frac{2x^6}{2yx^3}dx, \frac{y}{x^2} \right) & = \left( \frac{x^2 + 2}{2yx^3}dx, \frac{2x^3}{y}dx, \frac{y}{x^2} \right). \label{28basistwo}
+\end{align}
 
+As in the $X_0(22)$ case, we need to refine our cover, since the open set $U_0$ is not closed under the action of $\sigma$.
+In particular, we let $\cU' = \{U_\infty, U_{1} \}$ and $\cU'' = \cU \cup \cU'$.
+Then we wish to find elements of $\cechderhamhone(\cU'')$ that surject on to \eqref{28basisone} and \eqref{28basistwo}.
+
+\todo[inline]{Rough work from here - here be dragons}
+We first posit that
+\[
+\left( \frac{1}{2yx^2}dx, \frac{x^4+2x^2}{2y}dx, \frac{x^4 + 2x^3 + 2x^2 + 2x}{2y(x-1)^3}dx, \frac{y}{x}, \frac{y}{x(x-1)^2}, \frac{-y(x+1)}{(x-1)^2} \right)
+\]
+is such an element.
+We start by checking that the alternating sum of the functions is zero:
+\begin{equation*}
+\frac{y}{x} = \frac{y}{x(x-1)^2} - \frac{y(x+1)}{(x-1)^2}  = \frac{y(x-1)^2 - y - yx(x+1)}{x(x-1)^2} = 0
+\end{equation*}
+
+We next check that the third differential is regular on the correct open set, as follows:
+\begin{align*}
+\di \left( \frac{x^4 + 2x^3 + 2x^2 + 2x}{2y(x-1)^3}dx \right) & = 3D_\infty -R +3D_\infty -3D_1 
 
 
 
