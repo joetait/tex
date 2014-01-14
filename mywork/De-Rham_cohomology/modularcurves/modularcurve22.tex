@@ -391,7 +391,14 @@ We start by checking that the alternating sum of the functions is zero:
 
 We next check that the third differential is regular on the correct open set, as follows:
 \begin{align*}
-\di \left( \frac{x^4 + 2x^3 + 2x^2 + 2x}{2y(x-1)^3}dx \right) & = 3D_\infty -R +3D_\infty -3D_1 
+\di \left( \frac{x^4 + 2x^3 + 2x^2 + 2x}{2y(x-1)^3}dx \right) = & 3D_\infty -R +3D_\infty -3D_1 +\di_0(x^4+2x^3+2x^2+2x) \\
+&  -4D_\infty +R -2D_\infty \\
+= & \di_0(x^4 + 2x^3 + 2x^2 + 2x) - 3D_1.
+\end{align*}
+Clearly this is positive on $U_1$, as desired.
+
+
+
 
 
 
