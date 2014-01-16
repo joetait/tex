@@ -108,6 +108,8 @@
 
 \begin{document}
 \maketitle
+\listoftodos
+\bigskip
 
 We suppose that $k$ is a field of characteristic three and that $X$ is the curve defined by
 \begin{align*}
@@ -136,17 +138,15 @@ If $g(x) = a_sx^s + \ldots + a_0$ where $a_0 \neq 0 \neq a_s$, then we define $g
 Applying this to \eqref{int} we get $x^6 + x^4 + x^2 + 2$.
 Since this is function we will be using we relabel $f(x)$ so that $y^2 = f(x) = x^6 + x^4 + x^2 + 2$, and we henceforth let $X$ be the curve defined by this equation (which is isomorphic to our previous curve).
 We check that this equation has no double roots, and hence is actually a hyperelliptic curve, by computing $f'(x) = x^3 + 2x$. 
-The roots of $f'(x)$ are zero, and $\pm \sqrt {-1}$.
-None of these values are roots of $f(x)$, and hence $X$ is a hyperelliptic curve.
+We then notice that $f(x) = f'(x)^2 + 2$, and hence $f(x)$ and $f'(x)$ are coprime, and hence share no roots.
+In particular, this implies that $f(x)$ has no repeated, hence $X$ is a hyperelliptic curve.
 
-
-To compute the action we need\todo{explain more} to find a value $c$ such that $f(x) - f(x+c) = 0$ for all $x \in k$, which means we must solve the coefficients of
+Moreover, since it is clear that both $f'(x+1) = f'(x)$ we see that
 \[
-f(x+c) - f(x) = (2c^3+c)x^3 + (c^3 + 2c)x + c^6 + c^4 + c^2.
+f(x+1) = f'(x+1)^2 + 2 = f'(x)^2 + 2 = f(x).
 \]
-This clearly equals zero if $c=1$ or if $c=2$.
-Then \cite[\S 3.3]{automorphismshyperellipticmodular} tells us that $\sigma \colon (x,y) \mapsto (x+1, y)$ and $\sigma \colon (x,y) \mapsto (x+2,y)$ are automorphisms of $X$.
-We fix $\sigma$ to be the former of these automorphisms.
+Hence $y^2 = f(x)$ is invariant under the action $\sigma \colon x \mapsto x+1$, and in particular this means that if we let $\sigma(y) = y$ then $\sigma$ is a well defined automorphism of $X$, of order three.
+
 
 Now we wish to see how our element of order three acts on $\derhamhone$ of our curve.
 However, since the basis we have already computed in \cite[Thm. 2.3]{derhamactions} is not stable under this action (in particular, the open set $U_0$ is not preserved) we must refine our cover.
@@ -169,7 +169,7 @@ The residue classes of
 \]
 and
 \[
-\nu_2 = \left( \frac{x^2 + 2}{yx^3}, \frac{x^3}{y}dx, \frac{x^3 + x^2 + x+ 1}{2y(x-1)^3}dx, \frac{y}{x^2}, \frac{x(y +1)}{x^2(x-1)^2}, \frac{2y}{(x-1)^2} \right)
+\nu_2 = \left( \frac{x^2 + 1}{2yx^3}, \frac{2x^3}{y}dx, \frac{x^3 + x^2 + x+ 1}{2y(x-1)^3}dx, \frac{y}{x^2}, \frac{x(y +1)}{x^2(x-1)^2}, \frac{2y}{(x-1)^2} \right)
 \]
 are well defined elements of $\cechderhamhone(\cU'')$.
 Moreover, the canonical projections on to $\cechderhamhone(\cU)$ are the first two basis elements described in \cite[Thm. 2.3]{derhamactions}.
@@ -179,7 +179,40 @@ We let $\omega_{ji}$ and $f_{jki}$ be the elements of $\nu_i$, so that
 \[
 \nu_i = (\omega_{0i}, \omega_{\infty i}, \omega_{1i}, f_{0\infty i}, f_{01i}, f_{\infty 1 i} ).
 \]
-For both $i=1$ and $i=2$ we know from \cite[Thm. 2.3]{derhamactions} that the first, second and fourth entry of $\nu_i$ satisfy the conditions of \eqref{sixtupleconditions}.\todo{write out $\phi_i$ and $\psi_i$ explicitly}
+We first show that the first, second and fourth entry of both $\nu_1$ and $\nu_2$ are those described in \cite[Thm. 2.2]{derhamactions}.
+It will then follow that they satisfy the relevant conditions of \eqref{sixtupleconditions}.
+
+First note that $f'(x) = x^3 + 2x$, and hence
+\[
+s_1(x) = xf'(x) + f(x) = x^6 + 2x^4 + 2 \qquad s_2(x) = xf'(x) - f(x) = 2x^6 + x^2 +1.
+\]
+Recall that we defined $\psi_i(x)$ and $\phi_i(x)$ to the be the unique polynomials in $k[x]$ summing to $s_i$ such that $\psi_i(x)$ is degree at most $g+1$ and $x^{g+2}$ divides $\phi_i(x)$.
+Since $g=2$ it follows that
+\[
+\psi_1(x) = 2 \qquad {\rm and}\qquad \phi_1(x) = x^6 + 2x^4
+\]
+and that
+\[
+\psi_2(x) = x^2 +1 \qquad {\rm and} \qquad \phi_2(x) = 2x^6.
+\]
+
+Hence
+\[
+\omega_{01} = \frac{\psi_1(x)}{2yx^2}dx = \frac{1}{yx^2}dx
+\]
+and
+\[
+\omega_{\infty 1} = \frac{-\phi(x)}{2yx^2}dx = \frac{x^4+2x^2}{yx}dx.
+\]
+On the other hand
+\[
+\omega_{02} = \frac{\psi_2(x)}{2yx^3}dx = \frac{x^2+1}{2yx^3}dx
+\]
+and
+\[
+\omega_{\infty 2} = \frac{-\phi_2(x)}{2yx^3}dx = \frac{2x^3}{y}dx.
+\]
+
 We then show that the rest of the conditions are also satisfied, starting with $\nu_i$.
 We first check that the elements are regular on the appropriate sets by computing their divisors, which are as follows
 \begin{align*}
@@ -194,9 +227,9 @@ We first check that the elements are regular on the appropriate sets by computin
 & = R - D_0 - 2D_1;
 \end{align*}
 \begin{align*}
-\di \left( \frac{y}{(x-1)^2} \right) & = \di(y) - 2\di(x-1) \\
-& = R - 3D_\infty - 2D_1 + 2D_\infty \\
-& = R - D_\infty - 2D_1.
+\di \left( \frac{2y(x+1)}{(x-1)^2} \right) & = \di(y) + \di(x+1) - 2\di(x-1) \\
+& = R - 3D_\infty +D_1 - D_\infty - 2D_1 + 2D_\infty \\
+& = R + D_1 - 2D_\infty - 2D_1.
 \end{align*}
 These are clearly non-negative on $U_1$, $U_0 \cap U_1$ and $U_\infty \cap U_1$ respectively.
 
@@ -224,7 +257,8 @@ and
 \begin{align}
 \omega_{\infty 1} - \omega_{11} & = \frac{x^4 + 2x^2}{y}dx - \frac{x^4 + 2x^3 + 2x^2}{2y(x-1)^3} dx \\
 & = \frac{2(x^4 + 2x^2)(x-1)^3 + 2x^4 + x^3 + x^2}{2y(x-1)^3}dx \\
-& = \frac{2x^7 + x^5 + 2x^3}{2y(x-1)^3}dx.
+& = \frac{2x^7 + x^5 + x^3}{2y(x-1)^3}dx\\
+& = 2d \left( \frac{y(x+1)}{(x-1)^2}\right).
 \end{align}\todo{check this}
 Hence 
 \[
@@ -238,8 +272,8 @@ df_{0 1 1} & = d \left( \frac{y}{x(x-1)^2} \right) \\
 & = \frac{f'}{2yx(x-1)^2}dx + \frac{y}{x^2(x-1)^3}dx \\
 & = \frac{2x^6 + x^5 + x^4 + 2x^3 + 1}{2yx^2(x-1)^3} dx\\
 & = \frac{2(x^3-1)}{2yx^2(x-1)^3}dx - \frac{x^6 + 2x^5 + 2x^4}{2yx^2(x-1)^3}dx \\
-& = \omega_1 - \omega_3.
-\end{align}\todo{double check this}
+& = \omega_{01} - \omega_{11}.
+\end{align}
 So we know that our first element is an element of $\derhamhone (\cU'')$.
 
 We now turn to the second element, where we again start by checking that all the differentials and functions are regular on the correct open sets.
@@ -250,7 +284,7 @@ We have
 & + 3D_\infty + R - 2D_\infty \\
  = &  \di_0(x^3 + x^2 + x + 1) + D_\infty - 3D_1
 \end{align}
-which is clearly positive on $U_1$.
+which is clearly non-negative on $U_1$.
 Similarly
 \begin{align}
 \di \left( \frac{y(x+1)}{x^2(x-1)^2} \right) & = \di(y) + \di(x+1) - 2\di(x) - \di(x-1) \\
@@ -263,7 +297,7 @@ and
 & = R - 3D_\infty - 2D_1 + 2D_\infty \\
 & = R - D_\infty - 2D_1,
 \end{align}
-which are non-negative on $U_0 \cap U_1$ and $U_1 \cap U_\infty$ respectively.
+are non-negative on $U_0 \cap U_1$ and $U_1 \cap U_\infty$ respectively.
 
 It is also obvious that
 \[
@@ -275,15 +309,15 @@ We finally check the relations between the functions and differentials, starting
 df_{0 1 2} & = \frac{1}{2yx^3(x-1)^3} (x(x-1)(x+1)f' + f)dx \\
 & = \frac{1}{2yx^3(x-1)^3}(2x^6 + 2x^4 + 2x^2 + 2)dx \\
 & = \frac{1}{2yx^3(x-1)^3}((x^5 + x^3 + 2x^2 + 2) + 2(x^6 + x^5 + x^4 + x^3))dx \\
-& = \omega_{12} - \omega_{32}.
+& = \omega_{02} - \omega_{12}.
 \end{align}
 We also have
 \begin{align}
 df_{\infty 1 2} & = \frac{1}{2y(x-1)^3}(f-(x-1)f')dx \\
 & = \frac{1}{2y(x-1)^3}(x^6 + x^3 + 2x^2 + 2x+ 2)dx \\
 & = \frac{1}{2y(x-1)^3}(x^3(x-1)^3 - x^3 - x^2 - x - 1) dx \\
-& = \left(\frac{x^3}{y} - \frac{x^3 + x^2 + x+1}{2y(x-1)^3}\right) dx \\
-& = \omega_{22} - \omega_{32},
+& = \left(\frac{x^3}{2y} - \frac{x^3 + x^2 + x+1}{2y(x-1)^3}\right) dx \\
+& = \omega_{\infty 2} - \omega_{12},
 \end{align}
 which completes the proof.
 
