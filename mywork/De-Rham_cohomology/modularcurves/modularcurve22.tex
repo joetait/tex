@@ -202,7 +202,7 @@ Hence
 \]
 and
 \[
-\omega_{\infty 1} = \frac{-\phi(x)}{2yx^2}dx = \frac{x^4+2x^2}{yx}dx.
+\omega_{\infty 1} = \frac{-\phi_1(x)}{2yx^2}dx = \frac{x^4+2x^2}{y}dx.
 \]
 On the other hand
 \[
@@ -259,7 +259,7 @@ and
 & = \frac{2(x^4 + 2x^2)(x-1)^3 + 2x^4 + x^3 + x^2}{2y(x-1)^3}dx \\
 & = \frac{2x^7 + x^5 + x^3}{2y(x-1)^3}dx\\
 & = 2d \left( \frac{y(x+1)}{(x-1)^2}\right).
-\end{align}\todo{check this}
+\end{align}
 Hence 
 \[
 df_{\infty 1 1} = \omega_{\infty 1} - \omega_{ 1 1}.
@@ -334,38 +334,45 @@ However, we can easily see that $\sigma(U_0) = U_1$, and hence we have the follo
 \end{array}
 \]
 
-\todo[inline]{From this point there must be a mistake, since we will shortly see that the action is not closed}
 Since the image $\sigma (U_0)$ is equal to $U_1$ it follows that $\sigma$ will map from $\derhamhone(\cU')$ to $\derhamhone(\cU)$, and hence we can compute the group action by studying $\sigma \colon (\omega_{2i}, \omega_{3i}, f_{23i}) \mapsto (\sigma(\omega_{3i}), \sigma (\omega_{2i}), \sigma(f_{23i}))$.
 
-When we compute this action we see that
+In particular
+\begin{equation}\label{sigmanu1}
+\sigma(\nu_1) = \left( \frac{x^4+2x^2+2x+2}{yx^3}dx, \frac{x^4+x^3+2x^2+2x}{y}dx, \frac{2y(x+2)}{x^2} \right)
+\end{equation}
+and
 \[
-\sigma\left( \frac{x^4 + 2x^2}{y}, \frac{x^4+2x^3+x^2}{2y(x-1)^3} , \frac{2y(x+1)}{(x-1)^2} \right) = \left( \frac{x^4 + x^2 + 1}{2yx^3}, \frac{x^4 + x^3 + 2x^2 + 2x}{y}dx, \frac{2y(x+2)}{x^2} \right)
+\sigma(\nu_2) = \left( \frac{x^3+x^2+1}{2yx^3}dx, \frac{2x^3+2}{y}dx, \frac{2y}{x^2} \right).
 \]
-and that
-\[
-\sigma\left( \frac{x^3}{y}dx, \frac{x^3 + x^2 + x + 1}{2y(x-1)^3}dx, \frac{2y}{(x-1)^2} \right) = \left( \frac{x^3 + x^2 + 1}{2yx^3}dx, \frac{x^3 + 1}{y}dx, \frac{2y}{x^2}\right).
-\]
+Note that $dx$ is invariant under the action of $\sigma$, since $\sigma(dx) = d (\sigma (x)) = d(x+1) = dx$.
 
-We wish to write the above elements in terms of the basis elements for $\cechderhamhone(\cU)$ that we have already discovered.
+
+We wish to write the above elements in terms of the basis elements for $\cechderhamhone(\cU)$ that we have already described.
 Recall that this basis is formed of
 \begin{align}
 \gamma_1  = & \left( \frac{1}{y}dx, \frac{1}{y}dx, 0\right) \\
 \gamma_2 = & \left(\frac{x}{y}dx, \frac{x}{y}dx, 0\right) \\
-\gamma_3 = & \left( \frac{1}{yx^2}dx, \frac{x^4 + x^2}{y}dx, \frac{y}{x} \right)\\
-\gamma_4 = & \left(\frac{x^2+1}{yx^3}dx, \frac{x^3}{y}dx, \frac{y}{x^2} \right).
+\gamma_3 = & \left( \frac{1}{yx^2}dx, \frac{x^4 + 2x^2}{y}dx, \frac{y}{x} \right)\\
+\gamma_4 = & \left(\frac{x^2+1}{2yx^3}dx, \frac{2x^3}{y}dx, \frac{y}{x^2} \right).
 \end{align}
 
-Now a simple computation shows us that
-\begin{equation}
-\left( \frac{x^3 + x^2 + 1}{2yx^3}dx, \frac{x^3 + 1}{y}dx, \frac{2y}{x^2}\right) + \gamma_3 - \gamma_4 + \gamma_2 
-= \left( \frac{x^2 + x + 1}{yx^3}dx, \frac{2x^4}{y}dx, 0 \right).
-\end{equation}
-However, this is clearly not an element of $\cechderhamhone(\cU)$, since the 
+Note that
 \[
-\frac{x^2+x+1}{yx^3}dx - \frac{2x^4}{y}dx \neq d0 = 0.
+2\gamma_3 + \gamma_4 = \left( \frac{2x^2+2x+2}{yx^3}dx, \frac{2x^4+2x^3+x^2}{y}dx, \frac{2y(x+2)}{x^2} \right).
+\]
+Hence, if the second entry in $\sigma(\nu_1)$ were the negative of what is shown in \eqref{sigmanu1} then it would follow that
+\[
+\sigma(\nu_1) - (2\gamma_3+\gamma_4) = \left( \frac{x}{y}dx, \frac{x}{y}dx, 0\right) = \gamma_2.
 \]
 
-A similar computation for $\sigma(\nu_1)$ shows us that this is also not an element of $\cechderhamhone(\cU)$.
+We provide a similar computation for $\nu_2$, starting by computing the image of $\nu_2$ under the action of $\sigma$, which is
+\[
+\sigma(\nu_2) = \left( \frac{x^3+x^2+1}{2yx^3}dx, \frac{2x^3+2}{y}dx, \frac{2y}{x^2} \right).
+\]
+In this case, if the final term of $\sigma(\nu_2)$ were minus what it is then we would have
+\[
+\sigma(\nu_2) - \gamma_4 = \left( \frac{1}{2y}dx, \frac{1}{2y}dx, 0\right) = 2\gamma_1.
+\]
 
 \section{Modular curve $X_0(50)$}
 We now consider the modular curve $X_0(50)$.
@@ -415,7 +422,7 @@ s_2 & = xf'(x) - f(x) = 2x^6 + x^2 + 2.
 \end{align}
 Then it follows that the first two basis elements in \cite[Thm. 2.3]{derhamactions} are
 \begin{align}
-\left( \frac{1}{2yx^2}dx, \frac{x^6 + 2x^4}{2yx^2}dx, \frac{y}{x} \right) & = \left( \frac{1}{2yx^2}dx, \frac{x^4+2x^2}{2y}dx, \frac{y}{x} \right) \label{28basisone} \\
+\left( \frac{1}{2yx^2}dx, \frac{2(x^6 + 2x^4)}{2yx^2}dx, \frac{y}{x} \right) & = \left( \frac{1}{2yx^2}dx, \frac{x^4+2x^2}{y}dx, \frac{y}{x} \right) \label{28basisone} \\
 \left( \frac{x^2 + 2}{2yx^3}dx, \frac{2x^6}{2yx^3}dx, \frac{y}{x^2} \right) & = \left( \frac{x^2 + 2}{2yx^3}dx, \frac{2x^3}{y}dx, \frac{y}{x^2} \right). \label{28basistwo}
 \end{align}
 
@@ -426,12 +433,12 @@ Then we wish to find elements of $\cechderhamhone(\cU'')$ that surject on to \eq
 \todo[inline]{Rough work from here - here be dragons}
 We first posit that
 \[
-\left( \frac{1}{2yx^2}dx, \frac{x^4+2x^2}{2y}dx, \frac{x^4 + 2x^3 + 2x^2 + 2x}{2y(x-1)^3}dx, \frac{y}{x}, \frac{y}{x(x-1)^2}, \frac{-y(x+1)}{(x-1)^2} \right)
+\left( \frac{1}{2yx^2}dx, \frac{x^4+2x^2}{y}dx, \frac{x^4 + 2x^3 + 2x^2 + 2x}{2y(x-1)^3}dx, \frac{y}{x}, \frac{y}{x(x-1)^2}, \frac{-y(x+1)}{(x-1)^2} \right)
 \]
 is such an element.
 We start by checking that the alternating sum of the functions is zero:
 \begin{equation*}
-\frac{y}{x} = \frac{y}{x(x-1)^2} - \frac{y(x+1)}{(x-1)^2}  = \frac{y(x-1)^2 - y - yx(x+1)}{x(x-1)^2} = 0
+\frac{y}{x} - \frac{y}{x(x-1)^2} - \frac{y(x+1)}{(x-1)^2}  = \frac{y(x-1)^2 - y - yx(x+1)}{x(x-1)^2} = 0
 \end{equation*}
 
 We next check that the third differential is regular on the correct open set, as follows:
@@ -442,8 +449,20 @@ We next check that the third differential is regular on the correct open set, as
 \end{align*}
 Clearly this is positive on $U_1$, as desired.
 
-
-
+We now verify the other relations, starting with
+\begin{align*}
+df_{0 1 1} & = d \left( \frac{y}{x(x-1)^2} \right) \\
+& = \frac{1}{x(x-1)^2}dy + y d \left( \frac{1}{x(x-1)^2} \right) \\
+& = \frac{f'}{2yx(x-1)^2}dx + \frac{y}{(x-1)^3x^2}dx \\
+& = \frac{1}{2yx^2(x-1)^3}\left( f'x(x-1) +2f\right)dx \\
+& = \frac{1}{2yx^2(x-1)^3}(2x^6+x^5+x^4+2x^3+2)dx \\
+& = \omega_{0 1} - \omega_{1 1}.
+\end{align*}
+Similarly
+\begin{align*}
+df_{\infty 1} & = d \left( \frac{2y(x+1)}{(x-1)^2} \right) \\
+& = 
+\end{align*}
 
 
 
