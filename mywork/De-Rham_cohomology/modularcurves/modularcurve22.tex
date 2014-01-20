@@ -262,7 +262,7 @@ and
 \end{align}
 Hence 
 \[
-df_{\infty 1 1} = \omega_{\infty 1} - \omega_{ 1 1}.
+df_{\infty 1 1} = \omega_{\infty 1} - \omega_{1 1}.
 \]
 
 Similarly we have
@@ -338,13 +338,15 @@ Since the image $\sigma (U_0)$ is equal to $U_1$ it follows that $\sigma$ will m
 
 In particular
 \begin{equation}\label{sigmanu1}
-\sigma(\nu_1) = \left( \frac{x^4+2x^2+2x+2}{yx^3}dx, \frac{x^4+x^3+2x^2+2x}{y}dx, \frac{2y(x+2)}{x^2} \right)
+\sigma(\nu_1) = \left( \frac{x^4+2x^2+2x+2}{2yx^3}dx, \frac{x^4+x^3+2x^2+2x}{y}dx, \frac{y(x+2)}{x^2} \right)
 \end{equation}
 and
 \[
-\sigma(\nu_2) = \left( \frac{x^3+x^2+1}{2yx^3}dx, \frac{2x^3+2}{y}dx, \frac{2y}{x^2} \right).
+\sigma(\nu_2) = \left( \frac{x^3+x^2+1}{2yx^3}dx, \frac{x^3+1}{2y}dx, \frac{y}{x^2} \right).
 \]
+Since we change the order of the differentials, we also need to change the sign of the function after the action of $\sigma$ has been applied.\todo[inline]{Check that changing the sign of the function is correct}
 Note that $dx$ is invariant under the action of $\sigma$, since $\sigma(dx) = d (\sigma (x)) = d(x+1) = dx$.
+
 
 
 We wish to write the above elements in terms of the basis elements for $\cechderhamhone(\cU)$ that we have already described.
@@ -356,23 +358,16 @@ Recall that this basis is formed of
 \gamma_4 = & \left(\frac{x^2+1}{2yx^3}dx, \frac{2x^3}{y}dx, \frac{y}{x^2} \right).
 \end{align}
 
-Note that
+Then it is easy to see that
 \[
-2\gamma_3 + \gamma_4 = \left( \frac{2x^2+2x+2}{yx^3}dx, \frac{2x^4+2x^3+x^2}{y}dx, \frac{2y(x+2)}{x^2} \right).
+\sigma(\nu_1) = 2 \alpha_2 + 2\alpha_4 + \alpha_3
 \]
-Hence, if the second entry in $\sigma(\nu_1)$ were the negative of what is shown in \eqref{sigmanu1} then it would follow that
+and similarly
 \[
-\sigma(\nu_1) - (2\gamma_3+\gamma_4) = \left( \frac{x}{y}dx, \frac{x}{y}dx, 0\right) = \gamma_2.
+\sigma(\nu_2) = 2\alpha_4 + 2 \alpha_1.
 \]
+We then see that the action of $\sigma$ on the curve is not stable.
 
-We provide a similar computation for $\nu_2$, starting by computing the image of $\nu_2$ under the action of $\sigma$, which is
-\[
-\sigma(\nu_2) = \left( \frac{x^3+x^2+1}{2yx^3}dx, \frac{2x^3+2}{y}dx, \frac{2y}{x^2} \right).
-\]
-In this case, if the final term of $\sigma(\nu_2)$ were minus what it is then we would have
-\[
-\sigma(\nu_2) - \gamma_4 = \left( \frac{1}{2y}dx, \frac{1}{2y}dx, 0\right) = 2\gamma_1.
-\]
 
 \section{Modular curve $X_0(50)$}
 We now consider the modular curve $X_0(50)$.
