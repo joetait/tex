@@ -111,6 +111,39 @@
 \listoftodos
 \bigskip
 
+\section{Note on de-Rham cohomology}
+We let $X$ be the hyperelliptic curve over an algebraically closed field $k$ (characteristic not 2) defined by $y^2 = f(x)$, where $f(x) \in k[x]$ has no repeated roots.
+We let $\pi \colon X \ra \mathbb P^1_k$ be the canonical projection.\todo{rewrite this line}
+In previous work we found a basis for the de-Rham cohomology of any hyperelliptic curve using \cech cohomology.
+In particular, we let $\cU = \{ U_0 , U_\infty\}$ (recall that $U_a = X\backslash \pi^{-1}(a)$ and a basis of $\cechderhamhone(\cU)$ is given in \cite{derhamactions}.
+However, when we are computing actions on particular curves we will often find that the cover $\cU$ is not preserved under the action of particular elements of the automorphism group.
+To accommodate for this we will need to extend\todo{alternative word} our cover by at least one open set.
+The elements of $G= Aut(X)$\todo{make "Aut" an operator} we will be considering will always fix $U_\infty$, so if $\sigma$ is the element we are considering we will need only add $\sigma^{-1}(U_0)$.
+We call the cover with this additional element $\cU'' = \{U_0, U_\infty, \sigma^{-1}(U_0)\}$, and we let $\cU' = \{U_\infty, \sigma^{-1}(U_0)\}$.
+We then have the following commutative diagram
+\[
+\begin{array}{ccc}
+\derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\rho} & \cechderhamhone(\cU'')  \\
+\sigma\uparrow & ~ & \rho'\downarrow  \\
+\derhamhone \cong \cechderhamhone(\cU)  & \xrightarrow{\sigma} & \cechderhamhone(\cU')
+\end{array}
+\]
+where $\rho$ and $\rho'$ are the canonical projections.
+To define these explicitly we recall that $\cechderhamhone(\cU'')$ can be defined is the $k$ vector space \todo{hyphenate this?}
+\begin{multline}
+\left\{ (\omega_0, \omega_\infty , \omega_1, f_{0\infty}, f_{01},f_{\infty 1}) | \omega_i \in \Omega_X(U_i), f_{ij} \in \cO_X(U_i \cap U_j), \right. \\ \left. f_{0\infty} - f_{01} + f_{\infty1} = 0, df_{ij} = \omega_i - \omega_j \right\}
+\end{multline}
+quotiented by the subspace 
+\[
+\left\{ df_0, df_\infty, df_1, f_0- f_\infty, f_0 - f_1, f_\infty - f_1 | f_i \in \cO_X(U_i)\right\}.
+\]
+Then $\rho$ projects the first, second and fourth co-ordinate \todo{hyphen?} whilst $\rho'$ projects the second, third and sixth co-ordinate.
+Also note that $\sigma \colon \cechderhamhone(\cU) \ra \cechderhamhone (\cU')$ since cohomology is contravariant and $\sigma (\cU') = \cU$.
+
+
+
+\section{$X_0(22)$}
+
 We suppose that $k$ is a field of characteristic three and that $X$ is the curve defined by
 \begin{align*}
 y^2 = f(x)  & = (x^3 + x^2 + 2x + 1)(x^3 + 2x^2 + x + 1)\\
@@ -360,11 +393,11 @@ Recall that this basis is formed of
 
 Then it is easy to see that
 \[
-\sigma(\nu_1) = 2 \alpha_2 + 2\alpha_4 + \alpha_3
+\sigma(\nu_1) = 2 \gamma_2 + 2\gamma_4 + \gamma_3
 \]
 and similarly
 \[
-\sigma(\nu_2) = 2\alpha_4 + 2 \alpha_1.
+\sigma(\nu_2) = \gamma_4 + 2 \gamma_1.
 \]
 We then see that the action of $\sigma$ on the curve is not stable.
 
