@@ -88,12 +88,13 @@
 \DeclareMathOperator{\cha}{char}
 \DeclareMathOperator{\gal}{Gal}
 \DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\im}{im}
 
 %%% END Article customizations
 
 %%% The "real" document content comes below...
 
-\title{title}
+\title{Modular Forms}
 \author{J. Tait}
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
@@ -101,7 +102,30 @@
 \begin{document}
 \maketitle
 
-\section{section 1}
+\section{Section 1}
+
+\begin{defn}
+We $\Gamma = {\rm SL}_2(R)$, and we let $\mathbb H = \{u + iv | v >0\}$.
+\end{defn}
+\begin{rem}
+Note that other texts sometimes refer to $\mathbb H$ as $\mathbb H^2$.
+\end{rem}
+
+\begin{lem}
+For $g = \left( \begin{array}{cc} a& b \\ c & d\end{array} \right) \in \Gamma$ and $\tau \in \mathbb H$ we let $g\tau := \frac{a\tau + b}{c\tau + d}$.
+This is a well defined action of $\Gamma$ on $\mathbb H$.
+\end{lem}
+\begin{proof}
+Note that if $\tau = x + iy$ then 
+\begin{equation*}
+\im (g\tau) = \im \left( \frac{a\tau + b}{c\tau +d} \right ) =
+\im\left( \frac{(a\tau + b)(c\bar\tau + d)}{|c\tau +d|^2} \right) 
+=\im\left( \frac{ac|\tau|^2 + ad\tau + bc\bar\tau + bd}{|c\tau + d|^2} \right)
+= \frac{ad\cdot y - bc \cdot y}{|c\tau + d|^2}.
+\end{equation*}
+Since $g \in \Gamma$ then $ad - bc =1$, and hence $\im(g\tau) = \frac{y}{|c \tau + d|^2}$, which is positive since $y$ is positive.
+\end{proof}
+
 
 \bibliography{biblio}
 \bibliographystyle{plain}
