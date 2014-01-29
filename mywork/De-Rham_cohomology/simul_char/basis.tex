@@ -549,7 +549,10 @@ Then since
 \]
 it follows that $\res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) = \res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only if $\res_{P_0}(x^{i-j}dx) = 0$.
 Since $x$ is a uniformising parameter at $P_0$ then $\res_{P_0}(x^{i-j}dx) \neq 0$ if and only if $i-j = -1$.
-Hence $\res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq \res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only $i-j=-1$, and since we are assuming $\cha(k) = 2$ this is equivalent to $\res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) +\res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq 0$.
+Hence $\res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq \res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only if $i-j=-1$.
+Hence $\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = \res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) +\res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq 0$ if and only $j = i+1$.
+
+Finally, if zero is a branch point then \todo{consider this case}
 \end{proof}
 
 
@@ -568,8 +571,25 @@ S_i(x,y) := xF'(x) + y(xH'(x) + iH(x))\in k[x]\oplus yk[x] \subseteq k(x,y).
 We now decompose these polynomials into two parts, which will be used in the sequel.
 Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x)\in k(x)$ and $\phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\psi_i (x)$ is at most $g+1$ and $x^{g+2}$ divides $\phi_i(x)$.
 
+We define $A_{j,i} \in k$ for $1 \leq j \leq 2g+2$, and $B_{k,i} \in k$ for $0\leq k \leq g+1$ by the equation
+\[
+S_i(x,y) = A_{2g+2,i}x^{2g+2} + \ldots + A_{1,i} x + y(B_{g+1,i} x^{g+1} + \ldots + B_{1,i} x + B_{0,i}).
+\]
+Note that many of these coefficients may be zero.
+In particular we remark that the $x^i$ term of $xH'(x) + iH(x)$, and hence $B_{i,i}$, is always zero, since it is precisely $x \cdot B_{i,i}x^{i-1} + B_{i,i} x^i = 2B_{i,i}x^i = 0$.\todo{move back to where it previously was}
 
-Secondly, we write $S_i(x,y)$ as $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$, where $\Phi_i(x,y), \Psi_i(x,y) \in k[x,y]$ are the unique polynomials such that $\Phi_i(x,y)$ is divisible by $x^i$ and no monomial of $\Psi_i(x,y)$ has a factor of $x^i$.
+
+We now define the following polynomials:
+\begin{equation}\label{Split}
+\begin{split}
+\Phi_i^x(x) & =  {}_iA_{2g+2}x^{2g+2} + \ldots + {}_iA_{i+1}x^{i+1} \\
+\Psi_i^x(x) & =  {}_iA_ix^i + \ldots + {}_iA_1x \\
+\Phi_i^y(x) & =  {}_iB_gx^g + \ldots {}_iB_{i+1}x^{i+1} \\
+\Psi_i^y(x) & =  {}_iB_{i-1}x^{i-1} + \ldots + {}_iB_1x + {}_iB_0.
+\end{split}
+\end{equation}
+We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
+Finally, we define $\Phi_i(x,y) = \phi_i(^xx) + y \phi^y_i(x)$ and $\Psi_i(x,y) = \psi_i^x(x) + y \Psi_i^y(x)$.
 
 Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $k$-vector space basis of $\derhamhone$.
 \begin{thm}\label{basis}
@@ -598,7 +618,7 @@ form a basis of $\derhamhone$.
 Before proving this theorem we use it to prove the following corollary.
 
 \begin{cor}
-The action of $G$ on $\derhamhone$ is faithful unless $G$ contains a hyperelliptic involution and $p=2$, in which case the action of the involution $\sigma:(x,y) \mapsto (x,y+H(x))$ is trivial.
+The action of $G$ on $\derhamhone$ is faithful unless $G$ contains a hyperelliptic involution and $p=2$, in which case the action of the hyperelliptic involution is trivial.
 \end{cor}
 
 \begin{proof}
@@ -608,7 +628,7 @@ Then if $p \neq 2$ or $G$ does not contain a hyperelliptic involution it follows
 We now suppose that $p=2$ and that $G$ contains a hyperelliptic involution, which we denote by $\sigma$.
 By the same theorem from \cite{faithfulaction} as used in the last paragraph, we know that $\sigma$ acts trivially on $\hzero$.
 
-Since $\hzero$ is dual to $\hone$ we know that $G$ also does not act faithfully on $\hone$.
+Since $\hzero$ is dual to $\hone$ we know that $\sigma$ also acts trivially on $\hone$.
 We can study exactly why this is from the view of \cech cohomology, and this will also help to determine the action of $\sigma$ on $\derhamhone$.
 If we fix a natural number $i\in \{1, \ldots ,g\}$ then $\sigma$ maps $\frac{y}{x^i}$ to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
 Now we can split $\frac{H(x)}{x^i}$ as follows, 
@@ -618,7 +638,7 @@ Now we can split $\frac{H(x)}{x^i}$ as follows,
 and since this is clearly the difference of an element of $\cO_X(U_0)$ and an element of $\cO_X(U_\infty)$ we see that $\frac{H(x)}{x^i}$ is zero in $\hone$.
 We let 
 \[
-H_{1,i}(x) = b_{i-1}x^{i-1} + \ldots + b_1x
+H_{1,i}(x) = b_{i-1}x^{i-1} + \ldots + b_1x + b_0
 \]
 and 
 \[
@@ -629,9 +649,9 @@ We now consider the action of $\sigma$ on the entries in \eqref{three}.
 Firstly we see that
 \begin{align*}
 \sigma \left( \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} dx\right) & = \frac{-\sigma(\Psi_i(x,y))}{x^{i+1} H(x)} dx \\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{H(x)(xH_{1,i}'(x) + iH_{1,i}'(x))}{x^{i+1}H(x)}dx\\
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{H(x)(xH_{1,i}'(x) + iH_{1,i}(x))}{x^{i+1}H(x)}dx\\
 & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{xH_{1,i}'(x) + iH_{1,i}(x)}{x^{i+1}}dx \\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx +  \frac{H_{1,i}'(x)}{x^i}dx + \frac{iH_{1,i}'(x)}{x^{i+1}}dx \\
+& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx +  \frac{H_{1,i}'(x)}{x^i}dx + \frac{iH_{1,i}(x)}{x^{i+1}}dx \\
 & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx +  \frac{1}{x^i}d\left( H_{1,i}(x) \right) + H_{1,i}(x) d \left( \frac{1}{x^i} \right) \\
 & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + d\left( \frac{H_{1,i}(x)}{x^i} \right),
 \end{align*}
@@ -647,11 +667,11 @@ Lastly, it is clear that $\sigma(x^{-i}y) = x^{-i}(y+H(x))$.
 We can now describe exactly how sigma acts on the elements of \eqref{three} using $H_{1,i}(x)$ and $H_{2,i}(x)$:
 \begin{multline}
 \sigma \left( \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right)\right) = \\
- \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + d\left(\frac{H'_{1,i}(x)}{x^i}\right),  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ d\left(\frac{H'_{2,i}(x)}{x^i} \right), \frac{y+H(x)}{x^i} \right).
+ \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + d\left(\frac{H_{1,i}(x)}{x^i}\right),  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ d\left(\frac{H_{2,i}(x)}{x^i} \right), \frac{y+H(x)}{x^i} \right).
 \end{multline}
 So the action of $\sigma$ on the basis elements in \eqref{three} amounts to adding 
 \[
-\left( d\left(\frac{H_{1,i}'}{x^i}\right), d\left(\frac{H_{2,i}'}{x^i}\right), \frac{H(x)}{x^i} \right),
+\left( d\left(\frac{H_{1,i}}{x^i}\right), d\left(\frac{H_{2,i}}{x^i}\right), \frac{H(x)}{x^i} \right),
 \]
 which clearly satisfies the conditions of \eqref{quotient} and hence is zero.
 So the action of the involution $\sigma$ on $\derhamhone$ is trivial and hence the action of the group $G$ is not faithful.
@@ -666,10 +686,17 @@ If we let
 \]
 then 
 \begin{equation}
-\sigma(\nu_i) = -\nu_i = \nu_i - 2\nu_i.
+\sigma(\nu_i) = -\nu_i.
 \end{equation}
-Since we are assuming that $p\neq 2$ it follows that $2\nu_i \neq 0$ for $i = 1, \ldots , g$.
-In particular we note that the action on the elements \eqref{one} is non-trivial.
+Similary, if 
+\[
+\eta_i = \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, o \right)
+\]
+then 
+\[
+\sigma(\eta_i) = - \eta_i.
+\]
+Hence $\sigma$ acts by multiplication with $-1$ on $\derhamhone$.
 \end{rem}
 
 
@@ -758,26 +785,7 @@ We have also already seen in the proof of Lemma \ref{basish1} that $\frac{y}{x^i
 So in order to prove that for $i\in \{1, \ldots, g\}$ the elements of \eqref{three} are satisify the conditions of \eqref{derhamconditions} it only remains to show that the differentials $\frac{\Phi_i}{x^{i+1}H(x)}dx$ and $\frac{\Psi_i}{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.
 
 
-We define $A_{j,i} \in k$ for $1 \leq j \leq 2g+2$, and $B_{k,i} \in k$ for $0\leq k \leq g+1$ by the equation
-\[
-S_i(x,y) = A_{2g+2,i}x^{2g+2} + \ldots + A_{1,i} x + y(B_{g+1,i} x^{g+1} + \ldots + B_{1,i} x + B_{0,i}).
-\]
-Note that many of these coefficients may be zero.
-In particular we remark that the $x^i$ term of $xH'(x) + iH(x)$, and hence $B_{i,i}$, is always zero, since it is precisely $x \cdot B_{i,i}x^{i-1} + B_{i,i} x^i = 2B_{i,i}x^i = 0$.
-
-
-We can now define the following polynomials:
-\begin{equation}\label{Split}
-\begin{split}
-\Phi_i^x(x) & =  {}_iA_{2g+2}x^{2g+2} + \ldots + {}_iA_{i+1}x^{i+1} \\
-\Psi_i^x(x) & =  {}_iA_ix^i + \ldots + {}_iA_1x \\
-\Phi_i^y(x) & =  {}_iB_gx^g + \ldots {}_iB_{i+1}x^{i+1} \\
-\Psi_i^y(x) & =  {}_iB_{i-1}x^{i-1} + \ldots + {}_iB_1x + {}_iB_0.
-\end{split}
-\end{equation}
-We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
-
-Clearly $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x) }{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x) }{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.
+Clearly $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x) }{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x) }{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.\todo{note that some stuff was removed before this para}
 
 We start by computing the divisor of $\frac{1}{x^{i+1}H(x)}dx$, since it is a common component to all the differentials we need to look at.
 This yields
