@@ -210,7 +210,7 @@ quotiented by the subspace
 \left\{ df_0, df_\infty, df_1, f_0- f_\infty, f_0 - f_1, f_\infty - f_1 | f_i \in \cO_X(U_i)\right\}.
 \]
 The following proposition will allow us to compute how $\sigma$ acts on $\cechderhamhone(\cU)$, as in \cite[\S 3]{canonicalrepresentation}.
-\begin{prop}
+\begin{prop}\label{basis22}
 The residue classes of
 \[
 \nu_1 = \left(\frac{1}{yx^2}dx, \frac{x^4 + 2x^2}{y}dx, \frac{x^4 + 2x^3 +  2x^2}{2y(x-1)^3}dx, \frac{y}{x}, \frac{y}{x(x-1)^2}, \frac{2y(x+1)}{(x-1)^2} \right)
@@ -415,6 +415,21 @@ and similarly
 \sigma(\nu_2) = \gamma_4 + 2 \gamma_1.
 \]
 We then see that the action of $\sigma$ on the curve is not stable.
+
+Now we compute the action of $\sigma$ on $\hone$.
+We will then be able to explicitly check whether the short exact sequence splits.
+
+Before computing the action of $\sigma$ on $\hone$ we first note that if we naively map $f$ to $\sigma(f)$ the action is not well defined, since $\sigma$ changes the cover, and hence $\sigma(f)$ is not regular on $U_0\cap U_\infty$, and hence not an element of $\cechhone$.
+However, we can use the same technique that we employed to compute the group action of $\sigma$ on $\derhamhone$.
+Namely, we compute elements of $\cechhone (\cU'')$ that surject on the $\cechhone(\cU)$, and then we study how $\sigma$ acts on the image of these elements in $\cechhone(\cU)$.
+It is easy to compute that
+\[
+\cechhone(\cU'') = \frac{ \{(f_{0\infty}, f_{01}, f_{\infty 1})| f_{i,j} \in \cO_X(U_i \cap U_j), f_{0 \infty} - f_{01} + f_{\infty 1} \} }{ \{ (f_0 - f_\infty , f_0 - f_1, f_\infty - f_1)| f_i \in \cO_X(U_i)\}}.
+\]
+It is then clear that we can project that last three entries of the elements described in Proposition \ref{basis22} on to $\cechhone(\cU'')$.
+However, since we are considering the same elements as those that appear in $\cechderhamhone(\cU'')$ then the group action on the components will be the same.
+Hence the action on both the elements of $\cechderhamhone(\cU)$ that project on to $\cechhone(\cu)$, and the elements of 
+
 
 
 \section{Modular curve $X_0(50)$}
