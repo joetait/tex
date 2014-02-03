@@ -428,7 +428,35 @@ It is easy to compute that
 \]
 It is then clear that we can project that last three entries of the elements described in Proposition \ref{basis22} on to $\cechhone(\cU'')$.
 However, since we are considering the same elements as those that appear in $\cechderhamhone(\cU'')$ then the group action on the components will be the same.
-Hence the action on both the elements of $\cechderhamhone(\cU)$ that project on to $\cechhone(\cu)$, and the elements of 
+Hence the action on both the elements of $\cechderhamhone(\cU)$ that project on to $\cechhone(\cU)$, and the elements of 
+
+We saw what the action of $\sigma$ on $\gamma_3$ and $\gamma_4$ was earlier.
+It is also easy to see that
+\[
+\sigma(\gamma_1) = \gamma_1 \ {\rm and} \ \sigma(\gamma_2) = \gamma_1 + \gamma_2.
+\]
+We can then compute whether it is possible for the short exact sequence \todo{reference ses} splits.
+Suppose there is a map $s\colon \hone \ra \derhamhone$ such that$p \circ s  = {\rm id} \colon \hone \ra \hone$.
+Hence $s(\bar \gamma_3) = \gamma_3 + a_1 \gamma_1 + a_2 \gamma_2$ and $s(\bar \gamma_4) = \gamma_4 + b_1 \gamma_1 + b_2 \gamma_2$, for some $a_i, b_i \in k$.
+Obviously $s$ must be a $k[G]$-module homomorphism.
+Hence 
+\[
+\gamma_4 + b_1\gamma_1 + b_2(\gamma_1 + \gamma_2) = \sigma (s(\bar \gamma_4)) = s ( \sigma(\bar \gamma_4)) =  s(\bar \gamma_4) = \gamma_4 + b_1\gamma_1.
+\]
+Clearly $b_2 = 0$ in this case, so $s(\gamma_4 ) = \gamma_4 + b_1 \gamma_1$.
+
+We also require that $\sigma(s(\bar \gamma_3) = s (\sigma(\bar \gamma_3))$.
+On the one hand we have
+\[
+\sigma(s(\bar \gamma_3)) = \gamma_3 + 2\gamma_4 + 2\gamma_2 + a_1\gamma_1 + a_2(\gamma_2 + \gamma_1) = (a_1 +a_2)\gamma_1 + (a_2 + 2)\gamma_2 + \gamma_3 + 2\gamma_4
+\]
+whilst on the other hand we have
+\[
+s(\sigma( \bar \gamma_3)) = s(\bar \gamma_3 + 2 \bar \gamma_4) = \gamma_3 + a_1 \gamma_1 + a_2 \gamma_2 + 2\gamma_4 + 2b_1\gamma_1 = (a_1 + 2b_1)\gamma_1 + a_2\gamma_2 + \gamma_3 + 2\gamma_4.
+\]
+So for $\sigma(s(\bar \gamma_3) = s (\sigma(\bar \gamma_3))$ to hold we would require $(a_2 + 2)\gamma_2 = a_2\gamma_2$.
+Hence such a splitting map $s$ does not exist.
+
 
 
 
