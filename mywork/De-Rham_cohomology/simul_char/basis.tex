@@ -131,7 +131,6 @@
 \section{Background}
 
 \todo[inline]{change references to preprint when in thesis}
-\todo[inline]{check usage of equation numbers}
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
 We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$.
 We also suppose that we have a finite group $G$ acting faithfully on $X$.
@@ -213,13 +212,13 @@ The bases of the $k$-vector spaces in \eqref{ses} will be given in terms of defi
 Throughout we will denote by $P_a$ and $P_a'$ the unique elements of $\pi^{-1}(a)$ for any point $a \in \mathbb P_k^1$ that is not a branch point.
 If $a \in \mathbb P_k^1$ is a branch point we denote the unique point in $\pi^{-1}(a)$ by $P_a$.
 We also define $D_a$ to be the divisor $\pi^*\left([a]\right)$ for any $a \in \mathbb P_k^1$, and hence
-\begin{equation}\label{divisorofpoints}
+\begin{equation*}
 D_a= 
 \begin{cases}
  2[P_a] & \text{if $a$ is a branch point} \\
  [P_a] + [P_a'] & \text{otherwise.}
 \end{cases}
-\end{equation}
+\end{equation*}
 With this notation we also have
 \begin{equation}\label{divxp=2}
 \di (x)  = D_0 - D_\infty
@@ -266,14 +265,14 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i$.
 \begin{prop}\label{divyp=2}
 Suppose that $p=2$.
 Then if $\infty$ is a branch point the divisor of $y$ is
-\begin{equation}
+\begin{equation*}
 \di(y) = 
  {\displaystyle \sum_{i=1}^l} m_i[Q_i] -(2g+1)[P_\infty].
-\end{equation}
+\end{equation*}
 On the other hand, if $\infty$ is not a branch point then 
-\begin{equation}
+\begin{equation*}
  \di(y) = {\displaystyle \sum_{i=1}^l} m_i[Q_i] +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'].
-\end{equation}
+\end{equation*}
 \end{prop}
 \begin{rem}
 Note that the divisor of $y$ does not have the symmetry of the other divisors we have considered if $\infty$ is not a branch point.
@@ -291,9 +290,9 @@ Hence $\di_0(y)$ has zero coefficients for any point in $U_\infty$ other than th
 So now we suppose that $P= Q_i = (\gamma_i, 0)$ is an unramified point in $U_\infty$.
 Then $H(\gamma_i) \neq 0$ and $\left. y \right|_P = 0$, so $y + H(x)$ is a unit at $P$.
 Since $y(y+H(x)) = F(x)$ we find that
-\begin{equation}\label{unramifiedcoefficient}
+\begin{equation*}
 \ord_P(y) = \ord_P\left( \frac{F(x)}{y + H(x)} \right) = \ord_P(F(x)) = m_i.
-\end{equation}
+\end{equation*}
 
 We now look at when $P = Q_i = (\gamma_i, 0)$ is a ramification point.
 Since $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ cannot share roots, we see that $P$ being a ramification point implies $m_i = 1$.
@@ -342,9 +341,9 @@ dy = \frac{F'-yH'}{H}dx.
 
 
 To state the ramification points, and for later use, we suppose that 
-\begin{equation}\label{hcoefficients}
+\begin{equation*}
 H(x) = \prod_{i=1}^d (x-a_i)^{n_i} = x^d + b_{d-1}x^{d-1} + \ldots + b_1x
-\end{equation}
+\end{equation*}
 for some $a_i, b_i \in  k$, $d \leq g+1$ and $n_i \in \mathbb N$.
 Then the $a_i \in \mathbb A_k^1 \subset \mathbb P_k^1$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points above $a_i$.
 Given this, we can write the ramification divisor as
@@ -405,12 +404,12 @@ Hence the map $(\omega, \omega) \mapsto \omega$ gives an isomorphism from $\ker(
 Finally, $d_3$ is defined by $(\omega_1, \omega_2) \mapsto \omega_1|_{U_0 \cap U_\infty} - \omega_2|_{U_0 \cap U_\infty}$.
 Hence the kernel of $d_3$ is formed of pairs $(\omega_1, \omega_2) \in \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus_{P \in  U_\infty} \Omega_{K(X)}/\Omega_{X,P}$ such that $\omega_1$ and $\omega_2$ agree on $U_0 \cap U_\infty$.
 It follows that the map $\ker(d_3) \ra \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}$ given by 
-\begin{equation}
+\begin{equation*}
 (\omega_1, \omega_2) \mapsto \omega_{12}(x) = \begin{cases}
 \omega_1(x) & \text{if}\ x \in U_0 \\
 \omega_2(x) & \text{otherwise},
 \end{cases}
-\end{equation}
+\end{equation*}
 is an isomorphism.
 \end{proof}
 
@@ -516,11 +515,11 @@ if $\infty$ is a branch point and is
 {\displaystyle \sum_{i=1}^l} m_i[Q_i] - iD_0 +(g+1-\deg(F(x)) + i)[P_\infty] - (g+1-i)[P_\infty']
 \end{equation*}
 otherwise.
-These equalities follow from \eqref{divyp=2} and \eqref{divxp=2}, and the divisors are clearly positive on $U_0 \cap U_\infty$.
+These equalities follow from Proposition \ref{divyp=2} and \eqref{divxp=2}, and the divisors are clearly positive on $U_0 \cap U_\infty$.
 
 
 Next we recall from \cite[Chap 7, Prop. 4.26]{liu} that in this case a basis of $\hzero$ is given by $\frac{1}{H(x)}dx, \ldots, \frac{x^{g-1}}{H(x)}dx$.
-We then compute the divisor of $ \frac{y}{x^j} \cdot \frac{x^i}{H(x)}dx$ using \eqref{divxp=2}, \eqref{differentialdivisor}, \eqref{divisorofH} and \eqref{divyp=2}, which is
+We then compute the divisor of $ \frac{y}{x^j} \cdot \frac{x^i}{H(x)}dx$ using \eqref{divxp=2}, \eqref{differentialdivisor}, \eqref{divisorofH} and Proposition \ref{divyp=2}, which is
 \begin{align*}
 \di\left( \frac{yx^{i-j}}{H(x)}dx \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
 & = \sum_{i=1}^l m_i[Q_i] - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty \\
@@ -537,7 +536,7 @@ On the other hand, if $j-i \leq 0$ then the differential is regular on $U_0$.
 It then follows from the residue theorem that the residue at $P_\infty$ is also zero.
 Finally, since $i$ ranges from $0$ to $g-1$ we see that for $1\leq j \leq g$ the residue classes of $yx^{-j}$ form a basis of $\hone$.\todo{phrasing}
 
-If $\infty \in \mathbb P_k^1$ is not a branch point then using \eqref{divxp=2}, \eqref{differentialdivisor} \eqref{divisorofH} and \eqref{divyp=2}, the divisor of $\frac{y}{x^j} \cdot \frac{x^i }{H(x)}dx$ is
+If $\infty \in \mathbb P_k^1$ is not a branch point then using \eqref{divxp=2}, \eqref{differentialdivisor} and Proposition \ref{divyp=2}, the divisor of $\frac{y}{x^j} \cdot \frac{x^i }{H(x)}dx$ is
 \begin{align*}
 \di\left( \frac{yx^{i-j}}{H(x)}dx \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
 & = \sum_{i=1}^l m_i[Q_i] + (g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] + (i-j)D_0 \\
@@ -597,7 +596,7 @@ We now define the following polynomials:
 \Phi_i^y(x) & =  {}_iB_gx^g + \ldots {}_iB_{i+1}x^{i+1} \\
 \Psi_i^y(x) & =  {}_iB_{i-1}x^{i-1} + \ldots + {}_iB_1x + {}_iB_0.
 \end{split}
-\end{equation}
+\end{equation}\todo{reference this later}
 We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
 Finally, we define $\Phi_i(x,y) = \phi_i(^xx) + y \phi^y_i(x)$ and $\Psi_i(x,y) = \psi_i^x(x) + y \Psi_i^y(x)$.
 
@@ -675,10 +674,10 @@ Lastly, it is clear that $\sigma(x^{-i}y) = x^{-i}(y+H(x))$.
 
 
 We can now describe exactly how sigma acts on the elements of \eqref{three} using $H_{1,i}(x)$ and $H_{2,i}(x)$:
-\begin{multline}
+\begin{multline*}
 \sigma \left( \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right)\right) = \\
  \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + d\left(\frac{H_{1,i}(x)}{x^i}\right),  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ d\left(\frac{H_{2,i}(x)}{x^i} \right), \frac{y+H(x)}{x^i} \right).
-\end{multline}
+\end{multline*}
 So the action of $\sigma$ on the basis elements in \eqref{three} amounts to adding 
 \[
 \left( d\left(\frac{H_{1,i}}{x^i}\right), d\left(\frac{H_{2,i}}{x^i}\right), \frac{H(x)}{x^i} \right),
@@ -695,9 +694,9 @@ If we let
 \nu_i = \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right)
 \]
 then 
-\begin{equation}
+\begin{equation*}
 \sigma(\nu_i) = -\nu_i.
-\end{equation}
+\end{equation*}
 Similary, if 
 \[
 \eta_i = \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, o \right)
@@ -799,13 +798,13 @@ Clearly $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x
 
 We start by computing the divisor of $\frac{1}{x^{i+1}H(x)}dx$, since it is a common component to all the differentials we need to look at.
 This yields
-\begin{align}
+\begin{align*}
 \di \left( \frac{1}{x^{i+1}H(x)}dx \right) & = \di(dx) - \di (x^{i+1}) - \di (H(x)) \nonumber \\
 & = (R-2D_\infty) - ((i+1)D_0 - (i+1)D_\infty) - (R - (g+1)D_\infty) \nonumber \\
 & = (g+i)D_\infty - (i+1)D_0,
-\end{align}
+\end{align*}
 using \eqref{differentialdivisor}, \eqref{divisorofH} and \eqref{divxp=2}.
-We now use this along with \eqref{divyp=2} and the polynomials we defined in the preceding paragraphs to complete the proof.
+We now use this along with Proposition \ref{divyp=2} and the polynomials we defined in the preceding paragraphs to complete the proof.
 
 We begin by computing the divisors associated to $\Phi_i(x,y)$.
 Firstly,
@@ -825,7 +824,7 @@ We now compute the divisor of the other half of $\frac{\Phi_i(x,y)}{x^{i+1}H(x)}
  \geq & \di(y) + \di_0(\Phi_i^y(x)) - (g+1)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
  = & \di(y) + \di_0\left(\frac{\Phi_i^y(x)}{x^{i+1}} \right) + (i-1)D_\infty.
 \end{align*}
-From \eqref{divyp=2} we see that $y$ only has poles at points in $\pi^{-1}(\infty)$, and hence this completes the proof that $\frac{\Phi_i(x,y) }{x^{i+1}H(x)}dx$ is regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
+From Proposition \ref{divyp=2} we see that $y$ only has poles at points in $\pi^{-1}(\infty)$, and hence this completes the proof that $\frac{\Phi_i(x,y) }{x^{i+1}H(x)}dx$ is regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
 
 Now we complete the same computations on $\Psi_i(x,y)$, starting with $\Psi_i^x(x)$:
 \begin{align*}
@@ -837,7 +836,7 @@ Now we complete the same computations on $\Psi_i(x,y)$, starting with $\Psi_i^x(
 and it is clear that the divisor is positive on $U_0 = X \backslash \pi^{-1}(0)$.
 
 For the other half of the differential we need to consider seperate cases.
-If we assume that $\infty$ is branch point then  using \eqref{divyp=2} we see that
+If we assume that $\infty$ is branch point then  using Proposition \ref{divyp=2} we see that
 \begin{align*}
 \di\left(\frac{y\Psi_i^y(x) }{x^{i+1}H(x)}dx \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y(x)) - (i+1)D_0 + (g+i)[P_\infty] \\
  =  & \di_0(y) + \di(\Psi_i^y(x)) -(i+1)D_0 + (2i -1)[P_\infty] \\
@@ -852,7 +851,7 @@ On the other hand, if $\infty$ is not a branch point then we have
 = & \di(y) + \di_0(\Psi_i^y(x)) - (i+1)D_0 + (g+i - d_\Psi^y)D_\infty \\
 \geq & \di(y) + \di_0(\Psi_i^y(x)) - (i+1)D_0 + (g+1)D_\infty. \\
 \end{align*}
-Since we know from \eqref{divyp=2} that $y$ cannot have a pole of order greater $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential $\frac{y\Psi_i^y(x) }{x^{i+1}H(x)}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$.
+Since we know from Proposition \ref{divyp=2} that $y$ cannot have a pole of order greater $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential $\frac{y\Psi_i^y(x) }{x^{i+1}H(x)}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$.
 Thus we have completed the proof.
 
 
@@ -876,13 +875,13 @@ In particular, this shows that the basis of $\hone$ in Lemma \ref{basish1} is du
 
 We first consider the case $p\neq 2$.
 We note that $t:= \frac{y}{x^{g+1}}$ is a uniformising parameter at $P_\infty$ as can be seen by computing the order of $t$ at $P_\infty$ as follows
-\begin{align}
+\begin{align*}
 \ord_{P_\infty}(t) & =  \frac{1}{2}\ord_{P_\infty}(t^2) \\
   & =  \frac{1}{2}\ord_{P_\infty}\left( \frac{f}{x^{2g+2}} \right) \\
 & =  \frac{1}{2}\ord_{P_\infty}(f(x)) - \frac{1}{2}\ord_{P_\infty}(x^{2g+2})\\
 & =  -(2g+1) + (2g+2) \\
 & =  1.
-\end{align}
+\end{align*}
 
 We now write $\frac{1}{x}dx$ in terms of $dt$.
 By the quotient rule we know that
@@ -899,9 +898,9 @@ from which we conclude that
 
 We now let $p(x) = \left(\frac{(2g+2)f(x)}{x} - f'(x)\right)$, and noting that the coefficient of $x^{2g}$ in $p(x)$ is $(2g+2)a_{2g+1} - (2g+1)a_{2g+1} = a_{2g+1}$, we see that $h(x)$ is a degree $2g$ polynomial in $x$.
 We wish to compute the coefficient of $t^{-1}$ in the expansion of $\frac{1}{x}dx$ at $P_\infty$ and for this we require the following expansions
-\begin{align}
+\begin{align*}
 \frac{p(x)}{x^{2g+1}} = \frac{a_{2g+1}x^{2g}}{x^{2g+1}} + \ldots = \frac{a_{2g+1}}{x} + \ldots \qquad \text{and} \qquad t^2 = \frac{f}{x^{2g+2} } = \frac{a_{2g+1}}{x} + \ldots
-\end{align}
+\end{align*}
 
 Since $\ord_{P_\infty}\left(\frac{p(x)}{x^{2g+1}}\right) = 2$ we know that $\frac{p(x)}{x^{2g+1}} = \sum_{j\geq 2} c_j t^j$ for some $c_j\in k$, and from the above computations we can see that $c_2 = 1$.
 We also know that $\frac{x^{2g+1}}{p(x)} = \sum_{k\geq -2} d_kt^k$, for some $d_k\in k$, and clearly $d_{-2} = 1$.
@@ -919,7 +918,7 @@ We start by noting that $t = \frac{y}{x^{g+1}}$ is a uniformising parameter at $
 \di(t) & = \di_0(y) - (2g+1)[P_\infty] -(g+1)D_0 + (g+1)D_\infty \\
 & = \di_0(y)-(g+1)D_0 + [P_\infty],
 \end{align*}
-using \eqref{divxp=2} and \eqref{divyp=2}.
+using \eqref{divxp=2} and Proposition \ref{divyp=2}.
 So clearly $t$ is a uniformising parameter at $P_\infty$.
 
 We now wish to write $\frac{y}{xH(x)}dx$ as $r(x,y)dt$ for some $r \in k(x,y)$.
