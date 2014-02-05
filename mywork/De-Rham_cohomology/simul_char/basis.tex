@@ -360,8 +360,10 @@ The following sequence
 0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta} H^1(X,\Omega_X) \ra 0,
 \end{equation}
 where $\Omega_{K(X)}$ is the module of differentials of $K(X)$ over $k$.
-Note that the sequence formed by the last three terms can be found in \cite[Pg. 248]{hart}.
 \end{lem}
+\begin{rem}
+Note that the sequence formed by the last three terms can be found in \cite[Pg. 248]{hart}.
+\end{rem}
 \begin{proof}
 We let $\underline{\Omega}_{K(X)}$ be the constant sheaf of $\Omega_{K(X)}$.
 Then the short exact sequence
@@ -388,18 +390,14 @@ Hence $i^{-1}$ and therefore $i^*$ are isomorphisms from $\underline{\Omega}_{K(
 It follows that for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^*(f) \in i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$.
 We recall that for any $f \in \Omega_{K(X)}$ we have $f \in \Omega_{X,P}$  for all but a finite number of points $P \in X$, and hence the image of any such $f$ in $\prod_{P\in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors.
 In particular, the image lies in $\bigoplus_{P \in X} i_*(\Omega_{K(X)}/\Omega_{X,P} ) \subset \prod_{P\in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$.
-Hence the map 
-\[
-\left( \underline{\Omega}_{K(X)}/\Omega_X \right)_P \ra i_*\left(\Omega_{K(X)}/\Omega_{X,P} \right) \qquad f \mapsto i_*i^*(f)
-\]
- is an isomorphism of stalks, and so the above yields an isomorphism at the level of sheaves in \eqref{sheafisomorphism}.\todo{check more}
+Hence the map $f \mapsto i_*i^*(f)$ is an isomorphism of stalks, and so the above yields an isomorphism at the level of sheaves in \eqref{sheafisomorphism}.
 
 
 Now we can take the \cech complex of \eqref{serredualityses} over our cover $\cU$, yielding
-\begin{displaymath}\label{dualitydiagram}
+\begin{equation}\label{dualitydiagram2}
 \xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \Omega_{K(X)} \times \Omega_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
 \Omega_X(U_0 \cap U_\infty)\ar@{^{(}->}[r]  & \Omega_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
-\end{displaymath}
+\end{equation}
 where $\Omega_P$ is the stalk of $\Omega_X$ at $P$.
 We can now apply the snake lemma to this commutative diagram.
 In the next paragraph we conclude the proof by showing that the exact sequence that arises from the applying the snake lemma is precisely the sequence \eqref{dualityses} in the statement of the lemma.
@@ -419,7 +417,7 @@ It follows that the map $\ker(d_3) \ra \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_
 is an isomorphism.
 \end{proof}
 
-We now recall the definition of the trace map $t\colon \hone \ra k$.
+We now recall the definition of the trace map $t\colon H^1(X,\Omega_X) \ra k$.
 Given a point $P\in X$ we have the residue map $\res_P \colon \Omega_{K(X)} \ra k$, as defined in \cite[Chap III, Thm. 7.14.1]{hart}.
 This also gives a well defined map on the quotient $\res_P \colon \Omega_K/\Omega_P \ra k$, since elements of $\Omega_P$ have zero residue at $P$, and so $\Omega_P \subseteq \ker \left(\res_P\right)$.
 Since we know that $\sum_{P\in X}\res_P(\omega) = 0$ for any $\omega \in \Omega_K$ by the residue theorem \cite[Chap. III, Thm. 7.14.2]{hart},  it follows that the map $t \colon \bigoplus_{P \in X} \Omega_K/\Omega_P \ra k$ given by $(\omega_P)_{P \in X} \mapsto \sum_{P\in X} \res_P(\omega_P)$ vanishes on the image of $\Omega_{K(X)}$.
@@ -428,22 +426,31 @@ Hence this map passes to the quotient and we can define the trace map
 t \colon H^1\left(X, \Omega_X\right) \ra k,\ \bar \omega \mapsto \sum_{P \in X} \res_P(\bar \omega).
 \]
 
-Using \eqref{dualitydiagram} we can study the map $t$.
+The following lemma will make it easier to compute $t(\bar \omega)$ for some $\bar \omega \in H^1(X,\Omega_X)$.
+\begin{lem}
+For any $\bar \omega \in H^1(X,\Omega_X)$ we have the following equality
+\[
+t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
+\]
+\end{lem}
+\begin{proof}
+The proof follows from a diagram chase on \eqref{dualitydiagram2}.
 Given a cocycle in $\bar \omega \in \hone$ we take a representative $\omega \in \Omega_X(U_0 \cap U_\infty)$.
-This then injects in to $\Omega_{K(X)}$, and since $d_2$ is surjective we know it is in the image of $d_2$, and hence we can choose an element of $\Omega_{K(X)} \times \Omega_{K(X)}$ mapping to $\omega$.
+This then injects in to $\Omega_{K(X)}$, and since $d_2$ is surjective we can choose an element of $\Omega_{K(X)} \times \Omega_{K(X)}$ mapping to $\omega$.
 In particular, we could choose $(\omega,0)$.
 This then maps to $\psi = ((\bar{\omega}|_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right)$.
-By commutativity of the diagram $\psi \in \ker(d_3)$.
+Moreover, by commutativity of the diagram $\psi \in \ker(d_3)$.
 Since $\omega$ is regular on $U_0 \cap U_\infty$, and $0$ is regular on $U_\infty$, then $\res_P(\psi) = 0$ for all $P \in U_\infty$.
-So to compute $t(\bar \omega)$ it suffices to compute the residue of $\omega$ (or equivalently $\psi$) at all points in $\pi^{-1}(\infty)$.\todo{make this in to a lemma}
-\todo[inline]{rephrase last few lines}
+Hence $t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega)$.\todo{check last equality}
+\end{proof}
 
 We now use this trace map to show that $\hone$ and $\hzero$ are dual $k$-vector spaces.
 There exists a canonical map 
 \begin{equation}\label{productmap}
-\hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, f) \mapsto f \cdot \omega|_{U_0 \cap U_\infty}.
-\end{equation}\todo{explain what the product is}
-We first check that this is well defined.
+\hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, f) \mapsto f \cdot \omega|_{U_0 \cap U_\infty},
+\end{equation}
+where the product $f \cdot \omega|_{U_0\cap U_\infty}$ is just the usual product of a function and a differential, restricted to the appropriate set.
+We check that this map is well defined.
 Elements of $\hzero$ are pairs $(\omega_0, \omega_\infty) \in \Omega_X(U_0) \times \Omega_X(U_\infty)$ that agree on $U_0 \cap U_\infty$.
 In particular all elements of $\hzero$ are regular on $U_0 \cap U_\infty$.
 Elements of $\hone$ are also regular on $U_0 \cap U_\infty$, since $\hone$ is a quotient of $\cO_X(U_0 \cap U_\infty)$.
