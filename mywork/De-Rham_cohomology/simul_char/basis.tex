@@ -384,9 +384,15 @@ i^{-1}\left(\underline{\Omega}_{K(X)}/\Omega_X\right) & = \left(\underline{\Omeg
 & = \underline{\Omega}_{K(X),P}/\Omega_{X,P} \\
 & = \Omega_{K(X)}/\Omega_{X,P}.
 \end{align*}
-Hence for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^*(f) \in i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$.
-We then recall that for any $f \in \Omega_{K(X)}$ we have $f \in \Omega_{X,P}$  for all but a finite number of points $P \in X$, and hence the image of any such $f$ in $\prod_{P\in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors.
-Hence $f \mapsto i_*i^*(f)$ is an isomorphism at the level of stalks, and so the above yields an isomorphism at the level of sheaves in \eqref{sheafisomorphism}.\todo{check more}
+Hence $i^{-1}$ and therefore $i^*$ are isomorphisms from $\underline{\Omega}_{K(X)}/\Omega_X$ to $\Omega_{K(X)}/\Omega_{X,P}$.
+It follows that for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^*(f) \in i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$.
+We recall that for any $f \in \Omega_{K(X)}$ we have $f \in \Omega_{X,P}$  for all but a finite number of points $P \in X$, and hence the image of any such $f$ in $\prod_{P\in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors.
+In particular, the image lies in $\bigoplus_{P \in X} i_*(\Omega_{K(X)}/\Omega_{X,P} ) \subset \prod_{P\in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$.
+Hence the map 
+\[
+\left( \underline{\Omega}_{K(X)}/\Omega_X \right)_P \ra i_*\left(\Omega_{K(X)}/\Omega_{X,P} \right) \qquad f \mapsto i_*i^*(f)
+\]
+ is an isomorphism of stalks, and so the above yields an isomorphism at the level of sheaves in \eqref{sheafisomorphism}.\todo{check more}
 
 
 Now we can take the \cech complex of \eqref{serredualityses} over our cover $\cU$, yielding
