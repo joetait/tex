@@ -199,6 +199,12 @@ Then we obtain a short exact sequence of complexes
 \[
 \Omega_{+1} \hookrightarrow T \twoheadrightarrow \cO.
 \]
+This gives rise to the following long exact sequence
+\begin{multline}\label{longexactsequence}
+0 \ra H^0_{\text dR}(X/k) \ra H^0(X,\cO_X) \ra H^0(X,\Omega_X) \ra \derhamhone \ra \hone \\
+ \ra H^1(X,\Omega_X) \ra H^2_{\text dR}(X/k) \ra 0
+\end{multline}
+
 \todo[inline]{finish this proof}
 \end{proof}
 
@@ -441,7 +447,7 @@ In particular, we could choose $(\omega,0)$.
 This then maps to $\psi = ((\bar{\omega}|_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right)$.
 Moreover, by commutativity of the diagram $\psi \in \ker(d_3)$.
 Since $\omega$ is regular on $U_0 \cap U_\infty$, and $0$ is regular on $U_\infty$, then $\res_P(\psi) = 0$ for all $P \in U_\infty$.
-Hence $t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega)$.\todo{check last equality}
+Hence $t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega)$.
 \end{proof}
 
 We now use this trace map to show that $\hone$ and $\hzero$ are dual $k$-vector spaces.
@@ -482,12 +488,12 @@ We now use this fact to compute a basis of $H^1(X,\cO_X)$, and then state a basi
 \begin{proof}
 We start by considering the case $p \neq 2$ and first check that the functions $\frac{y}{x}, \ldots, \frac{y}{x^g}$ are indeed regular on $U_0 \cap U_\infty$ (as required by \eqref{cechhone}) by computing their divisors.
 By \eqref{divxp=2} and \eqref{pnot2divisors} we see that
-\begin{align*}
-\di \left( \frac{y}{x^i} \right) & = \di (y) - \di ( x^i) \\
-& = R - (g+1)D_\infty - iD_0 + iD_\infty \\
+\begin{align}\label{divisorofyoverx}
+\di \left( \frac{y}{x^i} \right) & = \di (y) - \di ( x^i) \nonumber \\
+& = R - (g+1)D_\infty - iD_0 + iD_\infty \nonumber \\
 & = R - iD_0 - (g+1 - i)D_\infty.
-\end{align*}\todo{quantifiers on $i$?}
-Since $R$ is a positive divisor this is clearly positive on $U_0 \cap U_\infty$.
+\end{align}
+Since $R$ is a positive divisor this is clearly positive on $U_0 \cap U_\infty$ for any $i\in \{0, \ldots, g-1\}$.
 
 
 Recall that $\omega_0 = y^{-1}dx, \ldots, \omega_{g-1}x^{g-1}y^{-1}dx$ form a basis of $\hzero$ (see, for example, \cite[Chap 7, Prop. 4.26]{liu}).
@@ -500,7 +506,7 @@ We see from \eqref{divxp=2} and \eqref{differentialdivisor} that the divisor of 
 & = R + (i-j)D_0 - (i-j+2)D_\infty.
 \end{split}
 \end{equation}
-Now if $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor $R$ has a $[P_\infty]$ term with coefficient one) and hence $\res_{P_\infty}\left(x^{i-j}dx\right)  = \res_{P_\infty}\left(x^{-1}dx\right) \neq 0$.
+If $\infty$ is a branch point, then we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor $R$ has a $[P_\infty]$ term with coefficient one) and hence $\res_{P_\infty}\left(x^{i-j}dx\right)  = \res_{P_\infty}\left(x^{-1}dx\right) \neq 0$.
 We have shown that for $i \in \{0, \ldots, g-1\}$ the product $\langle x^iy^{-1}dx, yx^{-(i+1)} \rangle \neq 0$.
 
 We now also check that if $i \neq j-1$ then $\langle x^iy^{-1}dx, yx^{-j} \rangle = 0$.
@@ -512,7 +518,11 @@ Hence the elements $yx^{-1}, \ldots, yx^g$ form a (dual) basis if $\infty$ is a 
 
 
 On the other hand, if $\infty$ is not a branch point then we see from \eqref{residuedivisor} that $x^{i-j}dx$ still has order one poles at both $P_\infty$ and $P_\infty'$ if and only if $i-j=-1$.
-In this case we see that there are still no poles in $U_0\backslash \pi^{-1}(\infty)$ and hence $\sum_{P \in U_0}\res_P(x^{-1}dx) = \res_{P_\infty}(x^{-1}dx) + \res_{P_\infty'}(x^{-1}dx)$.\todo{adapt}
+In this case we see from \eqref{divisorofyoverx} that $yx^{-1}$ still has no poles in $U_0\backslash \pi^{-1}(\infty)$.
+Hence $\sum_{P \in U_0\backslash \pi^{-1}(\infty)} \res_P(yx^{-1}) = 0$ and hence 
+\[
+\sum_{P \in U_0}\res_P(x^{-1}dx) = \res_{P_\infty}(x^{-1}dx) + \res_{P_\infty'}(x^{-1}dx).
+\]
 As we assumed $p\neq 2$ it is sufficient to show that $\res_{P_\infty}(x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$ in order to prove that $\langle x^iy^{-1}dx, yx^{-(i+1)}|_{U_0} \rangle \neq 0$.
 
 We can show this using the hyperelliptic involution $\sigma$.
@@ -569,23 +579,19 @@ Moreover, if this is the case and $2g+(j-i) = 2g+1 \geq \deg(F(x))$ then this is
 This leaves the case $2g+2 =  \deg(F(x))$, where we have poles of order one at both $P_\infty$ and $P_\infty'$.
 To show that the sum of the residues of $\frac{yx^i}{H(x)}dx$ is non-zero for every $i \in \{ 1, \ldots, g\}$ (i.e. that the image of each element under the trace map is non-zero) it suffices to show that sum of the residues at $P_\infty$ and $P_\infty'$ are non-zero.
 
-First recall that in charactersitic two we have an involution $\sigma \colon X \ra X$ given by $(x,y) \mapsto (x, y + H(x))$.
+First recall that in characteristic two we have an involution $\sigma \colon X \ra X$ given by $(x,y) \mapsto (x, y + H(x))$.
 As noted earlier, we then know that $\res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega)$ for any $P \in X$ and $\omega\in \hzero$.
-We use this at $P_0$, since the residue on $\pi^{-1}(\infty)$ is precisely the negative of the residue on $U_\infty$, and we see from the divisor that the only poles occur at $P_0$ and $P_0' = \sigma (P_0)$.
 Then since 
 \[
 \sigma \left( \frac{yx^{i-j}}{H(x)}dx \right) = \frac{(y+H(x))x^{i-j}}{H(x)}dx = \frac{yx^{i-j}}{H(x)}dx + x^{i-j}dx,
 \]
-it follows that $\res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) = \res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only if $\res_{P_0}(x^{i-j}dx) = 0$.
-Since $x$ is a uniformising parameter at $P_0$ then $\res_{P_0}(x^{i-j}dx) \neq 0$ if and only if $i-j = -1$.
-Hence $\res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq \res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only if $i-j=-1$.
-Hence $\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = \res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) +\res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq 0$ if and only $j = i+1$.
-
-Finally, if zero is a branch point then $[P_0]$ has coefficient of one in the ramification divisor $R$, and hence $\ord_{P_0}(x^{-1}dx) = -1$ (recall that $\di(dx) = R - 2D_\infty$ from \eqref{differentialdivisor}).
-Also, if $i-j > -1$ then clearly $\ord_{P_0}(x^{i-j}dx) \geq 0$ and hence the residue at $P_0$ is zero.
-This leaves the case $i-j < -1$.
-\todo{Finish this case. Check i's and j's are correct way round. Possibly reference divisor.}
-
+it follows that $\res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) = \res_{P_\infty '} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only if $\res_{P_\infty}(x^{i-j}dx) = 0$.
+Note that $x^{i-j}dx = x^{i-j+2}d\frac{1}{x}$, and since $\frac{1}{x}$ is a uniformising parameter at $P_\infty$, it follows that $\res_{P_\infty}\left(x^{i-j+2}d\frac{1}{x}\right) \neq 0$ if and only if $i-j+2 = 1$.
+Hence $\res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq \res_{P_\infty '} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only if $i-j=-1$.
+In particular 
+\[
+\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = \res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) +\res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq 0
+\] if and only if $j = i+1$.
 \end{proof}
 
 
@@ -818,7 +824,7 @@ We have also already seen in the proof of Lemma \ref{basish1} that $\frac{y}{x^i
 So in order to prove that for $i\in \{1, \ldots, g\}$ the elements of \eqref{three} are satisify the conditions of \eqref{derhamconditions} it only remains to show that the differentials $\frac{\Phi_i}{x^{i+1}H(x)}dx$ and $\frac{\Psi_i}{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.
 
 
-Clearly $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x) }{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x) }{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.\todo{note that some stuff was removed before this para}
+Clearly $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$ (recall that these polynomials are defined in \eqref{Split}), and we will use these splittings to show that $\frac{ \Phi_i(x) }{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x) }{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.\todo{note that some stuff was removed before this para}
 
 We start by computing the divisor of $\frac{1}{x^{i+1}H(x)}dx$, since it is a common component to all the differentials we need to look at.
 This yields
