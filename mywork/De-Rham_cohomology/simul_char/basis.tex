@@ -161,12 +161,12 @@ Since a curve doesn't have differentials of degree greater than one, this is the
 Here $d$ denotes the differential map $f \mapsto df$, as defined in \cite[Chap II, \S 8, Pg. 172]{hart}.
 
 We then use the cover $\cal U$ and the \cech differentials as defined earlier to give us the \cech complex of \eqref{res}, which is
-\begin{displaymath}\label{bicomplex}
+\begin{equation}\label{bicomplex}
 \xymatrix{ & 0 \ar[d] & 0 \ar[d] & \\
 0 \ar[r] & \cO_X(U_0) \times \cO_X(U_\infty) \ar[d] \ar[r] & \Omega_X(U_0) \times \Omega_X(U_\infty) \ar[d] \ar[r] & 0 \\
 0 \ar[r] & \cO_X(U_0\cap U_\infty) \ar[d] \ar[r] & \Omega_X(U_0 \cap U_\infty) \ar[r] \ar[d] & 0 \\
 & 0 & 0 &}
-\end{displaymath}
+\end{equation}
 By a generalisation of Leray's theorem \cite[Cor 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
 Note that this requires ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero for any $\sigma$ in the nerve of $\cU$ and any $p \geq 1$ ---
 since $U_0$ and $U_\infty$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.
@@ -464,13 +464,20 @@ We now combine the product map in \eqref{productmap} with the trace map to get a
 \]
 Thus if we fix any $\omega \in \hzero$ we produce a map $\theta(\omega)\colon \hone \ra k$, given by $\theta(\omega)(f) = \langle \omega , f\rangle$.
 Similarly, if we fix any $f \in \hone$ then we get a map $\psi(f) \colon \hzero \ra k$.
-Serre's duality theorem \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields} states that $\psi$ and $\theta$ are isomorphisms and are dual to each other,\todo{explain what it means for $\psi$ and $\theta$ to be dual} and hence that the spaces $\hone$ and $\hzero$ are dual.\todo{write as lemma - no proof}
+Now $\psi$ and $\theta$ are isomorphisms and are dual to each other: in particular, this means that given a basis $e_1, \ldots, e_n$ of $\hzero$, we can find a basis $f_1, \ldots , f_n$ of $\hone$ such that $\theta(e_i)(f_i) = 1$ for all $1 \leq i \leq n$ and $\theta(e_i)(f_j) = 0$ if $i \neq j$ (and similarly for $\psi$).
+Hence we have the following lemma.
+\begin{lem}
+The spaces $\hone$ and $\hzero$ are dual $k$-vector spaces.
+\end{lem}
+\begin{proof}
+This is in fact a specialisation of \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields}.
+\end{proof}
 
 
 We now use this fact to compute a basis of $H^1(X,\cO_X)$, and then state a basis of $\derhamhone$ in the following theorem.
 
 \begin{prop}\label{basish1}
- Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0 \cap U_\infty$, form a basis of $H^1(X,\cO_X)$.\todo{check over this letter}
+ Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0 \cap U_\infty$, form a basis of $H^1(X,\cO_X)$.
 \end{prop}
 \begin{proof}
 We start by considering the case $p \neq 2$ and first check that the functions $\frac{y}{x}, \ldots, \frac{y}{x^g}$ are indeed regular on $U_0 \cap U_\infty$ (as required by \eqref{cechhone}) by computing their divisors.
@@ -547,7 +554,7 @@ We also need to check that if $j \neq i+1$ then $\langle \frac{x^i}{H(x)}dx, \fr
 Indeed, if $j-i \geq 2$ then clearly $\frac{yx^{i-j}}{H(x)}dx$ does not have a pole at $P_\infty$.
 On the other hand, if $j-i \leq 0$ then the differential is regular on $U_0$.
 It then follows from the residue theorem that the residue at $P_\infty$ is also zero.
-Finally, since $i$ ranges from $0$ to $g-1$ we see that for $1\leq j \leq g$ the residue classes of $yx^{-j}$ form a basis of $\hone$.\todo{phrasing}
+Finally, since $i$ ranges from $0$ to $g-1$ in all of the above, we see that the collection of residue classes of $\{yx^{-j}\}_{1\leq j \leq g}$ form a basis of $\hone$.
 
 If $\infty \in \mathbb P_k^1$ is not a branch point then using \eqref{divxp=2}, \eqref{differentialdivisor} and Proposition \ref{divyp=2}, the divisor of $\frac{y}{x^j} \cdot \frac{x^i }{H(x)}dx$ is
 \begin{align*}
@@ -574,7 +581,11 @@ Since $x$ is a uniformising parameter at $P_0$ then $\res_{P_0}(x^{i-j}dx) \neq 
 Hence $\res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq \res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only if $i-j=-1$.
 Hence $\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = \res_{P_0} \left( \frac{yx^{i-j}}{H(x)}dx \right) +\res_{P_0'} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq 0$ if and only $j = i+1$.
 
-Finally, if zero is a branch point then \todo{consider this case}
+Finally, if zero is a branch point then $[P_0]$ has coefficient of one in the ramification divisor $R$, and hence $\ord_{P_0}(x^{-1}dx) = -1$ (recall that $\di(dx) = R - 2D_\infty$ from \eqref{differentialdivisor}).
+Also, if $i-j > -1$ then clearly $\ord_{P_0}(x^{i-j}dx) \geq 0$ and hence the residue at $P_0$ is zero.
+This leaves the case $i-j < -1$.
+\todo{Finish this case. Check i's and j's are correct way round. Possibly reference divisor.}
+
 \end{proof}
 
 
@@ -609,7 +620,7 @@ We now define the following polynomials:
 \Phi_i^y(x) & =  {}_iB_gx^g + \ldots {}_iB_{i+1}x^{i+1} \\
 \Psi_i^y(x) & =  {}_iB_{i-1}x^{i-1} + \ldots + {}_iB_1x + {}_iB_0.
 \end{split}
-\end{equation}\todo{reference this later}
+\end{equation}
 We denote the degrees of these polynomials by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$ respectively.
 Finally, we define $\Phi_i(x,y) = \phi_i(^xx) + y \phi^y_i(x)$ and $\Psi_i(x,y) = \psi_i^x(x) + y \Psi_i^y(x)$.
 
@@ -817,7 +828,7 @@ This yields
 & = (g+i)D_\infty - (i+1)D_0,
 \end{align*}
 using \eqref{differentialdivisor}, \eqref{divisorofH} and \eqref{divxp=2}.
-We now use this along with Proposition \ref{divyp=2} and the polynomials we defined in the preceding paragraphs to complete the proof.
+We now use this along with Proposition \ref{divyp=2} and the polynomials \eqref{Split} to complete the proof.
 
 We begin by computing the divisors associated to $\Phi_i(x,y)$.
 Firstly,
