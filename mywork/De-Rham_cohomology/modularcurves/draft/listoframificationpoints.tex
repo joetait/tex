@@ -728,6 +728,37 @@ Also when $N=28$ and $p=5$ the automorphism group is $B$, as in \cite{automorphi
 When $N=48$ and $p=7$ then the automorphism group is $A$, as in \cite{automorphismshyperellipticmodular}, which is of order $672$, which is divisible by the characteristic.
 Finally, when $N=50$ and the characteristic is 3 then the automorphism group is $D_6$, which is divisible by the characteristic.
 
+\section{general basis for de Rham cohomology, sixtuple cover}
+We start by looking at a view examples of bases, to see if we can find a pattern.
+In particular, since we already know what the first two differentials are, and since two differentials and three functions will determine any element of $\derhamhone$, we only look for triples of functions that are regular on $U_0\cap U_\infty$, $U_0\cap U_a$ and $U_a \cap U_\infty$ respectively.
+
+Firstly, when the genus is two such a triple is given by
+\begin{align}
+& \left( \frac{y}{x}, \frac{a^2y}{x(x-a)^2}, \frac{-y(x-2a)}{(x-a)^2} \right) \\
+& \left( \frac{y}{x^2}, \frac{ay(a-2x}{x^2{x-a}^2},\frac{2ay}{(x-a)^2} \right).
+\end{align}
+Note that 
+\[
+\frac{y(x-2a)}{(x-a)^2} = \frac{y}{x-a} - \frac{ay}{(x-a)^2}.
+\]
+\todo[inline]{show that the relations hold}
+
+When the genus is three the following triples are what we desire:
+\begin{align}
+\left( \frac{y}{x}, \frac{-a^3y}{x(x-a)^3}, \frac{y(x^2 -3ax + 3a^2)}{x-a)^3} \right) \\
+\left( \frac{y}{x^2}, \frac{y(3a^2x - a^3)}{x^2(x-a)^3}, \frac{-y(x-3a)}{(x-a)^3} \right) \\
+\left( \frac{y}{x^3}, \frac{y(-3ax^2+3a^2x-a^3)}{x^3 (x-a)^3}, \frac{-y}{(x-a)^3} \right).
+\end{align}
+Note that
+\[
+\frac{y(x-3a)}{(x-a)^3} = \frac{y}{(x-a)^2} - \frac{2ay}{x-a)^3}
+\]
+and that
+\[
+\frac{y(x^2-3ax+3a^2)}{(x-a)^3} = \frac{y}{x-a} - \frac{ay}{(x-a)^2} + \frac{a^2y}{(x-a)^3}.
+\]
+\todo[inline]{show that the relations hold}
+
 \bibliography{biblio}
 \bibliographystyle{amsalpha}
 
