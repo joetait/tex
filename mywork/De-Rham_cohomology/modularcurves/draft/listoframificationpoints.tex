@@ -735,7 +735,7 @@ In particular, since we already know what the first two differentials are, and s
 Firstly, when the genus is two such a triple is given by
 \begin{align}
 & \left( \frac{y}{x}, \frac{a^2y}{x(x-a)^2}, \frac{-y(x-2a)}{(x-a)^2} \right) \\
-& \left( \frac{y}{x^2}, \frac{ay(a-2x}{x^2{x-a}^2},\frac{2ay}{(x-a)^2} \right).
+& \left( \frac{y}{x^2}, \frac{ay(a-2x)}{x^2(x-a)^2},\frac{y}{(x-a)^2} \right).
 \end{align}
 Note that 
 \[
@@ -776,10 +776,16 @@ Note that we have the following equalities
 \begin{thm}
 The collection of elements
 \begin{equation}
-\left(\frac{y}{x^{g-k}}, \frac{y\left( \sum_{i=0}^{g-k} \binom{i}{g-k}a^ix^{g-k-i}\right)}{x^{g-k}(x-a)^4}, \frac{-y\left( \sum_{i=g-k}^g \binom{g}{i} a^{i-(g-k)}x^{(g-k)-i}\right)}{(x-a)^g} \right)
+\left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx,  \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, ---, \frac{y}{x^k}, \frac{y\left( \sum_{i=0}^{k-1} (-1)^{g-i} \binom{g}{i}a^{g-i}x^i \right)}{x^k(x-a)^g}, \frac{-y\left( \sum_{i=k}^g (-1)^{g-i} \binom{g}{i} a^{g-i}x^i \right)}{(x^k(x-a)^g} \right)
 \end{equation}
 as $k$ ranges between $1$ and $g$ form a basis of $\cechderhamhone(\cU'')$.
 \end{thm}
+\begin{proof}
+We already know that $\omega_{0} - \omega_{\infty} = df_{0 \infty}$, and that $\omega_0$ and $\omega_\infty$ are regular on $U_0$ and $U_\infty$ respectively.
+It is clear that $df_{0\infty} - df_{0 a} + df_{a \infty} = 0$.\todo{explain more}.
+It is clear that the functions are regular on the correct open sets. \todo{show this}
+This just leaves us to check that $--- : = \omega_{0} - df_{a \infty}$ is regular on $U_a$.
+\end{proof}
 \bibliography{biblio}
 \bibliographystyle{amsalpha}
 
