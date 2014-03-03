@@ -787,18 +787,95 @@ It is clear that the functions are regular on the correct open sets. \todo{show 
 This just leaves us to check that $--- : = \omega_{0} - df_{a \infty}$ is regular on $U_a$.
 We first compute $df_{0 a }$ as follows
 \begin{align}
-df_{0 a} & = d \left( \frac{y\left( \sum_{i=0}^{k-1}(-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)}{x^k(x-a)^g} \\
-& = \frac{f'}{2y} \left( \frac{\sum_{i=0}^{k-1}(-1)^{g-i}\binom){g}{i}x^i\right)}{x^k)x-a)^g} + \frac{ y \left( \sum_{i=0}^{k-1}(-1)^{g-i}i \binom{g}{i}a^{g-i}x^{i-1}\right)}{x^k(x-a)^g} + \frac{y\left(\sum_{i=0}^{k-1}(-1)^{g-i}\binom{g}{i}a^{g-i}x^i\right)(-gx-k(x-a))}{x^{k+1}(x-a)^{g+1}} 
+df_{0 a} & = d \left( \frac{y\left( \sum_{i=0}^{k-1}(-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)}{x^k(x-a)^g} \right) \\
+& = \frac{f'}{2y} \left( \frac{\sum_{i=0}^{k-1}(-1)^{g-i}\binom{g}{i}x^i}{x^k(x-a)^g}\right) + \frac{ y \left( \sum_{i=0}^{k-1}(-1)^{g-i}i \binom{g}{i}a^{g-i}x^{i-1}\right)}{x^k(x-a)^g} + \frac{y\left(\sum_{i=0}^{k-1}(-1)^{g-i}\binom{g}{i}a^{g-i}x^i\right)(-gx-k(x-a))}{x^{k+1}(x-a)^{g+1}} 
 \end{align}
 We use this to compute $\omega_a$ as follows
 \begin{align}
 \omega_a & = \omega_0 - df_{a \infty}\\
-& = \frac{\psi(x)}{2yx^{k+1} - blah\\
+& = \frac{\psi(x)}{2yx^{k+1}} - blah\\
 \end{align}
 \todo[inline]{Give binomial expansion a name. Use it to shorten statements.}
 \end{proof}
+We split up $(x-a)^g$ in to two parts, 
+\begin{align}
+\beth_i := \sum_{k=0}^{i-1} (-1)^{g-k} \binom{g}{k} a^{g-k}x^k \\
+\intertext{and}
+\aleph_i := \sum_{k=i}^g (-1)^{g-k} \binom{g}{k} a^{g-k}x^k.
+\end{align}
+\begin{thm}
+The collection of elements 
+\begin{equation}
+\left( \left( \frac{\psi_i(x)}{2yx^{i+1}} \right)dx, \left( \frac{-\phi_i(x)}{2yx^{i+1}} \right) dx, ---, \frac{y}{x^i}, \frac{y\beth_i}{x^i(x-a)^g}, \frac{y\aleph_i}{x^i(x-a)^g} \right)
+\end{equation}
+as $i$ ranges from $1$ to $g$ form a basis of $\cechderhamhone(\cU'')$.
+\end{thm}
+\begin{proof}
+We start by computing $df_{0a}$, which is
+\begin{align}
+df_{0 a} = d \left( \frac{y \beth_i}{x^i(x-a)^g} \right) \\
+& = \frac{f'}{2y}\left( \frac{\beth_i}{x^i(x-a)^g} \right) + \frac{y(i-1)\beth_i}{x^{i+1}(x-a)^g} + \frac{y\beth_i(-gx-i(x-a))}{x^{i+1}(x-a)^{g+1}}dx \\
+& = \frac{ f'x(x-a)\beth_i + 2(i-1)f(x-a)\beth_i - 2f(gx+i(x-a))\beth_i }{2yx^{i+1}(x-a)^{g+1}} dx.
+\end{align}
+Hence $\omega_a = {\text fill this in}$ since
+\begin{multline}\label{binomialdifferential}
+\omega_0 - df_{0 a} = \frac{\psi_i(x)(x-a)^{g+1} - f'x(x-a)\beth_i - 2(i-1)f(x-a)\beth_i + 2f(gx+i(x-a))\beth_i}{2yx^{i+1}(x-a)^{g+1}}dx.
+\end{multline}
+We now check that this is regular on $U_a$.
+We start by computing the following divisor
+\begin{align}
+\di \left( \frac{dx}{2yx^{i+1}(x-a)^{g+1}} \right) & = \di(dx) - \di(y) - (i+1)\di(x) - (g+1)\di(x-a) \\
+& = R - 2D_\infty - R + (g+1)D_\infty - (i+1)D_0 + (i+1)D_\infty - (g+1)D_a + (g+1)D_\infty
+& = (2g +i +1)D_\infty - (i+1)D_0 - (g+1)D_a.
+\end{align}
+Since the numerator in \eqref{binomialdifferential} only has a pole at $\infty$ we see that \eqref{binomialdifferential} is regular on all points in $U_a$, except possibly $\pi^{-1}(0)$ and $\pi^{-1}(\infty)$, which we now consider.
+
+The coefficient of $D_\infty$ in the divisor of \eqref{binomialdifferential} is $2g+i+1$ minus the degree of the numerator.
+The degree of $\psi_i(x)(x-a)^{g+1}$ is at most $2g+2$, which is clearly less than or equal $2g+i+1$ for $i \in \{1,m \ldots , g\}$.
+
+We now consider cases according to the degree of $f(x)$.
+If $\deg(f) = 2g+1$, then we see that $\deg( f'x(x-a) + 2(i-1)f(x-a) - 2f(gx+k(x-a)))$ is at most $2g+2$, and since $\deg( \beth_i) \leq i-1$ it follows that the degree of the numerator of $\omega_a$ is at most $2g+i+1$, and hence \eqref{binomialdifferential} is regular at $\pi^{-1}(\infty)$.
+
+On the other hand, if $\deg(f) = 2g+2$, we will show that the lead coefficient of $(f'x(x-a) + 2(i-1)f(x-a) - 2f(gx+i(x-a)))\beth_i$ is zero, and hence it is of degree $2g+k +1$, as in the previous case.
+In particular, the lead coefficient of $f'x(x-a) + 2(i-1)f(x-a) - 2f(gx+i(x-a))$ is 
+\begin{equation}
+(2g+2)\alpha x^{2g+3} + 2(i-1)\alpha x^{2g+3} - 2(g+i)\alpha x^{2g+3} = 0.
+\end{equation}
+Hence the degree of the numerator of \eqref{binomialdifferential} is at most $2g+k+1$, and the same computation as in the case $\deg(f) = 2g+1$ telling us that there is no pole at $\pi^{-1}(\infty)$ holds.
+
+Finally, we check that there is no pole $\pi^{-1}(0)$, which is equivalent to checking that the numerator in \eqref{binomialdifferential} is divisible by $x^{i+1}$.
+Recall that $\psi_i(x)$ is defined to be the sum of all monomials in $s_i(x) = xf'(x) - 2if(x)$ with degree at most $g+1$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \bibliography{biblio}
 \bibliographystyle{amsalpha}
-
-
 \end{document}
