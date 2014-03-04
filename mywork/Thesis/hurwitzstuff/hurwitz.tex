@@ -1,14 +1,14 @@
 \section{The Riemann-Hurwitz formula}\label{Hurwitzsection}
 
-Let $X$ and $Y$ be two projective non-singular curves over an algebraically closed field $k$, with a map $\pi :X \rightarrow Y$ of degree $n$.
+Let $X$ and $Y$ be two projective non-singular curves over an algebraically closed field $k$, with a map $\pi \colon X \rightarrow Y$ of degree $n$.
 We let $g_X$ and $g_Y$ be the genera of $X$ and $Y$ respectively.
 Let $K(X)$ and $K(Y)$ be the function fields of $X$ and $Y$ respectively.
-Note that $K(X)$ is a degree $n$ extension of $K(Y)$, and recall that $\pi$ induces a map $\pi^*:K(Y) \rightarrow K(X)$.
+Note that $K(X)$ is a degree $n$ extension of $K(Y)$, and recall that $\pi$ induces a map $\pi^*\colon K(Y) \rightarrow K(X)$.
 As usual, for any $P \in X$ and $Q \in Y$ we denote the local ring of rational functions at $P$ and $Q$ by $\cO_P$ and $\cO_Q$ respectively.
 
 We also recall some facts about Galois theory.
-Any element $\alpha \in K(X)$ defines a $K(Y)$-linear map $\mu_{\alpha} : K(X) \rightarrow K(X)$, multiplication by $\alpha$.
-We then define the {\em trace map}, denoted $\Tr_{X/Y}: K(X) \rightarrow K(Y)$, to be the trace of the matrix corresponding to $\mu_{\alpha}$.
+Any element $\alpha \in K(X)$ defines a $K(Y)$-linear map $\mu_{\alpha} \colon  K(X) \rightarrow K(X)$, multiplication by $\alpha$.
+We then define the {\em trace map}, denoted $\Tr_{X/Y}\colon  K(X) \rightarrow K(Y)$, to be the trace of the matrix corresponding to $\mu_{\alpha}$.
 Note that $\Tr_{X/Y}$ is an additive map, and that for $\alpha \in K(Y)$ we have $\Tr_{X/Y}(\alpha) = n \alpha$.
 Also, since our extension is Galois (and hence, in particular, separable) then the trace map is non-zero (see, for example, \cite[Appendix A]{stichtenoth}).
 Finally, if $\alpha \in K(X)$ has minimum polynomial 
@@ -18,7 +18,7 @@ Finally, if $\alpha \in K(X)$ has minimum polynomial
  and $s= [K(X):K(Y)(\alpha)]$, then $\Tr_{X/Y}(\alpha) = -sa_{r-1}$ as in \cite[Appendix A]{stichtenoth}.
 
 Given a basis $\{z_1,\ldots,z_n\}$ of $K(X)$ over $K(Y)$, we now introduce its dual basis with respect to the trace.
-We denote the dual space of $K(X)$ over $K(Y)$ by \[K(X)^*:=\{\lambda :K(X) \rightarrow K(Y)| \lambda\ \text{is}\ K(Y)\text{-linear}\}.\]
+We denote the dual space of $K(X)$ over $K(Y)$ by \[K(X)^*:=\{\lambda \colon K(X) \rightarrow K(Y)| \lambda\ \text{is}\ K(Y)\text{-linear}\}.\]
 We make $K(X)^*$ in to a one-dimensional $K(X)$-vector space by defining $z \lambda(w):=\lambda(z w)$.
 As $\Tr_{X/Y}$ is non-zero, then there exists a unique $z\in K(X)$ for every $\lambda \in K(X)^*$ such that $\lambda = z\cdot \Tr_{X/Y}$.
 In particular, if we choose $\lambda_j\in K(X)^*$ such that $\lambda_j(z_i) = \delta_{ij}$ (the Kronecker symbol), then there exist $z_j^*$ such that $\lambda_j = z_j^*\cdot \Tr_{X/Y}$.
@@ -30,7 +30,7 @@ The elements $z_1^*, \ldots , z_n^*$ form the {\em dual basis} of $z_1, \ldots ,
 
 We now briefly introduce differentials in terms of function fields.
 Let $C$ be any projective, non-singular curve over $k$, with function field $K(C)$, and with genus $g_C$.
-Then an {\em ad\`ele on $C$} is a map $\alpha: C \rightarrow K(C)$ such $\alpha(P) \in \cO_P$ for nearly all $P \in C$ (i.e. all but a finite number of points).
+Then an {\em ad\`ele on $C$} is a map $\alpha\colon  C \rightarrow K(C)$ such $\alpha(P) \in \cO_P$ for nearly all $P \in C$ (i.e. all but a finite number of points).
 We can view $\alpha$ as an element of $\prod_{P\in C}K(C)$, and we write $\alpha_P := \alpha(P)$.
 We let the {\em ad\`ele space} of $C$, denoted by $\cA_C$, be the space of all ad\`eles on $C$.
 There is a canonical injection $K(C) \hookrightarrow  \cA_C$, defined by sending $x\in K(C)$ to the ad\`ele $\alpha$ for which $\alpha_P =  x$ at each point $P\in C$.
@@ -58,7 +58,7 @@ For any $D\in \cD_C$ we define $v_P(D)$ to be the coefficient of $[P]$ in $D$, a
  \cA_C(D):=\{\alpha \in \cA_C | v_P(\alpha) \geq -v_P(D)\ \text{for all} \ P\in C\}
 \]
 be the {\em ad\`ele space associated to $D$}.
-Then we define a {\em differential} on $C$ to be a $k$-linear map $\omega: \cA_C \rightarrow k$ such that $\omega$ is zero on $\cA_C(D) +K(C)$ for some divisor $D\in \cD_C$.
+Then we define a {\em differential} on $C$ to be a $k$-linear map $\omega\colon  \cA_C \rightarrow k$ such that $\omega$ is zero on $\cA_C(D) +K(C)$ for some divisor $D\in \cD_C$.
 Note that via the canonical embedding of $K(C)$ into $\cA_C$, we can view $\cA_C(D) +K(C)$ as a subspace of $\cA_C$.
 We will denote the space of differentials on $C$ by $\Omega_{K(C)}$.
 
@@ -99,8 +99,8 @@ The following proposition about the space of differentials is very useful, thoug
 
 
 It should be noted that in algebraic geometry differentials are normally defined in a different, but equivalent, manner.
-Given a ring $K(C)$ and an $K(C)$-module $M$, we call any $K(C)$-linear map $D:K(C)\rightarrow M$ satisfying \[D(ab) = aD(b) + D(a)b\] for all $a,b\in K(C)$ a {\em derivation}.
-There is a unique module, denoted $\Omega_{K(C)}$, with a map $d:K(C) \rightarrow \Omega_{K(C)}$, which every derivation must factor through; i.e. if $D:K(C)\rightarrow M$ is a derivation then there is a unique map $f:\Omega_{K(C)}\rightarrow M$ such that $D = f\circ d$.
+Given a ring $K(C)$ and an $K(C)$-module $M$, we call any $K(C)$-linear map $D\colon K(C)\rightarrow M$ satisfying \[D(ab) = aD(b) + D(a)b\] for all $a,b\in K(C)$ a {\em derivation}.
+There is a unique module, denoted $\Omega_{K(C)}$, with a map $d\colon K(C) \rightarrow \Omega_{K(C)}$, which every derivation must factor through; i.e. if $D\colon K(C)\rightarrow M$ is a derivation then there is a unique map $f\colon \Omega_{K(C)}\rightarrow M$ such that $D = f\circ d$.
 Given any differential $\omega$, we can write it as $fdx$ for some $x$ and some $f$ in $K(C)$.
 This is how we will consider differentials in the other sections of this report.
 At the end of this section we will describe an isomorphism between $\Omega_C$ and $\Omega_{K(C)}$.
@@ -147,7 +147,7 @@ Since $\dim H^0(C,\cO(0)) = 1$ (recall that the only functions with no poles are
 
 
 There is an alternative way to map $K(C)$ in to $\cA_C$, which we will make use of shortly.
-Given a point $P\in C$ we define $\iota_P:K(C) \rightarrow \cA_C$ by
+Given a point $P\in C$ we define $\iota_P\colon K(C) \rightarrow \cA_C$ by
 \begin{equation}
  (\iota_P(x))_Q:= \begin{cases}
            x & \text{if }\ P=Q\\
@@ -155,7 +155,7 @@ Given a point $P\in C$ we define $\iota_P:K(C) \rightarrow \cA_C$ by
            \end{cases}
 \end{equation}
 for $Q\in C$.
-For $\omega \in \Omega_{K(C)}$ we then define $\omega_P:K(C) \rightarrow k$ to be the map $\omega_P(x) := \omega(\iota_P(x))$.
+For $\omega \in \Omega_{K(C)}$ we then define $\omega_P\colon K(C) \rightarrow k$ to be the map $\omega_P(x) := \omega(\iota_P(x))$.
 This is called the {\em local component} of $\omega$; we will use these definitions to prove the following proposition.\\
 
 \begin{prop}\label{propertyofomega}
@@ -421,7 +421,7 @@ We now define the ad\`ele space of $X$ over $Y$.
  \[
   \mathcal{A}_{X/Y} := \{\alpha \in \mathcal{A}_X | \alpha_P =\alpha_{P'}\ \text{if}\ \cO_P\cap K(Y) = \cO_{P'}\cap K(Y)\}.
  \]
-We extend the trace function $\Tr_{X/Y}:K(X)\rightarrow K(Y)$ to a map $\Tr_{X/Y}:\mathcal{A}_{X/Y} \rightarrow \mathcal{A}_Y$,  by letting
+We extend the trace function $\Tr_{X/Y}\colon K(X)\rightarrow K(Y)$ to a map $\Tr_{X/Y}\colon \mathcal{A}_{X/Y} \rightarrow \mathcal{A}_Y$,  by letting
 \[
  (\Tr_{X/Y}(\alpha))_Q := \Tr_{X/Y}(\alpha_P)
 \]
@@ -468,7 +468,7 @@ We first note that this immediately implies the Riemann-Hurwitz formula.
 
 
 \begin{cor}\label{hur}[Riemann-Hurwitz Formula]
- Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $f:X \rightarrow Y$, then
+ Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $f\colon X \rightarrow Y$, then
  \[
   2g_X - 2 = n(2g_Y -2) + \deg(R),
  \]
@@ -498,15 +498,15 @@ Hence $\alpha = \beta + (\alpha - \beta) \in \mathcal{A}_{X/Y} + \mathcal{A}_X(D
 \end{proof}
 \begin{comment}
 \begin{lem}
- Let $V$ be a vector space over $K(X)$ and let $\mu:V\rightarrow K(Y)$ be a $K(Y)$ linear map.
- Then thee is a unique $K(X)$ linear map $\mu':V\rightarrow K(X)$ such that $\Tr_{X/Y}\circ \mu' = \mu$.
+ Let $V$ be a vector space over $K(X)$ and let $\mu\colon V\rightarrow K(Y)$ be a $K(Y)$ linear map.
+ Then thee is a unique $K(X)$ linear map $\mu'\colon V\rightarrow K(X)$ such that $\Tr_{X/Y}\circ \mu' = \mu$.
 \end{lem}
 \begin{proof}
  {\bf is prop III.3.3 needed?}
- Let $K(X)^:=\{ \lambda:K(X) \rightarrow K(Y)| \lambda L-\text{linear}\}$ be the space of linear forms, which forms a vector space over $K(X)$.
+ Let $K(X)^:=\{ \lambda\colon K(X) \rightarrow K(Y)| \lambda L-\text{linear}\}$ be the space of linear forms, which forms a vector space over $K(X)$.
  It is one dimensional over $K(X)$ {\bf (check why)}, and so any $\lambda \in K(X)^*$ can be written as $z\cdot \Tr_{X/Y}$ for some $z\in K(X)$.
  
- If we fix a $v\in V$ then we can define an $L$-linear map $\lambda :K(X) \rightarrow K(Y)$ as $\lambda_v(a)\mapsto \mu(av)$.
+ If we fix a $v\in V$ then we can define an $L$-linear map $\lambda \colon K(X) \rightarrow K(Y)$ as $\lambda_v(a)\mapsto \mu(av)$.
  So there exists a unique $z_v\in K(X)$ such that $\lambda_v = z_v\cdot \mu$, and we define $\mu'(v) := z_v$.
  Hence
  \[
@@ -515,7 +515,7 @@ Hence $\alpha = \beta + (\alpha - \beta) \in \mathcal{A}_{X/Y} + \mathcal{A}_X(D
 for every $a\in K(X)$ and $v\in V$.
 Since the trace function and $\mu$ are both linear, it follows that $\mu'$ is also.
 If we let $a=1$ then the equality $\mu = \Tr_{X/Y} \circ \mu'$, which proves existence.
-If there were another such map, say $\mu^*$, then the difference $\mu'-\mu^*:V\rightarrow K(X)$ would be surjective, but $\Tr_{X/Y}\circ (\mu'-\mu^*) = 0$.
+If there were another such map, say $\mu^*$, then the difference $\mu'-\mu^*\colon V\rightarrow K(X)$ would be surjective, but $\Tr_{X/Y}\circ (\mu'-\mu^*) = 0$.
 This implies that $\Tr_{X/Y}=0$, a contradiction, hence $\mu'$is unique.
 \end{proof}
 \end{comment}
@@ -526,7 +526,7 @@ We now prove Theorem \ref{detailedhurwitz}.
  If $\omega = 0$ then we can clearly let $\omega' = 0$, so we assume that $\omega \neq 0$.
  We will use the following divisor, $W' := \pi^*(\di (\omega)) + R$, throughout the proof.
  
- We first prove two assertions about $\omega_1:= \omega\circ \Tr_{X/Y} :\mathcal{A}_{X/Y} \rightarrow k$.
+ We first prove two assertions about $\omega_1:= \omega\circ \Tr_{X/Y} \colon \mathcal{A}_{X/Y} \rightarrow k$.
  Namely, we show that
  \begin{enumerate}[(i)]
   \item For any $\alpha \in \mathcal{A}_{X/Y}(W') + K(X)$ then $\omega_1(\alpha) = 0$;
@@ -595,7 +595,7 @@ Now $\omega_1(\beta) = \omega(\Tr_{X/Y}(\beta)) = \omega_Q(x) \neq 0$.
 This shows (ii).
 
 By Lemma \ref{adelespacelemma} for each $\alpha \in \mathcal{A}_X$ there exists some $\beta \in \mathcal{A}_{X/Y}$ and $\gamma \in \mathcal{A}_X(W')$ such that $\alpha = \beta + \gamma$.
-We now define a new differential $\omega_2 : \mathcal{A}_X \rightarrow k$ by letting $\omega_2(\alpha) := \omega_1(\beta)$.
+We now define a new differential $\omega_2 \colon  \mathcal{A}_X \rightarrow k$ by letting $\omega_2(\alpha) := \omega_1(\beta)$.
 Suppose we have two representations of $\alpha$, say $\beta+ \gamma$ and $\beta' + \gamma'$, where $\beta, \beta' \in \mathcal{A}_{X/Y}$ and $\gamma, \gamma' \in \mathcal{A}_{X}(W')$.
 Then 
 \[
@@ -645,10 +645,10 @@ If differential is a unit at a point, it's precise value can be determined by th
 \begin{comment}
 We now show the equivalence of our two definitions of differential.
 
-Recall that for a curve $C$ a derivation of $K(C)$ is a $k$-linear map $d:K(C) \rightarrow M$ for some $K(C)$-module $M$ such that $d(ab) = ad(b) + d(a)b$ for all $a,b\in K(C)$.
+Recall that for a curve $C$ a derivation of $K(C)$ is a $k$-linear map $d\colon K(C) \rightarrow M$ for some $K(C)$-module $M$ such that $d(ab) = ad(b) + d(a)b$ for all $a,b\in K(C)$.
 Note that of course, as $K(C)$ is a field, $M$ is a vector space, but this does hold more generally for rings and modules.
 
-By \cite[Prop. IV.1.4]{stichtenoth}, for each $x\in K(C)\backslash k$ there exists a unique derivation $d_x:K(C) \rightarrow K(C)$ such that $d_x(x) = 1$, which we call the {\em derivation with respect to $x$}.
+By \cite[Prop. IV.1.4]{stichtenoth}, for each $x\in K(C)\backslash k$ there exists a unique derivation $d_x\colon K(C) \rightarrow K(C)$ such that $d_x(x) = 1$, which we call the {\em derivation with respect to $x$}.
 
 If we let $Z:= \{(u,x)\in K(C)\times K(C) |x\notin k\}$, then we can define a relation on the elements of $Z$ by letting $(u,x) \sim (v,y)$ if $v = u\cdot d_y(x)$.
 Then we denote the equivalence class of $(1,x)\in Z$ by $dx$.
@@ -663,12 +663,12 @@ By \cite[Prop. I.7.4]{stichtenoth} there exists a unique differential $\omega \i
 
 Now for any $z\in K(C) \backslash k$ we have that $k(z)$ is isomorphic to $K(x)$.
 Hence if we let $G$ be the Galois group of the extension $[K(C):k(z)]$ then the quotient curve $Y:=X/G$ is isomorphic to the projective line.
-We let $f_z:C \rightarrow \mathbb P_k^1$ be the corresponding surjective map, and we denote the unique differential described above by $\omega_z$.
-We then define $\delta:K(C) \rightarrow \Omega_{K(C)}$ to be the map such that if $z\in K(C)\backslash k$ then $\delta (z) := f_z^*(\omega_z)$ and if $y\in k$ then $\delta(y):=0$.
-This then induces a map $\mu:\Omega_{K(C)} \rightarrow \Omega_{K(C)}$, defined by $z\cdot dx \mapsto z\cdot \delta(x)$·
+We let $f_z\colon C \rightarrow \mathbb P_k^1$ be the corresponding surjective map, and we denote the unique differential described above by $\omega_z$.
+We then define $\delta\colon K(C) \rightarrow \Omega_{K(C)}$ to be the map such that if $z\in K(C)\backslash k$ then $\delta (z) := f_z^*(\omega_z)$ and if $y\in k$ then $\delta(y):=0$.
+This then induces a map $\mu\colon \Omega_{K(C)} \rightarrow \Omega_{K(C)}$, defined by $z\cdot dx \mapsto z\cdot \delta(x)$·
 
 \begin{thm}
-The map $\mu:\Omega_{K(C)} \rightarrow \Omega_{K(C)}$ is an isomorphism.
+The map $\mu\colon \Omega_{K(C)} \rightarrow \Omega_{K(C)}$ is an isomorphism.
 \end{thm}
 \begin{proof}
 See \cite[Thm. IV.3.2]{stichtenoth}.
