@@ -190,49 +190,23 @@ Also, by comparing the degrees in \eqref{easylemma} we see that $\deg(g_1(x) = 0
 Hence $\sigma(y) = \pm y$, and of course if $\sigma(y) = -y$ we can just compose $\sigma$ with the hyperelliptic involution, and we conclude that $\sigma(y) = y$.
 \end{proof}
 
+Given an automorphism $\sigma\colon (x,y) \mapsto (x+a,y)$ of $X$, we obtain some restrictions on the defining equation \eqref{definingequation}, which we list in the lemma below.
 
-
-We see from \cite[\S 3.3]{automorphismshyperellipticmodular} that to describe how $C_3$ acts on $X$ we need our defining equation to be of the form
+\begin{lem}
+The situation described above implies that $\cha (k) = 3$, and also that the following identities, relating to the coefficients in \eqref{definingequation}, hold:
+\begin{itemize}
+\item $a_5 = 0$
+\item 
+\end{itemize}
+\end{lem}
+\begin{proof}
+Since $\sigma(y) = y$, it follows that $f(x+a) = f(x)$.
+Expanding the left hand side we get 
 \[
-y^2 = \sum_{i=0}^3 a_{2i}x^{2i}.
+f(x+a) = 
 \]
-If we consider a function field $k(x,y)$, with the relation $y^2=f(x)$, then the map sending $x$ to $x-1$ is an isomorphism.
-If we apply this map to $K(X)$, the function field of $X$, we get 
-\begin{equation}\label{int}
-y^2 = x^6 + 2x^4 + 2x^2 + 2.
-\end{equation}
+\end{proof}
 
-
-We need to alter the above equation in one more way before we can describe the group action.
-In general, if $g(x) = a_sx^s + \ldots + a_0$ and $a_0 \neq 0 \neq a_s$, then we define $g^*(x) = a_0^{-1}x^s g\left( \frac{1}{x} \right)$.
-As stated after Lemma 2.6 in \cite{automorphismshyperellipticmodular}, if $2|s$ and $g(0) \neq 0$ and $y^2 = g(x)$ defines a hyperelliptic curve, then $y^2 = g^*(x)$ defines an isomorphic curve.
-Hence we can apply this to \eqref{int} we get 
-\begin{equation}\label{proper}
-y^2 = x^6 + x^4 + x^2 + 2.
-\end{equation}
-
-Since \eqref{proper} defines an isomorphic curve to $X$ on which we can describe the action of $C_3$, we relabel $f(x)$ to denote $x^6 + x^4 + x^2 + 2$, and we then relabel $X$ to be the curve defined by 
-\[
-y^2 = f(x) = x^6 + x^4 + x^2 + 2.
-\]
-We check that this equation has no double roots, and hence $X$ is a hyperelliptic curve.
-Notice that $f'(x) = x^3 + 2x$ and then that $f(x) = f'(x)^2 + 2$.
-Hence $f(x)$ and $f'(x)$ are coprime and share no roots.
-In particular, this implies that $f(x)$ has no repeated, hence $X$ is a hyperelliptic curve.
-
-We now demonstrate the action of $C_3$ on $X$.
-Let $\sigma :x \mapsto x+1$.
-Since it is clear that both $f'(x+1) = f'(x)$ we see that
-\[
-f(x+1) = f'(x+1)^2 + 2 = f'(x)^2 + 2 = f(x).
-\]
-Hence $y^2 = f(x)$ is invariant under the action of $\sigma$, and in particular this means that if we let $\sigma(y) = y$ then $\sigma$ is a well defined automorphism of $X$, of order three.
-
-
-Now we wish to see how our element of order three acts on $\derhamhone$ of our curve.
-However, since the basis we have already computed in \cite[Thm. 2.3]{derhamactions} is not stable under this action (in particular, the open set $U_0$ is not preserved) we must refine our cover.
-As in the first section we refine the cover by adding $U_\sigma = U_1$, and we let $\cU'' = \{U_0, U_1, U_\infty\}$ and $\cU' = \{U_\infty, U_1\}$.
-The \cech de Rham cohomology corresponding to the cover $\cU''$ is given by \eqref{sixtupleconditions}.
 
 
 The following proposition allows us to compute how $\sigma$ acts on $\cechderhamhone(\cU)$, as described in the first section.
