@@ -193,18 +193,18 @@ Hence $\sigma(y) = \pm y$, and of course if $\sigma(y) = -y$ we can just compose
 Given an automorphism $\sigma\colon (x,y) \mapsto (x+a,y)$ of $X$, we obtain some restrictions on the defining equation \eqref{definingequation}, which we list in the lemma below.
 
 \begin{lem}
-The situation described above implies that $\cha (k) = 3$, and also that the following identities, relating to the coefficients in \eqref{definingequation}, hold:
-\begin{itemize}
-\item $a_5 = 0$
-\item 
-\end{itemize}
-\end{lem}
+Given the situation above, it follows that the characteristic of $k$ is 3 or 5.
 \begin{proof}
 Since $\sigma(y) = y$, it follows that $f(x+a) = f(x)$.
-Expanding the left hand side we get 
-\[
-f(x+a) = 
-\]
+Expanding the left hand side we see that the coefficient of $x^5$ is $6aa_6 + a_5$.
+Since the coefficient of $x^5$ in $f(x)$ is $a_5$.
+We conclude that $6aa_6 = 0$, and hence either $6=0$ or $a_6=0$.
+If $6=0$ then it follows that $\cha (k)=3$.
+
+On the other hand, if $a_6=0$ then we compare the coefficients of $x^4$ in $f(x+a)$ and $f(x)$, which are $5aa_5+a_4$ and $a_4$ respectively.
+We conclude that $5aa_5=0$. Since the degree of $f(x)$ is either $2g+2=6$ or $2g+1=5$ it follows that at least one of $a_6$ and $a_5$ must be non-zero.
+Hence if $a_6=0$ it follows that $\cha(k) = 5$.
+
 \end{proof}
 
 
