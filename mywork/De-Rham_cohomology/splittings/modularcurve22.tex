@@ -213,155 +213,41 @@ The following proposition allows us to compute how $\sigma$ acts on $\cechderham
 
 \begin{prop}\label{basis22}
 The residue classes of
-\[
-\nu_1 = \left(\frac{1}{yx^2}dx, \frac{x^4 + 2x^2}{y}dx, \frac{x^4 + 2x^3 +  2x^2}{2y(x-1)^3}dx, \frac{y}{x}, \frac{y}{x(x-1)^2}, \frac{2y(x+1)}{(x-1)^2} \right)
-\]
+\begin{multline*}
+\nu_1 = \left(\frac{a_3x^3-a_1x-2a_0}{yx^2}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx, \frac{x^4 + 2x^3 +  2x^2}{2y(x-a)^3}dx, \right. \\ \left. \frac{y}{x}, \frac{a^2y}{x(x-a)^2}, \frac{-y(x-2a)}{(x-a)^2} \right)
+\end{multline*}
 and
-\[
-\nu_2 = \left( \frac{x^2 + 1}{2yx^3}, \frac{2x^3}{y}dx, \frac{x^3 + x^2 + x+ 1}{2y(x-1)^3}dx, \frac{y}{x^2}, \frac{x(y +1)}{x^2(x-1)^2}, \frac{2y}{(x-1)^2} \right)
-\]
+\begin{multline*}
+\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3}, \frac{-(2a_6x^3+a_5x^5)}{2y}dx, \frac{x^3 + x^2 + x+ 1}{2y(x-a)^3}dx, \right. \\ \left. \frac{y}{x^2}, \frac{y(a^2-2ax)}{x^2(x-a)^2}, \frac{-y}{(x-a)^2} \right)
+\end{multline*}
 are well defined elements of $\cechderhamhone(\cU'')$.
 Moreover, the canonical projections on to $\cechderhamhone(\cU)$ are the first two basis elements described in \cite[Thm. 2.3]{derhamactions}.
 \end{prop}
 \begin{proof}
-We let $\omega_{ji}$ and $f_{jki}$ be, respectively, the differentials and functions of which $\nu_i$ consists, so that
+In order to refer to the entries in $\nu_1$ and $\nu_2$ we define $f_{ijk}$ and $\omega_{ijk}$ by letting
 \[
-\nu_i = (\omega_{0i}, \omega_{\infty i}, \omega_{1i}, f_{0\infty i}, f_{01i}, f_{\infty 1 i} ).
-\]
-We first show that the first, second and fourth entry of both $\nu_1$ and $\nu_2$ are those described in \cite[Thm. 2.2]{derhamactions}.
-It will then follow that they satisfy the relevant conditions of \eqref{sixtupleconditions}.
+\nu_i = \left( \omega_{0 i}, \omega_{\sigma i}, \omega_{\infty i}, f_{0 \sigma i}, f_{0 \infty i}, f_{\sigma \infty i} \right).
+\]\todo{clean this up, including the sentence before.}
+First, note that it follows from \todo{cite previous work} that $d(f_{0 \infty i}) = \omega_{0 i} - \omega_{\infty i}$.
 
-First note that $f'(x) = x^3 + 2x$, and hence using the notation of \cite{derhamactions} we have
+We check that $f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} = 0$.
+When $i=1$ we have
 \begin{align*}
-s_1(x) = xf'(x) + f(x) = x^6 + 2x^4 + 2 
-\intertext{and} 
-s_2(x) = xf'(x) - f(x) = 2x^6 + x^2 +1.
+f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{y}{x^2} - \frac{y(a^2-2ax)}{x^2(x-a)^2} - \frac{y}{(x-a)^2} \\
+& = \frac{y(x-a)^2 - y(a^2-2ax) - x^2y}{x^2(x-a)^2} \\
+& = 0
 \end{align*}
-Recall also that $\psi_i(x)$ and $\phi_i(x)$ are defined in \cite{derhamactions} to the be the unique polynomials in $k[x]$ summing to $s_i$ such that $\psi_i(x)$ is degree at most $g+1$ and $x^{g+2}$ divides $\phi_i(x)$.
-Since $g=2$ it follows that
-\begin{align*}
-\psi_1(x) = 2 \qquad &{\rm and}\qquad \phi_1(x) = x^6 + 2x^4
-\intertext{and that}
-\psi_2(x) = x^2 +1 \qquad &{\rm and} \qquad \phi_2(x) = 2x^6.
-\end{align*}
+after expanding the second line out.
 
-Hence
-\begin{align*}
-\omega_{01} &= \frac{\psi_1(x)}{2yx^2}dx = \frac{1}{yx^2}dx
-\intertext{and}
-\omega_{\infty 1} &= \frac{-\phi_1(x)}{2yx^2}dx = \frac{x^4+2x^2}{y}dx.
-\end{align*}
-On the other hand
-\begin{align*}
-\omega_{02} = \frac{\psi_2(x)}{2yx^3}dx = \frac{x^2+1}{2yx^3}dx
-\intertext{and}
-\omega_{\infty 2} = \frac{-\phi_2(x)}{2yx^3}dx = \frac{2x^3}{y}dx.
-\end{align*}
+When $i=2$ we have
+\begin{align}
+f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{y}{x} - \frac{y}{x(x-a)^2} - \frac{y(x-2a)}{(x-a)^2} \\
+& = \frac{y(x-a)^2 - a^2y -xy(x-2a)}{x(x-a)^2} \\
+& = \frac{y(x-a)^2 - y(x-a)^2}{x(x-a)^2} \\
+& = 0.
+\end{align}
 
-We then show that the rest of the conditions are also satisfied, starting with $\nu_1$.
-We first check that the elements are regular on the appropriate sets by computing their divisors, which are as follows
-\begin{align*}
-\di \left( \frac{x^4 + 2x^3 + x^2}{2y(x-1)^3}dx \right)  = & \di(x^4 + 2x^3 + x^2) -3\di(x-1) - \di(y) + \di(dx) \\
-= &\di_0(x^4 + 2x^3 + x^2) - 4D_\infty + 3D_\infty  - R +3D_\infty\\
-&  -3D_1 +R - 2D_\infty \\
-= & \di_0(x^4 + 2x^3 + x^2) - 3D_1;
-\end{align*}
-\begin{align*}
-\di \left(\frac{y}{x(x-1)^2} \right) & = \di(y) - \di(x) - 2\di(x-1) \\
-& = R - 3D_\infty - D_0 + D_\infty - 2D_1 + 2D_\infty \\
-& = R - D_0 - 2D_1;
-\end{align*}
-\begin{align*}
-\di \left( \frac{2y(x+1)}{(x-1)^2} \right) & = \di(y) + \di(x+1) - 2\di(x-1) \\
-& = R - 3D_\infty +D_1 - D_\infty - 2D_1 + 2D_\infty \\
-& = R + D_1 - 2D_\infty - 2D_1.
-\end{align*}
-These are clearly non-negative on $U_1$, $U_0 \cap U_1$ and $U_\infty \cap U_1$ respectively.
-
-Once we note that 
-\[
-\frac{y}{x(x-1)^2} = \frac{y}{x} -\left(\frac{y}{x-1} - \frac{y}{(x-1)^2} \right)
-\]
-and that
-\[
-\frac{2y(x+1)}{(x-1)^2} = -\left( \frac{y}{x-1} - \frac{y}{(x-1)^2}\right)
-\]
-then it is clear that
-\[
-\frac{y}{x} - \frac{y}{x(x-1)^2} + \frac{2y(x+1)}{(x-1)^2} = 0.
-\]
-
-Now we check the other relations, starting with
-\begin{align*}
-d \left( \frac{y(x+1)}{(x-1)^2} \right) & = \frac{x+1}{(x-1)^2}dy + y d \left( \frac{x+1}{(x-1)^2} \right) \\
-& = \frac{f'(x+1)}{2y(x-1)^2}dx - \frac{yx}{(x-1)^3} dx \\
-& = \frac{f'(x^2-1) +fx}{2y(x-1)^3}dx \\
-& = \frac{x^7 + 2x^5 + 2x^3}{2y(x-1)^3}dx
-\end{align*}
-and
-\begin{align*}
-\omega_{\infty 1} - \omega_{11} & = \frac{x^4 + 2x^2}{y}dx - \frac{x^4 + 2x^3 + 2x^2}{2y(x-1)^3} dx \\
-& = \frac{2(x^4 + 2x^2)(x-1)^3 + 2x^4 + x^3 + x^2}{2y(x-1)^3}dx \\
-& = \frac{2x^7 + x^5 + x^3}{2y(x-1)^3}dx\\
-& = 2d \left( \frac{y(x+1)}{(x-1)^2}\right).
-\end{align*}
-Hence $df_{\infty 1 1} = \omega_{\infty 1} - \omega_{1 1}$.
-
-Similarly we have
-\begin{align*}
-df_{0 1 1} & = d \left( \frac{y}{x(x-1)^2} \right) \\
-& = \frac{1}{x(x-1)^2}dy + y d \left( \frac{1}{x(x-1)^2} \right) \\
-& = \frac{f'}{2yx(x-1)^2}dx + \frac{y}{x^2(x-1)^3}dx \\
-& = \frac{2x^6 + x^5 + x^4 + 2x^3 + 1}{2yx^2(x-1)^3} dx\\
-& = \frac{2(x^3-1)}{2yx^2(x-1)^3}dx - \frac{x^6 + 2x^5 + 2x^4}{2yx^2(x-1)^3}dx \\
-& = \omega_{01} - \omega_{11}.
-\end{align*}
-So we know that our $\nu_1$ is an element of $\derhamhone (\cU'')$.
-
-We now turn to the second element, where we again start by checking that all the differentials and functions are regular on the correct open sets.
-We have
-\begin{align*}
-\di \left( \frac{x^3 + x^2 + x + 1}{2y(x-1)^3} dx \right) = & \di(x^3+x^2+x+1) -\di(y) - 3\di(x-1) + \di(dx) \\
-= & \di_0(x^3 + x^2 + x + 1) - 3D_\infty - R + 3D_\infty - 3D_1 \\
-& + 3D_\infty + R - 2D_\infty \\
- = &  \di_0(x^3 + x^2 + x + 1) + D_\infty - 3D_1
-\end{align*}
-which is clearly non-negative on $U_1$.
-Similarly
-\begin{align*}
-\di \left( \frac{y(x+1)}{x^2(x-1)^2} \right) & = \di(y) + \di(x+1) - 2\di(x) - \di(x-1) \\
-& = R - 3D_\infty + D_{-1} -D_\infty -2D_0 + 2D_\infty - 2D_1 + 2D_\infty \\
-& = R + D_{-1} - 2D_0 - 2D_1
-\end{align*}
-and
-\begin{align*}
-\di \left( \frac{2y}{(x-1)^2} \right) & = \di(y) - 2\di(x-1) \\
-& = R - 3D_\infty - 2D_1 + 2D_\infty \\
-& = R - D_\infty - 2D_1,
-\end{align*}
-are non-negative on $U_0 \cap U_1$ and $U_1 \cap U_\infty$ respectively.
-
-It is easy to check that
-\[
-f_{0 \infty 2} - f_{0 1 2 } + f_{\infty 1 2} = \frac{y}{x^2} - \left( \frac{y}{x^2} - \frac{y}{(x-1)^2} \right) + \frac{2}{(x-1)^2} = 0.
-\]
-
-We finally check the relations between the functions and differentials, starting with
-\begin{align*}
-df_{0 1 2} & = \frac{1}{2yx^3(x-1)^3} (x(x-1)(x+1)f' + f)dx \\
-& = \frac{1}{2yx^3(x-1)^3}(2x^6 + 2x^4 + 2x^2 + 2)dx \\
-& = \frac{1}{2yx^3(x-1)^3}((x^5 + x^3 + 2x^2 + 2) + 2(x^6 + x^5 + x^4 + x^3))dx \\
-& = \omega_{02} - \omega_{12}.
-\end{align*}
-We also have
-\begin{align*}
-df_{\infty 1 2} & = \frac{1}{2y(x-1)^3}(f-(x-1)f')dx \\
-& = \frac{1}{2y(x-1)^3}(x^6 + x^3 + 2x^2 + 2x+ 2)dx \\
-& = \frac{1}{2y(x-1)^3}(x^3(x-1)^3 - x^3 - x^2 - x - 1) dx \\
-& = \left(\frac{x^3}{2y} - \frac{x^3 + x^2 + x+1}{2y(x-1)^3}\right) dx \\
-& = \omega_{\infty 2} - \omega_{12},
-\end{align*}
-which completes the proof.
+We now check that differentials and functions are regular on the
 
 \end{proof}
 
