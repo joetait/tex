@@ -214,11 +214,20 @@ The following proposition allows us to compute how $\sigma$ acts on $\cechderham
 \begin{prop}\label{basis22}
 The residue classes of
 \begin{multline*}
-\nu_1 = \left(\frac{a_3x^3-a_1x-2a_0}{yx^2}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx, \frac{x^4 + 2x^3 +  2x^2}{2y(x-a)^3}dx, \right. \\ \left. \frac{y}{x}, \frac{a^2y}{x(x-a)^2}, \frac{-y(x-2a)}{(x-a)^2} \right)
+\nu_1 = \left(\frac{a_3x^3-a_1x-2a_0}{yx^2}dx, \frac{\aleph_1}{2y(x-a)^3}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx,  \right. \\ \left. \frac{a^2y}{x(x-a)^2}, \frac{y}{x},  \frac{-y(x-2a)}{(x-a)^2} \right)
 \end{multline*}
 and
 \begin{multline*}
-\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3}, \frac{-(2a_6x^3+a_5x^5)}{2y}dx, \frac{x^3 + x^2 + x+ 1}{2y(x-a)^3}dx, \right. \\ \left. \frac{y}{x^2}, \frac{y(a^2-2ax)}{x^2(x-a)^2}, \frac{-y}{(x-a)^2} \right)
+\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},  \frac{\aleph_2}{2y(x-a)^3}dx, \frac{-(2a_6x^3+a_5x^5)}{2y}dx, \right. \\ \left.  \frac{y(a^2-2ax)}{x^2(x-a)^2},\frac{y}{x^2}, \frac{-y}{(x-a)^2} \right),
+\end{multline*}
+where
+\begin{multline*}
+\aleph_1  = (4a^3a_4+a^2a_5+a_3)x^4 + (3a^3a_5+2a^2a_4-3aa_3)x^3 \\
+ + (2a^3a_4 + 6a^2a_3 - a_1)x^2 + (4a^2a_2 +3aa_1-a_0)x+(2a^2a_2+6aa_0)
+\end{multline*}
+and
+\begin{multline*}
+\aleph_2  = (-6a^a_6-2a_5)x^4 + (2a^3a_6-3a^2a_5-4a_4-a_3)x^3 \\ + (a^3a_5-3aa_3-2a_2)x^2 + (-2a_2a-3a_1)x +(-aa_1-4a0)
 \end{multline*}
 are well defined elements of $\cechderhamhone(\cU'')$.
 Moreover, the canonical projections on to $\cechderhamhone(\cU)$ are the first two basis elements described in \cite[Thm. 2.3]{derhamactions}.
@@ -247,9 +256,48 @@ f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{y}{x} - \frac{y}{
 & = 0.
 \end{align}
 
-We now check that differentials and functions are regular on the appropriate open sets.
-\end{proof}
+We now check that differentials and functions are regular on the appropriate open sets by computing the relevant divisors.
+Firstly, the divisor of $f_{0 \sigma 1}$ is
+\begin{align*}
+\di(f_{0 \sigma 1}) & = \di\left( \frac{a^2y}{x(x-a)^2} \right) \\ 
+& = \di(y) - \di(x) - 2\di(x-a) \\
+& = R - 3D_\infty - D_0 + D_\infty -2D_a +2D_\infty \\
+& = R - D_0 - 2D_a,
+\end{align*}
+and the divisor of $f_{0 \sigma 2}$ is
+\begin{align*}
+\di(f_{0 \sigma 2} ) & = \di \left( \frac{y(a^2 - 2ax)}{x^2(x-a)^2} \right) \\
+& = \di(y) + \di(a-2x) - 2\di(x) - 2\di(x-a) \\
+& = R - 3D_\infty +D_{\frac{a}{2}} - D_\infty -2D_0 + 2D_\infty -2D_a + 2D_\infty \\
+& = R + D_{\frac{a}{2}} - 2D_0 - 2D_a,
+\end{align*}
+both of which are regular on $U_0 \cap U_\sigma$.
+Secondly, the divisor of $f_{0 \infty i}$ is
+\begin{align*}
+\di(f_{0 \infty i}) & = \di\left( \frac{y}{x^i} \right) \\
+& = \di(y) - \di(x^{-i}) \\
+& = R - 3D_\infty -iD_0 + iD_\infty \\
+& = R - (3-i)D_\infty -iD_0.
+\end{align*}
+When $i = 1,2$ this is clearly positive everywhere on $U_0 \cap U_\infty$.
+Lastly we compute the divisor of  $f_{\sigma \infty i}$, which is
+\begin{align*}
+\di(f_{\sigma \infty 1} ) & = \di \left( \frac{-y(x-2a)}{(x-a)^2} \right) \\
+& = \di(y) + \di(x-2a) - 2\di(x-a) \\
+& = R - 3D_\infty + D_{2a} - D_\infty - 2D_a + 2D_\infty \\
+& = R + D_{2a} -2D_\infty - 2D_a
+\end{align*}
+when $i=1$ and
+\begin{align*}
+\di( f_{\sigma \infty 2} ) & = \di \left( \frac{-y}{(x-a)^2} \right) \\
+& = \di (y)  - 2\di(x-a) \\
+& = R - 3D_\infty  - 2D_a + 2D_\infty \\
+& = R - 2D_a - D_\infty 
+\end{align*}
+when $i=2$, and in both cases the divisor is clearly positive on $U_\sigma \cap U_\infty$.
 
+
+\end{proof}
 We are now in a position to study the action of $\sigma$, which fixes $y$ and maps $x$ to $x+1$, on $\cechderhamhone(\cU)$.
 As we saw in the first section, this action is given by $\sigma\colon (\omega_{2i}, \omega_{3i}, f_{23i}) \mapsto (\sigma(\omega_{3i}), \sigma(\omega_{2i}), -\sigma(f_{23i}))$, where $(\omega_{2i}, \omega_{3i}, f_{23i}) = \rho'(\nu_i)$.
 
