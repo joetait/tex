@@ -218,16 +218,16 @@ The residue classes of
 \end{multline*}
 and
 \begin{multline*}
-\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},  \frac{\aleph_2}{2y(x-a)^3}dx, \frac{-(2a_6x^3+a_5x^5)}{2y}dx, \right. \\ \left.  \frac{y(a^2-2ax)}{x^2(x-a)^2},\frac{y}{x^2}, \frac{-y}{(x-a)^2} \right),
+\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},  \frac{\aleph_2}{2y(x-a)^3}dx, \frac{-(2a_6x^3+a_5x^2)}{2y}dx, \right. \\ \left.  \frac{y(a^2-2ax)}{x^2(x-a)^2},\frac{y}{x^2}, \frac{-y}{(x-a)^2} \right),
 \end{multline*}
 where
 \begin{multline*}
 \aleph_1  = (4a^3a_4+a^2a_5+a_3)x^4 + (3a^3a_5+2a^2a_4-3aa_3)x^3 \\
- + (2a^3a_4 + 6a^2a_3 - a_1)x^2 + (4a^2a_2 +3aa_1-a_0)x+(2a^2a_2+6aa_0)
+ + (2a^3a_4 + 6a^2a_3 - a_1)x^2 + (4a^2a_2 +3aa_1-2a_0)x+(2a^2a_2+6aa_0)
 \end{multline*}
 and
 \begin{multline*}
-\aleph_2  = (-6a^a_6-2a_5)x^4 + (2a^3a_6-3a^2a_5-4a_4-a_3)x^3 \\ + (a^3a_5-3aa_3-2a_2)x^2 + (-2a_2a-3a_1)x +(-aa_1-4a0)
+\aleph_2  = (-6a^a_6-2a_5)x^4 + (2a^3a_6-3a^2a_5-4a_4-a_3)x^3 \\ + (a^3a_5-3aa_3-2a_2)x^2 + (-2a_2a-3a_1)x +(-aa_1-4a_0),
 \end{multline*}
 are well defined elements of $\cechderhamhone(\cU'')$.
 Moreover, the canonical projections on to $\cechderhamhone(\cU)$ are the first two basis elements described in \cite[Thm. 2.3]{derhamactions}.
@@ -296,7 +296,47 @@ when $i=1$ and
 \end{align*}
 when $i=2$, and in both cases the divisor is clearly positive on $U_\sigma \cap U_\infty$.
 
+Now we show that for $i = 1, 2$ the differential $\omega_{\sigma i}$ is regular on $U_\sigma$.
+In both cases it is clear that there can only be poles at $\pi^{-1}(a)$ and $\pi^{-1}(\infty)$.
+Now $\pi^{-1}(a) \cap U_\sigma$ is empty, hence we need only check that there are on poles in $\pi^{-1}(\infty)$, or equivalently that the coefficient of $D_\infty$ in $\di( \omega_{\sigma i})$ is non-negative.
+By \todo{reference divisors from other paper} when $i=1$ this coefficient is $-4 - 4 + 3 + 3 = 0$ and when $i=2$ the coefficient is $-4 -2 +3 + 3=0$.
 
+It only remains to show that $df_{0 \omega i} = \omega_{0 i} - \omega_{\sigma i}$ for $i \in \{ 1, 2\}$.
+When $i=1$ the left hand side is 
+\begin{align*}
+df_{0 \omega 1} & = d \left( \frac{a^2y}{x(x-a)^2} \right)  \\
+& = a^2\left( \frac{1}{x(x-a)^2}dy + y d \frac{1}{x(x-a)^2} \right) \\
+ & = a^2 \left( \frac{f'}{2yx(x-a)^2} + \frac{y(a-3x)}{x^2(x-a)^3} \right) dx \\
+& = \frac{a^2}{2yx^2(x-a)^3} \left( xf'(x-a) + 2f(a-3x) \right) dx,
+\end{align*}
+and the bracketed expression in the final line expands to 
+\begin{equation}\label{i=1expansion}
+-(4aa_6+a_5)x^6-(3aa_5+2a_4)x^5-(2aa_4+3a_3)x^4-(aa_3+4a_2)x^3-5a_1x^2+(aa_1-6a_0)x+2a_0a
+\end{equation}
+On the other hand, the right hand side is
+\begin{equation*}
+\omega_{0 1} - \omega_{\sigma 1}  = \frac{1}{2yx^2(x-a)^3} \left( (a_3x^3 -a_1x-2a_0)(x-a)^3 - x^2\aleph_1\right )dx,
+\end{equation*}
+and the bracketed expression here also expands to \eqref{i=1expansion}.
+Hence $df_{0 \sigma 1} = \omega_{0 1} - \omega_{\sigma 1}$.
+
+When $i=2$ then 
+\begin{align*}
+df_{0 \sigma 2} & = d \left( \frac{y(a^2 -2ax)}{x^2(x-a)^2} \right) \\
+& = \frac{a^2-2ax}{x^2(x-a)^2} dy + y d \frac{a^2-2ax}{x^2(x-a)^2} \\
+& = \left( \frac{f'(a^2-2ax)}{2yx^2(x-a)^2} + \frac{2af(a^2-3ax+3x^2}{x^3(x-a)^3} \right) dx \\
+& = \frac{a}{2yx^3(x-a)^3} \left( f'(a-2x)x(x-a) + 4f(a^2-3ax+3x^2 \right) dx,
+\end{align*}
+and expanding the brackets we gives
+\begin{multline}\label{i=2expansion}
+(6aa_6+2a_5)x^7+(4a_4+3a_5a-2a_6a)x^6+(6a_3-aa_5)x^5+(8a_2-3a_3a)x^4 \\ + (10a_1 -6a_2a+a_3a^2)x^3 
+(12a_0-9a_1a+2a_2a^2)x^2 + (3a_1a^2-12aa_0)x + 4a_0a^2.
+\end{multline}
+On the other hand
+\begin{equation*}
+\omega_{0 2} - \omega_{\sigma 2} = \frac{1}{2yx^3)(x-a)^3}\left( -(a_3x^3+2a_2x^2+3a_1x+4a_0)(x-a)^3 + x^3\aleph_2 \right) dx,
+\end{equation*}
+and the bracketed expression here also expands to \eqref{i=2expansion}.
 \end{proof}
 We are now in a position to study the action of $\sigma$, which fixes $y$ and maps $x$ to $x+1$, on $\cechderhamhone(\cU)$.
 As we saw in the first section, this action is given by $\sigma\colon (\omega_{2i}, \omega_{3i}, f_{23i}) \mapsto (\sigma(\omega_{3i}), \sigma(\omega_{2i}), -\sigma(f_{23i}))$, where $(\omega_{2i}, \omega_{3i}, f_{23i}) = \rho'(\nu_i)$.
