@@ -355,21 +355,39 @@ We consider $\sigma(\nu_1)$ first.
 \end{align*}
 Now we compute $\sigma(\aleph_1)$, which is
 \begin{align*}
-\sigma(\aleph_1) & = (4a^3a_6+a^2a_5+a_3)x^4 + (-16a^4a_6-a^3a_5+2a^2a_4-7aa_3)x^3 \\
-& + (24a^5a_6-3a^4a^5-4a^3a_4+21a^2a_3-a_1)x^2 \\
-& + (5a^5a_5-16a^a_6+6a^4a_4-13a^3a_3+4a^2a_2+3aa_1-2a_0)x \\
-& + a(4a^6a_6-2a^5a_5-2a^4a_4+4a^3a_3+4a^2a_2+4aa_1+4a_0)
+\sigma(\aleph_1) & = (4a^3a_6+a^2a_5+a_3)x^4 + (16a^4a_6+7a^3a_5+2a^2a_4+aa_3)x^3 \\
+& + (24a^5a_6+15a^4a^5+8a^3a_4+3a^2a_3-a_1)x^2 \\
+& + (16a^6a_6+13a^5a_5+10a^4a_4+7a^3a_3+4a^2a_2+aa_1-2a_0)x \\
+& + a(4a^6a_6+4a^5a_5+4a^4a_4+4a^3a_3+4a^2a_2+4aa_1+4a_0).
 \end{align*}
 We use the fact $f(x+a) = f(x)$, and equating the coefficients on both side, simplify the above expression.
 We list the identities we get from $f(x) = f(x+a)$ here:
 \begin{enumerate}
-\item $6aa_6=0$
-\item $15a^2a_6+5aa_5 = 0$
-\item $20a^3a_6+10a^2a_5+4aa_4 = 0$
-\item $15a^4a_6 + 10a^3a_5 + 6a^2a_4+3aa_3= 0$
-\item $6a^5a_6 + 5a^4a_5+4a^3a_4+3a^2a_3+2aa_2= 0$
-\item $a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1 = 0$
+\item \label{1} $6aa_6=0$
+\item \label{2} $15a^2a_6+5aa_5 = 0$
+\item \label{3} $20a^3a_6+10a^2a_5+4aa_4 = 0$
+\item \label{4} $15a^4a_6 + 10a^3a_5 + 6a^2a_4+3aa_3= 0$
+\item \label{5} $6a^5a_6 + 5a^4a_5+4a^3a_4+3a^2a_3+2aa_2= 0$
+\item \label{6} $a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1 = 0$
 \end{enumerate}
+When $\cha (k) =3$ using the above we see that the coefficients of $\sigma(\aleph_1)$ simplify as follows
+\begin{equation*}
+ a(4a^6a_6+4a^5a_5+4a^4a_4+4a^3a_3+4a^2a_2+4aa_1+4a_0) =  4aa_0
+\end{equation*}
+by \ref{6};
+\[
+16a^6a_6+13a^5a_5+10a^4a_4+7a^3a_3+4a^2a_2+aa_1-2a_0 = 3aa_1 -2a_0
+\]
+by \ref{5} and \ref{6};
+\[
+24a^5a_6+15a^4a^5+8a^3a_4+3a^2a_3-a_1 = 2a_2a^2-a_1
+\]
+by \ref{4} and \ref{5};
+\[
+16a^4a_6+7a^3a_5+2a^2a_4+aa_3 = 2a^3a_5 +aa_3
+\]
+by \ref{1} and \ref{3}.
+
 
 
 We wish to write the above elements in terms of the $k$-vector space basis elements of $\cechderhamhone(\cU)$.
@@ -377,8 +395,8 @@ Recall from \cite{derhamactions} that this basis is formed by
 \begin{align*}
 \gamma_1  = & \left( \frac{1}{y}dx, \frac{1}{y}dx, 0\right) \\
 \gamma_2 = & \left(\frac{x}{y}dx, \frac{x}{y}dx, 0\right) \\
-\gamma_3 = & \left( \frac{1}{yx^2}dx, \frac{x^4 + 2x^2}{y}dx, \frac{y}{x} \right)\\
-\gamma_4 = & \left(\frac{x^2+1}{2yx^3}dx, \frac{2x^3}{y}dx, \frac{y}{x^2} \right).
+\gamma_3 = & \left( \frac{a_3x^3-a_1x-2a_0}{2yx^2}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx, \frac{y}{x} \right)\\
+\gamma_4 = & \left(\frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},\frac{-(2a_6x^3+a_5x^2)}{2y}dx , \frac{y}{x^2} \right).
 \end{align*}
 Hence
 \[
