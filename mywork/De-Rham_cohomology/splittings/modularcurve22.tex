@@ -338,19 +338,38 @@ On the other hand
 \end{equation*}
 and the bracketed expression here also expands to \eqref{i=2expansion}.
 \end{proof}
-We are now in a position to study the action of $\sigma$, which fixes $y$ and maps $x$ to $x+1$, on $\cechderhamhone(\cU)$.
-As we saw in the first section, this action is given by $\sigma\colon (\omega_{2i}, \omega_{3i}, f_{23i}) \mapsto (\sigma(\omega_{3i}), \sigma(\omega_{2i}), -\sigma(f_{23i}))$, where $(\omega_{2i}, \omega_{3i}, f_{23i}) = \rho'(\nu_i)$.
 
-In particular
-\begin{equation*}\label{sigmanu1}
-\sigma(\rho'(\nu_1)) = \left( \frac{x^4+2x^2+2x+2}{2yx^3}dx, \frac{x^4+x^3+2x^2+2x}{y}dx, \frac{y(x+2)}{x^2} \right)
+We now use this proposition to compute the action of $\sigma $ on $\derhamhone$.
+Recall that $\sigma$ fixes $y$ and maps $x$ to $x+a$. 
+Note that this means that $\sigma(dx) = d(\sigma(x)) = d(x+a) = dx$.
+The action of $\sigma$ on $\nu_i$ is given by
+\begin{equation*}
+\sigma(\nu_1) = \left( \sigma( \omega_{\sigma}), \sigma(\omega_{\infty}), \sigma( f_{\sigma \infty}\right).
 \end{equation*}
-and
-\begin{equation*}\label{sigmanu2}
-\sigma(\rho'(\nu_2)) = \left( \frac{x^3+x^2+1}{2yx^3}dx, \frac{x^3+1}{2y}dx, \frac{y}{x^2} \right).
-\end{equation*}
-Note that $dx$ is invariant under the action of $\sigma$, since $\sigma(dx) = d (\sigma (x)) = d(x+1) = dx$.
+We will consider this action entry by entry, due to the amount space the expressions will take.
 
+We consider $\sigma(\nu_1)$ first.
+\begin{align*}
+\sigma( \omega_{\sigma}) & = \sigma \left( \frac{\aleph_1}{2y(x-a)^3} dx \right) \\
+& = \frac{\sigma(\aleph_1)}{2yx^3}dx.
+\end{align*}
+Now we compute $\sigma(\aleph_1)$, which is
+\begin{align*}
+\sigma(\aleph_1) & = (4a^3+a^5+a_3)x^4 + (2a^a_4-16a^4a_4-a^3a_5-7a_3a)x^3 \\
+& + (24a^5a_4-3a^4a^5-4a^3a_4+21a^2a_3-a_1)x^2 \\
+& + (5a^5a_5-16a^a_4+6a^4a_4-12a^3a_3+4a^2a_2+3aa_1-2a_0)x \\
+& + (-2a^6a_5+4a^7a_4-2a^5a_4-2a^4a_3+4a^3a_2+2a^2a_2+2a^2a_1+4aa_0)
+\end{align*}
+We use the fact $f(x+a) = f(x)$, and equating the coefficients on both side, simplify the above expression.
+We list the identities we get from $f(x) = f(x+a)$ here:
+\begin{enumerate}
+\item $6aa_6=0$
+\item $15a^2a_6+5aa_5 = 0$
+\item $20a^3a_6+10a^2a_5+4aa_4 = 0$
+\item $15a^4a_6 + 10a^3a_5 + 6a^2a_4+3aa_3= 0$
+\item $6a^5a_6 + 5a^4a_5+4a^3a_4+3a^2a_3+2aa_2= 0$
+\item $a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1 = 0$
+\end{enumerate}
 
 
 We wish to write the above elements in terms of the $k$-vector space basis elements of $\cechderhamhone(\cU)$.
