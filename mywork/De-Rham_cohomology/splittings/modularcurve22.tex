@@ -214,11 +214,11 @@ The following proposition allows us to compute how $\sigma$ acts on $\cechderham
 \begin{prop}\label{basis22}
 The residue classes of
 \begin{multline*}
-\nu_1 = \left(\frac{a_3x^3-a_1x-2a_0}{yx^2}dx, \frac{\aleph_1}{2y(x-a)^3}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx,  \right. \\ \left. \frac{a^2y}{x(x-a)^2}, \frac{y}{x},  \frac{-y(x-2a)}{(x-a)^2} \right)
+\nu_1 = \left(\frac{a_3x^3-a_1x-2a_0}{2yx^2}dx, \frac{\aleph_1}{2y(x-a)^3}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx,  \right. \\ \left. \frac{a^2y}{x(x-a)^2}, \frac{y}{x},  \frac{y(x-2a)}{(x-a)^2} \right)
 \end{multline*}
 and
 \begin{multline*}
-\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},  \frac{\aleph_2}{2y(x-a)^3}dx, \frac{-(2a_6x^3+a_5x^2)}{2y}dx, \right. \\ \left.  \frac{y(a^2-2ax)}{x^2(x-a)^2},\frac{y}{x^2}, \frac{-y}{(x-a)^2} \right),
+\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},  \frac{\aleph_2}{2y(x-a)^3}dx, \frac{-(2a_6x^3+a_5x^2)}{2y}dx, \right. \\ \left.  \frac{y(a^2-2ax)}{x^2(x-a)^2},\frac{y}{x^2}, \frac{y}{(x-a)^2} \right),
 \end{multline*}
 where
 \begin{multline*}
@@ -386,13 +386,62 @@ by \ref{4} and \ref{5};
 \[
 16a^4a_6+7a^3a_5+2a^2a_4+aa_3 = 2a^3a_5 +aa_3
 \]
-by \ref{1} and \ref{3}.\todo{rest of i=1}
+by \ref{1} and \ref{3}.
+Hence
+\begin{multline*}
+\sigma(\aleph_1) = \\ \frac{(4a^3a_6+a^2a_5+a_3)x^4+(6a^4a_6+2a^3a_5+aa_3)x^3+(2a^2a_2-a_1)x^2+(3aa_1-2a_0)x+4aa_0}{2yx^3}dx.
+\end{multline*}
+We also have
+\begin{align*}
+\sigma(f_{\sigma \infty 1}) & = \sigma\left(\frac{y(x-2a)}{(x-a)^2} \right) \\
+& = \frac{y(x-a)}{x^2}  \\
+& = \frac{y}{x} - \frac{ay}{x^2}.
+\end{align*}
+From this we can see that
+\begin{equation}\label{firstidentity}
+\sigma(\gamma_3) = \gamma_3 - a\gamma_4 + c_1\gamma_1 + c_2 \gamma_2
+\end{equation}
+for some $c_1,c_2 \in k$.
+Finally we have
+\begin{align*}
+\sigma (\omega_{\infty 1}) & = \sigma\left( \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y} dx \right) \\
+& = \frac{-4a_6x^4-(16aa_6+3a_5)x^3-(24a^2a_6+9aa_5+2a_4)x^2-(16a^3a_6+9a^2a_5+4aa_4)x-4a^4a_6-3a^3a_5-2a^2a_4}{2y}dx.
+\end{align*}
+Using the above we can compute the $c_1$ and $c_2$ mentioned above.
+We start by noting that
+\begin{align*}
+\sigma(\omega_{\infty 1}) + a\omega_{\infty 2} - \omega_{\infty 1} & = \frac{-18aa_6x^3 -(24a^2a_6+10aa_5)x^2-(16a^3a_6+9a^2a_5+4aa_4)x-4a^4a_6-3a^3a_5-2a^2a_4}{2y}dx \\
+& = \frac{(4a^3a_6+a^2a_5)x +2a^3a_5}{2y}dx.
+\end{align*}
+From this we see that $c_1= 2a^3a_5$ and that $c_2 = 4a^3a_6+a^2a_5$.\todo{Comment that this has been checked with the the $\omega_{0 1}$ entry too?}
+
 
 
 Now when $i=2$ we have
 \begin{align*}
-\sigma(\aleph_2) & = 
+\sigma(\aleph_2) & = -(6a^2a_6+2aa_5)x^4 - (22a^3a_6+11a^2a_5+4aa_4+a_3)x^3 \\
+& - (30a^4a_6+20a^3a_5+12a^2a_4+6aa_3+2a_2)x^2 \\
+& - (18a^5a_6+15a^4a_5+12a^3a_4+9a^2a_3+6aa_2+3a_1)x \\
+& -4(a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1+a_0).
 \end{align*}
+Again, using the relations \ref{1} through \ref{6} we can simplify these coefficients:
+by \ref{6} 
+\[
+-4(a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1+a_0) = -4a_0;
+\]
+by \ref{5}
+\[
+- (18a^5a_6+15a^4a_5+12a^3a_4+9a^2a_3+6aa_2+3a_1) = -3a_1;
+\]
+by \ref{4}
+\[
+- (30a^4a_6+20a^3a_5+12a^2a_4+6aa_3+2a_2) = -2a_2;
+\]
+by \ref{5} 
+\[
+- (22a^3a_6+11a^2a_5+4aa_4+a_3) = -2a^3a_5-a^2a_5-a_3;
+\]
+and by \ref{6}
 
 
 We wish to write the above elements in terms of the $k$-vector space basis elements of $\cechderhamhone(\cU)$.
