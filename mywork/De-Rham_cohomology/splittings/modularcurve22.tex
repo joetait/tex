@@ -463,7 +463,7 @@ We now use this to compute the $d_1$ and $d_2$ above, as follows:
 \sigma( \omega_{\infty 1}) - \gamma_4  & = \frac{-2a_6x^3-a_5x^2 -2aa_5x -2a^3a_6 - a^2a_5 + 2a_6x^3+a_5x^2}{2y}dx \\
 & = \frac{-(2aa_5x +(2a^3a_6+a^2a_5))}{2y}dx.
 \end{align*}
-Hence $d_2 = -aa_5x$ and $d_1 = \frac{2a^3a_6+a^2a_5}{2}$.
+Hence $d_2 = -aa_5$ and $d_1 = -\frac{2a^3a_6+a^2a_5}{2}$.
 
 We wish to write the above elements in terms of the $k$-vector space basis elements of $\cechderhamhone(\cU)$.
 Recall from \cite{derhamactions} that this basis is formed by
@@ -473,18 +473,9 @@ Recall from \cite{derhamactions} that this basis is formed by
 \gamma_3 = & \left( \frac{a_3x^3-a_1x-2a_0}{2yx^2}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx, \frac{y}{x} \right)\\
 \gamma_4 = & \left(\frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},\frac{-(2a_6x^3+a_5x^2)}{2y}dx , \frac{y}{x^2} \right).
 \end{align*}
-Hence
-\[
-\sigma(\rho'(\nu_1)) = 2 \gamma_2 + 2\gamma_4 + \gamma_3
-\]
-and similarly
-\[
-\sigma(\rho'(\nu_2)) = \gamma_4 + 2 \gamma_1.
-\]
-It follows that $\sigma(\gamma_3) = \gamma_3 + 2\gamma_2 + 2 \gamma_4$ and $\sigma(\gamma_4) = \gamma_4 + 2\gamma_1$.
 It is also easy to see that
 \[
-\sigma(\gamma_1) = \gamma_1 \ {\rm and} \ \sigma(\gamma_2) = \gamma_1 + \gamma_2.
+\sigma(\gamma_1) = \gamma_1 \ {\rm and} \ \sigma(\gamma_2) = a\gamma_1 + \gamma_2.
 \]
 Using these facts we prove the following proposition.
 
@@ -493,11 +484,11 @@ The short exact sequence of $k[G]$-modules
 \begin{equation*}
 0 \ra \hzero \ra \derhamhone \xrightarrow{p} \hone \ra 0
 \end{equation*}
-where $X = X_0(22)$ and $G = \aut(X)$, does not split when $\cha(k) = 3$.
+splits if $\deg(f) = 5$.\todo{equivalently, if $\cha (k) = 5$, other equivalent conditions}.
 \end{prop}
 \begin{proof}
 Suppose there is a $k[G]$-module homomorphism $s\colon \hone \ra \derhamhone$ such that $p \circ s  = {\rm id} \colon \hone \ra \hone$.
-Hence $s(\bar \gamma_3) = \gamma_3 + a_1 \gamma_1 + a_2 \gamma_2$ and $s(\bar \gamma_4) = \gamma_4 + b_1 \gamma_1 + b_2 \gamma_2$, for some $a_i, b_i \in k$.
+Hence $s(\bar \gamma_3) = \gamma_3 + b_{31} \gamma_1 + a_{32} \gamma_2$ and $s(\bar \gamma_4) = \gamma_4 + b_{41} \gamma_1 + b_{42} \gamma_2$, for some $ b_{ij} \in k$.
 Since $s$ is a $k[G]$-module homomorphism it follows that
 \[
 \gamma_4 + b_1\gamma_1 + b_2(\gamma_1 + \gamma_2) = \sigma (s(\bar \gamma_4)) = s ( \sigma(\bar \gamma_4)) =  s(\bar \gamma_4) = \gamma_4 + b_1\gamma_1.
