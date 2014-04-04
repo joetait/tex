@@ -413,7 +413,7 @@ We start by noting that
 \sigma(\omega_{\infty 1}) + a\omega_{\infty 2} - \omega_{\infty 1} & = \frac{-18aa_6x^3 -(24a^2a_6+10aa_5)x^2-(16a^3a_6+9a^2a_5+4aa_4)x-4a^4a_6-3a^3a_5-2a^2a_4}{2y}dx \\
 & = \frac{(4a^3a_6+a^2a_5)x +2a^3a_5}{2y}dx.
 \end{align*}
-From this we see that $c_1= 2a^3a_5$ and that $c_2 = 4a^3a_6+a^2a_5$.\todo{Comment that this has been checked with the the $\omega_{0 1}$ entry too?}
+From this we see that $c_1= a^3a_5$ and that $c_2 = \frac{4a^3a_6+a^2a_5}{2}$.\todo{Comment that this has been checked with the the $\omega_{0 1}$ entry too?}
 
 
 
@@ -442,7 +442,28 @@ by \ref{5}
 - (22a^3a_6+11a^2a_5+4aa_4+a_3) = -2a^3a_5-a^2a_5-a_3;
 \]
 and by \ref{6}
-
+Next we compute the action of sigma on $f_{\sigma \infty 2}$, as follows:
+\begin{align*}
+\sigma( f_{\sigma \infty 2}) & = \sigma \left( \frac{y}{(x-a)^2} \right) \\
+& = \frac{y}{x^2}.
+\end{align*}
+Hence we see that
+\[
+\sigma( \gamma_4) = \gamma_4 + d_1\gamma_1 + d_2 \gamma_2
+\]
+for some $d_1, d_2 \in k$.
+Lastly, we compute the action on $\omega_{\infty 2}$, which is
+\begin{align*}
+\sigma ( \omega_{\infty 2}) & = \sigma \left( \frac{-(2a_6x^3+a_5x^2)}{2y}dx \right) \\
+& = \frac{-2a_6x^3-(6aa_6+a_5)x^2-(6a^2a_6+2aa_5)x-2a^3a_6-a^2a_5}{2y}dx \\
+& = \frac{-2a_6x^3-a_5x^2 -2aa_5x -2a^3a_6 - a^2a_5}{2y}dx.
+\end{align*}
+We now use this to compute the $d_1$ and $d_2$ above, as follows:
+\begin{align*}
+\sigma( \omega_{\infty 1}) - \gamma_4  & = \frac{-2a_6x^3-a_5x^2 -2aa_5x -2a^3a_6 - a^2a_5 + 2a_6x^3+a_5x^2}{2y}dx \\
+& = \frac{-(2aa_5x +(2a^3a_6+a^2a_5))}{2y}dx.
+\end{align*}
+Hence $d_2 = -aa_5x$ and $d_1 = \frac{2a^3a_6+a^2a_5}{2}$.
 
 We wish to write the above elements in terms of the $k$-vector space basis elements of $\cechderhamhone(\cU)$.
 Recall from \cite{derhamactions} that this basis is formed by
