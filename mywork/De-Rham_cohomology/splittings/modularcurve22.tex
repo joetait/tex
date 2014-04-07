@@ -484,30 +484,30 @@ The short exact sequence of $k[G]$-modules
 \begin{equation*}
 0 \ra \hzero \ra \derhamhone \xrightarrow{p} \hone \ra 0
 \end{equation*}
-splits if $\deg(f) = 5$.\todo{equivalently, if $\cha (k) = 5$, other equivalent conditions}.
+splits if $\deg(f) = 5$.\todo{equivalently, if $\cha (k) = 5$, other equivalent conditions.}
 \end{prop}
 \begin{proof}
 Suppose there is a $k[G]$-module homomorphism $s\colon \hone \ra \derhamhone$ such that $p \circ s  = {\rm id} \colon \hone \ra \hone$.
-Hence $s(\bar \gamma_3) = \gamma_3 + b_{31} \gamma_1 + a_{32} \gamma_2$ and $s(\bar \gamma_4) = \gamma_4 + b_{41} \gamma_1 + b_{42} \gamma_2$, for some $ b_{ij} \in k$.
+Hence $s(\bar \gamma_3) = \gamma_3 + b_{31} \gamma_1 + b_{32} \gamma_2$ and $s(\bar \gamma_4) = \gamma_4 + b_{41} \gamma_1 + b_{42} \gamma_2$, for some $ b_{ij} \in k$.
 Since $s$ is a $k[G]$-module homomorphism it follows that
 \[
-\gamma_4 + b_1\gamma_1 + b_2(\gamma_1 + \gamma_2) = \sigma (s(\bar \gamma_4)) = s ( \sigma(\bar \gamma_4)) =  s(\bar \gamma_4) = \gamma_4 + b_1\gamma_1.
+s(\sigma ( \bar \gamma_4)) = s ( \bar \gamma_4) = \gamma_4 + b_{41}\gamma_1 + b_{42} \gamma_2
 \]
-Clearly $b_2 = 0$ in this case, so $s(\gamma_4 ) = \gamma_4 + b_1 \gamma_1$.
-
-We also require that $\sigma(s(\bar \gamma_3) = s (\sigma(\bar \gamma_3))$.
-On the one hand we have
-\[
-\sigma(s(\bar \gamma_3)) = \gamma_3 + 2\gamma_4 + 2\gamma_2 + a_1\gamma_1 + a_2(\gamma_2 + \gamma_1) = (a_1 +a_2)\gamma_1 + (a_2 + 2)\gamma_2 + \gamma_3 + 2\gamma_4
-\]
-whilst on the other hand we have
-\[
-s(\sigma( \bar \gamma_3)) = s(\bar \gamma_3 + 2 \bar \gamma_4) = \gamma_3 + a_1 \gamma_1 + a_2 \gamma_2 + 2\gamma_4 + 2b_1\gamma_1 = (a_1 + 2b_1)\gamma_1 + a_2\gamma_2 + \gamma_3 + 2\gamma_4.
-\]
-So for $\sigma(s(\bar \gamma_3) = s (\sigma(\bar \gamma_3))$ to hold we would require $(a_2 + 2)\gamma_2 = a_2\gamma_2$.
-Since $\cha(k) \neq 2$ this is not possible, and we arrive at a contradiction.
-Hence $s$ cannot exist, and the short exact sequence in the proposition does not split.
+and also that
+\begin{align*}
+\sigma(s(\bar \gamma_4))  & = \sigma (\gamma_4 + b_{14}\gamma_1 b_{24}\gamma_2 ) \\
+& = \gamma_4 -aa_5\gamma_2 - \left( \frac{2a^3a_6+a^2a_5}{2} \right) \gamma_1 + b_{14}\gamma_1 + b_{24}\gamma_2 + ab_{24}\gamma_1 \\
+& = \gamma_4 + (b_{42}-aa_5)\gamma_2 + \left( \frac{2b_{14}+2ab_{24}-2a^3a_6-a^2a_5}{2} \right) \gamma_1
+\end{align*}
+are equal.
+In particular we must have $b_{24}-aa_5 = b_{24}$, which implies that $aa_5 =0$.
+This implies $a_5=0$, which only happens if $\deg(f) = 6$.
+Hence $s$ cannot exist if $\deg(f) =5$, and the short exact sequence in the proposition does not split.
 \end{proof}
+\begin{rem}
+Note that if $\deg(f) = 6$ then there is no contradiction with either term, and the short exact sequence can split. 
+However, because we are not considering the entire automorphism group we cannot say that it does split.
+\end{rem}
 
 
 
