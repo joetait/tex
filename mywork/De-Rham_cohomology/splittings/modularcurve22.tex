@@ -218,20 +218,20 @@ The following proposition allows us to compute how $\sigma$ acts on this basis, 
 \begin{prop}\label{basis22}
 The pre-image $\rho^{-1}(\gamma_3)$ is the residue classes of
 \begin{multline*}
-\nu_1 = \left(\frac{a_3x^3-a_1x-2a_0}{2yx^2}dx, \frac{\r_1}{2y(x-a)^3}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx,  \right. \\ \left. \frac{a^2y}{x(x-a)^2}, \frac{y}{x},  \frac{y(x-2a)}{(x-a)^2} \right)
+\nu_1 = \left(\frac{a_3x^3-a_1x-2a_0}{2yx^2}dx, \frac{r_1}{2y(x-a)^3}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx,  \right. \\ \left. \frac{a^2y}{x(x-a)^2}, \frac{y}{x},  \frac{y(x-2a)}{(x-a)^2} \right)
 \end{multline*}
 and $\rho^{-1}(\gamma_4)$ is the residue class of
 \begin{multline*}
-\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},  \frac{\r_2}{2y(x-a)^3}dx, \frac{-(2a_6x^3+a_5x^2)}{2y}dx, \right. \\ \left.  \frac{y(a^2-2ax)}{x^2(x-a)^2},\frac{y}{x^2}, \frac{y}{(x-a)^2} \right),
+\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},  \frac{r_2}{2y(x-a)^3}dx, \frac{-(2a_6x^3+a_5x^2)}{2y}dx, \right. \\ \left.  \frac{y(a^2-2ax)}{x^2(x-a)^2},\frac{y}{x^2}, \frac{y}{(x-a)^2} \right),
 \end{multline*}
 where
 \begin{multline*}
-\r_1  := (4a^3a_6+a^2a_5+a_3)x^4 + (3a^3a_5+2a^2a_4-3aa_3)x^3 \\
+r_1  := (4a^3a_6+a^2a_5+a_3)x^4 + (3a^3a_5+2a^2a_4-3aa_3)x^3 \\
  + (2a^3a_4 + 6a^2a_3 - a_1)x^2 + (4a^2a_2 +3aa_1-2a_0)x+(2a^2a_1+6aa_0)
 \end{multline*}
 and
 \begin{multline*}
-\r_2  := (-6a^2a_6-2aa_5)x^4 + (2a^3a_6-3a^2a_5-4aa_4-a_3)x^3 \\ + (a^3a_5-3aa_3-2a_2)x^2 + (-2a_2a-3a_1)x +(-aa_1-4a_0).
+r_2  := (-6a^2a_6-2aa_5)x^4 + (2a^3a_6-3a^2a_5-4aa_4-a_3)x^3 \\ + (a^3a_5-3aa_3-2a_2)x^2 + (-2a_2a-3a_1)x +(-aa_1-4a_0).
 \end{multline*}
 \end{prop}
 \begin{proof}
@@ -293,7 +293,7 @@ both of which are clearly positive on $U_\sigma \cap U_\infty$.
 Now we show that for $i = 1, 2$ the differential $\omega_{\sigma i}$ is regular on $U_\sigma$.
 In both cases it is clear that there can only be poles at $a$ and $\pi^{-1}(\infty)$.
 Since $a$ is not in $U_\sigma$, we need only check that there are no poles in $\pi^{-1}(\infty)$, or equivalently that the coefficient of $D_\infty$ in $\di( \omega_{\sigma i})$ is non-negative.
-Since $\deg(\r_i) = 4$ for both $i=1$ and $i=2$ it follows that when $i=1$ this coefficient is $-4 - 4 + 3 + 3 = 0$ and when $i=2$ the coefficient is $-4 -2 +3 + 3=0$.
+Since $\deg(r_i) = 4$ for both $i=1$ and $i=2$ it follows that when $i=1$ this coefficient is $-4 - 4 + 3 + 3 = 0$ and when $i=2$ the coefficient is $-4 -2 +3 + 3=0$.
 
 It only remains to show that $df_{0 \omega i} = \omega_{0 i} - \omega_{\sigma i}$ for $i \in \{ 1, 2\}$.
 When $i=1$ the left hand side is 
@@ -309,7 +309,7 @@ and the bracketed expression in the final line expands to
 \end{equation}
 On the other hand, the right hand side is
 \begin{equation*}
-\omega_{0 1} - \omega_{\sigma 1}  = \frac{1}{2yx^2(x-a)^3} \left( (a_3x^3 -a_1x-2a_0)(x-a)^3 - x^2\r_1\right )dx,
+\omega_{0 1} - \omega_{\sigma 1}  = \frac{1}{2yx^2(x-a)^3} \left( (a_3x^3 -a_1x-2a_0)(x-a)^3 - x^2r_1\right )dx,
 \end{equation*}
 and the bracketed expression here also expands to \eqref{i=1expansion}.
 Hence $df_{0 \sigma 1} = \omega_{0 1} - \omega_{\sigma 1}$.
@@ -328,7 +328,7 @@ and expanding the brackets gives
 \end{multline}
 On the other hand
 \begin{equation*}
-\omega_{0 2} - \omega_{\sigma 2} = \frac{1}{2yx^3(x-a)^3}\left( -(a_3x^3+2a_2x^2+3a_1x+4a_0)(x-a)^3 + x^3\r_2 \right) dx,
+\omega_{0 2} - \omega_{\sigma 2} = \frac{1}{2yx^3(x-a)^3}\left( -(a_3x^3+2a_2x^2+3a_1x+4a_0)(x-a)^3 + x^3r_2 \right) dx,
 \end{equation*}
 and the bracketed expression here also expands to \eqref{i=2expansion}.
 \end{proof}
@@ -351,20 +351,23 @@ We have the following actions of $\sigma$ on the basis elements of $\cechderhamh
 \sigma(\gamma_4) & =  \gamma_4 - \frac{2a^3a_6+a^2a_5}{2} \gamma_2 - aa_5\gamma_1.
 \end{align*}
 \end{prop}
-We will consider this action entry by entry, starting with $\sigma(\omega_{\sigma 1})$, as follows:
+\begin{proof}
+The action on $\gamma_1$ and $\gamma_2$ is clear.
+
+For $\gamma_3$ and $\gamma_4$ we will consider this action entry by entry, starting with $\sigma(\omega_{\sigma 1})$, which is
 \begin{align*}
-\sigma( \omega_{\sigma}) & = \sigma \left( \frac{\r_1}{2y(x-a)^3} dx \right) \\
-& = \frac{\sigma(\r_1)}{2yx^3}dx.
+\sigma( \omega_{\sigma}) & = \sigma \left( \frac{r_1}{2y(x-a)^3} dx \right) \\
+& = \frac{\sigma(r_1)}{2yx^3}dx.
 \end{align*}
-Now we compute $\sigma(\r_1)$, which is
+Now we compute $\sigma(r_1)$, which is
 \begin{align*}
-\sigma(\r_1) & = (4a^3a_6+a^2a_5+a_3)x^4 + (16a^4a_6+7a^3a_5+2a^2a_4+aa_3)x^3 \\
+\sigma(r_1) & = (4a^3a_6+a^2a_5+a_3)x^4 + (16a^4a_6+7a^3a_5+2a^2a_4+aa_3)x^3 \\
 & + (24a^5a_6+15a^4a^5+8a^3a_4+3a^2a_3-a_1)x^2 \\
 & + (16a^6a_6+13a^5a_5+10a^4a_4+7a^3a_3+4a^2a_2+aa_1-2a_0)x \\
 & + a(4a^6a_6+4a^5a_5+4a^4a_4+4a^3a_3+4a^2a_2+4aa_1+4a_0).
 \end{align*}
-We use the fact $f(x+a) = f(x)$, and equating the coefficients on both side, simplify the above expression.
-We list the identities we get from $f(x) = f(x+a)$ here:
+We use the fact $f(x+a) = f(x)$ to simplify the above expression, by equating the coefficients on both side.
+We list the identities we get from doing this here:
 \begin{enumerate}
 \item \label{1} $6aa_6=0$;
 \item \label{2} $15a^2a_6+5aa_5 = 0$;
@@ -373,7 +376,7 @@ We list the identities we get from $f(x) = f(x+a)$ here:
 \item \label{5} $6a^5a_6 + 5a^4a_5+4a^3a_4+3a^2a_3+2aa_2= 0$;
 \item \label{6} $a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1 = 0$.
 \end{enumerate}
-Hence the constant coefficient of $\sigma (\r_1)$ simplifies to
+Hence the constant coefficient of $\sigma (r_1)$ simplifies to
 \begin{equation*}
  a(4a^6a_6+4a^5a_5+4a^4a_4+4a^3a_3+4a^2a_2+4aa_1+4a_0) =  4aa_0
 \end{equation*}
@@ -393,7 +396,7 @@ by \ref{4} and \ref{5}; the coefficient of $x^3$ simplifies to
 by \ref{1} and \ref{3}.
 Hence
 \begin{multline*}
-\sigma(\r_1) = \\ \frac{(4a^3a_6+a^2a_5+a_3)x^4+(6a^4a_6+2a^3a_5+aa_3)x^3+(2a^2a_2-a_1)x^2+(3aa_1-2a_0)x+4aa_0}{2yx^3}dx.
+\sigma(r_1) = \\ \frac{(4a^3a_6+a^2a_5+a_3)x^4+(2a^3a_5+aa_3)x^3+(2a^2a_2-a_1)x^2+(3aa_1-2a_0)x+4aa_0}{2yx^3}dx.
 \end{multline*}
 We also have
 \begin{align}\label{i=1sigmaaction}
@@ -413,7 +416,7 @@ Finally we have
 & \left. +\frac{(16a^3a_6+9a^2a_5+4aa_4)x+4a^4a_6+3a^3a_5+2a^2a_4}{2y}\right) dx.
 \end{align*}
 Using the above we can compute the $c_1$ and $c_2$ mentioned above.
-We compute the coefficient of $\omega_{\infty}$\todo{check that this is defined} in $\sigma(\rho'(\nu_1)) - \gamma_3 + a\gamma_4$, which is
+We compute the coefficient of $\omega_{\infty}$ (using the notation of \eqref{sixtupleconditions}) in $\sigma(\rho'(\nu_1)) - \gamma_3 + a\gamma_4$, which is
 \begin{multline*}
  -\left( \frac{18aa_6x^3 +(24a^2a_6+10aa_5)x^2+(16a^3a_6+9a^2a_5+4aa_4)x}{2y} \right. \\
 + \left. \frac{4a^4a_6+3a^3a_5+2a^2a_4}{2y}\right) dx  = \frac{(4a^3a_6+a^2a_5)x +2a^3a_5}{2y}dx.
@@ -423,13 +426,13 @@ From this we see that $c_1= a^3a_5$ and that $c_2 = \frac{4a^3a_6+a^2a_5}{2}$.
 
 Now when $i=2$ we have
 \begin{align*}
-\sigma(\r_2) & = -(6a^2a_6+2aa_5)x^4 - (22a^3a_6+11a^2a_5+4aa_4+a_3)x^3 \\
+\sigma(r_2) & = -(6a^2a_6+2aa_5)x^4 - (22a^3a_6+11a^2a_5+4aa_4+a_3)x^3 \\
 & - (30a^4a_6+20a^3a_5+12a^2a_4+6aa_3+2a_2)x^2 \\
 & - (18a^5a_6+15a^4a_5+12a^3a_4+9a^2a_3+6aa_2+3a_1)x \\
 & -4(a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1+a_0).
 \end{align*}
 Again, using the relations \ref{1} through \ref{6} we can simplify these coefficients:
-by \ref{6} the constant coefficient of $\sigma(\r_2)$ is
+by \ref{6} the constant coefficient of $\sigma(r_2)$ is
 \[
 -4(a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1+a_0) = -4a_0;
 \]
@@ -441,11 +444,11 @@ by \ref{4} the coefficient of $x^2$ is
 \[
 - (30a^4a_6+20a^3a_5+12a^2a_4+6aa_3+2a_2) = -2a_2;
 \]
-by \ref{5} the coefficient of $x^3$ is
+by \ref{3} the coefficient of $x^3$ is
 \[
 - (22a^3a_6+11a^2a_5+4aa_4+a_3) = -2a^3a_5-a^2a_5-a_3;
 \]
-and by \ref{6} the coefficient of $x^4$ is
+and by \ref{1} the coefficient of $x^4$ is
 \[
 -(6a^2a_6+2aa_5) = -2aa_5.
 \]
@@ -467,28 +470,25 @@ Lastly, we compute the action on $\omega_{\infty 2}$, which is
 & = \frac{-2a_6x^3-a_5x^2 -2aa_5x -2a^3a_6 - a^2a_5}{2y}dx,
 \end{align*}
 using \ref{6} for the last equality.
-We now use this to compute the $d_1$ and $d_2$ above, by computing the coefficient of $\omega_\infty$\todo{As above, check this is defined} of $\sigma(\rho'(\nu_1)) - \gamma_4$, as follows
+We now use this to compute the $d_1$ and $d_2$ above, by computing the coefficient of $\omega_\infty$ of $\sigma(\rho'(\nu_1)) - \gamma_4$, as follows
 \begin{multline*}
  \frac{-2a_6x^3-a_5x^2 -2aa_5x -2a^3a_6 - a^2a_5 + 2a_6x^3+a_5x^2}{2y}dx \\
  = \frac{-(2aa_5x +(2a^3a_6+a^2a_5))}{2y}dx.
 \end{multline*}
 Hence $d_2 = -aa_5$ and $d_1 = -\frac{2a^3a_6+a^2a_5}{2}$.
+\end{proof}
 
-We also note that
-\[
-\sigma(\gamma_1) = \gamma_1 \ {\rm and} \ \sigma(\gamma_2) = a\gamma_1 + \gamma_2.
-\]
-Using these facts we prove the following proposition.
+Having computed the action we can now prove the following proposition regarding the splitting of the short exact sequence described in \cite{derhamactions}.
 
 \begin{prop}
 The short exact sequence of $k[G]$-modules
 \begin{equation*}
 0 \ra \hzero \ra \derhamhone \xrightarrow{p} \hone \ra 0
 \end{equation*}
-splits if $\deg(f) = 5$.\todo{equivalently, if $\cha (k) = 5$, other equivalent conditions.}
+splits if $\deg(f) = 5$.
 \end{prop}
 \begin{rem}
-Note that $\deg(f)=5$ is equivalent to saying that $\cha(k)=5$.
+Note that $\deg(f)=5$ is equivalent to $\cha(k)=5$.
 \end{rem}
 \begin{proof}
 Suppose there is a $k[G]$-module homomorphism $s\colon \hone \ra \derhamhone$ such that $p \circ s  = {\rm id} \colon \hone \ra \hone$.
