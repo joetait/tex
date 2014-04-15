@@ -133,13 +133,13 @@
 \todo[inline]{change references to preprint when in thesis}
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
 We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$.
-We let $G$ denote a finite group acting on $X$.
+We let $G$ denote a finite group acting faithfully on $X$.
 
 In a similar vein to \cite{canonicalrepresentation}, we will be using \cech cohomology to compute both $\hone$ and the de Rham hypercohomology, denoted $\derhamhone$.
 We therefore recall the \cech cohomology relevant to both of these, starting with $\hone$.
 
 By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
-We let $U_a = X \backslash \pi^{-1}(a)$ for any $a \in \mathbb P_k^1$ and we let ${\cal U}$ be the affine cover of $X$ formed by\todo{by or from} $U_0$ and $U_\infty$.
+We let $U_a = X \backslash \pi^{-1}(a)$ for any $a \in \mathbb P_k^1$ and we let ${\cal U}$ be the affine cover of $X$ formed by $U_0$ and $U_\infty$.
 Given any sheaf $\cal F$ on $X$ we have the \cech differential $\check{d}\colon {\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, defined by $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
 In general we will suppress the notation denoting the restriction map.
 Via this differential we have the following cochain complex
@@ -153,7 +153,7 @@ The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_0 \cap U_
 \end{equation}
 
 We now recall how to compute the algebraic de Rham cohomology of $X$ via \cech cohomology.
-Since $X$ is a curve it has no differentials of degree greater than one.
+Since $X$ is a curve any differentials of degree greater than one on $X$ are zero.
 Hence the de Rham complex $X$ is the hypercohomology of the complex
 \begin{equation}\label{res}
 0 \rightarrow \cO_X \xrightarrow{d} \Omega_X \rightarrow 0.
@@ -184,25 +184,31 @@ quotiented by the subspace
 
 We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$ and to study the $k[G]$-module structure.
 The following lemma shows that $\derhamhone$ fits in to a short exact sequence which we will use to compute the $k$-basis.
-\begin{lem}\label{ses}
+\begin{prop}\label{ses}
 The following is a short exact sequence
 \begin{equation}\label{equationses}
-0 \ra H^0(X,\Omega_X) \xrightarrow{i} \derhamhone \xrightarrow{p} H^1(X,\cO_X) \ra 0.
+0 \ra H^0(X,\Omega_X) \xrightarrow{i} \derhamhone \xrightarrow{p} H^1(X,\cO_X) \ra 0, 
 \end{equation}
-\end{lem}
+where $i \colon \omega \mapsto (\omega, \omega)$ and $p \colon (\omega_0, \omega_\infty, f_{0 \infty}) \to f_{0 \infty}$.
+\end{prop}
 \begin{proof}
 Let $T$ be the total complex of \eqref{bicomplex}.
 Moreover we let $\cO$ and $\Omega$ be the complexes formed from the first and second (non-trivial) columns of \eqref{bicomplex} respectively.
-Then let $\Omega[1]$ denote the complex obtained from shifting $\Omega$ by one, i.e. $\Omega[1]^{n+1} = \Omega^n$.\todo{define $\Omega^n$? Use different notation?}
+Then let $\Omega[1]$ denote the complex obtained from shifting $\Omega$ by one, i.e. $\Omega[1]^{n+1} = \Omega^n$.
 Then we obtain the following short exact sequence of complexes 
 \[
 \Omega[1] \hookrightarrow T \twoheadrightarrow \cO,
 \]
 which gives rise to the following long exact sequence\todo{check use of which}
-\begin{multline}\label{longexactsequence}
-0 \ra H^0_{\text {dR}}(X/k) \ra H^0(X,\cO_X) \ra H^0(X,\Omega_X) \ra \derhamhone \ra \hone \\
- \ra H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k) \ra 0.
-\end{multline}
+\begin{equation*}
+0 \ra H^0_{\text {dR}}(X/k) \ra H^0(X,\cO_X) \ra \\
+\end{equation*}
+\begin{equation}\label{longexactsequence}
+ H^0(X,\Omega_X) \ra \derhamhone \ra \hone \ra \\
+\end{equation}
+\begin{equation*}
+ H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k) \ra 0.
+\end{equation*}
 The map $H^0(X,\cO_X) \ra \hzero$ is the map $f \mapsto df$.
 Since the only globally holomorphic functions on $X$ are constant functions, it follows that this is the zero map, and hence $\hzero \ra \cechhone$ is injective.
 
@@ -363,7 +369,6 @@ R = \sum_{i=1}^d 2n_i[P_i] + (g+1-d)D_\infty.
 \]
 Details can be found in \cite[\S 6]{faithfulaction}.
 
-We now take a brief detour to recall some of the details of Serre duality.
 We start with the following lemma.
 \begin{lem}
 The following sequence
