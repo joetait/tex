@@ -119,21 +119,21 @@ y^2 = f(x) = a_6x^6 + a_5x^5 + a_4x^4 + a_3x^3 + a_2x^2 + a_1x + a_0 \in k[x]
 \end{equation}
 where $f(x)$ has no repeated roots.
 We fix a degree two map $\pi \colon X \ra \mathbb P^1_k$, which is unique up to automorphism of $\mathbb P_k^1$.
-Moreover, we suppose that $X$ has an automorphism $\sigma \colon X \ra X$, such that the action of $\sigma$ on $x$ in the function field $K(X) = k(x,y)$ is $\sigma \colon x \to x+a$ for some $a\in k$.
-We now show that this determines the action of $\sigma$ on $y$, up to sign.
+Moreover, we suppose that $X$ has an automorphism $\sigma \colon X \ra X$, such that the action of $\sigma^*$ on $x$ in the function field $K(X) = k(x,y)$ is $\sigma^* \colon x \to x+a$ for some $a\in k$.
+We now show that this determines the action of $\sigma^*$ on $y$, up to sign.
 
 
 \begin{lem}
-The action of $\sigma$ on $y$ is given by $\sigma(y) = y$ or $\sigma(y) = -y$.
+The action of $\sigma^*$ on $y$ is given by $\sigma^*(y) = y$ or $\sigma^*(y) = -y$.
 \end{lem}
 \begin{proof}
 Since $y^2 \in k(x)$ then there must exist $g_1(x), g_2(x) \in k(x)$ such that 
 \begin{equation*}
-\sigma(y) = g_1(x)y + g_2(x) \in k(x,y).
+\sigma^*(y) = g_1(x)y + g_2(x) \in k(x,y).
 \end{equation*}
 Hence
 \begin{equation}\label{easylemma}
-f(x+a) = \sigma(y^2) = (\sigma(y))^2 = g_1(x)^2f(x)+2g_1(x)g_2(x)y + g_2(x)^2.
+f(x+a) = \sigma^*(y^2) = (\sigma^*(y))^2 = g_1(x)^2f(x)+2g_1(x)g_2(x)y + g_2(x)^2.
 \end{equation}
 Firstly, note that if neither $g_1(x)$ nor $g_2(x)$ are zero then
 \[
@@ -142,14 +142,14 @@ y = \frac{f(x+a) - g_1(x)f(x) - g_2(x)^2}{2g_1(x)g_2(x)},
 which contradicts the fact $K(X)$ is a degree two extension of $k(x)$.
 Hence one of $g_1(x)$ or $g_2(x)$ must be zero.
 
-If $g_1(x) = 0$ then $\sigma$ would not be an automorphism, since $y$ would not be in the image.
-Hence $\sigma(y) = g_1(x)y$.
+If $g_1(x) = 0$ then $\sigma^*$ would not be an automorphism, since $y$ would not be in the image.
+Hence $\sigma^*(y) = g_1(x)y$.
 Also, by comparing the degrees in \eqref{easylemma} we see that $\deg(g_1(x)) = 0$, and then by comparing coefficients in the same equation we see that $g_1(x)^2 = 1$.
-Hence $\sigma(y) = \pm y$.
+Hence $\sigma^*(y) = \pm y$.
 \end{proof}
 \begin{rem}
-If $\sigma(y) = -y$ we can, without loss of generality, replace $\sigma$ by $\sigma \circ j$, where $j$ denotes the hyperelliptic involution.
-Hence we will assume throughout the rest of the paper that $\sigma(y) = y$.
+If $\sigma^*(y) = -y$ we can, without loss of generality, replace $\sigma^*$ by $\sigma^* \circ j$, where $j$ denotes the hyperelliptic involution.
+Hence we will assume throughout the rest of the paper that $\sigma^*(y) = y$.
 \end{rem}
 
 Given an automorphism $\sigma\colon (x,y) \mapsto (x+a,y)$ of $X$, we obtain some restrictions on the defining equation \eqref{definingequation}, which we list in the lemma below.
@@ -159,7 +159,7 @@ If $\sigma$ is an automorphism of $X$ then the characteristic of $k$ is 3 or 5.
 Moreover, if $\cha(k)=5$ then the coefficients $a_6, a_4, a_3$ and $a_2$ in \eqref{definingequation} are zero.
 \end{lem}
 \begin{proof}
-Since $\sigma(y) = y$, it follows that $f(x+a) = f(x)$.
+Since $\sigma^*(y) = y$, it follows that $f(x+a) = f(x)$.
 Expanding the left hand side we see that the coefficient of $x^5$ is $6aa_6 + a_5$.
 Since the coefficient of $x^5$ in $f(x)$ is $a_5$.
 We conclude that $6aa_6 = 0$, and hence either $6=0$ or $a_6=0$.
@@ -184,7 +184,7 @@ We then have the following commutative diagram
 \sigma^*\uparrow & ~ & \rho'\downarrow  \\
 \derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\sigma^*} & \cechderhamhone(\cU')
 \end{array}
-\]\todo{add stars to sigmas}
+\]
 where $\rho$ and $\rho'$ are the canonical projections.
 To define these explicitly we recall that $\cechderhamhone(\cU'')$ can be defined is the $k$-vector space 
 \begin{multline}\label{sixtupleconditions}
@@ -199,9 +199,9 @@ Then $\rho$ projects the first, third and fifth coordinates whilst $\rho'$ proje
 Suppose that $v = (\omega_\sigma , \omega_\infty, f_{\sigma \infty})$ is an element of $\cechderhamhone(\cU')$.
 Then
 \begin{equation*}
-\sigma(v) := (\sigma(\omega_\sigma), \sigma(\omega_\infty), \sigma(f_{\sigma \infty})) \in \Omega_X(U_0) \times \Omega_X(U_\infty) \times \cO_X(U_\infty \cap U_0).
+\sigma^*(v) := (\sigma^*(\omega_\sigma), \sigma^*(\omega_\infty), \sigma^*(f_{\sigma \infty})) \in \Omega_X(U_0) \times \Omega_X(U_\infty) \times \cO_X(U_\infty \cap U_0).
 \end{equation*}
-Since $\sigma(\omega_\sigma)-\sigma(\omega_\infty) = \sigma(\omega_\sigma - \omega_\infty) = \sigma(df_{\sigma \infty})$ we see that $\sigma(v)$ is an element of $\cechderhamhone(\cU)$.
+Since $\sigma^*(\omega_\sigma)-\sigma^*(\omega_\infty) = \sigma^*(\omega_\sigma - \omega_\infty) = \sigma^*(df_{\sigma \infty})$ we see that $\sigma^*(v)$ is an element of $\cechderhamhone(\cU)$.
 
 
 
@@ -333,35 +333,35 @@ On the other hand
 and the bracketed expression here also expands to \eqref{i=2expansion}.
 \end{proof}
 
-We now use this proposition to compute the action of $\sigma $ on $\derhamhone$.
-Recall that $\sigma$ fixes $y$ and maps $x$ to $x+a$. 
-Note that this means that $\sigma(dx) = d(\sigma(x)) = d(x+a) = dx$.
-The action of $\sigma$ on $\nu_i$ is given by
+We now use this proposition to compute the action of $\sigma^* $ on $\derhamhone$.
+Recall that $\sigma^*$ fixes $y$ and maps $x$ to $x+a$. 
+Note that this means that $\sigma^*(dx) = d(\sigma^*(x)) = d(x+a) = dx$.
+The action of $\sigma^*$ on $\nu_i$ is given by
 \begin{equation*}
-\sigma(\nu_i) = \left( \sigma( \omega_{\sigma i}), \sigma(\omega_{\infty i}), \sigma( f_{\sigma \infty i})\right).
+\sigma^*(\nu_i) = \left( \sigma^*( \omega_{\sigma i}), \sigma^*(\omega_{\infty i}), \sigma^*( f_{\sigma \infty i})\right).
 \end{equation*}
-We use this to prove the following proposition regarding the action of $\sigma$ on $\cechderhamhone(\cU)$.
+We use this to prove the following proposition regarding the action of $\sigma^*$ on $\cechderhamhone(\cU)$.
 
 \begin{prop}
-We have the following actions of $\sigma$ on the basis elements of $\cechderhamhone(\cU)$:
+We have the following actions of $\sigma^*$ on the basis elements of $\cechderhamhone(\cU)$:
 \begin{align*}
-\sigma(\gamma_1) & = \gamma_1 \\
-\sigma(\gamma_2) & = \gamma_2 + a\gamma_1 \\
-\sigma(\gamma_3) & = \gamma_3 - a\gamma_4 + \frac{4a^3a_6 + a^2a_5}{2}\gamma_2 + a^3a_5\gamma_1 \\
-\sigma(\gamma_4) & =  \gamma_4 - \frac{2a^3a_6+a^2a_5}{2} \gamma_2 - aa_5\gamma_1.
+\sigma^*(\gamma_1) & = \gamma_1 \\
+\sigma^*(\gamma_2) & = \gamma_2 + a\gamma_1 \\
+\sigma^*(\gamma_3) & = \gamma_3 - a\gamma_4 + \frac{4a^3a_6 + a^2a_5}{2}\gamma_2 + a^3a_5\gamma_1 \\
+\sigma^*(\gamma_4) & =  \gamma_4 - \frac{2a^3a_6+a^2a_5}{2} \gamma_2 - aa_5\gamma_1.
 \end{align*}
 \end{prop}
 \begin{proof}
 The action on $\gamma_1$ and $\gamma_2$ is clear.
 
-For $\gamma_3$ and $\gamma_4$ we will consider this action entry by entry, starting with $\sigma(\omega_{\sigma 1})$, which is
+For $\gamma_3$ and $\gamma_4$ we will consider this action entry by entry, starting with $\sigma^*(\omega_{\sigma 1})$, which is
 \begin{align*}
-\sigma( \omega_{\sigma}) & = \sigma \left( \frac{r_1}{2y(x-a)^3} dx \right) \\
-& = \frac{\sigma(r_1)}{2yx^3}dx.
+\sigma^*( \omega_{\sigma}) & = \sigma^* \left( \frac{r_1}{2y(x-a)^3} dx \right) \\
+& = \frac{\sigma^*(r_1)}{2yx^3}dx.
 \end{align*}
-Now we compute $\sigma(r_1)$, which is
+Now we compute $\sigma^*(r_1)$, which is
 \begin{align*}
-\sigma(r_1) & = (4a^3a_6+a^2a_5+a_3)x^4 + (16a^4a_6+7a^3a_5+2a^2a_4+aa_3)x^3 \\
+\sigma^*(r_1) & = (4a^3a_6+a^2a_5+a_3)x^4 + (16a^4a_6+7a^3a_5+2a^2a_4+aa_3)x^3 \\
 & + (24a^5a_6+15a^4a^5+8a^3a_4+3a^2a_3-a_1)x^2 \\
 & + (16a^6a_6+13a^5a_5+10a^4a_4+7a^3a_3+4a^2a_2+aa_1-2a_0)x \\
 & + a(4a^6a_6+4a^5a_5+4a^4a_4+4a^3a_3+4a^2a_2+4aa_1+4a_0).
@@ -376,7 +376,7 @@ We list the identities we get from doing this here:
 \item \label{5} $6a^5a_6 + 5a^4a_5+4a^3a_4+3a^2a_3+2aa_2= 0$;
 \item \label{6} $a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1 = 0$.
 \end{enumerate}
-Hence the constant coefficient of $\sigma (r_1)$ simplifies to
+Hence the constant coefficient of $\sigma^* (r_1)$ simplifies to
 \begin{equation*}
  a(4a^6a_6+4a^5a_5+4a^4a_4+4a^3a_3+4a^2a_2+4aa_1+4a_0) =  4aa_0
 \end{equation*}
@@ -396,27 +396,27 @@ by \ref{4} and \ref{5}; the coefficient of $x^3$ simplifies to
 by \ref{1} and \ref{3}.
 Hence
 \begin{multline*}
-\sigma(r_1) = \\ \frac{(4a^3a_6+a^2a_5+a_3)x^4+(2a^3a_5+aa_3)x^3+(2a^2a_2-a_1)x^2+(3aa_1-2a_0)x+4aa_0}{2yx^3}dx.
+\sigma^*(r_1) = \\ \frac{(4a^3a_6+a^2a_5+a_3)x^4+(2a^3a_5+aa_3)x^3+(2a^2a_2-a_1)x^2+(3aa_1-2a_0)x+4aa_0}{2yx^3}dx.
 \end{multline*}
 We also have
 \begin{align}\label{i=1sigmaaction}
-\sigma(f_{\sigma \infty 1}) & = \sigma\left(\frac{y(x-2a)}{(x-a)^2} \right) \nonumber\\
+\sigma^*(f_{\sigma \infty 1}) & = \sigma^*\left(\frac{y(x-2a)}{(x-a)^2} \right) \nonumber\\
 & = \frac{y(x-a)}{x^2}  \
  = \frac{y}{x} - \frac{ay}{x^2}.
 \end{align}
 From \eqref{i=1sigmaaction} we see that
 \begin{equation}\label{firstidentity}
-\sigma(\gamma_3) = \gamma_3 - a\gamma_4 + c_1\gamma_1 + c_2 \gamma_2
+\sigma^*(\gamma_3) = \gamma_3 - a\gamma_4 + c_1\gamma_1 + c_2 \gamma_2
 \end{equation}
 for some $c_1,c_2 \in k$.
 Finally we have
 \begin{align*}
-\sigma (\omega_{\infty 1}) & = \sigma\left( \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y} dx \right) \\
+\sigma^* (\omega_{\infty 1}) & = \sigma^*\left( \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y} dx \right) \\
 & = - \left( \frac{4a_6x^4+(16aa_6+3a_5)x^3+(24a^2a_6+9aa_5+2a_4)x^2}{2y}\right. \\ 
 & \left. +\frac{(16a^3a_6+9a^2a_5+4aa_4)x+4a^4a_6+3a^3a_5+2a^2a_4}{2y}\right) dx.
 \end{align*}
 Using the above we can compute the $c_1$ and $c_2$ mentioned above.
-We compute the coefficient of $\omega_{\infty}$ (using the notation of \eqref{sixtupleconditions}) in $\sigma(\rho'(\nu_1)) - \gamma_3 + a\gamma_4$, which is
+We compute the coefficient of $\omega_{\infty}$ (using the notation of \eqref{sixtupleconditions}) in $\sigma^*(\rho'(\nu_1)) - \gamma_3 + a\gamma_4$, which is
 \begin{multline*}
  -\left( \frac{18aa_6x^3 +(24a^2a_6+10aa_5)x^2+(16a^3a_6+9a^2a_5+4aa_4)x}{2y} \right. \\
 + \left. \frac{4a^4a_6+3a^3a_5+2a^2a_4}{2y}\right) dx  = \frac{(4a^3a_6+a^2a_5)x +2a^3a_5}{2y}dx.
@@ -426,13 +426,13 @@ From this we see that $c_1= a^3a_5$ and that $c_2 = \frac{4a^3a_6+a^2a_5}{2}$.
 
 Now when $i=2$ we have
 \begin{align*}
-\sigma(r_2) & = -(6a^2a_6+2aa_5)x^4 - (22a^3a_6+11a^2a_5+4aa_4+a_3)x^3 \\
+\sigma^*(r_2) & = -(6a^2a_6+2aa_5)x^4 - (22a^3a_6+11a^2a_5+4aa_4+a_3)x^3 \\
 & - (30a^4a_6+20a^3a_5+12a^2a_4+6aa_3+2a_2)x^2 \\
 & - (18a^5a_6+15a^4a_5+12a^3a_4+9a^2a_3+6aa_2+3a_1)x \\
 & -4(a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1+a_0).
 \end{align*}
 Again, using the relations \ref{1} through \ref{6} we can simplify these coefficients:
-by \ref{6} the constant coefficient of $\sigma(r_2)$ is
+by \ref{6} the constant coefficient of $\sigma^*(r_2)$ is
 \[
 -4(a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1+a_0) = -4a_0;
 \]
@@ -453,24 +453,24 @@ and by \ref{1} the coefficient of $x^4$ is
 -(6a^2a_6+2aa_5) = -2aa_5.
 \]
 
-Next we compute the action of sigma on $f_{\sigma \infty 2}$, as follows:
+Next we compute the action of $\sigma^*$ on $f_{\sigma \infty 2}$, as follows:
 \begin{align*}
-\sigma( f_{\sigma \infty 2}) & = \sigma \left( \frac{y}{(x-a)^2} \right) \\
+\sigma^*( f_{\sigma \infty 2}) & = \sigma^* \left( \frac{y}{(x-a)^2} \right) \\
 & = \frac{y}{x^2}.
 \end{align*}
 Hence we see that
 \[
-\sigma( \gamma_4) = \gamma_4 + d_1\gamma_1 + d_2 \gamma_2
+\sigma^*( \gamma_4) = \gamma_4 + d_1\gamma_1 + d_2 \gamma_2
 \]
 for some $d_1, d_2 \in k$.
 Lastly, we compute the action on $\omega_{\infty 2}$, which is
 \begin{align*}
-\sigma ( \omega_{\infty 2}) & = \sigma \left( \frac{-(2a_6x^3+a_5x^2)}{2y}dx \right) \\
+\sigma^* ( \omega_{\infty 2}) & = \sigma^* \left( \frac{-(2a_6x^3+a_5x^2)}{2y}dx \right) \\
 & = \frac{-2a_6x^3-(6aa_6+a_5)x^2-(6a^2a_6+2aa_5)x-2a^3a_6-a^2a_5}{2y}dx \\
 & = \frac{-2a_6x^3-a_5x^2 -2aa_5x -2a^3a_6 - a^2a_5}{2y}dx,
 \end{align*}
 using \ref{6} for the last equality.
-We now use this to compute the $d_1$ and $d_2$ above, by computing the coefficient of $\omega_\infty$ of $\sigma(\rho'(\nu_1)) - \gamma_4$, as follows
+We now use this to compute the $d_1$ and $d_2$ above, by computing the coefficient of $\omega_\infty$ of $\sigma^*(\rho'(\nu_1)) - \gamma_4$, as follows
 \begin{multline*}
  \frac{-2a_6x^3-a_5x^2 -2aa_5x -2a^3a_6 - a^2a_5 + 2a_6x^3+a_5x^2}{2y}dx \\
  = \frac{-(2aa_5x +(2a^3a_6+a^2a_5))}{2y}dx.
@@ -495,17 +495,17 @@ Suppose there is a $k[G]$-module homomorphism $s\colon \hone \ra \derhamhone$ su
 Hence $s(\bar \gamma_3) = \gamma_3 + b_{31} \gamma_1 + b_{32} \gamma_2$ and $s(\bar \gamma_4) = \gamma_4 + b_{41} \gamma_1 + b_{42} \gamma_2$, for some $ b_{ij} \in k$.
 Since $s$ is a $k[G]$-module homomorphism it follows that
 \[
-s(\sigma ( \bar \gamma_4)) = s ( \bar \gamma_4) = \gamma_4 + b_{41}\gamma_1 + b_{42} \gamma_2
+s(\sigma^* ( \bar \gamma_4)) = s ( \bar \gamma_4) = \gamma_4 + b_{41}\gamma_1 + b_{42} \gamma_2
 \]
 and also that
 \begin{align*}
-\sigma(s(\bar \gamma_4))  & = \sigma (\gamma_4 + b_{14}\gamma_1 b_{24}\gamma_2 ) \\
+\sigma^*(s(\bar \gamma_4))  & = \sigma^* (\gamma_4 + b_{14}\gamma_1 b_{24}\gamma_2 ) \\
 & = \gamma_4 -aa_5\gamma_2 - \left( \frac{2a^3a_6+a^2a_5}{2} \right) \gamma_1 + b_{14}\gamma_1 + b_{24}\gamma_2 + ab_{24}\gamma_1 \\
 & = \gamma_4 + (b_{42}-aa_5)\gamma_2 + \left( \frac{2b_{14}+2ab_{24}-2a^3a_6-a^2a_5}{2} \right) \gamma_1
 \end{align*}
 are equal.
 In particular we must have $b_{24}-aa_5 = b_{24}$, which implies that $aa_5 =0$.
-If $a=0$ then $\sigma$ acts trivially. 
+If $a=0$ then $\sigma^*$ acts trivially. 
 Hence $a \neq 0$ and it follows that $a_5=0$.
 But if $\deg(f) = 5$ this is a contraction.
 \end{proof}
