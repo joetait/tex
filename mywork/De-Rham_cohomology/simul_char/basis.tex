@@ -212,10 +212,10 @@ which gives rise to the following long exact sequence\todo{check use of which}
 The map $H^0(X,\cO_X) \ra \hzero$ is the map $f \mapsto df$.
 Since the only globally holomorphic functions on $X$ are constant functions, it follows that this is the zero map, and hence $\hzero \ra \derhamhone$ is injective.
 
-We can show surjectivity directly from\todo{extra sheet? Or maybe email}
-
-
-\todo[inline]{finish this proof}
+Since \eqref{longexactsequence} is exact, $p$ is surjective if and only if $\alpha \colon H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k)$ is injective.
+Now $H^1(X,\Omega_X)$ is isomorphic to $k$ via the residue map \cite[Chap. III, Thm. 7.14.1]{hart}, and if we can show that this isomorphism factors through $\alpha$ it will follow that $\alpha$ is injective.
+But it follows from \cite[Chap. III, Thm. 7.14.1 (b)]{hart} that $\res_P(df)=0$ for any $f \in \cO_X(U_0 \cap U_\infty)$, and hence $\res_P$ is zero on the image of the map $\cO_X(U_0 \cap U_\infty) \ra \Omega_X(U_0 \cap U_\infty)$.
+From this it follows that the residue isomorphism factors through $\alpha$, and hence $p$ is surjective.\todo{repetition (last and 2nd line of para).}\todo{could give more detail. May need more notation though?}
 \end{proof}
 
 
