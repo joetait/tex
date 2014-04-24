@@ -214,8 +214,9 @@ Since the only globally holomorphic functions on $X$ are constant functions, it 
 
 Since \eqref{longexactsequence} is exact, $p$ is surjective if and only if $\alpha \colon H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k)$ is injective.
 Now $H^1(X,\Omega_X)$ is isomorphic to $k$ via the residue map \cite[Chap. III, Thm. 7.14.1]{hart}, and if we can show that this isomorphism factors through $\alpha$ it will follow that $\alpha$ is injective.
-But it follows from \cite[Chap. III, Thm. 7.14.1 (b)]{hart} that $\res_P(df)=0$ for any $f \in \cO_X(U_0 \cap U_\infty)$, and hence $\res_P$ is zero on the image of the map $\cO_X(U_0 \cap U_\infty) \ra \Omega_X(U_0 \cap U_\infty)$.
-From this it follows that the residue isomorphism factors through $\alpha$, and hence $p$ is surjective.\todo{repetition (last and 2nd line of para).}\todo{could give more detail. May need more notation though?}
+Considering the \cech cohomology constructions of $H^1(X,\Omega_X)$ and $H^2_{\text {dR}}(X/k)$, it suffices to show that the residue map is zero on $\Ima \left( d \colon \cO_X(U_0 \cap U_\infty) \ra \Omega_X(U_0 \cap U_\infty) \right)$.
+This follows from \cite[Chap. III, Thm. 7.14.1 (b)]{hart}, which says that $\res_P(df)=0$ for any $f \in \cO_X(U_0 \cap U_\infty)$.
+Hence the residue isomorphism factors through $\alpha$, and hence $p$ is surjective.
 \end{proof}
 
 
@@ -403,16 +404,15 @@ It follows that for each $P\in X$ we can map $f \in \underline{\Omega}_{K(X)}/\O
 We recall that for any $f \in \Omega_{K(X)}$ we have $f \in \Omega_{X,P}$  for all but a finite number of points $P \in X$, and hence the image of any such $f$ in $\prod_{P\in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors.
 In particular, the image lies in $\bigoplus_{P \in X} i_*(\Omega_{K(X)}/\Omega_{X,P} ) \subset \prod_{P\in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$.
 Since the map $\underline{\Omega}_{K(X)}/\Omega_X \cong \bigoplus_{P \in X}i_*(\Omega_{K(X)}/\Omega_{X,P}$ given by $f \mapsto (i_*i^*(f))_{P \in X}$ is an isomorphism of stalks it follows that it is also an isomorphism at the level of sheaves, as claimed in \eqref{sheafisomorphism}.
-\end{proof}
 
 
 Now we can take the \cech complex of \eqref{serredualityses} over the cover $\cU$, yielding
 \begin{equation}\label{dualitydiagram2}
-\xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \Omega_{K(X)} \times \Omega_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
-\Omega_X(U_0 \cap U_\infty)\ar@{^{(}->}[r]  & \Omega_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
+\xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
+\Omega_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{\Omega}_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
 \end{equation}
 We can now apply the snake lemma to this commutative diagram.
-In the next paragraph we conclude the proof by showing that the exact sequence that arises from the applying snake lemma is precisely the sequence \eqref{dualityses} in the statement of the lemma.
+In the next paragraph we conclude the proof by showing that the exact sequence that arises from the applying snake lemma is precisely the sequence \eqref{dualityses} in the statement of the lemma.\todo{check underlining}
 
 The fact that $H^0(X,\Omega_X) \cong \ker(d_1)$ and $H^1(X,\Omega_X) \cong {\rm coker}(d_1)$ follows from the above discussion of \cech cohomology.
 The map $d_2\colon \Omega_{K(X)} \times \Omega_{K(X)} \ra \Omega_{K(X)}$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$.
@@ -423,22 +423,24 @@ It follows that the map $\bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}\ra\ker(d
 \begin{equation*}
 (\omega_P)_{P \in X} \to \left( (\omega_P)_{ P \in U_0}, (\omega_P)_{P \in U_\infty}) \right)
 \end{equation*}
-is an isomorphism.\todo{move to proof of next lemma}
+is an isomorphism.\todo{This is needed for the proof - it shows it is a short exact sequence}
+\end{proof}
+
 
 We now recall the definition of the trace map $t\colon H^1(X,\Omega_X) \ra k$.
 Given a point $P\in X$ we have the residue map $\res_P \colon \Omega_{K(X)} \ra k$, defined by 
-\begin{itemize}
+\begin{enumerate}
 \item $\res_P(\omega) = 0$ for all $\omega \in \Omega_P$;
-\item $\res_P(f^ndf)=0$ for all $f \in K(X)*$, all $n \neq 1$;
+\item $\res_P(f^ndf)=0$ for all $f \in K(X)^*$, all $n \neq 1$;
 \item $\res_P(f^{-1}df) = \ord_P(f)$, where $\ord_P(f)$ is the order of $f$ at $P$;
-\end{itemize}
+\end{enumerate}
 as in \cite[Chap III, Thm. 7.14.1]{hart}.
 This also gives a well defined map on the quotient $\Omega_{K(X)}/\Omega_P$, since elements of $\Omega_P$ have zero residue at $P$, and so $\Omega_P \subseteq \ker \left(\res_P\right)$.
 Since we know that $\sum_{P\in X}\res_P(\omega) = 0$ for any $\omega \in \Omega_K(X)$ by the residue theorem \cite[Chap. III, Thm. 7.14.2]{hart},  it follows that the map $t \colon \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_P \ra k$ given by $(\omega_P)_{P \in X} \mapsto \sum_{P\in X} \res_P(\omega_P)$ vanishes on the image of $\Omega_{K(X)}$.
 Hence this map is well defined on the quotient, which is $H^1(X,\Omega_X)$, by Lemma \ref{dualityses}.
-Given some $\bar \omega$ in the quotient $H^1(X,\Omega_X)$, which is mapped to by some $\omega \in \bigoplus_{P \in X} \Omega_K(X)/\Omega_P$, we can define the trace map $t$ by
+Given some $\bar \omega$ in the quotient $H^1(X,\Omega_X)$, which can be lifted to $\omega \in \bigoplus_{P \in X} \Omega_K(X)/\Omega_P$, we can define the trace map $t$ by
 \[
-t \colon H^1\left(X, \Omega_X\right) \ra k,\ \bar \omega \mapsto \sum_{P \in X} \res_P(\bar \omega).
+t \colon H^1\left(X, \Omega_X\right) \ra k,\ \bar \omega \mapsto \sum_{P \in X} \res_P(\omega).
 \]\todo{check this}
 
 The following lemma will make it easier to compute $t(\bar \omega)$ for some $\bar \omega \in H^1(X,\Omega_X)$.
@@ -451,7 +453,7 @@ t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
 \begin{proof}
 The proof follows from a diagram chase on \eqref{dualitydiagram2}.
 Given a cocycle in $\bar \omega \in \hone$ we take a representative $\omega \in \Omega_X(U_0 \cap U_\infty)$.
-This then injects in to $\Omega_{K(X)}$, and since $d_2$ is surjective we can choose an element of $\Omega_{K(X)} \times \Omega_{K(X)}$ mapping to $\omega$.
+This then injects in to $\underline{\Omega}_{K(X)}$, and since $d_2$ is surjective we can choose an element of $\underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)}$ mapping to $\omega$.
 In particular, we could choose $(\omega,0)$.
 This then maps to 
 \[
@@ -508,41 +510,10 @@ Since $R$ is a positive divisor this is non-negative on $U_0 \cap U_\infty$ if $
 
 
 Recall that the differentials $\omega_0 = y^{-1}dx, \ldots, \omega_{g-1} = x^{g-1}y^{-1}dx$ form a basis of $\hzero$ (see, for example, \cite[Chap 7, Prop. 4.26]{liu}).
-We will show that the $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx)$ (the equality following from Lemma \ref{tracemaplemma} is non-zero if and only if $j = i+1$.
-It will then follow from Theorem \ref{serredualitytheorem} that the collection of elements $\{ yx^{-j}|_{U_0\cap U_\infty}\}_{ 1 \leq j \leq g}$ form a basis of $\hone$.
+By Lemma \ref{tracelemma} we know that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx)$.
+It follows immediately from \cite[Chap. III, Thm. 7.14.1(b)]{hart} that $\sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx) = -2$ if and is zero otherwise.
+It then follows from Theorem \ref{serredualitytheorem} that the collection of elements $\{ yx^{-j}|_{U_0\cap U_\infty}\}_{ 1 \leq j \leq g}$ form a basis of $\hone$.
 
-
-We see from \eqref{divxp=2} and \eqref{differentialdivisor} that the divisor of $x^{i-j}dx$ is
-\begin{equation}\label{residuedivisor}
-\begin{split}
-\di(x^{i-j}dx) & = R - 2D_\infty +(i-j)D_0 - (i-j)D_\infty \\
-& = R + (i-j)D_0 - (i-j+2)D_\infty.
-\end{split}
-\end{equation}
-If $\infty$ is a branch point we see that $x^{i-j}dx$ has a pole of order one at $P_\infty$ if and only if $i-j = -1$ (recall that in this case the ramification divisor $R$ has a $[P_\infty]$ term with coefficient one).
-Hence $\res_{P_\infty}\left(x^{i-j}dx\right)  \neq 0$ if and only $i-j=-1$, so $\langle x^iy^{-1}dx, yx^{-(i+1)} \rangle \neq 0$ for $0 \leq i \leq g-1$.
-
-We now also check that if $i \neq j-1$ then $\langle x^iy^{-1}dx, yx^{-j} \rangle = 0$.
-We see from the divisor above that if $i-j \leq -2$ then $x^{i-j}dx$ is regular at $P_\infty$, and hence the residue at $P_\infty$ is zero.
-On the other hand, if $i-j \geq 0$ then there is still a pole at $P_\infty$, though the order is less than $-1$.
-But since $i-j$ is non-negative there are no poles on $U_\infty$, and hence $\sum_{P \in U_\infty} \res_P(x^{i-j}dx) = 0$.
-By the residue theorem \cite[Chap. III, Thm. 7.14.2]{hart} $\res_{P_\infty} (x^{i-j}dx) = -\sum_{P \in U_\infty}\res_P(x^{i-j}dx)$, so $\res_{P_\infty}(x^{i-j}dx) = 0$.
-
-
-If $\infty$ is not a branch point then we see from \eqref{residuedivisor} that $x^{i-j}dx$ has order one poles at both $P_\infty$ and $P_\infty'$ if and only if $i-j=-1$.
-Hence 
-\[
-\langle x^iy^{-1}dx, yx^{-(i+1)} \rangle = \res_{P_\infty}(x^{-1}dx) + \res_{P_\infty'}(x^{-1}dx).
-\]
-As we assumed $p\neq 2$ it is sufficient to show that $\res_{P_\infty}(x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$ in order to prove that $\langle x^iy^{-1}dx, yx^{-(i+1)}\rangle \neq 0$.
-
-We can show this using the hyperelliptic involution $\sigma$.
-Given any $P \in X$ and any differential $\omega$ we have
-\[
-\res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega).
-\]
-In particular, if we let $\omega = x^{-1}dx$ and $P = P_\infty$, then we see that $\res_{P_\infty} (x^{-1}dx) = \res_{P_\infty'}(x^{-1}dx)$, since $\sigma^* (x^{-1}dx) = x^{-1}dx$.
-Hence $\langle x^iy^{-1}dx, yx^{-(i+1)}\rangle \neq 0$ and so the residue classes of the elements $yx^{-1}|_{U_0\cap U_\infty}, \ldots, yx^{-g}|_{U_0 \cap U_\infty}$ form a basis of $\hone$.
 
 
 We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldots , g\}$ the function $yx^{-i}$ is regular on $U_0 \cap U_\infty$.
@@ -560,50 +531,37 @@ otherwise.
 These equalities follow from Proposition \ref{divyp=2} and \eqref{divxp=2}.
 The divisors are clearly positive on $U_0 \cap U_\infty$.
 
-
 Next we recall from \cite[Chap 7, Prop. 4.26]{liu} that if $p=2$ a basis of $\hzero$ is given by $\frac{1}{H(x)}dx, \ldots, \frac{x^{g-1}}{H(x)}dx$.
-We then compute the divisor of $ \frac{y}{x^j} \cdot \frac{x^i}{H(x)}dx$ using \eqref{divxp=2}, \eqref{differentialdivisor}, \eqref{divisorofH} and Proposition \ref{divyp=2}, which is
+We then deduce from Lemma \ref{tracemaplemma} that
+\[
+\left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = \res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P_\infty'}\left( \frac{yx^{i-j}}{H(x)} dx \right).
+\]
+Then recall that in characteristic two we have an involution $\sigma \colon X \ra X$ given by $(x,y) \mapsto (x, y + H(x))$, and that $\res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega)$ for any $P \in X$ and $\omega\in \hzero$.
+Then it follows that
+\begin{align*}
+\sum_{P \in \pi^{-1}(\infty)} \res_P \left( \frac{yx^{i-j}}{H(x)}dx \right) & = \res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)} dx \right) + \res_{P_\infty'}\left( \frac{yx^{i-j}}{H(x)} dx\right) \\
+& = \res_{P_ \infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P_ \infty} \left( \frac{(y+H(x))x^{i-j}}{H(x)}dx \right) \\
+& = \res_{P_\infty}(x^{i-j}dx),
+\end{align*}
+since we are assuming that $\cha(k) = 2$.
+As in the previous case, it then follows from the definition of $\res_P$ that $\res_{P_infty}(x^{i-j}dx) = -1$ if $i-j = -1$ and is zero otherwise.
+
+
+
+If $P_\infty$ is a branch point then we start by computing the divisor of $ \frac{y}{x^j} \cdot \frac{x^i}{H(x)}dx$, using \eqref{divxp=2}, \eqref{differentialdivisor}, \eqref{divisorofH} and Proposition \ref{divyp=2}:
 \begin{align*}
 \di\left( \frac{yx^{i-j}}{H(x)}dx \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
 & = \sum_{i=1}^l m_i[Q_i] - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty \\
 & \qquad - R + (g+1)D_\infty\\
 & = \sum_{i=1}^l m_i[Q_i] + (2j-3-2i)[P_\infty] + (i-j)D_0
 \end{align*}
-when $P_\infty$ is a ramification point.
 We see that there is a pole of order one at $P_\infty$ if $2j - 3 - 2i = -1$, or equivalently if $j = i+1$.
-Hence $\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \rangle \neq 0$.\todo{what is the residue?}
+Hence $\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \rangle \neq 0$ in this case.\todo{what is the residue?}
 
 We also need to check that if $j \neq i+1$ then $\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \rangle = 0$.
 Indeed, if $j-i \geq 2$ then clearly $\frac{yx^{i-j}}{H(x)}dx$ does not have a pole at $P_\infty$.
-On the other hand, if $j-i \leq 0$ then the differential $\frac{yx^{i-j}}{H(x)}dx$ is regular on $U_\infty$.
-It then follows from the residue theorem that its residue at $P_\infty$ is also zero.
-
-If $\infty \in \mathbb P_k^1$ is not a branch point then using \eqref{divxp=2}, \eqref{differentialdivisor}, \eqref{divisorofH} and Proposition \ref{divyp=2}, the divisor of $\frac{y}{x^j} \cdot \frac{x^i }{H(x)}dx$ is
-\begin{align*}
-\di\left( \frac{yx^{i-j}}{H(x)}dx \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
-& = \sum_{i=1}^l m_i[Q_i] + (g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] + (i-j)D_0 \\
-& \qquad - (i-j)D_\infty + R - 2D_\infty - R + (g+1)D_\infty \\
-& = \sum_{i=1}^l m_i[Q_i] + (2g+j-i-\deg(F(x)))[P_\infty] + (j - i -2)[P_\infty'] \\
-&  \qquad + (i-j)D_0.
-\end{align*}
-Clearly if $j=i+1$ then $\frac{yx^{i-j}}{H(x)}dx$ has a pole of order one at $P_\infty'$.
-Moreover, if this is the case and $2g+(j-i) = 2g+1 \geq \deg(F(x))$ then this is the only pole in $U_0$\todo{adapt reasoning?}, and hence the residue of $\frac{yx^{i-j}}{H(x)}dx$ is non-zero.
-This leaves the case $2g+2 =  \deg(F(x))$, where we have poles of order one at both $P_\infty$ and $P_\infty'$.
-To show that the sum of the residues of $\frac{yx^i}{H(x)}dx$ is non-zero for every $i \in \{ 1, \ldots, g\}$ (i.e. that the image of each element under the trace map is non-zero) it suffices to show that the sum of the residues at $P_\infty$ and $P_\infty'$ are non-zero.
-
-First recall that in characteristic two we have an involution $\sigma \colon X \ra X$ given by $(x,y) \mapsto (x, y + H(x))$.
-As noted earlier, we then know that $\res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega)$ for any $P \in X$ and $\omega\in \hzero$.
-Since 
-\[
-\sigma^* \left( \frac{yx^{i-j}}{H(x)}dx \right) = \frac{(y+H(x))x^{i-j}}{H(x)}dx = \frac{yx^{i-j}}{H(x)}dx + x^{i-j}dx,
-\]
-it follows that $\res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) = \res_{P_\infty '} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only if $\res_{P_\infty}(x^{i-j}dx) = 0$.
-Note that $x^{i-j}dx = x^{i-j+2}d\frac{1}{x}$, and since $\frac{1}{x}$ is a uniformising parameter at $P_\infty$, it follows that $\res_{P_\infty}\left(x^{i-j+2}d\frac{1}{x}\right) \neq 0$ if and only if $\ord_{P_\infty}(x^{i-j+2}) = -1$ which is the case if and only if $i-j+2 = 1$.
-Hence $\res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq \res_{P_\infty '} \left( \frac{yx^{i-j}}{H(x)}dx \right)$ if and only if $i-j=-1$.
-In particular 
-\[
-\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = \res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) +\res_{P_\infty'} \left( \frac{yx^{i-j}}{H(x)}dx \right) \neq 0
-\] if and only if $j = i+1$.
+On the other hand, if $j-i \leq 0$ then the differential $\frac{yx^{i-j}}{H(x)}dx$ is regular on $U_\infty$, and hence the residue on this set is zero.
+Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem the residue of $\frac{yx^{i-j}}{H(x)}dx$ at $P_\infty$ is also zero.
 \end{proof}
 \todo[inline]{add mittag-leffler corollary}
 
