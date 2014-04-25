@@ -544,7 +544,7 @@ Then it follows that
 & = \res_{P_\infty}(x^{i-j}dx),
 \end{align*}
 since we are assuming that $\cha(k) = 2$.
-As in the previous case, it then follows from the definition of $\res_P$ that $\res_{P_infty}(x^{i-j}dx) = -1$ if $i-j = -1$ and is zero otherwise.
+As in the previous case, it then follows from the definition of $\res_P$ that $\res_{P_\infty}(x^{i-j}dx) = -1$ if $i-j = -1$ and is zero otherwise.
 
 
 
@@ -558,7 +558,7 @@ If $P_\infty$ is a branch point then we start by computing the divisor of $ \fra
 We see that there is a pole of order one at $P_\infty$ if $2j - 3 - 2i = -1$, or equivalently if $j = i+1$.
 Hence $\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \rangle \neq 0$ in this case.\todo{what is the residue?}
 
-We also need to check that if $j \neq i+1$ then $\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \rangle = 0$.
+We also need to check that if $j \neq i+1$ then $\left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = 0$.
 Indeed, if $j-i \geq 2$ then clearly $\frac{yx^{i-j}}{H(x)}dx$ does not have a pole at $P_\infty$.
 On the other hand, if $j-i \leq 0$ then the differential $\frac{yx^{i-j}}{H(x)}dx$ is regular on $U_\infty$, and hence the residue on this set is zero.
 Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem the residue of $\frac{yx^{i-j}}{H(x)}dx$ at $P_\infty$ is also zero.
@@ -567,9 +567,9 @@ Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem
 
 \begin{cor}
 For each $P \in X$ fix some $f_P \in K(X) / \cO_{X,P}$.
-Then there are unique $\alpha_1, \ldots , \alpha_g \in k$ such that, after $f_P$ is replaced by $f_P - \left( \alpha_1 \frac{y}{x} + \ldots + \alpha_n \frac{y}{x^n} \right)$ for all $P \in \pi^{-1}(\infty)$, there exists an $f \in K(X)$ such the laurent tail of $f$ at each $P$ in $X$ will be $f_P$.
+Then there are unique $\alpha_1, \ldots , \alpha_g \in k$ such that, after $f_P$ is replaced by $f_P - \left( \alpha_1 \frac{y}{x} + \ldots + \alpha_g \frac{y}{x^g} \right)$ for all $P \in \pi^{-1}(\infty)$, there exists an $f \in K(X)$ such the laurent tail of $f$ at each $P$ in $X$ will be $f_P$.
 \end{cor}
-\todo[inline]{add mittag-leffler corollary}
+\todo[inline]{Check statement. Can't be all $P \in X$; maybe discrete subset? But then this is finite and the statement is trivial...}
 
 
 
