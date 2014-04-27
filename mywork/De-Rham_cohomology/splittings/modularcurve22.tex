@@ -516,6 +516,25 @@ However, because we are not considering the entire automorphism group we cannot 
 \todo[inline]{say what restrictions on $s$ we get from the above?}
 \todo[inline]{state which exact sequences split from kontogeorgis paper}
 
+We define the following polynomials for $j \geq i$
+\[
+r_{i,j} : = \sum_{k=0}^{i-1} (-1)^{j-k}\binom{j}{k} a^{j-k} x^k
+\]
+and
+\[
+t_{i,j} := \sum_{k=i}^{j} (-1)^{j-k}\binom{j}{k} a^{j-k} x^k.
+\]
+We will mostly consider these polynomials when $j=g$, when they will split the polynomial $(x-a)^g$ in to two parts.
+We now present a basis of $\cechderhamhone (\cU'')$.
+
+\begin{prop}\label{basis22}
+The pre-image $\rho^{-1}(\gamma_3)$ is the residue classes of
+\begin{equation*}
+\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, ---, \frac{-\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_{i,g}y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_{i,g}y}{x^i(x-a)^g} \right)
+\end{equation*}
+\end{prop}
+
+
 
 
 \begin{comment}
