@@ -516,7 +516,13 @@ However, because we are not considering the entire automorphism group we cannot 
 \todo[inline]{say what restrictions on $s$ we get from the above?}
 \todo[inline]{state which exact sequences split from kontogeorgis paper}
 
-We define the following polynomials for $j \geq i$
+From \cite{derhamactions} a basis of $\cechderhamhone(\cU)$ is formed by
+\begin{align*}
+\gamma_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) , i=1, \ldots, g \\
+\intertext{and}
+\tau_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{-\phi_i(x)}{2yx^{i+1}}, x^{-i}y \right), i=1,\ldots ,g.
+\end{align*}
+We also define the following polynomials for $j \geq i$
 \[
 r_{i,j} : = \sum_{k=0}^{i-1} (-1)^{j-k}\binom{j}{k} a^{j-k} x^k
 \]
@@ -528,11 +534,84 @@ We will mostly consider these polynomials when $j=g$, when they will split the p
 We now present a basis of $\cechderhamhone (\cU'')$.
 
 \begin{prop}\label{basis22}
-The pre-image $\rho^{-1}(\gamma_3)$ is the residue classes of
+The pre-image $\rho^{-1}(\tau_i)$ is the residue classes of
 \begin{equation*}
-\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, ---, \frac{-\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_{i,g}y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_{i,g}y}{x^i(x-a)^g} \right)
+\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, ---, \frac{-\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_{i,g}y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_{i,g}y}{x^i(x-a)^g} \right).
 \end{equation*}
 \end{prop}
+\begin{proof}
+In order to refer to the entries in $\nu_i$ we let $f_{ijk}$ and $\omega_{ij}$ be the appropriate functions and differentials such that
+\[
+\nu_i = \left( \omega_{0 i}, \omega_{\sigma i}, \omega_{\infty i}, f_{0 \sigma i}, f_{0 \infty i}, f_{\sigma \infty i} \right).
+\]
+First, note that it follows from \cite{derhamactions} that $d(f_{0 \infty i}) = \omega_{0 i} - \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
+
+We observe that since $r_{i,g}+t_{i,g}$ is just the binary expansion of $(x-a)^g$ then
+\begin{align*}
+f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{r_{i,g}y}{x^i(x-a)^g} - \frac{y}{x^i} + \frac{t_{i,g}y}{x^i(x-a)^g} \\
+& = \frac{y(r_{i,g} + t_{i,g} - (x-a)^g)}{x^i(x-a)^g} \\
+& = 0.
+\end{align*}
+
+
+We now check that differentials and functions are regular on the appropriate open sets by computing the relevant divisors.
+Firstly
+\begin{align*}
+\frac{r_{i,g}y}{x^i(x-a)^g} & = \di(r_{i,g}) + \di(y) - i\di(x) - g\di(x-a) \\
+& = \di_0(r_{i,g}) - (i-1)D_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
+& = \di_0(f_{i,g}) +R -iD_0 - gD_a,
+\end{align*}
+which is regular on $U_0 \cap U_\sigma$.
+On the other hand
+\begin{align*}
+\frac{t_{i,g}y}{x^i(x-a)^g} & = \di\left(\frac{t_{i,g}}{x^i}\right) + \di(y) - g\di(x-a) \\
+& = \di_0 \left( \frac{t_{i,g}}{x^i} \right) - (g-i)D_\infty +R - (g+1)D_\infty - gD_a + gD_\infty\\
+\di_0 \left( \frac{t_{i,g}}{x^i} \right) +R - gD_a -(g+1-i)D_\infty.
+\end{align*}
+Since $\frac{t_{i,g}}{x^i}$ is regular on $U_\infty$ we conclude that $\di_0\left( \frac{t_{i,g}}{x^i} \right)$ is non-negative, and hence $\frac{t_{i,g}y}{x^i(x-a)^g}$ is regular on $U_a \cap U_\infty$.
+
+Now we show that for $i = 1, 2$ the differential $\omega_{\sigma i}$ is regular on $U_\sigma$.
+In both cases it is clear that there can only be poles at $a$ and $\pi^{-1}(\infty)$.
+Since $a$ is not in $U_\sigma$, we need only check that there are no poles in $\pi^{-1}(\infty)$, or equivalently that the coefficient of $D_\infty$ in $\di( \omega_{\sigma i})$ is non-negative.
+Since $\deg(r_i) = 4$ for both $i=1$ and $i=2$ it follows that when $i=1$ this coefficient is $-4 - 4 + 3 + 3 = 0$ and when $i=2$ the coefficient is $-4 -2 +3 + 3=0$.
+
+It only remains to show that $df_{0 \omega i} = \omega_{0 i} - \omega_{\sigma i}$ for $i \in \{ 1, 2\}$.
+When $i=1$ the left hand side is 
+\begin{align*}
+df_{0 \omega 1} & = d \left( \frac{a^2y}{x(x-a)^2} \right)  \\
+& = a^2\left( \frac{1}{x(x-a)^2}dy + y d \frac{1}{x(x-a)^2} \right) \\
+ & = a^2 \left( \frac{f'}{2yx(x-a)^2} + \frac{y(a-3x)}{x^2(x-a)^3} \right) dx \\
+& = \frac{a^2}{2yx^2(x-a)^3} \left( xf'(x-a) + 2f(a-3x) \right) dx,
+\end{align*}
+and the bracketed expression in the final line expands to 
+\begin{equation}\label{i=1expansion}
+-(4aa_6+a_5)x^6-(3aa_5+2a_4)x^5-(2aa_4+3a_3)x^4-(aa_3+4a_2)x^3-5a_1x^2+(aa_1-6a_0)x+2a_0a
+\end{equation}
+On the other hand, the right hand side is
+\begin{equation*}
+\omega_{0 1} - \omega_{\sigma 1}  = \frac{1}{2yx^2(x-a)^3} \left( (a_3x^3 -a_1x-2a_0)(x-a)^3 - x^2r_1\right )dx,
+\end{equation*}
+and the bracketed expression here also expands to \eqref{i=1expansion}.
+Hence $df_{0 \sigma 1} = \omega_{0 1} - \omega_{\sigma 1}$.
+
+When $i=2$ then 
+\begin{align*}
+df_{0 \sigma 2} & = d \left( \frac{y(a^2 -2ax)}{x^2(x-a)^2} \right) \\
+& = \frac{a^2-2ax}{x^2(x-a)^2} dy + y d \frac{a^2-2ax}{x^2(x-a)^2} \\
+& = \left( \frac{f'(a^2-2ax)}{2yx^2(x-a)^2} + \frac{2af(a^2-3ax+3x^2}{x^3(x-a)^3} \right) dx \\
+& = \frac{a}{2yx^3(x-a)^3} \left( f'(a-2x)x(x-a) + 4f(a^2-3ax+3x^2 \right) dx,
+\end{align*}
+and expanding the brackets gives
+\begin{multline}\label{i=2expansion}
+(6aa_6+2a_5)x^7+(4a_4+3a_5a-2a_6a)x^6+(6a_3-aa_5)x^5+(8a_2-3a_3a)x^4 \\ + (10a_1 -6a_2a+a_3a^2)x^3 
+(12a_0-9a_1a+2a_2a^2)x^2 + (3a_1a^2-12aa_0)x + 4a_0a^2.
+\end{multline}
+On the other hand
+\begin{equation*}
+\omega_{0 2} - \omega_{\sigma 2} = \frac{1}{2yx^3(x-a)^3}\left( -(a_3x^3+2a_2x^2+3a_1x+4a_0)(x-a)^3 + x^3r_2 \right) dx,
+\end{equation*}
+and the bracketed expression here also expands to \eqref{i=2expansion}.
+\end{proof}
 
 
 
