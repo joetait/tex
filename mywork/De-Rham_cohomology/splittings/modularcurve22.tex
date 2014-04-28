@@ -572,14 +572,33 @@ Since $\frac{t_{i,g}}{x^i}$ is regular on $U_\infty$ we conclude that $\di_0\lef
 
 
 We now show that $\omega_{0 i} - df_{0 \sigma i}$ is regular on $U_\sigma$.\todo{check whether I should be using $U_\sigma$ or $U_a$}
-We begin by computing $df_{0 \sigma i}$, as follows:\tod{add ``$(x)$'' to $r_{ij,}$ and $t_{i,j}$ terms}
+We begin by computing $df_{0 \sigma i}$, as follows:\todo{add ``$(x)$'' to $r_{ij,}$ and $t_{i,j}$ terms}
 \begin{align*}
 df_{0 \sigma i} & = d \left( \frac{y r_{i,g}}{x^i(x-a)^g} \right) \\
 & = \frac{r_{i,g}}{x^i(x-a)^g}dy + y d\left( \frac{r_{i,g}}{x^i(x-a)^g} \right) \\
 & = \frac{f'r_{i,g}}{2yx^i(x-a)^g}dx + \left( \frac{yr_{i,g}'}{x^i(x-a)^g} -\frac{iy r_{i,g}}{x^{i+1}(x-a)^g} - \frac{gyr_{i,g}}{x^i(x-a)^{g+1}}\right) dx \\
-& = \frac{f'r_{i,g} + 2if(xr_{i,g}'(x-a) - i(x-a)r_{i,g} - gxr_{i,g})}{2yx^i(x-a)^g}.
+& = \frac{xf'r_{i,g}(x-a) + 2f(xr_{i,g}'(x-a) - i(x-a)r_{i,g} - gxr_{i,g})}{2yx^{i+1}(x-a)^{g+1}} dx \\
+& = \frac{(xf'r_{i,g}(x-a) - 2if(x-a)r_{i,g}) + 2ixf(r_{i,g}'(x-a)-gr_{i,g})}{2yx^{i+1}(x-a)^{g+1}}dx.
 \end{align*}
-Now we note that $r_{i,g}' = gr_{i-1, g}$
+We first show that $r_{i,g}'-gr_{i,g}$ is a monomial of degree $i-1$. 
+It will then follow that $\frac{2ixf(r_{i,g}' - gr_{i,g}}{2yx^{i+1}(x-a)^{g+1}}dx$ can only have poles at $\pi^{-1}{a}$ and $\pi^{-1}(\infty)$.
+Since 
+\begin{align*}
+r_{i,g}' & = \sum_{k=0}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
+& = \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k
+\end{align*}
+it follows that
+\begin{align*}
+r_{i,g}'(x-a) & = x \sum_{k=0}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} - a \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k \\
+& = \sum_{k=0}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^k  + \sum_{k=0}^{i-2} (k+1) (-1)^{g-k} \binom{g}{k+1}a^{g-k} x^k,
+\end{align*}
+and so the coefficient of $x^k$ is $(-1)^{g-k}\left(k\binom{g}{k} + (k+1)\binom{g}{k+1}\right) a^{g-k}$ for $0 \leq k \leq i-2$.
+On the other hand, the coefficient of $x^k$ in $gr_{i,g}$ is $(-1)^{g-k}g\binom{g}{k}a^{g-k}$.
+Since 
+\begin{align*}
+k\binom{g}{k}
+
+
 \end{proof}
 
 
