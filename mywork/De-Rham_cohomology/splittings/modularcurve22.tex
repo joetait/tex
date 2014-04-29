@@ -597,8 +597,7 @@ So
 \]
 
 
-We now show that $r_{i,g}'-gr_{i,g}$ is a monomial of degree $i$. 
-It will then follow that $\frac{2ixf(r_{i,g}'(x-a) - gr_{i,g}}{2yx^{i+1}(x-a)^{g+1}}dx$ is regular on $U_\sigma cap U_\infty$.
+We now compute $r_{i,g}'-gr_{i,g}$.
 Since 
 \begin{align*}
 r_{i,g}' & = \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
@@ -618,13 +617,26 @@ k\binom{g}{k} + (k+1)\binom{g}{k+1} & = k \left( \frac{g!}{k!(g-k)!} \right) + (
 & = \frac{g\cdot g!}{k!(g-k)!} \\
 & = g \binom{g}{k}
 \end{align*}
-it follows that $r_{i,g}' (x-a) - gr_{i,g}$ is divisible by $x^i$, and since $\deg(r_{i,g}'(x-a) - gr_{i,g}) \leq i$ we know that $r_{i,g}'(x-a) - gr_{i,g}$ we know it is in fact a monomial of order $i$.
-In particular, $ r_{i,g}'(x-a) - gr_{i,g} = (g+i-1)(-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i$, and hence
+has only one term of order $i$.
+This term is
 \begin{align*}
-\frac{2ixf(r_{i,g}'(x-a)-gr_{i,g})}{2yx^{i+1}(x-a)^{g+1}}dx & = \frac{2if(g+i-1)(-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^{i+1}}{2yx^{i+1}(x-a)^{g+1}} dx \\
-& = \frac{2if(g+i-1)(-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}}{2y(x-a)^{g+1}} dx,
+(i-1)(-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i - g(-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i & = (-1)^{g-i+1}\left( (i-1-g)\frac{g!}{(i-1)!(g-i+1)!} \right) a^{g-i+1}x^i \\
+& = (-1)^{g-i+2} \frac{g!}{(i-1)!(g-i)!} a^{g-i+1}x^i \\
+& = (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i.
 \end{align*}
-which is clearly regular on $U_\sigma \cap U_\infty$.
+
+So up to this point we have
+\[
+\omega_{0 i } - df_{0\sigma i} =  \frac{(\psi_i(x)t_{i,g} - \phi_i(x)r_{i,g})(x-a) - 2f(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}.
+\]
+The last observation we make is that there are only two terms that have degree less $i+1$, namely the smallest terms in $\psi_i(x)t_{i,g})(x-a)$, which is 
+\[
+-2ia_0\cdot (-1)^{g+i}\binom{g}{i}a^{g-i}x^i\cdot (-a) = 2ia_0(-1)^{g+i+2}\binom{g}{i}a^{g-i+1}x^i,
+\]
+ and the smallest term in $- 2f(-1)^{g-i+2}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}$, which is $-2a_0\cdot (-1)^{g-i+1}i \binom{g}{i}a^{g-i+1}x^i$.
+These terms clearly cancel, and we see that the whole numerator is divisible by $x^{i+1}$.
+
+It only remains to show that there is no pole at infinity.
 
 \end{proof}
 
