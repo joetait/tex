@@ -554,25 +554,71 @@ f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{r_{i,g}y}{x^i(x-a
 \end{align*}
 
 
+
 We now check that differentials and functions are regular on the appropriate open sets by computing the relevant divisors.
 Firstly
 \begin{align*}
 \frac{r_{i,g}y}{x^i(x-a)^g} & = \di(r_{i,g}) + \di(y) - i\di(x) - g\di(x-a) \\
-& = \di_0(r_{i,g}) - iD_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
-& = \di_0(f_{i,g}) +R -iD_0 - gD_a,
+& = \di_0(r_{i,g}) - (i-1)D_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
+& = \di_0(f_{i,g}) +R -iD_0 - gD_a + D_\infty,
 \end{align*}
 which is regular on $U_0 \cap U_\sigma$.
 On the other hand
 \begin{align*}
 \frac{t_{i,g}y}{x^i(x-a)^g} & = \di\left(\frac{t_{i,g}}{x^i}\right) + \di(y) - g\di(x-a) \\
-& = \di_0 \left( \frac{t_{i,g}}{x^{i+1}} \right) - (g-i-1)D_\infty +R - (g+1)D_\infty - gD_a + gD_\infty\\
-\di_0 \left( \frac{t_{i,g}}{x^i} \right) +R - gD_a -(g-i)D_\infty.
+& = \di_0 \left( \frac{t_{i,g}}{x^i} \right) - (g-i)D_\infty +R - (g+1)D_\infty - gD_a + gD_\infty\\
+& = \di_0 \left( \frac{t_{i,g}}{x^i} \right) +R - gD_a -(g-i+1)D_\infty.
 \end{align*}
-Since $\frac{t_{i,g}}{x^i}$ is regular on $U_\infty$ we conclude that $\di_0\left( \frac{t_{i,g}}{x^i} \right)$ is non-negative, and hence $\frac{t_{i,g}y}{x^i(x-a)^g}$ is regular on $U_a \cap U_\infty$.
+Since $t_{i,g}/x^i$ is regular on $U_\infty$ we conclude that $\di_0\left( \frac{t_{i,g}}{x^i} \right)$ is non-negative, and hence $({t_{i,g}y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
+
+To show that
+\begin{equation}\label{longequation}
+\omega_{\sigma i} =  \frac{(\psi_i(x)t_{i,g} - \phi_i(x)r_{i,g})(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx
+\end{equation}
+is regular on $U_\sigma$ we first compute the divisor
+\begin{align*}
+\di\left( \frac{dx}{2yx^{i+1}(x-a)^{g+1}}\right) & = \di(dx) - \di(y) - (i+1)\di(x) - (g+1)\di(x-a) \\
+& = R - 2D_\infty - R + (g+1)D_\infty - (i+1)D_0 + (i+1)D_\infty \\
+& \quad - (g+1)D_a + (g+1)D_\infty \\
+& = (2g+i+1)D_\infty -(i+1)D_0 - (g+1)D_a.
+\end{align*}
+
+We next show that the numerator of \eqref{longequation},
+\begin{equation}\label{numerator}
+{(\psi_i(x)t_{i,g} - \phi_i(x)r_{i,g})(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}
+\end{equation}
+has order less then $2g+i+2$, from which it will follow that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
+The order of $\psi_i(x)t_{i,g}(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
+If $\deg(f) = 2g+1$, then the degree of both $\phi_i(x)r_{i,g}(x-a)$ and $2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i$ is clearly at most $2g+1+i$.
+Lastly, if $\deg(f) = 2g+2$ then the leading term of $-\phi_i(x)r_{i,g}(x-a)$ is
+\begin{align*}
+-((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
+&  = 2(-1)^{g-i+2}\left( (g-i+1)\binom{g}{i-1} \right) a_{2g+2}x^{2g+i+2} \\
+& = 2(-1)^{g-i+2} \left( \frac{g!}{(i-1)!(g-i)!} \right) a_{2g+2}x^{2g+i+2} \\
+& = 2i(-1)^{g-i+2}\binom{g}{i}a_{2g+2}x^{2g+i+2},
+\end{align*}
+which clearly cancels with the leading term of $2if(-1)^{g-i+1}\binom{g}{i}a^{g+i-1}x^i$.
+Since these terms cancel, we again have the that the degree of the numerator of \eqref{longequation} is at most $2g+i+1$, and \eqref{longequation} has no pole at the point(s) in $\pi^{-1}(\infty)$.
+
+Finally, we show that the numerator of \eqref{longequation} is divisible by $x^{i+1}$.
+Note that
+\[
+2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i - 2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i 
+\]
+and
+\[
+\psi_i(x)t_{i,g}(x-a) - a\cdot(-2ia_0)\cdot \left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)
+\]
+are both divisible by $x^{i+1}$.
+Moreover, 
+\[
+a\cdot(-2ia_0)\cdot \left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right) = 2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i,
+\]
+so the terms cancel and we see that the numerator is divisible by $x^{i+1}$.
 
 
-We now show that $\omega_{0 i} - df_{0 \sigma i}$ is regular on $U_\sigma$.\todo{check whether I should be using $U_\sigma$ or $U_a$}
-We begin by computing $df_{0 \sigma i}$, as follows:\todo{add ``$(x)$'' to $r_{ij,}$ and $t_{i,j}$ terms}
+Finally, we show that $\omega_{\sigma i} = \omega_{0 i} -df_{0 \sigma i}$.
+We begin this by computing $df_{0 \sigma i}$, which is
 \begin{align*}
 df_{0 \sigma i} & = d \left( \frac{y r_{i,g}}{x^i(x-a)^g} \right) \\
 & = \frac{r_{i,g}}{x^i(x-a)^g}dy + y d\left( \frac{r_{i,g}}{x^i(x-a)^g} \right) \\
@@ -581,7 +627,7 @@ df_{0 \sigma i} & = d \left( \frac{y r_{i,g}}{x^i(x-a)^g} \right) \\
 \end{align*}
 Hence $\omega_{0 i} - df_{o \sigma i}$ expands to
 \[
-\frac{\psi_i(x)(x-a)^{g+1} - xf'r_{i,g}(x-a) - 2f(xr_{i,g}'(x-a)-i(x-a)r_{i,g}-gxr_{i,g})}{2yx^{i+1}(x-a)^{g+1}}.
+\frac{\psi_i(x)(x-a)^{g+1} - xf'r_{i,g}(x-a) - 2f(xr_{i,g}'(x-a)-i(x-a)r_{i,g}-gxr_{i,g})}{2yx^{i+1}(x-a)^{g+1}}.dx
 \]
 Now
 \[
@@ -620,23 +666,17 @@ k\binom{g}{k} + (k+1)\binom{g}{k+1} & = k \left( \frac{g!}{k!(g-k)!} \right) + (
 has only one term of order $i$.
 This term is
 \begin{align*}
-(i-1)(-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i - g(-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i & = (-1)^{g-i+1}\left( (i-1-g)\frac{g!}{(i-1)!(g-i+1)!} \right) a^{g-i+1}x^i \\
-& = (-1)^{g-i+2} \frac{g!}{(i-1)!(g-i)!} a^{g-i+1}x^i \\
+ (-1)^{g-i+1}\left( (i-1-g)\frac{g!}{(i-1)!(g-i+1)!} \right) & a^{g-i+1}x^i \\
+&  = (-1)^{g-i+2} \frac{g!}{(i-1)!(g-i)!} a^{g-i+1}x^i \\
 & = (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i.
 \end{align*}
 
-So up to this point we have
+Combining the above we conclude that
 \[
-\omega_{0 i } - df_{0\sigma i} =  \frac{(\psi_i(x)t_{i,g} - \phi_i(x)r_{i,g})(x-a) - 2f(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}.
+\omega_{0 i } - df_{0\sigma i} =  \frac{(\psi_i(x)t_{i,g} - \phi_i(x)r_{i,g})(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}.
 \]
-The last observation we make is that there are only two terms that have degree less $i+1$, namely the smallest terms in $\psi_i(x)t_{i,g})(x-a)$, which is 
-\[
--2ia_0\cdot (-1)^{g+i}\binom{g}{i}a^{g-i}x^i\cdot (-a) = 2ia_0(-1)^{g+i+2}\binom{g}{i}a^{g-i+1}x^i,
-\]
- and the smallest term in $- 2f(-1)^{g-i+2}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}$, which is $-2a_0\cdot (-1)^{g-i+1}i \binom{g}{i}a^{g-i+1}x^i$.
-These terms clearly cancel, and we see that the whole numerator is divisible by $x^{i+1}$.
 
-It only remains to show that there is no pole at infinity.
+Note that the last relation ($df_{\sigma \infty i} = \omega_{\sigma i} - \sigma_{\infty i}$) follows from 
 
 \end{proof}
 
