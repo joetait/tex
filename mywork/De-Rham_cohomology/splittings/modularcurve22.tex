@@ -112,10 +112,10 @@
 \bigskip
 
 
-We let $X$ be a genus $2$ curve over an algebraically closed field $k$ (characteristic not 2).
-Since any genus two curve is hyperelliptic, we may suppose that $X$ is defined by 
+We let $X$ be a hyperelliptic curve over an algebraically closed field $k$ (characteristic not $p \neq 2$).
+We may suppose that $X$ is defined by 
 \begin{equation}\label{definingequation}
-y^2 = f(x) = a_6x^6 + a_5x^5 + a_4x^4 + a_3x^3 + a_2x^2 + a_1x + a_0 \in k[x]
+y^2 = f(x) \in k[x]
 \end{equation}
 where $f(x)$ has no repeated roots.
 We fix a degree two map $\pi \colon X \ra \mathbb P^1_k$, which is unique up to automorphism of $\mathbb P_k^1$.
@@ -152,25 +152,7 @@ If $\sigma^*(y) = -y$ we can, without loss of generality, replace $\sigma^*$ by 
 Hence we will assume throughout the rest of the paper that $\sigma^*(y) = y$.
 \end{rem}
 
-Given an automorphism $\sigma\colon (x,y) \mapsto (x+a,y)$ of $X$, we obtain some restrictions on the defining equation \eqref{definingequation}, which we list in the lemma below.
 
-\begin{lem}
-If $\sigma$ is an automorphism of $X$ then the characteristic of $k$ is 3 or 5. 
-Moreover, if $\cha(k)=5$ then the coefficients $a_6, a_4, a_3$ and $a_2$ in \eqref{definingequation} are zero.
-\end{lem}
-\begin{proof}
-Since $\sigma^*(y) = y$, it follows that $f(x+a) = f(x)$.
-Expanding the left hand side we see that the coefficient of $x^5$ is $6aa_6 + a_5$.
-Since the coefficient of $x^5$ in $f(x)$ is $a_5$.
-We conclude that $6aa_6 = 0$, and hence either $6=0$ or $a_6=0$.
-If $6=0$ then it follows that $\cha (k)=3$.
-
-On the other hand, if $a_6=0$ then we compare the coefficients of $x^4$ in $f(x+a)$ and $f(x)$, which are $5aa_5+a_4$ and $a_4$ respectively.
-We conclude that $5aa_5=0$. Since the degree of $f(x)$ is either $2g+2=6$ or $2g+1=5$ it follows that at least one of $a_6$ and $a_5$ must be non-zero.
-Hence if $a_6=0$ it follows that $\cha(k) = 5$.
-
-The final statement follows again by comparing coefficients.
-\end{proof}
 
 In previous work we found a basis for the de Rham cohomology of any hyperelliptic curve using \cech cohomology.
 In particular,  if we let $\cU = \{ U_0 , U_\infty\}$ (recall that $U_a = X\backslash \pi^{-1}(a)$) then a basis of $\cechderhamhone(\cU)$ is given in \cite{derhamactions}.
@@ -203,147 +185,244 @@ Then
 \end{equation*}
 Since $\sigma^*(\omega_\sigma)-\sigma^*(\omega_\infty) = \sigma^*(\omega_\sigma - \omega_\infty) = \sigma^*(df_{\sigma \infty})$ we see that $\sigma^*(v)$ is an element of $\cechderhamhone(\cU)$.
 
-
-
-
+We know look at the specific case we are considering.
 From \cite{derhamactions} a basis of $\cechderhamhone(\cU)$ is formed by
 \begin{align*}
-\gamma_1  = & \left( \frac{1}{y}dx, \frac{1}{y}dx, 0\right) \\
-\gamma_2 = & \left(\frac{x}{y}dx, \frac{x}{y}dx, 0\right) \\
-\gamma_3 = & \left( \frac{a_3x^3-a_1x-2a_0}{2yx^2}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx, \frac{y}{x} \right)\\
-\gamma_4 = & \left(\frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},\frac{-(2a_6x^3+a_5x^2)}{2y}dx , \frac{y}{x^2} \right).
+\gamma_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) , i=1, \ldots, g \\
+\intertext{and}
+\tau_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{-\phi_i(x)}{2yx^{i+1}}, x^{-i}y \right), i=1,\ldots ,g.
 \end{align*}
-The following proposition allows us to compute how $\sigma$ acts on this basis, using the commutative diagram from the first section.
+We also define the following polynomials for $j \geq i$
+\[
+r_i(x) : = \sum_{k=0}^{i-1} (-1)^{g-k}\binom{g}{k} a^{j-k} x^k
+\]
+and
+\[
+t_i(x) := \sum_{k=i}^{g} (-1)^{g-k}\binom{g}{k} a^{g-k} x^k,
+\]
+splitting the polynomial $(x-a)^g$ in to two parts.
+The following proposition allows us to compute how $\sigma^*$ acts on the basis of $\cechderhamhone(\cU)$ mentioned above.
 
 \begin{prop}\label{basis22}
-The pre-image $\rho^{-1}(\gamma_3)$ is the residue classes of
+The pre-image $\rho^{-1}(\tau_i)$ is the residue classes of
 \begin{multline*}
-\nu_1 = \left(\frac{a_3x^3-a_1x-2a_0}{2yx^2}dx, \frac{r_1}{2y(x-a)^3}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx,  \right. \\ \left. \frac{a^2y}{x(x-a)^2}, \frac{y}{x},  \frac{y(x-2a)}{(x-a)^2} \right)
-\end{multline*}
-and $\rho^{-1}(\gamma_4)$ is the residue class of
-\begin{multline*}
-\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},  \frac{r_2}{2y(x-a)^3}dx, \frac{-(2a_6x^3+a_5x^2)}{2y}dx, \right. \\ \left.  \frac{y(a^2-2ax)}{x^2(x-a)^2},\frac{y}{x^2}, \frac{y}{(x-a)^2} \right),
-\end{multline*}
-where
-\begin{multline*}
-r_1  := (4a^3a_6+a^2a_5+a_3)x^4 + (3a^3a_5+2a^2a_4-3aa_3)x^3 \\
- + (2a^3a_4 + 6a^2a_3 - a_1)x^2 + (4a^2a_2 +3aa_1-2a_0)x+(2a^2a_1+6aa_0)
-\end{multline*}
-and
-\begin{multline*}
-r_2  := (-6a^2a_6-2aa_5)x^4 + (2a^3a_6-3a^2a_5-4aa_4-a_3)x^3 \\ + (a^3a_5-3aa_3-2a_2)x^2 + (-2a_2a-3a_1)x +(-aa_1-4a_0).
+\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) + \phi_i(x)r_i(x))(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{-\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right).
 \end{multline*}
 \end{prop}
 \begin{proof}
-In order to refer to the entries in $\nu_1$ and $\nu_2$ we let $f_{ijk}$ and $\omega_{ijk}$ be the appropriate functions and differentials such that
+In order to refer to the entries in $\nu_i$ we let $f_{ijk}$ and $\omega_{ij}$ be the appropriate functions and differentials such that
 \[
 \nu_i = \left( \omega_{0 i}, \omega_{\sigma i}, \omega_{\infty i}, f_{0 \sigma i}, f_{0 \infty i}, f_{\sigma \infty i} \right).
 \]
 First, note that it follows from \cite{derhamactions} that $d(f_{0 \infty i}) = \omega_{0 i} - \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
 
-We check that $f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} = 0$.
-When $i=1$ we have
+Firstly, since $r_i(x)+t_i(x)$ is the binary expansion of $(x-a)^g$ then
 \begin{align*}
-f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{a^2y}{x(x-a)^2} -\frac{y}{x} + \frac{y(x-2a)}{(x-a)^2} \\
-& = \frac{a^2y- y(x-a)^2  +xy(x-2a)}{x(x-a)^2} \\
-& = \frac{y(x-a)^2 - y(x-a)^2}{x(x-a)^2} \\
+f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{r_i(x)y}{x^i(x-a)^g} - \frac{y}{x^i} + \frac{t_i(x)y}{x^i(x-a)^g} \\
+& = \frac{y(r_i(x) + t_i(x) - (x-a)^g)}{x^i(x-a)^g} \\
 & = 0.
 \end{align*}
 
-When $i=2$ we have
-\begin{align*}
-f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{y(a^2-2ax)}{x^2(x-a)^2} -\frac{y}{x^2} + \frac{y}{(x-a)^2} \\
-& = \frac{y(a^2-2ax)-y(x-a)^2 +x^2y}{x^2(x-a)^2} \\
-& = \frac{y(x-a)^2 - y(x-a)^2}{x^2(x-a)^2} \\
-& = 0.
-\end{align*}
+
 
 We now check that differentials and functions are regular on the appropriate open sets by computing the relevant divisors.
-Firstly, the divisor of $f_{0 \sigma 1}$ is
+Firstly
 \begin{align*}
-\di(f_{0 \sigma 1}) & = \di\left( \frac{a^2y}{x(x-a)^2} \right) \\ 
-& = \di(y) - \di(x) - 2\di(x-a) \\
-& = R - 3D_\infty - D_0 + D_\infty -2D_a +2D_\infty \\
-& = R - D_0 - 2D_a,
+\di \left( f_{0 \sigma i} \right) & = \di \left( \frac{r_i(x)y}{x^i(x-a)^g} \right) \\
+&  = \di(r_i(x)) + \di(y) - i\di(x) - g\di(x-a) \\
+& = \di_0(r_i(x)) - (i-1)D_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
+& = \di_0(f_{i,g}) +R -iD_0 - gD_a + D_\infty,
 \end{align*}
-and the divisor of $f_{0 \sigma 2}$ is
-\begin{align*}
-\di(f_{0 \sigma 2} ) & = \di \left( \frac{y(a^2 - 2ax)}{x^2(x-a)^2} \right) \\
-& = \di(y) + \di(a-2x) - 2\di(x) - 2\di(x-a) \\
-& = R - 3D_\infty +D_{\frac{a}{2}} - D_\infty -2D_0 + 2D_\infty -2D_a + 2D_\infty \\
-& = R + D_{\frac{a}{2}} - 2D_0 - 2D_a,
-\end{align*}
-both of which are regular on $U_0 \cap U_\sigma$.
-Secondly, the divisor of  $f_{\sigma \infty 1}$ is
-\begin{align*}
-\di(f_{\sigma \infty 1} ) & = \di \left( \frac{y(x-2a)}{(x-a)^2} \right) \\
-& = \di(y) + \di(x-2a) - 2\di(x-a) \\
-& = R - 3D_\infty + D_{2a} - D_\infty - 2D_a + 2D_\infty \\
-& = R + D_{2a} -2D_\infty - 2D_a
-\end{align*}
-and the divisor of $f_{\sigma \infty 2}$ is
-\begin{align*}
-\di( f_{\sigma \infty 2} ) & = \di \left( \frac{y}{(x-a)^2} \right) \\
-& = \di (y)  - 2\di(x-a) \\
-& = R - 3D_\infty  - 2D_a + 2D_\infty \\
-& = R - 2D_a - D_\infty,
-\end{align*}
-both of which are clearly positive on $U_\sigma \cap U_\infty$.
-
-Now we show that for $i = 1, 2$ the differential $\omega_{\sigma i}$ is regular on $U_\sigma$.
-In both cases it is clear that there can only be poles at $a$ and $\pi^{-1}(\infty)$.
-Since $a$ is not in $U_\sigma$, we need only check that there are no poles in $\pi^{-1}(\infty)$, or equivalently that the coefficient of $D_\infty$ in $\di( \omega_{\sigma i})$ is non-negative.
-Since $\deg(r_i) = 4$ for both $i=1$ and $i=2$ it follows that when $i=1$ this coefficient is $-4 - 4 + 3 + 3 = 0$ and when $i=2$ the coefficient is $-4 -2 +3 + 3=0$.
-
-It only remains to show that $df_{0 \omega i} = \omega_{0 i} - \omega_{\sigma i}$ for $i \in \{ 1, 2\}$.
-When $i=1$ the left hand side is 
-\begin{align*}
-df_{0 \omega 1} & = d \left( \frac{a^2y}{x(x-a)^2} \right)  \\
-& = a^2\left( \frac{1}{x(x-a)^2}dy + y d \frac{1}{x(x-a)^2} \right) \\
- & = a^2 \left( \frac{f'}{2yx(x-a)^2} + \frac{y(a-3x)}{x^2(x-a)^3} \right) dx \\
-& = \frac{a^2}{2yx^2(x-a)^3} \left( xf'(x-a) + 2f(a-3x) \right) dx,
-\end{align*}
-and the bracketed expression in the final line expands to 
-\begin{equation}\label{i=1expansion}
--(4aa_6+a_5)x^6-(3aa_5+2a_4)x^5-(2aa_4+3a_3)x^4-(aa_3+4a_2)x^3-5a_1x^2+(aa_1-6a_0)x+2a_0a
-\end{equation}
-On the other hand, the right hand side is
-\begin{equation*}
-\omega_{0 1} - \omega_{\sigma 1}  = \frac{1}{2yx^2(x-a)^3} \left( (a_3x^3 -a_1x-2a_0)(x-a)^3 - x^2r_1\right )dx,
-\end{equation*}
-and the bracketed expression here also expands to \eqref{i=1expansion}.
-Hence $df_{0 \sigma 1} = \omega_{0 1} - \omega_{\sigma 1}$.
-
-When $i=2$ then 
-\begin{align*}
-df_{0 \sigma 2} & = d \left( \frac{y(a^2 -2ax)}{x^2(x-a)^2} \right) \\
-& = \frac{a^2-2ax}{x^2(x-a)^2} dy + y d \frac{a^2-2ax}{x^2(x-a)^2} \\
-& = \left( \frac{f'(a^2-2ax)}{2yx^2(x-a)^2} + \frac{2af(a^2-3ax+3x^2}{x^3(x-a)^3} \right) dx \\
-& = \frac{a}{2yx^3(x-a)^3} \left( f'(a-2x)x(x-a) + 4f(a^2-3ax+3x^2 \right) dx,
-\end{align*}
-and expanding the brackets gives
-\begin{multline}\label{i=2expansion}
-(6aa_6+2a_5)x^7+(4a_4+3a_5a-2a_6a)x^6+(6a_3-aa_5)x^5+(8a_2-3a_3a)x^4 \\ + (10a_1 -6a_2a+a_3a^2)x^3 
-(12a_0-9a_1a+2a_2a^2)x^2 + (3a_1a^2-12aa_0)x + 4a_0a^2.
-\end{multline}
+which is non-negative on $U_0 \cap U_\sigma$.
 On the other hand
-\begin{equation*}
-\omega_{0 2} - \omega_{\sigma 2} = \frac{1}{2yx^3(x-a)^3}\left( -(a_3x^3+2a_2x^2+3a_1x+4a_0)(x-a)^3 + x^3r_2 \right) dx,
-\end{equation*}
-and the bracketed expression here also expands to \eqref{i=2expansion}.
+\begin{align*}
+\di \left( f_{\sigma \infty i} \right) & = \di \left( \frac{t_i(x)y}{x^i(x-a)^g} \right) \\
+& = \di\left(\frac{t_i(x)}{x^i}\right) + \di(y) - g\di(x-a) \\
+& = \di_0 \left( \frac{t_i(x)}{x^i} \right) - (g-i)D_\infty +R - (g+1)D_\infty - gD_a + gD_\infty\\
+& = \di_0 \left( \frac{t_i(x)}{x^i} \right) +R - gD_a -(g-i+1)D_\infty.
+\end{align*}
+Since $t_i(x)/x^i$ is regular on $U_\infty$ we conclude that $({t_i(x)y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
+
+To show that
+\begin{equation}\label{longequation}
+\omega_{\sigma i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx
+\end{equation}
+is regular on $U_\sigma$ we first compute the divisor
+\begin{align*}
+\di\left( \frac{dx}{2yx^{i+1}(x-a)^{g+1}}\right) & = \di(dx) - \di(y) - (i+1)\di(x) - (g+1)\di(x-a) \\
+& = R - 2D_\infty - R + (g+1)D_\infty - (i+1)D_0 + (i+1)D_\infty \\
+& \quad - (g+1)D_a + (g+1)D_\infty \\
+& = (2g+i+1)D_\infty -(i+1)D_0 - (g+1)D_a.
+\end{align*}
+
+We next show that the numerator of \eqref{longequation},
+\begin{equation}\label{numerator}
+{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i},
+\end{equation}
+has order less then $2g+i+2$, from which it will follow that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
+The order of $\psi_i(x)t_i(x)(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
+If $\deg(f) = 2g+1$, then clearly
+\[
+\deg\left( \phi_i(x)r_i(x)(x-a) \right) = \deg(\phi_i) + \deg(r_i(x)) + \deg((x-a)) \leq 2g+1 i-1 +1 = 2g+i+1
+\]
+and
+\[
+\deg \left( 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i \right)  = \begin{cases} 0 & \text {if } p|i\binom{g}{i}, \\
+ \deg(f) + \deg(x^i) \leq 2g+i+1 & \text{otherwise}
+\end{cases}
+\]
+Lastly, if $\deg(f) = 2g+2$ then the leading term of $-\phi_i(x)r_i(x)(x-a)$ is
+\begin{align*}
+-((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
+&  = 2(-1)^{g-i+2}\left( (g-i+1)\binom{g}{i-1} \right) a_{2g+2}x^{2g+i+2} \\
+& = 2(-1)^{g-i+2} \left( \frac{g!}{(i-1)!(g-i)!} \right) a_{2g+2}x^{2g+i+2} \\
+& = 2i(-1)^{g-i+2}\binom{g}{i}a_{2g+2}x^{2g+i+2},
+\end{align*}
+which clearly cancels with the leading term of $2if(-1)^{g-i+1}\binom{g}{i}a^{g+i-1}x^i$.
+Since these terms cancel, we again have the that the degree of \eqref{numerator} is at most $2g+i+1$, and \eqref{longequation} has no pole at the point(s) in $\pi^{-1}(\infty)$.
+
+Finally, we show that \eqref{numerator} is divisible by $x^{i+1}$.
+By definition $x^{g+1} | \phi_i(x)$, and since $i \leq g$ it follows that $x^{i+1}|\phi_i(x)r_i(x)(x-a)$.
+On the other hand
+\[
+2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i - 2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i 
+\]
+and
+\[
+\psi_i(x)t_i(x)(x-a) - a(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)
+\]
+are both divisible by $x^{i+1}$.
+Moreover, 
+\[
+a(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right) = 2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i,
+\]
+so these terms (which appear in $\psi_i(x)t_i(x)(x-a)$ and $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$) cancel, and the numerator is divisible by $x^{i+1}$.
+
+
+It only remains to show that $\omega_{\sigma i} = \omega_{0 i} -df_{0 \sigma i}$.
+We begin this by computing $df_{0 \sigma i}$, which is
+\begin{align*}
+df_{0 \sigma i} & = d \left( \frac{y r_i(x)}{x^i(x-a)^g} \right) \\
+& = \frac{r_i(x)}{x^i(x-a)^g}dy + y d\left( \frac{r_i(x)}{x^i(x-a)^g} \right) \\
+& = \frac{f'r_i(x)}{2yx^i(x-a)^g}dx + \left( \frac{yr_i(x)'}{x^i(x-a)^g} -\frac{iy r_i(x)}{x^{i+1}(x-a)^g} - \frac{gyr_i(x)}{x^i(x-a)^{g+1}}\right) dx \\
+& = \frac{xf'r_i(x)(x-a) + 2f(xr_i(x)'(x-a) - i(x-a)r_i(x) - gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}} dx.
+\end{align*}
+Hence $\omega_{0 i} - df_{o \sigma i}$ expands to
+\[
+\frac{\psi_i(x)(x-a)^{g+1} - xf'r_i(x)(x-a) + 2f(xr_i(x)'(x-a)-i(x-a)r_i(x)-gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}}dx.
+\]
+Now
+\[
+(x-a)^{g+1} = (x-a)^g(x-a)  = (r_i(x) + t_i(x))(x-a)
+\]
+and
+\[
+xf'r_i(x)(x-a) - 2ifr_i(x)(x-a) = r_i(x)(x-a)(xf'-2if) = r_i(x)(x-a)(\psi_i(x) + \phi_i(x)).
+\]
+So
+\[
+\psi_i(x)(x-a)^{g+1} - xf'r_i(x)(x-a) - 2ifr_i(x)(x-a) = (\psi_i(x)t_i(x) - \phi_i(x) r_i(x))(x-a).
+\]
+
+
+We now compute $r_i(x)'-gr_i(x)$.
+Since 
+\begin{align*}
+r_i(x)' & = \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
+& = \sum_{k=0}^{i-1} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k
+\end{align*}
+it follows that
+\begin{align*}
+r_i(x)'(x-a) & = x \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} - a \sum_{k=0}^{i-1} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k \\
+& = \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^k  + \sum_{k=0}^{i-1} (k+1) (-1)^{g-k} \binom{g}{k+1}a^{g-k} x^k,
+\end{align*}
+and so the coefficient of $x^k$ is $(-1)^{g-k}\left(k\binom{g}{k} + (k+1)\binom{g}{k+1}\right) a^{g-k}$ for $0 \leq k \leq i-1$.
+On the other hand, the coefficient of $x^k$ in $gr_i(x)$ is $(-1)^{g-k}g\binom{g}{k}a^{g-k}$.
+Since 
+\begin{align*}
+k\binom{g}{k} + (k+1)\binom{g}{k+1} & = k \left( \frac{g!}{k!(g-k)!} \right) + (k+1) \left( \frac{g!}{(k+1)!(g-k-1)!} \right) \\
+& = \frac{g!}{(k-1)!(g-k)!} + \frac{g!}{k!(g-k-1)!} \\
+& = \frac{g\cdot g!}{k!(g-k)!} \\
+& = g \binom{g}{k}
+\end{align*}
+it follows that $r_i(x)'-gr_i(x)$ has only one term of order $i$.
+This term is
+\begin{align*}
+ (-1)^{g-i+1}\left( (i-1-g)\frac{g!}{(i-1)!(g-i+1)!} \right) & a^{g-i+1}x^i \\
+&  = (-1)^{g-i+2} \frac{g!}{(i-1)!(g-i)!} a^{g-i+1}x^i \\
+& = (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i.
+\end{align*}
+
+Combining the above we conclude that
+\[
+\omega_{0 i } - df_{0\sigma i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}.
+\]
+
+Note that the last relation ($df_{\sigma \infty i} = \omega_{\sigma i} - \sigma_{\infty i}$) follows from 
+
 \end{proof}
 
-We now use this proposition to compute the action of $\sigma^* $ on $\derhamhone$.
+We now suppose that $X$ is of genus 2, and that
+\[
+f(x) = a_6x^6 + a_5x^5 + a_4x^4 + a_3x^3 + a_2x^2 + a_1x + a_0.
+\]
+The existence of $\sigma^*$ places restrictions on the characteristic of $k$ and the coefficients of $f(x)$, as stated in the following lemma.
+
+\begin{lem}
+The characteristic of $k$ is 3 or 5. 
+Moreover, if $\cha(k)=5$ then the coefficients $a_6, a_4, a_3$ and $a_2$ in \eqref{definingequation} are zero.
+\end{lem}
+\begin{proof}
+Since $\sigma^*(y) = y$, it follows that $f(x+a) = f(x)$.
+Expanding the left hand side we see that the coefficient of $x^5$ is $6aa_6 + a_5$.
+Since the coefficient of $x^5$ in $f(x)$ is $a_5$.
+We conclude that $6aa_6 = 0$, and hence either $6=0$ or $a_6=0$.
+If $6=0$ then it follows that $\cha (k)=3$.
+
+On the other hand, if $a_6=0$ then we compare the coefficients of $x^4$ in $f(x+a)$ and $f(x)$, which are $5aa_5+a_4$ and $a_4$ respectively.
+We conclude that $5aa_5=0$. Since the degree of $f(x)$ is either $2g+2=6$ or $2g+1=5$ it follows that at least one of $a_6$ and $a_5$ must be non-zero.
+Hence if $a_6=0$ it follows that $\cha(k) = 5$.
+
+The final statement follows again by comparing coefficients.
+\end{proof}
+
+
 Recall that $\sigma^*$ fixes $y$ and maps $x$ to $x+a$. 
 Note that this means that $\sigma^*(dx) = d(\sigma^*(x)) = d(x+a) = dx$.
 The action of $\sigma^*$ on $\nu_i$ is given by
 \begin{equation*}
 \sigma^*(\nu_i) = \left( \sigma^*( \omega_{\sigma i}), \sigma^*(\omega_{\infty i}), \sigma^*( f_{\sigma \infty i})\right).
 \end{equation*}
-We use this to prove the following proposition regarding the action of $\sigma^*$ on $\cechderhamhone(\cU)$.
+
+Note that in this specific case the basis of $\cechderhamhone(\cU)$ is formed by
+\begin{align*}
+\gamma_1  = & \left( \frac{1}{y}dx, \frac{1}{y}dx, 0\right) \\
+\gamma_2 = & \left(\frac{x}{y}dx, \frac{x}{y}dx, 0\right) \\
+\gamma_3 = & \left( \frac{a_3x^3-a_1x-2a_0}{2yx^2}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx, \frac{y}{x} \right)\\
+\gamma_4 = & \left(\frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},\frac{-(2a_6x^3+a_5x^2)}{2y}dx , \frac{y}{x^2} \right).
+\end{align*}
+Also, the pre-image $\rho^{-1}(\tau_i)$ computed in the previous proposition can be more explicitly written as 
+\begin{multline*}
+\nu_1 = \left(\frac{a_3x^3-a_1x-2a_0}{2yx^2}dx, \frac{\lambda_1}{2y(x-a)^3}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx,  \right. \\ \left. \frac{a^2y}{x(x-a)^2}, \frac{y}{x},  \frac{y(x-2a)}{(x-a)^2} \right)
+\end{multline*}
+and
+\begin{multline*}
+\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},  \frac{\lambda_2}{2y(x-a)^3}dx, \frac{-(2a_6x^3+a_5x^2)}{2y}dx, \right. \\ \left.  \frac{y(a^2-2ax)}{x^2(x-a)^2},\frac{y}{x^2}, \frac{y}{(x-a)^2} \right),
+\end{multline*}
+where
+\begin{multline*}
+\lambda_1  := (4a^3a_6+a^2a_5+a_3)x^4 + (3a^3a_5+2a^2a_4-3aa_3)x^3 \\
+ + (2a^3a_4 + 6a^2a_3 - a_1)x^2 + (4a^2a_2 +3aa_1-2a_0)x+(2a^2a_1+6aa_0)
+\end{multline*}
+and
+\begin{multline*}
+\lambda_2  := (-6a^2a_6-2aa_5)x^4 + (2a^3a_6-3a^2a_5-4aa_4-a_3)x^3 \\ + (a^3a_5-3aa_3-2a_2)x^2 + (-2a_2a-3a_1)x +(-aa_1-4a_0).
+\end{multline*}
+
+We use this to prove the following proposition about the action of $\sigma^*$ on $\cechderhamhone(\cU)$.
 
 \begin{prop}
-We have the following actions of $\sigma^*$ on the basis elements of $\cechderhamhone(\cU)$:
+The action of $\sigma^*$ on the basis elements of $\cechderhamhone(\cU)$ is
 \begin{align*}
 \sigma^*(\gamma_1) & = \gamma_1 \\
 \sigma^*(\gamma_2) & = \gamma_2 + a\gamma_1 \\
@@ -356,12 +435,12 @@ The action on $\gamma_1$ and $\gamma_2$ is clear.
 
 For $\gamma_3$ and $\gamma_4$ we will consider this action entry by entry, starting with $\sigma^*(\omega_{\sigma 1})$, which is
 \begin{align*}
-\sigma^*( \omega_{\sigma}) & = \sigma^* \left( \frac{r_1}{2y(x-a)^3} dx \right) \\
-& = \frac{\sigma^*(r_1)}{2yx^3}dx.
+\sigma^*( \omega_{\sigma}) & = \sigma^* \left( \frac{\lambda_1}{2y(x-a)^3} dx \right) \\
+& = \frac{\sigma^*(\lambda_1)}{2yx^3}dx.
 \end{align*}
-Now we compute $\sigma^*(r_1)$, which is
+Now we compute $\sigma^*(\lambda_1)$, which is
 \begin{align*}
-\sigma^*(r_1) & = (4a^3a_6+a^2a_5+a_3)x^4 + (16a^4a_6+7a^3a_5+2a^2a_4+aa_3)x^3 \\
+\sigma^*(\lambda_1) & = (4a^3a_6+a^2a_5+a_3)x^4 + (16a^4a_6+7a^3a_5+2a^2a_4+aa_3)x^3 \\
 & + (24a^5a_6+15a^4a^5+8a^3a_4+3a^2a_3-a_1)x^2 \\
 & + (16a^6a_6+13a^5a_5+10a^4a_4+7a^3a_3+4a^2a_2+aa_1-2a_0)x \\
 & + a(4a^6a_6+4a^5a_5+4a^4a_4+4a^3a_3+4a^2a_2+4aa_1+4a_0).
@@ -376,7 +455,7 @@ We list the identities we get from doing this here:
 \item \label{5} $6a^5a_6 + 5a^4a_5+4a^3a_4+3a^2a_3+2aa_2= 0$;
 \item \label{6} $a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1 = 0$.
 \end{enumerate}
-Hence the constant coefficient of $\sigma^* (r_1)$ simplifies to
+Hence the constant coefficient of $\sigma^* (\lambda_1)$ simplifies to
 \begin{equation*}
  a(4a^6a_6+4a^5a_5+4a^4a_4+4a^3a_3+4a^2a_2+4aa_1+4a_0) =  4aa_0
 \end{equation*}
@@ -396,7 +475,7 @@ by \ref{4} and \ref{5}; the coefficient of $x^3$ simplifies to
 by \ref{1} and \ref{3}.
 Hence
 \begin{multline*}
-\sigma^*(r_1) = \\ \frac{(4a^3a_6+a^2a_5+a_3)x^4+(2a^3a_5+aa_3)x^3+(2a^2a_2-a_1)x^2+(3aa_1-2a_0)x+4aa_0}{2yx^3}dx.
+\sigma^*(\lambda_1) = \\ \frac{(4a^3a_6+a^2a_5+a_3)x^4+(2a^3a_5+aa_3)x^3+(2a^2a_2-a_1)x^2+(3aa_1-2a_0)x+4aa_0}{2yx^3}dx.
 \end{multline*}
 We also have
 \begin{align}\label{i=1sigmaaction}
@@ -426,13 +505,13 @@ From this we see that $c_1= a^3a_5$ and that $c_2 = \frac{4a^3a_6+a^2a_5}{2}$.
 
 Now when $i=2$ we have
 \begin{align*}
-\sigma^*(r_2) & = -(6a^2a_6+2aa_5)x^4 - (22a^3a_6+11a^2a_5+4aa_4+a_3)x^3 \\
+\sigma^*(\lambda_2) & = -(6a^2a_6+2aa_5)x^4 - (22a^3a_6+11a^2a_5+4aa_4+a_3)x^3 \\
 & - (30a^4a_6+20a^3a_5+12a^2a_4+6aa_3+2a_2)x^2 \\
 & - (18a^5a_6+15a^4a_5+12a^3a_4+9a^2a_3+6aa_2+3a_1)x \\
 & -4(a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1+a_0).
 \end{align*}
 Again, using the relations \ref{1} through \ref{6} we can simplify these coefficients:
-by \ref{6} the constant coefficient of $\sigma^*(r_2)$ is
+by \ref{6} the constant coefficient of $\sigma^*(\lambda_2)$ is
 \[
 -4(a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1+a_0) = -4a_0;
 \]
@@ -515,181 +594,6 @@ However, because we are not considering the entire automorphism group we cannot 
 \end{rem}
 \todo[inline]{say what restrictions on $s$ we get from the above?}
 \todo[inline]{state which exact sequences split from kontogeorgis paper}
-
-From \cite{derhamactions} a basis of $\cechderhamhone(\cU)$ is formed by
-\begin{align*}
-\gamma_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) , i=1, \ldots, g \\
-\intertext{and}
-\tau_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{-\phi_i(x)}{2yx^{i+1}}, x^{-i}y \right), i=1,\ldots ,g.
-\end{align*}
-We also define the following polynomials for $j \geq i$
-\[
-r_{i,j} : = \sum_{k=0}^{i} (-1)^{j-k}\binom{j}{k} a^{j-k} x^k
-\]
-and
-\[
-t_{i,j} := \sum_{k=i+1}^{j} (-1)^{j-k}\binom{j}{k} a^{j-k} x^k.
-\]
-We will mostly consider these polynomials when $j=g$, when they will split the polynomial $(x-a)^g$ in to two parts.
-We now present a basis of $\cechderhamhone (\cU'')$.
-
-\begin{prop}\label{basis22}
-The pre-image $\rho^{-1}(\tau_i)$ is the residue classes of
-\begin{equation*}
-\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, ---, \frac{-\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_{i,g}y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_{i,g}y}{x^i(x-a)^g} \right).
-\end{equation*}
-\end{prop}
-\begin{proof}
-In order to refer to the entries in $\nu_i$ we let $f_{ijk}$ and $\omega_{ij}$ be the appropriate functions and differentials such that
-\[
-\nu_i = \left( \omega_{0 i}, \omega_{\sigma i}, \omega_{\infty i}, f_{0 \sigma i}, f_{0 \infty i}, f_{\sigma \infty i} \right).
-\]
-First, note that it follows from \cite{derhamactions} that $d(f_{0 \infty i}) = \omega_{0 i} - \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
-
-Firstly, since $r_{i,g}+t_{i,g}$ is the binary expansion of $(x-a)^g$ then
-\begin{align*}
-f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{r_{i,g}y}{x^i(x-a)^g} - \frac{y}{x^i} + \frac{t_{i,g}y}{x^i(x-a)^g} \\
-& = \frac{y(r_{i,g} + t_{i,g} - (x-a)^g)}{x^i(x-a)^g} \\
-& = 0.
-\end{align*}
-
-
-
-We now check that differentials and functions are regular on the appropriate open sets by computing the relevant divisors.
-Firstly
-\begin{align*}
-\di \left( f_{0 \sigma i} \right) & = \di \left( \frac{r_{i,g}y}{x^i(x-a)^g} \right) \\
-&  = \di(r_{i,g}) + \di(y) - i\di(x) - g\di(x-a) \\
-& = \di_0(r_{i,g}) - (i-1)D_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
-& = \di_0(f_{i,g}) +R -iD_0 - gD_a + D_\infty,
-\end{align*}
-which is regular on $U_0 \cap U_\sigma$.
-On the other hand
-\begin{align*}
-\di \left( f_{\sigma \infty i} \right) & = \di \left( \frac{t_{i,g}y}{x^i(x-a)^g} \right) \\
-& = \di\left(\frac{t_{i,g}}{x^i}\right) + \di(y) - g\di(x-a) \\
-& = \di_0 \left( \frac{t_{i,g}}{x^i} \right) - (g-i)D_\infty +R - (g+1)D_\infty - gD_a + gD_\infty\\
-& = \di_0 \left( \frac{t_{i,g}}{x^i} \right) +R - gD_a -(g-i+1)D_\infty.
-\end{align*}
-Since $t_{i,g}/x^i$ is regular on $U_\infty$ we conclude that $({t_{i,g}y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
-
-To show that
-\begin{equation}\label{longequation}
-\omega_{\sigma i} =  \frac{(\psi_i(x)t_{i,g} - \phi_i(x)r_{i,g})(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx
-\end{equation}
-is regular on $U_\sigma$ we first compute the divisor
-\begin{align*}
-\di\left( \frac{dx}{2yx^{i+1}(x-a)^{g+1}}\right) & = \di(dx) - \di(y) - (i+1)\di(x) - (g+1)\di(x-a) \\
-& = R - 2D_\infty - R + (g+1)D_\infty - (i+1)D_0 + (i+1)D_\infty \\
-& \quad - (g+1)D_a + (g+1)D_\infty \\
-& = (2g+i+1)D_\infty -(i+1)D_0 - (g+1)D_a.
-\end{align*}
-
-We next show that the numerator of \eqref{longequation},
-\begin{equation}\label{numerator}
-{(\psi_i(x)t_{i,g} - \phi_i(x)r_{i,g})(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}
-\end{equation}\todo{should be plus $-2if\ldots$?}
-has order less then $2g+i+2$, from which it will follow that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
-The order of $\psi_i(x)t_{i,g}(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
-If $\deg(f) = 2g+1$, then clearly
-\[
-\deg\left( \phi_i(x)r_{i,g}(x-a) \right) = \deg(\phi_i) + \deg(r_{i,g}) + \deg((x-a)) \leq 2g+1 i-1 +1 = 2g+i+1
-\]
-and
-\[
-\deg \left( 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i \right)  = \begin{cases} 0 & \text {if } p|i\binom{g}{i}, \\
- \deg(f) + \deg(x^i) \leq 2g+i+1 & \text{otherwise}
-\end{cases}
-\]
-Lastly, if $\deg(f) = 2g+2$ then the leading term of $-\phi_i(x)r_{i,g}(x-a)$ is
-\begin{align*}
--((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
-&  = 2(-1)^{g-i+2}\left( (g-i+1)\binom{g}{i-1} \right) a_{2g+2}x^{2g+i+2} \\
-& = 2(-1)^{g-i+2} \left( \frac{g!}{(i-1)!(g-i)!} \right) a_{2g+2}x^{2g+i+2} \\
-& = 2i(-1)^{g-i+2}\binom{g}{i}a_{2g+2}x^{2g+i+2},
-\end{align*}
-which clearly cancels with the leading term of $2if(-1)^{g-i+1}\binom{g}{i}a^{g+i-1}x^i$.
-Since these terms cancel, we again have the that the degree of the numerator of \eqref{longequation} is at most $2g+i+1$, and \eqref{longequation} has no pole at the point(s) in $\pi^{-1}(\infty)$.
-
-Finally, we show that the numerator of \eqref{longequation} is divisible by $x^{i+1}$.
-Note that
-\[
-2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i - 2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i 
-\]
-and
-\[
-\psi_i(x)t_{i,g}(x-a) - a(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)
-\]
-are both divisible by $x^{i+1}$.
-Moreover, 
-\[
-a\cdot(-2ia_0)\cdot \left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right) = 2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i,
-\]
-so the terms cancel and we see that the numerator is divisible by $x^{i+1}$.
-
-
-Finally, we show that $\omega_{\sigma i} = \omega_{0 i} -df_{0 \sigma i}$.
-We begin this by computing $df_{0 \sigma i}$, which is
-\begin{align*}
-df_{0 \sigma i} & = d \left( \frac{y r_{i,g}}{x^i(x-a)^g} \right) \\
-& = \frac{r_{i,g}}{x^i(x-a)^g}dy + y d\left( \frac{r_{i,g}}{x^i(x-a)^g} \right) \\
-& = \frac{f'r_{i,g}}{2yx^i(x-a)^g}dx + \left( \frac{yr_{i,g}'}{x^i(x-a)^g} -\frac{iy r_{i,g}}{x^{i+1}(x-a)^g} - \frac{gyr_{i,g}}{x^i(x-a)^{g+1}}\right) dx \\
-& = \frac{xf'r_{i,g}(x-a) + 2f(xr_{i,g}'(x-a) - i(x-a)r_{i,g} - gxr_{i,g})}{2yx^{i+1}(x-a)^{g+1}} dx.
-\end{align*}
-Hence $\omega_{0 i} - df_{o \sigma i}$ expands to
-\[
-\frac{\psi_i(x)(x-a)^{g+1} - xf'r_{i,g}(x-a) - 2f(xr_{i,g}'(x-a)-i(x-a)r_{i,g}-gxr_{i,g})}{2yx^{i+1}(x-a)^{g+1}}.dx
-\]
-Now
-\[
-(x-a)^{g+1} = (x-a)^g(x-a)  = (r_{i,g} + t_{i,g})(x-a)
-\]
-and
-\[
-xf'r_{i,g}(x-a) - 2ifr_{i,g}(x-a) = r_{i,g}(x-a)(xf'-2if) = r_{i,g}(x-a)(\psi_i(x) + \phi_i(x)).
-\]
-So
-\[
-\psi_i(x)(x-a)^{g+1} - xf'r_{i,g}(x-a) - 2ifr_{i,g}(x-a) = (\psi_i(x)t_{i,g} - \phi_i(x) r_{i,g})(x-a).
-\]
-
-
-We now compute $r_{i,g}'-gr_{i,g}$.
-Since 
-\begin{align*}
-r_{i,g}' & = \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
-& = \sum_{k=0}^{i-1} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k
-\end{align*}
-it follows that
-\begin{align*}
-r_{i,g}'(x-a) & = x \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} - a \sum_{k=0}^{i-1} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k \\
-& = \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^k  + \sum_{k=0}^{i-1} (k+1) (-1)^{g-k} \binom{g}{k+1}a^{g-k} x^k,
-\end{align*}
-and so the coefficient of $x^k$ is $(-1)^{g-k}\left(k\binom{g}{k} + (k+1)\binom{g}{k+1}\right) a^{g-k}$ for $0 \leq k \leq i-1$.
-On the other hand, the coefficient of $x^k$ in $gr_{i,g}$ is $(-1)^{g-k}g\binom{g}{k}a^{g-k}$.
-Since 
-\begin{align*}
-k\binom{g}{k} + (k+1)\binom{g}{k+1} & = k \left( \frac{g!}{k!(g-k)!} \right) + (k+1) \left( \frac{g!}{(k+1)!(g-k-1)!} \right) \\
-& = \frac{g!}{(k-1)!(g-k)!} + \frac{g!}{k!(g-k-1)!} \\
-& = \frac{g\cdot g!}{k!(g-k)!} \\
-& = g \binom{g}{k}
-\end{align*}
-has only one term of order $i$.
-This term is
-\begin{align*}
- (-1)^{g-i+1}\left( (i-1-g)\frac{g!}{(i-1)!(g-i+1)!} \right) & a^{g-i+1}x^i \\
-&  = (-1)^{g-i+2} \frac{g!}{(i-1)!(g-i)!} a^{g-i+1}x^i \\
-& = (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i.
-\end{align*}
-
-Combining the above we conclude that
-\[
-\omega_{0 i } - df_{0\sigma i} =  \frac{(\psi_i(x)t_{i,g} - \phi_i(x)r_{i,g})(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}.
-\]
-
-Note that the last relation ($df_{\sigma \infty i} = \omega_{\sigma i} - \sigma_{\infty i}$) follows from 
-
-\end{proof}
 
 
 
