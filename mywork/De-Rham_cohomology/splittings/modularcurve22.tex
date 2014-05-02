@@ -546,7 +546,7 @@ In order to refer to the entries in $\nu_i$ we let $f_{ijk}$ and $\omega_{ij}$ b
 \]
 First, note that it follows from \cite{derhamactions} that $d(f_{0 \infty i}) = \omega_{0 i} - \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
 
-We observe that since $r_{i,g}+t_{i,g}$ is just the binary expansion of $(x-a)^g$ then
+Firstly, since $r_{i,g}+t_{i,g}$ is the binary expansion of $(x-a)^g$ then
 \begin{align*}
 f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{r_{i,g}y}{x^i(x-a)^g} - \frac{y}{x^i} + \frac{t_{i,g}y}{x^i(x-a)^g} \\
 & = \frac{y(r_{i,g} + t_{i,g} - (x-a)^g)}{x^i(x-a)^g} \\
@@ -558,18 +558,20 @@ f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{r_{i,g}y}{x^i(x-a
 We now check that differentials and functions are regular on the appropriate open sets by computing the relevant divisors.
 Firstly
 \begin{align*}
-\frac{r_{i,g}y}{x^i(x-a)^g} & = \di(r_{i,g}) + \di(y) - i\di(x) - g\di(x-a) \\
+\di \left( f_{0 \sigma i} \right) & = \di \left( \frac{r_{i,g}y}{x^i(x-a)^g} \right) \\
+&  = \di(r_{i,g}) + \di(y) - i\di(x) - g\di(x-a) \\
 & = \di_0(r_{i,g}) - (i-1)D_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
 & = \di_0(f_{i,g}) +R -iD_0 - gD_a + D_\infty,
 \end{align*}
 which is regular on $U_0 \cap U_\sigma$.
 On the other hand
 \begin{align*}
-\frac{t_{i,g}y}{x^i(x-a)^g} & = \di\left(\frac{t_{i,g}}{x^i}\right) + \di(y) - g\di(x-a) \\
+\di \left( f_{\sigma \infty i} \right) & = \di \left( \frac{t_{i,g}y}{x^i(x-a)^g} \right) \\
+& = \di\left(\frac{t_{i,g}}{x^i}\right) + \di(y) - g\di(x-a) \\
 & = \di_0 \left( \frac{t_{i,g}}{x^i} \right) - (g-i)D_\infty +R - (g+1)D_\infty - gD_a + gD_\infty\\
 & = \di_0 \left( \frac{t_{i,g}}{x^i} \right) +R - gD_a -(g-i+1)D_\infty.
 \end{align*}
-Since $t_{i,g}/x^i$ is regular on $U_\infty$ we conclude that $\di_0\left( \frac{t_{i,g}}{x^i} \right)$ is non-negative, and hence $({t_{i,g}y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
+Since $t_{i,g}/x^i$ is regular on $U_\infty$ we conclude that $({t_{i,g}y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
 
 To show that
 \begin{equation}\label{longequation}
@@ -586,10 +588,19 @@ is regular on $U_\sigma$ we first compute the divisor
 We next show that the numerator of \eqref{longequation},
 \begin{equation}\label{numerator}
 {(\psi_i(x)t_{i,g} - \phi_i(x)r_{i,g})(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}
-\end{equation}
+\end{equation}\todo{should be plus $-2if\ldots$?}
 has order less then $2g+i+2$, from which it will follow that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
 The order of $\psi_i(x)t_{i,g}(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
-If $\deg(f) = 2g+1$, then the degree of both $\phi_i(x)r_{i,g}(x-a)$ and $2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i$ is clearly at most $2g+1+i$.
+If $\deg(f) = 2g+1$, then clearly
+\[
+\deg\left( \phi_i(x)r_{i,g}(x-a) \right) = \deg(\phi_i) + \deg(r_{i,g}) + \deg((x-a)) \leq 2g+1 i-1 +1 = 2g+i+1
+\]
+and
+\[
+\deg \left( 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i \right)  = \begin{cases} 0 & \text {if } p|i\binom{g}{i}, \\
+ \deg(f) + \deg(x^i) \leq 2g+i+1 & \text{otherwise}
+\end{cases}
+\]
 Lastly, if $\deg(f) = 2g+2$ then the leading term of $-\phi_i(x)r_{i,g}(x-a)$ is
 \begin{align*}
 -((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
@@ -607,7 +618,7 @@ Note that
 \]
 and
 \[
-\psi_i(x)t_{i,g}(x-a) - a\cdot(-2ia_0)\cdot \left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)
+\psi_i(x)t_{i,g}(x-a) - a(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)
 \]
 are both divisible by $x^{i+1}$.
 Moreover, 
