@@ -70,10 +70,10 @@
 %\usecolortheme{whale}
 %\usecolortheme{wolverine}
 
-%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
 %\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
-%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 }
 
 \usepackage[all]{xy}  % Tool for drawing commutative diagrams
@@ -85,7 +85,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Algebraic de Rham cohomology of hyperelliptic]{Group actions on the algebraic de Rham cohomology of hyperelliptic curves} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[de Rham cohomology of hyperelliptic curves]{Group actions on the algebraic de Rham cohomology of hyperelliptic curves} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Joe Tait} % Your name
 \institute[Southampton University] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -282,12 +282,11 @@ The $\check {\text C}$ech complex of $X$ with respect to this cover is
 \pause
 
 which gives rise to the following total complex
-
 \begin{equation*}
 \Omega^0_X(U_0) \times \Omega_X^0(U_\infty) \xrightarrow[]{d_0} \Omega_X^1(U_0)\times \Omega_X^1(U_\infty) \times \Omega_X^0(U_0 \cap U_\infty) \xrightarrow[]{d_1} \Omega^1_X(U_0 \cap U_\infty).
 \end{equation*}
 \pause
-Then $H^1_{\text dR}(X) \cong \operatorname{ker}(d_1)/\operatorname{im}(d_0)$, and has elements of the form $(f_0, f_\infty , \omega)$.
+Then $H^1_{\text dR}(X) \cong \check{H}^1_{\text dR}(U) = \operatorname{ker}(d_1)/\operatorname{im}(d_0)$, which has elements of the form $(f_0, f_\infty , \omega)$.
 \end{frame}
 
 \begin{frame}
@@ -307,14 +306,33 @@ and
 \begin{theorem}
 The residue classes of
 \[
-\left( \left( \frac{\psi_i(x)}{2yx^{i+1}} \right) \only<1>{dx}, \left(\frac{-\phi_i(x)}{2yx^{i+1}} \right)dx, \frac{y}{x^i} \right), i= 1, \ldots, g
+\tau_i := \left( \left( \frac{\psi_i(x)}{2yx^{i+1}} \right) \only<1>{dx}, \left(\frac{-\phi_i(x)}{2yx^{i+1}} \right)dx, \frac{y}{x^i} \right), i= 1, \ldots, g
 \]
 and
 \[
-\left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0 \right), i = 0, \ldots, g-1
+\nu_i := \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0 \right), i = 0, \ldots, g-1
 \]
 form a basis of $\check{H}^1_X(U)$.
 \end{theorem}
+\end{frame}
+
+\begin{frame}
+We define 
+\[
+r_i(x) = \sum_{k=0}^{i-1} (-1)^{g-k} \binom{g}{k} a^{g-k}x^k \quad {\text and} \quad t_i(x) = \sum_{k=i}^g (-1)^{g-k}\binom{g}{k} a^{g-k}x^k.
+\]
+\begin{theorem}
+The pre-image $\rho^{-1}(\tau_i)$ is the residue class of is
+\begin{equation*}
+\left( \frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{h_i}{2yx^{i+1}(x-a)^{g+1}}dx, \frac{-\phi_i(x)}{2yx^{i+1}}dx, \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i}, \frac{t_i(x)y}{x^i(x-a)^g} \right)
+\end{equation*}
+where
+\[
+h_i = 
+(\psi_i(x)t_i(x) + \phi_i(x)r_i(x))(x-a) - 2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i.
+\]
+\end{theorem}
+
 \end{frame}
 %
 %%------------------------------------------------
