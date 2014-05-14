@@ -58,6 +58,7 @@
 \usepackage{mathrsfs}
 \usepackage{amsopn}
 \usepackage{amssymb}
+\usepackage{etex}
 %\usepackage{natbib}
 % (This matches ConTeXt defaults)
 
@@ -564,10 +565,10 @@ On the other hand, if $j-i \leq 0$ then the differential $\frac{yx^{i-j}}{H(x)}d
 Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem the residue of $\frac{yx^{i-j}}{H(x)}dx$ at $P_\infty$ is also zero.
 \end{proof}
 
-
+%Mittag-Leffler style corollary
 \begin{cor}
-For each $P \in X$ fix some $f_P \in K(X) / \cO_{X,P}$.
-Then there are unique $\alpha_1, \ldots , \alpha_g \in k$ such that, after $f_P$ is replaced by $f_P - \left( \alpha_1 \frac{y}{x} + \ldots + \alpha_g \frac{y}{x^g} \right)$ for all $P \in \pi^{-1}(\infty)$, there exists an $f \in K(X)$ such the laurent tail of $f$ at each $P$ in $X$ will be $f_P$.
+For each $P \in X$ fix some $f_P \in K(X)$, such that $f_P \in \cO_{X,p}$ for almost all $P$.
+Then there exist unique $\alpha_1, \ldots , \alpha_g \in k$ such that, after $f_P$ is replaced by $f_P - \left( \alpha_1 \frac{y}{x} + \ldots + \alpha_g \frac{y}{x^g} \right)$ for all $P \in \pi^{-1}(\infty)$, there exists an $f \in K(X)$ such the laurent tail of $f$ at each $P$ in $X$ will be $f_P$.
 \end{cor}
 \todo[inline]{Check statement. Can't be all $P \in X$; maybe discrete subset? But then this is finite and the statement is trivial...}
 

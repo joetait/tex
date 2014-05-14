@@ -244,23 +244,51 @@ The University of Southampton   \\ % Your institution for the title page
     }
 \end{displaymath}}
 
-%\xyoption{arc}
-%\only<4>{
-%\begin{displaymath}
-%    \xymatrix{
-%    0 \ar[r] & \Omega^0_X \ar[d] \ar[r] & \Omega_X^1 \ar[r] \ar[d] & \ldots \ar[r] & \Omega_X^n \ar[d] \ar[r] & 0 \\ 
-%    0 \ar[r] & C^0(\Omega^0_X) \ar[d] \ar[r] & C^0(\Omega_X^1) \ar[r] \ar[d] & \ldots \ar[r] & C^0(\Omega_X^n) \ar[d] \ar[r] & 0 \\
-%    0 \ar[r] & C^1(\Omega^0_X) \ar[d] \ar[r] & C^1(\Omega_X^1) \ar[r] \ar[d] & \ldots \ar[r] & C^1(\Omega_X^n) \ar[d] \ar[r] & 0 \\
-%    &   \vdots                       & \vdots                        & \ldots        & \vdots                        & \\
-%    }
-%\end{displaymath}
-%\xy 0;/r5pc/:*\dir{*},*++!DR(-2.5){f}
-%*\frm{-};p+(-1.5,-1.5)*\dir{*}="r",
-%**\dir{-},*+!UL{r},"r",
-%,{\ellipse(1,.4){}},{\ellipse(,.75){}}
-%,{\ellipse<15pt,20pt>{=}}
-%;*{};{\ellipse<,10pt>{.}}\endxy
-%}
+\only<4>{\begin{displaymath}
+    \xymatrix{
+    0 \ar[r] & {\color{red}\Omega^0_X} \ar[d] \ar[r] & \Omega_X^1 \ar[r] \ar[d] & \ldots \ar[r] & \Omega_X^n \ar[d] \ar[r] & 0 \\ 
+    0 \ar[r] & C^0(\Omega^0_X) \ar[d] \ar[r] & C^0(\Omega_X^1) \ar[r] \ar[d] & \ldots \ar[r] & C^0(\Omega_X^n) \ar[d] \ar[r] & 0 \\
+    0 \ar[r] & C^1(\Omega^0_X) \ar[d] \ar[r] & C^1(\Omega_X^1) \ar[r] \ar[d] & \ldots \ar[r] & C^1(\Omega_X^n) \ar[d] \ar[r] & 0 \\
+    &   \vdots                       & \vdots                        & \ldots        & \vdots                        & \\
+    }
+\end{displaymath}
+
+\begin{displaymath}
+\xymatrix{
+0 \ar[r]  & \Omega_X^0 \ar@[white][r] & {\color{white} C^0(\Omega_X^0) \oplus \Omega_X^1 } \ar@[white][r] & {\color{white} C^1(\Omega_X^0) \oplus C^0(\Omega_X^1) \oplus \Omega_X^2} \ar@[white][r] &
+}
+\end{displaymath}}
+
+
+\only<5>{\begin{displaymath}
+    \xymatrix{
+    0 \ar[r] & \Omega^0_X \ar[d] \ar[r] & {\color{red}\Omega_X^1} \ar[r] \ar[d] & \ldots \ar[r] & \Omega_X^n \ar[d] \ar[r] & 0 \\ 
+    0 \ar[r] & {\color{red}C^0(\Omega^0_X)} \ar[d] \ar[r] & C^0(\Omega_X^1) \ar[r] \ar[d] & \ldots \ar[r] & C^0(\Omega_X^n) \ar[d] \ar[r] & 0 \\
+    0 \ar[r] & C^1(\Omega^0_X) \ar[d] \ar[r] & C^1(\Omega_X^1) \ar[r] \ar[d] & \ldots \ar[r] & C^1(\Omega_X^n) \ar[d] \ar[r] & 0 \\
+    &   \vdots                       & \vdots                        & \ldots        & \vdots                        & \\
+    }
+\end{displaymath}
+
+\begin{displaymath}
+\xymatrix{
+0 \ar[r]  & \Omega_X^0 \ar[r] & C^0(\Omega_X^0) \oplus \Omega_X^1  \ar@[white][r] & {\color{white} C^1(\Omega_X^0) \oplus C^0(\Omega_X^1) \oplus \Omega_X^2} \ar@[white][r] &
+}
+\end{displaymath}}
+
+\only<6>{\begin{displaymath}
+    \xymatrix{
+    0 \ar[r] & \Omega^0_X \ar[d] \ar[r] & \Omega_X^1 \ar[r] \ar[d] & \ldots \ar[r] & \Omega_X^n \ar[d] \ar[r] & 0 \\ 
+    0 \ar[r] & C^0(\Omega^0_X) \ar[d] \ar[r] & {\color{red}C^0(\Omega_X^1)} \ar[r] \ar[d] & \ldots \ar[r] & C^0(\Omega_X^n) \ar[d] \ar[r] & 0 \\
+    0 \ar[r] & {\color{red}C^1(\Omega^0_X)} \ar[d] \ar[r] & C^1(\Omega_X^1) \ar[r] \ar[d] & \ldots \ar[r] & C^1(\Omega_X^n) \ar[d] \ar[r] & 0 \\
+    &   \vdots                       & \vdots                        & \ldots        & \vdots                        & \\
+    }
+\end{displaymath}
+
+\begin{displaymath}
+\xymatrix{
+0 \ar[r]  & \Omega_X^0 \ar[r] & C^0(\Omega_X^0) \oplus \Omega_X^1  \ar[r] & C^1(\Omega_X^0) \oplus C^0(\Omega_X^1) \oplus \Omega_X^2 & 
+}
+\end{displaymath}}
 \end{frame}
 
 \begin{frame}
