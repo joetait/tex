@@ -163,7 +163,10 @@ If we consider the direct sum of these induced sheaves over all points $P\in X$ 
 \begin{equation}\label{sheafisomorphism}
 \underline{\Omega}_{K(X)}/\Omega_X\cong \bigoplus_{P\in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right).
 \end{equation}
-To explain this isomorphism we first construct a map from $\underline{\Omega}_{K(X)}/\Omega_{X,P}$ in to the product $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$, and then showing that this map has finite support.
+Given this isomorphism, we can take the cohomology of \eqref{serredualityses} and we get the exact sequence in the statement of the lemma.
+
+
+To explain the isomorphism in \eqref{sheafisomorphism} we first construct a map from $\underline{\Omega}_{K(X)}/\Omega_{X,P}$ in to the product $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$, and then showing that this map has finite support.
 
 Given $i\colon \{P\} \hookrightarrow X$ we have the following equalities
 \begin{align*}
@@ -171,7 +174,12 @@ i^{-1}\left(\underline{\Omega}_{K(X)}/\Omega_X\right) & = \left(\underline{\Omeg
 & = \underline{\Omega}_{K(X),P}/\Omega_{X,P} \\
 & = \Omega_{K(X)}/\Omega_{X,P}.
 \end{align*}
-Moreover, since $i^{-1}$ and the direct image functor $i_*$ are adjoint, we have a map $\left(\underline{\Omega}_{K(X)}/\Omega_X\right) \ra i_* i^{-1} \left( \underline{\Omega}_{K(X)}/\Omega_X \right) = i_* \left( \underline{\Omega}_{K(X)}/\Omega_{X.P} \right)$.\todo{check whether this is an isomorphism just because adjoint} This map is an isomorphism at the level of stalks, and hence is an isomorphism when we sum over all $P \in X$.\todo{finish this}
+It follows that for each $P \in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^{-1}(f) \in \left( \Omega_{K(X)}/\Omega_{X,P}$.
+Recall that for any $f \in \Omega_{K(X)}$then $f$ lies in $\Omega_{X,P}$ for all but a finite number of points $P \in X$.
+Hence the image of $f$ in $\Prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}$ is zero in almost all factors.
+
+
+
 \end{proof}
 
 For any $P\in X$ the residue map $\res_P \colon \Omega_{K(X)} \ra k$ is defined by the following properties:
