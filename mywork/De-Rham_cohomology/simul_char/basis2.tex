@@ -252,7 +252,7 @@ H^1(X,\Omega_X) \cong \frac{\Omega_X(U_0 \cap U_\infty)}{\Ima(\check{d})} = \fra
 
 We now describe the trace map using the \cech cohomology representative of $\hone$ above.
 \begin{lem}\label{tracemaplemma}
-For any $\bar \omega \in \cechhone$ we have the following equality:
+For any $\bar \omega \in \cechhone$, which has $\omega \in \Omega_X(U_0 \cap U_\infty)$ as a representative, we have the following equality:
 \[
 t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
 \]
@@ -288,6 +288,73 @@ This then maps to
 Moreover, by commutativity of the diagram $\psi \in \ker(d_3)$.
 Since $\omega$ is regular on $U_0 \cap U_\infty$, and $0$ is regular on $U_\infty$, then $\res_P(\psi) = 0$ for all $P \in U_\infty$.
 Hence $t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega)$.
+\end{proof}
+
+We now recall how to compute the algebraic de Rham cohomology of $X$ via \cech cohomology.
+Since $X$ is a curve any differentials of degree greater than one on $X$ are zero.
+Hence the de Rham complex $X$ is the hypercohomology of the complex
+\begin{equation}\label{res}
+0 \rightarrow \cO_X \xrightarrow{d} \Omega_X \rightarrow 0.
+\end{equation}
+Here $d$ denotes the differential map $f \mapsto df$, as defined in \cite[Chap II, \S 8, Pg. 172]{hart}.
+
+We use the cover $\cal U$ and the \cech differentials as defined earlier to give us the \cech bicomplex of \eqref{res}, which is
+\begin{equation}\label{bicomplex}
+\xymatrix{ & 0 \ar[d] & 0 \ar[d] & \\
+0 \ar[r] & \cO_X(U_0) \times \cO_X(U_\infty) \ar[d] \ar[r] & \Omega_X(U_0) \times \Omega_X(U_\infty) \ar[d] \ar[r] & 0 \\
+0 \ar[r] & \cO_X(U_0\cap U_\infty) \ar[d] \ar[r] & \Omega_X(U_0 \cap U_\infty) \ar[r] \ar[d] & 0 \\
+& 0 & 0 &}
+\end{equation}
+By a generalisation of Leray's theorem \cite[Cor 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
+Note that this requires ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero for any $\sigma$ in the nerve of $\cU$ and any $p \geq 1$ ---
+since $U_0$ and $U_\infty$ are affine, this again follows from Serre's affineness criterion \cite[Thm 5.2.23]{liu}.
+
+
+
+After computing the first cohomology group of the total complex of \eqref{bicomplex} we see that $\derhamhone$ is isomorphic to the space
+\begin{equation}\label{derhamconditions}
+\left\{(\omega_0, \omega_\infty, f_{0,\infty}) | \omega_i\in \Omega_{X/k}(U_i), f_{0,\infty}\in \cO_X(U_0 \cap U_\infty), df_{0,\infty} = \omega_0|_{U_0\cap U_\infty} - \omega_\infty|_{U_0\cap U_\infty} \right\}
+\end{equation}
+quotiented by the subspace
+\begin{equation}\label{quotient}
+\left\{  (df_0, df_\infty, f_0|_{U_0\cap U_\infty} -f_\infty|_{U_0\cap U_\infty} )|f_i \in \cO_X(U_i)\right\}.
+\end{equation}
+
+We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$ and to study the $k[G]$-module structure.
+The following lemma shows that $\derhamhone$ fits in to a short exact sequence which we will use to compute the $k$-basis.
+\begin{prop}\label{ses}
+The following is a short exact sequence
+\begin{equation}\label{equationses}
+0 \ra H^0(X,\Omega_X) \xrightarrow{i} \derhamhone \xrightarrow{p} H^1(X,\cO_X) \ra 0, 
+\end{equation}
+where $i \colon \omega \mapsto (\omega, \omega)$ and $p \colon (\omega_0, \omega_\infty, f_{0 \infty}) \to f_{0 \infty}$.
+\end{prop}
+\begin{proof}
+Let $T$ be the total complex of \eqref{bicomplex}.
+Moreover we let $\cO$ and $\Omega$ be the complexes formed from the first and second (non-trivial) columns of \eqref{bicomplex} respectively.
+Then let $\Omega[1]$ denote the complex obtained from shifting $\Omega$ by one, i.e. $\Omega[1]^{n+1} = \Omega^n$.
+Then we obtain the following short exact sequence of complexes 
+\[
+\Omega[1] \hookrightarrow T \twoheadrightarrow \cO,
+\]
+giving rise to the following long exact sequence
+\begin{equation*}
+0 \ra H^0_{\text {dR}}(X/k) \ra H^0(X,\cO_X) \ra \\
+\end{equation*}
+\begin{equation}\label{longexactsequence}
+ H^0(X,\Omega_X) \ra \derhamhone \ra \hone \ra \\
+\end{equation}
+\begin{equation*}
+ H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k) \ra 0.
+\end{equation*}
+The map $H^0(X,\cO_X) \ra \hzero$ is the map $f \mapsto df$.
+Since the only globally holomorphic functions on $X$ are constant functions, it follows that this is the zero map, and hence $\hzero \ra \derhamhone$ is injective.
+
+Since \eqref{longexactsequence} is exact, $p$ is surjective if and only if $\alpha \colon H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k)$ is injective.
+Now $H^1(X,\Omega_X)$ is isomorphic to $k$ via the residue map \cite[Chap. III, Thm. 7.14.1]{hart}, and if we can show that this isomorphism factors through $\alpha$ it will follow that $\alpha$ is injective.
+Considering the \cech cohomology constructions of $H^1(X,\Omega_X)$ and $H^2_{\text {dR}}(X/k)$, it suffices to show that the residue map is zero on $\Ima \left( d \colon \cO_X(U_0 \cap U_\infty) \ra \Omega_X(U_0 \cap U_\infty) \right)$.
+This follows from \cite[Chap. III, Thm. 7.14.1 (b)]{hart}, which says that $\res_P(df)=0$ for any $f \in \cO_X(U_0 \cap U_\infty)$.
+Hence the residue isomorphism factors through $\alpha$, and hence $p$ is surjective.
 \end{proof}
 
 
