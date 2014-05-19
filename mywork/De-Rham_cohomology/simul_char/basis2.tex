@@ -180,46 +180,143 @@ Recall that for any $f \in \Omega_{K(X)}$then $f$ lies in $\Omega_{X,P}$ for all
 Hence the image of $f$ in $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors.
 From this the isomorphism in \eqref{sheafisomorphism} follows.
 
-Replacing $\underline{\Omega}_{K(X)}/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ in \eqref{serredualityses} and taking cohomology then yields the exact sequence in the statement of the lemma.
-
-
-
+Replacing $\underline{\Omega}_{K(X)}/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ in \eqref{serredualityses} and taking cohomology then yields the exact sequence in the statement of the lemma.\todo{repeated line earlier}
 \end{proof}
 
 For any $P\in X$ the residue map $\res_P \colon \Omega_{K(X)} \ra k$ is defined by the following properties:
 \begin{itemize}
 \item $\res_P(\omega) = 0$ for all $\omega \in \Omega_{P}$;
-\item $\res_P(f^ndf) = 0$ for all $f \in K(X)*$ and all $n \neq 1$;
-\item $\res_P(f^{-1}df) = \ord_P(f)$, where $\ord_P$ is the order of the function at $P$.
+\item $\res_P(f^ndf) = 0$ for all $f \in K(X)^*$ and all $n \neq 1$;
+\item $\res_P(f^{-1}df) = \ord_P(f)$, where $\ord_P(f)$ is the order of $f$ at $P$.
 \end{itemize}
 See \cite[Chap III, Thm. 7.14.1]{hart} for details.
-Now $\res_P$ is well defined on the quotient $\Omega_{K(X)}/\Omega_P$, since $\Omega_P \subseteq \ker (\res_P)$.
-The residue theorem \cite[Chap. III, Thm. 7.14.2]{hart} states that for any $\omega \in \Omega_{K(X)}$ we have $\sum_{P\in X} \res_P(\omega) = 0$.
-From this it follows that the map $t \colon \bigoplus_{P \in X} \Omega_K(X)/\Omega_P \ra k$ given by $(\omega_P)_{P \in X} \mapsto \sum_{P\in X} \res_P(\omega_P)$ vanishes on the image of $\Omega_{K(X)}$.
-Hence this map is well defined on the quotient, which is $H^1(X,\Omega_X)$, by Lemma \ref{exactsequencelemma}.
-Given some $\bar \omega$ in the quotient $H^1(X,\Omega_X)$, which is mapped to by some $\omega \in \bigoplus_{P \in X} \Omega_K(X)/\Omega_P$, we can define the trace map $t$ by
-\[
-t \colon H^1\left(X, \Omega_X\right) \ra k,\ \bar \omega \mapsto \sum_{P \in X} \res_P(\omega).
-\]
-The following lemma will make it easier to compute $t( \bar \omega)$.
 
-\begin{lem}
-For any $\bar \omega \in H^1(X,\Omega_X)$ we have the following equality
+
+
+Now since $\Omega_P \subseteq \ker (\res_P)$, it follows that $\res_P$ is well defined on the quotient $\Omega_{K(X)}/\Omega_P$.
+Moreover, the residue theorem \cite[Chap. III, Thm. 7.14.2]{hart} states that for any $\omega \in \Omega_{K(X)}$ we have $\sum_{P\in X} \res_P(\omega) = 0$, and so the map $t \colon \bigoplus_{P \in X} \Omega_K(X)/\Omega_P \ra k$ given by $(\omega_P)_{P \in X} \mapsto \sum_{P\in X} \res_P(\omega_P)$ vanishes on the image of $\Omega_{K(X)}$.
+It follows that given some $\bar \omega$ in $H^1(X,\Omega_X)$, which is mapped to by some $(\omega_P)_{P \in X} \in \bigoplus_{P \in X} \Omega_K(X)/\Omega_P$, we can define the trace map $t$:
+\[
+t \colon H^1\left(X, \Omega_X\right) \ra k,\ \bar \omega \mapsto \sum_{P \in X} \res_P(\omega_P).
+\]
+
+
+We now use the trace map to define a pairing between the $k$-vector spaces $\hone$ and $\hzero$.
+Roughly speaking, we can replace $\Omega_X$ by $\cO_X$ in Lemma \ref{exactsequencelemma} and get a similar result.
+Hence $H^1(X,\cO_X)$ can also be viewed as a quotient of a direct sum over all $P \in X$, and using this we define a canonical map 
+\begin{equation}\label{productmap}
+\hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto \overline {((f  \omega)_P)}_{P \in X}.
+\end{equation}\todo{sort out notation}
+The product here is given as follows: since $\omega$ is a global differential and $f$ is the quotient of some $(f_P)_{P \in X}~\in~\bigoplus_{P \in X} i_*\left( \cO_X/\Omega_{X,P} \right)$, at any point $P$ we can take $f_P \omega_P$, the germ of $f\omega$.
+We then define $(f\omega)_P :=f_P\omega_P$.
+
+We now combine the product map in \eqref{productmap} with the trace map $t$ to get a map 
+\[
+ \hzero \times \hone \ra k,\quad (\omega, f) \to \langle \omega, f \rangle := t \left( f \omega |_{U_0 \cap U_\infty}\right).
+\]
+
+\begin{thm}\label{serredualitytheorem}
+Via the pairing $\langle , \rangle$, the $k$-vector spaces $\hone$ and $\hzero$ are dual to each other.
+\end{thm}
+\begin{proof}
+This is in fact a specialisation of \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields}.
+\end{proof}
+
+If we fix any $\omega \in \hzero$ we produce a map $\theta(\omega)\colon \hone \ra k$, given by $\theta(\omega)(f) = \langle \omega , f\rangle$.
+Similarly, if we fix any $f \in \hone$ then we get a map $\psi(f) \colon \hzero \ra k$.
+The maps $\psi$ and $\theta$ are isomorphisms and are dual to each other: in particular, this means that given a basis $e_1, \ldots, e_n$ of $\hzero$, we can find a basis $f_1, \ldots , f_n$ of $\hone$ such that $\theta(e_i)(f_i) = 1$ for all $1 \leq i \leq n$ and $\theta(e_i)(f_j) = 0$ if $i \neq j$ (and similarly for $\psi$).
+
+
+\section{\cech cohomology}
+In this section we will describe $\hone$ and $\hzero$ in terms of \cech cohomology.
+This will give us a concrete description, which we can then use in the next section to compute an explicit basis of $\derhamhone$.
+
+By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group of $\cO_X$ and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
+We let $U_a = X \backslash \pi^{-1}(a)$ for any $a \in \mathbb P_k^1$ and we let ${\cal U}$ be the affine cover of $X$ formed by $U_0$ and $U_\infty$.
+Given any sheaf $\cal F$ on $X$ we have the \cech differential $\check{d}\colon {\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, defined by $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
+In general we will suppress the notation denoting the restriction map.
+Via this differential we have the following cochain complex
+\begin{equation*}
+0 \rightarrow \cO_X(U_0)\times \cO_X(U_\infty) \xrightarrow{\check{d}} \cO_X(U_0 \cap U_\infty) \rightarrow 0.
+\end{equation*}
+The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(\check{d})}$ and hence
+\begin{equation}\label{cechhone}
+\hone \cong \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(\check{d})}  
+ = \frac{\cO_X(U_0 \cap U_\infty)}{\{f_0 - f_\infty | f_i \in \cO_X(U_i) \}}.
+\end{equation}
+
+If we replace $\cO_X$ by $\Omega_X$ in the previous paragraph then everything still holds, and we can conclude that
+\[
+H^1(X,\Omega_X) \cong \frac{\Omega_X(U_0 \cap U_\infty)}{\Ima(\check{d})} = \frac{\Omega_X(U_0 \cap U_\infty)}{\{\omega_0 - \omega_ \infty | \omega_i \in \Omega_X(U_i)\}}.
+\]
+
+We now describe the trace map using the \cech cohomology representative of $\hone$ above.
+\begin{lem}\label{tracemaplemma}
+For any $\bar \omega \in \cechhone$ we have the following equality:
 \[
 t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
 \]
 \end{lem}
 \begin{proof}
+We take the \cech complex of \eqref{serredualityses} over the cover $\cU$, yielding the following bicomplex
+\begin{equation}\label{dualitydiagram2}
+\xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
+\Omega_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{\Omega}_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
+\end{equation}
+We can now apply the snake lemma to this commutative diagram.
+In the next paragraph we conclude the proof by showing that the exact sequence that arises from the applying snake lemma is precisely the sequence \eqref{dualityses} in the statement of the lemma.\todo{check underlining}
+
+The fact that $H^0(X,\Omega_X) \cong \ker(d_1)$ and $H^1(X,\Omega_X) \cong {\rm coker}(d_1)$ follows from the above discussion of \cech cohomology.
+The map $d_2\colon \Omega_{K(X)} \times \Omega_{K(X)} \ra \Omega_{K(X)}$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$.
+Hence the map $\omega \mapsto (\omega, \omega)$ gives an isomorphism from $\Omega_{K(X)}$ to $\ker(d_2)$.
+Finally, $d_3$ is defined by $(\omega_0, \omega_\infty) \mapsto \omega_0|_{U_0 \cap U_\infty} - \omega_\infty|_{U_0 \cap U_\infty}$.
+Hence the kernel of $d_3$ is formed of pairs $(\omega_0, \omega_\infty) \in \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus_{P \in  U_\infty} \Omega_{K(X)}/\Omega_{X,P}$ such that $\omega_0$ and $\omega_\infty$ agree on $U_0 \cap U_\infty$.
+It follows that the map $\bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}\ra\ker(d_3)  $ given by 
+\begin{equation*}
+(\omega_P)_{P \in X} \to \left( (\omega_P)_{ P \in U_0}, (\omega_P)_{P \in U_\infty}) \right)
+\end{equation*}
+is an isomorphism.
+
 The proof follows from a diagram chase on \eqref{dualitydiagram2}.
 Given a cocycle in $\bar \omega \in \hone$ we take a representative $\omega \in \Omega_X(U_0 \cap U_\infty)$.
-This then injects in to $\Omega_{K(X)}$, and since $d_2$ is surjective we can choose an element of $\Omega_{K(X)} \times \Omega_{K(X)}$ mapping to $\omega$.
+This then injects in to $\underline{\Omega}_{K(X)}$, and since $d_2$ is surjective we can choose an element of $\underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)}$ mapping to $\omega$.
 In particular, we could choose $(\omega,0)$.
-This then maps to $\psi = ((\bar{\omega}|_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right)$.
+This then maps to 
+\[
+\psi = ((\bar{\omega}|_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right).
+\]
 Moreover, by commutativity of the diagram $\psi \in \ker(d_3)$.
 Since $\omega$ is regular on $U_0 \cap U_\infty$, and $0$ is regular on $U_\infty$, then $\res_P(\psi) = 0$ for all $P \in U_\infty$.
 Hence $t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega)$.
 \end{proof}
-\todo[inline]{proof doesn't make sense, since cech cohomology is not covered yet}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
