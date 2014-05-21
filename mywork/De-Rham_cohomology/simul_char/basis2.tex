@@ -130,21 +130,18 @@
 \listoftodos
 
 \todo[inline]{change references to preprint when in thesis}
-Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
-We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$.
-We let $G$ denote a finite group acting on $X$.
 
 \section{Serre duality}
 
 
 We begin by recalling some of the details of Serre duality.
-This will be used along with \cech cohomology to compute a $k$-basis of $\hone$, in a similar vein to \cite{canonicalrepresentation}.
-We let $K(X)$ denote the function field of $X$, and then let $\Omega_{K(X)}$ be the module of differentials of $K(X)$ over $k$.
+We take $X$ to be a smooth, projective, connected curve over an algebraically closed field $k$ of characteristic $P \geq 0$.
+Furthermore, we let $G$ denote the automorphism group of $X$ and we let $K(X)$ denote the function field of $X$, and then let $\Omega_{K(X)}$ be the module of differentials of $K(X)$ over $k$.
 The following lemma gives us a useful description of $H^1(X,\Omega_X)$.
 \begin{lem}\label{exactsequencelemma}
 The following sequence is exact:
 \begin{equation}\label{dualityses}
-0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta} H^1(X,\Omega_X) \ra 0,
+0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta} H^1(X,\Omega_X) \ra 0.
 \end{equation}
 \end{lem}
 \begin{rem}
@@ -164,10 +161,9 @@ If we consider the direct sum of these induced sheaves over all points $P\in X$ 
 \begin{equation}\label{sheafisomorphism}
 \underline{\Omega}_{K(X)}/\Omega_X\cong \bigoplus_{P\in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right).
 \end{equation}
-Given this isomorphism, we can take the cohomology of \eqref{serredualityses} and we get the exact sequence in the statement of the lemma.
 
 
-To explain the isomorphism in \eqref{sheafisomorphism} we first construct a map from $\underline{\Omega}_{K(X)}/\Omega_{X,P}$ in to the product $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$, and then showing that this map has finite support.
+To explain the isomorphism in \eqref{sheafisomorphism} we first construct a map from $\underline{\Omega}_{K(X)}/\Omega_{X,P}$ in to the product $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$, and then show that this map has finite support.
 
 Given $i\colon \{P\} \hookrightarrow X$ we have the following equalities
 \begin{align*}
@@ -175,7 +171,7 @@ i^{-1}\left(\underline{\Omega}_{K(X)}/\Omega_X\right) & = \left(\underline{\Omeg
 & = \underline{\Omega}_{K(X),P}/\Omega_{X,P} \\
 & = \Omega_{K(X)}/\Omega_{X,P}.
 \end{align*}
-It follows that for each $P \in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^{-1}(f) \in \left( \Omega_{K(X)}/\Omega_{X,P} \right)$.
+It follows that for each $P \in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^{-1}(f) \in i_8 \left( \Omega_{K(X)}/\Omega_{X,P} \right)$.
 Recall that for any $f \in \Omega_{K(X)}$then $f$ lies in $\Omega_{X,P}$ for all but a finite number of points $P \in X$.
 Hence the image of $f$ in $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors.
 From this the isomorphism in \eqref{sheafisomorphism} follows.
@@ -193,8 +189,12 @@ See \cite[Chap III, Thm. 7.14.1]{hart} for details.
 
 
 
-Now since $\Omega_P \subseteq \ker (\res_P)$, it follows that $\res_P$ is well defined on the quotient $\Omega_{K(X)}/\Omega_P$.
-Moreover, the residue theorem \cite[Chap. III, Thm. 7.14.2]{hart} states that for any $\omega \in \Omega_{K(X)}$ we have $\sum_{P\in X} \res_P(\omega) = 0$, and so the map $t \colon \bigoplus_{P \in X} \Omega_K(X)/\Omega_P \ra k$ given by $(\omega_P)_{P \in X} \mapsto \sum_{P\in X} \res_P(\omega_P)$ vanishes on the image of $\Omega_{K(X)}$.
+Since $\Omega_P \subseteq \ker (\res_P)$, it follows that $\res_P$ is well defined on the quotient $\Omega_{K(X)}/\Omega_P$.
+The residue theorem \cite[Chap. III, Thm. 7.14.2]{hart} states that $\sum_{P\in X} \res_P(\omega) = 0$ for any $\omega \in \Omega_{K(X)}$, and so the map 
+\[
+\bigoplus_{P \in X} \Omega_K(X)/\Omega_P \ra k, \quad (\omega_P)_{P \in X} \mapsto \sum_{P\in X} \res_P(\omega_P)
+\]
+vanishes on the image of $\Omega_{K(X)}$.
 It follows that given some $\bar \omega$ in $H^1(X,\Omega_X)$, which is mapped to by some $(\omega_P)_{P \in X} \in \bigoplus_{P \in X} \Omega_K(X)/\Omega_P$, we can define the trace map $t$:
 \[
 t \colon H^1\left(X, \Omega_X\right) \ra k,\ \bar \omega \mapsto \sum_{P \in X} \res_P(\omega_P).
@@ -203,25 +203,27 @@ t \colon H^1\left(X, \Omega_X\right) \ra k,\ \bar \omega \mapsto \sum_{P \in X} 
 
 We now use the trace map to define a pairing between the $k$-vector spaces $\hone$ and $\hzero$.
 Roughly speaking, we can replace $\Omega_X$ by $\cO_X$ in Lemma \ref{exactsequencelemma} and get a similar result.
-Hence $H^1(X,\cO_X)$ can also be viewed as a quotient of a direct sum over all $P \in X$, and using this we define a canonical map 
+Hence $H^1(X,\cO_X)$ can also be viewed as a quotient of $\bigoplus_{P \in X} K(X)/\cO_{X,P}$.
+Then we can define a map 
 \begin{equation}\label{productmap}
-\hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto \overline {((f  \omega)_P)}_{P \in X}.
+\hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto \overline {(f_P  \omega_P)}_{P \in X},
 \end{equation}\todo{sort out notation}
-The product here is given as follows: since $\omega$ is a global differential and $f$ is the quotient of some $(f_P)_{P \in X}~\in~\bigoplus_{P \in X} i_*\left( \cO_X/\Omega_{X,P} \right)$, at any point $P$ we can take $f_P \omega_P$, the germ of $f\omega$.
-We then define $(f\omega)_P :=f_P\omega_P$.
+where $f_p\omega_p$ is just the product of the germ of $\omega$ in $\Omega_{X,P}$ with $f_P$.
+Note that in general we will denote elements of $\hone$ by $f$.
 
 We now combine the product map in \eqref{productmap} with the trace map $t$ to get a map 
 \[
- \hzero \times \hone \ra k,\quad (\omega, f) \to \langle \omega, f \rangle := t \left( f \omega |_{U_0 \cap U_\infty}\right).
+ \hzero \times \hone \ra k,\quad (\omega, f) \to \langle \omega, f \rangle := t \left( f \omega \right).
 \]
 
 \begin{thm}\label{serredualitytheorem}
-Via the pairing $\langle , \rangle$, the $k$-vector spaces $\hone$ and $\hzero$ are dual to each other.
+Via the pairing $\langle\ ,\ \rangle$, the $k$-vector spaces $\hone$ and $\hzero$ are dual to each other.
 \end{thm}
 \begin{proof}
-This is in fact a specialisation of \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields}.
+This is a specialisation of \cite[Thm. 2, Chap. II]{algebraicgroupsandclassfields}.
 \end{proof}
 
+We briefly describe the maps Serre uses to prove the above theorem.
 If we fix any $\omega \in \hzero$ we produce a map $\theta(\omega)\colon \hone \ra k$, given by $\theta(\omega)(f) = \langle \omega , f\rangle$.
 Similarly, if we fix any $f \in \hone$ then we get a map $\psi(f) \colon \hzero \ra k$.
 The maps $\psi$ and $\theta$ are isomorphisms and are dual to each other: in particular, this means that given a basis $e_1, \ldots, e_n$ of $\hzero$, we can find a basis $f_1, \ldots , f_n$ of $\hone$ such that $\theta(e_i)(f_i) = 1$ for all $1 \leq i \leq n$ and $\theta(e_i)(f_j) = 0$ if $i \neq j$ (and similarly for $\psi$).
