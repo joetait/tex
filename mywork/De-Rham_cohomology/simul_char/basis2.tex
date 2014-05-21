@@ -230,10 +230,9 @@ The maps $\psi$ and $\theta$ are isomorphisms and are dual to each other: in par
 
 
 \section{\cech cohomology}
-In this section we will describe $\hone$ and $\hzero$ in terms of \cech cohomology.
-This will give us a concrete description, which we can then use in the next section to compute an explicit basis of $\derhamhone$.
+In this section we describe $\hone$ and $\hzero$ concretely in terms of \cech cohomology.
 
-By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group of $\cO_X$ and $\hone$ will be isomorphic if the cover we use to compute the \cech cohomology is affine.
+By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group of $\cO_X$ will be isomorphic to $\hone$ if the cover we use to compute the \cech cohomology is affine.
 We let $U_a = X \backslash \pi^{-1}(a)$ for any $a \in \mathbb P_k^1$ and we let ${\cal U}$ be the affine cover of $X$ formed by $U_0$ and $U_\infty$.
 Given any sheaf $\cal F$ on $X$ we have the \cech differential $\check{d}\colon {\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, defined by $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
 In general we will suppress the notation denoting the restriction map.
@@ -250,51 +249,55 @@ The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_0 \cap U_
 If we replace $\cO_X$ by $\Omega_X$ in the previous paragraph then everything still holds, and we can conclude that
 \[
 H^1(X,\Omega_X) \cong \frac{\Omega_X(U_0 \cap U_\infty)}{\Ima(\check{d})} = \frac{\Omega_X(U_0 \cap U_\infty)}{\{\omega_0 - \omega_ \infty | \omega_i \in \Omega_X(U_i)\}}.
-\]
+\]\todo{check that I actually want this and $\hzero$}
 
 We now describe the trace map using the \cech cohomology representative of $\hone$ above.
 \begin{lem}\label{tracemaplemma}
-For any $\bar \omega \in \cechhone$, which has $\omega \in \Omega_X(U_0 \cap U_\infty)$ as a representative, we have the following equality:
+For any $\bar \omega \in \check{H}^1\left (\cal U, \Omega_X\right )$, which has $\omega \in \Omega_X(U_0 \cap U_\infty)$ as a representative, we have the following equality:
 \[
 t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
 \]
 \end{lem}
 \begin{proof}
-We take the \cech complex of \eqref{serredualityses} over the cover $\cU$, yielding the following bicomplex
+We take the \cech complex of \eqref{serredualityses} (replacing $\underline{\Omega}_{K(X)}/\Omega_X$ by $\bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$) over the cover $\cU$, yielding the following bicomplex
 \begin{equation}\label{dualitydiagram2}
 \xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
 \Omega_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{\Omega}_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
 \end{equation}
 We can now apply the snake lemma to this commutative diagram.
-In the next paragraph we conclude the proof by showing that the exact sequence that arises from the applying snake lemma is precisely the sequence \eqref{dualityses} in the statement of the lemma.\todo{check underlining}
+This gives rise to six terms, the last two of which are zero.
+The other four terms are described below.
 
 The fact that $H^0(X,\Omega_X) \cong \ker(d_1)$ and $H^1(X,\Omega_X) \cong {\rm coker}(d_1)$ follows from the above discussion of \cech cohomology.
 The map $d_2\colon \Omega_{K(X)} \times \Omega_{K(X)} \ra \Omega_{K(X)}$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$.
 Hence the map $\omega \mapsto (\omega, \omega)$ gives an isomorphism from $\Omega_{K(X)}$ to $\ker(d_2)$.
 Finally, $d_3$ is defined by $(\omega_0, \omega_\infty) \mapsto \omega_0|_{U_0 \cap U_\infty} - \omega_\infty|_{U_0 \cap U_\infty}$.
 Hence the kernel of $d_3$ is formed of pairs $(\omega_0, \omega_\infty) \in \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus_{P \in  U_\infty} \Omega_{K(X)}/\Omega_{X,P}$ such that $\omega_0$ and $\omega_\infty$ agree on $U_0 \cap U_\infty$.
-It follows that the map $\bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}\ra\ker(d_3)  $ given by 
-\begin{equation*}
-(\omega_P)_{P \in X} \to \left( (\omega_P)_{ P \in U_0}, (\omega_P)_{P \in U_\infty}) \right)
-\end{equation*}
+It follows that the map 
+\[
+\bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}\ra\ker(d_3), \quad  (\omega_P)_{P \in X} \to \left( (\omega_P)_{ P \in U_0}, (\omega_P)_{P \in U_\infty}) \right)
+\]
 is an isomorphism.
 
-The proof follows from a diagram chase on \eqref{dualitydiagram2}.
-Given a cocycle in $\bar \omega \in \hone$ we take a representative $\omega \in \Omega_X(U_0 \cap U_\infty)$.
+The proof now follows from a diagram chase on \eqref{dualitydiagram2}.
+ We have a cocycle in $\bar \omega \in \hone$ with representative $\omega \in \Omega_X(U_0 \cap U_\infty)$.
 This then injects in to $\underline{\Omega}_{K(X)}$, and since $d_2$ is surjective we can choose an element of $\underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)}$ mapping to $\omega$.
 In particular, we could choose $(\omega,0)$.
 This then maps to 
 \[
 \psi = ((\bar{\omega}|_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right).
 \]
-Moreover, by commutativity of the diagram $\psi \in \ker(d_3)$.
-Since $\omega$ is regular on $U_0 \cap U_\infty$, and $0$ is regular on $U_\infty$, then $\res_P(\psi) = 0$ for all $P \in U_\infty$.
-Hence $t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega)$.
+By commutativity of the diagram $\psi \in \ker(d_3)$.
+Since $\res_P(\omega)=0$ for all $P \in U_0 \cap U_\infty$, and similarly $\res_P(0)=0$ for all $P \in U_\infty$, then $\res_P(\psi) = 0$ for all $P \in U_\infty$.
+Finally, we conclude that 
+\[
+t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega).
+\]
 \end{proof}
 
 We now recall how to compute the algebraic de Rham cohomology of $X$ via \cech cohomology.
 Since $X$ is a curve any differentials of degree greater than one on $X$ are zero.
-Hence the de Rham complex $X$ is the hypercohomology of the complex
+Hence the de Rham complex of $X$ is the hypercohomology of the complex
 \begin{equation}\label{res}
 0 \rightarrow \cO_X \xrightarrow{d} \Omega_X \rightarrow 0.
 \end{equation}
@@ -333,7 +336,7 @@ where $i \colon \omega \mapsto (\omega, \omega)$ and $p \colon (\omega_0, \omega
 \end{prop}
 \begin{proof}
 Let $T$ be the total complex of \eqref{bicomplex}.
-Moreover we let $\cO$ and $\Omega$ be the complexes formed from the first and second (non-trivial) columns of \eqref{bicomplex} respectively.
+Moreover, we let $\cO$ and $\Omega$ be the complexes formed from the first and second (non-trivial) columns of \eqref{bicomplex} respectively.
 Then let $\Omega[1]$ denote the complex obtained from shifting $\Omega$ by one, i.e. $\Omega[1]^{n+1} = \Omega^n$.
 Then we obtain the following short exact sequence of complexes 
 \[
@@ -378,8 +381,9 @@ On the other hand, if $p=2$, then the extension $K(X)$ of $k(x)$ will be $k(x,y)
 y^2 - H(x)y = F(x)
 \end{equation}
 for some $H(x),F(x) \in k[x]$, such that $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
-We require that $\deg(H(x)) \leq g+1$, with equality if and only $\infty$ is not a branch point, and that $\deg(F(x)) \leq 2g+2$ with $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point  \cite[Prop 7.4.24]{liu}.
+We require that $\deg(H(x)) \leq g+1$, with equality if and only if $\infty$ is not a branch point, and that $\deg(F(x)) \leq 2g+2$ with $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point  \cite[Prop 7.4.24]{liu}.
 
+We now recall the details of some divisors discussed in \cite{faithfulaction}, which we will need later.
 Henceforth we let $P_a$ and $P_a'$ denote the unique elements of $\pi^{-1}(a)$ for any point $a \in \mathbb P_k^1$ that is not a branch point.
 If $a \in \mathbb P_k^1$ is a branch point we denote the unique point in $\pi^{-1}(a)$ by $P_a$.
 We also define $D_a$ to be the divisor $\pi^*\left([a]\right)$ for any $a \in \mathbb P_k^1$, and hence
@@ -394,46 +398,52 @@ D_a=
 If $p \neq 2$ then the ramification points are the zeroes of $f(x)$.
 We suppose that 
 \[
-f(x) = \prod_{i=1}^d (x-a_i) = b_dx^d + \ldots + b_0,
+f(x) = \prod_{i=1}^{d_f} (x-a_i) = x^{d_f} + b_{d_f - 1}x^{d_f-1} \ldots + b_0,
 \]
-for some $a_i, b_i \in k$, $d = \deg(f) \in \{2g+1, 2g+2\}$ and $n_i \ mathbb N$.
-In this case, the $a_i \in \mathbb A_k^1 \subset \mathbb P_k^1$ are the branch points of $\pi$, and hence we let $P_i = P_{a_i}$ denote the corresponding branch points.
-Then the ramification divisor $R$ of $X$ is
+for some $a_i, b_i \in k$, $d_f = \deg(f) $ and $n_i \mathbb N$.
+In this case, the $a_i \in \mathbb A_k^1 \subset \mathbb P_k^1$ are the branch points of $\pi$, and hence we let $P_i = P_{a_i}$ denote the corresponding ramification points.
+Then the ramification divisor $R$ of $\pi$ is
 \[
-R = \sum_{i=1}^d [P_i].
-\]
+R = \sum_{i=1}^{d_f} [P_i].
+\]\todo{what to do about $\infty$?}
 If $p=2$ then we suppose that
 \begin{equation*}
-H(x) = \prod_{i=1}^d (x-a_i)^{n_i} = x^d + b_{d-1}x^{d-1} + \ldots + b_1x + b_0
+H(x) = \prod_{i=1}^{d_H} (x-A_i)^{n_i} = x^{d_H} + B_{{d_H}-1}x^{{d_H}-1} + \ldots + B_1x + B_0
 \end{equation*}
-for some $a_i, b_i \in  k$, $d \leq g+1$ and $n_i \in \mathbb N$.
-Then, as above, the $a_i$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points.
+for some $A_i, B_i \in  k$, ${d_H} \leq g+1$ and $n_i \in \mathbb N$.
+Then, as above, the $A_i$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points.
 Given this, we can write the ramification divisor as
 \[
-R = \sum_{i=1}^d 2n_i[P_i] + (g+1-d)D_\infty.
+R = \sum_{i=1}^{d_H} 2n_i[P_i] + (g+1-{d_H})D_\infty.
 \]
-Details can be found in \cite[\S 6]{faithfulaction}.
 
 
-With this notation we also have
+We also have
 \begin{equation}\label{divxp=2}
 \di (x)  = D_0 - D_\infty
 \end{equation}
-regardless of the characteristic of $k$.
-Also, as in \cite[\S 6]{faithfulaction}, we have
+and
 \begin{equation}\label{differentialdivisor}
 \di(dx) = R - 2D_\infty,
 \end{equation}
-where $R$ denotes the ramification divisor of $\pi$.
 This is again regardless of characteristic.
 
-If $P \neq 2$ then recall from \cite[\S 6]{faithfulaction} that
+If $p \neq 2$ then 
 \begin{equation}\label{pnot2divisors}
 \di(y)  = R - (g+1)D_\infty.
 \end{equation}
-If $p=2$ then we also recall from \cite[\S 6]{faithfulaction} that the divisor of $H(x)$ is
+whilst if $p=2$ then the divisor of $H(x)$ is
 \begin{equation}\label{divisorofH}
 \di (H(x))  = R - (g+1)D_\infty. 
+\end{equation}
+We also compute the divisor of $dy$ when the characteristic of $k$ is $2$.
+We start by noting that when we take the differential of \eqref{definep=2} we obtain
+\[
+dF = d\left(y^2 + yH \right) = d(yH) = Hdy + ydH
+\]
+and from this it follows that
+\begin{equation}\label{divdyp=2}
+dy = \frac{F'-yH'}{H}dx.
 \end{equation}
 
 Finally, we describe the divisor of $y$ when $p=2$.
@@ -521,7 +531,7 @@ Since $R$ is a positive divisor this is non-negative on $U_0 \cap U_\infty$ if $
 
 
 Recall that the differentials $\omega_0 = y^{-1}dx, \ldots, \omega_{g-1} = x^{g-1}y^{-1}dx$ form a basis of $\hzero$ (see, for example, \cite[Chap 7, Prop. 4.26]{liu}).
-By Lemma \ref{tracelemma} we know that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx)$.
+By Lemma \ref{tracemaplemma} we know that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx)$.
 It follows immediately from \cite[Chap. III, Thm. 7.14.1(b)]{hart} that $\sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx) = -2$ if and is zero otherwise.
 It then follows from Theorem \ref{serredualitytheorem} that the collection of elements $\{ yx^{-j}|_{U_0\cap U_\infty}\}_{ 1 \leq j \leq g}$ form a basis of $\hone$.
 
