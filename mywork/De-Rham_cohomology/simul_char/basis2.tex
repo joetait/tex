@@ -135,8 +135,9 @@
 
 
 We begin by recalling some of the details of Serre duality.
-We take $X$ to be a smooth, projective, connected curve over an algebraically closed field $k$ of characteristic $P \geq 0$.
-Furthermore, we let $G$ denote the automorphism group of $X$ and we let $K(X)$ denote the function field of $X$, and then let $\Omega_{K(X)}$ be the module of differentials of $K(X)$ over $k$.
+We take $X$ to be a smooth, projective, connected curve over an algebraically closed field $k$ of characteristic $p \geq 0$.
+Furthermore, we let $G$ denote the automorphism group of $X$ and we let $K(X)$ denote the function field of $X$.
+We then define $\Omega_{K(X)}$ to be the module of differentials of $K(X)$ over $k$.
 The following lemma gives us a useful description of $H^1(X,\Omega_X)$.
 \begin{lem}\label{exactsequencelemma}
 The following sequence is exact:
@@ -171,12 +172,12 @@ i^{-1}\left(\underline{\Omega}_{K(X)}/\Omega_X\right) & = \left(\underline{\Omeg
 & = \underline{\Omega}_{K(X),P}/\Omega_{X,P} \\
 & = \Omega_{K(X)}/\Omega_{X,P}.
 \end{align*}
-It follows that for each $P \in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^{-1}(f) \in i_8 \left( \Omega_{K(X)}/\Omega_{X,P} \right)$.
+It follows that for any $P \in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^{-1}(f) \in i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right)$.
 Recall that for any $f \in \Omega_{K(X)}$then $f$ lies in $\Omega_{X,P}$ for all but a finite number of points $P \in X$.
 Hence the image of $f$ in $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors.
 From this the isomorphism in \eqref{sheafisomorphism} follows.
 
-Replacing $\underline{\Omega}_{K(X)}/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ in \eqref{serredualityses} and taking cohomology then yields the exact sequence in the statement of the lemma.\todo{repeated line earlier}
+Replacing $\underline{\Omega}_{K(X)}/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ in \eqref{serredualityses} and taking cohomology then yields the exact sequence in the statement of the lemma.
 \end{proof}
 
 For any $P\in X$ the residue map $\res_P \colon \Omega_{K(X)} \ra k$ is defined by the following properties:
@@ -190,7 +191,7 @@ See \cite[Chap III, Thm. 7.14.1]{hart} for details.
 
 
 Since $\Omega_P \subseteq \ker (\res_P)$, it follows that $\res_P$ is well defined on the quotient $\Omega_{K(X)}/\Omega_P$.
-The residue theorem \cite[Chap. III, Thm. 7.14.2]{hart} states that $\sum_{P\in X} \res_P(\omega) = 0$ for any $\omega \in \Omega_{K(X)}$, and so the map 
+The residue theorem \cite[Chap. III, Thm. 7.14.2]{hart} states that $\sum_{P\in X} \res_P(\omega) = 0$ for any $\omega \in \Omega_{K(X)}$, so the map 
 \[
 \bigoplus_{P \in X} \Omega_K(X)/\Omega_P \ra k, \quad (\omega_P)_{P \in X} \mapsto \sum_{P\in X} \res_P(\omega_P)
 \]
@@ -206,9 +207,9 @@ Roughly speaking, we can replace $\Omega_X$ by $\cO_X$ in Lemma \ref{exactsequen
 Hence $H^1(X,\cO_X)$ can also be viewed as a quotient of $\bigoplus_{P \in X} K(X)/\cO_{X,P}$.
 Then we can define a map 
 \begin{equation}\label{productmap}
-\hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto \overline {(f_P  \omega_P)}_{P \in X},
+\hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto \overline {(f  \omega)_P}_{P \in X},
 \end{equation}\todo{sort out notation}
-where $f_p\omega_p$ is just the product of the germ of $\omega$ in $\Omega_{X,P}$ with $f_P$.
+where $(f\omega)_P := f_p\omega_p$ is just the product of the germ of $\omega$ in $\Omega_{X,P}$ with $f_P$.
 Note that in general we will denote elements of $\hone$ by $f$.
 
 We now combine the product map in \eqref{productmap} with the trace map $t$ to get a map 
@@ -251,9 +252,9 @@ If we replace $\cO_X$ by $\Omega_X$ in the previous paragraph then everything st
 H^1(X,\Omega_X) \cong \frac{\Omega_X(U_0 \cap U_\infty)}{\Ima(\check{d})} = \frac{\Omega_X(U_0 \cap U_\infty)}{\{\omega_0 - \omega_ \infty | \omega_i \in \Omega_X(U_i)\}}.
 \]\todo{check that I actually want this and $\hzero$}
 
-We now describe the trace map using the \cech cohomology representative of $\hone$ above.
+We now describe how the trace map acts on $\check{H}^1(X,\Omega_X)$.
 \begin{lem}\label{tracemaplemma}
-For any $\bar \omega \in \check{H}^1\left (\cal U, \Omega_X\right )$, which has $\omega \in \Omega_X(U_0 \cap U_\infty)$ as a representative, we have the following equality:
+For any $\bar \omega \in \check{H}^1\left (\cU, \Omega_X\right )$, which has $\omega \in \Omega_X(U_0 \cap U_\infty)$ as a representative, we have the following equality:
 \[
 t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
 \]
@@ -288,8 +289,7 @@ This then maps to
 \psi = ((\bar{\omega}|_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right).
 \]
 By commutativity of the diagram $\psi \in \ker(d_3)$.
-Since $\res_P(\omega)=0$ for all $P \in U_0 \cap U_\infty$, and similarly $\res_P(0)=0$ for all $P \in U_\infty$, then $\res_P(\psi) = 0$ for all $P \in U_\infty$.
-Finally, we conclude that 
+Since $\res_P(\omega)=0$ for all $P \in U_0 \cap U_\infty$, and similarly $\res_P(0)=0$ for all $P \in U_\infty$, then we conclude that 
 \[
 t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega).
 \]
@@ -337,7 +337,7 @@ where $i \colon \omega \mapsto (\omega, \omega)$ and $p \colon (\omega_0, \omega
 \begin{proof}
 Let $T$ be the total complex of \eqref{bicomplex}.
 Moreover, we let $\cO$ and $\Omega$ be the complexes formed from the first and second (non-trivial) columns of \eqref{bicomplex} respectively.
-Then let $\Omega[1]$ denote the complex obtained from shifting $\Omega$ by one, i.e. $\Omega[1]^{n+1} = \Omega^n$.
+Then let $\Omega[1]$ denote the complex obtained from shifting $\Omega$ by one, i.e.~$\Omega[1]^{n+1} = \Omega^n$.
 Then we obtain the following short exact sequence of complexes 
 \[
 \Omega[1] \hookrightarrow T \twoheadrightarrow \cO,
@@ -367,9 +367,7 @@ Hence the residue isomorphism factors through $\alpha$, and hence $p$ is surject
 Let $X$ be a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$ over an algebraically closed field $k$ of characteristic $p \geq 0$.
 We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$.
 We let $G$ denote a finite group acting faithfully on $X$.
-
-We now give an explicit basis of $\hone$ and $\derhamhone$, in terms of $f(x)$ and its coefficients.
-We use the results of the previous sections along with methods similar to those found in \cite{canonicalrepresentation} to achieve this.
+In this section we will give an explicit basis of $\hone$ and $\derhamhone$, using the results of the previous sections along with methods similar to those found in \cite{canonicalrepresentation}.
 
 If $p \neq 2$ then the extension $K(X)$ of $K(\mathbb P_k^1) = k(x)$ will be $k(x,y)$ where $y$ satisfies
 \begin{equation}\label{definingequationpnot2}
@@ -400,17 +398,18 @@ We suppose that
 \[
 f(x) = \prod_{i=1}^{d_f} (x-a_i) = x^{d_f} + b_{d_f - 1}x^{d_f-1} \ldots + b_0,
 \]
-for some $a_i, b_i \in k$, $d_f = \deg(f) $ and $n_i \mathbb N$.
+for some $a_i, b_i \in k$, $d_f = \deg(f) $ and $n_i \in  \mathbb N$.
 In this case, the $a_i \in \mathbb A_k^1 \subset \mathbb P_k^1$ are the branch points of $\pi$, and hence we let $P_i = P_{a_i}$ denote the corresponding ramification points.
+If $d_f = 2g+1$ then we let $P_{2g+2} = P_\infty$, and then $P_1, \ldots, P_{2g+2}$ are all the ramification points of $\pi$.
 Then the ramification divisor $R$ of $\pi$ is
 \[
 R = \sum_{i=1}^{d_f} [P_i].
-\]\todo{what to do about $\infty$?}
+\]
 If $p=2$ then we suppose that
 \begin{equation*}
 H(x) = \prod_{i=1}^{d_H} (x-A_i)^{n_i} = x^{d_H} + B_{{d_H}-1}x^{{d_H}-1} + \ldots + B_1x + B_0
 \end{equation*}
-for some $A_i, B_i \in  k$, ${d_H} \leq g+1$ and $n_i \in \mathbb N$.
+for some $A_i, B_i \in  k$, ${d_H} \deg(H(x)) \leq g+1$ and $n_i \in \mathbb N$.
 Then, as above, the $A_i$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points.
 Given this, we can write the ramification divisor as
 \[
@@ -426,17 +425,17 @@ and
 \begin{equation}\label{differentialdivisor}
 \di(dx) = R - 2D_\infty,
 \end{equation}
-This is again regardless of characteristic.
+regardless of characteristic.
 
 If $p \neq 2$ then 
 \begin{equation}\label{pnot2divisors}
-\di(y)  = R - (g+1)D_\infty.
+\di(y)  = R - (g+1)D_\infty,
 \end{equation}
 whilst if $p=2$ then the divisor of $H(x)$ is
 \begin{equation}\label{divisorofH}
 \di (H(x))  = R - (g+1)D_\infty. 
 \end{equation}
-We also compute the divisor of $dy$ when the characteristic of $k$ is $2$.
+We also compute the divisor of $dy$ when the characteristic of $k$ is two.
 We start by noting that when we take the differential of \eqref{definep=2} we obtain
 \[
 dF = d\left(y^2 + yH \right) = d(yH) = Hdy + ydH
@@ -461,7 +460,7 @@ Then, if $\infty$ is a branch point, the divisor of $y$ is
 \di(y) = 
  {\displaystyle \sum_{i=1}^l} m_i[Q_i] -(2g+1)[P_\infty].
 \end{equation*}
-On the other hand, if $\infty$ is not a branch point, then, after possibly swapping the notations for $P_\infty$ and $P_\infty'$ for the two points in $\pi^{-1}(\infty)$, we have
+On the other hand, if $\infty$ is not a branch point, then, after possibly swapping the notations for the two points $P_\infty$ and $P_\infty'$ in $\pi^{-1}(\infty)$, we have
 \begin{equation*}
  \di(y) = {\displaystyle \sum_{i=1}^l} m_i[Q_i] +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'].
 \end{equation*}
@@ -469,7 +468,7 @@ On the other hand, if $\infty$ is not a branch point, then, after possibly swapp
 \begin{proof}
 We first show that $\di_0(y)$, the divisor of the zeroes of $y$, is $\sum_{i=1}^l m_i [Q_i]$.
 
-It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{definep=2} i.e. in $U_\infty$.
+It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{definep=2} i.e.~in $U_\infty$.
 Suppose $P\in U_\infty$.
 If $\left. F \right|_P \neq 0$ then it follows that $y|_P \neq 0$, since $F(x) = y (y + H(x))$.
 Hence $\di_0(y)$ has zero coefficients for any point in $U_\infty$ other than the $Q_i$.
