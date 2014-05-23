@@ -119,7 +119,7 @@
 
 %%% The "real" document content comes below...
 
-\title{Group actions on de Rham cohomology of hyperelliptic curves}
+\title{Group actions on the de Rham cohomology of hyperelliptic~curves}
 \author{}
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed
@@ -393,9 +393,9 @@ D_a=
 If $p \neq 2$ then the ramification points are the zeroes of $f(x)$.
 We suppose that 
 \[
-f(x) = \prod_{i=1}^{d_f} (x-a_i) = x^{d_f} + b_{d_f - 1}x^{d_f-1} \ldots + b_0,
+f(x) = \prod_{i=1}^{d_f} (x-a_i)^{n_i} = x^{d_f} + b_{d_f - 1}x^{d_f-1} \ldots + b_0,
 \]
-for some $a_i, b_i \in k$ and with $d_f := \deg(f) $.
+for some $a_i, b_i \in k$, $n_i \in \mathbb N$ and with $d_f := \deg(f) $.
 In this case, the $a_i \in \mathbb A_k^1 \subset \mathbb P_k^1$ are the branch points of $\pi$, and we let $P_i = P_{a_i}$ denote the corresponding ramification points.
 Then the ramification divisor $R$ of $\pi$ is
 \[
@@ -405,7 +405,7 @@ If $p=2$ then we suppose that
 \begin{equation*}
 H(x) = \prod_{i=1}^{d_H} (x-A_i)^{n_i} = x^{d_H} + B_{{d_H}-1}x^{{d_H}-1} + \ldots + B_1x + B_0
 \end{equation*}
-for some $A_i, B_i \in  k$ and with  ${d_H} := \deg(H(x)) \leq g+1$.
+for some $A_i, B_i \in  k$, $n_i \in \mathbb N$ and with  ${d_H} := \deg(H(x)) \leq g+1$.
 Then, as above, the $A_i$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points.
 Given this, we can write the ramification divisor as
 \[
@@ -431,7 +431,7 @@ whilst if $p=2$ then the divisor of $H(x)$ is
 \begin{equation}\label{divisorofH}
 \di (H(x))  = R - (g+1)D_\infty. 
 \end{equation}
-We also compute the divisor of $dy$ when the characteristic of $k$ is two.
+We also compute the divisor of $dy$ when $p=2$.
 We start by noting that when we take the differential of \eqref{definep=2} we obtain
 \[
 dF = d\left(y^2 + yH \right) = d(yH) = Hdy + ydH
@@ -480,12 +480,19 @@ We now look at when $P = Q_i = (\gamma_i, 0)$ is a ramification point.
 Since $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ cannot share roots it follows that $m_i = 1$.
 Hence the function $\tilde F(x) := (x- \gamma_i)^{-1}F(x)$ is a unit at $P$.
 We let $\tilde H(x) = (x- \gamma_i)^{-1}H(x)$.
-Now $y^2 = F(x) - y H(x) = (x- \gamma_i) (\tilde F(x) - y \tilde H(x))$, and hence
+
+\pagebreak
+
+Now 
+\[
+y^2 = F(x) - y H(x) = (x- \gamma_i) (\tilde F(x) - y \tilde H(x)),
+\]
+and hence
 \[
 \ord_P(y^2 ) = \ord_P(x-\gamma_i) + \ord_P(\tilde F(x) - y \tilde H(x)).
 \]
 Since $\ord_P(x-\gamma_i) = 2$ and $\ord_P(\tilde F(x) - y \tilde H(x)) \geq 0$ we know that $\ord_P(y) \geq 1$.
-Hence $\left. (y \tilde H(x)) \right|_P = 0$, and since $\tilde F(x)$ is a unit at $P$, we conclude that $\tilde F(x) - y \tilde H(x)$ is a unit at $P$.
+Hence $(y \tilde H(x)) \big|_P = 0$, and since $\tilde F(x)$ is a unit at $P$, we conclude that $\tilde F(x) - y \tilde H(x)$ is a unit at $P$.
 Hence $\ord_P(y^2) = 2$, and so $\ord_P(y) = 1 = m_i$.
 It follows that $\di_0(y) =  \sum_{i=1}^l m_i [Q_i]$.
 
@@ -498,7 +505,7 @@ Since $y$ can only have a pole at $P_\infty$, we conclude that the degree of thi
 if $\infty$ is a branch point.
 
 If $\infty$ is not a branch point then there are two points at which $y$ may have a pole, namely $P_\infty$ and $P_\infty'$.
-We consider three cases, and recalling that $\ord_{P_\infty}(y + H(x)) = \ord_{P_\infty'}(y)$, using the automorphism given by $y \mapsto y+H(x)$.
+We consider three cases, noting that $\ord_{P_\infty}(y + H(x)) = \ord_{P_\infty'}(y)$, since $y \mapsto y+H(x)$ is an automorphism.
 
 
 Firstly, we suppose that $\ord_{P_\infty}(y) < -(g+1)$.
@@ -583,7 +590,7 @@ Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem
 %Mittag-Leffler style corollary
 \begin{cor}
 For each $P \in X$ fix some $f_P \in K(X)$, such that $f_P = 0$ for almost all $P$.
-Then there exist unique $\alpha_1, \ldots , \alpha_g \in k$ such that, after $f_P$ is replaced by $f_P~-~\left(\alpha_1 \frac{y}{x} + \ldots + \alpha_g \frac{y}{x^g} \right)$ for all $P \in \pi^{-1}(\infty)$, there exists an $f \in K(X)$ such that the laurent tail of $f$ at each $P$ in $X$ will be $f_P$.
+Then there exist unique $\alpha_1, \ldots , \alpha_g \in k$ such that, after $f_P$ is replaced by $f_P~-~\left(\alpha_1 \frac{y}{x} + \ldots + \alpha_g \frac{y}{x^g} \right)$ for all $P \in \pi^{-1}(\infty)$, there exists an $f \in K(X)$ such that the Laurent tail of $f$ at each $P$ in $X$ will be $f_P$.
 \end{cor}
 \todo[inline]{Do $\alpha_i$ depend on $P$? Rephrase first line to start "let $P_1, \ldots, P_n$ be a finite collection of points..."}
 \begin{proof}
@@ -766,9 +773,11 @@ In order to do this we define $\alpha_{j,i} \in k$ for $0\leq j \leq 2g+2$ to sa
 s_i(x) = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{0,i},
 \]
 so that
-\[
-\phi_i(x) = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{g+2,i}x^{g+2} \ {\rm and } \ \psi_i(x) = \alpha_{g+1,i}x^{g+1} + \ldots + \alpha_{0,i}.
-\]
+\begin{align*}
+\phi_i(x) = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{g+2,i}x^{g+2} \\
+\intertext{and }
+\psi_i(x) = \alpha_{g+1,i}x^{g+1} + \ldots + \alpha_{0,i}.
+\end{align*}
 Note that it is possible for any of $\alpha_{j,i}$ to be zero. In fact, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
 Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 \leq d_\psi \leq g+1$ and $g+1 < d_\phi \leq 2g+2$.
 \todo{remove d psi? - will keep for now in case useful later}
