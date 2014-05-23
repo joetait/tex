@@ -268,15 +268,11 @@ We take the \cech complex of \eqref{serredualityses} (replacing $\underline{\Ome
 \xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
 \Omega_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{\Omega}_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
 \end{equation}
-We can now apply the snake lemma to this commutative diagram.
-This gives rise to six terms, the last two of which are zero.
-The other four terms are described below.
-
-The fact that $H^0(X,\Omega_X) \cong \ker(d_1)$ and $H^1(X,\Omega_X) \cong {\rm coker}(d_1)$ follows from the above discussion of \cech cohomology.
-The map $d_2\colon \Omega_{K(X)} \times \Omega_{K(X)} \ra \Omega_{K(X)}$ is the \cech differential given by $(\omega_1,\omega_2) \mapsto \omega_1 - \omega_2$.
-Hence the map $\omega \mapsto (\omega, \omega)$ gives an isomorphism from $\Omega_{K(X)}$ to $\ker(d_2)$.
-Finally, $d_3$ is defined by $(\omega_0, \omega_\infty) \mapsto \omega_0|_{U_0 \cap U_\infty} - \omega_\infty|_{U_0 \cap U_\infty}$.
-Hence the kernel of $d_3$ is formed of pairs $(\omega_0, \omega_\infty) \in \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus_{P \in  U_\infty} \Omega_{K(X)}/\Omega_{X,P}$ such that $\omega_0$ and $\omega_\infty$ agree on $U_0 \cap U_\infty$.
+We can now apply the snake lemma to this commutative diagram, giving a long exact sequence.
+In fact, this sequence is isomorphic to that found in Lemma \ref{exactsequencelemma}, but since we will only exhibit the isomorphisms for the third and fourth terms, since this is all we need to examine the trace map.
+The fact that $H^1(X,\Omega_X) \cong {\rm coker}(d_1)$ follows from the above discussion of \cech cohomology.
+To show the isomorphism $\ker(d_3) \cong \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}$ we first recall that $d_3$ is defined by $(\omega_0, \omega_\infty) \mapsto \omega_0|_{U_0 \cap U_\infty} - \omega_\infty|_{U_0 \cap U_\infty}$.
+Then the kernel of $d_3$ is formed of pairs $(\omega_0, \omega_\infty) \in \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus_{P \in  U_\infty} \Omega_{K(X)}/\Omega_{X,P}$ such that $\omega_0$ and $\omega_\infty$ agree on $U_0 \cap U_\infty$.
 It follows that the map 
 \[
 \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}\ra\ker(d_3), \quad  (\omega_P)_{P \in X} \to \left( (\omega_P)_{ P \in U_0}, (\omega_P)_{P \in U_\infty}) \right)
@@ -292,7 +288,7 @@ This then maps to
 \psi = ((\bar{\omega}|_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right).
 \]
 By commutativity of the diagram $\psi \in \ker(d_3)$.
-Since $\res_P(\omega)=0$ for all $P \in U_0 \cap U_\infty$, and similarly $\res_P(0)=0$ for all $P \in U_\infty$, then we conclude that 
+Since $\res_P(\omega)=0$ for all $P \in U_0 \cap U_\infty$, and similarly $\res_P(0)=0$ for all $P \in U_\infty$, we conclude that 
 \[
 t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega).
 \]
@@ -300,7 +296,7 @@ t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty
 
 We now recall how to compute the algebraic de Rham cohomology of $X$ via \cech cohomology.
 Since $X$ is a curve any differentials of degree greater than one on $X$ are zero.
-Hence the de Rham complex of $X$ is the hypercohomology of the complex
+Hence the de Rham complex of $X$ is 
 \begin{equation}\label{res}
 0 \rightarrow \cO_X \xrightarrow{d} \Omega_X \rightarrow 0.
 \end{equation}
@@ -319,7 +315,7 @@ since $U_0$ and $U_\infty$ are affine, this again follows from Serre's affinenes
 
 
 
-After computing the first cohomology group of the total complex of \eqref{bicomplex} we see that $\derhamhone$ is isomorphic to the space
+After computing the first cohomology group of the total complex we see that $\derhamhone$ is isomorphic to the space
 \begin{equation}\label{derhamconditions}
 \left\{(\omega_0, \omega_\infty, f_{0,\infty}) | \omega_i\in \Omega_{X/k}(U_i), f_{0,\infty}\in \cO_X(U_0 \cap U_\infty), df_{0,\infty} = \omega_0|_{U_0\cap U_\infty} - \omega_\infty|_{U_0\cap U_\infty} \right\}
 \end{equation}
@@ -328,7 +324,7 @@ quotiented by the subspace
 \left\{  (df_0, df_\infty, f_0|_{U_0\cap U_\infty} -f_\infty|_{U_0\cap U_\infty} )|f_i \in \cO_X(U_i)\right\}.
 \end{equation}
 
-We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$ and to study the $k[G]$-module structure.
+We wish to compute a $k$-basis of $\derhamhone$ in order that we can see how $G$ acts on $\derhamhone$ and to study its $k[G]$-module structure.
 The following lemma shows that $\derhamhone$ fits in to a short exact sequence which we will use to compute the $k$-basis.
 \begin{prop}\label{ses}
 The following is a short exact sequence
@@ -341,7 +337,7 @@ where $i \colon \omega \mapsto (\omega, \omega)$ and $p \colon (\omega_0, \omega
 Let $T$ be the total complex of \eqref{bicomplex}.
 Moreover, we let $\cO$ and $\Omega$ be the complexes formed from the first and second (non-trivial) columns of \eqref{bicomplex} respectively.
 Then let $\Omega[1]$ denote the complex obtained from shifting $\Omega$ by one, i.e.~$\Omega[1]^{n+1} = \Omega^n$.
-Then we obtain the following short exact sequence of complexes 
+From this we obtain the following short exact sequence of complexes 
 \[
 \Omega[1] \hookrightarrow T \twoheadrightarrow \cO,
 \]
@@ -362,7 +358,7 @@ Since \eqref{longexactsequence} is exact, $p$ is surjective if and only if $\alp
 Now $H^1(X,\Omega_X)$ is isomorphic to $k$ via the residue map \cite[Chap. III, Thm. 7.14.1]{hart}, and if we can show that this isomorphism factors through $\alpha$ it will follow that $\alpha$ is injective.
 Considering the \cech cohomology constructions of $H^1(X,\Omega_X)$ and $H^2_{\text {dR}}(X/k)$, it suffices to show that the residue map is zero on $\Ima \left( d \colon \cO_X(U_0 \cap U_\infty) \ra \Omega_X(U_0 \cap U_\infty) \right)$.
 This follows from \cite[Chap. III, Thm. 7.14.1 (b)]{hart}, which says that $\res_P(df)=0$ for any $f \in \cO_X(U_0 \cap U_\infty)$.
-Hence the residue isomorphism factors through $\alpha$, and hence $p$ is surjective.
+Hence the residue isomorphism factors through $\alpha$, and $p$ is surjective.
 \end{proof}
 
 \section{Basis of $\hone$ and $\derhamhone$}
@@ -399,18 +395,17 @@ We suppose that
 \[
 f(x) = \prod_{i=1}^{d_f} (x-a_i) = x^{d_f} + b_{d_f - 1}x^{d_f-1} \ldots + b_0,
 \]
-for some $a_i, b_i \in k$, $d_f = \deg(f) $ and $n_i \in  \mathbb N$.
-In this case, the $a_i \in \mathbb A_k^1 \subset \mathbb P_k^1$ are the branch points of $\pi$, and hence we let $P_i = P_{a_i}$ denote the corresponding ramification points.
-If $d_f = 2g+1$ then we let $P_{2g+2} = P_\infty$, and then $P_1, \ldots, P_{2g+2}$ are all the ramification points of $\pi$.
+for some $a_i, b_i \in k$ and with $d_f := \deg(f) $.
+In this case, the $a_i \in \mathbb A_k^1 \subset \mathbb P_k^1$ are the branch points of $\pi$, and we let $P_i = P_{a_i}$ denote the corresponding ramification points.
 Then the ramification divisor $R$ of $\pi$ is
 \[
-R = \sum_{i=1}^{d_f} [P_i].
+R = \sum_{i=1}^{d_f} [P_i] + (2g+2 - d_f)D_\infty.
 \]
 If $p=2$ then we suppose that
 \begin{equation*}
 H(x) = \prod_{i=1}^{d_H} (x-A_i)^{n_i} = x^{d_H} + B_{{d_H}-1}x^{{d_H}-1} + \ldots + B_1x + B_0
 \end{equation*}
-for some $A_i, B_i \in  k$, ${d_H} \deg(H(x)) \leq g+1$ and $n_i \in \mathbb N$.
+for some $A_i, B_i \in  k$ and with  ${d_H} := \deg(H(x)) \leq g+1$.
 Then, as above, the $A_i$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points.
 Given this, we can write the ramification divisor as
 \[
@@ -610,12 +605,12 @@ S_i(x,y) := xF'(x) + y(xH'(x) + iH(x))\in k[x]\oplus yk[x] \subseteq k(x,y).
 We now decompose these polynomials into two parts, which will be used in the sequel.
 Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x)\in k(x)$ and $\phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\psi_i (x)$ is at most $g+1$ and $x^{g+2}$ divides $\phi_i(x)$.
 
-We define $A_{j,i} \in k$ for $1 \leq j \leq 2g+2$, and $B_{k,i} \in k$ for $0\leq k \leq g+1$ by the equation
+For the second case we define $A_{j,i} \in k$ for $1 \leq j \leq 2g+2$, and $B_{k,i} \in k$ for $0\leq k \leq g+1$ by the equation
 \[
 S_i(x,y) = A_{2g+2,i}x^{2g+2} + \ldots + A_{1,i} x + y(B_{g+1,i} x^{g+1} + \ldots + B_{1,i} x + B_{0,i}).
 \]
 Note that many of these coefficients may be zero.
-In particular we remark that the $x^i$ term of $xH'(x) + iH(x)$, and hence $B_{i,i}$, is always zero, since it is precisely $x \cdot b_ix^{i-1} + b_i x^i = 2B_{i,i}x^i = 0$.\todo{move back to where it previously was}
+In particular we remark that the $x^i$ term of $xH'(x) + iH(x)$ is always zero, since $b_{i,i}x^i = x \cdot b_ix^{i-1} + b_i x^i = 2b_{i,i}x^i = 0$.
 
 
 We now define the following polynomials:
@@ -627,7 +622,7 @@ We now define the following polynomials:
 \Psi_i^y(x) & =  {}_iB_{i-1}x^{i-1} + \ldots + {}_iB_1x + {}_iB_0.
 \end{split}
 \end{equation}
-Finally, we define $\Phi_i(x,y) = \Phi_i^x(x) + y \Phi^y_i(x)$ and $\Psi_i(x,y) = \Psi_i^x(x) + y \Psi_i^y(x)$, so that $S_i(x,y) = \phi_i(x,y) + \psi_i(x,y)$.
+Finally, we define $\Phi_i(x,y) = \Phi_i^x(x) + y \Phi^y_i(x)$ and $\Psi_i(x,y) = \Psi_i^x(x) + y \Psi_i^y(x)$, so that $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$.
 
 Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $k$-vector space basis of $\derhamhone$.
 \begin{thm}\label{basis}
