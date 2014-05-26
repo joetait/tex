@@ -192,9 +192,9 @@ From \cite{derhamactions} a basis of $\cechderhamhone(\cU)$ is formed by
 \intertext{and}
 \tau_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{-\phi_i(x)}{2yx^{i+1}}, x^{-i}y \right), i=1,\ldots ,g.
 \end{align*}
-We also define the following polynomials for $j \geq i$
+We also define the following polynomials for $1 \leq i \leq g$
 \[
-r_i(x) : = \sum_{k=0}^{i-1} (-1)^{g-k}\binom{g}{k} a^{j-k} x^k
+r_i(x) : = \sum_{k=0}^{i-1} (-1)^{g-k}\binom{g}{k} a^{g-k} x^k
 \]
 and
 \[
@@ -204,10 +204,11 @@ splitting the polynomial $(x-a)^g$ in to two parts.
 The following proposition allows us to compute how $\sigma^*$ acts on the basis of $\cechderhamhone(\cU)$ mentioned above.
 
 \begin{prop}\label{basis22}
-The pre-image $\rho^{-1}(\tau_i)$ is the residue classes of
+The pre-image $\rho^{-1}(\tau_i)$ is the set of residue classes of
 \begin{multline*}
-\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) + \phi_i(x)r_i(x))(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{-\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right).
+\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{-\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right)
 \end{multline*}
+formed as $i$ ranges from $1$ to $g$.
 \end{prop}
 \begin{proof}
 In order to refer to the entries in $\nu_i$ we let $f_{ijk}$ and $\omega_{ij}$ be the appropriate functions and differentials such that
@@ -230,8 +231,8 @@ Firstly
 \begin{align*}
 \di \left( f_{0 \sigma i} \right) & = \di \left( \frac{r_i(x)y}{x^i(x-a)^g} \right) \\
 &  = \di(r_i(x)) + \di(y) - i\di(x) - g\di(x-a) \\
-& = \di_0(r_i(x)) - (i-1)D_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
-& = \di_0(f_{i,g}) +R -iD_0 - gD_a + D_\infty,
+& \geq \di_0(r_i(x)) - (i-1)D_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
+& = \di_0(f_{i,g}) +R -iD_0 - gD_a,
 \end{align*}
 which is non-negative on $U_0 \cap U_\sigma$.
 On the other hand
@@ -263,7 +264,7 @@ has order less then $2g+i+2$, from which it will follow that \eqref{longequation
 The order of $\psi_i(x)t_i(x)(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
 If $\deg(f) = 2g+1$, then clearly
 \[
-\deg\left( \phi_i(x)r_i(x)(x-a) \right) = \deg(\phi_i) + \deg(r_i(x)) + \deg((x-a)) \leq 2g+1 i-1 +1 = 2g+i+1
+\deg\left( \phi_i(x)r_i(x)(x-a) \right) = \deg(\phi_i) + \deg(r_i(x)) + \deg((x-a)) \leq 2g+1 + i-1 +1 = 2g+i+1
 \]
 and
 \[
@@ -289,7 +290,7 @@ On the other hand
 \]
 and
 \[
-\psi_i(x)t_i(x)(x-a) - a(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)
+\psi_i(x)t_i(x)(x-a) + a(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)
 \]
 are both divisible by $x^{i+1}$.
 Moreover, 
@@ -325,11 +326,11 @@ So
 \]
 
 
-We now compute $r_i(x)'-gr_i(x)$.
+We now compute $(x-a)r_i(x)'-gr_i(x)$.
 Since 
 \begin{align*}
-r_i(x)' & = \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
-& = \sum_{k=0}^{i-1} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k
+r_i(x)' & = \sum_{k=0}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
+& = \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k
 \end{align*}
 it follows that
 \begin{align*}
@@ -355,7 +356,7 @@ This term is
 
 Combining the above we conclude that
 \[
-\omega_{0 i } - df_{0\sigma i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}.
+\omega_{0 i } - df_{0\sigma i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx.
 \]
 
 Note that the last relation ($df_{\sigma \infty i} = \omega_{\sigma i} - \sigma_{\infty i}$) follows from 
