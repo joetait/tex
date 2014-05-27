@@ -596,185 +596,73 @@ However, because we are not considering the entire automorphism group we cannot 
 \todo[inline]{say what restrictions on $s$ we get from the above?}
 \todo[inline]{state which exact sequences split from kontogeorgis paper}
 
-
-
-
-\begin{comment}
-\section{Modular curve $X_0(50)$}
-We now consider the modular curve $X_0(50)$.
-When $\cha(k) = 3$ we see from \cite[Table 1]{automorphismshyperellipticmodular} that the automorphism group is $D_6$, the dihedral group with 12 elements.
-We see from \cite[Table 2]{automorphismshyperellipticmodular} that this has 
+The following is for the case where $g = 4$.
+In this case our curve must have 
 \[
-y^2 = f(x) = x^6 + 2x^5 + 2x^3 + 2 + 1
+y^2 = x^9 + a_6x^6+ a^2a_6x^4+a_3x^3a^4a_6x^2 +2(a^8 + a^2a_3)x +a_0
 \]
-as a defining equation.
+as its defining equation, where we also have the relations
+\begin{itemize}
+\item $2a^6a_6 + a^4a_4 = 0$;
+\item $a^a_4 + 2a^2a_2 = 0$;
+\item $a^9 + a^3a_3 + aa_1 = 0$.
+\end{itemize}
+Also, the characteristic of $k$ is necessarily three.
+As before, $sigma \colon x \to x+a$.
+We denote the basis elements that come from $\hzero$ by $\lambda_i$, as $i$ ranges from $0$ to $g-1$, and the basis elements that map tpo $\hone$ by $\gamma_i$ (same range for $i$, but plus one).
+Then we have the following lemma.
+\begin{lem}
+For $i = 0, \ldots , g-1$ then
+\[
+\sigma^*(\lambda_i) = \sum_{j=0}^1 \binom{i}{j} a^{i-j} \lambda_j.
+\]
+\end{lem}
+\begin{proof}
+Clear
+\end{proof}
 
-However, as in the last equation we need to write this in the form $\sum_i=0^3 a_{2i}x^{2i}$ for some $a_i \in k$.
-\todo[inline]{Not sure what automorphism can be used to remove the $x^5$ term}
-We can deduce this, up to a constant, from the \cite[Table 7]{automorphismshyperellipticmodular}; namely $f(x) = 2x^6 + x^4 +2x^2$.
-We can also deduce that the automorphism of order three is $x \mapsto x+i$, where $i^2 = -1$.
-Indeed, we can easily verify that $2x^6 + x^4 + 2x^2 = 2(x+i)^6 + (x+i)^4 + 2(x+i)^2$.
-However, without being sure of what the constant term is we cannot compute the basis.
-
-\section{Modular curve $X_0(28)$}
-Let $k$ be an algebraically closed field of characteristic three.
-We now consider the modular curve $X_0(28)$, which by \cite[Table 1]{automorphismshyperellipticmodular} has defining equation 
+Next we explicilty write out the elements $\gamma_1, \ldots, \gamma_4$.
 \begin{align*}
-y^2 &  = (x^2 + 1)(x^2 + x+2)(x^2+2x+2) \\
-& = x^6 + x^4 + x^2 + 1.
-\end{align*}
-We also see from \cite[Table 1]{automorphismshyperellipticmodular} that the automorphism group when $\cha(k) = 3$ is $GL_2(\mathbb F_3)$.
-
-We start by computing explicitly what this action.
-\todo[inline]{There appear to be some issues in the case of the generic automorphism group. In Table 1 the group is listed as $D_6$, yet in 3.1 it is claimed that the reduced group is $\ZZ_2$. Also, there are three generators listed in Table 2, but they are all of order 2. Check this with Bernhard}
-\todo[inline]{Given that the explicit elements on the generic fibre are all of order two, and that on page 154 it is mentioned that the reduced group on the generic fibre is $D_4$, I am guessing that the automorphism group is meant to be $D_8$ (or $D_4$?)}
-
-Although the automorphism group is said to be $GL_2(\mathbb F_3)$, we need only find one element that acts in the correct way to show that the sequence in \cite{derhamactions} does not split.
-We can construct at least one such element in the same way that we did for $X_0(22)$.
-We already have our defining equation in the form
-\[
-y^2 = \sum_{i=0}^3 a_{2i}x^{2i}.
-\]
-When we compute $f(x+c) - f(x)$ we get $(2c^3+c)x^3 + (c^3 + 2c)x + (c^6 + c^4 + c^2)$.
-If we set $c=1$ or $c=2$ then all the coefficients are clearly zero.
-So the map $\sigma \colon x \mapsto x-1$ is an isomorphism of our curve.
-
-We now compute what the basis elements of $\derhamhone$ are, using \cite[Thm. 2.3]{derhamactions}.
-We first note that if $f(x) = x^6 + x^4 + x^2 +1$ then $f'(x) = x^3 + 2x$.
-Hence
-\begin{align}
-s_1 & = xf'(x) -2f(x) = x^6 + 2x^4 + 1 \\
-s_2 & = xf'(x) - f(x) = 2x^6 + x^2 + 2.
-\end{align}
-Then it follows that the first two basis elements in \cite[Thm. 2.3]{derhamactions} are
-\begin{align}
-\left( \frac{1}{2yx^2}dx, \frac{2(x^6 + 2x^4)}{2yx^2}dx, \frac{y}{x} \right) & = \left( \frac{1}{2yx^2}dx, \frac{x^4+2x^2}{y}dx, \frac{y}{x} \right) \label{28basisone} \\
-\left( \frac{x^2 + 2}{2yx^3}dx, \frac{2(2x^6)}{2yx^3}dx, \frac{y}{x^2} \right) & = \left( \frac{x^2 + 2}{2yx^3}dx, \frac{2x^3}{y}dx, \frac{y}{x^2} \right). \label{28basistwo}
-\end{align}
-
-As in the $X_0(22)$ case, we need to refine our cover, since the open set $U_0$ is not closed under the action of $\sigma$.
-In particular, we let $\cU' = \{U_\infty, U_{1} \}$ and $\cU'' = \cU \cup \cU'$.
-Then we wish to find elements of $\cechderhamhone(\cU'')$ that surject on to \eqref{28basisone} and \eqref{28basistwo}.
-
-\todo[inline]{Rough work from here - here be dragons}
-We first posit that
-\[
-\nu_1 = \left( \frac{1}{2yx^2}dx, \frac{x^4+2x^2}{y}dx, \frac{x^4 + 2x^3 + 2x^2 + 2x}{2y(x-1)^3}dx, \frac{y}{x}, \frac{y}{x(x-1)^2}, \frac{-y(x+1)}{(x-1)^2} \right)
-\]
-is such an element.
-We start by checking that the alternating sum of the functions is zero:
-\begin{equation*}
-\frac{y}{x} - \frac{y}{x(x-1)^2} - \frac{y(x+1)}{(x-1)^2}  = \frac{y(x-1)^2 - y - yx(x+1)}{x(x-1)^2} = 0
-\end{equation*}
-
-We next check that the third differential is regular on the correct open set, as follows:
-\begin{align*}
-\di \left( \frac{x^4 + 2x^3 + 2x^2 + 2x}{2y(x-1)^3}dx \right) = & 3D_\infty -R +3D_\infty -3D_1 +\di_0(x^4+2x^3+2x^2+2x) \\
-&  -4D_\infty +R -2D_\infty \\
-= & \di_0(x^4 + 2x^3 + 2x^2 + 2x) - 3D_1.
-\end{align*}
-Clearly this is positive on $U_1$, as desired.
-
-We now verify the other relations, starting with
-\begin{align*}
-df_{0 1 1} & = d \left( \frac{y}{x(x-1)^2} \right) \\
-& = \frac{1}{x(x-1)^2}dy + y d \left( \frac{1}{x(x-1)^2} \right) \\
-& = \frac{f'}{2yx(x-1)^2}dx + \frac{y}{(x-1)^3x^2}dx \\
-& = \frac{1}{2yx^2(x-1)^3}\left( f'x(x-1) +2f\right)dx \\
-& = \frac{1}{2yx^2(x-1)^3}(2x^6+x^5+x^4+2x^3+2)dx \\
-& = \omega_{0 1} - \omega_{1 1}.
-\end{align*}
-Similarly
-\begin{align*}
-df_{\infty 1} & = d \left( \frac{2y(x+1)}{(x-1)^2} \right) \\
-& = 2yd\left( \frac{x+1}{(x-1)^2} \right) + \frac{2(x+1)}{(x-1)^2}dy \\
-& = \frac{yx}{(x-1)^3} dx + \frac{f'(x+1)}{y(x-1)^2}dx \\
-& = \frac{1}{y(x-1)^3}(fx + f'(x^2-1))dx \\
-& = \frac{1}{y(x-1)^3} (x^7 + 2x^5 + 2x^3 + 2x)dx \\
-& = \frac{(x^7 + 2x^5 + 2x^4 +x^2) + (x^4 + 2x^3 + 2x^2 + 2x)}{y(x-1)^3} dx \\
-& = \frac{(x^4+2x^2)(x-1)^3}{y(x-1)^3}dx - \frac{x^4+2x^3+2x^2+2x}{2y(x-1)^3}dx \\
-& = \omega_2 - \omega_3,
-\end{align*}
-concluding our proof that $\nu_1$ is an element of $\cechderhamhone(\cU'')$.
-
-We next show that
-\[
-\nu_2 = \left( \frac{x^2+2}{2yx^3}dx, \frac{2x^3}{y}dx, \frac{x^3+x^2+x+2}{2y(x-1)^3}dx, \frac{y}{x^2}, \frac{y(x+1)}{x^2(x-1)^2}, \frac{2y}{(x-1)^2} \right) 
-\]
-is also an element of $\cechderhamhone(\cU')$.
-Note that $\nu_1$ and $\nu_2$ are linearly independent.
-
-Firstly
-\[
-s_2(x) = xf'(x) - f(x) = 2x^6 + x^2 +2,
-\]
-and hence
-\[
-\psi_2 = x^2 + 2 \ {\rm and} \ \phi_2 = 2x^6.
-\]
-We then conclude
-\[
-\frac{\psi_2(x)}{2yx^3}dx = \frac{x^2+2}{2yx^3}dx \ {\rm and} \ \frac{-\psi_2}{2yx^3}dx = \frac{2x^3}{y}dx.
-\]
-
-We now check that $df_{0 1 2} = \omega_{0 2} - \omega_{1 2}$ as follows
-\begin{align*}
-df_{0 1 2} & = d\left(\frac{y(x+1)}{x^2(x-1)^2} \right) \\
-& = \frac{x+1}{x^2(x-1)^2}dy + y d\left( \frac{x+1}{x^2(x-1)^2} \right) \\
-& = \frac{f'(x)(x+1)}{2yx^2(x-1)^2} dx - \frac{y}{x^3(x-1)^3}dx \\
-& = \frac{f'(x)x(x^2-1) + f(x)}{2yx^3(x-1)^3}dx \\
-& = \frac{2x^6 + 2x^4 + 2x^2 +1}{2yx^3(x-1)^3} dx \\
-& = \frac{(x^5 + 2x^3 + 2x^2 + 1) + 2x^3(x^3 + x^2 + x + 2)}{2yx^3(x-1)^3}dx \\
-& = \omega_1 - \omega_3.
+\gamma_1 & = \left( \frac{a^2a_6x^4 + 2a_3x^3 + 2(a^8 + a^2a_3)x + 2a_0}{x^2y}, \frac{x^7 +a_6x^3}{y}, \frac{y}{x} \right)\\
+\gamma_2 & = \left(\frac{a^4a_6x^2 +2a_3x^3 +2a_0}{2x^3y} , \frac{2(x^6 +a_6x^3)}{y}, \frac{y}{ x^2 }\right)\\
+\gamma_3 & = \left(\frac{a^2a_6x^4 + 2a^4a_6x^2 + 2(a^8 + a^2a_3)x }{2x^4y } , 0, \frac{y }{x^3 } \right)\\
+\gamma_4 & = \left(\frac{a^2a_6x^4 +2a_3x^3 + 2(a^8 +a^2a_3)x + 2a_0 }{x^5y } , \frac{x^4+a_6x }{ y}, \frac{y }{ x^4} \right)
 \end{align*}
 
-Similarly we see that $df_{\infty 1 2} = \omega_{\infty 2} - \omega_{1 2}$:
-\begin{align*}
-df_{\infty 1 2} & = d \left( \frac{2y}{(x-1)^2} \right) \\
-& = 2y d\left( \frac{1}{(x-1)^2} \right) + \frac{2}{(x-1)^2} dy \\
-& = \frac{2y}{(x-1)^3}dx + \frac{f'(x)}{y(x-1)^2}dx \\
-& = \frac{2f(x) + (x-1)f'(x)}{y(x-1)^3} dx \\
-& = \frac{2x^6 + 2x^3 + x^2 + x + 2}{y(x-1)^3} dx \\
-& = \frac{2x^3(x-1)^3 + (x^3 + x^2 + x + 2)}{y(x-1)^3}dx \\
-& = \omega_{\infty 2} - \omega_{12}.
-\end{align*}
 
-These project down to 
+
+We now compute the action of $\sigma^*$ on the above elements, computed via the sixtuple elements given earlier:
+\begin{multline}
+\left( \frac{a^4x^8 + 2a^2a_6x^7 + (2a^6 + a^3a_6 + a_3)x^6 + (2a^7 + aa_3)x^5 + (a^8  + a^a_3)x^4 + 2(a^6a_6+2a^3a_3+2a_0)x^3 + 2(a^{10}+a^4a_3+2aa_0)x^2 + 2(a^{11}+a^5a_3)x + 2a^3a_0}{2yx^5} \right. \\ \left. \frac{x^7 + a^6 + (2a^3+a_6)x^4 + (2a^4+aa_6)x^3 + (a^6 + a^3a_6)x + a^4a_6 + a^7}{y}, \frac{y(x^3-ax^2+a^2x-a^3)}{x^4} \right).
+\end{multline}
+From this we see that
 \[
-\eta_1 = \left( \frac{x^4 + 2x^2}{y}dx , \frac{x^4 + 2x^3 + 2x^2 + 2x}{2y(x-1)^3}dx, \frac{2y(x+1)}{(x-1)^2} \right)
+\sigma^*(\gamma_1) = \gamma_1 - a\gamma_2 + a^2\gamma_3 - a^3\gamma_4 + a^4\lambda_4 + (2a^6 + a^3a_6)\lambda_2 + (2a^7 + 2a^4a_6)\lambda_1.
 \]
-and
-\[
-\eta_2 = \left(\frac{2x^3}{y}dx, \frac{x^3+x^2+x+2}{2y(x-1)^3}dx, \frac{2y}{(x-1)^2} \right).
-\]
+\todo[inline]{there are sign errors in the above}
 
-The basis of $\cechderhamhone (\cU)$ as given in \cite{derhamactions} can be written more explicitly as 
-\begin{align*}
-\alpha_1 & = \left( \frac{1}{y}dx, \frac{1}{y}dx, 0 \right) \\
-\alpha_2 & = \left( \frac{x}{y}dx, \frac{x}{y}dx, 0 \right) \\
-\alpha_3 & = \left( \frac{1}{2yx^2}dx, \frac{x^4 + 2x^2}{y}dx, \frac{y}{x} \right) \\
-\alpha_4 & = \left( \frac{x^2 + 2}{2yx^3}dx, \frac{2x^3}{y}dx, \frac{y}{x^2} \right)
-\end{align*}
+\begin{multline}
+\sigma^*(\gamma_2) = \left( \frac{2a^3x^8 + (a^6 + 2a^3a_6 + a_3)x^5 + a^4a_6x^4 + 2a^5a_6x^3 + 2(a^9 + a^3+a_0)x^2}{2yx^5} \right., \\
+\left. \frac{2(x^6 + (2a^3+a_6)x^3 + (a^6 + a^3a_6))}{y} , \frac{y(x^2 + ax}{x^4} \right).
+\end{multline}
+ 
 
-We first compute the action of $\sigma$ on $\eta_1$ and $\eta_2$, which is as follows:
-\[
-\sigma(\eta_1) = \left( \frac{x^4 + 2x^2 + x +1}{2yx^3}dx, \frac{x^4 + x^3 + 2x^2 + 2x}{y}dx, \frac{y(x+2)}{x^2} \right) 
-\]
-and
-\[
-\sigma(\eta_2) = \left( \frac{x^3 + x^2 +2}{2yx^3}dx, \frac{2x^3 + 2}{y}dx, \frac{y}{x^2} \right):
-\]
-recall that we change the sign of the third time.
 
-Then we have
-\begin{align*}
-\sigma(\eta_1) &= 2\alpha_4 + \alpha_3 + 2\alpha_2\\
-\intertext{and}\\
-\sigma(\eta_2) & = \alpha_4 + 2\alpha_1
-\end{align*}
-The action here is the same as for $X_0(22)$ and hence the short exact sequence here does not split.
 
-\end{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \bibliography{biblio}
