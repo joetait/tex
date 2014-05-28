@@ -190,7 +190,7 @@ From \cite{derhamactions} a basis of $\cechderhamhone(\cU)$ is formed by
 \begin{align*}
 \gamma_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) , i=1, \ldots, g \\
 \intertext{and}
-\tau_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{-\phi_i(x)}{2yx^{i+1}}, x^{-i}y \right), i=1,\ldots ,g.
+\tau_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{\phi_i(x)}{2yx^{i+1}}, x^{-i}y \right), i=1,\ldots ,g.
 \end{align*}
 We also define the following polynomials for $1 \leq i \leq g$
 \[
@@ -206,7 +206,7 @@ The following proposition allows us to compute how $\sigma^*$ acts on the basis 
 \begin{prop}\label{basis22}
 The pre-image $\rho^{-1}(\tau_i)$ is the set of residue classes of
 \begin{multline*}
-\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{-\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right)
+\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right)
 \end{multline*}
 formed as $i$ ranges from $1$ to $g$.
 \end{prop}
@@ -666,11 +666,13 @@ Hence we conclude that $\sigma^*(\gamma_3) = \gamma_3)$.
 
 Lastly, we compute $\sigma^*(\gamma_4)$, which is
 \begin{multline*}
-\left( \frac{2ax^8 + 2a^3x^6 + (2a^4 +aa_6)x^5 + 2a^2a_6x^4 (a^3a_6 + a_3)x^3 + 2a^4a_6x^2 + (a^8 + a^2a_3)x + a^6a_6 +a_0 }{2yx^5}, \frac{x^4 +ax^3 +(a^3+a_6)x + a^4+aa_6}{y}, frac{y}{x^4} \right)
+\left( \frac{2ax^8 + 2a^3x^6 + (2a^4 +aa_6)x^5 + 2a^2a_6x^4 (a^3a_6 + a_3)x^3 + 2a^4a_6x^2 + (a^8 + a^2a_3)x + a^6a_6 +a_0 }{2yx^5},\right. \\ \left. \frac{x^4 +ax^3 +(a^3+a_6)x + a^4+aa_6}{y}, \frac{y}{x^4} \right)
 \end{multline*}
 
-
-
+Then the action of $\sigma^*(\gamma_4)$ is 
+\[
+\sigma^*(\gamma_4) = \gamma_4 + 2a\lambda_3 + 2a^3\lambda_1 + 2(a^4 + aa_0)\lambda_0.
+\]
 
 
 
