@@ -383,7 +383,70 @@ Since the only entry in $\lambda_i$ is $x^i/y$, and $\sigma^*$ acts trivially on
 \todo[inline]{improve phrasing}
 \end{proof}
 
-We now suppose that our curve has defining equation of order $p^n$, where $p$ is still the characteristic of $k$.
+We now show that if the $f(x)$ term in the defining equation of $X$ has degree $p^n$ then the short exact sequence in \todo{reference other work here} doesn't split.
+
+\begin{thm}
+Suppose that $\deg(f(x)) = p^n + 1$ for some $n \in \NN$.
+Then the short exact sequence of $k[G]$-modules
+\[
+0 \ra \hzero \ra \derhamhone \ra \hone \ra 0
+\]
+does not split.
+\end{thm}
+\begin{proof}
+We suppose that the sequence does split, and that $s \colon \hone \ra \derhamhone$, given by $s \colon \bar\gamma_i \to \gamma_i$ is the splitting map.
+
+We now examine the action of $\sigma^*$ on $\gamma_g$.
+We first look at the sixth entry in $\nu_g$ from\todo{reference proposition 0.2 here}, which maps to $f_{0\infty}$.
+This entry is
+\[
+\frac{t_g(x)y}{x^g(x-a)^g} = \frac{y}{(x-a)^g},
+\]
+and clearly $\sigma^*(y/(x-a)^g) = y/x^g$.
+Since the third term in $\lambda_i$ is zero for all $i$, and since the third entries in $\gamma_i$ form a set of linearly independent elements (over $k$), it follows that the we can determine the action of $\sigma^*$ on $\bar\gamma_i$ form the third entry alone.\todo{move to earlier, rephrase}
+In particular, $\sigma^*(\bar\gamma_g) = \bar\gamma_g$.
+For this reason, $\sigma^*(\gamma_g) = \gamma_g + \sum_{i=0}^{g-1} c_i\lambda_i$, for some $c_i \in k$.
+We can also write $s(\bar\sigma_g)$ as $\sigma_g + \sum_{i =0}^{g-1}d_i\lambda_i$ for some $d_i \in k$.
+We will compute $c_{g-1}$, and then compare this with the coefficient of $\sigma^*(s(\bar\gamma_g))$ to gain a contradiction.
+
+
+Now $c_{g-1}$ is precisely the lead coefficient of the numerator of the second term in $\nu_g$\todo{explain this. reference proposition 0.2}.
+Since
+\[
+\deg(\psi_g(x)t_g(x)x) \leq g+1 + g+ 1 = 2g+1 < 3g+1 = \deg(\phi_g(x)r_g(x)x) = \deg(f(x)x^g
+\]
+we see that the lead term of this entry\todo{specify which entry} is the lead term of $2gf(x)(-1)ax^g - \phi_g(x)r_g(x)x$.
+Rearranging $2g+1 = p^n - 1$ gives us the identity
+\[
+g = \frac{p^n - 1}{2}.
+\]
+From this we see that the lead coefficient of $2gf(x)(-1)ax^g$ is 
+\[
+2\left( \frac{p^n-1}{2} \right) (-1)a = a
+\]
+since $\cha(k) = p$.
+On the other hand the lead term of $-\phi_g(x)r_g(x)x$ is
+\[
+-(-2g)(-1)\binom{g}{g-1}a = 2\left(\frac{p^n -1 }{2}\right) (-1)\left( \frac{p^n - 1}{2} \right)a = \frac{-a}{2}.
+\]
+Finally, it follows that the lead coefficient of the numerator in the second term of is
+\[
+a - \frac{a}{2} = \frac{a}{2}.
+\]
+
+So now we have, on the one hand,
+\[
+s(\sigma^*(\bar\gamma_g)) = \gamma_g + \sum_{i=0}^{g-1}d_i\lambda_i,
+\]
+whilst on the other hand
+\begin{align}
+\sigma^*(s(\bar\gamma_g)) & = \sigma^*(\gamma_g + \sum_{i=1}^{g-1} d_i\lambda_i ) \\
+& = \gamma_g + \frac{a}{2}\lambda_{g-1} + \sum_{i=0}^{g-2} c_i x^k + \sum_{i=0}^{g-1} d_i \sum_{k=0}^{i} \binom{i}{k}a^{i-k}x^k.
+\end{align}
+Hence we see that for $s(\sigma^*(\gamma_g))$ to equal $\sigma^*(s(\gamma_g))$ we require that $\frac{a}{2} + d_{g-1} = d_{g-1}$; \ie that $\frac{a}{2} = 0$. 
+But then $a=0$, which is a contradiction.
+
+\end{proof}
 
 
 
