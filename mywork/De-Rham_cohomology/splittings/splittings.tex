@@ -363,6 +363,39 @@ Note that the last relation ($df_{\sigma \infty i} = \omega_{\sigma i} - \sigma_
 
 \end{proof}
 
+
+We now label the basis elements of $\cechderhamhone$, seperating the parts that surject on to $\hone$ and inject from $\hzero$.\todo{improve phrasing}
+We let
+\begin{align*}
+\gamma_i & = \left( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{-\phi(x)}{2yx^{i+1}}, \frac{y}{x^i} \right), \quad i = 1, \ldots, g \\
+\intertext{and }
+\lambda_i & = \left( \frac{x^i}{y}, \frac{x^i}{y}, 0 \right), \quad i = 0, \ldots, g-1
+\end{align*}
+We describe the action of $\sigma^*$ on $\lambda_i$ in the following lemma.
+\begin{lem}
+For each $i \in \{ 0, \ldots, g-1\}$ then 
+\[
+\sigma^*(\lambda_i) = \sum_{k = 0}^i \binom{i}{k}a^{i-k}x^k.
+\]
+\end{lem}
+\begin{proof}
+Since the only entry in $\lambda_i$ is $x^i/y$, and $\sigma^*$ acts trivially on $y$, then the lemma follows by expanding $(x+a)^i$.
+\todo[inline]{improve phrasing}
+\end{proof}
+
+We now suppose that our curve has defining equation of order $p^n$, where $p$ is still the characteristic of $k$.
+
+
+
+
+
+
+
+
+
+
+
+\begin{comment}
 We now suppose that $X$ is of genus 2, and that
 \[
 f(x) = a_6x^6 + a_5x^5 + a_4x^4 + a_3x^3 + a_2x^2 + a_1x + a_0.
@@ -677,6 +710,7 @@ Then the action of $\sigma^*(\gamma_4)$ is
 
 
 
+\end{comment}
 
 
 
