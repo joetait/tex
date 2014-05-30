@@ -102,7 +102,7 @@
 
 %%% The "real" document content comes below...
 
-\title{Group actions on de Rham cohomology of genus two curves}
+\title{Group actions on de Rham cohomology of hyperelliptic~curves}
 \author{J. Tait}
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
@@ -113,14 +113,14 @@
 \bigskip
 
 
-We let $X$ be a hyperelliptic curve over an algebraically closed field $k$ (characteristic not $p \neq 2$).
-We may suppose that $X$ is defined by 
+We let $X$ be a hyperelliptic curve of genus $g$ over an algebraically closed field $k$ characteristic $p \neq 2$.
+We fix a degree two map $\phi \colon X \ra \mathbb{P}^1_k$, which is unique up to isomorphism of $\mathbb{P}_k^1$.
+Then the extension $K(X)$ of $k(x) = K(\mathbb{P}_k^1$ is $k(x,y)$ where $y$ satisfies
 \begin{equation}\label{definingequation}
 y^2 = f(x) \in k[x]
 \end{equation}
-where $f(x)$ has no repeated roots.
-We fix a degree two map $\pi \colon X \ra \mathbb P^1_k$, which is unique up to automorphism of $\mathbb P_k^1$.
-Moreover, we suppose that $X$ has an automorphism $\sigma \colon X \ra X$, such that the action of $\sigma^*$ on $x$ in the function field $K(X) = k(x,y)$ is $\sigma^* \colon x \to x+a$ for some $a\in k$.
+where $f(x)$ has no repeated roots and degree $2g+1$ or $2g+2$.
+We suppose that $X$ has an automorphism $\sigma \colon X \ra X$, such that the action of $\sigma^*$ on $x$ in the function field $K(X) = k(x,y)$ is $\sigma^* \colon x \to x+a$ for some $a\in k$.
 We now show that this determines the action of $\sigma^*$ on $y$, up to sign.
 
 
@@ -189,9 +189,9 @@ Since $\sigma^*(\omega_\sigma)-\sigma^*(\omega_\infty) = \sigma^*(\omega_\sigma 
 We know look at the specific case we are considering.
 From \cite{derhamactions} a basis of $\cechderhamhone(\cU)$ is formed by
 \begin{align*}
-\gamma_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) , i=1, \ldots, g \\
+\lambda_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) , i=0, \ldots, g-1 \\
 \intertext{and}
-\tau_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{\phi_i(x)}{2yx^{i+1}}, x^{-i}y \right), i=1,\ldots ,g.
+\gamma_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{-\phi_i(x)}{2yx^{i+1}}, x^{-i}y \right), i=1,\ldots ,g.
 \end{align*}
 We also define the following polynomials for $1 \leq i \leq g$
 \[
@@ -205,20 +205,24 @@ splitting the polynomial $(x-a)^g$ in to two parts.
 The following proposition allows us to compute how $\sigma^*$ acts on the basis of $\cechderhamhone(\cU)$ mentioned above.
 
 \begin{prop}\label{basis22}
-The pre-image $\rho^{-1}(\tau_i)$ is the set of residue classes of
+The pre-image $\rho^{-1}(\gamma_i)$ is the set of residue classes of
 \begin{multline*}
-\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) - 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right)
+\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right)
 \end{multline*}
 formed as $i$ ranges from $1$ to $g$.
 \end{prop}
+\begin{rem}
+Note that the fourth term, $\frac{\phi_i(x)}{2yx^{i+1}} dx$, has a different sign than the equivalent term in $\gamma_i$.
+This is due the increased cover and moving it from the second to third position.
+\end{rem}
 \begin{proof}
 In order to refer to the entries in $\nu_i$ we let $f_{ijk}$ and $\omega_{ij}$ be the appropriate functions and differentials such that
 \[
 \nu_i = \left( \omega_{0 i}, \omega_{\sigma i}, \omega_{\infty i}, f_{0 \sigma i}, f_{0 \infty i}, f_{\sigma \infty i} \right).
 \]
-First, note that it follows from \cite{derhamactions} that $d(f_{0 \infty i}) = \omega_{0 i} - \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
+First, note that it follows from \cite{derhamactions} that $d(f_{0 \infty i}) = \omega_{0 i} + \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
 
-Firstly, since $r_i(x)+t_i(x)$ is the binary expansion of $(x-a)^g$ then
+Since $r_i(x)+t_i(x)$ is the binary expansion of $(x-a)^g$ then
 \begin{align*}
 f_{0 \sigma i} - f_{0 \infty i}+ f_{\sigma \infty i} & = \frac{r_i(x)y}{x^i(x-a)^g} - \frac{y}{x^i} + \frac{t_i(x)y}{x^i(x-a)^g} \\
 & = \frac{y(r_i(x) + t_i(x) - (x-a)^g)}{x^i(x-a)^g} \\
@@ -233,17 +237,17 @@ Firstly
 \di \left( f_{0 \sigma i} \right) & = \di \left( \frac{r_i(x)y}{x^i(x-a)^g} \right) \\
 &  = \di(r_i(x)) + \di(y) - i\di(x) - g\di(x-a) \\
 & \geq \di_0(r_i(x)) - (i-1)D_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
-& = \di_0(f_{i,g}) +R -iD_0 - gD_a,
+& = \di_0(r_i(x)) +R -iD_0 - gD_a,
 \end{align*}
 which is non-negative on $U_0 \cap U_\sigma$.
-On the other hand
+On the other hand,
 \begin{align*}
 \di \left( f_{\sigma \infty i} \right) & = \di \left( \frac{t_i(x)y}{x^i(x-a)^g} \right) \\
 & = \di\left(\frac{t_i(x)}{x^i}\right) + \di(y) - g\di(x-a) \\
 & = \di_0 \left( \frac{t_i(x)}{x^i} \right) - (g-i)D_\infty +R - (g+1)D_\infty - gD_a + gD_\infty\\
 & = \di_0 \left( \frac{t_i(x)}{x^i} \right) +R - gD_a -(g-i+1)D_\infty.
 \end{align*}
-Since $t_i(x)/x^i$ is regular on $U_\infty$ we conclude that $({t_i(x)y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
+Since $t_i(x)/x^i$ and $y$ are regular on $U_\infty$ we conclude that $({t_i(x)y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
 
 To show that
 \begin{equation}\label{longequation}
@@ -256,12 +260,11 @@ is regular on $U_\sigma$ we first compute the divisor
 & \quad - (g+1)D_a + (g+1)D_\infty \\
 & = (2g+i+1)D_\infty -(i+1)D_0 - (g+1)D_a.
 \end{align*}
-
 We next show that the numerator of \eqref{longequation},
 \begin{equation}\label{numerator}
 {(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i},
 \end{equation}
-has order less then $2g+i+2$, from which it will follow that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
+has order less then $2g+i+2$, from which it follows that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
 The order of $\psi_i(x)t_i(x)(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
 If $\deg(f) = 2g+1$, then clearly
 \[
@@ -270,7 +273,7 @@ If $\deg(f) = 2g+1$, then clearly
 and
 \[
 \deg \left( 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i \right)  = \begin{cases} 0 & \text {if } p|i\binom{g}{i}, \\
- \deg(f) + \deg(x^i) \leq 2g+i+1 & \text{otherwise}
+ \deg(f) + \deg(x^i) =  2g+i+1 & \text{otherwise.}
 \end{cases}
 \]
 Lastly, if $\deg(f) = 2g+2$ then the leading term of $-\phi_i(x)r_i(x)(x-a)$ is
@@ -285,20 +288,20 @@ Since these terms cancel, we again have the that the degree of \eqref{numerator}
 
 Finally, we show that \eqref{numerator} is divisible by $x^{i+1}$.
 By definition $x^{g+1} | \phi_i(x)$, and since $i \leq g$ it follows that $x^{i+1}|\phi_i(x)r_i(x)(x-a)$.
-On the other hand
+Also, both
 \[
 2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i - 2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i 
 \]
 and
 \[
-\psi_i(x)t_i(x)(x-a) + a(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)
+\psi_i(x)t_i(x)(x-a) - (-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)
 \]
-are both divisible by $x^{i+1}$.
+are divisible by $x^{i+1}$.
 Moreover, 
 \[
-a(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right) = 2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i,
+(-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right) = 2ia_0(-1)^{g-i+2}\binom{g}{i}a^{g-i+1}x^i,
 \]
-so these terms (which appear in $\psi_i(x)t_i(x)(x-a)$ and $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$) cancel, and the numerator is divisible by $x^{i+1}$.
+so these terms cancel when adding $\psi_i(x)t_i(x)(x-a)$ and $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ and the numerator, \eqref{numerator}, is divisible by $x^{i+1}$.
 
 
 It only remains to show that $\omega_{\sigma i} = \omega_{0 i} -df_{0 \sigma i}$.
@@ -306,12 +309,12 @@ We begin this by computing $df_{0 \sigma i}$, which is
 \begin{align*}
 df_{0 \sigma i} & = d \left( \frac{y r_i(x)}{x^i(x-a)^g} \right) \\
 & = \frac{r_i(x)}{x^i(x-a)^g}dy + y d\left( \frac{r_i(x)}{x^i(x-a)^g} \right) \\
-& = \frac{f'r_i(x)}{2yx^i(x-a)^g}dx + \left( \frac{yr_i(x)'}{x^i(x-a)^g} -\frac{iy r_i(x)}{x^{i+1}(x-a)^g} - \frac{gyr_i(x)}{x^i(x-a)^{g+1}}\right) dx \\
-& = \frac{xf'r_i(x)(x-a) + 2f(xr_i(x)'(x-a) - i(x-a)r_i(x) - gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}} dx.
+& = \frac{f(x)'r_i(x)}{2yx^i(x-a)^g}dx + \left( \frac{yr_i(x)'}{x^i(x-a)^g} -\frac{iy r_i(x)}{x^{i+1}(x-a)^g} - \frac{gyr_i(x)}{x^i(x-a)^{g+1}}\right) dx \\
+& = \frac{xf(x)'r_i(x)(x-a) + 2f(xr_i(x)'(x-a) - i(x-a)r_i(x) - gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}} dx.
 \end{align*}
 Hence $\omega_{0 i} - df_{o \sigma i}$ expands to
 \[
-\frac{\psi_i(x)(x-a)^{g+1} - xf'r_i(x)(x-a) + 2f(xr_i(x)'(x-a)-i(x-a)r_i(x)-gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}}dx.
+\frac{\psi_i(x)(x-a)^{g+1} - xf(x)'r_i(x)(x-a) + 2f(x)(xr_i(x)'(x-a)-i(x-a)r_i(x)-gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}}dx.
 \]
 Now
 \[
@@ -319,7 +322,7 @@ Now
 \]
 and
 \[
-xf'r_i(x)(x-a) - 2ifr_i(x)(x-a) = r_i(x)(x-a)(xf'-2if) = r_i(x)(x-a)(\psi_i(x) + \phi_i(x)).
+xf(x)'r_i(x)(x-a) - 2if(x)r_i(x)(x-a) = r_i(x)(x-a)(xf(x)'-2if(x)) = r_i(x)(x-a)(\psi_i(x) + \phi_i(x)).
 \]
 So
 \[
@@ -338,7 +341,7 @@ it follows that
 r_i(x)'(x-a) & = x \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} - a \sum_{k=0}^{i-1} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k \\
 & = \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^k  + \sum_{k=0}^{i-1} (k+1) (-1)^{g-k} \binom{g}{k+1}a^{g-k} x^k,
 \end{align*}
-and so the coefficient of $x^k$ is $(-1)^{g-k}\left(k\binom{g}{k} + (k+1)\binom{g}{k+1}\right) a^{g-k}$ for $0 \leq k \leq i-1$.
+and so the coefficient of $x^k$ in $r_i(x)'(x-a)$ is $(-1)^{g-k}\left(k\binom{g}{k} + (k+1)\binom{g}{k+1}\right) a^{g-k}$ for $0 \leq k \leq i-1$.
 On the other hand, the coefficient of $x^k$ in $gr_i(x)$ is $(-1)^{g-k}g\binom{g}{k}a^{g-k}$.
 Since 
 \begin{align*}
@@ -347,7 +350,7 @@ k\binom{g}{k} + (k+1)\binom{g}{k+1} & = k \left( \frac{g!}{k!(g-k)!} \right) + (
 & = \frac{g\cdot g!}{k!(g-k)!} \\
 & = g \binom{g}{k}
 \end{align*}
-it follows that $r_i(x)'-gr_i(x)$ has only one term of order $i$.
+it follows that $r_i(x)'-gr_i(x)$ has only one term, which is of order $i$.
 This term is
 \begin{align*}
  (-1)^{g-i+1}\left( (i-1-g)\frac{g!}{(i-1)!(g-i+1)!} \right) & a^{g-i+1}x^i \\
@@ -360,19 +363,15 @@ Combining the above we conclude that
 \omega_{0 i } - df_{0\sigma i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx.
 \]
 
-Note that the last relation ($df_{\sigma \infty i} = \omega_{\sigma i} - \sigma_{\infty i}$) follows from 
+Note that the last relation ($df_{\sigma \infty i} = \omega_{\sigma i} - \omega_{\infty i}$) holds, since 
+\[
+df_{\sigma \infty i} = df_{0 \infty i} - df_{0 \sigma i} = \omega_{0 i} - \omega{_\infty i } - \omega_{0 i} + \omega_{\sigma i} = \omega_{\sigma i} - \sigma_{\infty i}.
+\]
 
 \end{proof}
 
 
-We now label the basis elements of $\cechderhamhone$, seperating the parts that surject on to $\hone$ and inject from $\hzero$.\todo{improve phrasing}
-We let
-\begin{align*}
-\gamma_i & = \left( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{-\phi(x)}{2yx^{i+1}}, \frac{y}{x^i} \right), \quad i = 1, \ldots, g \\
-\intertext{and }
-\lambda_i & = \left( \frac{x^i}{y}, \frac{x^i}{y}, 0 \right), \quad i = 0, \ldots, g-1
-\end{align*}
-We describe the action of $\sigma^*$ on $\lambda_i$ in the following lemma.
+We now describe the action of $\sigma^*$ on $\lambda_i$ in the following lemma.
 \begin{lem}
 For each $i \in \{ 0, \ldots, g-1\}$ then 
 \[
@@ -380,14 +379,16 @@ For each $i \in \{ 0, \ldots, g-1\}$ then
 \]
 \end{lem}
 \begin{proof}
-Since the only entry in $\lambda_i$ is $x^i/y$, and $\sigma^*$ acts trivially on $y$, then the lemma follows by expanding $(x+a)^i$.
-\todo[inline]{improve phrasing}
+Since $\sigma^*$ acts trivially on $y$, it follows that
+\[
+\sigma^*\left( \frac{x^i}{y} \right) = \sum_{k=0}^i \binom{i}{k}a^{i-k}x^k.
+\]
+The statement follows from this.
 \end{proof}
 
-We now show that if the $f(x)$ term in the defining equation of $X$ has degree $p^n$ then the short exact sequence in \todo{reference other work here} doesn't split.
 
 \begin{thm}
-Suppose that $\deg(f(x)) = p^n + 1$ for some $n \in \NN$.
+Suppose that $\deg(f(x)) = p^n $ for some $n \in \NN$.
 Then the short exact sequence of $k[G]$-modules
 \[
 0 \ra \hzero \ra \derhamhone \ra \hone \ra 0
@@ -395,28 +396,25 @@ Then the short exact sequence of $k[G]$-modules
 does not split.
 \end{thm}
 \begin{proof}
-We suppose that the sequence does split, and that $s \colon \hone \ra \derhamhone$, given by $s \colon \bar\gamma_i \to \gamma_i$ is the splitting map.
+We suppose that the sequence does split, and that $s \colon \hone \ra \derhamhone$, given by $s \colon \bar\gamma_i \mapsto \gamma_i$ is the splitting map.
 
-We now examine the action of $\sigma^*$ on $\gamma_g$.
-We first look at the sixth entry in $\nu_g$ from\todo{reference proposition 0.2 here}, which maps to $f_{0\infty}$.
+We now examine the action of $\sigma^*$ on $\gamma_g$ and $\bar \gamma_g$.
+We first look at the sixth entry in $\nu_g$ from Proposition \ref{basis22}, which $\sigma^*$ maps to $f_{0\infty}$.
 This entry is
 \[
 \frac{t_g(x)y}{x^g(x-a)^g} = \frac{y}{(x-a)^g},
 \]
 and clearly $\sigma^*(y/(x-a)^g) = y/x^g$.
-Since the third term in $\lambda_i$ is zero for all $i$, and since the third entries in $\gamma_i$ form a set of linearly independent elements (over $k$), it follows that the we can determine the action of $\sigma^*$ on $\bar\gamma_i$ form the third entry alone.\todo{move to earlier, rephrase}
-In particular, $\sigma^*(\bar\gamma_g) = \bar\gamma_g$.
-For this reason, $\sigma^*(\gamma_g) = \gamma_g + \sum_{i=0}^{g-1} c_i\lambda_i$, for some $c_i \in k$.
-We can also write $s(\bar\sigma_g)$ as $\sigma_g + \sum_{i =0}^{g-1}d_i\lambda_i$ for some $d_i \in k$.
-We will compute $c_{g-1}$, and then compare this with the coefficient of $\sigma^*(s(\bar\gamma_g))$ to gain a contradiction.
+Hence $\sigma^*(\bar\gamma_g) = \bar \gamma_g$, and $\sigma^*(\gamma_g) = \gamma_g + \sum_{i =0}^{g-1}c_i\lambda_i$, for some $c_i \in k$.
+We now compute $c_{g-1}$.
 
-
-Now $c_{g-1}$ is precisely the lead coefficient of the numerator of the second term in $\nu_g$\todo{explain this. reference proposition 0.2}.
-Since
+We begin this by computing the lead term of the first entry of $\sigma^*(\gamma_g)$.
+This is equal to the lead term of $\omega_{\sigma g}$ in $\nu_g$, since applying $\sigma^*$ doesn't change the lead term of any polynomials.
+As
 \[
 \deg(\psi_g(x)t_g(x)x) \leq g+1 + g+ 1 = 2g+1 < 3g+1 = \deg(\phi_g(x)r_g(x)x) = \deg(f(x)x^g
 \]
-we see that the lead term of this entry\todo{specify which entry} is the lead term of $2gf(x)(-1)ax^g - \phi_g(x)r_g(x)x$.
+we need only compute the coefficient of $x^{3g+1}$ in $2gf(x)(-1)ax^g - \phi_g(x)r_g(x)x$ and show that it is non-zero.
 Rearranging $2g+1 = p^n - 1$ gives us the identity
 \[
 g = \frac{p^n - 1}{2}.
@@ -435,7 +433,17 @@ Finally, it follows that the lead coefficient of the numerator in the second ter
 a - \frac{a}{2} = \frac{a}{2}.
 \]
 
-So now we have, on the one hand,
+
+Since the denominator of $\omega_{\sigma g}$ is of degree $2g+2$, we see that overall the degree of the first entry of $\gamma_g$ is $g-1$ (as a polynomial in $x$).
+Now the degree of $\frac{\psi_g(x)}{2yx^{g+1}}$ is less than this, as is the degree of $\lambda_i$, unless $i=g-1$, when the degree of $\lambda_i$ is precisely $g-1$.
+Hence, by comparing coefficients, we see that $c_{g-1} = \frac{a}{2}$.
+
+Now suppose that 
+\[
+s(\bar\gamma_i) = \gamma_g + \sum_{i=0}^{g-1}d_i \lambda_i
+\]
+for some $d_i \in k$.
+Then, on the one hand,
 \[
 s(\sigma^*(\bar\gamma_g)) = \gamma_g + \sum_{i=0}^{g-1}d_i\lambda_i,
 \]
@@ -444,7 +452,7 @@ whilst on the other hand
 \sigma^*(s(\bar\gamma_g)) & = \sigma^*(\gamma_g + \sum_{i=1}^{g-1} d_i\lambda_i ) \\
 & = \gamma_g + \frac{a}{2}\lambda_{g-1} + \sum_{i=0}^{g-2} c_i x^k + \sum_{i=0}^{g-1} d_i \sum_{k=0}^{i} \binom{i}{k}a^{i-k}x^k.
 \end{align}
-Hence we see that for $s(\sigma^*(\gamma_g))$ to equal $\sigma^*(s(\gamma_g))$ we require that $\frac{a}{2} + d_{g-1} = d_{g-1}$; \ie that $\frac{a}{2} = 0$. 
+Hence we see that for $s(\sigma^*(\gamma_g))$ to equal $\sigma^*(s(\gamma_g))$ we require $\frac{a}{2} + d_{g-1} = d_{g-1}$; \ie that $\frac{a}{2} = 0$. 
 But then $a=0$, which is a contradiction.
 
 \end{proof}
