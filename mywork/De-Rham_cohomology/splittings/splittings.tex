@@ -120,18 +120,18 @@ Then the extension $K(X)$ of $k(x) = K(\mathbb{P}_k^1)$ is $k(x,y)$ where $y$ sa
 \begin{equation}\label{definingequation}
 y^2 = f(x) \in k[x],
 \end{equation}
-where $f(x)$ has no repeated roots and degree $2g+1$ or $2g+2$.
-We can furthermore assume that $f(x)$ is monic, without loss of generality.
+for some $f(x)$ which has no repeated roots and degree $2g+1$ or $2g+2$.
+We can furthermore assume, without loss of generality, that $f(x)$ is monic.
 
 
 In previous work we found a basis for the de Rham cohomology of any hyperelliptic curve using \cech cohomology.
-In particular,  if we let $\cU = \{ U_0 , U_\infty\}$ (recall that $U_a = X\backslash \pi^{-1}(a)$), then a basis of $\cechderhamhone(\cU)$ is formed by
+In particular, if we let $\cU = \{ U_0 , U_\infty\}$ (recall that $U_z~=~X\backslash \pi^{-1}(z)$ for any $z \in \mathbb P_k^1$), then a $k$-vector space basis of $\cechderhamhone(\cU)$ is formed by
 \begin{align*}
 \lambda_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) ,\quad i=0, \ldots, g-1 \\
 \intertext{and}
-\gamma_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{-\phi_i(x)}{2yx^{i+1}}, x^{-i}y \right), \quad i=1,\ldots ,g;
+\gamma_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{-\phi_i(x)}{2yx^{i+1}}dx, x^{-i}y \right), \quad i=1,\ldots ,g.
 \end{align*}
-see \cite{derhamactions} for details.
+See \cite{derhamactions} for details.\todo{recall $\psi$ and $\phi$}
 We fix some $a \in \mathbb P_k^1\backslash \{0, \infty\}$ and define $U_a : = X \backslash \pi^{-1}(a)$.
 We then let $\cU''~=~\{U_0,U_a, U_\infty\}$.
 We now recall that $\cechderhamhone(\cU'')$ can be defined as the $k$-vector space 
@@ -166,7 +166,7 @@ Note that the fourth term, $\frac{\phi_i(x)}{2yx^{i+1}} dx$, has a different sig
 This is due the increased cover and moving it from the second to third position.
 \end{rem}
 \begin{proof}
-In order to refer to the entries in $\nu_i$ we let $f_{ijk}$ and $\omega_{ij}$ be the appropriate functions and differentials such that
+In order to be able to refer to the entries in $\nu_i$ we let
 \[
 \nu_i = \left( \omega_{0 i}, \omega_{\sigma i}, \omega_{\infty i}, f_{0 \sigma i}, f_{0 \infty i}, f_{\sigma \infty i} \right).
 \]
@@ -189,21 +189,22 @@ Firstly
 & \geq \di_0(r_i(x)) - (i-1)D_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
 & = \di_0(r_i(x)) +R -iD_0 - gD_a,
 \end{align*}
-which is non-negative on $U_0 \cap U_\sigma$.
+which is non-negative on $U_0 \cap U_a$.
 On the other hand,
 \begin{align*}
 \di \left( f_{\sigma \infty i} \right) & = \di \left( \frac{t_i(x)y}{x^i(x-a)^g} \right) \\
 & = \di\left(\frac{t_i(x)}{x^i}\right) + \di(y) - g\di(x-a) \\
 & = \di_0 \left( \frac{t_i(x)}{x^i} \right) - (g-i)D_\infty +R - (g+1)D_\infty - gD_a + gD_\infty\\
-& = \di_0 \left( \frac{t_i(x)}{x^i} \right) +R - gD_a -(g-i+1)D_\infty.
+& = \di_0 \left( \frac{t_i(x)}{x^i} \right) +R - gD_a -(g-i+1)D_\infty,
 \end{align*}
-Since $t_i(x)/x^i$ and $y$ are regular on $U_\infty$ we conclude that $({t_i(x)y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
+where the third equality holds because $t_i(x)/x^i$ is regular on $U_\infty$.
+Since $y$ is also regular on $U_\infty$  we conclude that $({t_i(x)y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
 
 To show that
 \begin{equation}\label{longequation}
 \omega_{\sigma i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx
 \end{equation}
-is regular on $U_\sigma$ we first compute the divisor
+is regular on $U_a$ we first compute the divisor
 \begin{align*}
 \di\left( \frac{dx}{2yx^{i+1}(x-a)^{g+1}}\right) & = \di(dx) - \di(y) - (i+1)\di(x) - (g+1)\di(x-a) \\
 & = R - 2D_\infty - R + (g+1)D_\infty - (i+1)D_0 + (i+1)D_\infty \\
@@ -214,19 +215,17 @@ We next show that the numerator of \eqref{longequation},
 \begin{equation}\label{numerator}
 {(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i},
 \end{equation}
-has order less then $2g+i+2$, from which it follows that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
-The order of $\psi_i(x)t_i(x)(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
-If $\deg(f) = 2g+1$, then clearly
+has degree less then $2g+i+2$, from which it follows that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
+The degree of $\psi_i(x)t_i(x)(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
+If $\deg(f) = 2g+1$, then clearly\todo{check that it should be $2g$ and not $g$}
 \[
-\deg\left( \phi_i(x)r_i(x)(x-a) \right) = \deg(\phi_i) + \deg(r_i(x)) + \deg((x-a)) \leq 2g+1 + i-1 +1 = 2g+i+1
+\deg\left( \phi_i(x)r_i(x)(x-a) \right) = \deg(\phi_i) + \deg(r_i(x)) + \deg(x-a) \leq 2g+1 + i-1 +1 = 2g+i+1
 \]
 and
 \[
-\deg \left( 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i \right)  = \begin{cases} 0 & \text {if } p|i\binom{g}{i}, \\
- \deg(f) + \deg(x^i) =  2g+i+1 & \text{otherwise.}
-\end{cases}
+\deg \left( 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i \right)  \leq  2g+1+i .
 \]
-Lastly, if $\deg(f) = 2g+2$ then the leading term of $-\phi_i(x)r_i(x)(x-a)$ is
+Lastly, if $\deg(f) = 2g+2$ then the leading term \todo{rephrase - don't use "leading term", in case coefficient is zero}of $-\phi_i(x)r_i(x)(x-a)$ is
 \begin{align*}
 -((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
 &  = 2(-1)^{g-i+2}\left( (g-i+1)\binom{g}{i-1} \right) a_{2g+2}x^{2g+i+2} \\
