@@ -112,64 +112,29 @@
 \listoftodos
 \bigskip
 
+\todo[inline]{replace $\sigma$ subscripts with $a$ throughout}
 
 We let $X$ be a hyperelliptic curve of genus $g$ over an algebraically closed field $k$ characteristic $p \neq 2$.
-We fix a degree two map $\phi \colon X \ra \mathbb{P}^1_k$, which is unique up to isomorphism of $\mathbb{P}_k^1$.
-Then the extension $K(X)$ of $k(x) = K(\mathbb{P}_k^1$ is $k(x,y)$ where $y$ satisfies
+We fix a degree two map $\pi \colon X \ra \mathbb{P}^1_k$, which is unique up to isomorphism of $\mathbb{P}_k^1$.
+Then the extension $K(X)$ of $k(x) = K(\mathbb{P}_k^1)$ is $k(x,y)$ where $y$ satisfies
 \begin{equation}\label{definingequation}
-y^2 = f(x) \in k[x]
+y^2 = f(x) \in k[x],
 \end{equation}
 where $f(x)$ has no repeated roots and degree $2g+1$ or $2g+2$.
-We suppose that $X$ has an automorphism $\sigma \colon X \ra X$, such that the action of $\sigma^*$ on $x$ in the function field $K(X) = k(x,y)$ is $\sigma^* \colon x \to x+a$ for some $a\in k$.
-We now show that this determines the action of $\sigma^*$ on $y$, up to sign.
-
-
-\begin{lem}
-The action of $\sigma^*$ on $y$ is given by $\sigma^*(y) = y$ or $\sigma^*(y) = -y$.
-\end{lem}
-\begin{proof}
-Since $y^2 \in k(x)$ then there must exist $g_1(x), g_2(x) \in k(x)$ such that 
-\begin{equation*}
-\sigma^*(y) = g_1(x)y + g_2(x) \in k(x,y).
-\end{equation*}
-Hence
-\begin{equation}\label{easylemma}
-f(x+a) = \sigma^*(y^2) = (\sigma^*(y))^2 = g_1(x)^2f(x)+2g_1(x)g_2(x)y + g_2(x)^2.
-\end{equation}
-Firstly, note that if neither $g_1(x)$ nor $g_2(x)$ are zero then
-\[
-y = \frac{f(x+a) - g_1(x)f(x) - g_2(x)^2}{2g_1(x)g_2(x)},
-\]
-which contradicts the fact $K(X)$ is a degree two extension of $k(x)$.
-Hence one of $g_1(x)$ or $g_2(x)$ must be zero.
-
-If $g_1(x) = 0$ then $\sigma^*$ would not be an automorphism, since $y$ would not be in the image.
-Hence $\sigma^*(y) = g_1(x)y$.
-Also, by comparing the degrees in \eqref{easylemma} we see that $\deg(g_1(x)) = 0$, and then by comparing coefficients in the same equation we see that $g_1(x)^2 = 1$.
-Hence $\sigma^*(y) = \pm y$.
-\end{proof}
-\begin{rem}
-If $\sigma^*(y) = -y$ we can, without loss of generality, replace $\sigma^*$ by $\sigma^* \circ j$, where $j$ denotes the hyperelliptic involution.
-Hence we will assume throughout the rest of the paper that $\sigma^*(y) = y$.
-\end{rem}
-
+We can furthermore assume that $f(x)$ is monic, without loss of generality.
 
 
 In previous work we found a basis for the de Rham cohomology of any hyperelliptic curve using \cech cohomology.
-In particular,  if we let $\cU = \{ U_0 , U_\infty\}$ (recall that $U_a = X\backslash \pi^{-1}(a)$) then a basis of $\cechderhamhone(\cU)$ is given in \cite{derhamactions}.
-However, this cover is not preserved under the action of $\sigma$ (in particular, $\sigma(U_0) = U_a \notin \cU$).
-To accommodate for this we will need to add one more open set, $U_\sigma := \sigma(U_0)$, to our cover.
-We call the cover with this additional element $\cU'' = \{U_0, U_\sigma, U_\infty \}$, and we let $\cU' = \{U_\sigma, U_\infty\}$.
-We then have the following commutative diagram
-\[
-\begin{array}{ccc}
-\derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\rho} & \cechderhamhone(\cU'')  \\
-\sigma^*\uparrow & ~ & \rho'\downarrow  \\
-\derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\sigma^*} & \cechderhamhone(\cU')
-\end{array}
-\]
-where $\rho$ and $\rho'$ are the canonical projections.
-To define these explicitly we recall that $\cechderhamhone(\cU'')$ can be defined is the $k$-vector space 
+In particular,  if we let $\cU = \{ U_0 , U_\infty\}$ (recall that $U_a = X\backslash \pi^{-1}(a)$), then a basis of $\cechderhamhone(\cU)$ is formed by
+\begin{align*}
+\lambda_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) ,\quad i=0, \ldots, g-1 \\
+\intertext{and}
+\gamma_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{-\phi_i(x)}{2yx^{i+1}}, x^{-i}y \right), \quad i=1,\ldots ,g;
+\end{align*}
+see \cite{derhamactions} for details.
+We fix some $a \in \mathbb P_k^1\backslash \{0, \infty\}$ and define $U_a : = X \backslash \pi^{-1}(a)$.
+We then let $\cU''~=~\{U_0,U_a, U_\infty\}$.
+We now recall that $\cechderhamhone(\cU'')$ can be defined as the $k$-vector space 
 \begin{multline}\label{sixtupleconditions}
 \left\{ (\omega_0, \omega_\sigma, \omega_\infty , f_{0\sigma}, f_{0 \infty},f_{\sigma \infty}) | \omega_i \in \Omega_X(U_i), f_{ij} \in \cO_X(U_i \cap U_j), \right. \\ \left. f_{0\sigma} - f_{0\infty} + f_{\sigma \infty} = 0, df_{ij} = \omega_i - \omega_j \right\}
 \end{multline}
@@ -177,22 +142,7 @@ quotiented by the subspace
 \[
 \left\{ df_0, df_\sigma, df_\infty, f_0- f_\sigma, f_0 - f_\infty, f_\sigma - f_\infty | f_i \in \cO_X(U_i)\right\}.
 \]
-Then $\rho$ projects the first, third and fifth coordinates whilst $\rho'$ projects the second, third and sixth coordinates.
 
-Suppose that $v = (\omega_\sigma , \omega_\infty, f_{\sigma \infty})$ is an element of $\cechderhamhone(\cU')$.
-Then
-\begin{equation*}
-\sigma^*(v) := (\sigma^*(\omega_\sigma), \sigma^*(\omega_\infty), \sigma^*(f_{\sigma \infty})) \in \Omega_X(U_0) \times \Omega_X(U_\infty) \times \cO_X(U_\infty \cap U_0).
-\end{equation*}
-Since $\sigma^*(\omega_\sigma)-\sigma^*(\omega_\infty) = \sigma^*(\omega_\sigma - \omega_\infty) = \sigma^*(df_{\sigma \infty})$ we see that $\sigma^*(v)$ is an element of $\cechderhamhone(\cU)$.
-
-We know look at the specific case we are considering.
-From \cite{derhamactions} a basis of $\cechderhamhone(\cU)$ is formed by
-\begin{align*}
-\lambda_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) , i=0, \ldots, g-1 \\
-\intertext{and}
-\gamma_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}, \frac{-\phi_i(x)}{2yx^{i+1}}, x^{-i}y \right), i=1,\ldots ,g.
-\end{align*}
 We also define the following polynomials for $1 \leq i \leq g$
 \[
 r_i(x) : = \sum_{k=0}^{i-1} (-1)^{g-k}\binom{g}{k} a^{g-k} x^k
@@ -202,14 +152,14 @@ and
 t_i(x) := \sum_{k=i}^{g} (-1)^{g-k}\binom{g}{k} a^{g-k} x^k,
 \]
 splitting the polynomial $(x-a)^g$ in to two parts.
-The following proposition allows us to compute how $\sigma^*$ acts on the basis of $\cechderhamhone(\cU)$ mentioned above.
+The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
+
 
 \begin{prop}\label{basis22}
-The pre-image $\rho^{-1}(\gamma_i)$ is the set of residue classes of
+The pre-image of $\rho^{-1}(\gamma_i)$ for $i \in \{1, \ldots, g\}$ is the residue class of
 \begin{multline*}
-\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right)
+\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right).
 \end{multline*}
-formed as $i$ ranges from $1$ to $g$.
 \end{prop}
 \begin{rem}
 Note that the fourth term, $\frac{\phi_i(x)}{2yx^{i+1}} dx$, has a different sign than the equivalent term in $\gamma_i$.
@@ -365,13 +315,61 @@ Combining the above we conclude that
 
 Note that the last relation ($df_{\sigma \infty i} = \omega_{\sigma i} - \omega_{\infty i}$) holds, since 
 \[
-df_{\sigma \infty i} = df_{0 \infty i} - df_{0 \sigma i} = \omega_{0 i} - \omega{_\infty i } - \omega_{0 i} + \omega_{\sigma i} = \omega_{\sigma i} - \sigma_{\infty i}.
+df_{\sigma \infty i} = df_{0 \infty i} - df_{0 \sigma i} = \omega_{0 i} - \omega_{\infty i } - \omega_{0 i} + \omega_{\sigma i} = \omega_{\sigma i} - \sigma_{\infty i}.
 \]
-
 \end{proof}
 
+Now we suppose that $\sigma \in \aut(X)$ such that the following diagram commutes:
+\[
+\begin{array}{ccc}
+X & \xrightarrow[\sigma] & X \\
+\downarrow\pi & & \downarrow\pi \\
+\mathbb P^1_k & \xrightarrow[\sigma] & \mathbb P_k^1
+\end{array}
+\]
+Hence, if $a = \sigma(0)$, the following diagram commutes:
+\[
+\begin{array}{ccc}
+\derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\rho} & \cechderhamhone(\cU'')  \\
+\sigma^*\downarrow & ~ & \rho'\downarrow  \\
+\derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\sigma^*} & \cechderhamhone(\cU')
+\end{array}
+\]
+Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordinates and on the second, third and sixth coordinates respectively.
 
-We now describe the action of $\sigma^*$ on $\lambda_i$ in the following lemma.
+
+Clearly if $\sigma^* x \mapsto x+a$ then $a = \sigma(0)$: we assume in what follows that $\sigma$ is such an automorphism.
+\begin{lem}
+The action of $\sigma^*$ on $y$ is given by $\sigma^*(y) = y$ or $\sigma^*(y) = -y$.
+\end{lem}
+\begin{proof}
+Since $y^2 \in k(x)$ then there must exist $g_1(x), g_2(x) \in k(x)$ such that 
+\begin{equation*}
+\sigma^*(y) = g_1(x)y + g_2(x) \in k(x,y).
+\end{equation*}
+Hence
+\begin{equation}\label{easylemma}
+f(x+a) = \sigma^*(y^2) = (\sigma^*(y))^2 = g_1(x)^2f(x)+2g_1(x)g_2(x)y + g_2(x)^2.
+\end{equation}
+Firstly, note that if neither $g_1(x)$ nor $g_2(x)$ are zero then
+\[
+y = \frac{f(x+a) - g_1(x)f(x) - g_2(x)^2}{2g_1(x)g_2(x)},
+\]
+which contradicts the fact $K(X)$ is a degree two extension of $k(x)$.
+Hence one of $g_1(x)$ or $g_2(x)$ must be zero.
+
+If $g_1(x) = 0$ then $\sigma^*$ would not be an automorphism, since $y$ would not be in the image.
+Hence $\sigma^*(y) = g_1(x)y$.
+Also, by comparing the degrees in \eqref{easylemma} we see that $\deg(g_1(x)) = 0$, and then by comparing coefficients in the same equation we see that $g_1(x)^2 = 1$.
+Hence $\sigma^*(y) = \pm y$.
+\end{proof}
+\begin{rem}
+If $\sigma^*(y) = -y$ we can, without loss of generality, replace $\sigma$ by $\sigma \circ j$, where $j$ denotes the hyperelliptic involution.
+Hence we will assume throughout the rest of the paper that $\sigma^*(y) = y$.
+\end{rem}
+
+
+We now describe the action of $\sigma^*$ on $\lambda_i$.
 \begin{lem}
 For each $i \in \{ 0, \ldots, g-1\}$ then 
 \[
@@ -779,7 +777,14 @@ Then the action of $\sigma^*(\gamma_4)$ is
 \sigma^*(\gamma_4) = \gamma_4 + 2a\lambda_3 + 2a^3\lambda_1 + 2(a^4 + aa_0)\lambda_0.
 \]
 
-
+%--------
+%Could be useful to describe why the action of sigma changes covers
+Suppose that $v = (\omega_\sigma , \omega_\infty, f_{\sigma \infty})$ is an element of $\cechderhamhone(\cU')$.
+Then
+\begin{equation*}
+\sigma^*(v) := (\sigma^*(\omega_\sigma), \sigma^*(\omega_\infty), \sigma^*(f_{\sigma \infty})) \in \Omega_X(U_0) \times \Omega_X(U_\infty) \times \cO_X(U_\infty \cap U_0).
+\end{equation*}
+Since $\sigma^*(\omega_\sigma)-\sigma^*(\omega_\infty) = \sigma^*(\omega_\sigma - \omega_\infty) = \sigma^*(df_{\sigma \infty})$ we see that $\sigma^*(v)$ is an element of $\cechderhamhone(\cU)$.
 
 
 \end{comment}
