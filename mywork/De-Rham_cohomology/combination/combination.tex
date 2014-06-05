@@ -18,7 +18,7 @@
 % \geometry{landscape} % set up the page for landscape
 % read geometry.pdf for detailed page layout information
 
-\usepackage{graphicx} % support the \includegraphics command and options
+%\usepackage{graphicx} % support the \includegraphics command and options
 \usepackage[obeyDraft]{todonotes}
 
 %\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
@@ -26,9 +26,9 @@
 %%% PACKAGES
 \usepackage[all]{xy}
 \usepackage{mathtools}
-\usepackage{booktabs} % for much better looking tables
+%\usepackage{booktabs} % for much better looking tables
 \usepackage{array} % for better arrays (eg matrices) in maths
-\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+%\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
 \usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
 \usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
 %\usepackage{hyperref}
@@ -43,22 +43,22 @@
 % stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
 
 %%% HEADERS & FOOTERS
-\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
-\pagestyle{fancy} % options: empty , plain , fancy
-\renewcommand{\headrulewidth}{0pt} % customise the layout...
-\lhead{}\chead{}\rhead{}
-\lfoot{}\cfoot{\thepage}\rfoot{}
+%\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+%\pagestyle{fancy} % options: empty , plain , fancy
+%\renewcommand{\headrulewidth}{0pt} % customise the layout...
+%\lhead{}\chead{}\rhead{}
+%\lfoot{}\cfoot{\thepage}\rfoot{}
 
 %%% SECTION TITLE APPEARANCE
-\usepackage{sectsty}
-\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+%\usepackage{sectsty}
+%\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amsfonts}
-\usepackage{mathrsfs}
-\usepackage{amsopn}
+%\usepackage{mathrsfs}
+%\usepackage{amsopn}
 \usepackage{amssymb}
-\usepackage{etex}
+%\usepackage{etex}
 %\usepackage{natbib}
 % (This matches ConTeXt defaults)
 
@@ -140,6 +140,7 @@ We begin by recalling some of the details of Serre duality.
 We take $X$ to be a smooth, projective, connected curve over an algebraically closed field $k$ of characteristic $p \geq 0$.
 Furthermore, we let $G$ denote the automorphism group of $X$ and we let $K(X)$ denote the function field of $X$.
 We then define $\Omega_{K(X)}$ to be the module of differentials of $K(X)$ over $k$.
+We also let $\underline{\Omega}_{K(X)}$ and $\underline{K(X)}$ denote the constant sheaves of $\Omega_{K(X)}$ and $K(X)$ respectively.
 The following lemma gives us a useful description of $H^1(X,\Omega_X)$.
 \begin{lem}\label{exactsequencelemma}
 The following sequence is exact:
@@ -151,8 +152,7 @@ The following sequence is exact:
 Note that the sequence formed by the last three terms can be found in \cite[Pg. 248]{hart}.
 \end{rem}
 \begin{proof}
-We let $\underline{\Omega}_{K(X)}$ be the constant sheaf of $\Omega_{K(X)}$.
-Then the short exact sequence
+The short exact sequence
 \begin{equation}\label{serredualityses}
 0 \rightarrow \Omega_X \rightarrow \underline{\Omega}_{K(X)} \rightarrow \underline{\Omega}_{K(X)}/\Omega_X \rightarrow 0
 \end{equation}
@@ -211,12 +211,11 @@ t \colon H^1\left(X, \Omega_X\right) \ra k,\quad \overline{(\omega_P)}_{P \in X}
 We now use the trace map to define a pairing between the $k$-vector spaces $\hone$ and $\hzero$.
 Roughly speaking, we can replace $\Omega_X$ by $\cO_X$ in Lemma \ref{exactsequencelemma} and get a similar result.
 Hence $H^1(X,\cO_X)$ can also be viewed as a quotient of $\bigoplus_{P \in X} K(X)/\cO_{X,P}$.
-Then we can define a map 
+Moreover, since $\Omega_{K(X)}$ is a $K(X)$-module, we can define a map 
 \begin{equation}\label{productmap}
 \hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto ( \overline {(f  \omega)_P})_{P \in X},
 \end{equation}
-where $(f\omega)_P := f_p\omega_p$ is the product of the germ of $\omega$ in $\Omega_{X,P}$ with $f_P$.
-Note that in general we will denote elements of $\hone$ by $f$.
+where $(f\omega)_P := f_p\omega_p$ is the product of the germ of $\omega$ in $\Omega_{X,P}$ with the germ $f_P$ in $\underline{K(X)}_{P}$.
 
 We now combine the product map in \eqref{productmap} with the trace map $t$ to get a map 
 \[
