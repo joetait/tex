@@ -258,7 +258,7 @@ The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_0 \cap U_
 If we replace $\cO_X$ by $\Omega_X$ in the previous paragraph then everything still holds, and we can conclude that
 \[
 H^1(X,\Omega_X) \cong \frac{\Omega_X(U_0 \cap U_\infty)}{\Ima(\check{d})} = \frac{\Omega_X(U_0 \cap U_\infty)}{\{\omega_0 - \omega_ \infty | \omega_i \in \Omega_X(U_i)\}}.
-\]\todo{check that I actually want this and $\hzero$}
+\]
 
 We now describe how the trace map acts on $\check{H}^1(X,\Omega_X)$.
 \begin{lem}\label{tracemaplemma}
@@ -786,7 +786,6 @@ so that
 \end{align*}
 Note that it is possible for any of $\alpha_{j,i}$ to be zero. In fact, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
 Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 \leq d_\psi \leq g+1$ and $g+1 < d_\phi \leq 2g+2$.
-\todo{remove d psi? - will keep for now in case useful later}
 
 
 We now show that $\frac{-\phi_i}{2yx^{i+1}}dx$ and $\frac{\psi_i}{2yx^{i+1}}dx$ are regular on $U_\infty$ and $U_0$ respectively.
@@ -909,7 +908,7 @@ Thus we have completed the proof.
 
 \section{Splitting of the short exact sequence}
 
-\todo[inline]{replace $\sigma$ subscripts with $a$ throughout}
+\todo[inline]{check to see what is repeated in the first paragrpah from before}
 
 We let $X$ be a hyperelliptic curve of genus $g$ over an algebraically closed field $k$ characteristic $p \neq 2$.
 We let $G$ denote the automorphism group of $X$.
@@ -919,20 +918,18 @@ Then the extension $K(X)$ of $k(x) = K(\mathbb{P}_k^1)$ is $k(x,y)$ where $y$ sa
 y^2 = f(x) \in k[x],
 \end{equation}
 for some $f(x)$ which has no repeated roots and degree $2g+1$ or $2g+2$.
-We can furthermore assume, without loss of generality, that $f(x)$ is monic.
+We can assume, without loss of generality, that $f(x)$ is monic.
 
 
-In previous work we found a basis for the de Rham cohomology of any hyperelliptic curve using \cech cohomology.
-In particular, if we let $\cU = \{ U_0 , U_\infty\}$ (recall that $U_z~=~X\backslash \pi^{-1}(z)$ for any $z \in \mathbb P_k^1$), then a $k$-vector space basis of $\cechderhamhone(\cU)$ is formed by
+In the previous section (Theorem \ref{basis}) we found a basis for the de Rham cohomology of any hyperelliptic curve using \cech cohomology, with respect to the cover $\cU = \{ U_0 , U_\infty\}$.
+We let $\lambda_i$ and $\gamma_i$ denote the elements of this basis by defining
 \begin{align*}
 \lambda_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) ,\quad i=0, \ldots, g-1 \\
 \intertext{and}
 \gamma_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{-\phi_i(x)}{2yx^{i+1}}dx, x^{-i}y \right), \quad i=1,\ldots ,g.
 \end{align*}
-See \cite{derhamactions} for details.\todo{recall $\psi$ and $\phi$}
-We fix some $a \in \mathbb P_k^1\backslash \{0, \infty\}$ and define $U_a : = X \backslash \pi^{-1}(a)$.
-We then let $\cU''~=~\{U_0,U_a, U_\infty\}$.
-We now recall that $\cechderhamhone(\cU'')$ can be defined as the $k$-vector space 
+We now fix some $a \in \mathbb P_k^1\backslash \{0, \infty\}$ and define $U_a : = X \backslash \pi^{-1}(a)$ and $\cU''~:=~\{U_0,U_a, U_\infty\}$.
+Then $\cechderhamhone(\cU'')$ can be defined as the $k$-vector space 
 \begin{multline}\label{sixtupleconditions}
 \left\{ (\omega_0, \omega_\sigma, \omega_\infty , f_{0\sigma}, f_{0 \infty},f_{\sigma \infty}) | \omega_i \in \Omega_X(U_i), f_{ij} \in \cO_X(U_i \cap U_j), \right. \\ \left. f_{0\sigma} - f_{0\infty} + f_{\sigma \infty} = 0, df_{ij} = \omega_i - \omega_j \right\}
 \end{multline}
@@ -961,14 +958,14 @@ The pre-image of $\rho^{-1}(\gamma_i)$ for $i \in \{1, \ldots, g\}$ is the resid
 \end{prop}
 \begin{rem}
 Note that the fourth term, $\frac{\phi_i(x)}{2yx^{i+1}} dx$, has a different sign than the equivalent term in $\gamma_i$.
-This is due the increased cover and moving it from the second to third position.
+This is due the increased number of open sets in the cover moving it from the second to third position.
 \end{rem}
 \begin{proof}
 In order to be able to refer to the entries in $\nu_i$ we let
 \[
 \nu_i = \left( \omega_{0 i}, \omega_{\sigma i}, \omega_{\infty i}, f_{0 \sigma i}, f_{0 \infty i}, f_{\sigma \infty i} \right).
 \]
-First, note that it follows from \cite{derhamactions} that $d(f_{0 \infty i}) = \omega_{0 i} + \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
+First, note that it follows from the proof of Theorem \ref{basis} that $d(f_{0 \infty i}) = \omega_{0 i} + \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
 
 Since $r_i(x)+t_i(x)$ is the binary expansion of $(x-a)^g$ then
 \begin{align*}
@@ -1015,7 +1012,7 @@ We next show that the numerator of \eqref{longequation},
 \end{equation}
 has degree less then $2g+i+2$, from which it follows that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
 The degree of $\psi_i(x)t_i(x)(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
-If $\deg(f) = 2g+1$, then clearly\todo{check that it should be $2g$ and not $g$}
+If $\deg(f) = 2g+1$, then clearly
 \[
 \deg\left( \phi_i(x)r_i(x)(x-a) \right) = \deg(\phi_i) + \deg(r_i(x)) + \deg(x-a) \leq 2g+1 + i-1 +1 = 2g+i+1
 \]
@@ -1035,7 +1032,7 @@ Since these terms cancel, we again have the that the degree of \eqref{numerator}
 
 Finally, we show that \eqref{numerator} is divisible by $x^{i+1}$.
 By definition $x^{g+2} | \phi_i(x)$, and since $i \leq g$ it follows that $x^{i+1}|\phi_i(x)r_i(x)(x-a)$.
-On the other hand, the lowest degree terms of $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ and $\psi_i(x)t_i(x)(x-a)$ which can be non-zero are, respectively,\todo{rephrase "which can be non-zero"}
+On the other hand, the lowest degree terms of $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ and $\psi_i(x)t_i(x)(x-a)$ which can be non-zero are, respectively,
 \[
  2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i 
 \]
@@ -1047,7 +1044,8 @@ Since
 \[
 (-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right) = 2ia_0(-1)^{g-i+2}\binom{g}{i}a^{g-i+1}x^i,
 \]
-it follows that these terms cancel when adding $\psi_i(x)t_i(x)(x-a)$ and $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ and the numerator \eqref{numerator} is divisible by $x^{i+1}$.
+it follows that these terms cancel when adding $\psi_i(x)t_i(x)(x-a)$ and $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$.
+Hence the numerator \eqref{numerator} is divisible by $x^{i+1}$.
 
 
 It only remains to show that $\omega_{\sigma i} = \omega_{0 i} -df_{0 \sigma i}$.
@@ -1127,7 +1125,7 @@ Hence, if $a = \sigma(0)$, the following diagram also commutes:
 Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordinates and on the second, third and sixth coordinates respectively.
 
 
-Clearly if $\sigma^* x \mapsto x+a$ then $a = \sigma(0)$: we assume in what follows that $\sigma$ is such an automorphism.
+Clearly if $\sigma^* \colon x \mapsto x+a$ then $a = \sigma(0)$, and we assume in what follows that $\sigma$ is such an automorphism.
 \begin{lem}
 The action of $\sigma^*$ on $y$ is given by $\sigma^*(y) = y$ or $\sigma^*(y) = -y$.
 \end{lem}
@@ -1142,7 +1140,7 @@ f(x+a) = \sigma^*(y^2) = (\sigma^*(y))^2 = g_1(x)^2f(x)+2g_1(x)g_2(x)y + g_2(x)^
 \end{equation}
 Firstly, note that if neither $g_1(x)$ nor $g_2(x)$ are zero then
 \[
-y = \frac{f(x+a) - g_1(x)f(x) - g_2(x)^2}{2g_1(x)g_2(x)},
+y = \frac{f(x+a) - g_1(x)^2f(x) - g_2(x)^2}{2g_1(x)g_2(x)},
 \]
 which contradicts the fact $K(X)$ is a degree two extension of $k(x)$.
 Hence one of $g_1(x)$ or $g_2(x)$ must be zero.
@@ -1158,11 +1156,11 @@ Hence we will assume throughout the rest of the paper that $\sigma^*(y) = y$.
 \end{rem}
 
 \begin{ex}
-If $2g+1$ is an odd prime \todo{don't need to specify that $\infty$ is a branch point - implied by $2g+1$ being odd} then exists an automorphism $\sigma$ of the form $\sigma\colon (x,y) \mapsto (x+a,y)$ if and only if $p=2g+1$ and $f(x) = x^p - a^{p-1}x + a_0$, for some $a_0 \in k$.
-In this case we may assume that $a_0$, since if it doesn't we can apply the automorphism $x \mapsto x+b, y\mapsto y$ to $K(X)$, where $b$ is a root of $f(x)$.
+If $2g+1$ is an odd prime then exists an automorphism $\sigma$ of the form $\sigma\colon (x,y) \mapsto (x+a,y)$ if and only if $p=2g+1$ and $f(x) = x^p - a^{p-1}x + a_0$, for some $a_0 \in k$.
+In this case we may assume that $a_0 = 0$, since if it doesn't we can apply the automorphism $x \mapsto x+b, y\mapsto y$ to $K(X)$, where $b$ is a root of $f(x)$.
 Moreover, given an equation of the form $y^2 = x^p - a^{p-1}x$, we can apply another automorphism of $K(X)$ to replace the coefficient $a^{p-1}$ by $1$, namely $x \mapsto ax, y \mapsto a^{\frac{p}{2}}y$.
 Hence we see that all such curves are isomorphic.
-In particular, it follows from \cite{canonicalrepresentation} that \todo{finish this}
+In particular, it follows from \cite{canonicalrepresentation} that the short exact sequence in Proposition \ref{ses} doesn't split when the above conditions hold.
 \end{ex}
 
 
