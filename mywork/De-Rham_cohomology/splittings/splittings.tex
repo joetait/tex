@@ -115,6 +115,7 @@
 \todo[inline]{replace $\sigma$ subscripts with $a$ throughout}
 
 We let $X$ be a hyperelliptic curve of genus $g$ over an algebraically closed field $k$ characteristic $p \neq 2$.
+We let $G$ denote the automorphism group of $X$.
 We fix a degree two map $\pi \colon X \ra \mathbb{P}^1_k$, which is unique up to isomorphism of $\mathbb{P}_k^1$.
 Then the extension $K(X)$ of $k(x) = K(\mathbb{P}_k^1)$ is $k(x,y)$ where $y$ satisfies
 \begin{equation}\label{definingequation}
@@ -230,27 +231,27 @@ Lastly, if $\deg(f) = 2g+2$ then the term of degree $2g+i+2$ in $-\phi_i(x)r_i(x
 -((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
 &  = 2(-1)^{g-i+2}\left( (g-i+1)\binom{g}{i-1} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
 & = 2(-1)^{g-i} \left( \frac{g!}{(i-1)!(g-i)!} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
+<<<<<<< HEAD
 & = 2i(-1)^{g-i}\binom{g}{i}a_{2g+2}a^{g-i+1}x^{2g+i+2},
 \end{align*}
 which clearly cancels with the term of $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ of degree $2g+i+2$.
 Since these terms cancel, we again have the that the degree of \eqref{numerator} is at most $2g+i+1$, and \eqref{longequation} has no pole at the point(s) in $\pi^{-1}(\infty)$.
 
 Finally, we show that \eqref{numerator} is divisible by $x^{i+1}$.
-By definition $x^{g+1} | \phi_i(x)$, and since $i \leq g$ it follows that $x^{i+1}|\phi_i(x)r_i(x)(x-a)$.
-Also, both
+By definition $x^{g+2} | \phi_i(x)$, and since $i \leq g$ it follows that $x^{i+1}|\phi_i(x)r_i(x)(x-a)$.
+On the other hand, the lowest degree terms of $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ and $\psi_i(x)t_i(x)(x-a)$ which can be non-zero are, respectively,\todo{rephrase "which can be non-zero"}
 \[
-2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i - 2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i 
+ 2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i 
 \]
 and
 \[
-\psi_i(x)t_i(x)(x-a) - (-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)
+ (-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right).
 \]
-are divisible by $x^{i+1}$.
-Moreover, 
+Since
 \[
 (-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right) = 2ia_0(-1)^{g-i+2}\binom{g}{i}a^{g-i+1}x^i,
 \]
-so these terms cancel when adding $\psi_i(x)t_i(x)(x-a)$ and $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ and the numerator, \eqref{numerator}, is divisible by $x^{i+1}$.
+it follows that these terms cancel when adding $\psi_i(x)t_i(x)(x-a)$ and $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ and the numerator \eqref{numerator} is divisible by $x^{i+1}$.
 
 
 It only remains to show that $\omega_{\sigma i} = \omega_{0 i} -df_{0 \sigma i}$.
@@ -258,12 +259,12 @@ We begin this by computing $df_{0 \sigma i}$, which is
 \begin{align*}
 df_{0 \sigma i} & = d \left( \frac{y r_i(x)}{x^i(x-a)^g} \right) \\
 & = \frac{r_i(x)}{x^i(x-a)^g}dy + y d\left( \frac{r_i(x)}{x^i(x-a)^g} \right) \\
-& = \frac{f(x)'r_i(x)}{2yx^i(x-a)^g}dx + \left( \frac{yr_i(x)'}{x^i(x-a)^g} -\frac{iy r_i(x)}{x^{i+1}(x-a)^g} - \frac{gyr_i(x)}{x^i(x-a)^{g+1}}\right) dx \\
+& = \frac{f(x)'r_i(x)}{2yx^i(x-a)^g}dx + y\left( \frac{r_i(x)'}{x^i(x-a)^g} -\frac{i r_i(x)}{x^{i+1}(x-a)^g} - \frac{gr_i(x)}{x^i(x-a)^{g+1}}\right) dx \\
 & = \frac{xf(x)'r_i(x)(x-a) + 2f(xr_i(x)'(x-a) - i(x-a)r_i(x) - gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}} dx.
 \end{align*}
 Hence $\omega_{0 i} - df_{o \sigma i}$ expands to
 \[
-\frac{\psi_i(x)(x-a)^{g+1} - xf(x)'r_i(x)(x-a) + 2f(x)(xr_i(x)'(x-a)-i(x-a)r_i(x)-gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}}dx.
+\frac{\psi_i(x)(x-a)^{g+1} - xf(x)'r_i(x)(x-a) - 2f(x)\left(xr_i(x)'(x-a)-i(x-a)r_i(x)-gxr_i(x)\right)}{2yx^{i+1}(x-a)^{g+1}}dx.
 \]
 Now
 \[
@@ -282,34 +283,27 @@ So
 We now compute $(x-a)r_i(x)'-gr_i(x)$.
 Since 
 \begin{align*}
-r_i(x)' & = \sum_{k=0}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
+r_i(x)' & = \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
 & = \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k
 \end{align*}
 it follows that
 \begin{align*}
-r_i(x)'(x-a) & = x \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} - a \sum_{k=0}^{i-1} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k \\
-& = \sum_{k=0}^i k (-1)^{g-k} \binom{g}{k} a^{g-k} x^k  + \sum_{k=0}^{i-1} (k+1) (-1)^{g-k} \binom{g}{k+1}a^{g-k} x^k,
+r_i(x)'(x-a) & = x \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} - a \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k \\
+& = \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^k  + \sum_{k=0}^{i-2} (k+1) (-1)^{g-k} \binom{g}{k+1}a^{g-k} x^k \\
+& = gr_i(x) + (-1)^{g-i+2}i \binom{g}{i}a^{g-i+1}x^i,
 \end{align*}
-and so the coefficient of $x^k$ in $r_i(x)'(x-a)$ is $(-1)^{g-k}\left(k\binom{g}{k} + (k+1)\binom{g}{k+1}\right) a^{g-k}$ for $0 \leq k \leq i-1$.
-On the other hand, the coefficient of $x^k$ in $gr_i(x)$ is $(-1)^{g-k}g\binom{g}{k}a^{g-k}$.
-Since 
+because
 \begin{align*}
 k\binom{g}{k} + (k+1)\binom{g}{k+1} & = k \left( \frac{g!}{k!(g-k)!} \right) + (k+1) \left( \frac{g!}{(k+1)!(g-k-1)!} \right) \\
 & = \frac{g!}{(k-1)!(g-k)!} + \frac{g!}{k!(g-k-1)!} \\
 & = \frac{g\cdot g!}{k!(g-k)!} \\
-& = g \binom{g}{k}
+& = g \binom{g}{k}.
 \end{align*}
-it follows that $r_i(x)'-gr_i(x)$ has only one term, which is of order $i$.
-This term is
-\begin{align*}
- (-1)^{g-i+1}\left( (i-1-g)\frac{g!}{(i-1)!(g-i+1)!} \right) & a^{g-i+1}x^i \\
-&  = (-1)^{g-i+2} \frac{g!}{(i-1)!(g-i)!} a^{g-i+1}x^i \\
-& = (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i.
-\end{align*}
+Hence $r_i(x)'-gr_i(x)= (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i$. 
 
 Combining the above we conclude that
 \[
-\omega_{0 i } - df_{0\sigma i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx.
+\omega_{0 i } - df_{0\sigma i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx= \omega_{\sigma i}.
 \]
 
 Note that the last relation ($df_{\sigma \infty i} = \omega_{\sigma i} - \omega_{\infty i}$) holds, since 
@@ -318,7 +312,7 @@ df_{\sigma \infty i} = df_{0 \infty i} - df_{0 \sigma i} = \omega_{0 i} - \omega
 \]
 \end{proof}
 
-Now we suppose that $\sigma \in \aut(X)$ such that the following diagram commutes:
+Now we suppose that there exists $\sigma \in \aut(X)$ such that the following diagram commutes:
 \[
 \begin{array}{ccc}
 X & \xrightarrow[\sigma] & X \\
@@ -326,7 +320,7 @@ X & \xrightarrow[\sigma] & X \\
 \mathbb P^1_k & \xrightarrow[\sigma] & \mathbb P_k^1
 \end{array}
 \]
-Hence, if $a = \sigma(0)$, the following diagram commutes:
+Hence, if $a = \sigma(0)$, the following diagram also commutes:
 \[
 \begin{array}{ccc}
 \derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\rho} & \cechderhamhone(\cU'')  \\
