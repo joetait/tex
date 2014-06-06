@@ -225,14 +225,14 @@ and
 \[
 \deg \left( 2if(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i \right)  \leq  2g+1+i .
 \]
-Lastly, if $\deg(f) = 2g+2$ then the leading term \todo{rephrase - don't use "leading term", in case coefficient is zero}of $-\phi_i(x)r_i(x)(x-a)$ is
+Lastly, if $\deg(f) = 2g+2$ then the term of degree $2g+i+2$ in $-\phi_i(x)r_i(x)(x-a)$ is
 \begin{align*}
 -((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
-&  = 2(-1)^{g-i+2}\left( (g-i+1)\binom{g}{i-1} \right) a_{2g+2}x^{2g+i+2} \\
-& = 2(-1)^{g-i+2} \left( \frac{g!}{(i-1)!(g-i)!} \right) a_{2g+2}x^{2g+i+2} \\
-& = 2i(-1)^{g-i+2}\binom{g}{i}a_{2g+2}x^{2g+i+2},
+&  = 2(-1)^{g-i+2}\left( (g-i+1)\binom{g}{i-1} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
+& = 2(-1)^{g-i} \left( \frac{g!}{(i-1)!(g-i)!} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
+& = 2i(-1)^{g-i}\binom{g}{i}a_{2g+2}a^{g-i+1}x^{2g+i+2},
 \end{align*}
-which clearly cancels with the leading term of $2if(-1)^{g-i+1}\binom{g}{i}a^{g+i-1}x^i$.
+which clearly cancels with the term of $2if(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ of degree $2g+i+2$.
 Since these terms cancel, we again have the that the degree of \eqref{numerator} is at most $2g+i+1$, and \eqref{longequation} has no pole at the point(s) in $\pi^{-1}(\infty)$.
 
 Finally, we show that \eqref{numerator} is divisible by $x^{i+1}$.
