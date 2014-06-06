@@ -486,7 +486,6 @@ Since $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ cannot share roots it follows that $m_i
 Hence the function $\tilde F(x) := (x- \gamma_i)^{-1}F(x)$ is a unit at $P$.
 We let $\tilde H(x) = (x- \gamma_i)^{-1}H(x)$.
 
-\pagebreak
 
 Now 
 \[
@@ -522,6 +521,8 @@ We now suppose that $\ord_{P_\infty} (y) = -(g+1)$. Since $y(y+H(x)) = F(x)$ it 
 Finally, if $\ord_{P_\infty}(y) > -(g+1)$, then since $\ord_{P_\infty}(H(x)) = -(g+1)$ it follows that $\ord_{P_\infty'}(y) = \ord_{P_\infty} (y+H(x)) = -(g+1)$.
 Then, from a computation similar to that in the previous paragraph we see that $\ord_{P_\infty}(y) = -\deg(F(x)) + g +1$, completing the proof.
 \end{proof}
+
+\pagebreak
 
 \begin{prop}\label{basish1}
  Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0 \cap U_\infty$, form a basis of $H^1(X,\cO_X)$.
@@ -1155,6 +1156,14 @@ Hence $\sigma^*(y) = \pm y$.
 If $\sigma^*(y) = -y$ we can, without loss of generality, replace $\sigma$ by $\sigma \circ j$, where $j$ denotes the hyperelliptic involution.
 Hence we will assume throughout the rest of the paper that $\sigma^*(y) = y$.
 \end{rem}
+
+\begin{ex}
+If $2g+1$ is an odd prime \todo{don't need to specify that $\infty$ is a branch point - implied by $2g+1$ being odd} then exists an automorphism $\sigma$ of the form $\sigma\colon (x,y) \mapsto (x+a,y)$ if and only if $p=2g+1$ and $f(x) = x^p - a^{p-1}x + a_0$, for some $a_0 \in k$.
+In this case we may assume that $a_0$, since if it doesn't we can apply the automorphism $x \mapsto x+b, y\mapsto y$ to $K(X)$, where $b$ is a root of $f(x)$.
+Moreover, given an equation of the form $y^2 = x^p - a^{p-1}x$, we can apply another automorphism of $K(X)$ to replace the coefficient $a^{p-1}$ by $1$, namely $x \mapsto ax, y \mapsto a^{\frac{p}{2}}y$.
+Hence we see that all such curves are isomorphic.
+In particular, it follows from \cite{canonicalrepresentation} that \todo{finish this}
+\end{ex}
 
 
 We now describe the action of $\sigma^*$ on $\lambda_i$.
