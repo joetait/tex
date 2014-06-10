@@ -593,13 +593,24 @@ Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem
 \end{proof}
 
 %Mittag-Leffler style corollary
-\begin{cor}
-For each $P \in X$ fix some $f_P \in K(X)$, such that $f_P = 0$ for almost all $P$.
-Then there exist unique $\alpha_1, \ldots , \alpha_g \in k$ such that, after $f_P$ is replaced by $f_P~-~\left(\alpha_1 \frac{y}{x} + \ldots + \alpha_g \frac{y}{x^g} \right)$ for all $P \in \pi^{-1}(\infty)$, there exists an $f \in K(X)$ such that the Laurent tail of $f$ at each $P$ in $X$ will be $f_P$.
-\end{cor}
-\todo[inline]{Do $\alpha_i$ depend on $P$? Rephrase first line to start "let $P_1, \ldots, P_n$ be a finite collection of points..."}
-\begin{proof}
 
+\begin{cor}
+For each $P \in X$ we fix $f_P \in K(X)/\cO_{X,P}$, such that $f_P = 0$ for almost all $P \in X$.
+Then there exist unique $\alpha_1, \ldots, \alpha_n \in k$ such that after replacing $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$, we can find an $f \in K(X)$ such that the laurent tail of $f$ at $P$ in $X$ is $f_P$.
+\end{cor}
+\begin{proof}
+Since $f_P = 0$ for almost all $P \in X$ then $(f_P)_{P \in X} \in \bigoplus_{P \in X} K(X)/\cO_{X,P}$.
+By replacing $\Omega_{K(X}$ by $K(X)$ and $\Omega_X$ by $\cO_X$ in the proof of Lemma \cite{exactsequencelemma} we can derive the following exact sequence:
+\begin{equation}\label{honeses}
+0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \xrightarrow{\delta} \hone \ra 0.
+\end{equation}
+Since $\frac{x}{y}, \ldots, \frac{x^g}{y}$ form a basis of $\hone$, it follows that there exists unique $\alpha_1, \ldots, \alpha_g$ such that
+\[
+\delta\left( (f_P)_{P \in X} \right) - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) = 0.
+\]
+When we pull this back to $\bigoplus_{P \in X} K(X)/\cO_{X,P}$ the $\left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ term will be zero in all factors except $P \in \pi^{-1}(\{0,\infty\})$, since $\frac{x^i}{y} \in \cO_{X,P}$ for all such $P$.
+Hence, if we replace $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for all $P \in \pi^{-1}(\{0,\infty\})$, it follows that $\delta\left((f_P)_{P \in X}\right) = 0$.
+By the exactness of \eqref{honeses} it then follows that there exists an $f \in K(X)$ such that the image of $f$ in $\bigoplus_{P \in X} K(X)/\cO_{X,P}$ is $(f_P)_{P \in X}$, and hence $f$ has $f_P$ as a laurent tail at each $P \in X$.
 \end{proof}
 
 
