@@ -156,7 +156,7 @@ Note that a sketch of the proof below can be found in \cite[Pg. 248]{hart}.
 \end{rem}
 \begin{proof}
 The short exact sequence
-\begin{equation}\label{serredualityses}
+\begin{equation}\label{serredualitysesfunctions}
 0 \rightarrow \cO_X \rightarrow \underline{K}(X) \rightarrow \underline{K}(X)/\cO_X \rightarrow 0
 \end{equation}
 is a flasque resolution of $\cO_X$ (see \cite[Chap II, ex. 1.16]{hart}).
@@ -610,21 +610,37 @@ Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem
 
 \begin{cor}
 For each $P \in X$ we fix $f_P \in K(X)/\cO_{X,P}$, such that $f_P = 0$ for almost all $P \in X$.
-Then there exist unique $\alpha_1, \ldots, \alpha_n \in k$ such that after replacing $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for $P \in \pi^{-1}(\infty)$, we can find an $f \in K(X)$ such that the laurent tail of $f$ at $P$ in $X$ is $f_P$.
+Then there exist unique $\alpha_1, \ldots, \alpha_g \in k$ such that after replacing $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for $P \in \pi^{-1}(\infty)$, we can find an $f \in K(X)$ such that the laurent tail of $f$ at $P$ in $X$ is $f_P$.
 \end{cor}
 \begin{proof}
 Since $f_P = 0$ for almost all $P \in X$ then $(f_P)_{P \in X} \in \bigoplus_{P \in X} K(X)/\cO_{X,P}$.
-From Lemma \ref{exactsequencelemma} we have
+From Lemma \ref{exactsequencelemma} we have the following exact sequence
 \begin{equation*}
 0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \xrightarrow{\delta} \hone \ra 0.
 \end{equation*}
-Since $\frac{x}{y}, \ldots, \frac{x^g}{y}$ form a basis of $\hone$, it follows that there exists unique $\alpha_1, \ldots, \alpha_g$ such that
+Since $\frac{x}{y}, \ldots, \frac{x^g}{y}$ form a basis of $\hone$, it follows that there exist unique $\alpha_1, \ldots, \alpha_g$ such that
 \[
 \delta\left( (f_P)_{P \in X} \right) - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) = 0.
 \]
-When we pull this back to $\bigoplus_{P \in X} K(X)/\cO_{X,P}$ the $\left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ term will be zero in all factors except $P \in \pi^{-1}(\{0,\infty\})$, since $\frac{x^i}{y} \in \cO_{X,P}$ for all such $P$.
-Hence, if we replace $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for all $P \in \pi^{-1}(\{0,\infty\})$, it follows that $\delta\left((f_P)_{P \in X}\right) = 0$.
-By the exactness of \eqref{dualitysesfunctions} it then follows that there exists an $f \in K(X)$ such that the image of $f$ in $\bigoplus_{P \in X} K(X)/\cO_{X,P}$ is $(f_P)_{P \in X}$, and hence $f$ has $f_P$ as a laurent tail at each $P \in X$.
+We can derive \eqref{dualitysesfunctions} by applying the snake lemma to the \cech complex of \eqref{serredualitysesfunctions} over $\cU$, which is
+\begin{equation}\label{dualitydiagram2}
+\xymatrix{\cO_X(U_0)\times\cO_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{K}(X) \times \underline{K}(X) \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} K(X)/\cO_{X,P} \times \bigoplus \limits_{P \in U_\infty} K(X)/\cO_{X,P} \ar[d]^{d_3} \\
+\cO_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{K}(X) \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} K(X)/\cO_{X,P} }
+\end{equation}
+Analagously to \eqref{dualitydiagram2}, the kernel of $d_3$ is $\bigoplus_{P \in X}K(X)/\cO_{X,P}$ and the cokernel of $d_1$ is $\hone$.
+Via a diagram chase on $- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) \in \hone$ we can find a corresponding element 
+\begin{equation}\label{immediate}
+\left(0, \left(- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) \right)_P\right) \in \bigoplus_{P \in U_0}K(X)/\cO_{X,P} \times \bigoplus_{P \in U_\infty}K(X)/\cO_{X,P}.
+\end{equation}
+Since $(\alpha_ix^i/y$ is regular on $U_\infty \cap U_0$, \eqref{immediate} is equivalent to $\left(0, (g_P)_{P \in U_\infty}\right)$, where
+\[
+g_P = \begin{cases}
+    - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) & \quad \text{if}\ P \in \pi^{-1}(\infty) \\
+    0 & \quad \text{else.}
+\end{cases}
+\]
+Clearly $(0, g_P) \in \ker (d_3) = \bigoplus_{P \in X} K(X)/\cO_{X,P}$, and $\delta((f_P)_{P \in X} - (g_P)_{P \in X}) = 0$, by choice of $(g_P)_{P \in X}$.
+By the exactness of \eqref{dualitysesfunctions} it follows that there exists an $f \in K(X)$ which has laurent tail $f_P - g_P$ at each $P \in X$, as required in the statement of the corollary.
 \end{proof}
 
 
