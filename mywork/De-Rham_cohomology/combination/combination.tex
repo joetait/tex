@@ -197,6 +197,7 @@ Taking cohomology of this then yields the second exact sequence, \eqref{dualitys
 
 \begin{rem}
 When considering elements of $H^1(X,\Omega_X)$ as elements in the cokernel of the map $\Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$ above, we will denote them by $\overline{(\omega_P)}_{P \in X}$.
+Similarly, when considering elements of $\hone$ as elements of the cokernel of the map $K(X) \ra \bigoplus_{P \in X}K(X)/\cO_{X,P}$, we will denote them by $\overline{(f_P)}_{P \in X}$.
 \end{rem}
 
 For any $P\in X$ the residue map $\res_P \colon \Omega_{K(X)} \ra k$ is defined by the following properties:
@@ -222,8 +223,6 @@ t \colon H^1\left(X, \Omega_X\right) \ra k,\quad \overline{(\omega_P)}_{P \in X}
 
 
 We now use the trace map to define a pairing between the $k$-vector spaces $\hone$ and $\hzero$.
-Roughly speaking, we can replace $\Omega_X$ by $\cO_X$ in Lemma \ref{exactsequencelemma} and get a similar result.
-Hence $H^1(X,\cO_X)$ can also be viewed as a sum of quotients, namely $\bigoplus_{P \in X} K(X)/\cO_{X,P}$.
 Since $\Omega_{K(X)}$ is a $K(X)$-module, we can define a map 
 \begin{equation}\label{productmap}
 \hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto ( \overline {(f  \omega)_P})_{P \in X},
@@ -274,7 +273,7 @@ H^1(X,\Omega_X) \cong \frac{\Omega_X(U_0 \cap U_\infty)}{\Ima(\check{d})} = \fra
 
 We now describe how the trace map acts on $\check{H}^1(X,\Omega_X)$.
 \begin{lem}\label{tracemaplemma}
-For any $\bar \omega \in \check{H}^1\left (\cU, \Omega_X\right )$, which has $\omega$ as a representative in $\Omega_X(U_0 \cap U_\infty$, we have the following equality:
+For any $\bar \omega \in \check{H}^1\left (\cU, \Omega_X\right )$, which has $\omega$ as a representative in $\Omega_X(U_0 \cap U_\infty)$, we have the following equality:
 \[
 t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
 \]
@@ -611,21 +610,21 @@ Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem
 
 \begin{cor}
 For each $P \in X$ we fix $f_P \in K(X)/\cO_{X,P}$, such that $f_P = 0$ for almost all $P \in X$.
-Then there exist unique $\alpha_1, \ldots, \alpha_n \in k$ such that after replacing $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$, we can find an $f \in K(X)$ such that the laurent tail of $f$ at $P$ in $X$ is $f_P$.
+Then there exist unique $\alpha_1, \ldots, \alpha_n \in k$ such that after replacing $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for $P \in \pi^{-1}(\infty)$, we can find an $f \in K(X)$ such that the laurent tail of $f$ at $P$ in $X$ is $f_P$.
 \end{cor}
 \begin{proof}
 Since $f_P = 0$ for almost all $P \in X$ then $(f_P)_{P \in X} \in \bigoplus_{P \in X} K(X)/\cO_{X,P}$.
-By replacing $\Omega_{K(X}$ by $K(X)$ and $\Omega_X$ by $\cO_X$ in the proof of Lemma \cite{exactsequencelemma} we can derive the following exact sequence:
-\begin{equation}\label{honeses}
+From Lemma \ref{exactsequencelemma} we have
+\begin{equation*}
 0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \xrightarrow{\delta} \hone \ra 0.
-\end{equation}
+\end{equation*}
 Since $\frac{x}{y}, \ldots, \frac{x^g}{y}$ form a basis of $\hone$, it follows that there exists unique $\alpha_1, \ldots, \alpha_g$ such that
 \[
 \delta\left( (f_P)_{P \in X} \right) - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) = 0.
 \]
 When we pull this back to $\bigoplus_{P \in X} K(X)/\cO_{X,P}$ the $\left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ term will be zero in all factors except $P \in \pi^{-1}(\{0,\infty\})$, since $\frac{x^i}{y} \in \cO_{X,P}$ for all such $P$.
 Hence, if we replace $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for all $P \in \pi^{-1}(\{0,\infty\})$, it follows that $\delta\left((f_P)_{P \in X}\right) = 0$.
-By the exactness of \eqref{honeses} it then follows that there exists an $f \in K(X)$ such that the image of $f$ in $\bigoplus_{P \in X} K(X)/\cO_{X,P}$ is $(f_P)_{P \in X}$, and hence $f$ has $f_P$ as a laurent tail at each $P \in X$.
+By the exactness of \eqref{dualitysesfunctions} it then follows that there exists an $f \in K(X)$ such that the image of $f$ in $\bigoplus_{P \in X} K(X)/\cO_{X,P}$ is $(f_P)_{P \in X}$, and hence $f$ has $f_P$ as a laurent tail at each $P \in X$.
 \end{proof}
 
 
@@ -1114,7 +1113,7 @@ df_{a \infty i} = df_{0 \infty i} - df_{0 a i} = \omega_{0 i} - \omega_{\infty i
 \]
 \end{proof}
 
-Now we suppose that there exists $\sigma \in \aut(X)$ such that $\sigma$ is a descends to a well defined map on $\mathbb P_k^1$ and such that the following diagram commutes:
+We note that for any $\sigma \in \aut(X)$ the following diagram commutes,
 \[
 \begin{array}{ccc}
 X & \xrightarrow[\sigma] & X \\
@@ -1122,6 +1121,7 @@ X & \xrightarrow[\sigma] & X \\
 \mathbb P^1_k & \xrightarrow[\sigma] & \mathbb P_k^1
 \end{array}
 \]
+since the hyperelliptic involution $j$ is in the centre of $\aut(X)$.
 Hence, if $a = \sigma(0)$, the following diagram also commutes:
 \[
 \begin{array}{ccc}
