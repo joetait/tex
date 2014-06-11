@@ -140,46 +140,59 @@ We begin by recalling some of the details of Serre duality.
 We take $X$ to be a smooth, projective, connected curve over an algebraically closed field $k$ of characteristic $p \geq 0$.
 Furthermore, we let $G$ denote the automorphism group of $X$ and we let $K(X)$ denote the function field of $X$.
 We then define $\Omega_{K(X)}$ to be the module of differentials of $K(X)$ over $k$.
-We also let $\underline{\Omega}_{K(X)}$ and $\underline{K(X)}$ denote the constant sheaves of $\Omega_{K(X)}$ and $K(X)$ respectively.
+We also let $\underline{\Omega}_{K(X)}$ and $\underline{K}(X)$ denote the constant sheaves of $\Omega_{K(X)}$ and $K(X)$ respectively.
 The following lemma gives us a useful description of $H^1(X,\Omega_X)$.
 \begin{lem}\label{exactsequencelemma}
-The following sequence is exact:
-\begin{equation}\label{dualityses}
+The following sequences are exact:
+\begin{equation}\label{dualitysesfunctions}
+0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \xrightarrow{\delta} \hone \ra  0;
+\end{equation}
+\begin{equation}\label{dualitysesdifferentials}
 0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta} H^1(X,\Omega_X) \ra 0.
 \end{equation}
 \end{lem}
 \begin{rem}
-Note that the sequence formed by the last three terms can be found in \cite[Pg. 248]{hart}.
+Note that a sketch of the proof below can be found in \cite[Pg. 248]{hart}.
 \end{rem}
 \begin{proof}
 The short exact sequence
 \begin{equation}\label{serredualityses}
-0 \rightarrow \Omega_X \rightarrow \underline{\Omega}_{K(X)} \rightarrow \underline{\Omega}_{K(X)}/\Omega_X \rightarrow 0
+0 \rightarrow \cO_X \rightarrow \underline{K}(X) \rightarrow \underline{K}(X)/\cO_X \rightarrow 0
 \end{equation}
-is a flasque resolution of $\Omega_X$ (see \cite[Chap II, ex. 1.16]{hart}).
+is a flasque resolution of $\cO_X$ (see \cite[Chap II, ex. 1.16]{hart}).
 
-We view the module $\Omega_{K(X)}/\Omega_{X,P}$ as a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
-Hence for each $P\in X$ we have the induced sheaf $i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ on $X$.
+We view the module $K(X)/\cO_{X,P}$ as a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
+Hence for each $P\in X$ we have the induced sheaf $i_*\left( K(X)/\cO_{X,P} \right)$ on $X$.
 If we consider the direct sum of these induced sheaves over all points $P\in X$ we have the following isomorphism
 \begin{equation}\label{sheafisomorphism}
-\underline{\Omega}_{K(X)}/\Omega_X\cong \bigoplus_{P\in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right).
+\underline{K}(X)/\cO_X\cong \bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right).
 \end{equation}
 
 
-To explain the isomorphism in \eqref{sheafisomorphism} we first construct a map from $\underline{\Omega}_{K(X)}/\Omega_{X,P}$ in to the product $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$, and then show that this map has finite support.
+To explain the isomorphism in \eqref{sheafisomorphism} we first construct a map from $\underline{K}(X)/\cO_{X,P}$ in to the product $\prod_{P \in X} i_*\left({K(X)}/\cO_{X,P}\right)$, and then show that this map has finite support.
 
 Given $i\colon \{P\} \hookrightarrow X$ we have the following equalities
 \begin{align*}
-i^{-1}\left(\underline{\Omega}_{K(X)}/\Omega_X\right) & = \left(\underline{\Omega}_{K(X)}/\Omega_X\right)_P \\
-& = \underline{\Omega}_{K(X),P}/\Omega_{X,P} \\
-& = \Omega_{K(X)}/\Omega_{X,P}.
+i^{-1}\left(\underline{K}(X)/\cO_X\right) & = \left(\underline{K}(X)/\cO_X\right)_P \\
+& = \underline{K(X),P}/\cO_{X,P} \\
+& = K(X)/\cO_{X,P}.
 \end{align*}
-It follows that for any $P \in X$ we can map $f \in \underline{\Omega}_{K(X)}/\Omega_X$ to $i_*i^{-1}(f) \in i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right)$.
-Recall that for any $f \in \Omega_{K(X)}$then $f$ lies in $\Omega_{X,P}$ for all but a finite number of points $P \in X$.
-Hence the image of $f$ in $\prod_{P \in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors.
+It follows that for any $P \in X$ we can map $f \in \underline{K}(X)/\cO_X$ to $i_*i^{-1}(f) \in i_* \left( K(X)/\cO_{X,P} \right)$.
+Recall that for any $f \in K(X)$then $f$ lies in $\cO_{X,P}$ for all but a finite number of points $P \in X$.
+Hence the image of $f$ in $\prod_{P \in X} i_*\left(K(X)/\cO_{X,P}\right)$ is zero in almost all factors.
 From this the isomorphism in \eqref{sheafisomorphism} follows.
 
-Replacing $\underline{\Omega}_{K(X)}/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(\Omega_{K(X)}/\Omega_{X,P}\right)$ in \eqref{serredualityses} and taking cohomology then yields the exact sequence in the statement of the lemma.
+Replacing $\underline{K}(X)/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{serredualityses} yields
+\begin{equation}\label{resolutionofox}
+0 \ra \cO_X \ra \underline{K}(X) \ra \bigoplus_{P \in X}i_* \left( K(X)/\cO_{X,P} \right)
+\end{equation}
+Taking cohomology then yields the exact sequence \eqref{dualitysesfunctions}.
+
+We can also tensor \eqref{resolutionofox} with $\Omega_X$ to get
+\[
+0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \bigoplus_{P \in X} \i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right).
+\]
+Taking cohomology of this then yields the second exact sequence, \eqref{dualitysesdifferentials}.
 \end{proof}
 
 \begin{rem}
@@ -215,7 +228,7 @@ Since $\Omega_{K(X)}$ is a $K(X)$-module, we can define a map
 \begin{equation}\label{productmap}
 \hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto ( \overline {(f  \omega)_P})_{P \in X},
 \end{equation}
-where $(f\omega)_P$ denotes $f_p\omega_p$, the product of the germ of $\omega$ in $\Omega_{X,P}$ with the germ of $f$ in $\underline{K(X)}_{P}$.
+where $(f\omega)_P$ denotes $f_p\omega_p$, the product of the germ of $\omega$ in $\Omega_{X,P}$ with the germ of $f$ in $\underline{K}(X)_{P}$.
 
 We now combine the product map in \eqref{productmap} with the trace map $t$ to get a map 
 \[
