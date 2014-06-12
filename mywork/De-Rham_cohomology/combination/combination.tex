@@ -182,16 +182,16 @@ Recall that for any $f \in K(X)$then $f$ lies in $\cO_{X,P}$ for all but a finit
 Hence the image of $f$ in $\prod_{P \in X} i_*\left(K(X)/\cO_{X,P}\right)$ is zero in almost all factors.
 From this the isomorphism in \eqref{sheafisomorphism} follows.
 
-Replacing $\underline{K}(X)/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{serredualityses} yields
+Replacing $\underline{K}(X)/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{serredualitysesfunctions} yields
 \begin{equation}\label{resolutionofox}
 0 \ra \cO_X \ra \underline{K}(X) \ra \bigoplus_{P \in X}i_* \left( K(X)/\cO_{X,P} \right)
 \end{equation}
 Taking cohomology then yields the exact sequence \eqref{dualitysesfunctions}.
 
 We can also tensor \eqref{resolutionofox} with $\Omega_X$ to get
-\[
-0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \bigoplus_{P \in X} \i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right).
-\]
+\begin{equation}\label{serredualitydifferentials}
+0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \bigoplus_{P \in X} i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right).
+\end{equation}
 Taking cohomology of this then yields the second exact sequence, \eqref{dualitysesdifferentials}.
 \end{proof}
 
@@ -279,7 +279,7 @@ t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
 \]
 \end{lem}
 \begin{proof}
-We take the \cech complex of \eqref{serredualityses} (replacing $\underline{\Omega}_{K(X)}/\Omega_X$ by $\bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$) over the cover $\cU$, yielding the following bicomplex
+We take the \cech complex of \eqref{serredualitydifferentials} over the cover $\cU$, yielding the following bicomplex
 \begin{equation}\label{dualitydiagram2}
 \xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
 \Omega_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{\Omega}_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
