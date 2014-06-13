@@ -41,6 +41,7 @@ We let the {\em \adele space} of $X$, denoted by $\cA_X$, be the space of all \a
 There is a canonical injection $K(X) \hookrightarrow  \cA_X$, defined by sending $x\in K(X)$ to the \adele $\alpha$ for which $\alpha_P =  x$ at each point $P\in X$.
 The elements of $K(X)$ have natural valuations; for each $P\in X$ we choose a uniformising parameter $t\in \cO_{X,P}$, and we then define $v_P(x):=n$, where $n$ is the unique integer such that $x=ut^n$ for some unit $u\in \cO_{X,P}$.
 We can we can then extend this valuation to elements of $\cA_X$ by defining $v_P(\alpha) := v_P(\alpha_P)$.
+\todo[inline]{consider changing \adele notation to $(\alpha_P)_{P \in X}$}
 
 Recall that a divisor on $X$ is a finitely supported formal sum over $X$, with coefficients in $\mathbb Z$, which we write as 
 \[
@@ -63,16 +64,15 @@ For any $D\in \cD_X$ we let
  \cA_X(D):=\{\alpha \in \cA_X | v_P(\alpha) \geq -v_P(D)\ \text{for all} \ P\in X\}
 \]
 be the {\em ad\`ele space associated to $D$}.\todo[inline]{Make some of these proper definitions}
-Then we define a {\em differential} on $X$ to be a $k$-linear map $\omega\colon  \cA_X \rightarrow k$ such that $\omega$ is zero on $\cA_X(D) +K(X)$ for some divisor $D\in \cD_X$.
+We now define a {\em differential} on $X$ to be a $k$-linear map $\omega\colon  \cA_X \rightarrow k$ such that $\omega$ is zero on $\cA_X(D) +K(X)$ for some divisor $D\in \cD_X$.
 Note that via the canonical embedding of $K(X)$ into $\cA_X$, we can view $\cA_X(D) +K(X)$ as a subspace of $\cA_X$.
 We will denote the space of differentials on $X$ by $\Omega_{K(X)}$.
 
 Now we define 
 \[
- M(\omega) := \{ D\in \cD_X | \omega \ \text{is zero on }\ \cA_X(D) + K(X)\}
+ M(\omega) := \{ D\in \cD_X |\ \omega \ \text{is zero on }\ \cA_X(D) + K(X)\}
 \]
 for any non-zero $\omega \in \Omega_{K(X)}$, and state the following lemma.
-\vskip1em
 
 \begin{defnlem}
  For any non-zero differential $\omega$ on $X$ there is a unique maximal divisor $W$ in $M(\omega)$, which we call the {\rm canonical divisor associated to $\omega$} (we associate the zero divisor to $0\in \Omega_{K(X)}$).
@@ -89,9 +89,7 @@ for any non-zero $\omega \in \Omega_{K(X)}$, and state the following lemma.
 
 We can now define valuations on the differentials; namely, given some differential $\omega $ on $X$, and its associated divisor $W$, we set $v_P(\omega):=v_P(W)$ for $P\in X$.
 The following proposition about the space of differentials is very useful, though we will not prove it here.
-\vskip1em
-
-
+\todo[inline]{Rephrase the above paragraph}
 
 
 \begin{prop}
@@ -109,15 +107,14 @@ There is a unique module, denoted $\Omega_{K(X)}$, with a map $d\colon K(X) \rig
 Given any differential $\omega$, we can write it as $fdx$ for some $x$ and some $f$ in $K(X)$.
 This is how we will consider differentials in the other sections of this report.
 At the end of this section we will describe an isomorphism between $\Omega_X$ and $\Omega_{K(X)}$.
+\todo[inline]{Sort out clash of notations re $\Omega_X$ and $\Omega_{K(X)}$. Rephrase parts. Consider using something other than ``D'' for differential}
 
-Before moving on from differentials, there is a particular class that we will be studying.
-These are the {\em holomorphic differentials}.
-A differential $\omega \in \Omega_{K(X)}$ is called holomorphic if its associated divisor, $W$, is non-negative (\ie if $v_P(W) \geq 0$ for all $P\in X$).
+Finally, we define a particular class of differentials that will play a crucial role in what follows.
+A differential $\omega \in \Omega_{K(X)}$ is called {\em holomorphic} if its associated divisor, $W$, is non-negative (\ie if $v_P(W) \geq 0$ for all $P\in X$).
 We denote {\em the space of holomorphic differentials} by $H^0(X,\Omega_{K(X)})$.
 Also, for any divisor $D$ on $X$ we define \[H^0(X,\cO(D)) := \{x\in K(X) | v_P(x) \geq -v_P(D)\}\cup \{0\}.\]
 This is sheaf theoretic notation, which would not normally be used in function field theory, but we use it for consistency with the rest of the report.
 We can now state the celebrated Riemann-Roch theorem.
-\vskip1em
 
 \begin{thm}[Riemann-Roch]\label{riemannroch}
 Let $W$ be a canonical divisor on $X$.
