@@ -5,10 +5,10 @@ Let $X$ and $Y$ be two projective non-singular curves over an algebraically clos
 We let $g_X$ and $g_Y$ be the genera of $X$ and $Y$ respectively.
 Let $K(X)$ and $K(Y)$ be the function fields of $X$ and $Y$ respectively.
 Note that $K(X)$ is a degree $n$ extension of $K(Y)$, and recall that $\pi$ induces a map $\pi^*\colon K(Y) \rightarrow K(X)$.
-As usual, for any $P \in X$ and $Q \in Y$ we denote the local ring of rational functions at $P$ and $Q$ by $\cO_P$ and $\cO_Q$ respectively.
+As usual, for any $P \in X$ and $Q \in Y$ we denote the local ring formed by functions which are regular at $P$ and $Q$ by $\cO_{X,P}$ and $\cO_{X,Q}$ respectively.
 
-We also recall some facts about Galois theory.
-Any element $\alpha \in K(X)$ defines a $K(Y)$-linear map $\mu_{\alpha} \colon  K(X) \rightarrow K(X)$, multiplication by $\alpha$.
+We recall some facts from Galois theory.
+Any element $\alpha \in K(X)$ defines a $K(Y)$~-~linear map $\mu_{\alpha} \colon  K(X) \rightarrow K(X)$, which is multiplication by $\alpha$.
 We then define the {\em trace map}, denoted $\Tr_{X/Y}\colon  K(X) \rightarrow K(Y)$, to be the trace of the matrix corresponding to $\mu_{\alpha}$.
 Note that $\Tr_{X/Y}$ is an additive map, and that for $\alpha \in K(Y)$ we have $\Tr_{X/Y}(\alpha) = n \alpha$.
 Also, since our extension is Galois (and hence, in particular, separable) then the trace map is non-zero (see, for example, \cite[Appendix A]{stichtenoth}).
@@ -31,11 +31,11 @@ The elements $z_1^*, \ldots , z_n^*$ form the {\em dual basis} of $z_1, \ldots ,
 
 We now briefly introduce differentials in terms of function fields.
 Let $C$ be any projective, non-singular curve over $k$, with function field $K(C)$, and with genus $g_C$.
-Then an {\em ad\`ele on $C$} is a map $\alpha\colon  C \rightarrow K(C)$ such $\alpha(P) \in \cO_P$ for nearly all $P \in C$ (i.e. all but a finite number of points).
+Then an {\em ad\`ele on $C$} is a map $\alpha\colon  C \rightarrow K(C)$ such $\alpha(P) \in \cO_{X,P}$ for nearly all $P \in C$ (\ie all but a finite number of points).
 We can view $\alpha$ as an element of $\prod_{P\in C}K(C)$, and we write $\alpha_P := \alpha(P)$.
 We let the {\em ad\`ele space} of $C$, denoted by $\cA_C$, be the space of all ad\`eles on $C$.
 There is a canonical injection $K(C) \hookrightarrow  \cA_C$, defined by sending $x\in K(C)$ to the ad\`ele $\alpha$ for which $\alpha_P =  x$ at each point $P\in C$.
-The elements of $K(C)$ have natural valuations; for each $P\in C$ we choose a uniformising parameter $t\in \cO_P$, and we then define $v_P(x):=n$, where $n$ is the unique integer such that $x=ut^n$ for some unit $u\in \cO_P$.
+The elements of $K(C)$ have natural valuations; for each $P\in C$ we choose a uniformising parameter $t\in \cO_{X,P}$, and we then define $v_P(x):=n$, where $n$ is the unique integer such that $x=ut^n$ for some unit $u\in \cO_{X,P}$.
 We can we can then extend this valuation to elements of $\cA_C$ by defining $v_P(\alpha) := v_P(\alpha_P)$.
 
 Recall that a divisor on $C$ is a finitely supported formal sum over $C$, with coefficients in $\mathbb Z$, which we write as 
@@ -101,14 +101,14 @@ The following proposition about the space of differentials is very useful, thoug
 
 It should be noted that in algebraic geometry differentials are normally defined in a different, but equivalent, manner.
 Given a ring $K(C)$ and an $K(C)$-module $M$, we call any $K(C)$-linear map $D\colon K(C)\rightarrow M$ satisfying \[D(ab) = aD(b) + D(a)b\] for all $a,b\in K(C)$ a {\em derivation}.
-There is a unique module, denoted $\Omega_{K(C)}$, with a map $d\colon K(C) \rightarrow \Omega_{K(C)}$, which every derivation must factor through; i.e. if $D\colon K(C)\rightarrow M$ is a derivation then there is a unique map $f\colon \Omega_{K(C)}\rightarrow M$ such that $D = f\circ d$.
+There is a unique module, denoted $\Omega_{K(C)}$, with a map $d\colon K(C) \rightarrow \Omega_{K(C)}$, which every derivation must factor through; \ie if $D\colon K(C)\rightarrow M$ is a derivation then there is a unique map $f\colon \Omega_{K(C)}\rightarrow M$ such that $D = f\circ d$.
 Given any differential $\omega$, we can write it as $fdx$ for some $x$ and some $f$ in $K(C)$.
 This is how we will consider differentials in the other sections of this report.
 At the end of this section we will describe an isomorphism between $\Omega_C$ and $\Omega_{K(C)}$.
 
 Before moving on from differentials, there is a particular class that we will be studying.
 These are the {\em holomorphic differentials}.
-A differential $\omega \in \Omega_{K(C)}$ is called holomorphic if its associated divisor, $W$, is non-negative (i.e. if $v_P(W) \geq 0$ for all $P\in C$).
+A differential $\omega \in \Omega_{K(C)}$ is called holomorphic if its associated divisor, $W$, is non-negative (\ie if $v_P(W) \geq 0$ for all $P\in C$).
 We denote {\em the space of holomorphic differentials} by $H^0(C,\Omega_{K(C)})$.
 Also, for any divisor $D$ on $C$ we define \[H^0(C,\cO(D)) := \{x\in K(C) | v_P(x) \geq -v_P(D)\}\cup \{0\}.\]
 This is sheaf theoretic notation, which would not normally be used in function field theory, but we use it for consistency with the rest of the report.
@@ -192,30 +192,30 @@ But this contradicts the maximality of $W$ in its definition.
 We now give a small result regarding field extensions, after recalling some terminology.
 Recall that if $S$ is a subring of $R$, then an element $x\in R$ is integral over $S$ if there is a monic polynomial with co-efficients in $S$ for which $x$ is a solution.
 Then an integral basis of $R$ over $S$ is a basis of $R$ over $S$, for which each basis elements is integral.
- Recall that $\cO_Q$ is an integrally closed subring of $K(Y)$ for any $Q\in Y$, and that $K(Y)$ is the field of fractions of $\cO_Q$.
+ Recall that $\cO_{X,Q}$ is an integrally closed subring of $K(Y)$ for any $Q\in Y$, and that $K(Y)$ is the field of fractions of $\cO_{X,Q}$.
  \vskip1em
 
 
 \begin{prop}
  For $z\in K(X)$ we let $\phi(T)\in K(Y)[T]$ be its minimal monic polynomial over $K(Y)$.
- Then $z$ is integral over $\cO_Q$ if and only $\phi (T)\in \cO_Q[T]$.
+ Then $z$ is integral over $\cO_{X,Q}$ if and only $\phi (T)\in \cO_{X,Q}[T]$.
 \end{prop}
 \begin{proof}
  By definition $\phi(T)$ is the monic irreducible polynomial in $K(Y)[T]$ such that $\phi(z) = 0$. 
- Hence if $\phi (T)$ has co-efficients in $\cO_Q$, then $z$ is integral over $\cO_Q$ by definition.
+ Hence if $\phi (T)$ has co-efficients in $\cO_{X,Q}$, then $z$ is integral over $\cO_{X,Q}$ by definition.
  
- We now suppose that $z\in K(X)$ is integral over $\cO_Q$.
- Then we can choose some monic polynomial $f(T)\in \cO_Q[T]$ such that $f(z) = 0$.
+ We now suppose that $z\in K(X)$ is integral over $\cO_{X,Q}$.
+ Then we can choose some monic polynomial $f(T)\in \cO_{X,Q}[T]$ such that $f(z) = 0$.
  Since $\phi(T)$ is minimal over $K(Y)$, then there exists some $\psi(T)\in K(Y)[T]$ such that $f(T) = \phi(T)\cdot \psi(T)$.
- Let $F \supseteq K(X)$ be a finite extension of $K(X)$ containing all the roots of $\phi$, and let $R$ be the integral closure of $\cO_Q$ in $F$.
+ Let $F \supseteq K(X)$ be a finite extension of $K(X)$ containing all the roots of $\phi$, and let $R$ be the integral closure of $\cO_{X,Q}$ in $F$.
  Now the roots of $\phi(T)$ are also roots of $f(T)$, and hence are in $R$.
  Then the coefficients of $\phi(T)$ can be written as polynomials of the roots of $\phi(T)$, and as we just noted that these roots are in $R$ then $\phi(T) \in R[T]$.
- But then $\phi(T)\in K(Y)[T]$, and since $R$ is integrally closed it follows that $K(Y)\cap R = \cO_Q$, hence $\phi(T)\in \cO_Q[T]$.
+ But then $\phi(T)\in K(Y)[T]$, and since $R$ is integrally closed it follows that $K(Y)\cap R = \cO_{X,Q}$, hence $\phi(T)\in \cO_{X,Q}[T]$.
 \end{proof}
 
 \begin{cor}\label{traceinclosure}
-Let $Q$ be a point in $Y$ and let $x\in K(X)$ be integral over $\cO_Q$ under $\pi$.
- Then $\Tr_{X/Y}(x)\in \cO_Q$.
+Let $Q$ be a point in $Y$ and let $x\in K(X)$ be integral over $\cO_{X,Q}$ under $\pi$.
+ Then $\Tr_{X/Y}(x)\in \cO_{X,Q}$.
 \end{cor}
 \begin{proof}
  As noted earlier, if $\phi(T)=T^r+a_{r-1}T^{r-1} + \ldots + a_0\in K(Y)[T]$ is the minimal polynomial of $x$ over $K(Y)$, then $\Tr_{X/Y}(x)=-n_xa_{r-1}$, where $n_x : = [K(X):K(Y)(x)]$.
@@ -251,10 +251,10 @@ We used the notation above, form algebraic geometry, to be consistent with the r
 ~
 
 \begin{defn}
- For any $Q\in Y$, let $\cO_Q'$ be the integral closure of $\cO_Q$ in $K(X)$.
- We then define the complementary module over $\cO_Q$ to be
+ For any $Q\in Y$, let $\cO_{X,Q}'$ be the integral closure of $\cO_{X,Q}$ in $K(X)$.
+ We then define the complementary module over $\cO_{X,Q}$ to be
  \[
-  C_Q :=\{z\in K(X) | \Tr_{X/Y}(z\cdot \cO_Q') \subseteq \cO_Q\}.
+  C_Q :=\{z\in K(X) | \Tr_{X/Y}(z\cdot \cO_{X,Q}') \subseteq \cO_{X,Q}\}.
  \]
 \end{defn}
 
@@ -290,110 +290,110 @@ Since ${\mathcal{P}_1'}^{n_1} \subseteq {\mathcal{P}_1}^{n_1}$ and ${\mathcal{P}
 \end{proof}
 
 \begin{lem}\label{pidlemma}
- Let $Q\in Y$, and let $\cO_Q'$ be the integral closure of $\cO_Q$ in $K(X)$.
- Then $\cO_Q'$ is a principal ideal domain.
+ Let $Q\in Y$, and let $\cO_{X,Q}'$ be the integral closure of $\cO_{X,Q}$ in $K(X)$.
+ Then $\cO_{X,Q}'$ is a principal ideal domain.
 \end{lem}
 \begin{proof}
- By \cite[Cor. III.3.5]{stichtenoth}, we have $\cO_Q' = \{x\in K(X)|v_P(x) \geq 0 \ {\rm for all} \ P\in \pi^{-1}(Q)\}$.
- Let $I$ be an ideal of $\cO_Q'$.
+ By \cite[Cor. III.3.5]{stichtenoth}, we have $\cO_{X,Q}' = \{x\in K(X)|v_P(x) \geq 0 \ {\rm for all} \ P\in \pi^{-1}(Q)\}$.
+ Let $I$ be an ideal of $\cO_{X,Q}'$.
  If we let $\{P_1,\ldots, P_l\} = \pi^{-1}(Q)$ then we can choose $x_i$ for $1\leq i \leq l$ such that $v_{P_i}(x_i) \leq v_{P_i}(y)$ for all $y\in I$.
  By the Approximation Lemma there exist $z_i$ such that $v_P (z_i) = 0$ if $P=P_i$ and $v_{P_j}(z_i) > v_{P_j}(z_j)$ for $j\neq i$.
  Now let $x = \sum_{i=1}^l x_iz_i \in I$.
  Clearly $v_{P_i}(x) = v_{P_i}(x_i)$ for all $1\leq i\leq l$.\\
- Now we show that $I \subseteq x\cO_Q'$.
+ Now we show that $I \subseteq x\cO_{X,Q}'$.
  If $y\in I$ then we let $z = x^{-1}y$.
  Then $v_{P_i}(z) = v_{P_i}(y) - v_{P_i}(x_i) \geq 0$ for all $1\leq i\leq l$.
-Hence $z\in \cO_Q'$ and so $y = xz \in x\cO_Q'$, completing the proof.
+Hence $z\in \cO_{X,Q}'$ and so $y = xz \in x\cO_{X,Q}'$, completing the proof.
 \end{proof}
 
 
 \begin{prop}\label{factsaboutc'}
 Let $Q\in Y$. 
  \begin{enumerate}
-  \item $C_Q$ is an $\cO_Q'$-module, and $\cO_Q' \subseteq C_Q$.
-  \item If $\{z_1,\ldots ,z_n\}$ is a (necessarily integral) basis of $\cO_Q'$ over $\cO_Q$, then 
+  \item $C_Q$ is an $\cO_{X,Q}'$-module, and $\cO_{X,Q}' \subseteq C_Q$.
+  \item If $\{z_1,\ldots ,z_n\}$ is a (necessarily integral) basis of $\cO_{X,Q}'$ over $\cO_{X,Q}$, then 
   \[
-   C_Q = \sum_{i=1}^n \cO_Q\cdot z_i^*,
+   C_Q = \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*,
   \]
 where $z_i^*$ is the dual basis of $z_i$ for $1\leq i \leq n$.
-  \item There is a $t\in K(X)$ such that $C_Q = t\cdot \cO_Q'$ (note that this $t$ depends on the choice of $Q$).
-  Moreover, $v_P(t) \leq 0$ for all $P\in \pi^{-1}(Q)$, and if $t'\in K(X)$ then $C_Q=t'\cdot \cO_Q'$ if and only if $v_P(t) = v_P(t')$ for all $P\in \pi^{-1}(Q)$.
+  \item There is a $t\in K(X)$ such that $C_Q = t\cdot \cO_{X,Q}'$ (note that this $t$ depends on the choice of $Q$).
+  Moreover, $v_P(t) \leq 0$ for all $P\in \pi^{-1}(Q)$, and if $t'\in K(X)$ then $C_Q=t'\cdot \cO_{X,Q}'$ if and only if $v_P(t) = v_P(t')$ for all $P\in \pi^{-1}(Q)$.
 
  \end{enumerate}
 \end{prop}
 \begin{proof}
  \begin{enumerate}
-  \item It is clear that $C_Q$ is an $\cO_Q'$ module.
-	Indeed, if $y\in \cO_Q'$, then $y\cdot \cO_Q' \subseteq \cO_Q'$ and hence $\Tr_{X/Y}(z y\cdot \cO_Q')\subseteq \Tr_{X/Y}(z\cdot \cO_Q') \subseteq \cO_Q$ for any $z\in C_Q$.
-	The fact that $\cO_Q'$ is contained in $C_Q$ follows from Corollary \ref{traceinclosure}.
-  \item We first show that $C_Q \subseteq \sum_{i=1}^n \cO_Q\cdot z_i^*$.
+  \item It is clear that $C_Q$ is an $\cO_{X,Q}'$ module.
+	Indeed, if $y\in \cO_{X,Q}'$, then $y\cdot \cO_{X,Q}' \subseteq \cO_{X,Q}'$ and hence $\Tr_{X/Y}(z y\cdot \cO_{X,Q}')\subseteq \Tr_{X/Y}(z\cdot \cO_{X,Q}') \subseteq \cO_{X,Q}$ for any $z\in C_Q$.
+	The fact that $\cO_{X,Q}'$ is contained in $C_Q$ follows from Corollary \ref{traceinclosure}.
+  \item We first show that $C_Q \subseteq \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*$.
 	Suppose $z\in C_Q$.
 	Now $\{z_1^*, \ldots ,z_n^*\}$ is a basis of $K(X)$ over $K(Y)$, so there exist $x_1,\ldots , x_n\in K(Y)$ such that $z=\sum_{i=1}^n x_iz_i^*$.
-	As $z\in C_Q$ and $z_1,\ldots ,z_n\in \cO_Q'$, it follows by definition of $C_Q$ that $\Tr_{X/Y}(zz_j)\in \cO_Q$ for $j\in \{1,\ldots ,n\}$.
+	As $z\in C_Q$ and $z_1,\ldots ,z_n\in \cO_{X,Q}'$, it follows by definition of $C_Q$ that $\Tr_{X/Y}(zz_j)\in \cO_{X,Q}$ for $j\in \{1,\ldots ,n\}$.
 	We know that 
 	\[
 	 \Tr_{X/Y}(zz_j) = \Tr_{X/Y}\left(\sum_{i=1}^nx_iz_iz_j^*\right) = \sum_{i=1}^nx_i \cdot \Tr_{X/Y}(z_iz_j^*) = x_j,
 	\]
 	since $z_j^*$ is dual to $z_j$.
-	Hence each $x_j$ is in $\cO_Q$, and $z\in \sum_{i=1}^n\cO_Q\cdot z_i^*$.
+	Hence each $x_j$ is in $\cO_{X,Q}$, and $z\in \sum_{i=1}^n\cO_{X,Q}\cdot z_i^*$.
 	
-	Now suppose that $z\in \sum_{i=1}^n\cO_Q\cdot z_i^*$ and $u\in \cO_Q'$.
-	Then we need to show that $\Tr_{X/Y}(z u)\in \cO_Q$.
-	We can find $x_i, y_j\in \cO_Q$ such that $z=\sum_{i=1}^n x_iz_i^*$ and $u=\sum_{i=1}^ny_jz_j$.
+	Now suppose that $z\in \sum_{i=1}^n\cO_{X,Q}\cdot z_i^*$ and $u\in \cO_{X,Q}'$.
+	Then we need to show that $\Tr_{X/Y}(z u)\in \cO_{X,Q}$.
+	We can find $x_i, y_j\in \cO_{X,Q}$ such that $z=\sum_{i=1}^n x_iz_i^*$ and $u=\sum_{i=1}^ny_jz_j$.
 	Then
 	\[
 	 \Tr_{X/Y}(zu) = \Tr_{X/Y}\left(\sum_{i,j=1}^n \left(x_iy_jz_i^*z_j\right)\right) = \sum_{i,j=1}^n x_iy_j\cdot \Tr_{X/Y}(z_i^*z_j) = \sum_{i=1}^n x_iy_i.
 	\]
-	Since $\sum_{i=1}^n x_iy_i\in \cO_Q$, it follows that $z\in C_Q$.
-  \item By the previous part, we can find $u_i\in K(X)$ such that $C_Q = \sum_{i=1}^n \cO_Q \cdot u_i$.
+	Since $\sum_{i=1}^n x_iy_i\in \cO_{X,Q}$, it follows that $z\in C_Q$.
+  \item By the previous part, we can find $u_i\in K(X)$ such that $C_Q = \sum_{i=1}^n \cO_{X,Q} \cdot u_i$.
 	Choose some $x\in K(Y)$ such that $v_Q(x)\geq 0$ and also $v_Q(x)\geq -v_P(u_i)$ for all $P\in \pi^{-1}(Q)$ and $i\in \{1,\ldots ,n\}$.
 	By definition of $e_P$ it follows that
 	\[ v_P(xu_i) = e_Pv_Q(x) + v_P(u_i) \geq 0\]
 	for all $i\in \{1,\ldots, n\}$ and all $P\in \pi^{-1}(Q)$.
-	Since $\cO'_Q = \cap_{P\mapsto Q} \cO_P$ (see, for example, \cite[Cor. III.3.5]{stichtenoth}), then $x\cdot C_Q \subseteq \cO_Q'$.
-	Since $\cO_Q'$ is a principal ideal domain by Lemma \ref{pidlemma}, it follows that $x\cdot C_Q = y\cdot \cO_Q'$ for some $y\in \cO_Q'$.
-	If we let $t=x^{-1}y$ then $C_Q =t\cdot \cO_Q'$, proving the first part of the statement.\\
-	Since $\cO_Q'\subseteq C_Q$ then $v_P(t)\leq 0$ for all $P\in \pi^{-1}(Q)$.
-	Now $t\cdot \cO_Q' = t'\cdot \cO_Q'$ if and only if both $tt'^{-1}$ and $t^{-1}t'$ are in $\cO_Q'$.
+	Since $\cO'_Q = \cap_{P\mapsto Q} \cO_{X,P}$ (see, for example, \cite[Cor. III.3.5]{stichtenoth}), then $x\cdot C_Q \subseteq \cO_{X,Q}'$.
+	Since $\cO_{X,Q}'$ is a principal ideal domain by Lemma \ref{pidlemma}, it follows that $x\cdot C_Q = y\cdot \cO_{X,Q}'$ for some $y\in \cO_{X,Q}'$.
+	If we let $t=x^{-1}y$ then $C_Q =t\cdot \cO_{X,Q}'$, proving the first part of the statement.\\
+	Since $\cO_{X,Q}'\subseteq C_Q$ then $v_P(t)\leq 0$ for all $P\in \pi^{-1}(Q)$.
+	Now $t\cdot \cO_{X,Q}' = t'\cdot \cO_{X,Q}'$ if and only if both $tt'^{-1}$ and $t^{-1}t'$ are in $\cO_{X,Q}'$.
 	But this is the case if and only $v_P(tt'^{-1}) \geq 0$ and $v_P(t^{-1}t')\geq 0$ for all $P\in \pi^{-1}(Q)$, which is equivalent to $v_P(t)=v_P(t')$ for all such $P$.
  \end{enumerate}
 \end{proof}
 
 \begin{prop}\label{almostallqiny}
- For almost all $Q\in Y$ we have $C_Q= \cO_Q'$.
+ For almost all $Q\in Y$ we have $C_Q= \cO_{X,Q}'$.
 \end{prop}
 \begin{proof}
- We first show that, given a basis of $K(X)$ over $K(Y)$, it is almost always integral over $\cO_Q$ given $Q\in Y$.
- Recall that $\cO_Q$ is integrally closed in $K(Y)$, and its quotient field is $K(Y)$.
- As before, we denote by $\cO_Q'$ the integral closure of $\cO_Q$ in $K(X)$, and we consider a basis $\{z_1,\ldots ,z_n\}$ of $K(X)$ over $K(Y)$.
+ We first show that, given a basis of $K(X)$ over $K(Y)$, it is almost always integral over $\cO_{X,Q}$ given $Q\in Y$.
+ Recall that $\cO_{X,Q}$ is integrally closed in $K(Y)$, and its quotient field is $K(Y)$.
+ As before, we denote by $\cO_{X,Q}'$ the integral closure of $\cO_{X,Q}$ in $K(X)$, and we consider a basis $\{z_1,\ldots ,z_n\}$ of $K(X)$ over $K(Y)$.
  Let $\{z_1^*,\ldots ,z_n^*\}$ be the dual basis.
  Now the minimal polynomials of $z_1,\ldots, z_n,z_1^*,\ldots z_n^*$ have finitely many coefficients in $K(Y)$.
  Hence if $S\subseteq Y$ is the set of poles of these co-efficients, then $S$ is finite and for $Q\notin S$ then we have
  \[
-  z_1,\ldots,z_n,z_1^*,\ldots, z_n^*\in \cO_Q'.
+  z_1,\ldots,z_n,z_1^*,\ldots, z_n^*\in \cO_{X,Q}'.
  \]
 
  
  
-Now we assume that $\{z_1,\ldots ,z_n,z_1^*,\ldots z_n^*\}\subseteq \cO_Q'$ and then we show that 
+Now we assume that $\{z_1,\ldots ,z_n,z_1^*,\ldots z_n^*\}\subseteq \cO_{X,Q}'$ and then we show that 
 \[
-  \cO_Q' \subseteq \sum_{i=1}^n \cO_Q\cdot z_i^*.
+  \cO_{X,Q}' \subseteq \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*.
 \]
 
  If $z\in K(X)$ then there are $e_1,\ldots, e_n\in K(Y)$ such that $z=e_1z_1^*+\ldots +e_nz_n^*$.
- If $z\in \cO_Q'$ then $zz_j\in \cO_Q'$ for $1\leq j\leq n$, and hence $\Tr_{X/Y}(zz_j)\in \cO_Q$, by Corollary \ref{traceinclosure}.
+ If $z\in \cO_{X,Q}'$ then $zz_j\in \cO_{X,Q}'$ for $1\leq j\leq n$, and hence $\Tr_{X/Y}(zz_j)\in \cO_{X,Q}$, by Corollary \ref{traceinclosure}.
  As
  \[
   \Tr_{X/Y}(zz_j) = \Tr_{X/Y}\left(\sum_{i=1}^n e_iz_jz_i^*\right) = \sum_{i=1}^ne_i\cdot \Tr_{X/Y}(z_jz_i^*) = e_j.
  \]
-  Hence $e_j\in \cO_Q$, and $\cO_Q'\subseteq \sum_{i=1}^n\cO_Q\cdot z_i^*$.
-  Since $\{z_1,\ldots, z_n\}$ also forms a basis we can run the same argument again to show that $\cO_Q'\subseteq \sum_{i=1}^n\cO_Q\cdot z_i$.
+  Hence $e_j\in \cO_{X,Q}$, and $\cO_{X,Q}'\subseteq \sum_{i=1}^n\cO_{X,Q}\cdot z_i^*$.
+  Since $\{z_1,\ldots, z_n\}$ also forms a basis we can run the same argument again to show that $\cO_{X,Q}'\subseteq \sum_{i=1}^n\cO_{X,Q}\cdot z_i$.
   
   We then have the following set of inequalities:
   \[
-   \sum_{i=1}^n \cO_Q\cdot z_i \subseteq \cO_Q' \subseteq \sum_{i=1}^n\cO_Q\cdot z_i^* \subseteq \cO_Q'\subseteq \sum_{i=1}^n \cO_Q\cdot z_i.
+   \sum_{i=1}^n \cO_{X,Q}\cdot z_i \subseteq \cO_{X,Q}' \subseteq \sum_{i=1}^n\cO_{X,Q}\cdot z_i^* \subseteq \cO_{X,Q}'\subseteq \sum_{i=1}^n \cO_{X,Q}\cdot z_i.
   \]
-Since $C_Q = \sum_{i=1}^n \cO_Q\cdot z_i^*$ by part 2 of Proposition \ref{factsaboutc'}, the result follows.
+Since $C_Q = \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*$ by part 2 of Proposition \ref{factsaboutc'}, the result follows.
 \end{proof}
 
 We can now define the ramification divisor.
@@ -401,7 +401,7 @@ We can now define the ramification divisor.
 
 
 \begin{defn}
- For a point $Q\in X$ choose $t\in K(X)$ such that $C_Q = t\cdot \cO_Q'$, as in part 3 of Proposition \ref{factsaboutc'}.
+ For a point $Q\in X$ choose $t\in K(X)$ such that $C_Q = t\cdot \cO_{X,Q}'$, as in part 3 of Proposition \ref{factsaboutc'}.
  Then for any $P\in \pi^{-1}(Q)$ we define the different exponent to be $\delta_P := -v_P(t)$.
  By Proposition \ref{factsaboutc'} this is well defined, and by Proposition \ref{almostallqiny} it is almost always zero.
  Hence we can define the ramification divisor to be
@@ -420,7 +420,7 @@ We now define the ad\`ele space of $X$ over $Y$.
 \begin{defn}
  We define $\mathcal {A}_{X/Y}$ as
  \[
-  \mathcal{A}_{X/Y} := \{\alpha \in \mathcal{A}_X | \alpha_P =\alpha_{P'}\ \text{if}\ \cO_P\cap K(Y) = \cO_{P'}\cap K(Y)\}.
+  \mathcal{A}_{X/Y} := \{\alpha \in \mathcal{A}_X | \alpha_P =\alpha_{P'}\ \text{if}\ \cO_{X,P}\cap K(Y) = \cO_{P'}\cap K(Y)\}.
  \]
 We extend the trace function $\Tr_{X/Y}\colon K(X)\rightarrow K(Y)$ to a map $\Tr_{X/Y}\colon \mathcal{A}_{X/Y} \rightarrow \mathcal{A}_Y$,  by letting
 \[
@@ -562,20 +562,20 @@ By the approximation lemma, there exists a $u\in J$ such that
  v_{P^*}(u) = v_{P^*}(\pi^*(\di (\omega))-B')
  \]
  for all $P^*\in \pi^{-1}(Q_0)$, and hence $J\nsubseteq C_{Q_0}$.
-(As noted earlier, $z\in \cO_Q$ if and only if $v_P(z) \geq -\delta_P$).
-It is clear that $J\cdot \cO_{Q_0} \subseteq J$, and hence that $\Tr_{X/Y}(J) \nsubseteq \cO_Q$.
+(As noted earlier, $z\in \cO_{X,Q}$ if and only if $v_P(z) \geq -\delta_P$).
+It is clear that $J\cdot \cO_{Q_0} \subseteq J$, and hence that $\Tr_{X/Y}(J) \nsubseteq \cO_{X,Q}$.
 We let $t$ be an element of $K(Y)$ such that $v_Q(t) = 1$.
 Then there is an $r\in \mathbb N$ such that 
-$t^r\cdot J \subseteq \cO_Q,
+$t^r\cdot J \subseteq \cO_{X,Q},
  $
- and then \[ t^r\cdot \Tr_{X/Y}(J) = \Tr_{X/Y}(t^r\cdot J) \subseteq \cO_Q.\]
-It is clear that $t^r\cdot \Tr_{X/Y} (J)$ is an ideal of $\cO_Q$, and so $\Tr_{X/Y}(J) = t^s\cdot \cO_Q$ for some negative integer $s$.
+ and then \[ t^r\cdot \Tr_{X/Y}(J) = \Tr_{X/Y}(t^r\cdot J) \subseteq \cO_{X,Q}.\]
+It is clear that $t^r\cdot \Tr_{X/Y} (J)$ is an ideal of $\cO_{X,Q}$, and so $\Tr_{X/Y}(J) = t^s\cdot \cO_{X,Q}$ for some negative integer $s$.
 Hence 
 \begin{equation}\label{traceinring}
- t^{-1}\cdot \cO_Q \subseteq \Tr_{X/Y}(J).
+ t^{-1}\cdot \cO_{X,Q} \subseteq \Tr_{X/Y}(J).
 \end{equation}
 By Proposition \ref{propertyofomega} we can find an $x\in K(Y)$ such that $v_Q(x) = -v_Q(\omega) - 1$ and $\omega_Q(x) \neq 0$.
-If we choose $y\in K(Y)$ such that $v_Q(y) = v_Q(\omega)$, then $xy \in t^{-1}\cO_Q$.
+If we choose $y\in K(Y)$ such that $v_Q(y) = v_Q(\omega)$, then $xy \in t^{-1}\cO_{X,Q}$.
 Hence by \eqref{traceinring} there is a $z\in J$ such that $\Tr_{X/Y} (z) = xy$.
 Let $\beta \in \mathcal{A}_{X/Y}$ be chosen  such that 
 \begin{equation*}
@@ -653,7 +653,7 @@ By \cite[Prop. IV.1.4]{stichtenoth}, for each $x\in K(C)\backslash k$ there exis
 
 If we let $Z:= \{(u,x)\in K(C)\times K(C) |x\notin k\}$, then we can define a relation on the elements of $Z$ by letting $(u,x) \sim (v,y)$ if $v = u\cdot d_y(x)$.
 Then we denote the equivalence class of $(1,x)\in Z$ by $dx$.
-It can then be shown that $Z$, when quotiented by the above relation, has the univerisal property of $\Omega_C$, and hence is isomorphic to $\Omega_C$ as a $K(C)$-module (see \cite[IV.1.8]{stichtenoth}).
+It can then be shown that $Z$, when quotiented by the above relation, has the universal property of $\Omega_C$, and hence is isomorphic to $\Omega_C$ as a $K(C)$-module (see \cite[IV.1.8]{stichtenoth}).
 \end{comment}
 
 Let $C$ be a smooth, projective, connected algebraic curve over $k$.

@@ -221,7 +221,7 @@ where $i \colon \omega \mapsto (\omega, \omega, 0)$ and $p \colon (\omega_0, \om
 \begin{proof}
 Let $T$ be the total complex of \eqref{bicomplex}.
 Moreover, we let $\cO$ and $\Omega$ be the complexes formed from the first and second (non-trivial) columns of \eqref{bicomplex} respectively.
-Then let $\Omega[1]$ denote the complex obtained from shifting $\Omega$ by one, i.e.~$\Omega[1]^{n+1} = \Omega^n$.
+Then let $\Omega[1]$ denote the complex obtained from shifting $\Omega$ by one, \ie~$\Omega[1]^{n+1} = \Omega^n$.
 From this we obtain the following short exact sequence of complexes 
 \[
 \Omega[1] \hookrightarrow T \twoheadrightarrow \cO,
@@ -353,7 +353,7 @@ If $\infty$ is not a branch point, then, after possibly swapping the notations f
 \begin{proof}
 We first show that $\di_0(y)$, the divisor of the zeroes of $y$, is $\sum_{i=1}^l m_i [Q_i]$.
 
-It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{definep=2} i.e.~in $U_\infty$.
+It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{definep=2} \ie~in $U_\infty$.
 Suppose $P\in U_\infty$.
 If $\left. F \right|_P \neq 0$ then it follows that $y|_P \neq 0$, since $F(x) = y (y + H(x))$.
 Hence $\di_0(y)$ has zero coefficients for any point in $U_\infty\backslash \{Q_1, \ldots, Q_l \}$.
@@ -479,7 +479,7 @@ Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem
 
 \begin{cor}
 For each $P \in X$ we fix $f_P \in K(X)/\cO_{X,P}$, such that $f_P = 0$ for almost all $P \in X$.
-Then there exist unique $\alpha_1, \ldots, \alpha_g \in k$ such that after replacing $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for $P \in \pi^{-1}(\infty)$, we can find an $f \in K(X)$ such that the laurent tail of $f$ at $P$ in $X$ is $f_P$.
+Then there exist unique $\alpha_1, \ldots, \alpha_g \in k$ such that after replacing $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for $P \in \pi^{-1}(\infty)$, we can find an $f \in K(X)$ such that the Laurent tail of $f$ at $P$ in $X$ is $f_P$.
 \end{cor}
 \begin{proof}
 Since $f_P = 0$ for almost all $P \in X$ then $(f_P)_{P \in X} \in \bigoplus_{P \in X} K(X)/\cO_{X,P}$.
@@ -496,7 +496,7 @@ We can derive \eqref{dualitysesfunctions} by applying the snake lemma to the \ce
 \xymatrix{\cO_X(U_0)\times\cO_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{K}(X) \times \underline{K}(X) \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} K(X)/\cO_{X,P} \times \bigoplus \limits_{P \in U_\infty} K(X)/\cO_{X,P} \ar[d]^{d_3} \\
 \cO_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{K}(X) \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} K(X)/\cO_{X,P} }
 \end{equation}
-Analagously to \eqref{dualitydiagram2}, the kernel of $d_3$ is $\bigoplus_{P \in X}K(X)/\cO_{X,P}$ and the cokernel of $d_1$ is $\hone$.
+Analogously to \eqref{dualitydiagram2}, the kernel of $d_3$ is $\bigoplus_{P \in X}K(X)/\cO_{X,P}$ and the cokernel of $d_1$ is $\hone$.
 Via a diagram chase on $- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) \in \hone$ we can find a corresponding element 
 \begin{equation}\label{immediate}
 \left(0, \left(- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) \right)_P\right) \in \bigoplus_{P \in U_0}K(X)/\cO_{X,P} \times \bigoplus_{P \in U_\infty}K(X)/\cO_{X,P}.
@@ -509,7 +509,7 @@ g_P = \begin{cases}
 \end{cases}
 \]
 Clearly $(0, g_P) \in \ker (d_3) = \bigoplus_{P \in X} K(X)/\cO_{X,P}$, and $\delta((f_P)_{P \in X} - (g_P)_{P \in X}) = 0$, by choice of $(g_P)_{P \in X}$.
-By the exactness of \eqref{dualitysesfunctions} it follows that there exists an $f \in K(X)$ which has laurent tail $f_P - g_P$ at each $P \in X$, as required in the statement of the corollary.
+By the exactness of \eqref{dualitysesfunctions} it follows that there exists an $f \in K(X)$ which has Laurent tail $f_P - g_P$ at each $P \in X$, as required in the statement of the corollary.
 \end{proof}
 
 
@@ -1385,7 +1385,7 @@ Note that if $\deg(f) = 6$ then there is no contradiction with either term, and 
 However, because we are not considering the entire automorphism group we cannot say that it does split.
 \end{rem}
 \todo[inline]{say what restrictions on $s$ we get from the above?}
-\todo[inline]{state which exact sequences split from kontogeorgis paper}
+\todo[inline]{state which exact sequences split from Kontogeorgis paper}
 
 The following is for the case where $g = 4$.
 In this case our curve must have 
@@ -1400,7 +1400,7 @@ as its defining equation, where we also have the relations
 \end{itemize}
 Also, the characteristic of $k$ is necessarily three.
 As before, $sigma \colon x \to x+a$.
-We denote the basis elements that come from $\hzero$ by $\lambda_i$, as $i$ ranges from $0$ to $g-1$, and the basis elements that map tpo $\hone$ by $\gamma_i$ (same range for $i$, but plus one).
+We denote the basis elements that come from $\hzero$ by $\lambda_i$, as $i$ ranges from $0$ to $g-1$, and the basis elements that map to $\hone$ by $\gamma_i$ (same range for $i$, but plus one).
 Then we have the following lemma.
 \begin{lem}
 For $i = 0, \ldots , g-1$ then
@@ -1412,7 +1412,7 @@ For $i = 0, \ldots , g-1$ then
 Clear
 \end{proof}
 
-Next we explicilty write out the elements $\gamma_1, \ldots, \gamma_4$.
+Next we explicitly write out the elements $\gamma_1, \ldots, \gamma_4$.
 \begin{align*}
 \gamma_1 & = \left( \frac{a^2a_6x^4 + 2a_3x^3 + 2(a^8 + a^2a_3)x + 2a_0}{x^2y}, \frac{x^7 +a_6x^3}{y}, \frac{y}{x} \right)\\
 \gamma_2 & = \left(\frac{a^4a_6x^2 +2a_3x^3 +2a_0}{2x^3y} , \frac{2(x^6 +a_6x^3)}{y}, \frac{y}{ x^2 }\right)\\
