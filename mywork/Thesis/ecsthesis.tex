@@ -3,7 +3,7 @@
 %% ---------------------------------------------------------------- 
 \documentclass[draft]{ecsthesis}      % Use the Thesis Style
 %\graphicspath{{../Figures/}}   % Location of your graphics files
-\usepackage{natbib}            % Use Natbib style for the refs.
+%\usepackage{natbib}            % Use Natbib style for the refs.
 \hypersetup{colorlinks=true}   % Set to false for black/white printing
 \usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
 \usepackage[all]{xy}
@@ -81,6 +81,8 @@ This work is all about \dots
 \dedicatory{To \dots}
 \mainmatter
 %% ----------------------------------------------------------------
+\listoftodos
+
 \include{./Introduction/Introduction}
 \include{./hurwitzstuff/hurwitz}
 \include{./dimension/dimensionformulae}
@@ -90,7 +92,7 @@ This work is all about \dots
 \appendix
 %\include{AppendixA}
 \backmatter
-\bibliographystyle{plain}
+\bibliographystyle{ecs}
 \bibliography{biblio}
 \end{document}
 %% ----------------------------------------------------------------

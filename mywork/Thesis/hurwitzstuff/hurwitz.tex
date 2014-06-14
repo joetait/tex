@@ -85,8 +85,7 @@ for any non-zero $\omega \in \Omega_{K(X)}$, and state the following lemma.
  See \cite[Lem. I.5.10 and Prop. I.5.13]{stichtenoth}.
 \end{proof}
 
-
-
+\todo[inline]{Introduce the idea of "the" canonical divisor $K_X$ here}
 We can now define valuations on the differentials; namely, given some differential $\omega $ on $X$, and its associated divisor $W$, we set $v_P(\omega):=v_P(W)$ for $P\in X$.
 The following proposition about the space of differentials is very useful, though we will not prove it here.
 \todo[inline]{Rephrase the above paragraph}
@@ -103,7 +102,7 @@ The following proposition about the space of differentials is very useful, thoug
 
 It should be noted that in algebraic geometry differentials are normally defined in a different, but equivalent, manner.
 Given a ring $K(X)$ and an $K(X)$-module $M$, we call any $K(X)$-linear map $D\colon K(X)\rightarrow M$ satisfying \[D(ab) = aD(b) + D(a)b\] for all $a,b\in K(X)$ a {\em derivation}.
-There is a unique module, denoted $\Omega_{K(X)}$, with a map $d\colon K(X) \rightarrow \Omega_{K(X)}$, which every derivation must factor through; \ie if $D\colon K(X)\rightarrow M$ is a derivation then there is a unique map $f\colon \Omega_{K(X)}\rightarrow M$ such that $D = f\circ d$.
+There is a unique module, denoted $\Omega_{K(X)}$, with a map $d\colon K(X) \rightarrow \Omega_{K(X)}$, which every derivation must factor through; \ie if $D\colon K(X)\rightarrow M$ is a derivation then there is a unique map $f\colon \Omega_{K(X)}\rightarrow M$ such that $D = f\circ d$.\todo{change $f$}
 Given any differential $\omega$, we can write it as $fdx$ for some $x$ and some $f$ in $K(X)$.
 This is how we will consider differentials in the other sections of this report.
 At the end of this section we will describe an isomorphism between $\Omega_X$ and $\Omega_{K(X)}$.
@@ -111,9 +110,12 @@ At the end of this section we will describe an isomorphism between $\Omega_X$ an
 
 Finally, we define a particular class of differentials that will play a crucial role in what follows.
 A differential $\omega \in \Omega_{K(X)}$ is called {\em holomorphic} if its associated divisor, $W$, is non-negative (\ie if $v_P(W) \geq 0$ for all $P\in X$).
-We denote {\em the space of holomorphic differentials} by $H^0(X,\Omega_{K(X)})$.
-Also, for any divisor $D$ on $X$ we define \[H^0(X,\cO(D)) := \{x\in K(X) | v_P(x) \geq -v_P(D)\}\cup \{0\}.\]
-This is sheaf theoretic notation, which would not normally be used in function field theory, but we use it for consistency with the rest of the report.
+We denote {\em the space of holomorphic differentials} by $H^0(X,\Omega_{K(X)})$.\todo{Change notation - $\Omega_{K(X)}$ is not a sheaf}
+Also, for any divisor $D$ on $X$ we define 
+\[
+H^0(X,\cO(D)) := \{x\in K(X) | v_P(x) \geq -v_P(D)\}\cup \{0\}.
+\]\todo{change this notation to Fulton's or Stichtenoth's}
+This is sheaf theoretic notation, which would not normally be used in function field theory, but we use it for consistency with the rest of the report.\todo{change this sentence after changing notation}
 We can now state the celebrated Riemann-Roch theorem.
 
 \begin{thm}[Riemann-Roch]\label{riemannroch}
@@ -158,14 +160,14 @@ Given a point $P\in X$ we define $\iota_P\colon K(X) \rightarrow \cA_X$ by
 \end{equation}
 for $Q\in X$.
 For $\omega \in \Omega_{K(X)}$ we then define $\omega_P\colon K(X) \rightarrow k$ to be the map $\omega_P(x) := \omega(\iota_P(x))$.
-This is called the {\em local component} of $\omega$; we will use these definitions to prove the following proposition.\\
+This is called the {\em local component} of $\omega$; we will use these definitions to prove the following proposition.\todo{change this sentence}
 
 \begin{prop}\label{propertyofomega}
  Let $\omega \neq 0$ be a differential on $X$ and let $P\in X$. Then
  \[
   v_P(\omega) = \max \{r\in \mathbb{Z}|\omega_P(x) = 0\ \text{for all} \ x\in K(X) \ \text{with}\ v_P(x) \geq -r\}.
  \]
-In particular $\omega_P \neq 0$.
+In particular $\omega_P \neq 0$.\todo{make clear that the maximum exists and hence that this is well defined}
 \end{prop}
 \begin{proof}
  Let $W$ be the divisor associated to $\omega$.
@@ -191,7 +193,7 @@ But this contradicts the maximality of $W$ in its definition.
 
 
 We now give a small result regarding field extensions, after recalling some terminology.
-Recall that if $S$ is a subring of $R$, then an element $x\in R$ is integral over $S$ if there is a monic polynomial with co-efficients in $S$ for which $x$ is a solution.
+Recall that if $S$ is a subring of $R$, then an element $x\in R$ is integral over $S$ if there is a monic polynomial with coefficients in $S$ for which $x$ is a solution.
 Then an integral basis of $R$ over $S$ is a basis of $R$ over $S$, for which each basis elements is integral.
  Recall that $\cO_{X,Q}$ is an integrally closed subring of $K(Y)$ for any $Q\in Y$, and that $K(Y)$ is the field of fractions of $\cO_{X,Q}$.
  \vskip1em
@@ -203,7 +205,7 @@ Then an integral basis of $R$ over $S$ is a basis of $R$ over $S$, for which eac
 \end{prop}
 \begin{proof}
  By definition $\phi(T)$ is the monic irreducible polynomial in $K(Y)[T]$ such that $\phi(z) = 0$. 
- Hence if $\phi (T)$ has co-efficients in $\cO_{X,Q}$, then $z$ is integral over $\cO_{X,Q}$ by definition.
+ Hence if $\phi (T)$ has coefficients in $\cO_{X,Q}$, then $z$ is integral over $\cO_{X,Q}$ by definition.
  
  We now suppose that $z\in K(X)$ is integral over $\cO_{X,Q}$.
  Then we can choose some monic polynomial $f(T)\in \cO_{X,Q}[T]$ such that $f(z) = 0$.
@@ -369,7 +371,7 @@ where $z_i^*$ is the dual basis of $z_i$ for $1\leq i \leq n$.
  As before, we denote by $\cO_{X,Q}'$ the integral closure of $\cO_{X,Q}$ in $K(X)$, and we consider a basis $\{z_1,\ldots ,z_n\}$ of $K(X)$ over $K(Y)$.
  Let $\{z_1^*,\ldots ,z_n^*\}$ be the dual basis.
  Now the minimal polynomials of $z_1,\ldots, z_n,z_1^*,\ldots z_n^*$ have finitely many coefficients in $K(Y)$.
- Hence if $S\subseteq Y$ is the set of poles of these co-efficients, then $S$ is finite and for $Q\notin S$ then we have
+ Hence if $S\subseteq Y$ is the set of poles of these coefficients, then $S$ is finite and for $Q\notin S$ then we have
  \[
   z_1,\ldots,z_n,z_1^*,\ldots, z_n^*\in \cO_{X,Q}'.
  \]
