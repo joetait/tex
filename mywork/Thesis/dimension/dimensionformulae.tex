@@ -7,7 +7,7 @@
 For the rest of the report, unless otherwise stated, we assume that $X$ is a connected smooth projective algebraic curve over an algebraically closed field $k$ of characteristic $p \geq 0$.
 We furthermore assume that $G$ is a finite group of order $n$ that acts faithfully on $X$.
 Note that $G$ also induces an action on the vector space $H^0(X,\Omega_X^{\otimes m})$ of global holomorphic poly-differentials of order $m$.
-We let $Y$ denote the quotient curve $X/G$, and we let $\pi\colon X\rightarrow Y$ be the canonical projection.
+We let $Y$ denote the quotient curve $X/G$, and we let $\pi:X\rightarrow Y$ be the canonical projection.
 Finally, as before, we denote by $g_X$ and $g_Y$ the genus of $X$ and $Y$ respectively, and we let $K_X$ and $K_Y$ be canonical divisors on $X$ and $Y$.
 
 
@@ -107,9 +107,9 @@ The next lemma is the main idea in the proof of our formula for $\dim_kH^0(X,\Om
     We have
       \begin{eqnarray*}
 	 \lefteqn{\pi_*^G\left(\cO_X(D)\right)_Q = \cO_X(D)_P \cap K(Y)}\\
-	  &=& \left\{f \in K(Y)| \textrm{ord}_P(f) \ge -n_P\right\}\\
-	  &=& \left\{f \in K(Y)| \textrm{ord}_Q(f) \ge - \frac{n_P}{e_P}\right\}\\
-	  &=& \left\{ f \in K(Y)| \textrm{ord}_Q(f) \ge - \left\lfloor\frac{n_P}{e_P} \right\rfloor \right\}\\
+	  &=& \left\{f \in K(Y): \textrm{ord}_P(f) \ge -n_P\right\}\\
+	  &=& \left\{f \in K(Y): \textrm{ord}_Q(f) \ge - \frac{n_P}{e_P}\right\}\\
+	  &=& \left\{ f \in K(Y): \textrm{ord}_Q(f) \ge - \left\lfloor\frac{n_P}{e_P} \right\rfloor \right\}\\
 	  &=& \cO_Y\left(\left\lfloor \frac{\pi_*(D)}{n} \right\rfloor\right)_Q,
       \end{eqnarray*}
     as desired.
@@ -838,12 +838,12 @@ since $\omega^{\otimes m}$ is a basis of $H^0(X,\Omega_X^{\otimes m})$ this mean
 
 If $p>0$ and $G$ is a $p$-group, then the multiplicative character $G\rightarrow k^*$ afforded by the one-dimensional representation $H^0(X,\Omega_X^{\otimes m})$ of $G$ has to be trivial because $k$ doesn't contain any $p^{\mbox{th}}$ roots of unity;
 in particular the action of $G$ on $H^0(X,\Omega_X^{\otimes m})$ is trivial as well.
-On the other hand, if $p\neq 2$ and $X$ is given by the Weierstrass equation of the form $y^2 = f(x)$, then the involution $\sigma \colon (x,y) \rightarrow (x,-y)$ maps the invariant differential $\omega = \frac{dx}{y}$ to $-\omega$.
+On the other hand, if $p\neq 2$ and $X$ is given by the Weierstrass equation of the form $y^2 = f(x)$, then the involution $\sigma : (x,y) \rightarrow (x,-y)$ maps the invariant differential $\omega = \frac{dx}{y}$ to $-\omega$.
   
   
   \subsection{Hyperelliptic curves, characteristic unequal to 2}\label{charneq2}
   Let $X$ be a smooth, projective, connected hyperelliptic algebraic curve of genus $g$ over an algebraically closed field $k$, with $\cha (k) \neq 2$.
-Let $x\colon X\rightarrow \mathbb{P}_k^1$ be the corresponding holomorphic map of degree $2$.
+Let $x:X\rightarrow \mathbb{P}_k^1$ be the corresponding holomorphic map of degree $2$.
 This curve then has a corresponding degree two extension $k(x,y)$ of the rational function field in one variable over $k$, $k(x)$, where
 \begin{equation}\label{definingequation}
  y^2 = f(x)
@@ -863,7 +863,7 @@ Since $x$ is of degree $2$ and at most tamely ramified, the coefficients of the 
 We let $a_i = x(p_i)$ and $D_i = \div_{a_i}(x)$.
 Moreover, for a general point $a \in \mathbb P_k^1$ we let $D_a = \div_x(x)$.
 We now show that the ramification points correspond to the zeroes of $f(x)$.
-Since there are no repeated roots in $f(x)$, then \eqref{definingequation} defines a non-singular affine curve $X'$, with a degree two projection $x'\colon X'\rightarrow \mathbb A_k^1$.
+Since there are no repeated roots in $f(x)$, then \eqref{definingequation} defines a non-singular affine curve $X'$, with a degree two projection $x': X'\rightarrow \mathbb A_k^1$.
 Clearly for any point $a\in \mathbb A_k^1$ which is not a solution to $f(x)$, then there are two points in the pre-image, namely $(a,\pm \sqrt{a})$, and the point is not ramified.
 On the other hand, if $a\in \mathbb A_k^1$ is a solution to $f(x)$, then there is only one point in the pre-image and hence it is ramified.
 Since there are $2g+2$ solutions of $f(x)$, and the degree of $R$ is $2g+2$, then we conclude that these are all the ramification points.
@@ -1022,7 +1022,7 @@ This proves the main theorem for hyperelliptic curves over a field of characteri
 
 \subsection{Hyperelliptic curves, characteristic 2}
 Let $X$ be a smooth, projective, connected hyperelliptic algebraic curve of genus $g$ over an algebraically closed field $k$ of characteristic two.
-Let $\pi\colon X \rightarrow \mathbb P_k^1$ be the corresponding holomorphic map of degree two.
+Let $\pi:X \rightarrow \mathbb P_k^1$ be the corresponding holomorphic map of degree two.
 By \cite[\S 7.4.3]{liu} this curve has a corresponding degree two extension $k(x,y)$ of the function field of one variable over $k$, $k(x)$, where
 \begin{equation}\label{ext}
   y^2 - h(x)y = f(x)
