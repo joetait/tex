@@ -32,10 +32,10 @@ The elements $z_1^*, \ldots , z_n^*$ form the {\em dual basis} of $z_1, \ldots ,
 
 We now briefly introduce differentials in terms of function fields.
 Let $C$ be any projective, non-singular curve over $k$, with function field $K(C)$, and with genus $g_C$.
-Then an {\em ad\`ele on $C$} is a map $\alpha\colon  C \rightarrow K(C)$ such $\alpha(P) \in \cO_{X,P}$ for nearly all $P \in C$ (\ie all but a finite number of points).
+Then an {\em \adele on $C$} is a map $\alpha\colon  C \rightarrow K(C)$ such $\alpha(P) \in \cO_{X,P}$ for nearly all $P \in C$ (\ie all but a finite number of points).
 We can view $\alpha$ as an element of $\prod_{P\in C}K(C)$, and we write $\alpha_P := \alpha(P)$.
-We let the {\em ad\`ele space} of $C$, denoted by $\cA_C$, be the space of all ad\`eles on $C$.
-There is a canonical injection $K(C) \hookrightarrow  \cA_C$, defined by sending $x\in K(C)$ to the ad\`ele $\alpha$ for which $\alpha_P =  x$ at each point $P\in C$.
+We let the {\em \adele space} of $C$, denoted by $\cA_C$, be the space of all \adeles on $C$.
+There is a canonical injection $K(C) \hookrightarrow  \cA_C$, defined by sending $x\in K(C)$ to the \adele $\alpha$ for which $\alpha_P =  x$ at each point $P\in C$.
 The elements of $K(C)$ have natural valuations; for each $P\in C$ we choose a uniformising parameter $t\in \cO_{X,P}$, and we then define $v_P(x):=n$, where $n$ is the unique integer such that $x=ut^n$ for some unit $u\in \cO_{X,P}$.
 We can we can then extend this valuation to elements of $\cA_C$ by defining $v_P(\alpha) := v_P(\alpha_P)$.
 
@@ -59,7 +59,7 @@ For any $D\in \cD_C$ we define $v_P(D)$ to be the coefficient of $[P]$ in $D$, a
 \[
  \cA_C(D):=\{\alpha \in \cA_C | v_P(\alpha) \geq -v_P(D)\ \text{for all} \ P\in C\}
 \]
-be the {\em ad\`ele space associated to $D$}.
+be the {\em \adele space associated to $D$}.
 Then we define a {\em differential} on $C$ to be a $k$-linear map $\omega\colon  \cA_C \rightarrow k$ such that $\omega$ is zero on $\cA_C(D) +K(C)$ for some divisor $D\in \cD_C$.
 Note that via the canonical embedding of $K(C)$ into $\cA_C$, we can view $\cA_C(D) +K(C)$ as a subspace of $\cA_C$.
 We will denote the space of differentials on $C$ by $\Omega_{K(C)}$.
@@ -406,7 +406,7 @@ We can now define the ramification divisor.
 It should be noted that when considering the theory of function fields the ramification divisor is called the different, and denoted ${\rm Diff}_{X/Y}$.
 \end{rem}
 
-We now define the ad\`ele space of $X$ over $Y$.
+We now define the \adele space of $X$ over $Y$.
 
 \begin{defn}
  We define $\mathcal {A}_{X/Y}$ as
@@ -482,7 +482,7 @@ We first give a lemma that is necessary for the proof of the theorem.
   v_P(\alpha_P - x_Q) \geq -v_P(D)
  \]
 for each $P\in \pi^{-1}(Q)$. 
-We then define the ad\`ele $\beta$ such that $\beta_P := x_Q$ for every $P\in \pi^{-1}(Q)$.
+We then define the \adele $\beta$ such that $\beta_P := x_Q$ for every $P\in \pi^{-1}(Q)$.
 Then $\beta \in \mathcal{A}_{X/Y}$ and the difference $\alpha - \beta$ is in $\mathcal{A}_X(D)$ by definition of $\beta$.
 Hence $\alpha = \beta + (\alpha - \beta) \in \mathcal{A}_{X/Y} + \mathcal{A}_X(D)$.
 \end{proof}
