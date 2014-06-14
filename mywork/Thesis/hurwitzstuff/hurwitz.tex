@@ -246,7 +246,7 @@ We used the notation above, from algebraic geometry, to be consistent with the r
 ~
 
 \begin{defn}
- For any $Q\in Y$, let $\cO_{X,Q}'$ be the integral closure of $\cO_{X,Q}$ in $K(X)$.
+ For any $Q\in Y$, let $\cO_{X,Q}'$ be the integral closure of $\cO_{X,Q}$ in $K(X)$.\todo{define this in text, remove instances in this and next lemma}
  We then define the complementary module over $\cO_{X,Q}$ to be
  \[
   C_Q :=\{z\in K(X) | \Tr_{X/Y}(z\cdot \cO_{X,Q}') \subseteq \cO_{X,Q}\}.
@@ -258,17 +258,17 @@ We will list some properties of the complementary module in a proposition, but f
 
 \begin{lem}[Approximation lemma]\label{approximationlemma}
 Let $m$ be a positive integer. 
-For each $i\in \{1,\ldots, m\}$ let $P_i\in X$, let $\mathcal{P}_i$ be the corresponding maximal ideal of $\cO_{P_i}$, let $x_i$ be an element of $K(X)$ and let $n_i$ be an integer.
+For each $i\in \{1,\ldots, m\}$ let $P_i\in X$, let $\mathcal{P}_i$ be the corresponding maximal ideal of $\cO_{P_i}$, let $x_i$ be an element of $K(X)$ and let $n_i$ be an integer.\todo{fix line break}
 Then there is an $x\in K(X)$ such that $v_{P_i}(x-x_i) \geq n_i$ for all $i$.
 \end{lem}
 
 \begin{rem}
-This result can be strengthened to also say that $v_P(x) \geq 0$ for any $P\notin \{P_1,\ldots ,P_m\}$.
+This result can be strengthened to also say that $v_P(x) \geq 0$ for any $P\notin \{P_1,\ldots ,P_m\}$.\todo{fix line break}
 We will not prove this here, for the sake of brevity, but the proof can be found in \cite[Ch. 1, \S 3]{localfields}.
 \end{rem}
 \begin{proof}
 We let $R:= \cO_{P_i} \cap \ldots \cap \cO_{P_m}$, and we let $\mathcal{P}_i' := \mathcal{P}_i \cap R$.
-To start we prove the lemma in the case that the $x_i$ are in $R$.
+We first prove the lemma assuming that $x_i \in R$.
  We may increase the $n_i$ such that $n_i\geq 0$ for all $i$.
  By linearity we may assume that $x_2 = \ldots = x_m = 0$, since if we find an element for $x_1$ in this instance, we can similarly find an element for each $i$ and add them.
 Let $I = {\mathcal{P}_1'}^{n_1} + {\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m}$.
@@ -279,15 +279,15 @@ Since ${\mathcal{P}_1'}^{n_1} \subseteq {\mathcal{P}_1}^{n_1}$ and ${\mathcal{P}
  
  In general one can write $x_i = \frac{a_i}{b}$ for $a_i\in R$ and $b\in R\backslash \{0\}$, and $x$ can be represented as $\frac{a}{s}$.
  Then we require that $v_{P_1}(a-a_i) \geq n_i + v_{P_i}(s)$ for all $i$ and that $v_P(a)_ \geq v_P(s)$ for all $P\notin \{P_1,\ldots ,P_m\}$.
- But after adding the points $P$ for which $v_P(s)$ is negative, this is precisely what we described above.
-\end{proof}
+ But after adding the points $P$ for which $v_P(s)$ is negative, this is precisely what we described in the statement of the lemma.
+ \end{proof}
 
 \begin{lem}\label{pidlemma}
  Let $Q\in Y$, and let $\cO_{X,Q}'$ be the integral closure of $\cO_{X,Q}$ in $K(X)$.
  Then $\cO_{X,Q}'$ is a principal ideal domain.
 \end{lem}
 \begin{proof}
- By \cite[Cor. III.3.5]{stichtenoth}, we have $\cO_{X,Q}' = \{x\in K(X)|v_P(x) \geq 0 \ {\rm for all} \ P\in \pi^{-1}(Q)\}$.
+By \cite[Cor. III.3.5]{stichtenoth}, we have $\cO_{X,Q}' = \{x\in K(X)|v_P(x) \geq 0 \ \text{for all} \ P\in \pi^{-1}(Q)\}$.
  Let $I$ be an ideal of $\cO_{X,Q}'$.
  If we let $\{P_1,\ldots, P_l\} = \pi^{-1}(Q)$ then we can choose $x_i$ for $1\leq i \leq l$ such that $v_{P_i}(x_i) \leq v_{P_i}(y)$ for all $y\in I$.
  By the Approximation Lemma there exist $z_i$ such that $v_P (z_i) = 0$ if $P=P_i$ and $v_{P_j}(z_i) > v_{P_j}(z_j)$ for $j\neq i$.
@@ -301,15 +301,15 @@ Hence $z\in \cO_{X,Q}'$ and so $y = xz \in x\cO_{X,Q}'$, completing the proof.
 
 
 \begin{prop}\label{factsaboutc'}
-Let $Q\in Y$. 
+Fix $Q\in Y$. 
  \begin{enumerate}
   \item $C_Q$ is an $\cO_{X,Q}'$-module, and $\cO_{X,Q}' \subseteq C_Q$.
   \item If $\{z_1,\ldots ,z_n\}$ is a (necessarily integral) basis of $\cO_{X,Q}'$ over $\cO_{X,Q}$, then 
   \[
    C_Q = \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*,
   \]
-where $z_i^*$ is the dual basis of $z_i$ for $1\leq i \leq n$.
-  \item There is a $t\in K(X)$ such that $C_Q = t\cdot \cO_{X,Q}'$ (note that this $t$ depends on the choice of $Q$).
+where $z_i^*$ is the dual basis of $z_i$ for $1\leq i \leq n$.\todo{reference dual basis defined earlier}
+\item There is a $t\in K(X)$ such that $C_Q = t\cdot \cO_{X,Q}'$ (note that $t$ depends on the choice of $Q$).
   Moreover, $v_P(t) \leq 0$ for all $P\in \pi^{-1}(Q)$, and if $t'\in K(X)$ then $C_Q=t'\cdot \cO_{X,Q}'$ if and only if $v_P(t) = v_P(t')$ for all $P\in \pi^{-1}(Q)$.
 
  \end{enumerate}
