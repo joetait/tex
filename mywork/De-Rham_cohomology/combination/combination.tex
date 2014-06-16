@@ -97,14 +97,14 @@ We take $X$ to be a smooth, projective, connected curve over an algebraically cl
 Furthermore, we let $G$ denote the automorphism group of $X$ and we let $K(X)$ denote the function field of $X$.
 We then define $\Omega_{K(X)}$ to be the module of differentials of $K(X)$ over $k$.
 We also let $\underline{\Omega}_{K(X)}$ and $\underline{K}(X)$ denote the constant sheaves of $\Omega_{K(X)}$ and $K(X)$ respectively.
-The following lemma gives us a useful description of $H^1(X,\Omega_X)$.
+The following lemma gives us a useful description of $H^1(X,\Omega_X)$ and $\hone$.
 \begin{lem}\label{exactsequencelemma}
 The following sequences are exact:
 \begin{equation}\label{dualitysesfunctions}
 0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \xrightarrow{\delta} \hone \ra  0;
 \end{equation}
 \begin{equation}\label{dualitysesdifferentials}
-0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta} H^1(X,\Omega_X) \ra 0.
+0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta'} H^1(X,\Omega_X) \ra 0.
 \end{equation}
 \end{lem}
 \begin{rem}
@@ -115,7 +115,7 @@ The short exact sequence
 \begin{equation}\label{serredualitysesfunctions}
 0 \rightarrow \cO_X \rightarrow \underline{K}(X) \rightarrow \underline{K}(X)/\cO_X \rightarrow 0
 \end{equation}
-is a flasque resolution of $\cO_X$ (see \cite[Chap II, ex. 1.16]{hart}).
+is a flasque resolution of $\cO_X$ (see \cite[Chap II, ex. 1.16 (a)]{hart}).
 
 We view the module $K(X)/\cO_{X,P}$ as a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
 Hence for each $P\in X$ we have the induced sheaf $i_*\left( K(X)/\cO_{X,P} \right)$ on $X$.
@@ -125,7 +125,7 @@ If we consider the direct sum of these induced sheaves over all points $P\in X$ 
 \end{equation}
 
 
-To explain the isomorphism in \eqref{sheafisomorphism} we first construct a map from $\underline{K}(X)/\cO_{X,P}$ in to the product $\prod_{P \in X} i_*\left({K(X)}/\cO_{X,P}\right)$, and then show that this map has finite support.
+To explain this isomorphism we first construct a map from $\underline{K}(X)/\cO_{X,P}$ in to the product $\prod_{P \in X} i_*\left({K(X)}/\cO_{X,P}\right)$, and then show that this map has finite support.
 
 Given $i\colon \{P\} \hookrightarrow X$ we have the following equalities
 \begin{align*}
@@ -134,26 +134,26 @@ i^{-1}\left(\underline{K}(X)/\cO_X\right) & = \left(\underline{K}(X)/\cO_X\right
 & = K(X)/\cO_{X,P}.
 \end{align*}
 It follows that for any $P \in X$ we can map $f \in \underline{K}(X)/\cO_X$ to $i_*i^{-1}(f) \in i_* \left( K(X)/\cO_{X,P} \right)$.
-Recall that for any $f \in K(X)$then $f$ lies in $\cO_{X,P}$ for all but a finite number of points $P \in X$.
+Recall that for any $f \in K(X)$ then $f$ lies in $\cO_{X,P}$ for all but a finite number of points $P \in X$.
 Hence the image of $f$ in $\prod_{P \in X} i_*\left(K(X)/\cO_{X,P}\right)$ is zero in almost all factors.
 From this the isomorphism in \eqref{sheafisomorphism} follows.
 
-Replacing $\underline{K}(X)/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{serredualitysesfunctions} yields
+Replacing $\underline{K}(X)/\cO_{X,P}$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{serredualitysesfunctions} yields
 \begin{equation}\label{resolutionofox}
-0 \ra \cO_X \ra \underline{K}(X) \ra \bigoplus_{P \in X}i_* \left( K(X)/\cO_{X,P} \right)
+0 \ra \cO_X \ra \underline{K}(X) \ra \bigoplus_{P \in X}i_* \left( K(X)/\cO_{X,P} \right) \ra 0
 \end{equation}
 Taking cohomology then yields the exact sequence \eqref{dualitysesfunctions}.
 
 We can also tensor \eqref{resolutionofox} with $\Omega_X$ to get
 \begin{equation}\label{serredualitydifferentials}
-0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \bigoplus_{P \in X} i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right).
+0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \bigoplus_{P \in X} i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right) \ra 0.
 \end{equation}
 Taking cohomology of this then yields the second exact sequence, \eqref{dualitysesdifferentials}.
 \end{proof}
 
 \begin{rem}
-When considering elements of $H^1(X,\Omega_X)$ as elements in the cokernel of the map $\Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$ above, we will denote them by $\overline{(\omega_P)}_{P \in X}$.
-Similarly, when considering elements of $\hone$ as elements of the cokernel of the map $K(X) \ra \bigoplus_{P \in X}K(X)/\cO_{X,P}$, we will denote them by $\overline{(f_P)}_{P \in X}$.
+When considering elements of $H^1(X,\Omega_X)$ as elements of the cokernel of the map $\Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$ above, we will denote them by $\overline{(\omega_P)}_{P \in X}$.
+Similarly, when we are considering elements of $\hone$ as elements of the cokernel of the map $K(X) \ra \bigoplus_{P \in X}K(X)/\cO_{X,P}$, we will denote them by $\overline{(f_P)}_{P \in X}$.
 \end{rem}
 
 For any $P\in X$ the residue map $\res_P \colon \Omega_{K(X)} \ra k$ is defined by the following properties:
@@ -172,14 +172,14 @@ The residue theorem \cite[Chap. III, Thm. 7.14.2]{hart} states that $\sum_{P\in 
 \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P} \ra k, \quad (\omega_P)_{P \in X} \mapsto \sum_{P\in X} \res_P(\omega_P)
 \]
 vanishes on the image of $\Omega_{K(X)}$.
-It follows that given some $\overline{(\omega_P)}_{P \in X} \in H^1(X,\Omega_X)$, mapped to by some $(\omega_P)_{P \in X} \in \bigoplus_{P \in X} \Omega_K(X)/\Omega_{X,P}$, we can define the trace map $t$ to be:
+It follows that given some $\overline{(\omega_P)}_{P \in X} \in H^1(X,\Omega_X)$, mapped to by $(\omega_P)_{P \in X} \in \bigoplus_{P \in X} \Omega_K(X)/\Omega_{X,P}$, we can define the trace map $t$ to be:
 \[
 t \colon H^1\left(X, \Omega_X\right) \ra k,\quad \overline{(\omega_P)}_{P \in X}  \mapsto \sum_{P \in X} \res_P(\omega_P).
 \]
 
 
 We now use the trace map to define a pairing between the $k$-vector spaces $\hone$ and $\hzero$.
-Since $\Omega_{K(X)}$ is a $K(X)$-module, we can define a map 
+Since $\Omega_X$ is a $\underline{K}(X)$-module, we can define a map 
 \begin{equation}\label{productmap}
 \hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto ( \overline {(f  \omega)_P})_{P \in X},
 \end{equation}
@@ -187,7 +187,7 @@ where $(f\omega)_P$ denotes $f_p\omega_p$, the product of the germ of $\omega$ i
 
 We now combine the product map in \eqref{productmap} with the trace map $t$ to get a map 
 \[
- \hzero \times \hone \ra k,\quad (\omega, \overline{(f_P)}_{P \in X}) \mapsto \langle \omega, \overline{(f_P)}_{P \in X} \rangle := t \left( \overline{(f \omega)_P} \right)_{P \in X}.
+ \hzero \times \hone \ra k,\quad \left(\omega, \overline{(f_P)}_{P \in X}\right) \mapsto \left\langle \omega, \overline{(f_P)}_{P \in X} \right\rangle := t \left( \overline{(f \omega)_P} \right)_{P \in X}.
 \]
 
 \begin{thm}\label{serredualitytheorem}
@@ -204,12 +204,12 @@ The maps $\psi$ and $\theta$ are isomorphisms and are dual to each other: in par
 
 
 \section{\cech cohomology}
-We now assume that $X$ is a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$, still over $k$.
+We now assume that $X$ is a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$.
 We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$.
 In this section we describe $\hone$ and $\hzero$ concretely for such an $X$, using \cech cohomology.
 
-By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that, if we use an affine cover, the first \cech cohomology group of $\cO_X$ will be isomorphic to $\hone$.
-We define $U_a = X \backslash \pi^{-1}(a)$ for any $a \in \mathbb P_k^1$ and we let ${\cal U}$ be the affine cover of $X$ formed by $U_0$ and $U_\infty$.
+By Leray's theorem \cite[Thm 5.2.12]{liu} and Serre's affineness criterion \cite[Thm 5.2.23]{liu} we know that the first \cech cohomology group of $\cO_X$ will, if we use an affine cover, be isomorphic to $\hone$.
+We define $U_a := X \backslash \pi^{-1}(a)$ for any $a \in \mathbb P_k^1$ and we let ${\cal U}$ be the affine cover of $X$ formed by $U_0$ and $U_\infty$.
 Given any sheaf $\cal F$ on $X$ we have the \cech differential $\check{d}\colon {\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, defined by $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
 In general we will suppress the notation denoting the restriction map.
 Via this differential we have the following cochain complex
@@ -229,7 +229,7 @@ H^1(X,\Omega_X) \cong \frac{\Omega_X(U_0 \cap U_\infty)}{\Ima(\check{d})} = \fra
 
 We now describe how the trace map acts on $\check{H}^1(X,\Omega_X)$.
 \begin{lem}\label{tracemaplemma}
-For any $\bar \omega \in \check{H}^1\left (\cU, \Omega_X\right )$, which has $\omega$ as a representative in $\Omega_X(U_0 \cap U_\infty)$, we have the following equality:
+For any $\bar \omega \in \check{H}^1\left (\cU, \Omega_X\right )$, which has $\omega$ as a representative in $\Omega_X(U_0 \cap U_\infty)$,\todo{Should this be rephrased, since $\omega$ doesn't have a residue at $P \in \pi^{-1}(\infty)$} we have the following equality:
 \[
 t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
 \]
@@ -297,13 +297,12 @@ quotiented by the subspace
 \end{equation}
 
 We wish to compute a $k$-basis of $\derhamhone$ in order to study its $k[G]$-module structure.
-The following lemma shows that $\derhamhone$ fits in to a short exact sequence which we will use to compute the $k$-basis.
+The following lemma shows that $\derhamhone$ fits in to a short exact sequence with $\hone$ and $\hzero$ which we will use to compute the $k$-basis.
 \begin{prop}\label{ses}
 The following is a short exact sequence
 \begin{equation}\label{equationses}
-0 \ra H^0(X,\Omega_X) \xrightarrow{i} \derhamhone \xrightarrow{p} H^1(X,\cO_X) \ra 0, 
+0 \ra H^0(X,\Omega_X) \rightarrow \derhamhone \rightarrow H^1(X,\cO_X) \ra 0.
 \end{equation}
-where $i \colon \omega \mapsto (\omega, \omega, 0)$ and $p \colon (\omega_0, \omega_\infty, f_{0 \infty}) \to f_{0 \infty}$.
 \end{prop}
 \begin{proof}
 Let $T$ be the total complex of \eqref{bicomplex}.
@@ -326,16 +325,26 @@ giving rise to the following long exact sequence
 The map $H^0(X,\cO_X) \ra \hzero$ is the map $f \mapsto df$.
 Since the only globally holomorphic functions on $X$ are constant functions, it follows that this is the zero map, and hence $\hzero \ra \derhamhone$ is injective.
 
-Since \eqref{longexactsequence} is exact, $p$ is surjective if and only if $\alpha \colon H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k)$ is injective.
+Since \eqref{longexactsequence} is exact, $p \colon \cechderhamhone(\cU) \ra \cechhone(\cU)$ is surjective if and only if $\alpha \colon H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k)$ is injective.
 Now $H^1(X,\Omega_X)$ is isomorphic to $k$ via the residue map \cite[Chap. III, Thm. 7.14.1]{hart}, and if we can show that this isomorphism factors through $\alpha$ it will follow that $\alpha$ is injective.
 Considering the \cech cohomology constructions of $H^1(X,\Omega_X)$ and $H^2_{\text {dR}}(X/k)$, it suffices to show that the residue map is zero on $\Ima \left( d \colon \cO_X(U_0 \cap U_\infty) \ra \Omega_X(U_0 \cap U_\infty) \right)$.
-This follows from \cite[Chap. III, Thm. 7.14.1 (b)]{hart}, which says that $\res_P(df)=0$ for any $f \in \cO_X(U_0 \cap U_\infty)$.
+This follows from \cite[Chap. III, Thm. 7.14.1 (b)]{hart}, which says that if $f \in \cO_X(U_0 \cap U_\infty)$ then $\res_{P}(df) =0$ for any $P \in _0 \cap U_\infty$.
 Hence the residue isomorphism factors through $\alpha$, and $p$ is surjective.
 \end{proof}
+\begin{rem}
+If we replace the terms in \eqref{equationses} by their \cech cohomology representatives then we can describe the maps concretely as
+\[
+i\colon \check{H}^0(\cU,\Omega_X) \ra \cechderhamhone(\cU), \quad \omega \mapsto (\omega, \omega, 0)
+\]
+and
+\[
+p \colon \cechderhamhone(\cU) \ra \cechhone\quad (\omega_0, \omega_\infty, f_{0 \infty}) \mapsto f_{0, \infty}.
+\]  
+\end{rem}
 
 \section{Basis of $\hone$ and $\derhamhone$}
 
-In this section we will give an explicit basis of $\hone$ and $\derhamhone$, using the results of the previous sections along with methods similar to those found in \cite{canonicalrepresentation}.
+In this section we will give an explicit basis of $\hone$ and $\derhamhone$, using the results of the previous sections along with methods similar to those found in \cite{canonicalrepresentation}.\todo{remove this and mention in introduction/overview section(s)}
 
 Since $X$ is a hyperelliptic curve, it follows that if $p \neq 2$ the extension $K(X)$ of $K(\mathbb P_k^1) = k(x)$ will be $k(x,y)$ where $y$ satisfies
 \begin{equation}\label{definingequationpnot2}
@@ -364,7 +373,7 @@ D_a=
 \end{cases}
 \end{equation*}
 
-If $p \neq 2$ then the ramification points are the zeroes of $f(x)$.
+If $p \neq 2$ then the ramification points of $\pi$ are the zeroes of $f(x)$.
 We suppose that 
 \[
 f(x) = \prod_{i=1}^{d_f} (x-a_i) = x^{d_f} + b_{d_f - 1}x^{d_f-1} \ldots + b_0,
@@ -407,7 +416,7 @@ whilst if $p=2$ then the divisor of $H(x)$ is
 \begin{equation}\label{divisorofH}
 \di (H(x))  = R - (g+1)D_\infty. 
 \end{equation}
-We also compute the divisor of $dy$ when $p=2$.
+We also compute $dy$ in terms of $x$ and $dx$ when $p=2$.
 We start by noting that when we take the differential of \eqref{definep=2} we obtain
 \[
 dF(x) = d\left(y^2 + yH(x) \right) = d(yH(x)) = H(x)dy + ydH(x)
@@ -419,7 +428,7 @@ dy = \frac{F(x)'-yH(x)'}{H(x)}dx.
 
 Finally, we describe the divisor of $y$ when $p=2$.
 In order to do this we need to distinguish the zeroes of $F(x)$.
-Suppose that $F(x)$ has $l \leq \deg(F(x))$ distinct zeroes, and let $\gamma_1, \ldots, \gamma_l \in k \subseteq \mathbb P_k^1$ be these zeroes.
+Suppose that $F(x)$ has $l \leq \deg(F(x))$ distinct zeroes, and let $\gamma_1, \ldots, \gamma_l \in \mathbb{A}_k^1 \subseteq \mathbb P_k^1$ be these zeroes.
 Then if $\gamma_i$ is a branch point let $Q_i = (\gamma_i, 0)$ be the unique point in the pre-image $\pi^{-1}(\gamma_i)$.
 If $\gamma_i$ is not a branch point then let $Q_i = (\gamma_i, 0)$ and $Q_i' = (\gamma_i, H(\gamma_i))$ be the unique points that form the pre-image $\pi^{-1}(\gamma_i)$.
 Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in \NN$.
@@ -440,10 +449,10 @@ If $\infty$ is not a branch point, then, after possibly swapping the notations f
 \begin{proof}
 We first show that $\di_0(y)$, the divisor of the zeroes of $y$, is $\sum_{i=1}^l m_i [Q_i]$.
 
-It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{definep=2} i.e.~in $U_\infty$.
+It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{definep=2} (\ie~in $U_\infty$).
 Suppose $P\in U_\infty$.
 If $\left. F \right|_P \neq 0$ then it follows that $y|_P \neq 0$, since $F(x) = y (y + H(x))$.
-Hence $\di_0(y)$ has zero coefficients for any point in $U_\infty\backslash \{Q_1, \ldots, Q_l \}$.
+Hence the coefficient of $\di_0(y)$ for any point in $U_\infty\backslash \{Q_1, \ldots, Q_l \}$ is zero.
 
 Suppose that $P= Q_i = (\gamma_i, 0)$ is an unramified point in $U_\infty$.
 Then $H(\gamma_i) \neq 0$ and $\left. y \right|_P = 0$, so $y + H(x)$ is a unit at $P$.
@@ -479,7 +488,7 @@ Since $y$ can only have a pole at $P_\infty$, we conclude that the degree of thi
 \]
 
 If $\infty$ is not a branch point then there are two points at which $y$ may have a pole, namely $P_\infty$ and $P_\infty'$.
-We consider three cases, noting that $\ord_{P_\infty}(y + H(x)) = \ord_{P_\infty'}(y)$, since $y \mapsto y+H(x)$ is an automorphism.
+We consider three cases, noting that $\ord_{P_\infty}(y + H(x)) = \ord_{P_\infty'}(y)$, since the hyperelliptic involution of $X$, denoted $\sigma$, acts on $y$ by $y \mapsto y+H(X)$ and $\sigma(P_\infty) = P_\infty'$.  
 
 
 Firstly, we suppose that $\ord_{P_\infty}(y) < -(g+1)$.
@@ -534,7 +543,7 @@ We then deduce from Lemma \ref{tracemaplemma} that
 \[
 \left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = \res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P_\infty'}\left( \frac{yx^{i-j}}{H(x)} dx \right).
 \]
-Then recall that in characteristic two we have an involution $\sigma \colon X \ra X$ given by $(x,y) \mapsto (x, y + H(x))$, and that $\res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega)$ for any $P \in X$ and $\omega\in \hzero$.
+Then recall that in characteristic two the hyperelliptic involution $\sigma \colon X \ra X$ is given by $(x,y) \mapsto (x, y + H(x))$, and that $\res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega)$ for any $P \in X$ and $\omega\in \hzero$.
 Then it follows that
 \begin{align*}
 \sum_{P \in \pi^{-1}(\infty)} \res_P \left( \frac{yx^{i-j}}{H(x)}dx \right) & = \res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)} dx \right) + \res_{P_\infty'}\left( \frac{yx^{i-j}}{H(x)} dx\right) \\
@@ -559,7 +568,7 @@ Hence $\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right\rangle \neq 0$ in t
 We also need to check that if $j \neq i+1$ then $\left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = 0$.
 Indeed, if $j-i \geq 2$ then clearly $\frac{yx^{i-j}}{H(x)}dx$ does not have a pole at $P_\infty$.
 On the other hand, if $j-i \leq 0$ then the differential $\frac{yx^{i-j}}{H(x)}dx$ is regular on $U_\infty$, and hence the residue on this set is zero.
-Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem the residue of $\frac{yx^{i-j}}{H(x)}dx$ at $P_\infty$ is also zero.
+Since $\{P_\infty\} = X \backslash U_\infty $ it follows from the residue theorem the residue of $\frac{yx^{i-j}}{H(x)}dx$ at $P_\infty$ is also zero.
 \end{proof}
 
 %Mittag-Leffler style corollary
@@ -588,7 +597,7 @@ Via a diagram chase on $- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g 
 \begin{equation}\label{immediate}
 \left(0, \left(- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) \right)_P\right) \in \bigoplus_{P \in U_0}K(X)/\cO_{X,P} \times \bigoplus_{P \in U_\infty}K(X)/\cO_{X,P}.
 \end{equation}
-Since $(\alpha_ix^i/y$ is regular on $U_\infty \cap U_0$, \eqref{immediate} is equivalent to $\left(0, (g_P)_{P \in U_\infty}\right)$, where
+Since $\alpha_ix^i/y$ is regular on $U_\infty \cap U_0$, \eqref{immediate} is equivalent to $\left(0, (g_P)_{P \in U_\infty}\right)$, where
 \[
 g_P = \begin{cases}
     - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) & \quad \text{if}\ P \in \pi^{-1}(\infty) \\
@@ -596,11 +605,11 @@ g_P = \begin{cases}
 \end{cases}
 \]
 Clearly $(0, g_P) \in \ker (d_3) = \bigoplus_{P \in X} K(X)/\cO_{X,P}$, and $\delta((f_P)_{P \in X} - (g_P)_{P \in X}) = 0$, by choice of $(g_P)_{P \in X}$.
-By the exactness of \eqref{dualitysesfunctions} it follows that there exists an $f \in K(X)$ which has laurent tail $f_P - g_P$ at each $P \in X$, as required in the statement of the corollary.
+By the exactness of \eqref{dualitysesfunctions} it follows that there exists an $f \in K(X)$ which has laurent tail $f_P - g_P$ at each $P \in X$.
 \end{proof}
 
 
-In order to state a basis of $\derhamhone$, as well as to shorten the proof of the following theorem, we define the following polynomials. 
+In order to state a basis of $\derhamhone$, as well as to shorten the proof of the following theorem, we fix some notation. 
 We suppose that $1 \leq i \leq g$.
 Then when $p\neq 2$ we define
 \[
@@ -612,7 +621,7 @@ S_i(x,y) := xF'(x) + y(xH'(x) + iH(x))\in k[x]\oplus yk[x] \subseteq k(x,y).
 \end{equation}
 
 We now decompose these polynomials into two parts, which will be used in the sequel.
-Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x)\in k(x)$ and $\phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\psi_i (x)$ is at most $g+1$ and $x^{g+2}$ divides $\phi_i(x)$.
+Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x), \phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\psi_i (x)$ is at most $g+1$ and $x^{g+2}$ divides $\phi_i(x)$.
 
 For the second case we define $A_{j,i} \in k$ for $1 \leq j \leq 2g+2$, and $B_{k,i} \in k$ for $0\leq k \leq g+1$ by the equation
 \[
@@ -721,19 +730,19 @@ We briefly study the action of $\sigma$ on the elements \eqref{one} (when $p\neq
 When $p \neq 2$ then $\sigma$ acts by $(x,y) \mapsto (x,-y)$.
 If we let
 \[
-\nu_i = \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right)
+\gamma_i = \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right)
 \]
 then 
 \begin{equation*}
-\sigma(\nu_i) = -\nu_i.
+\sigma(\gamma_i) = -\gamma_i.
 \end{equation*}
 Similarly, if 
 \[
-\eta_i = \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0 \right)
+\lambda_i = \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0 \right)
 \]
 then 
 \[
-\sigma(\eta_i) = - \eta_i.
+\sigma(\lambda_i) = - \lambda_i.
 \]
 Hence $\sigma$ acts by multiplication with $-1$ on $\derhamhone$.
 \end{rem}
@@ -896,7 +905,8 @@ Thus we have completed the proof.
 \section{Splitting of the short exact sequence}
 
 
-As in the previous section, we assume $X$ is a hyperelliptic curve of genus $g$ over an algebraically closed field $k$ characteristic $p \neq 2$, and we retain the relevant notation introduced.
+As in the previous section, we assume $X$ is a hyperelliptic curve, but now with genus $g \geq 2$.
+Furthermore, we now assume that $\cha(k) \neq2$.
 
 In the previous section (Theorem \ref{basis}) we found a basis for the de Rham cohomology of any hyperelliptic curve using \cech cohomology, with respect to the cover $\cU = \{ U_0 , U_\infty\}$.
 We let $\lambda_i$ and $\gamma_i$ denote the elements of this basis by defining
@@ -924,7 +934,7 @@ and
 t_i(x) := \sum_{k=i}^{g} (-1)^{g-k}\binom{g}{k} a^{g-k} x^k,
 \]
 splitting the polynomial $(x-a)^g$ in to two parts.
-The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
+The following proposition allows us to compute how some elements of $G$ ct on $\derhamhone$.
 
 
 \begin{prop}\label{basis22}
@@ -962,7 +972,7 @@ Firstly, by \eqref{divxp=2} and \eqref{differentialdivisor},
 & = \di_0(r_i(x)) +R -iD_0 - gD_a,
 \end{align*}
 which is non-negative on $U_0 \cap U_a$.
-On the other hand, by \eqref{divxp=2} and \eqref{differentialdivisor},
+On the other hand, also by \eqref{divxp=2} and \eqref{differentialdivisor},
 \begin{align*}
 \di \left( f_{a \infty i} \right) & = \di \left( \frac{t_i(x)y}{x^i(x-a)^g} \right) \\
 & = \di\left(\frac{t_i(x)}{x^i}\right) + \di(y) - g\di(x-a) \\
@@ -1000,7 +1010,7 @@ and
 \]
 Lastly, if $\deg(f(x)) = 2g+2$ then the term of degree $2g+i+2$ in $-\phi_i(x)r_i(x)(x-a)$ is
 \begin{align*}
--((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
+-\left((2g+2)a_{2g+2}x^{2g+2}-\right.&\left.2ia_{2g+2}x^{g+2}\right)\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
 &  = 2(-1)^{g-i+2}\left( (g-i+1)\binom{g}{i-1} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
 & = 2(-1)^{g-i} \left( \frac{g!}{(i-1)!(g-i)!} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
 & = 2i(-1)^{g-i}\binom{g}{i}a_{2g+2}x^{2g+i+2},
@@ -1008,8 +1018,8 @@ Lastly, if $\deg(f(x)) = 2g+2$ then the term of degree $2g+i+2$ in $-\phi_i(x)r_
 which cancels with the term of the same degree in $2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$.
 Since these terms cancel, we again have the that the degree of \eqref{numerator} is at most $2g+i+1$, and \eqref{longequation} has no pole(s) at the point(s) in $\pi^{-1}(\infty)$.
 
-Finally, we show that \eqref{numerator} is divisible by $x^{i+1}$.
-By definition $x^{g+2} | \phi_i(x)$, and since $i \leq g$ it follows that $x^{i+1}|\phi_i(x)r_i(x)(x-a)$.
+We now show that \eqref{numerator} is divisible by $x^{i+1}$.
+By definition $x^{g+2} | \phi_i(x)$, and hence for $i \leq g$ it follows that $x^{i+1}|\phi_i(x)r_i(x)(x-a)$.
 On the other hand, the lowest degree terms of $2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ and $\psi_i(x)t_i(x)(x-a)$ which can be non-zero are, respectively,
 \[
  2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i 
@@ -1085,38 +1095,38 @@ df_{a \infty i} = df_{0 \infty i} - df_{0 a i} = \omega_{0 i} - \omega_{\infty i
 \]
 \end{proof}
 
-We note that for any $\sigma \in \aut(X)$ the following diagram commutes,
+We note that for any $\tau \in \aut(X)$ the following diagram commutes,
 \[
 \begin{array}{ccc}
-X & \xrightarrow[\sigma] & X \\
+X & \xrightarrow[\tau] & X \\
 \downarrow\pi & & \downarrow\pi \\
-\mathbb P^1_k & \xrightarrow[\sigma] & \mathbb P_k^1
+\mathbb P^1_k & \xrightarrow[\tau] & \mathbb P_k^1
 \end{array}
 \]
-since the hyperelliptic involution $j$ is in the centre of $\aut(X)$.
-Hence, if $a = \sigma(0)$, the following diagram also commutes:
+since the hyperelliptic involution $\sigma$ is in the centre of $\aut(X)$.\todo{reference liu}
+Hence, if $a = \tau(0)$, the following diagram also commutes:
 \[
 \begin{array}{ccc}
 \derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\rho} & \cechderhamhone(\cU'')  \\
-\sigma^*\downarrow & ~ & \rho'\downarrow  \\
-\derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\sigma^*} & \cechderhamhone(\cU')
+\tau^*\downarrow & ~ & \rho'\downarrow  \\
+\derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\tau^*} & \cechderhamhone(\cU')
 \end{array}
 \]
 Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordinates and on the second, third and sixth coordinates respectively.
 
 
-Clearly if $\sigma^* \colon x \mapsto x+a$ then $a = \sigma(0)$, and we assume in what follows that $\sigma$ is such an automorphism.
+Clearly if $\tau^* \colon x \mapsto x+a$ then $a = \tau(0)$, and we assume in what follows that $\tau$ is such an automorphism.
 \begin{lem}
-The action of $\sigma^*$ on $y$ is given by $\sigma^*(y) = y$ or $\sigma^*(y) = -y$.
+The action of $\tau^*$ on $y$ is given by $\tau^*(y) = y$ or $\tau^*(y) = -y$.
 \end{lem}
 \begin{proof}
 Since $y^2 \in k(x)$ then there must exist $g_1(x), g_2(x) \in k(x)$ such that 
 \begin{equation*}
-\sigma^*(y) = g_1(x)y + g_2(x) \in k(x,y).
+\tau^*(y) = g_1(x)y + g_2(x) \in k(x,y).
 \end{equation*}
 Hence
 \begin{equation}\label{easylemma}
-f(x+a) = \sigma^*(y^2) = (\sigma^*(y))^2 = g_1(x)^2f(x)+2g_1(x)g_2(x)y + g_2(x)^2.
+f(x+a) = \tau^*(y^2) = (\tau^*(y))^2 = g_1(x)^2f(x)+2g_1(x)g_2(x)y + g_2(x)^2.
 \end{equation}
 Firstly, note that if neither $g_1(x)$ nor $g_2(x)$ are zero then
 \[
@@ -1125,18 +1135,18 @@ y = \frac{f(x+a) - g_1(x)^2f(x) - g_2(x)^2}{2g_1(x)g_2(x)},
 which contradicts the fact $K(X)$ is a degree two extension of $k(x)$.
 Hence one of $g_1(x)$ or $g_2(x)$ must be zero.
 
-If $g_1(x) = 0$ then $\sigma^*$ would not be an automorphism, since $y$ would not be in the image.
-Hence $\sigma^*(y) = g_1(x)y$.
+If $g_1(x) = 0$ then $\tau^*$ would not be an automorphism, since $y$ would not be in the image.
+Hence $\tau^*(y) = g_1(x)y$.
 Also, by comparing the degrees in \eqref{easylemma} we see that $\deg(g_1(x)) = 0$, and then by comparing coefficients in the same equation we see that $g_1(x)^2 = 1$.
-Hence $\sigma^*(y) = \pm y$.
+Hence $\tau^*(y) = \pm y$.
 \end{proof}
 \begin{rem}
-If $\sigma^*(y) = -y$ we can, without loss of generality, replace $\sigma$ by $\sigma \circ j$, where $j$ denotes the hyperelliptic involution.
-Hence we will assume throughout the rest of the paper that $\sigma^*(y) = y$.
+If $\tau^*(y) = -y$ we can, without loss of generality, replace $\tau$ by $\tau \circ \sigma$, where $\sigma$ denotes the hyperelliptic involution.
+Hence we will assume throughout the rest of the paper that $\tau^*(y) = y$.
 \end{rem}
 
 \begin{ex}
-If $2g+1$ is an odd prime then exists an automorphism $\sigma$ of the form $\sigma\colon (x,y) \mapsto (x+a,y)$ if and only if $p=2g+1$ and $f(x) = x^p - a^{p-1}x + a_0$, for some $a_0 \in k$.
+If $2g+1$ is an odd prime then exists an automorphism $\tau$ of the form $\tau\colon (x,y) \mapsto (x+a,y)$ if and only if $p=2g+1$ and $f(x) = x^p - a^{p-1}x + a_0$, for some $a_0 \in k$.
 In this case we may assume that $a_0 = 0$, since if it doesn't we can apply the automorphism $x \mapsto x+b, y\mapsto y$ to $K(X)$, where $b$ is a root of $f(x)$.
 Moreover, given an equation of the form $y^2 = x^p - a^{p-1}x$, we can apply automorphism of $K(X)$ to replace the coefficient $a^{p-1}$ by $1$, namely $x \mapsto ax, y \mapsto a^{\frac{p}{2}}y$.
 Hence we see that all such curves are isomorphic to those defined by $y^2 = x^p - x$.
@@ -1144,17 +1154,17 @@ In particular, it follows from \cite{canonicalrepresentation} that the short exa
 \end{ex}
 
 
-We now describe the action of $\sigma^*$ on $\lambda_i$.
+We now describe the action of $\tau^*$ on $\lambda_i$.
 \begin{lem}
 For each $i \in \{ 0, \ldots, g-1\}$ then 
 \[
-\sigma^*(\lambda_i) = \sum_{k = 0}^i \binom{i}{k}a^{i-k}x^k.
+\tau^*(\lambda_i) = \sum_{k = 0}^i \binom{i}{k}a^{i-k}x^k.
 \]
 \end{lem}
 \begin{proof}
-Since $\sigma^*$ acts trivially on $y$, it follows that
+Since $\tau^*$ acts trivially on $y$, it follows that
 \[
-\sigma^*\left( \frac{x^i}{y} \right) = \sum_{k=0}^i \binom{i}{k}a^{i-k}\frac{x^k}{y}.
+\tau^*\left( \frac{x^i}{y} \right) = \sum_{k=0}^i \binom{i}{k}a^{i-k}\frac{x^k}{y}.
 \]
 The statement follows from this.
 \end{proof}
@@ -1169,20 +1179,20 @@ Then the short exact sequence of $k[G]$-modules
 does not split.
 \end{thm}
 \begin{proof}
-We suppose that the sequence does split, and that $s \colon \hone \ra \derhamhone$, given by $s \colon \bar\gamma_i \mapsto \gamma_i$, is the splitting map.
+We suppose that the sequence does split, and that $s \colon \hone \ra \derhamhone$ is the splitting map.
 
-We now examine the action of $\sigma^*$ on $\gamma_g$ and $\bar \gamma_g$.
+We now examine the action of $\tau^*$ on $\gamma_g$ and $\bar \gamma_g$.
 We first look at the sixth entry in $\nu_g$ from Proposition \ref{basis22}.
 This entry is
 \[
 \frac{t_g(x)y}{x^g(x-a)^g} = \frac{y}{(x-a)^g},
 \]
-and clearly $\sigma^*(y/(x-a)^g) = y/x^g$.
-Hence $\sigma^*(\bar\gamma_g) = \bar \gamma_g$, and $\sigma^*(\gamma_g) = \gamma_g + \sum_{i =0}^{g-1}c_i\lambda_i$, for some $c_i \in k$.
+and clearly $\tau^*(y/(x-a)^g) = y/x^g$.
+Hence $\tau^*(\bar\gamma_g) = \bar \gamma_g$, and $\tau^*(\gamma_g) = \gamma_g + \sum_{i =0}^{g-1}c_i\lambda_i$, for some $c_i \in k$.
 We now compute $c_{g-1}$.
 
-We begin this by computing the lead term of the first entry of $\sigma^*(\gamma_g) \in \cechderhamhone(\cU)$.
-This is equal to the lead term of $\omega_{\sigma g}$ in $\nu_g$, since applying $\sigma^*$ doesn't change the lead term of any polynomials.
+We begin this by computing the lead term of the first entry of $\tau^*(\gamma_g) \in \cechderhamhone(\cU)$.
+This is equal to the lead term of $\omega_{\tau g}$ in $\nu_g$ by Proposition \eqref{basis22}, since for any polynomial $h(x)$ it follows that $h(x)$ and $h(x+a)$ have teh same lead coefficient.
 As
 \[
 \deg(\psi_g(x)t_g(x)x) \leq g+1 + g+ 1 = 2g+1 < 3g+1 = \deg(\phi_g(x)r_g(x)x) = \deg(f(x)x^g)
@@ -1194,9 +1204,9 @@ g = \frac{p^n - 1}{2}.
 \]
 From this we see that the lead coefficient of $2gf(x)(-1)ax^g$ is 
 \[
-2\left( \frac{p^n-1}{2} \right) (-1)a = a
-\]
-since $\cha(k) = p$.
+2\left( \frac{p^n-1}{2} \right) (-1)a = a,
+    \]
+    since $\cha(k) = p$.
 On the other hand, the lead term of $-\phi_g(x)r_g(x)x$ is
 \[
 -(p^n-2g)(-1)\binom{g}{g-1}a = 2\left(\frac{p^n -1 }{2}\right) (-1)\left( \frac{p^n - 1}{2} \right)a = -\frac{a}{2}.
@@ -1207,25 +1217,26 @@ a - \frac{a}{2} = \frac{a}{2}.
 \]
 
 
-Since the denominator of $\omega_{a g}$ is of degree $2g+2$, we see that overall the degree of the first entry of $\gamma_g$ is $g-1$ (as a polynomial in $x$).
-Now the degree of $\frac{\psi_g(x)}{2yx^{g+1}}$ is less than this, as is the degree of the first entry in $\lambda_i$, unless $i=g-1$, in which case the degree of $\lambda_i$ is precisely $g-1$.
+Since the denominator of $\omega_{a g}$ is of degree $2g+2$, we see that overall the degree of the first entry of $\gamma_g$ (as a polynomial in $x$) is $g-1$.
+Now the degree of $\frac{\psi_g(x)}{2yx^{g+1}}$ is less than this, as is the degree of the first entry in $\lambda_i$ for $i< g-1$.
+However, the degree of the first entry of $\lambda_{g-1}$ is precisely $g-1$.
 Hence, by comparing coefficients, we see that $c_{g-1} = \frac{a}{2}$.
 
 Now suppose that 
 \[
-s(\bar\gamma_i)  = s( \bar \gamma_g) = \gamma_g + \sum_{i=0}^{g-1}d_i \lambda_i
+ s( \bar \gamma_g) = \gamma_g + \sum_{i=0}^{g-1}d_i \lambda_i
 \]
 for some $d_i \in k$.
 Then, on the one hand,
 \[
-s(\sigma^*(\bar\gamma_g)) = \gamma_g + \sum_{i=0}^{g-1}d_i\lambda_i,
+s(\tau^*(\bar\gamma_g)) = s(\bar\gamma_g) =  \gamma_g + \sum_{i=0}^{g-1}d_i\lambda_i,
 \]
 whilst on the other hand
 \begin{align}
-\sigma^*(s(\bar\gamma_g)) & = \sigma^*(\gamma_g + \sum_{i=1}^{g-1} d_i\lambda_i ) \\
+\tau^*(s(\bar\gamma_g)) & = \tau^*(\gamma_g + \sum_{i=1}^{g-1} d_i\lambda_i ) \\
 & = \gamma_g + \frac{a}{2}\lambda_{g-1} + \sum_{i=0}^{g-2} c_i \lambda_k + \sum_{i=0}^{g-1} d_i \sum_{k=0}^{i} \binom{i}{k}a^{i-k}\lambda_k.
 \end{align}
-Hence we see that for $s(\sigma^*(\gamma_g))$ to equal $\sigma^*(s(\gamma_g))$ we require $\frac{a}{2} + d_{g-1} = d_{g-1}$; \ie that $\frac{a}{2} = 0$. 
+Hence we see that for $s(\tau^*(\gamma_g))$ to equal $\tau^*(s(\gamma_g))$ we require $\frac{a}{2} + d_{g-1} = d_{g-1}$; \ie that $\frac{a}{2} = 0$. 
 But then $a=0$, which is a contradiction.
 
 \end{proof}
