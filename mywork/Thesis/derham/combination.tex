@@ -11,104 +11,104 @@ Furthermore, we let $G$ denote the automorphism group of $X$ and we let $K(X)$ d
 We then define $\Omega_{K(X)}$ to be the module of differentials of $K(X)$ over $k$.
 We also let $\underline{\Omega}_{K(X)}$ and $\underline{K}(X)$ denote the constant sheaves of $\Omega_{K(X)}$ and $K(X)$ respectively.
 The following lemma gives us a useful description of $H^1(X,\Omega_X)$.
-\begin{lem}\label{exactsequencelemma}
-The following sequences are exact:
-\begin{equation}\label{dualitysesfunctions}
-0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \xrightarrow{\delta} \hone \ra  0;
-\end{equation}
-\begin{equation}\label{dualitysesdifferentials}
-0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta} H^1(X,\Omega_X) \ra 0.
-\end{equation}
-\end{lem}
-\begin{rem}
-Note that a sketch of the proof below can be found in \cite[pg. 248]{hart}.
-\end{rem}
-\begin{proof}
-The short exact sequence
-\begin{equation}\label{serredualitysesfunctions}
-0 \rightarrow \cO_X \rightarrow \underline{K}(X) \rightarrow \underline{K}(X)/\cO_X \rightarrow 0
-\end{equation}
-is a flasque resolution of $\cO_X$ (see \cite[Chap. II, ex. 1.16]{hart}).
+    \begin{lem}\label{exactsequencelemma}
+    The following sequences are exact:
+        \begin{equation}\label{dualitysesfunctions}
+        0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \xrightarrow{\delta} \hone \ra  0;
+        \end{equation}
+        \begin{equation}\label{dualitysesdifferentials}
+        0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \xrightarrow{\delta} H^1(X,\Omega_X) \ra 0.
+        \end{equation}
+    \end{lem}
+    \begin{rem}
+        Note that a sketch of the proof below can be found in \cite[pg. 248]{hart}.
+        \end{rem}
+    \begin{proof}
+    The short exact sequence
+        \begin{equation}\label{serredualitysesfunctions}
+        0 \rightarrow \cO_X \rightarrow \underline{K}(X) \rightarrow \underline{K}(X)/\cO_X \rightarrow 0
+        \end{equation}
+    is a flasque resolution of $\cO_X$ (see \cite[Chap. II, ex. 1.16]{hart}).
+    
+    We view the module $K(X)/\cO_{X,P}$ as a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
+    Hence for each $P\in X$ we have the induced sheaf $i_*\left( K(X)/\cO_{X,P} \right)$ on $X$.
+    If we consider the direct sum of these induced sheaves over all points $P\in X$ we have the following isomorphism
+        \begin{equation}\label{sheafisomorphism}
+        \underline{K}(X)/\cO_X\cong \bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right).
+        \end{equation}
+    
+    
+    To explain the isomorphism in \eqref{sheafisomorphism} we first construct a map from $\underline{K}(X)/\cO_{X,P}$ in to the product $\prod_{P \in X} i_*\left({K(X)}/\cO_{X,P}\right)$, and then show that this map has finite support.
+    
+    Given $i\colon \{P\} \hookrightarrow X$ we have the following equalities
+        \begin{align*}
+        i^{-1}\left(\underline{K}(X)/\cO_X\right) & = \left(\underline{K}(X)/\cO_X\right)_P \\
+        & = \underline{K(X),P}/\cO_{X,P} \\
+        & = K(X)/\cO_{X,P}.
+        \end{align*}
+    It follows that for any $P \in X$ we can map $f \in \underline{K}(X)/\cO_X$ to $i_*i^{-1}(f) \in i_* \left( K(X)/\cO_{X,P} \right)$.
+    Recall that for any $f \in K(X)$then $f$ lies in $\cO_{X,P}$ for all but a finite number of points $P \in X$.
+    Hence the image of $f$ in $\prod_{P \in X} i_*\left(K(X)/\cO_{X,P}\right)$ is zero in almost all factors.
+    From this the isomorphism in \eqref{sheafisomorphism} follows.
+    
+    Replacing $\underline{K}(X)/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{serredualitysesfunctions} yields
+        \begin{equation}\label{resolutionofox}
+        0 \ra \cO_X \ra \underline{K}(X) \ra \bigoplus_{P \in X}i_* \left( K(X)/\cO_{X,P} \right)
+        \end{equation}
+    Taking cohomology then yields the exact sequence \eqref{dualitysesfunctions}.
+    
+    We can also tensor \eqref{resolutionofox} with $\Omega_X$ to get
+        \begin{equation}\label{serredualitydifferentials}
+        0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \bigoplus_{P \in X} i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right).
+        \end{equation}
+    Taking cohomology of this then yields the second exact sequence, \eqref{dualitysesdifferentials}.
+    \end{proof}
 
-We view the module $K(X)/\cO_{X,P}$ as a sheaf on the singleton $\{P\}$, which has a natural embedding $i\colon \{P\} \rightarrow X$.
-Hence for each $P\in X$ we have the induced sheaf $i_*\left( K(X)/\cO_{X,P} \right)$ on $X$.
-If we consider the direct sum of these induced sheaves over all points $P\in X$ we have the following isomorphism
-\begin{equation}\label{sheafisomorphism}
-\underline{K}(X)/\cO_X\cong \bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right).
-\end{equation}
-
-
-To explain the isomorphism in \eqref{sheafisomorphism} we first construct a map from $\underline{K}(X)/\cO_{X,P}$ in to the product $\prod_{P \in X} i_*\left({K(X)}/\cO_{X,P}\right)$, and then show that this map has finite support.
-
-Given $i\colon \{P\} \hookrightarrow X$ we have the following equalities
-\begin{align*}
-i^{-1}\left(\underline{K}(X)/\cO_X\right) & = \left(\underline{K}(X)/\cO_X\right)_P \\
-& = \underline{K(X),P}/\cO_{X,P} \\
-& = K(X)/\cO_{X,P}.
-\end{align*}
-It follows that for any $P \in X$ we can map $f \in \underline{K}(X)/\cO_X$ to $i_*i^{-1}(f) \in i_* \left( K(X)/\cO_{X,P} \right)$.
-Recall that for any $f \in K(X)$then $f$ lies in $\cO_{X,P}$ for all but a finite number of points $P \in X$.
-Hence the image of $f$ in $\prod_{P \in X} i_*\left(K(X)/\cO_{X,P}\right)$ is zero in almost all factors.
-From this the isomorphism in \eqref{sheafisomorphism} follows.
-
-Replacing $\underline{K}(X)/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{serredualitysesfunctions} yields
-\begin{equation}\label{resolutionofox}
-0 \ra \cO_X \ra \underline{K}(X) \ra \bigoplus_{P \in X}i_* \left( K(X)/\cO_{X,P} \right)
-\end{equation}
-Taking cohomology then yields the exact sequence \eqref{dualitysesfunctions}.
-
-We can also tensor \eqref{resolutionofox} with $\Omega_X$ to get
-\begin{equation}\label{serredualitydifferentials}
-0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \bigoplus_{P \in X} i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right).
-\end{equation}
-Taking cohomology of this then yields the second exact sequence, \eqref{dualitysesdifferentials}.
-\end{proof}
-
-\begin{rem}
-When considering elements of $H^1(X,\Omega_X)$ as elements in the cokernel of the map $\Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$ above, we will denote them by $\overline{(\omega_P)}_{P \in X}$.
-Similarly, when considering elements of $\hone$ as elements of the cokernel of the map $K(X) \ra \bigoplus_{P \in X}K(X)/\cO_{X,P}$, we will denote them by $\overline{(f_P)}_{P \in X}$.
-\end{rem}
+    \begin{rem}
+        When considering elements of $H^1(X,\Omega_X)$ as elements in the cokernel of the map $\Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$ above, we will denote them by $\overline{(\omega_P)}_{P \in X}$.
+        Similarly, when considering elements of $\hone$ as elements of the cokernel of the map $K(X) \ra \bigoplus_{P \in X}K(X)/\cO_{X,P}$, we will denote them by $\overline{(f_P)}_{P \in X}$.
+    \end{rem}
 
 For any $P\in X$ the residue map $\res_P \colon \Omega_{K(X)} \ra k$ is defined by the following properties:
-\begin{itemize}
-\item $\res_P(\omega) = 0$ for all $\omega \in \Omega_{P}$;
-\item $\res_P(f^ndf) = 0$ for all $f \in K(X)^*$ and all $n \neq 1$;
-\item $\res_P(f^{-1}df) = \ord_P(f)$, where $\ord_P(f)$ is the order of $f$ at $P$.
-\end{itemize}
+    \begin{itemize}
+        \item $\res_P(\omega) = 0$ for all $\omega \in \Omega_{P}$;
+        \item $\res_P(f^ndf) = 0$ for all $f \in K(X)^*$ and all $n \neq 1$;
+        \item $\res_P(f^{-1}df) = \ord_P(f)$, where $\ord_P(f)$ is the order of $f$ at $P$.
+    \end{itemize}
 See \cite[Chap. III, Thm. 7.14.1]{hart} for details.
 
 
 
 Since $\Omega_{X,P} \subseteq \ker (\res_P)$, it follows that $\res_P$ is a well defined function on the quotient $\Omega_{K(X)}/\Omega_{X,P}$.
 The residue theorem \cite[Chap. III, Thm. 7.14.2]{hart} states that $\sum_{P\in X} \res_P(\omega) = 0$ for any $\omega \in \Omega_{K(X)}$, so the map 
-\[
-\bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P} \ra k, \quad (\omega_P)_{P \in X} \mapsto \sum_{P\in X} \res_P(\omega_P)
-\]
+    \begin{equation*} 
+    \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P} \ra k, \quad (\omega_P)_{P \in X} \mapsto \sum_{P\in X} \res_P(\omega_P)
+    \end{equation*} 
 vanishes on the image of $\Omega_{K(X)}$.
 It follows that given some $\overline{(\omega_P)}_{P \in X} \in H^1(X,\Omega_X)$, mapped to by some $(\omega_P)_{P \in X} \in \bigoplus_{P \in X} \Omega_K(X)/\Omega_{X,P}$, we can define the trace map $t$ to be:
-\[
-t \colon H^1\left(X, \Omega_X\right) \ra k,\quad \overline{(\omega_P)}_{P \in X}  \mapsto \sum_{P \in X} \res_P(\omega_P).
-\]
+    \[
+    t \colon H^1\left(X, \Omega_X\right) \ra k,\quad \overline{(\omega_P)}_{P \in X}  \mapsto \sum_{P \in X} \res_P(\omega_P).
+    \]
 
 
 We now use the trace map to define a pairing between the $k$-vector spaces $\hone$ and $\hzero$.
 Since $\Omega_{K(X)}$ is a $K(X)$-module, we can define a map 
-\begin{equation}\label{productmap}
-\hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto ( \overline {(f  \omega)_P})_{P \in X},
-\end{equation}
+    \begin{equation}\label{productmap}
+    \hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto ( \overline {(f  \omega)_P})_{P \in X},
+    \end{equation}
 where $(f\omega)_P$ denotes $f_p\omega_p$, the product of the germ of $\omega$ in $\Omega_{X,P}$ with the germ of $f$ in $\underline{K}(X)_{P}$.
 
 We now combine the product map in \eqref{productmap} with the trace map $t$ to get a map 
-\[
- \hzero \times \hone \ra k,\quad (\omega, \overline{(f_P)}_{P \in X}) \mapsto \langle \omega, \overline{(f_P)}_{P \in X} \rangle := t \left( \overline{(f \omega)_P} \right)_{P \in X}.
-\]
+    \[
+     \hzero \times \hone \ra k,\quad (\omega, \overline{(f_P)}_{P \in X}) \mapsto \langle \omega, \overline{(f_P)}_{P \in X} \rangle := t \left( \overline{(f \omega)_P} \right)_{P \in X}.
+    \]
 
-\begin{thm}\label{serredualitytheorem}
-Via the pairing $\langle\ ,\ \rangle$, the $k$-vector spaces $\hone$ and $\hzero$ are dual to each other.
-\end{thm}
-\begin{proof}
-This is a specialisation of \cite[Chap. II, Thm. 2]{algebraicgroupsandclassfields}.
-\end{proof}
+    \begin{thm}\label{serredualitytheorem}
+    Via the pairing $\langle\ ,\ \rangle$, the $k$-vector spaces $\hone$ and $\hzero$ are dual to each other.
+    \end{thm}
+    \begin{proof}
+    This is a specialisation of \cite[Chap. II, Thm. 2]{algebraicgroupsandclassfields}.
+    \end{proof}
 
 We briefly describe the maps Serre uses to prove the above theorem.
 If we fix any $\omega \in \hzero$ we produce a map $\theta(\omega)\colon \hone \ra k$, given by $\theta(\omega)(f) = \langle \omega , f\rangle$.
@@ -117,6 +117,7 @@ The maps $\psi$ and $\theta$ are isomorphisms and are dual to each other: in par
 
 
 \section{\cech cohomology}
+
 We now assume that $X$ is a smooth, projective, connected hyperelliptic curve of genus $g \geq 2$, still over $k$.
 We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$.
 In this section we describe $\hone$ and $\hzero$ concretely for such an $X$, using \cech cohomology.
@@ -126,74 +127,74 @@ We define $U_a = X \backslash \pi^{-1}(a)$ for any $a \in \mathbb P_k^1$ and we 
 Given any sheaf $\cal F$ on $X$ we have the \cech differential $\check{d}\colon {\cal F}(U_0) \times {\cal F} (U_\infty) \rightarrow {\cal F}(U_0 \cap U_\infty)$, defined by $(f_0,f_\infty) \mapsto f_0|_{U_0 \cap U_\infty} - f_\infty|_{U_0 \cap U_\infty}$.
 In general we will suppress the notation denoting the restriction map.
 Via this differential we have the following cochain complex
-\begin{equation*}
-0 \rightarrow \cO_X(U_0)\times \cO_X(U_\infty) \xrightarrow{\check{d}} \cO_X(U_0 \cap U_\infty) \rightarrow 0.
-\end{equation*}
+    \begin{equation*}
+    0 \rightarrow \cO_X(U_0)\times \cO_X(U_\infty) \xrightarrow{\check{d}} \cO_X(U_0 \cap U_\infty) \rightarrow 0.
+    \end{equation*}
 The first cohomology group of this chain is $\cechhone = \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(\check{d})}$ and hence
-\begin{equation}\label{cechhone}
-\hone \cong \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(\check{d})}  
- = \frac{\cO_X(U_0 \cap U_\infty)}{\{f_0 - f_\infty | f_i \in \cO_X(U_i) \}}.
-\end{equation}
+    \begin{equation}\label{cechhone}
+    \hone \cong \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(\check{d})}  
+     = \frac{\cO_X(U_0 \cap U_\infty)}{\{f_0 - f_\infty | f_i \in \cO_X(U_i) \}}.
+    \end{equation}
 
 If we replace $\cO_X$ by $\Omega_X$ in the previous paragraph then everything still holds, and we can conclude that
-\[
-H^1(X,\Omega_X) \cong \frac{\Omega_X(U_0 \cap U_\infty)}{\Ima(\check{d})} = \frac{\Omega_X(U_0 \cap U_\infty)}{\{\omega_0 - \omega_ \infty | \omega_i \in \Omega_X(U_i)\}}.
-\]
+    \[
+    H^1(X,\Omega_X) \cong \frac{\Omega_X(U_0 \cap U_\infty)}{\Ima(\check{d})} = \frac{\Omega_X(U_0 \cap U_\infty)}{\{\omega_0 - \omega_ \infty | \omega_i \in \Omega_X(U_i)\}}.
+    \]
 
 We now describe how the trace map acts on $\check{H}^1(X,\Omega_X)$.
-\begin{lem}\label{tracemaplemma}
-For any $\bar \omega \in \check{H}^1\left (\cU, \Omega_X\right )$, which has $\omega$ as a representative in $\Omega_X(U_0 \cap U_\infty)$, we have the following equality:
-\[
-t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
-\]
-\end{lem}
-\begin{proof}
-We take the \cech complex of \eqref{serredualitydifferentials} over the cover $\cU$, yielding the following bicomplex
-\begin{equation}\label{dualitydiagram2}
-\xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
-\Omega_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{\Omega}_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
-\end{equation}
-We can now apply the snake lemma to this diagram, giving a long exact sequence.
-In fact, this sequence is isomorphic to that found in Lemma \ref{exactsequencelemma}, but we will only exhibit the isomorphisms for the third and fourth terms, since this is all we need to examine the trace map.
-The fact that $H^1(X,\Omega_X) \cong {\rm coker}(d_1)$ follows from the above discussion of \cech cohomology.
-To show the isomorphism $\ker(d_3) \cong \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}$ we first recall that $d_3$ is defined by $(\omega_0, \omega_\infty) \mapsto \omega_0|_{U_0 \cap U_\infty} - \omega_\infty|_{U_0 \cap U_\infty}$.
-Then the kernel of $d_3$ is formed of pairs $(\omega_0, \omega_\infty) \in \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus_{P \in  U_\infty} \Omega_{K(X)}/\Omega_{X,P}$ such that $\omega_0$ and $\omega_\infty$ agree on $U_0 \cap U_\infty$.
-It follows that the map 
-\[
-\bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}\ra\ker(d_3), \quad  (\omega_P)_{P \in X} \to \left( (\omega_P)_{ P \in U_0}, (\omega_P)_{P \in U_\infty}) \right)
-\]
-is an isomorphism.
-
-The proof now follows from a diagram chase on \eqref{dualitydiagram2}.
- We have a cocycle in $\bar \omega \in \hone$ with representative $\omega \in \Omega_X(U_0 \cap U_\infty)$.
-This then injects in to $\underline{\Omega}_{K(X)}$, and since $d_2$ is surjective we can choose an element of $\underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)}$ mapping to $\omega$.
-In particular, we could choose $(\omega,0)$.
-This then maps to 
-\[
-\psi = ((\bar{\omega}_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right).
-\]
-By commutativity of the diagram $\psi \in \ker(d_3)$.
-Since $\res_P(\omega)=0$ for all $P \in U_0 \cap U_\infty$, and similarly $\res_P(0)=0$ for all $P \in U_\infty$, we conclude that 
-\[
-t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega).
-\]
-\end{proof}
+    \begin{lem}\label{tracemaplemma}
+    For any $\bar \omega \in \check{H}^1\left (\cU, \Omega_X\right )$, which has $\omega$ as a representative in $\Omega_X(U_0 \cap U_\infty)$, we have the following equality:
+        \[
+        t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
+        \]
+    \end{lem}
+    \begin{proof}
+    We take the \cech complex of \eqref{serredualitydifferentials} over the cover $\cU$, yielding the following bicomplex
+        \begin{equation}\label{dualitydiagram2}
+        \xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
+        \Omega_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{\Omega}_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
+        \end{equation}
+    We can now apply the snake lemma to this diagram, giving a long exact sequence.
+    In fact, this sequence is isomorphic to that found in Lemma \ref{exactsequencelemma}, but we will only exhibit the isomorphisms for the third and fourth terms, since this is all we need to examine the trace map.
+    The fact that $H^1(X,\Omega_X) \cong {\rm coker}(d_1)$ follows from the above discussion of \cech cohomology.
+    To show the isomorphism $\ker(d_3) \cong \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}$ we first recall that $d_3$ is defined by $(\omega_0, \omega_\infty) \mapsto \omega_0|_{U_0 \cap U_\infty} - \omega_\infty|_{U_0 \cap U_\infty}$.
+    Then the kernel of $d_3$ is formed of pairs $(\omega_0, \omega_\infty) \in \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus_{P \in  U_\infty} \Omega_{K(X)}/\Omega_{X,P}$ such that $\omega_0$ and $\omega_\infty$ agree on $U_0 \cap U_\infty$.
+    It follows that the map 
+        \[
+        \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}\ra\ker(d_3), \quad  (\omega_P)_{P \in X} \to \left( (\omega_P)_{ P \in U_0}, (\omega_P)_{P \in U_\infty}) \right)
+        \]
+    is an isomorphism.
+    
+    The proof now follows from a diagram chase on \eqref{dualitydiagram2}.
+     We have a cocycle in $\bar \omega \in \hone$ with representative $\omega \in \Omega_X(U_0 \cap U_\infty)$.
+    This then injects in to $\underline{\Omega}_{K(X)}$, and since $d_2$ is surjective we can choose an element of $\underline{\Omega}_{K(X)} \times \underline{\Omega}_{K(X)}$ mapping to $\omega$.
+    In particular, we could choose $(\omega,0)$.
+    This then maps to 
+        \[
+        \psi = ((\bar{\omega}_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right).
+        \]
+    By commutativity of the diagram $\psi \in \ker(d_3)$.
+    Since $\res_P(\omega)=0$ for all $P \in U_0 \cap U_\infty$, and similarly $\res_P(0)=0$ for all $P \in U_\infty$, we conclude that 
+        \[
+        t(\bar \omega) = \sum_{P \in X}\res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega).
+        \]
+    \end{proof}
 
 We now recall how to compute the algebraic de Rham cohomology of $X$ via \cech cohomology.
 Since $X$ is a curve any differentials of degree greater than one on $X$ are zero.
 Hence the de Rham complex of $X$ is 
-\begin{equation}\label{res}
-0 \rightarrow \cO_X \xrightarrow{d} \Omega_X \rightarrow 0.
-\end{equation}
+    \begin{equation}\label{res}
+    0 \rightarrow \cO_X \xrightarrow{d} \Omega_X \rightarrow 0.
+    \end{equation}
 Here $d$ denotes the differential map $f \mapsto df$, as defined in \cite[Chap. II, pg. 172]{hart}.
 
 We use the cover $\cal U$ and the \cech differentials defined earlier to give us the \cech bicomplex of \eqref{res}, which is
-\begin{equation}\label{bicomplex}
-\xymatrix{ & 0 \ar[d] & 0 \ar[d] & \\
-0 \ar[r] & \cO_X(U_0) \times \cO_X(U_\infty) \ar[d] \ar[r] & \Omega_X(U_0) \times \Omega_X(U_\infty) \ar[d] \ar[r] & 0 \\
-0 \ar[r] & \cO_X(U_0\cap U_\infty) \ar[d] \ar[r] & \Omega_X(U_0 \cap U_\infty) \ar[r] \ar[d] & 0 \\
-& 0 & 0 &}
-\end{equation}
+    \begin{equation}\label{bicomplex}
+    \xymatrix{ & 0 \ar[d] & 0 \ar[d] & \\
+    0 \ar[r] & \cO_X(U_0) \times \cO_X(U_\infty) \ar[d] \ar[r] & \Omega_X(U_0) \times \Omega_X(U_\infty) \ar[d] \ar[r] & 0 \\
+    0 \ar[r] & \cO_X(U_0\cap U_\infty) \ar[d] \ar[r] & \Omega_X(U_0 \cap U_\infty) \ar[r] \ar[d] & 0 \\
+    & 0 & 0 &}
+    \end{equation}
 By a generalisation of Leray's theorem \cite[Cor. 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{bicomplex}.
 Note that this requires ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero for any $\sigma$ in the nerve of $\cU$ and any $p \geq 1$ ---
 since $U_0$ and $U_\infty$ are affine, this follows from Serre's affineness criterion \cite[Thm. 5.2.23]{liu}.
@@ -201,66 +202,67 @@ since $U_0$ and $U_\infty$ are affine, this follows from Serre's affineness crit
 
 
 After computing the first cohomology group of the total complex it is clear that $\derhamhone$ is isomorphic to the space
-\begin{equation}\label{derhamconditions}
-\left\{(\omega_0, \omega_\infty, f_{0,\infty}) | \omega_i\in \Omega_{X/k}(U_i), f_{0,\infty}\in \cO_X(U_0 \cap U_\infty), df_{0,\infty} = \omega_0|_{U_0\cap U_\infty} - \omega_\infty|_{U_0\cap U_\infty} \right\}
-\end{equation}
+    \begin{equation}\label{derhamconditions}
+    \left\{(\omega_0, \omega_\infty, f_{0,\infty}) | \omega_i\in \Omega_{X/k}(U_i), f_{0,\infty}\in \cO_X(U_0 \cap U_\infty), df_{0,\infty} = \omega_0|_{U_0\cap U_\infty} - \omega_\infty|_{U_0\cap U_\infty} \right\}
+    \end{equation}
 quotiented by the subspace
-\begin{equation}\label{quotient}
-\left\{  (df_0, df_\infty, f_0|_{U_0\cap U_\infty} -f_\infty|_{U_0\cap U_\infty} )|f_i \in \cO_X(U_i)\right\}.
-\end{equation}
+    \begin{equation}\label{quotient}
+    \left\{  (df_0, df_\infty, f_0|_{U_0\cap U_\infty} -f_\infty|_{U_0\cap U_\infty} )|f_i \in \cO_X(U_i)\right\}.
+    \end{equation}
 
 We wish to compute a $k$-basis of $\derhamhone$ in order to study its $k[G]$-module structure.
 The following lemma shows that $\derhamhone$ fits in to a short exact sequence which we will use to compute the $k$-basis.
-\begin{prop}\label{ses}
-The following is a short exact sequence
-\begin{equation}\label{equationses}
-0 \ra H^0(X,\Omega_X) \xrightarrow{i} \derhamhone \xrightarrow{p} H^1(X,\cO_X) \ra 0, 
-\end{equation}
-where $i \colon \omega \mapsto (\omega, \omega, 0)$ and $p \colon (\omega_0, \omega_\infty, f_{0 \infty}) \to f_{0 \infty}$.
-\end{prop}
-\begin{proof}
-Let $T$ be the total complex of \eqref{bicomplex}.
-Moreover, we let $\cO$ and $\Omega$ be the complexes formed from the first and second (non-trivial) columns of \eqref{bicomplex} respectively.
-Then let $\Omega[1]$ denote the complex obtained from shifting $\Omega$ by one, \ie~$\Omega[1]^{n+1} = \Omega^n$.
-From this we obtain the following short exact sequence of complexes 
-\[
-\Omega[1] \hookrightarrow T \twoheadrightarrow \cO,
-\]
-giving rise to the following long exact sequence
-\begin{equation*}
-0 \ra H^0_{\text {dR}}(X/k) \ra H^0(X,\cO_X) \ra 0
-\end{equation*}
-\begin{equation}\label{longexactsequence}
- H^0(X,\Omega_X) \ra \derhamhone \ra \hone \ra 0
-\end{equation}
-\begin{equation*}
- H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k) \ra 0.
-\end{equation*}
-The map $H^0(X,\cO_X) \ra \hzero$ is the map $f \mapsto df$.
-Since the only globally holomorphic functions on $X$ are constant functions, it follows that this is the zero map, and hence $\hzero \ra \derhamhone$ is injective.
-
-Since \eqref{longexactsequence} is exact, $p$ is surjective if and only if $\alpha \colon H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k)$ is injective.
-Now $H^1(X,\Omega_X)$ is isomorphic to $k$ via the residue map \cite[Chap. III, Thm. 7.14.1]{hart}, and if we can show that this isomorphism factors through $\alpha$ it will follow that $\alpha$ is injective.
-Considering the \cech cohomology constructions of $H^1(X,\Omega_X)$ and $H^2_{\text {dR}}(X/k)$, it suffices to show that the residue map is zero on $\Ima \left( d \colon \cO_X(U_0 \cap U_\infty) \ra \Omega_X(U_0 \cap U_\infty) \right)$.
-This follows from \cite[Chap. III, Thm. 7.14.1 (b)]{hart}, which says that $\res_P(df)=0$ for any $f \in \cO_X(U_0 \cap U_\infty)$.
-Hence the residue isomorphism factors through $\alpha$, and $p$ is surjective.
-\end{proof}
+    
+    \begin{prop}\label{ses}
+    The following is a short exact sequence
+        \begin{equation}\label{equationses}
+        0 \ra H^0(X,\Omega_X) \xrightarrow{i} \derhamhone \xrightarrow{p} H^1(X,\cO_X) \ra 0, 
+        \end{equation}
+    where $i \colon \omega \mapsto (\omega, \omega, 0)$ and $p \colon (\omega_0, \omega_\infty, f_{0 \infty}) \to f_{0 \infty}$.
+    \end{prop}
+    \begin{proof}
+    Let $T$ be the total complex of \eqref{bicomplex}.
+    Moreover, we let $\cO$ and $\Omega$ be the complexes formed from the first and second (non-trivial) columns of \eqref{bicomplex} respectively.
+    Then let $\Omega[1]$ denote the complex obtained from shifting $\Omega$ by one, \ie~$\Omega[1]^{n+1} = \Omega^n$.
+    From this we obtain the following short exact sequence of complexes 
+        \[
+        \Omega[1] \hookrightarrow T \twoheadrightarrow \cO,
+        \]
+    giving rise to the following long exact sequence
+        \begin{equation*}
+        0 \ra H^0_{\text {dR}}(X/k) \ra H^0(X,\cO_X) \ra 0
+        \end{equation*}
+        \begin{equation}\label{longexactsequence}
+         H^0(X,\Omega_X) \ra \derhamhone \ra \hone \ra 0
+        \end{equation}
+        \begin{equation*}
+         H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k) \ra 0.
+        \end{equation*}
+    The map $H^0(X,\cO_X) \ra \hzero$ is the map $f \mapsto df$.
+    Since the only globally holomorphic functions on $X$ are constant functions, it follows that this is the zero map, and hence $\hzero \ra \derhamhone$ is injective.
+    
+    Since \eqref{longexactsequence} is exact, $p$ is surjective if and only if $\alpha \colon H^1(X,\Omega_X) \ra H^2_{\text {dR}}(X/k)$ is injective.
+    Now $H^1(X,\Omega_X)$ is isomorphic to $k$ via the residue map \cite[Chap. III, Thm. 7.14.1]{hart}, and if we can show that this isomorphism factors through $\alpha$ it will follow that $\alpha$ is injective.
+    Considering the \cech cohomology constructions of $H^1(X,\Omega_X)$ and $H^2_{\text {dR}}(X/k)$, it suffices to show that the residue map is zero on $\Ima \left( d \colon \cO_X(U_0 \cap U_\infty) \ra \Omega_X(U_0 \cap U_\infty) \right)$.
+    This follows from \cite[Chap. III, Thm. 7.14.1 (b)]{hart}, which says that $\res_P(df)=0$ for any $f \in \cO_X(U_0 \cap U_\infty)$.
+    Hence the residue isomorphism factors through $\alpha$, and $p$ is surjective.
+    \end{proof}
 
 \section{Basis of $\hone$ and $\derhamhone$}
 
 In this section we will give an explicit basis of $\hone$ and $\derhamhone$, using the results of the previous sections along with methods similar to those found in \cite{canonicalrepresentation}.
 
 Since $X$ is a hyperelliptic curve, it follows that if $p \neq 2$ the extension $K(X)$ of $K(\mathbb P_k^1) = k(x)$ will be $k(x,y)$ where $y$ satisfies
-\begin{equation}\label{definingequationpnot2}
-y^2 = f(x)
-\end{equation}
+    \begin{equation}\label{definingequationpnot2}
+    y^2 = f(x)
+    \end{equation}
 for some polynomial $f(x) \in k[x]$ which has no repeated roots and is of degree $2g+1$ or $2g+2$ \cite[Prop. 7.4.24]{liu}.
 Moreover, we can assume, by applying an automorphism of $\mathbb P_k^1$ if necessary, that $f(x)$ is monic.
 
 On the other hand, if $p=2$, then the extension $K(X)$ of $k(x)$ will be $k(x,y)$, this time with $y$ satisfying the equation
-\begin{equation}\label{definep=2}
-y^2 - H(x)y = F(x)
-\end{equation}
+    \begin{equation}\label{definep=2}
+    y^2 - H(x)y = F(x)
+    \end{equation}
 for some $H(x),F(x) \in k[x]$, such that $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ share no roots.
 We require that $\deg(H(x)) \leq g+1$, with equality if and only if $\infty$ is not a branch point, and that $\deg(F(x)) \leq 2g+2$ with $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point  \cite[Prop. 7.4.24]{liu}.
 Finally, we can assume, again applying an automorphism of $\mathbb P_k^1$, that $H(x)$ is monic.
@@ -269,19 +271,19 @@ We now recall the details of some divisors discussed in \cite{faithfulaction}, w
 Henceforth we let $P_a$ and $P_a'$ denote the unique elements of $\pi^{-1}(a)$ for any point $a \in \mathbb P_k^1$ that is not a branch point.
 If $a \in \mathbb P_k^1$ is a branch point we denote the unique point in $\pi^{-1}(a)$ by $P_a$.
 We also define $D_a$ to be the divisor $\pi^*\left([a]\right)$ for any $a \in \mathbb P_k^1$, and hence
-\begin{equation*}
-D_a= 
-\begin{cases}
- 2[P_a] & \text{if $a$ is a branch point}, \\
- [P_a] + [P_a'] & \text{otherwise.}
-\end{cases}
-\end{equation*}
+    \begin{equation*}
+    D_a= 
+        \begin{cases}
+         2[P_a] & \text{if $a$ is a branch point}, \\
+         [P_a] + [P_a'] & \text{otherwise.}
+        \end{cases}
+    \end{equation*}
 
 If $p \neq 2$ then the ramification points are the zeroes of $f(x)$.
 We suppose that 
-\[
-f(x) = \prod_{i=1}^{d_f} (x-a_i) = x^{d_f} + b_{d_f - 1}x^{d_f-1} \ldots + b_0,
-\]
+    \[
+    f(x) = \prod_{i=1}^{d_f} (x-a_i) = x^{d_f} + b_{d_f - 1}x^{d_f-1} \ldots + b_0,
+    \]
 for some $a_i, b_i \in k$ and with $d_f := \deg(f) $.
 In this case, the $a_i \in \mathbb A_k^1 \subset \mathbb P_k^1$ are branch points of $\pi$, and we let $P_i = P_{a_i}$ denote the corresponding ramification points.
 When $d_f = 2g+1$ then $\infty \in \mathbb P_k^1$ is a branch point and we define $P_{2g+2} := P_\infty$.
@@ -297,38 +299,38 @@ H(x) = \prod_{i=1}^{d_H} (x-A_i)^{n_i} = x^{d_H} + B_{{d_H}-1}x^{{d_H}-1} + \ldo
 for some $A_i, B_i \in  k$, $n_i \in \mathbb N$ and with  ${d_H} := \deg(H(x)) \leq g+1$.
 Then, as above, the $A_i$ are the branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points.
 Given this, we can write the ramification divisor as
-\[
-R = \sum_{i=1}^{d_H} 2n_i[P_i] + (g+1-{d_H})D_\infty.
-\]
+    \[
+    R = \sum_{i=1}^{d_H} 2n_i[P_i] + (g+1-{d_H})D_\infty.
+    \]
 
 
 We also have
-\begin{equation}\label{divxp=2}
-\di (x)  = D_0 - D_\infty
-\end{equation}
+    \begin{equation}\label{divxp=2}
+    \di (x)  = D_0 - D_\infty
+    \end{equation}
 and
-\begin{equation}\label{differentialdivisor}
-\di(dx) = R - 2D_\infty,
-\end{equation}
+    \begin{equation}\label{differentialdivisor}
+    \di(dx) = R - 2D_\infty,
+    \end{equation}
 regardless of characteristic.
 
 If $p \neq 2$ then 
-\begin{equation}\label{pnot2divisors}
-\di(y)  = R - (g+1)D_\infty,
-\end{equation}
+    \begin{equation}\label{pnot2divisors}
+    \di(y)  = R - (g+1)D_\infty,
+    \end{equation}
 whilst if $p=2$ then the divisor of $H(x)$ is
-\begin{equation}\label{divisorofH}
-\di (H(x))  = R - (g+1)D_\infty. 
-\end{equation}
+    \begin{equation}\label{divisorofH}
+    \di (H(x))  = R - (g+1)D_\infty. 
+    \end{equation}
 We also compute the divisor of $dy$ when $p=2$.
 We start by noting that when we take the differential of \eqref{definep=2} we obtain
-\[
-dF(x) = d\left(y^2 + yH(x) \right) = d(yH(x)) = H(x)dy + ydH(x)
-\]
+    \[
+    dF(x) = d\left(y^2 + yH(x) \right) = d(yH(x)) = H(x)dy + ydH(x)
+    \]
 and from this it follows that
-\begin{equation}\label{divdyp=2}
-dy = \frac{F(x)'-yH(x)'}{H(x)}dx.
-\end{equation}
+    \begin{equation}\label{divdyp=2}
+    dy = \frac{F(x)'-yH(x)'}{H(x)}dx.
+    \end{equation}
 
 Finally, we describe the divisor of $y$ when $p=2$.
 In order to do this we need to distinguish the zeroes of $F(x)$.
@@ -338,470 +340,471 @@ If $\gamma_i$ is not a branch point then let $Q_i = (\gamma_i, 0)$ and $Q_i' = (
 Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in \NN$.
 
 
-\begin{prop}\label{divyp=2}
-Suppose that $p=2$.
-Then, if $\infty$ is a branch point, the divisor of $y$ is
-\begin{equation*}
-\di(y) = 
- {\displaystyle \sum_{i=1}^l} m_i[Q_i] -(2g+1)[P_\infty].
-\end{equation*}
-If $\infty$ is not a branch point, then, after possibly swapping the notations for the two points $P_\infty$ and $P_\infty'$ in $\pi^{-1}(\infty)$, we have
-\begin{equation*}
- \di(y) = {\displaystyle \sum_{i=1}^l} m_i[Q_i] +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'].
-\end{equation*}
-\end{prop}
-\begin{proof}
-We first show that $\di_0(y)$, the divisor of the zeroes of $y$, is $\sum_{i=1}^l m_i [Q_i]$.
-
-It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{definep=2} \ie~in $U_\infty$.
-Suppose $P\in U_\infty$.
-If $\left. F \right|_P \neq 0$ then it follows that $y|_P \neq 0$, since $F(x) = y (y + H(x))$.
-Hence $\di_0(y)$ has zero coefficients for any point in $U_\infty\backslash \{Q_1, \ldots, Q_l \}$.
-
-Suppose that $P= Q_i = (\gamma_i, 0)$ is an unramified point in $U_\infty$.
-Then $H(\gamma_i) \neq 0$ and $\left. y \right|_P = 0$, so $y + H(x)$ is a unit at $P$.
-Since $y(y+H(x)) = F(x)$ we find that
-\begin{equation*}
-\ord_P(y) = \ord_P\left( \frac{F(x)}{y + H(x)} \right) = \ord_P(F(x)) = m_i.
-\end{equation*}
-
-We now look at when $P = Q_i = (\gamma_i, 0)$ is a ramification point.
-Since $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ cannot share roots it follows that $m_i = 1$.
-Hence the function $\tilde F(x) := (x- \gamma_i)^{-1}F(x)$ is a unit at $P$.
-We let $\tilde H(x) = (x- \gamma_i)^{-1}H(x)$.
-
-
-Now 
-\[
-y^2 = F(x) - y H(x) = (x- \gamma_i) \left(\tilde F(x) - y \tilde H(x)\right),
-\]
-and hence
-\[
-\ord_P(y^2 ) = \ord_P(x-\gamma_i) + \ord_P(\tilde F(x) - y \tilde H(x)).
-\]
-Since $\ord_P(x-\gamma_i) = 2$ and $\ord_P\left(\tilde F(x) - y \tilde H(x)\right) \geq 0$ we know that $\ord_P(y) \geq 1$.
-Hence $(y \tilde H(x)) \big|_P = 0$, and since $\tilde F(x)$ is a unit at $P$, we conclude that $\tilde F(x) - y \tilde H(x)$ is a unit at $P$.
-Hence $\ord_P(y^2) = 2$, and so $\ord_P(y) = 1 = m_i$.
-It follows that $\di_0(y) =  \sum_{i=1}^l m_i [Q_i]$.
-
-We now consider the poles of $y$.
-If $\infty$ is a branch point then $\deg(F(x)) = 2g+1$ and hence $\sum_{i=1}^l m_i = 2g+1$.
-Since $y$ can only have a pole at $P_\infty$, we conclude that the degree of this pole is $2g+1$, and hence
-\[
-\di(y) = \sum_{i=1}^l m_i [Q_i] - (2g+1)[P_\infty].
-\]
-
-If $\infty$ is not a branch point then there are two points at which $y$ may have a pole, namely $P_\infty$ and $P_\infty'$.
-We consider three cases, noting that $\ord_{P_\infty}(y + H(x)) = \ord_{P_\infty'}(y)$, since $y \mapsto y+H(x)$ is an automorphism.
-
-
-Firstly, we suppose that $\ord_{P_\infty}(y) < -(g+1)$.
-Then $\ord_{P_\infty}(y) < \ord_{P_\infty}(H(x))$ and hence $ \ord_{P_\infty}(y) = \ord_{P_\infty}(y+H(x))$.
-But this contradicts $\ord_{P_\infty}(y) + \ord_{P_\infty}(y+H(x)) = \ord_{P_\infty}(F(x))$, since the left hand side is less than $-2(g+1)$, which is the minimum value of the right hand side.
-
-We now suppose that $\ord_{P_\infty} (y) = -(g+1)$. Since $y(y+H(x)) = F(x)$ it follows that $-(g+1) + \ord_{P_\infty}(y+H(x)) = \ord_{P_\infty}(F(x))$, and hence $\ord_{P_\infty'}(y) = \ord_{P_\infty}(y+H(x)) = -\deg(F(x)) + g + 1$.
-
-Finally, if $\ord_{P_\infty}(y) > -(g+1)$, then since $\ord_{P_\infty}(H(x)) = -(g+1)$ it follows that $\ord_{P_\infty'}(y) = \ord_{P_\infty} (y+H(x)) = -(g+1)$.
-Then, from a computation similar to that in the previous paragraph we see that $\ord_{P_\infty}(y) = -\deg(F(x)) + g +1$, completing the proof.
-\end{proof}
-
-
-\begin{prop}\label{basish1}
- Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0 \cap U_\infty$, form a basis of $H^1(X,\cO_X)$.
-\end{prop}
-\begin{proof}
-We start by considering the case $p \neq 2$ and first check that the functions $\frac{y}{x}, \ldots, \frac{y}{x^g}$ are indeed regular on $U_0 \cap U_\infty$ (as required by \eqref{cechhone}) by computing their divisors.
-From \eqref{divxp=2} and \eqref{pnot2divisors} we see that
-\begin{align}\label{divisorofyoverx}
-\di \left( \frac{y}{x^i} \right) & = \di (y) - \di ( x^i) \nonumber \\
-& = R - (g+1)D_\infty - iD_0 + iD_\infty \nonumber \\
-& = R - iD_0 - (g+1 - i)D_\infty.
-\end{align}
-Since $R$ is a positive divisor this is non-negative on $U_0 \cap U_\infty$ if $i\in \{0, \ldots, g-1\}$.
+    \begin{prop}\label{divyp=2}
+    Suppose that $p=2$.
+    Then, if $\infty$ is a branch point, the divisor of $y$ is
+        \begin{equation*}
+        \di(y) = 
+         {\displaystyle \sum_{i=1}^l} m_i[Q_i] -(2g+1)[P_\infty].
+        \end{equation*}
+    If $\infty$ is not a branch point, then, after possibly swapping the notations for the two points $P_\infty$ and $P_\infty'$ in $\pi^{-1}(\infty)$, we have
+        \begin{equation*}
+        \di(y) = {\displaystyle \sum_{i=1}^l} m_i[Q_i] +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'].
+        \end{equation*}
+    \end{prop}
+    \begin{proof}
+    We first show that $\di_0(y)$, the divisor of the zeroes of $y$, is $\sum_{i=1}^l m_i [Q_i]$.
+    
+    It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{definep=2} \ie~in $U_\infty$.
+    Suppose $P\in U_\infty$.
+    If $\left. F \right|_P \neq 0$ then it follows that $y|_P \neq 0$, since $F(x) = y (y + H(x))$.
+    Hence $\di_0(y)$ has zero coefficients for any point in $U_\infty\backslash \{Q_1, \ldots, Q_l \}$.
+    
+    Suppose that $P= Q_i = (\gamma_i, 0)$ is an unramified point in $U_\infty$.
+    Then $H(\gamma_i) \neq 0$ and $\left. y \right|_P = 0$, so $y + H(x)$ is a unit at $P$.
+    Since $y(y+H(x)) = F(x)$ we find that
+        \begin{equation*}
+        \ord_P(y) = \ord_P\left( \frac{F(x)}{y + H(x)} \right) = \ord_P(F(x)) = m_i.
+        \end{equation*}
+    
+    We now look at when $P = Q_i = (\gamma_i, 0)$ is a ramification point.
+    Since $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ cannot share roots it follows that $m_i = 1$.
+    Hence the function $\tilde F(x) := (x- \gamma_i)^{-1}F(x)$ is a unit at $P$.
+    We let $\tilde H(x) = (x- \gamma_i)^{-1}H(x)$.
+    
+    
+    Now 
+        \[
+        y^2 = F(x) - y H(x) = (x- \gamma_i) \left(\tilde F(x) - y \tilde H(x)\right),
+        \]
+    and hence
+        \[
+        \ord_P(y^2 ) = \ord_P(x-\gamma_i) + \ord_P(\tilde F(x) - y \tilde H(x)).
+        \]
+    Since $\ord_P(x-\gamma_i) = 2$ and $\ord_P\left(\tilde F(x) - y \tilde H(x)\right) \geq 0$ we know that $\ord_P(y) \geq 1$.
+    Hence $(y \tilde H(x)) \big|_P = 0$, and since $\tilde F(x)$ is a unit at $P$, we conclude that $\tilde F(x) - y \tilde H(x)$ is a unit at $P$.
+    Hence $\ord_P(y^2) = 2$, and so $\ord_P(y) = 1 = m_i$.
+    It follows that $\di_0(y) =  \sum_{i=1}^l m_i [Q_i]$.
+    
+    We now consider the poles of $y$.
+    If $\infty$ is a branch point then $\deg(F(x)) = 2g+1$ and hence $\sum_{i=1}^l m_i = 2g+1$.
+    Since $y$ can only have a pole at $P_\infty$, we conclude that the degree of this pole is $2g+1$, and hence
+        \[
+        \di(y) = \sum_{i=1}^l m_i [Q_i] - (2g+1)[P_\infty].
+        \]
+    
+    If $\infty$ is not a branch point then there are two points at which $y$ may have a pole, namely $P_\infty$ and $P_\infty'$.
+    We consider three cases, noting that $\ord_{P_\infty}(y + H(x)) = \ord_{P_\infty'}(y)$, since $y \mapsto y+H(x)$ is an automorphism.
+    
+    
+    Firstly, we suppose that $\ord_{P_\infty}(y) < -(g+1)$.
+    Then $\ord_{P_\infty}(y) < \ord_{P_\infty}(H(x))$ and hence $ \ord_{P_\infty}(y) = \ord_{P_\infty}(y+H(x))$.
+    But this contradicts $\ord_{P_\infty}(y) + \ord_{P_\infty}(y+H(x)) = \ord_{P_\infty}(F(x))$, since the left hand side is less than $-2(g+1)$, which is the minimum value of the right hand side.
+    
+    We now suppose that $\ord_{P_\infty} (y) = -(g+1)$. Since $y(y+H(x)) = F(x)$ it follows that $-(g+1) + \ord_{P_\infty}(y+H(x)) = \ord_{P_\infty}(F(x))$, and hence $\ord_{P_\infty'}(y) = \ord_{P_\infty}(y+H(x)) = -\deg(F(x)) + g + 1$.
+    
+    Finally, if $\ord_{P_\infty}(y) > -(g+1)$, then since $\ord_{P_\infty}(H(x)) = -(g+1)$ it follows that $\ord_{P_\infty'}(y) = \ord_{P_\infty} (y+H(x)) = -(g+1)$.
+    Then, from a computation similar to that in the previous paragraph we see that $\ord_{P_\infty}(y) = -\deg(F(x)) + g +1$, completing the proof.
+    \end{proof}
 
 
-Recall that the differentials $\omega_0 = y^{-1}dx, \ldots, \omega_{g-1} = x^{g-1}y^{-1}dx$ form a basis of $\hzero$ (see, for example, \cite[Prop. 7.4.26]{liu}).
-By Lemma \ref{tracemaplemma} we know that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx)$.
-It follows immediately from \cite[Chap. III, Thm. 7.14.1 (b)]{hart} that $\sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx) = -2$ if $i-j=-1$ and is zero otherwise.
-It then follows from Theorem \ref{serredualitytheorem} that the collection of elements $\{ yx^{-j}|_{U_0\cap U_\infty}\}_{ 1 \leq j \leq g}$ form a basis of $\hone$.
-
-
-
-We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldots , g\}$ the function $yx^{-i}$ is regular on $U_0 \cap U_\infty$.
-This follows once we compute the divisor of $yx^{-i}$, which is
-\begin{equation*}
-\di \left( \frac{y}{x^i} \right)  =  
-{\displaystyle \sum_{i=1}^l} m_i[Q_i] -iD_0 -(2g+1 - 2i)[P_\infty]
-\end{equation*}
-if $\infty$ is a branch point and
-\begin{equation*}
-\di \left( \frac{y}{x^i} \right)  =  
-{\displaystyle \sum_{i=1}^l} m_i[Q_i] - iD_0 +(g+1-\deg(F(x)) + i)[P_\infty] - (g+1-i)[P_\infty']
-\end{equation*}
-otherwise.
-These equalities follow from Proposition \ref{divyp=2} and \eqref{divxp=2}.
-The divisors are clearly positive on $U_0 \cap U_\infty$.
-
-Next we recall from \cite[Prop. 7.4.26]{liu} that if $p=2$ a basis of $\hzero$ is given by $\frac{1}{H(x)}dx, \ldots, \frac{x^{g-1}}{H(x)}dx$.
-We then deduce from Lemma \ref{tracemaplemma} that
-\[
-\left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = \res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P_\infty'}\left( \frac{yx^{i-j}}{H(x)} dx \right).
-\]
-Then recall that in characteristic two we have an involution $\sigma \colon X \ra X$ given by $(x,y) \mapsto (x, y + H(x))$, and that $\res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega)$ for any $P \in X$ and $\omega\in \hzero$.
-Then it follows that
-\begin{align*}
-\sum_{P \in \pi^{-1}(\infty)} \res_P \left( \frac{yx^{i-j}}{H(x)}dx \right) & = \res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)} dx \right) + \res_{P_\infty'}\left( \frac{yx^{i-j}}{H(x)} dx\right) \\
-& = \res_{P_ \infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P_ \infty} \left( \frac{(y+H(x))x^{i-j}}{H(x)}dx \right) \\
-& = \res_{P_\infty}(x^{i-j}dx),
-\end{align*}
-since we are assuming that $\cha(k) = 2$.
-As in the previous case, it then follows from the definition of $\res_P$ that $\res_{P_\infty}(x^{i-j}dx) = -1$ if $i-j = -1$ and is zero otherwise.
-
-
-
-If $P_\infty$ is a branch point then we start by computing the divisor of $ \frac{y}{x^j} \cdot \frac{x^i}{H(x)}dx$, using \eqref{divxp=2}, \eqref{differentialdivisor}, \eqref{divisorofH} and Proposition \ref{divyp=2}:
-\begin{align*}
-\di\left( \frac{yx^{i-j}}{H(x)}dx \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
-& = \sum_{i=1}^l m_i[Q_i] - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty \\
-& \qquad - R + (g+1)D_\infty\\
-& = \sum_{i=1}^l m_i[Q_i] + (2j-3-2i)[P_\infty] + (i-j)D_0.
-\end{align*}
-We see that there is a pole of order one at $P_\infty$ if $2j - 3 - 2i = -1$, or equivalently if $j = i+1$.
-Hence $\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right\rangle \neq 0$ in this case.\todo{what is the residue?}
-
-We also need to check that if $j \neq i+1$ then $\left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = 0$.
-Indeed, if $j-i \geq 2$ then clearly $\frac{yx^{i-j}}{H(x)}dx$ does not have a pole at $P_\infty$.
-On the other hand, if $j-i \leq 0$ then the differential $\frac{yx^{i-j}}{H(x)}dx$ is regular on $U_\infty$, and hence the residue on this set is zero.
-Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem the residue of $\frac{yx^{i-j}}{H(x)}dx$ at $P_\infty$ is also zero.
-\end{proof}
+    \begin{prop}\label{basish1}
+     Via the isomorphism \eqref{cechhone} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0 \cap U_\infty$, form a basis of $H^1(X,\cO_X)$.
+    \end{prop}
+    \begin{proof}
+    We start by considering the case $p \neq 2$ and first check that the functions $\frac{y}{x}, \ldots, \frac{y}{x^g}$ are indeed regular on $U_0 \cap U_\infty$ (as required by \eqref{cechhone}) by computing their divisors.
+    From \eqref{divxp=2} and \eqref{pnot2divisors} we see that
+        \begin{align}\label{divisorofyoverx}
+        \di \left( \frac{y}{x^i} \right) & = \di (y) - \di ( x^i) \nonumber \\
+        & = R - (g+1)D_\infty - iD_0 + iD_\infty \nonumber \\
+        & = R - iD_0 - (g+1 - i)D_\infty.
+        \end{align}
+    Since $R$ is a positive divisor this is non-negative on $U_0 \cap U_\infty$ if $i\in \{0, \ldots, g-1\}$.
+    
+    
+    Recall that the differentials $\omega_0 = y^{-1}dx, \ldots, \omega_{g-1} = x^{g-1}y^{-1}dx$ form a basis of $\hzero$ (see, for example, \cite[Prop. 7.4.26]{liu}).
+    By Lemma \ref{tracemaplemma} we know that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx)$.
+    It follows immediately from \cite[Chap. III, Thm. 7.14.1 (b)]{hart} that $\sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx) = -2$ if $i-j=-1$ and is zero otherwise.
+    It then follows from Theorem \ref{serredualitytheorem} that the collection of elements $\{ yx^{-j}|_{U_0\cap U_\infty}\}_{ 1 \leq j \leq g}$ form a basis of $\hone$.
+    
+    
+    
+    We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldots , g\}$ the function $yx^{-i}$ is regular on $U_0 \cap U_\infty$.
+    This follows once we compute the divisor of $yx^{-i}$, which is
+        \begin{equation*}
+        \di \left( \frac{y}{x^i} \right)  =  
+        {\displaystyle \sum_{i=1}^l} m_i[Q_i] -iD_0 -(2g+1 - 2i)[P_\infty]
+        \end{equation*}
+    if $\infty$ is a branch point and
+        \begin{equation*}
+        \di \left( \frac{y}{x^i} \right)  =  
+        {\displaystyle \sum_{i=1}^l} m_i[Q_i] - iD_0 +(g+1-\deg(F(x)) + i)[P_\infty] - (g+1-i)[P_\infty']
+        \end{equation*}
+    otherwise.
+    These equalities follow from Proposition \ref{divyp=2} and \eqref{divxp=2}.
+    The divisors are clearly positive on $U_0 \cap U_\infty$.
+    
+    Next we recall from \cite[Prop. 7.4.26]{liu} that if $p=2$ a basis of $\hzero$ is given by $\frac{1}{H(x)}dx, \ldots, \frac{x^{g-1}}{H(x)}dx$.
+    We then deduce from Lemma \ref{tracemaplemma} that
+        \[
+        \left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = \res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P_\infty'}\left( \frac{yx^{i-j}}{H(x)} dx \right).
+        \]
+    Then recall that in characteristic two we have an involution $\sigma \colon X \ra X$ given by $(x,y) \mapsto (x, y + H(x))$, and that $\res_P(\sigma^*(\omega)) = \res_{\sigma(P)}(\omega)$ for any $P \in X$ and $\omega\in \hzero$.
+    Then it follows that
+        \begin{align*}
+        \sum_{P \in \pi^{-1}(\infty)} \res_P \left( \frac{yx^{i-j}}{H(x)}dx \right) & = \res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)} dx \right) + \res_{P_\infty'}\left( \frac{yx^{i-j}}{H(x)} dx\right) \\
+        & = \res_{P_ \infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P_ \infty} \left( \frac{(y+H(x))x^{i-j}}{H(x)}dx \right) \\
+        & = \res_{P_\infty}(x^{i-j}dx),
+        \end{align*}
+    since we are assuming that $\cha(k) = 2$.
+    As in the previous case, it then follows from the definition of $\res_P$ that $\res_{P_\infty}(x^{i-j}dx) = -1$ if $i-j = -1$ and is zero otherwise.
+    
+    
+    
+    If $P_\infty$ is a branch point then we start by computing the divisor of $ \frac{y}{x^j} \cdot \frac{x^i}{H(x)}dx$, using \eqref{divxp=2}, \eqref{differentialdivisor}, \eqref{divisorofH} and Proposition \ref{divyp=2}:
+        \begin{align*}
+        \di\left( \frac{yx^{i-j}}{H(x)}dx \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
+        & = \sum_{i=1}^l m_i[Q_i] - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty \\
+        & \qquad - R + (g+1)D_\infty\\
+        & = \sum_{i=1}^l m_i[Q_i] + (2j-3-2i)[P_\infty] + (i-j)D_0.
+        \end{align*}
+    We see that there is a pole of order one at $P_\infty$ if $2j - 3 - 2i = -1$, or equivalently if $j = i+1$.
+    Hence $\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right\rangle \neq 0$ in this case.\todo{what is the residue?}
+    
+    We also need to check that if $j \neq i+1$ then $\left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = 0$.
+    Indeed, if $j-i \geq 2$ then clearly $\frac{yx^{i-j}}{H(x)}dx$ does not have a pole at $P_\infty$.
+    On the other hand, if $j-i \leq 0$ then the differential $\frac{yx^{i-j}}{H(x)}dx$ is regular on $U_\infty$, and hence the residue on this set is zero.
+    Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the residue theorem the residue of $\frac{yx^{i-j}}{H(x)}dx$ at $P_\infty$ is also zero.
+    \end{proof}
 
 %Mittag-Leffler style corollary
 
-\begin{cor}
-For each $P \in X$ we fix $f_P \in K(X)/\cO_{X,P}$, such that $f_P = 0$ for almost all $P \in X$.
-Then there exist unique $\alpha_1, \ldots, \alpha_g \in k$ such that after replacing $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for $P \in \pi^{-1}(\infty)$, we can find an $f \in K(X)$ such that the Laurent tail of $f$ at $P$ in $X$ is $f_P$.
-\end{cor}
-\begin{proof}
-Since $f_P = 0$ for almost all $P \in X$ then $(f_P)_{P \in X} \in \bigoplus_{P \in X} K(X)/\cO_{X,P}$.
-From Lemma \ref{exactsequencelemma} we have the following exact sequence
-\begin{equation*}
-0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \xrightarrow{\delta} \hone \ra 0.
-\end{equation*}
-Since $\frac{x}{y}, \ldots, \frac{x^g}{y}$ form a basis of $\hone$, it follows that there exist unique $\alpha_1, \ldots, \alpha_g$ such that
-\[
-\delta\left( (f_P)_{P \in X} \right) - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) = 0.
-\]
-We can derive \eqref{dualitysesfunctions} by applying the snake lemma to the \cech complex of \eqref{serredualitysesfunctions} over $\cU$, which is
-\begin{equation}
-\xymatrix{\cO_X(U_0)\times\cO_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{K}(X) \times \underline{K}(X) \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} K(X)/\cO_{X,P} \times \bigoplus \limits_{P \in U_\infty} K(X)/\cO_{X,P} \ar[d]^{d_3} \\
-\cO_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{K}(X) \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} K(X)/\cO_{X,P} }
-\end{equation}
-Analogously to \eqref{dualitydiagram2}, the kernel of $d_3$ is $\bigoplus_{P \in X}K(X)/\cO_{X,P}$ and the cokernel of $d_1$ is $\hone$.
-Via a diagram chase on $- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) \in \hone$ we can find a corresponding element 
-\begin{equation}\label{immediate}
-\left(0, \left(- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) \right)_P\right) \in \bigoplus_{P \in U_0}K(X)/\cO_{X,P} \times \bigoplus_{P \in U_\infty}K(X)/\cO_{X,P}.
-\end{equation}
-Since $(\alpha_ix^i/y$ is regular on $U_\infty \cap U_0$, \eqref{immediate} is equivalent to $\left(0, (g_P)_{P \in U_\infty}\right)$, where
-\[
-g_P = \begin{cases}
-    - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) & \quad \text{if}\ P \in \pi^{-1}(\infty) \\
-    0 & \quad \text{else.}
-\end{cases}
-\]
-Clearly $(0, g_P) \in \ker (d_3) = \bigoplus_{P \in X} K(X)/\cO_{X,P}$, and $\delta((f_P)_{P \in X} - (g_P)_{P \in X}) = 0$, by choice of $(g_P)_{P \in X}$.
-By the exactness of \eqref{dualitysesfunctions} it follows that there exists an $f \in K(X)$ which has Laurent tail $f_P - g_P$ at each $P \in X$, as required in the statement of the corollary.
-\end{proof}
+    \begin{cor}
+    For each $P \in X$ we fix $f_P \in K(X)/\cO_{X,P}$, such that $f_P = 0$ for almost all $P \in X$.
+    Then there exist unique $\alpha_1, \ldots, \alpha_g \in k$ such that after replacing $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for $P \in \pi^{-1}(\infty)$, we can find an $f \in K(X)$ such that the Laurent tail of $f$ at $P$ in $X$ is $f_P$.
+    \end{cor}
+    \begin{proof}
+    Since $f_P = 0$ for almost all $P \in X$ then $(f_P)_{P \in X} \in \bigoplus_{P \in X} K(X)/\cO_{X,P}$.
+    From Lemma \ref{exactsequencelemma} we have the following exact sequence
+        \begin{equation*}
+        0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \xrightarrow{\delta} \hone \ra 0.
+        \end{equation*}
+    Since $\frac{x}{y}, \ldots, \frac{x^g}{y}$ form a basis of $\hone$, it follows that there exist unique $\alpha_1, \ldots, \alpha_g$ such that
+        \[
+        \delta\left( (f_P)_{P \in X} \right) - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) = 0.
+        \]
+    We can derive \eqref{dualitysesfunctions} by applying the snake lemma to the \cech complex of \eqref{serredualitysesfunctions} over $\cU$, which is
+        \begin{equation}
+        \xymatrix{\cO_X(U_0)\times\cO_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{K}(X) \times \underline{K}(X) \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} K(X)/\cO_{X,P} \times \bigoplus \limits_{P \in U_\infty} K(X)/\cO_{X,P} \ar[d]^{d_3} \\
+        \cO_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{K}(X) \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} K(X)/\cO_{X,P} }
+        \end{equation}
+    Analogously to \eqref{dualitydiagram2}, the kernel of $d_3$ is $\bigoplus_{P \in X}K(X)/\cO_{X,P}$ and the cokernel of $d_1$ is $\hone$.
+    Via a diagram chase on $- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) \in \hone$ we can find a corresponding element 
+        \begin{equation}\label{immediate}
+        \left(0, \left(- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) \right)_P\right) \in \bigoplus_{P \in U_0}K(X)/\cO_{X,P} \times \bigoplus_{P \in U_\infty}K(X)/\cO_{X,P}.
+        \end{equation}
+    Since $(\alpha_ix^i/y$ is regular on $U_\infty \cap U_0$, \eqref{immediate} is equivalent to $\left(0, (g_P)_{P \in U_\infty}\right)$, where
+        \[
+        g_P =
+            \begin{cases}
+            - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) & \quad \text{if}\ P \in \pi^{-1}(\infty) \\
+            0 & \quad \text{else.}
+            \end{cases}
+        \]
+    Clearly $(0, g_P) \in \ker (d_3) = \bigoplus_{P \in X} K(X)/\cO_{X,P}$, and $\delta((f_P)_{P \in X} - (g_P)_{P \in X}) = 0$, by choice of $(g_P)_{P \in X}$.
+    By the exactness of \eqref{dualitysesfunctions} it follows that there exists an $f \in K(X)$ which has Laurent tail $f_P - g_P$ at each $P \in X$, as required in the statement of the corollary.
+    \end{proof}
 
 
 In order to state a basis of $\derhamhone$, as well as to shorten the proof of the following theorem, we define the following polynomials. 
 We suppose that $1 \leq i \leq g$.
 Then when $p\neq 2$ we define
-\[
-s_i(x) := xf'(x) - 2if(x) \in k[x]
-\]
+    \[
+    s_i(x) := xf'(x) - 2if(x) \in k[x]
+    \]
 and when $p = 2$ we define
-\begin{equation}\label{capitals}
-S_i(x,y) := xF'(x) + y(xH'(x) + iH(x))\in k[x]\oplus yk[x] \subseteq k(x,y).
-\end{equation}
+    \begin{equation}\label{capitals}
+    S_i(x,y) := xF'(x) + y(xH'(x) + iH(x))\in k[x]\oplus yk[x] \subseteq k(x,y).
+    \end{equation}
 
 We now decompose these polynomials into two parts, which will be used in the sequel.
 Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x)\in k(x)$ and $\phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\psi_i (x)$ is at most $g+1$ and $x^{g+2}$ divides $\phi_i(x)$.
 
 For the second case we define $A_{j,i} \in k$ for $1 \leq j \leq 2g+2$, and $B_{k,i} \in k$ for $0\leq k \leq g+1$ by the equation
-\[
-S_i(x,y) = A_{2g+2,i}x^{2g+2} + \ldots + A_{1,i} x + y(B_{g+1,i} x^{g+1} + \ldots + B_{1,i} x + B_{0,i}).
-\]
+    \[
+    S_i(x,y) = A_{2g+2,i}x^{2g+2} + \ldots + A_{1,i} x + y(B_{g+1,i} x^{g+1} + \ldots + B_{1,i} x + B_{0,i}).
+    \]
 Note that many of these coefficients may be zero.
 In particular we remark that the $x^i$ term of $xH'(x) + iH(x)$ is always zero, since $B_{i,i}x^i = x \cdot B_ix^{i-1} + B_i x^i = 2B_{i,i}x^i = 0$.
 
 
 We now define the following polynomials:
-\begin{equation}\label{Split}
-\begin{split}
-\Phi_i^x(x) & =  A_{2g+2, i}x^{2g+2} + \ldots + A_{i+1, i}x^{i+1} \\
-\Psi_i^x(x) & =  A_{i,i}x^i + \ldots + A_{1,i}x \\
-\Phi_i^y(x) & =  B_{g,i}x^g + \ldots B_{i+1,i}x^{i+1} \\
-\Psi_i^y(x) & =  B_{i-1,i}x^{i-1} + \ldots + B_{1,i}x + B_{0,i}.
-\end{split}
-\end{equation}
+    \begin{equation}\label{Split}
+    \begin{split}
+    \Phi_i^x(x) & =  A_{2g+2, i}x^{2g+2} + \ldots + A_{i+1, i}x^{i+1} \\
+    \Psi_i^x(x) & =  A_{i,i}x^i + \ldots + A_{1,i}x \\
+    \Phi_i^y(x) & =  B_{g,i}x^g + \ldots B_{i+1,i}x^{i+1} \\
+    \Psi_i^y(x) & =  B_{i-1,i}x^{i-1} + \ldots + B_{1,i}x + B_{0,i}.
+    \end{split}
+    \end{equation}
 Finally, we define $\Phi_i(x,y) = \Phi_i^x(x) + y \Phi^y_i(x)$ and $\Psi_i(x,y) = \Psi_i^x(x) + y \Psi_i^y(x)$, so that $S_i(x,y) = \Phi_i(x,y) + \Psi_i(x,y)$.
 
 Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $k$-vector space basis of $\derhamhone$.
-\begin{thm}\label{basis}
 
-If $p \neq 2$ then the residue classes of 
-\begin{equation}\label{one}
- \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right), i=1, \ldots ,g,
-\end{equation}
-along with the residue classes of 
-\begin{equation}\label{two}
- \left( \frac{x^{i}}{y} dx , \frac{x^{i}}{y} dx, 0 \right), i = 0,\ldots ,g-1,
-\end{equation}
-form a basis of $\derhamhone$.
-
-On the other hand, if $p=2$ then the residue classes of the elements 
-\begin{equation}\label{three}
-\left( \left(\frac{\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right), i =1, \ldots , g,
-\end{equation}
-together with the residue classes of 
-\begin{equation}\label{four}
-\left( \frac{x^{i}}{H(x)} dx, \frac{x^{i}}{H(x)} dx, 0 \right), i=0, \ldots, g-1,
-\end{equation}
-form a basis of $\derhamhone$.
-\end{thm}
+    \begin{thm}\label{basis}
+    If $p \neq 2$ then the residue classes of 
+        \begin{equation}\label{one}
+         \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right), i=1, \ldots ,g,
+        \end{equation}
+    along with the residue classes of 
+        \begin{equation}\label{two}
+         \left( \frac{x^{i}}{y} dx , \frac{x^{i}}{y} dx, 0 \right), i = 0,\ldots ,g-1,
+        \end{equation}
+    form a basis of $\derhamhone$.
+    
+    On the other hand, if $p=2$ then the residue classes of the elements 
+        \begin{equation}\label{three}
+        \left( \left(\frac{\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right), i =1, \ldots , g,
+        \end{equation}
+    together with the residue classes of 
+        \begin{equation}\label{four}
+        \left( \frac{x^{i}}{H(x)} dx, \frac{x^{i}}{H(x)} dx, 0 \right), i=0, \ldots, g-1,
+        \end{equation}
+    form a basis of $\derhamhone$.
+    \end{thm}
 
 Before proving this theorem we use it to prove the following corollary.
 
-\begin{cor}
-The action of $G$ on $\derhamhone$ is faithful unless $G$ contains a hyperelliptic involution and $p=2$, in which case the action of the hyperelliptic involution is trivial.
-\end{cor}
+    \begin{cor}
+    The action of $G$ on $\derhamhone$ is faithful unless $G$ contains a hyperelliptic involution and $p=2$, in which case the action of the hyperelliptic involution is trivial.
+    \end{cor}
 
-\begin{proof}
-Recall from Proposition \ref{ses} that $H^0(X,\Omega_X)$ injects into $\derhamhone$.
-Then if $p \neq 2$ or $G$ does not contain a hyperelliptic involution it follows from \cite[Thm. 4.2]{faithfulaction}\todo{reference in thesis} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
+    \begin{proof}
+    Recall from Proposition \ref{ses} that $H^0(X,\Omega_X)$ injects into $\derhamhone$.
+    Then if $p \neq 2$ or $G$ does not contain a hyperelliptic involution it follows from \cite[Thm. 4.2]{faithfulaction}\todo{reference in thesis} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
+    
+    We now suppose that $p=2$ and that $G$ contains a hyperelliptic involution, which we denote by $\sigma$.
+    By the same theorem from \cite{faithfulaction}\todo{reference in thesis} we know that $\sigma$ acts trivially on $\hzero$.
+    
+    Since $\hzero$ is dual to $\hone$ then $\sigma$ also acts trivially on $\hone$.
+    We can study exactly why this is from the view of \cech cohomology, and this will also help to determine the action of $\sigma$ on $\derhamhone$.
+    If we fix a natural number $i\in \{1, \ldots ,g\}$ then $\sigma$ maps $\frac{y}{x^i}$ to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
+    Now we can split $\frac{H(x)}{x^i}$ as follows, 
+        \begin{equation*}
+        \frac{H(x)}{x^i} =  \frac{B_{i-1}x^{i-1} + \ldots + B_1x + B_0}{x^i} - \left( - \frac{x^d + B_{d-1}x^{d-1} + \ldots + B_ix^i}{x^i} \right),
+        \end{equation*}
+    where $B_j$ are as in \eqref{capitalh}.
+    Since this is clearly the difference of an element of $\cO_X(U_0)$ and an element of $\cO_X(U_\infty)$ we see that $\frac{H(x)}{x^i}$ is zero in $\hone$.
+    We let 
+        \[
+        H_{1,i}(x) = B_{i-1}x^{i-1} + \ldots + B_1x + B_0 \quad \text{ and } \quad H_{2,i}(x) = -( x^d + B_{d-1}x^{d-1} + \ldots + B_ix^i).
+        \]
+    
+    We now consider the action of $\sigma$ on the entries in \eqref{three}.
+    Firstly we see that
+        \begin{align*}
+        \sigma \left( \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} dx\right) & = \frac{-\sigma(\Psi_i(x,y))}{x^{i+1} H(x)} dx \\
+        & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{H(x)(xH_{1,i}'(x) + iH_{1,i}(x))}{x^{i+1}H(x)}dx\\
+        & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{xH_{1,i}'(x) + iH_{1,i}(x)}{x^{i+1}}dx \\
+        & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx +  \frac{H_{1,i}'(x)}{x^i}dx + \frac{iH_{1,i}(x)}{x^{i+1}}dx \\
+        & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx +  \frac{1}{x^i}d\left( H_{1,i}(x) \right) + H_{1,i}(x) d \left( \frac{1}{x^i} \right) \\
+        & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + d\left( \frac{H_{1,i}(x)}{x^i} \right),
+        \end{align*}
+    where the second equality follows from \eqref{capitals} and the fact that $\sigma(y) = y + H(x)$.
+    
+    Similarly we can derive
+        \begin{equation*}
+        \sigma \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} dx \right)  = \frac{\Phi_i(x,y)}{x^{i+1}H(x)} dx + d \left( \frac{H_{2,i}(x)}{x^i} \right).
+        \end{equation*}
+    Lastly, it is clear that $\sigma(x^{-i}y) = x^{-i}(y+H(x))$.
+    
+    
+    We can now describe exactly how sigma acts on the elements of \eqref{three} using $H_{1,i}(x)$ and $H_{2,i}(x)$:
+        \begin{multline*}
+        \sigma \left( \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right)\right) = \\
+         \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + d\left(\frac{H_{1,i}(x)}{x^i}\right),  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ d\left(\frac{H_{2,i}(x)}{x^i} \right), \frac{y+H(x)}{x^i} \right).
+        \end{multline*}
+    So the action of $\sigma$ on the basis elements in \eqref{three} amounts to adding 
+        \[
+        \left( d\left(\frac{H(x)_{1,i}}{x^i}\right), d\left(\frac{H(x)_{2,i}}{x^i}\right), \frac{H(x)}{x^i} \right),
+        \]
+    which clearly satisfies the conditions of \eqref{quotient} and hence is zero.
+    So the action of the involution $\sigma$ on $\derhamhone$ is trivial and hence the action of the group $G$ is not faithful.
+    \end{proof}
 
-We now suppose that $p=2$ and that $G$ contains a hyperelliptic involution, which we denote by $\sigma$.
-By the same theorem from \cite{faithfulaction}\todo{reference in thesis} we know that $\sigma$ acts trivially on $\hzero$.
-
-Since $\hzero$ is dual to $\hone$ then $\sigma$ also acts trivially on $\hone$.
-We can study exactly why this is from the view of \cech cohomology, and this will also help to determine the action of $\sigma$ on $\derhamhone$.
-If we fix a natural number $i\in \{1, \ldots ,g\}$ then $\sigma$ maps $\frac{y}{x^i}$ to $\frac{y}{x^i} + \frac{H(x)}{x^i}$. 
-Now we can split $\frac{H(x)}{x^i}$ as follows, 
-\begin{equation*}
-\frac{H(x)}{x^i} =  \frac{B_{i-1}x^{i-1} + \ldots + B_1x + B_0}{x^i} - \left( - \frac{x^d + B_{d-1}x^{d-1} + \ldots + B_ix^i}{x^i} \right),
-\end{equation*}
-where $B_j$ are as in \eqref{capitalh}.
-Since this is clearly the difference of an element of $\cO_X(U_0)$ and an element of $\cO_X(U_\infty)$ we see that $\frac{H(x)}{x^i}$ is zero in $\hone$.
-We let 
-\[
-H_{1,i}(x) = B_{i-1}x^{i-1} + \ldots + B_1x + B_0 \quad \text{ and } \quad H_{2,i}(x) = -( x^d + B_{d-1}x^{d-1} + \ldots + B_ix^i).
-\]
-
-We now consider the action of $\sigma$ on the entries in \eqref{three}.
-Firstly we see that
-\begin{align*}
-\sigma \left( \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} dx\right) & = \frac{-\sigma(\Psi_i(x,y))}{x^{i+1} H(x)} dx \\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{H(x)(xH_{1,i}'(x) + iH_{1,i}(x))}{x^{i+1}H(x)}dx\\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{xH_{1,i}'(x) + iH_{1,i}(x)}{x^{i+1}}dx \\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx +  \frac{H_{1,i}'(x)}{x^i}dx + \frac{iH_{1,i}(x)}{x^{i+1}}dx \\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx +  \frac{1}{x^i}d\left( H_{1,i}(x) \right) + H_{1,i}(x) d \left( \frac{1}{x^i} \right) \\
-& = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + d\left( \frac{H_{1,i}(x)}{x^i} \right),
-\end{align*}
-where the second equality follows from \eqref{capitals} and the fact that $\sigma(y) = y + H(x)$.
-
-Similarly we can derive
-\begin{equation*}
-\sigma \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} dx \right)  = \frac{\Phi_i(x,y)}{x^{i+1}H(x)} dx + d \left( \frac{H_{2,i}(x)}{x^i} \right).
-\end{equation*}
-Lastly, it is clear that $\sigma(x^{-i}y) = x^{-i}(y+H(x))$.
-
-
-We can now describe exactly how sigma acts on the elements of \eqref{three} using $H_{1,i}(x)$ and $H_{2,i}(x)$:
-\begin{multline*}
-\sigma \left( \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right)\right) = \\
- \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + d\left(\frac{H_{1,i}(x)}{x^i}\right),  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ d\left(\frac{H_{2,i}(x)}{x^i} \right), \frac{y+H(x)}{x^i} \right).
-\end{multline*}
-So the action of $\sigma$ on the basis elements in \eqref{three} amounts to adding 
-\[
-\left( d\left(\frac{H(x)_{1,i}}{x^i}\right), d\left(\frac{H(x)_{2,i}}{x^i}\right), \frac{H(x)}{x^i} \right),
-\]
-which clearly satisfies the conditions of \eqref{quotient} and hence is zero.
-So the action of the involution $\sigma$ on $\derhamhone$ is trivial and hence the action of the group $G$ is not faithful.
-\end{proof}
-
-\begin{rem}
-We briefly study the action of $\sigma$ on the elements \eqref{one} (when $p\neq 2$).
-When $p \neq 2$ then $\sigma$ acts by $(x,y) \mapsto (x,-y)$.
-If we let
-\[
-\nu_i = \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right)
-\]
-then 
-\begin{equation*}
-\sigma(\nu_i) = -\nu_i.
-\end{equation*}
-Similarly, if 
-\[
-\eta_i = \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0 \right)
-\]
-then 
-\[
-\sigma(\eta_i) = - \eta_i.
-\]
-Hence $\sigma$ acts by multiplication with $-1$ on $\derhamhone$.
-\end{rem}
+    \begin{rem}
+    We briefly study the action of $\sigma$ on the elements \eqref{one} (when $p\neq 2$).
+    When $p \neq 2$ then $\sigma$ acts by $(x,y) \mapsto (x,-y)$.
+    If we let
+        \[
+        \nu_i = \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right)
+        \]
+    then 
+        \begin{equation*}
+        \sigma(\nu_i) = -\nu_i.
+        \end{equation*}
+    Similarly, if 
+        \[
+        \eta_i = \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0 \right)
+        \]
+    then 
+        \[
+        \sigma(\eta_i) = - \eta_i.
+        \]
+    Hence $\sigma$ acts by multiplication with $-1$ on $\derhamhone$.
+    \end{rem}
 
 
 We now prove Theorem \ref{basis}.
 
-\begin{proof}
-We make use of the fact that the short exact sequence in Lemma \ref{ses} splits as a sequence of vector spaces over $k$, and that we know bases of the outer two terms.
-
-It is clear that the elements in \eqref{two} and \eqref{four} are elements of the space \eqref{derhamconditions}. 
-In fact, it follows from \cite[Thm. 6.1]{faithfulaction}\todo{reference in thesis} that they are the image of a basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
-
-Moreover, it is obvious that if the elements in \eqref{one} and \eqref{three} are well defined elements of the space \eqref{derhamconditions} then they will map to the basis of $\hone$ given in Lemma \ref{basish1}.
-So we need only show that the terms in \eqref{one} and \eqref{three} satisfy the conditions stated in \eqref{derhamconditions}.
-For the rest of the proof we fix $i \in \{1, \ldots ,g\}$.
-
-
-We start with the case $p\neq 2$, and observe that
-\begin{align*}
-\left(  \frac{\psi_i(x)}{2yx^{i+1}}  - \frac{-\phi_i(x)}{2yx^{i+1}} \right) dx & =  \frac{s_i(x)}{2yx^{i+1}} dx \\
-& =  \frac{1}{2yx^i} \left( f(x)' - \frac{2if(x)}{x} \right) dx \\
-& =  \frac{x^i}{2y} \left( \frac{f(x)'}{x^{2i}}dx -\frac{2if(x)}{x^{2i+1}} dx \right) \\
-& =  \frac{x^i}{2y} \left( f(x)d\left(\frac{1}{x^{2i}}\right) + \frac{1}{x^{2i}}df(x) \right) \\
-& =  \frac{x^i}{2y}d(f(x)x^{-2i}) \\
-& =  \frac{x^i}{2y} d\left(\left(yx^{-i}\right)^2\right) \\
-& =  d(yx^{-i}),
-\end{align*}
-with the penultimate line following from the defining equation \eqref{definingequationpnot2}.
-This shows that the elements in \eqref{one} satisfy $df_{0, \infty} = \omega_0 - \omega_\infty$, one of the conditions of \eqref{derhamconditions}.
-Since we saw in the proof of Lemma \ref{basish1} that $\frac{y}{x^i}$ is regular on $U_0\cap U_\infty$ it only remains to show that $\frac{\phi_i(x)}{2yx^{i+1}}dx$ and $\frac{-\psi_i(x)}{2yx^{i+1}}dx$ are regular on $U_\infty$ and $U_0$ respectively.
-
-
-In order to do this we define $\alpha_{j,i} \in k$ for $0\leq j \leq 2g+2$ to satisfy the equation
-\[
-s_i(x) = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{0,i},
-\]
-so that
-\begin{align*}
-\phi_i(x) = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{g+2,i}x^{g+2} \\
-\intertext{and }
-\psi_i(x) = \alpha_{g+1,i}x^{g+1} + \ldots + \alpha_{0,i}.
-\end{align*}
-Note that it is possible for any of $\alpha_{j,i}$ to be zero. In fact, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
-Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 \leq d_\psi \leq g+1$ and $g+1 < d_\phi \leq 2g+2$.
-
-
-We now show that $\frac{-\phi_i(x)}{2yx^{i+1}}dx$ and $\frac{\psi_i(x)}{2yx^{i+1}}dx$ are regular on $U_\infty$ and $U_0$ respectively.
-We may assume that $\phi_i(x)$ and $\psi_i(x)$ are non-zero, since the zero function is regular everywhere.
-
-
-The divisor of $\frac{-\phi_i(x)}{2yx^{i+1}}dx$ is
-\begin{align*}
-\di\left( \frac{-\phi_i(x)}{2yx^{i+1}}dx \right) & =  \di(\phi_i(x)) -\di(y) - \di(x^{i+1}) + \di (dx) \\
-& =  \di(\phi_i(x)) - ( R - (g+1)D_\infty) - ((i+1)D_0 - (i+1)D_\infty) \\
-& \qquad + (R - 2D_\infty) \\
-& =  \left( \di_0\left( \frac{\phi_i(x)}{x^{g+2}}\right) + (g+2)D_0 - d_\phi D_\infty\right) - (i+1)D_0 + (g+i)D_\infty \\
-& \geq  \di_0\left( \frac{\phi_i(x)}{x^{g+2}}\right) + (g+2)D_0 - (2g+2)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
-& =  \di_0\left( \frac{\phi_i(x)}{x^{g+2}} \right) + (i-g-2)D_\infty + (g-i+1)D_0,
-\end{align*}
-where the second equality makes use of \eqref{divxp=2} and \eqref{pnot2divisors}.
-Since $i \leq g$ the differential $\frac{-\phi_i(x)}{2yx^{i+1}}dx$ is regular on $U_\infty = X\backslash \pi^{-1}(\infty)$.
-
-Similarly the divisor of $\frac{\psi_i(x)}{2yx^{i+1}}dx$ is
-
-\begin{align*}
-\di \left( \frac{\psi_i(x)}{2yx^{i+1}}dx\right) & =  \di(\psi_i(x)) - \di(y) - \di(x^{i+1}) + \di (dx) \\
-& =  \di (\psi_i(x) ) -(R - (g+1)D_\infty) - ((i+1)D_0 - (i+1)D_\infty) \\ 
-& \qquad + (R -2D_\infty) \\
-& =  \di(\psi_i(x)) + (g+i)D_\infty -(i+1)D_0 \\
-& =  (\di_0(\psi_i(x)) -d_\psi D_\infty) + (g+i)D_\infty -(i+1)D_0 \\
-& \geq \left( \di_0(\psi_i(x)) - (g+1)D_\infty \right) + (g+i)D_\infty -(i+1)D_0 \\
-& =  \di_0(\psi_i(x)) + (i-1)D_\infty - (i+1)D_0.
-\end{align*}
-Again, the second equality uses \eqref{divxp=2} and \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^{i+1}}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
-
-
-We now suppose that $p=2$.
-We remind the reader that this allows us to change signs between positive and negative as we wish.
-We see that
-\begin{align*}
-\left( \left( \frac{ \Psi_i(x,y)}{x^{i+1}H} \right) + \left( \frac{\Phi_i(x,y)}{x^{i+1}H} \right) \right) dx & =  \frac{S_i(x,y)}{x^{i+1}H(x)}dx \\
-& =  \left( \frac{F(x)'}{x^iH(x)} + \frac{yH(x)'}{x^iH(x)} + \frac{iy}{x^{i+1}} \right) dx \\
-& =  \frac{1}{x^i}\left( \frac{F(x)' + yH(x)'}{H(x)} \right) dx + \frac{iy}{x^{i+1}}dx \\
-& =  x^{-i}dy + yd \left( x^{-i}\right) \\
-& =  d\left( yx^{-i}\right),
-\end{align*}
-with the fourth equality following from \eqref{divdyp=2}.
-We have also already seen in the proof of Lemma \ref{basish1} that $\frac{y}{x^i}$ is regular on $U_0 \cap U_\infty$.
-So in order to prove that for $i\in \{1, \ldots, g\}$ the elements of \eqref{three} are satisfy the conditions of \eqref{derhamconditions} it only remains to show that the differentials $\frac{\Phi_i(x,y)}{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x,y)}{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.
-We denote the degrees of the polynomials defined in \eqref{Split} by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$.
-
-
-By \eqref{Split} $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x,y) }{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x,y) }{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.\todo{note that some stuff was removed before this para}
-
-We start by computing the divisor of $\frac{1}{x^{i+1}H(x)}dx$, since it is a common component to all the differentials we need to look at.
-This yields
-\begin{align*}
-\di \left( \frac{1}{x^{i+1}H(x)}dx \right) & = \di(dx) - \di (x^{i+1}) - \di (H(x)) \nonumber \\
-& = (R-2D_\infty) - ((i+1)D_0 - (i+1)D_\infty) - (R - (g+1)D_\infty) \nonumber \\
-& = (g+i)D_\infty - (i+1)D_0,
-\end{align*}
-using \eqref{differentialdivisor}, \eqref{divisorofH} and \eqref{divxp=2}.
-We now use this along with Proposition \ref{divyp=2} and the polynomials \eqref{Split} to complete the proof.
-
-We begin by computing the divisors associated to $\Phi_i(x,y)$.
-Firstly,
-\begin{align*}
-\di \left( \frac{\Phi_i^x(x) }{x^{i+1} H(x)}dx \right)  = &  \di(\Phi_i^x(x)) -(i+1)D_0 + (g+i)D_\infty\\
- = & \left( \di_0(\Phi_i^x(x)) -d_\Phi^xD_\infty\right) -(i+1)D_0 + (g+i)D_\infty\\
- \geq & \di_0(\Phi_i^x(x)) - (2g+2)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
- = &  \di_0(\Phi_i^x(x)) - (i+1)D_0 + (i-2-g)D_\infty \\
- =  & \di_0 \left( \frac{\Phi_i^x(x)}{x^{i+1}} \right) + (i-g-2)D_\infty.
-\end{align*}
-From this we see that the differential $\frac{\Phi_i^x(x)}{x^{i+1}H(x)}dx$ is clearly regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
-
-We now compute the divisor of the other half of $\frac{\Phi_i(x,y)}{x^{i+1}H(x)}dx$, namely
-\begin{align*}
-\di\left(\frac{y\Phi_i^y(x) dx}{x^{i+1}H(x)} \right)  = & \di(y) + \di(\Phi_i^y(x)) -(i+1)D_0 + (g+i)D_\infty\\
- = & \di(y) + \di_0(\Phi_i^y(x)) - d_\Phi^yD_\infty -(i+1)D_0 + (g+i)D_\infty \\
- \geq & \di(y) + \di_0(\Phi_i^y(x)) - (g+1)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
- = & \di(y) + \di_0\left(\frac{\Phi_i^y(x)}{x^{i+1}} \right) + (i-1)D_\infty.
-\end{align*}
-From Proposition \ref{divyp=2} we see that $y$ only has poles at points in $\pi^{-1}(\infty)$, and hence this completes the proof that $\frac{\Phi_i(x,y) }{x^{i+1}H(x)}dx$ is regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
-
-Now we complete the same computations on $\Psi_i(x,y)$, starting with $\Psi_i^x(x)$:
-\begin{align*}
-\di\left( \frac{\Psi_i^x(x) }{x^{i+1}H(x)}dx \right)  & =   \di(\Psi_i^x(x))  - (i+1)D_0 + (g+i)D_\infty \\
-& = (\di_0(\Psi_i^x(x)) -d_\Psi^xD_\infty) - (i+1)D_0 + (g+i)D_\infty \\
- & \geq   \di_0(\Psi_i^x(x) ) - iD_\infty - (i+1)D_0 + (g+i)D_\infty \\
- & =   \di_0(\Psi_i^x(x)) - (i+1)D_0 + gD_\infty,
-\end{align*}
-and it is clear that the divisor is positive on $U_0 = X \backslash \pi^{-1}(0)$.
-
-For the other half of the differential we need to consider separate cases.
-If we assume that $\infty$ is branch point then  using Proposition \ref{divyp=2} we see that
-\begin{align*}
-\di\left(\frac{y\Psi_i^y(x) }{x^{i+1}H(x)}dx \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y(x)) - (i+1)D_0 + (g+i)[P_\infty] \\
- =  & \di_0(y) + \di(\Psi_i^y(x)) -(i+1)D_0 + (2i -1)[P_\infty] \\
- = &  \di_0(y) + \di_0(\Psi_i^y(x)) - d_\Psi^y[P_\infty] - (i+1)D_0 + (2i-1)[P_\infty] \\
- \geq &  \di_0(y) + \di_0(\Psi_i^y(x)) -(i-1)[P_\infty] -(i+1)D_0 + (2i-1)[P_\infty] \\
- =   &\di_0(y) + \di_0(\Psi_i^y(x)) -(i+1)D_0 + [P_\infty],
-\end{align*}
-which is clearly positive on $U_0$.
-On the other hand, if $\infty$ is not a branch point then we have
-\begin{align*}
-\di\left(\frac{y\Psi_i^y(x) }{x^{i+1}H(x)}dx \right)  =  & \di(y) + \di(\Psi_i^y(x)) - (i+1)D_0 + (g+i)D_\infty \\
-= & \di(y) + \di_0(\Psi_i^y(x)) - (i+1)D_0 + (g+i - d_\Psi^y)D_\infty \\
-\geq & \di(y) + \di_0(\Psi_i^y(x)) - (i+1)D_0 + (g+1)D_\infty. \\
-\end{align*}
-Since we know from Proposition \ref{divyp=2} that $y$ cannot have a pole of order greater $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential $\frac{y\Psi_i^y(x) }{x^{i+1}H(x)}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$.
-Thus we have completed the proof.
-
-
-\end{proof}
+    \begin{proof}
+    We make use of the fact that the short exact sequence in Lemma \ref{ses} splits as a sequence of vector spaces over $k$, and that we know bases of the outer two terms.
+    
+    It is clear that the elements in \eqref{two} and \eqref{four} are elements of the space \eqref{derhamconditions}. 
+    In fact, it follows from \cite[Thm. 6.1]{faithfulaction}\todo{reference in thesis} that they are the image of a basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
+    
+    Moreover, it is obvious that if the elements in \eqref{one} and \eqref{three} are well defined elements of the space \eqref{derhamconditions} then they will map to the basis of $\hone$ given in Lemma \ref{basish1}.
+    So we need only show that the terms in \eqref{one} and \eqref{three} satisfy the conditions stated in \eqref{derhamconditions}.
+    For the rest of the proof we fix $i \in \{1, \ldots ,g\}$.
+    
+    
+    We start with the case $p\neq 2$, and observe that
+        \begin{align*}
+        \left(  \frac{\psi_i(x)}{2yx^{i+1}}  - \frac{-\phi_i(x)}{2yx^{i+1}} \right) dx & =  \frac{s_i(x)}{2yx^{i+1}} dx \\
+        & =  \frac{1}{2yx^i} \left( f(x)' - \frac{2if(x)}{x} \right) dx \\
+        & =  \frac{x^i}{2y} \left( \frac{f(x)'}{x^{2i}}dx -\frac{2if(x)}{x^{2i+1}} dx \right) \\
+        & =  \frac{x^i}{2y} \left( f(x)d\left(\frac{1}{x^{2i}}\right) + \frac{1}{x^{2i}}df(x) \right) \\
+        & =  \frac{x^i}{2y}d(f(x)x^{-2i}) \\
+        & =  \frac{x^i}{2y} d\left(\left(yx^{-i}\right)^2\right) \\
+        & =  d(yx^{-i}),
+        \end{align*}
+    with the penultimate line following from the defining equation \eqref{definingequationpnot2}.
+    This shows that the elements in \eqref{one} satisfy $df_{0, \infty} = \omega_0 - \omega_\infty$, one of the conditions of \eqref{derhamconditions}.
+    Since we saw in the proof of Lemma \ref{basish1} that $\frac{y}{x^i}$ is regular on $U_0\cap U_\infty$ it only remains to show that $\frac{\phi_i(x)}{2yx^{i+1}}dx$ and $\frac{-\psi_i(x)}{2yx^{i+1}}dx$ are regular on $U_\infty$ and $U_0$ respectively.
+    
+    
+    In order to do this we define $\alpha_{j,i} \in k$ for $0\leq j \leq 2g+2$ to satisfy the equation
+        \[
+        s_i(x) = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{0,i},
+        \]
+    so that
+        \begin{align*}
+        \phi_i(x) = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{g+2,i}x^{g+2} \\
+        \intertext{and }
+        \psi_i(x) = \alpha_{g+1,i}x^{g+1} + \ldots + \alpha_{0,i}.
+        \end{align*}
+    Note that it is possible for any of $\alpha_{j,i}$ to be zero. In fact, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
+    Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 \leq d_\psi \leq g+1$ and $g+1 < d_\phi \leq 2g+2$.
+    
+    
+    We now show that $\frac{-\phi_i(x)}{2yx^{i+1}}dx$ and $\frac{\psi_i(x)}{2yx^{i+1}}dx$ are regular on $U_\infty$ and $U_0$ respectively.
+    We may assume that $\phi_i(x)$ and $\psi_i(x)$ are non-zero, since the zero function is regular everywhere.
+    
+    
+    The divisor of $\frac{-\phi_i(x)}{2yx^{i+1}}dx$ is
+        \begin{align*}
+        \di\left( \frac{-\phi_i(x)}{2yx^{i+1}}dx \right) & =  \di(\phi_i(x)) -\di(y) - \di(x^{i+1}) + \di (dx) \\
+        & =  \di(\phi_i(x)) - ( R - (g+1)D_\infty) - ((i+1)D_0 - (i+1)D_\infty) \\
+        & \qquad + (R - 2D_\infty) \\
+        & =  \left( \di_0\left( \frac{\phi_i(x)}{x^{g+2}}\right) + (g+2)D_0 - d_\phi D_\infty\right) - (i+1)D_0 + (g+i)D_\infty \\
+        & \geq  \di_0\left( \frac{\phi_i(x)}{x^{g+2}}\right) + (g+2)D_0 - (2g+2)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
+        & =  \di_0\left( \frac{\phi_i(x)}{x^{g+2}} \right) + (i-g-2)D_\infty + (g-i+1)D_0,
+        \end{align*}
+    where the second equality makes use of \eqref{divxp=2} and \eqref{pnot2divisors}.
+    Since $i \leq g$ the differential $\frac{-\phi_i(x)}{2yx^{i+1}}dx$ is regular on $U_\infty = X\backslash \pi^{-1}(\infty)$.
+    
+    Similarly the divisor of $\frac{\psi_i(x)}{2yx^{i+1}}dx$ is
+    
+        \begin{align*}
+        \di \left( \frac{\psi_i(x)}{2yx^{i+1}}dx\right) & =  \di(\psi_i(x)) - \di(y) - \di(x^{i+1}) + \di (dx) \\
+        & =  \di (\psi_i(x) ) -(R - (g+1)D_\infty) - ((i+1)D_0 - (i+1)D_\infty) \\ 
+        & \qquad + (R -2D_\infty) \\
+        & =  \di(\psi_i(x)) + (g+i)D_\infty -(i+1)D_0 \\
+        & =  (\di_0(\psi_i(x)) -d_\psi D_\infty) + (g+i)D_\infty -(i+1)D_0 \\
+        & \geq \left( \di_0(\psi_i(x)) - (g+1)D_\infty \right) + (g+i)D_\infty -(i+1)D_0 \\
+        & =  \di_0(\psi_i(x)) + (i-1)D_\infty - (i+1)D_0.
+        \end{align*}
+    Again, the second equality uses \eqref{divxp=2} and \eqref{pnot2divisors}, and since $i\geq 1$ we conclude that $\frac{\psi_i(x)}{2yx^{i+1}}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$, completing the $p\neq 2$ case.
+    
+    
+    We now suppose that $p=2$.
+    We remind the reader that this allows us to change signs between positive and negative as we wish.
+    We see that
+        \begin{align*}
+        \left( \left( \frac{ \Psi_i(x,y)}{x^{i+1}H} \right) + \left( \frac{\Phi_i(x,y)}{x^{i+1}H} \right) \right) dx & =  \frac{S_i(x,y)}{x^{i+1}H(x)}dx \\
+        & =  \left( \frac{F(x)'}{x^iH(x)} + \frac{yH(x)'}{x^iH(x)} + \frac{iy}{x^{i+1}} \right) dx \\
+        & =  \frac{1}{x^i}\left( \frac{F(x)' + yH(x)'}{H(x)} \right) dx + \frac{iy}{x^{i+1}}dx \\
+        & =  x^{-i}dy + yd \left( x^{-i}\right) \\
+        & =  d\left( yx^{-i}\right),
+        \end{align*}
+    with the fourth equality following from \eqref{divdyp=2}.
+    We have also already seen in the proof of Lemma \ref{basish1} that $\frac{y}{x^i}$ is regular on $U_0 \cap U_\infty$.
+    So in order to prove that for $i\in \{1, \ldots, g\}$ the elements of \eqref{three} are satisfy the conditions of \eqref{derhamconditions} it only remains to show that the differentials $\frac{\Phi_i(x,y)}{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x,y)}{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.
+    We denote the degrees of the polynomials defined in \eqref{Split} by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$.
+    
+    
+    By \eqref{Split} $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x,y) }{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x,y) }{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.\todo{note that some stuff was removed before this para}
+    
+    We start by computing the divisor of $\frac{1}{x^{i+1}H(x)}dx$, since it is a common component to all the differentials we need to look at.
+    This yields
+        \begin{align*}
+        \di \left( \frac{1}{x^{i+1}H(x)}dx \right) & = \di(dx) - \di (x^{i+1}) - \di (H(x)) \nonumber \\
+        & = (R-2D_\infty) - ((i+1)D_0 - (i+1)D_\infty) - (R - (g+1)D_\infty) \nonumber \\
+        & = (g+i)D_\infty - (i+1)D_0,
+        \end{align*}
+    using \eqref{differentialdivisor}, \eqref{divisorofH} and \eqref{divxp=2}.
+    We now use this along with Proposition \ref{divyp=2} and the polynomials \eqref{Split} to complete the proof.
+    
+    We begin by computing the divisors associated to $\Phi_i(x,y)$.
+    Firstly,
+        \begin{align*}
+        \di \left( \frac{\Phi_i^x(x) }{x^{i+1} H(x)}dx \right)  = &  \di(\Phi_i^x(x)) -(i+1)D_0 + (g+i)D_\infty\\
+         = & \left( \di_0(\Phi_i^x(x)) -d_\Phi^xD_\infty\right) -(i+1)D_0 + (g+i)D_\infty\\
+         \geq & \di_0(\Phi_i^x(x)) - (2g+2)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
+         = &  \di_0(\Phi_i^x(x)) - (i+1)D_0 + (i-2-g)D_\infty \\
+         =  & \di_0 \left( \frac{\Phi_i^x(x)}{x^{i+1}} \right) + (i-g-2)D_\infty.
+        \end{align*}
+    From this we see that the differential $\frac{\Phi_i^x(x)}{x^{i+1}H(x)}dx$ is clearly regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
+    
+    We now compute the divisor of the other half of $\frac{\Phi_i(x,y)}{x^{i+1}H(x)}dx$, namely
+        \begin{align*}
+        \di\left(\frac{y\Phi_i^y(x) dx}{x^{i+1}H(x)} \right)  = & \di(y) + \di(\Phi_i^y(x)) -(i+1)D_0 + (g+i)D_\infty\\
+         = & \di(y) + \di_0(\Phi_i^y(x)) - d_\Phi^yD_\infty -(i+1)D_0 + (g+i)D_\infty \\
+         \geq & \di(y) + \di_0(\Phi_i^y(x)) - (g+1)D_\infty - (i+1)D_0 + (g+i)D_\infty \\
+         = & \di(y) + \di_0\left(\frac{\Phi_i^y(x)}{x^{i+1}} \right) + (i-1)D_\infty.
+        \end{align*}
+    From Proposition \ref{divyp=2} we see that $y$ only has poles at points in $\pi^{-1}(\infty)$, and hence this completes the proof that $\frac{\Phi_i(x,y) }{x^{i+1}H(x)}dx$ is regular on $U_\infty = X \backslash \pi^{-1}(\infty)$.
+    
+    Now we complete the same computations on $\Psi_i(x,y)$, starting with $\Psi_i^x(x)$:
+        \begin{align*}
+        \di\left( \frac{\Psi_i^x(x) }{x^{i+1}H(x)}dx \right)  & =   \di(\Psi_i^x(x))  - (i+1)D_0 + (g+i)D_\infty \\
+        & = (\di_0(\Psi_i^x(x)) -d_\Psi^xD_\infty) - (i+1)D_0 + (g+i)D_\infty \\
+         & \geq   \di_0(\Psi_i^x(x) ) - iD_\infty - (i+1)D_0 + (g+i)D_\infty \\
+         & =   \di_0(\Psi_i^x(x)) - (i+1)D_0 + gD_\infty,
+        \end{align*}
+    and it is clear that the divisor is positive on $U_0 = X \backslash \pi^{-1}(0)$.
+    
+    For the other half of the differential we need to consider separate cases.
+    If we assume that $\infty$ is branch point then  using Proposition \ref{divyp=2} we see that
+        \begin{align*}
+        \di\left(\frac{y\Psi_i^y(x) }{x^{i+1}H(x)}dx \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y(x)) - (i+1)D_0 + (g+i)[P_\infty] \\
+         =  & \di_0(y) + \di(\Psi_i^y(x)) -(i+1)D_0 + (2i -1)[P_\infty] \\
+         = &  \di_0(y) + \di_0(\Psi_i^y(x)) - d_\Psi^y[P_\infty] - (i+1)D_0 + (2i-1)[P_\infty] \\
+         \geq &  \di_0(y) + \di_0(\Psi_i^y(x)) -(i-1)[P_\infty] -(i+1)D_0 + (2i-1)[P_\infty] \\
+         =   &\di_0(y) + \di_0(\Psi_i^y(x)) -(i+1)D_0 + [P_\infty],
+        \end{align*}
+    which is clearly positive on $U_0$.
+    On the other hand, if $\infty$ is not a branch point then we have
+        \begin{align*}
+        \di\left(\frac{y\Psi_i^y(x) }{x^{i+1}H(x)}dx \right)  =  & \di(y) + \di(\Psi_i^y(x)) - (i+1)D_0 + (g+i)D_\infty \\
+        = & \di(y) + \di_0(\Psi_i^y(x)) - (i+1)D_0 + (g+i - d_\Psi^y)D_\infty \\
+        \geq & \di(y) + \di_0(\Psi_i^y(x)) - (i+1)D_0 + (g+1)D_\infty. \\
+        \end{align*}
+    Since we know from Proposition \ref{divyp=2} that $y$ cannot have a pole of order greater $g+1$ at $P_\infty$ or $P_\infty'$, and only has poles at these points, it follows that the differential $\frac{y\Psi_i^y(x) }{x^{i+1}H(x)}dx$ is regular on $U_0 = X \backslash \pi^{-1}(0)$.
+    Thus we have completed the proof.
+    
+    
+    \end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%% Section 4 %%%%%%%%%%%%%%%%%%%%
@@ -813,351 +816,344 @@ As in the previous section, we assume $X$ is a hyperelliptic curve of genus $g$ 
 
 In the previous section (Theorem \ref{basis}) we found a basis for the de Rham cohomology of any hyperelliptic curve using \cech cohomology, with respect to the cover $\cU = \{ U_0 , U_\infty\}$.
 We let $\lambda_i$ and $\gamma_i$ denote the elements of this basis by defining
-\begin{align*}
-\lambda_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) ,\quad i=0, \ldots, g-1 \\
-\intertext{and}
-\gamma_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{-\phi_i(x)}{2yx^{i+1}}dx, x^{-i}y \right), \quad i=1,\ldots ,g.
-\end{align*}
+    \begin{align*}
+    \lambda_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) ,\quad i=0, \ldots, g-1 \\
+    \intertext{and}
+    \gamma_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{-\phi_i(x)}{2yx^{i+1}}dx, x^{-i}y \right), \quad i=1,\ldots ,g.
+    \end{align*}
 We now fix some $a \in \mathbb P_k^1\backslash \{0, \infty\}$ and define $U_a : = X \backslash \pi^{-1}(a)$ and $\cU''~:=~\{U_0,U_a, U_\infty\}$.
 Then $\cechderhamhone(\cU'')$ can be defined as the $k$-vector space 
-\begin{multline}\label{sixtupleconditions}
-\left\{ (\omega_0, \omega_a, \omega_\infty , f_{0a}, f_{0 \infty},f_{a \infty}) | \omega_i \in \Omega_X(U_i), f_{ij} \in \cO_X(U_i \cap U_j), \right. \\ \left. f_{0a} - f_{0\infty} + f_{a \infty} = 0, df_{ij} = \omega_i - \omega_j \right\}
-\end{multline}
+    \begin{multline}\label{sixtupleconditions}
+    \left\{ (\omega_0, \omega_a, \omega_\infty , f_{0a}, f_{0 \infty},f_{a \infty}) | \omega_i \in \Omega_X(U_i), f_{ij} \in \cO_X(U_i \cap U_j), \right. \\ \left. f_{0a} - f_{0\infty} + f_{a \infty} = 0, df_{ij} = \omega_i - \omega_j \right\}
+    \end{multline}
 quotiented by the subspace 
-\[
-\left\{ df_0, df_a df_\infty, f_0- f_a, f_0 - f_\infty, f_a - f_\infty | f_i \in \cO_X(U_i)\right\}.
-\]
+    \[
+    \left\{ df_0, df_a df_\infty, f_0- f_a, f_0 - f_\infty, f_a - f_\infty | f_i \in \cO_X(U_i)\right\}.
+    \]
 
 We also define the following polynomials for $1 \leq i \leq g$
-\[
-r_i(x) : = \sum_{k=0}^{i-1} (-1)^{g-k}\binom{g}{k} a^{g-k} x^k
-\]
+    \[
+    r_i(x) : = \sum_{k=0}^{i-1} (-1)^{g-k}\binom{g}{k} a^{g-k} x^k
+    \]
 and
-\[
-t_i(x) := \sum_{k=i}^{g} (-1)^{g-k}\binom{g}{k} a^{g-k} x^k,
-\]
+    \[
+    t_i(x) := \sum_{k=i}^{g} (-1)^{g-k}\binom{g}{k} a^{g-k} x^k,
+    \]
 splitting the polynomial $(x-a)^g$ in to two parts.
 The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
 
 
-\begin{prop}\label{basis22}
-The pre-image of $\rho^{-1}(\gamma_i)$ for $i \in \{1, \ldots, g\}$ is the residue class of
-\begin{multline*}
-\nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right).
-\end{multline*}
-\end{prop}
-\begin{rem}
-Note that the third term, $\frac{\phi_i(x)}{2yx^{i+1}} dx$, has a different sign than the equivalent term in $\gamma_i$.
-This is due the increased number of open sets in the cover moving it from the second to third position.
-\end{rem}
-\begin{proof}
-In order to be able to refer to the entries in $\nu_i$ we let
-\[
-\nu_i = \left( \omega_{0 i}, \omega_{a i}, \omega_{\infty i}, f_{0 a i}, f_{0 \infty i}, f_{a \infty i} \right).
-\]
-First, note that it follows from the proof of Theorem \ref{basis} that $d(f_{0 \infty i}) = \omega_{0 i} + \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
-
-Since $r_i(x)+t_i(x)$ is the binary expansion of $(x-a)^g$ then
-\begin{align*}
-f_{0 a i} - f_{0 \infty i}+ f_{a \infty i} & = \frac{r_i(x)y}{x^i(x-a)^g} - \frac{y}{x^i} + \frac{t_i(x)y}{x^i(x-a)^g} \\
-& = \frac{y(r_i(x) + t_i(x) - (x-a)^g)}{x^i(x-a)^g} \\
-& = 0.
-\end{align*}
-
-
-
-We now check that differentials and functions are regular on the appropriate open sets by computing the relevant divisors.
-Firstly, by \eqref{divxp=2} and \eqref{differentialdivisor},
-\begin{align*}
-\di \left( f_{0 a i} \right) & = \di \left( \frac{r_i(x)y}{x^i(x-a)^g} \right) \\
-&  = \di(r_i(x)) + \di(y) - i\di(x) - g\di(x-a) \\
-& \geq \di_0(r_i(x)) - (i-1)D_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
-& = \di_0(r_i(x)) +R -iD_0 - gD_a,
-\end{align*}
-which is non-negative on $U_0 \cap U_a$.
-On the other hand, by \eqref{divxp=2} and \eqref{differentialdivisor},
-\begin{align*}
-\di \left( f_{a \infty i} \right) & = \di \left( \frac{t_i(x)y}{x^i(x-a)^g} \right) \\
-& = \di\left(\frac{t_i(x)}{x^i}\right) + \di(y) - g\di(x-a) \\
-& = \di_0 \left( \frac{t_i(x)}{x^i} \right) - (g-i)D_\infty +R - (g+1)D_\infty - gD_a + gD_\infty\\
-& = \di_0 \left( \frac{t_i(x)}{x^i} \right) +R - gD_a -(g-i+1)D_\infty,
-\end{align*}
-where the third equality holds because $t_i(x)/x^i$ is regular on $U_\infty$.
-Since $y$ is also regular on $U_\infty$  we conclude that $({t_i(x)y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
-
-To show that
-\begin{equation}\label{longequation}
-\omega_{a i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx
-\end{equation}
-is regular on $U_a$ we first compute the divisor
-\begin{align*}
-\di\left( \frac{dx}{2yx^{i+1}(x-a)^{g+1}}\right) & = \di(dx) - \di(y) - (i+1)\di(x) - (g+1)\di(x-a) \\
-& = R - 2D_\infty - R + (g+1)D_\infty - (i+1)D_0 + (i+1)D_\infty \\
-& \quad - (g+1)D_a + (g+1)D_\infty \\
-& = (2g+i+1)D_\infty -(i+1)D_0 - (g+1)D_a,
-\end{align*}
-using \eqref{divxp=2}, \eqref{differentialdivisor} and \eqref{pnot2divisors}.
-We next show that the numerator of \eqref{longequation},
-\begin{equation}\label{numerator}
-{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i},
-\end{equation}
-has degree less then $2g+i+2$, from which it follows that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
-The degree of $\psi_i(x)t_i(x)(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
-If $\deg(f) = 2g+1$, then clearly
-\[
-\deg\left( \phi_i(x)r_i(x)(x-a) \right) = \deg(\phi_i) + \deg(r_i(x)) + \deg(x-a) \leq 2g+1 + i-1 +1 = 2g+i+1
-\]
-and
-\[
-\deg \left( 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i \right)  \leq  2g+1+i .
-\]
-Lastly, if $\deg(f(x)) = 2g+2$ then the term of degree $2g+i+2$ in $-\phi_i(x)r_i(x)(x-a)$ is
-\begin{align*}
--((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
-&  = 2(-1)^{g-i+2}\left( (g-i+1)\binom{g}{i-1} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
-& = 2(-1)^{g-i} \left( \frac{g!}{(i-1)!(g-i)!} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
-& = 2i(-1)^{g-i}\binom{g}{i}a_{2g+2}x^{2g+i+2},
-\end{align*}
-which cancels with the term of the same degree in $2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$.
-Since these terms cancel, we again have the that the degree of \eqref{numerator} is at most $2g+i+1$, and \eqref{longequation} has no pole(s) at the point(s) in $\pi^{-1}(\infty)$.
-
-Finally, we show that \eqref{numerator} is divisible by $x^{i+1}$.
-By definition $x^{g+2} | \phi_i(x)$, and since $i \leq g$ it follows that $x^{i+1}|\phi_i(x)r_i(x)(x-a)$.
-On the other hand, the lowest degree terms of $2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ and $\psi_i(x)t_i(x)(x-a)$ which can be non-zero are, respectively,
-\[
- 2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i 
-\]
-and
-\[
- (-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right).
-\]
-Since
-\[
-(-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right) = 2ia_0(-1)^{g-i+2}\binom{g}{i}a^{g-i+1}x^i,
-\]
-it follows that when adding $\psi_i(x)t_i(x)(x-a)$ and $2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ these terms will cancel.
-Hence the numerator \eqref{numerator} is divisible by $x^{i+1}$.
-
-
-It only remains to show that $\omega_{a i} = \omega_{0 i} -df_{0 a i}$.
-We begin this by computing $df_{0 a i}$, which is
-\begin{align*}
-df_{0 a i} & = d \left( \frac{y r_i(x)}{x^i(x-a)^g} \right) \\
-& = \frac{r_i(x)}{x^i(x-a)^g}dy + y d\left( \frac{r_i(x)}{x^i(x-a)^g} \right) \\
-& = \frac{f(x)'r_i(x)}{2yx^i(x-a)^g}dx + y\left( \frac{r_i(x)'}{x^i(x-a)^g} -\frac{i r_i(x)}{x^{i+1}(x-a)^g} - \frac{gr_i(x)}{x^i(x-a)^{g+1}}\right) dx \\
-& = \frac{xf(x)'r_i(x)(x-a) + 2f(xr_i(x)'(x-a) - i(x-a)r_i(x) - gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}} dx.
-\end{align*}
-Hence $\omega_{0 i} - df_{0 a i}$ expands to
-\[
-\frac{\psi_i(x)(x-a)^{g+1} - xf(x)'r_i(x)(x-a) - 2f(x)\left(xr_i(x)'(x-a)-i(x-a)r_i(x)-gxr_i(x)\right)}{2yx^{i+1}(x-a)^{g+1}}dx.
-\]
-Now
-\[
-(x-a)^{g+1} = (x-a)^g(x-a)  = (r_i(x) + t_i(x))(x-a)
-\]
-and
-\begin{multline*}
-xf(x)'r_i(x)(x-a) - 2if(x)r_i(x)(x-a) = r_i(x)(x-a)(xf(x)'-2if(x)) \\
-= r_i(x)(x-a)(\psi_i(x) + \phi_i(x)).
-\end{multline*}
-So
-\[
-\psi_i(x)(x-a)^{g+1} - xf(x)'r_i(x)(x-a) - 2if(x)r_i(x)(x-a) = (\psi_i(x)t_i(x) - \phi_i(x) r_i(x))(x-a).
-\]
-
-
-We now compute $(x-a)r_i(x)'-gr_i(x)$.
-First, we note that
-\begin{align*}
-r_i(x)' & = \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
-& = \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k.
-\end{align*}
-From this it follows that
-\begin{align*}
-r_i(x)'(x-a) & = x \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} - a \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k \\
-& = \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^k  + \sum_{k=0}^{i-2} (k+1) (-1)^{g-k} \binom{g}{k+1}a^{g-k} x^k \\
-& = gr_i(x) + (-1)^{g-i+2}i \binom{g}{i}a^{g-i+1}x^i,
-\end{align*}
-since
-\begin{align*}
-k\binom{g}{k} + (k+1)\binom{g}{k+1} & = k \left( \frac{g!}{k!(g-k)!} \right) + (k+1) \left( \frac{g!}{(k+1)!(g-k-1)!} \right) \\
-& = \frac{g!}{(k-1)!(g-k)!} + \frac{g!}{k!(g-k-1)!} \\
-& = \frac{g\cdot g!}{k!(g-k)!} \\
-& = g \binom{g}{k}.
-\end{align*}
-Hence $r_i(x)'-gr_i(x)= (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i$. 
-
-Combining the above we conclude that
-\[
-\omega_{0 i } - df_{0a i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx= \omega_{a i}.
-\]
-
-Note that the last relation ($df_{a \infty i} = \omega_{a i} - \omega_{\infty i}$) holds, since 
-\[
-df_{a \infty i} = df_{0 \infty i} - df_{0 a i} = \omega_{0 i} - \omega_{\infty i } - \omega_{0 i} + \omega_{a i} = \omega_{a i} - \omega_{\infty i}.
-\]
-\end{proof}
+    \begin{prop}\label{basis22}
+    The pre-image of $\rho^{-1}(\gamma_i)$ for $i \in \{1, \ldots, g\}$ is the residue class of
+        \begin{multline*}
+        \nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right).
+        \end{multline*}
+    \end{prop}
+    \begin{rem}
+    Note that the third term, $\frac{\phi_i(x)}{2yx^{i+1}} dx$, has a different sign than the equivalent term in $\gamma_i$.
+    This is due the increased number of open sets in the cover moving it from the second to third position.
+    \end{rem}
+    \begin{proof}
+    In order to be able to refer to the entries in $\nu_i$ we let
+        \[
+        \nu_i = \left( \omega_{0 i}, \omega_{a i}, \omega_{\infty i}, f_{0 a i}, f_{0 \infty i}, f_{a \infty i} \right).
+        \]
+    First, note that it follows from the proof of Theorem \ref{basis} that $d(f_{0 \infty i}) = \omega_{0 i} + \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
+    
+    Since $r_i(x)+t_i(x)$ is the binary expansion of $(x-a)^g$ then
+        \begin{align*}
+        f_{0 a i} - f_{0 \infty i}+ f_{a \infty i} & = \frac{r_i(x)y}{x^i(x-a)^g} - \frac{y}{x^i} + \frac{t_i(x)y}{x^i(x-a)^g} \\
+        & = \frac{y(r_i(x) + t_i(x) - (x-a)^g)}{x^i(x-a)^g} \\
+        & = 0.
+        \end{align*}
+    
+    
+    
+    We now check that differentials and functions are regular on the appropriate open sets by computing the relevant divisors.
+    Firstly, by \eqref{divxp=2} and \eqref{differentialdivisor},
+        \begin{align*}
+        \di \left( f_{0 a i} \right) & = \di \left( \frac{r_i(x)y}{x^i(x-a)^g} \right) \\
+        &  = \di(r_i(x)) + \di(y) - i\di(x) - g\di(x-a) \\
+        & \geq \di_0(r_i(x)) - (i-1)D_\infty +R - (g+1)D_\infty - iD_0 + iD_\infty - gD_a + gD_\infty \\
+        & = \di_0(r_i(x)) +R -iD_0 - gD_a,
+        \end{align*}
+    which is non-negative on $U_0 \cap U_a$.
+    On the other hand, by \eqref{divxp=2} and \eqref{differentialdivisor},
+        \begin{align*}
+        \di \left( f_{a \infty i} \right) & = \di \left( \frac{t_i(x)y}{x^i(x-a)^g} \right) \\
+        & = \di\left(\frac{t_i(x)}{x^i}\right) + \di(y) - g\di(x-a) \\
+        & = \di_0 \left( \frac{t_i(x)}{x^i} \right) - (g-i)D_\infty +R - (g+1)D_\infty - gD_a + gD_\infty\\
+        & = \di_0 \left( \frac{t_i(x)}{x^i} \right) +R - gD_a -(g-i+1)D_\infty,
+        \end{align*}
+    where the third equality holds because $t_i(x)/x^i$ is regular on $U_\infty$.
+    Since $y$ is also regular on $U_\infty$  we conclude that $({t_i(x)y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
+    
+    To show that
+        \begin{equation}\label{longequation}
+        \omega_{a i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx
+        \end{equation}
+    is regular on $U_a$ we first compute the divisor
+        \begin{align*}
+        \di\left( \frac{dx}{2yx^{i+1}(x-a)^{g+1}}\right) & = \di(dx) - \di(y) - (i+1)\di(x) - (g+1)\di(x-a) \\
+        & = R - 2D_\infty - R + (g+1)D_\infty - (i+1)D_0 + (i+1)D_\infty \\
+        & \quad - (g+1)D_a + (g+1)D_\infty \\
+        & = (2g+i+1)D_\infty -(i+1)D_0 - (g+1)D_a,
+        \end{align*}
+    using \eqref{divxp=2}, \eqref{differentialdivisor} and \eqref{pnot2divisors}.
+    We next show that the numerator of \eqref{longequation},
+        \begin{equation}\label{numerator}
+        {(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i},
+        \end{equation}
+    has degree less then $2g+i+2$, from which it follows that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
+    The degree of $\psi_i(x)t_i(x)(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
+    If $\deg(f) = 2g+1$, then clearly
+        \[
+        \deg\left( \phi_i(x)r_i(x)(x-a) \right) = \deg(\phi_i) + \deg(r_i(x)) + \deg(x-a) \leq 2g+1 + i-1 +1 = 2g+i+1
+        \]
+    and
+        \[
+        \deg \left( 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i \right)  \leq  2g+1+i .
+        \]
+    Lastly, if $\deg(f(x)) = 2g+2$ then the term of degree $2g+i+2$ in $-\phi_i(x)r_i(x)(x-a)$ is
+        \begin{align*}
+        -((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
+        &  = 2(-1)^{g-i+2}\left( (g-i+1)\binom{g}{i-1} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
+        & = 2(-1)^{g-i} \left( \frac{g!}{(i-1)!(g-i)!} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
+        & = 2i(-1)^{g-i}\binom{g}{i}a_{2g+2}x^{2g+i+2},
+        \end{align*}
+    which cancels with the term of the same degree in $2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$.
+    Since these terms cancel, we again have the that the degree of \eqref{numerator} is at most $2g+i+1$, and \eqref{longequation} has no pole(s) at the point(s) in $\pi^{-1}(\infty)$.
+    
+    Finally, we show that \eqref{numerator} is divisible by $x^{i+1}$.
+    By definition $x^{g+2} | \phi_i(x)$, and since $i \leq g$ it follows that $x^{i+1}|\phi_i(x)r_i(x)(x-a)$.
+    On the other hand, the lowest degree terms of $2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ and $\psi_i(x)t_i(x)(x-a)$ which can be non-zero are, respectively,
+        \[
+         2ia_0(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i 
+        \]
+    and
+        \[
+         (-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right).
+        \]
+    Since
+        \[
+        (-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right) = 2ia_0(-1)^{g-i+2}\binom{g}{i}a^{g-i+1}x^i,
+        \]
+    it follows that when adding $\psi_i(x)t_i(x)(x-a)$ and $2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ these terms will cancel.
+    Hence the numerator \eqref{numerator} is divisible by $x^{i+1}$.
+    
+    
+    It only remains to show that $\omega_{a i} = \omega_{0 i} -df_{0 a i}$.
+    We begin this by computing $df_{0 a i}$, which is
+        \begin{align*}
+        df_{0 a i} & = d \left( \frac{y r_i(x)}{x^i(x-a)^g} \right) \\
+        & = \frac{r_i(x)}{x^i(x-a)^g}dy + y d\left( \frac{r_i(x)}{x^i(x-a)^g} \right) \\
+        & = \frac{f(x)'r_i(x)}{2yx^i(x-a)^g}dx + y\left( \frac{r_i(x)'}{x^i(x-a)^g} -\frac{i r_i(x)}{x^{i+1}(x-a)^g} - \frac{gr_i(x)}{x^i(x-a)^{g+1}}\right) dx \\
+        & = \frac{xf(x)'r_i(x)(x-a) + 2f(xr_i(x)'(x-a) - i(x-a)r_i(x) - gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}} dx.
+        \end{align*}
+    Hence $\omega_{0 i} - df_{0 a i}$ expands to
+        \[
+        \frac{\psi_i(x)(x-a)^{g+1} - xf(x)'r_i(x)(x-a) - 2f(x)\left(xr_i(x)'(x-a)-i(x-a)r_i(x)-gxr_i(x)\right)}{2yx^{i+1}(x-a)^{g+1}}dx.
+        \]
+    Now
+        \[
+        (x-a)^{g+1} = (x-a)^g(x-a)  = (r_i(x) + t_i(x))(x-a)
+        \]
+    and
+        \begin{multline*}
+        xf(x)'r_i(x)(x-a) - 2if(x)r_i(x)(x-a) = r_i(x)(x-a)(xf(x)'-2if(x)) \\
+        = r_i(x)(x-a)(\psi_i(x) + \phi_i(x)).
+        \end{multline*}
+    So
+        \[
+        \psi_i(x)(x-a)^{g+1} - xf(x)'r_i(x)(x-a) - 2if(x)r_i(x)(x-a) = (\psi_i(x)t_i(x) - \phi_i(x) r_i(x))(x-a).
+        \]
+    
+    
+    We now compute $(x-a)r_i(x)'-gr_i(x)$.
+    First, we note that
+        \begin{align*}
+        r_i(x)' & = \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
+        & = \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k.
+        \end{align*}
+    From this it follows that
+        \begin{align*}
+        r_i(x)'(x-a) & = x \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} - a \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k \\
+        & = \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^k  + \sum_{k=0}^{i-2} (k+1) (-1)^{g-k} \binom{g}{k+1}a^{g-k} x^k \\
+        & = gr_i(x) + (-1)^{g-i+2}i \binom{g}{i}a^{g-i+1}x^i,
+        \end{align*}
+    since
+        \begin{align*}
+        k\binom{g}{k} + (k+1)\binom{g}{k+1} & = k \left( \frac{g!}{k!(g-k)!} \right) + (k+1) \left( \frac{g!}{(k+1)!(g-k-1)!} \right) \\
+        & = \frac{g!}{(k-1)!(g-k)!} + \frac{g!}{k!(g-k-1)!} \\
+        & = \frac{g\cdot g!}{k!(g-k)!} \\
+        & = g \binom{g}{k}.
+        \end{align*}
+    Hence $r_i(x)'-gr_i(x)= (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i$. 
+    
+    Combining the above we conclude that
+        \[
+        \omega_{0 i } - df_{0a i} =  \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx= \omega_{a i}.
+        \]
+    
+    Note that the last relation ($df_{a \infty i} = \omega_{a i} - \omega_{\infty i}$) holds, since 
+        \[
+        df_{a \infty i} = df_{0 \infty i} - df_{0 a i} = \omega_{0 i} - \omega_{\infty i } - \omega_{0 i} + \omega_{a i} = \omega_{a i} - \omega_{\infty i}.
+        \]
+    \end{proof}
 
 We note that for any $\sigma \in \aut(X)$ the following diagram commutes,
-\[
-\begin{array}{ccc}
-X & \xrightarrow[\sigma] & X \\
-\downarrow\pi & & \downarrow\pi \\
-\mathbb P^1_k & \xrightarrow[\sigma] & \mathbb P_k^1
-\end{array}
-\]
+    \[
+    \begin{array}{ccc}
+    X & \xrightarrow[\sigma] & X \\
+    \downarrow\pi & & \downarrow\pi \\
+    \mathbb P^1_k & \xrightarrow[\sigma] & \mathbb P_k^1
+    \end{array}
+    \]
 since the hyperelliptic involution $j$ is in the centre of $\aut(X)$.
 Hence, if $a = \sigma(0)$, the following diagram also commutes:
-\[
-\begin{array}{ccc}
-\derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\rho} & \cechderhamhone(\cU'')  \\
-        \sigma^*\downarrow & ~ & \rho'\downarrow  \\
-\derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\sigma^*} & \cechderhamhone(\cU')
-\end{array}
-\]
+    \[
+    \begin{array}{ccc}
+    \derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\rho} & \cechderhamhone(\cU'')  \\
+            \sigma^*\downarrow & ~ & \rho'\downarrow  \\
+    \derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\sigma^*} & \cechderhamhone(\cU')
+    \end{array}
+    \]
 Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordinates and on the second, third and sixth coordinates respectively.
 
 
 Clearly if $\sigma^* \colon x \mapsto x+a$ then $a = \sigma(0)$, and we assume in what follows that $\sigma$ is such an automorphism.
-\begin{lem}
-The action of $\sigma^*$ on $y$ is given by $\sigma^*(y) = y$ or $\sigma^*(y) = -y$.
-\end{lem}
-\begin{proof}
-Since $y^2 \in k(x)$ then there must exist $g_1(x), g_2(x) \in k(x)$ such that 
-\begin{equation*}
-\sigma^*(y) = g_1(x)y + g_2(x) \in k(x,y).
-\end{equation*}
-Hence
-\begin{equation}\label{easylemma}
-f(x+a) = \sigma^*(y^2) = (\sigma^*(y))^2 = g_1(x)^2f(x)+2g_1(x)g_2(x)y + g_2(x)^2.
-\end{equation}
-Firstly, note that if neither $g_1(x)$ nor $g_2(x)$ are zero then
-\[
-y = \frac{f(x+a) - g_1(x)^2f(x) - g_2(x)^2}{2g_1(x)g_2(x)},
-\]
-which contradicts the fact $K(X)$ is a degree two extension of $k(x)$.
-Hence one of $g_1(x)$ or $g_2(x)$ must be zero.
+    \begin{lem}
+    The action of $\sigma^*$ on $y$ is given by $\sigma^*(y) = y$ or $\sigma^*(y) = -y$.
+    \end{lem}
+    \begin{proof}
+    Since $y^2 \in k(x)$ then there must exist $g_1(x), g_2(x) \in k(x)$ such that 
+        \begin{equation*}
+        \sigma^*(y) = g_1(x)y + g_2(x) \in k(x,y).
+        \end{equation*}
+    Hence
+        \begin{equation}\label{easylemma}
+        f(x+a) = \sigma^*(y^2) = (\sigma^*(y))^2 = g_1(x)^2f(x)+2g_1(x)g_2(x)y + g_2(x)^2.
+        \end{equation}
+    Firstly, note that if neither $g_1(x)$ nor $g_2(x)$ are zero then
+        \[
+        y = \frac{f(x+a) - g_1(x)^2f(x) - g_2(x)^2}{2g_1(x)g_2(x)},
+        \]
+    which contradicts the fact $K(X)$ is a degree two extension of $k(x)$.
+    Hence one of $g_1(x)$ or $g_2(x)$ must be zero.
+    
+    If $g_1(x) = 0$ then $\sigma^*$ would not be an automorphism, since $y$ would not be in the image.
+    Hence $\sigma^*(y) = g_1(x)y$.
+    Also, by comparing the degrees in \eqref{easylemma} we see that $\deg(g_1(x)) = 0$, and then by comparing coefficients in the same equation we see that $g_1(x)^2 = 1$.
+    Hence $\sigma^*(y) = \pm y$.
+    \end{proof}
 
-If $g_1(x) = 0$ then $\sigma^*$ would not be an automorphism, since $y$ would not be in the image.
-Hence $\sigma^*(y) = g_1(x)y$.
-Also, by comparing the degrees in \eqref{easylemma} we see that $\deg(g_1(x)) = 0$, and then by comparing coefficients in the same equation we see that $g_1(x)^2 = 1$.
-Hence $\sigma^*(y) = \pm y$.
-\end{proof}
-\begin{rem}
-If $\sigma^*(y) = -y$ we can, without loss of generality, replace $\sigma$ by $\sigma \circ j$, where $j$ denotes the hyperelliptic involution.
-Hence we will assume throughout the rest of the paper that $\sigma^*(y) = y$.
-\end{rem}
+    \begin{rem}
+    If $\sigma^*(y) = -y$ we can, without loss of generality, replace $\sigma$ by $\sigma \circ j$, where $j$ denotes the hyperelliptic involution.
+    Hence we will assume throughout the rest of the paper that $\sigma^*(y) = y$.
+    \end{rem}
 
-\begin{ex}
-If $2g+1$ is an odd prime then exists an automorphism $\sigma$ of the form $\sigma\colon (x,y) \mapsto (x+a,y)$ if and only if $p=2g+1$ and $f(x) = x^p - a^{p-1}x + a_0$, for some $a_0 \in k$.
-In this case we may assume that $a_0 = 0$, since if it doesn't we can apply the automorphism $x \mapsto x+b, y\mapsto y$ to $K(X)$, where $b$ is a root of $f(x)$.
-Moreover, given an equation of the form $y^2 = x^p - a^{p-1}x$, we can apply automorphism of $K(X)$ to replace the coefficient $a^{p-1}$ by $1$, namely $x \mapsto ax, y \mapsto a^{\frac{p}{2}}y$.
-Hence we see that all such curves are isomorphic to those defined by $y^2 = x^p - x$.
-In particular, it follows from \cite{canonicalrepresentation} that the short exact sequence in Proposition \ref{ses} doesn't split when the above conditions hold.
-\end{ex}
+    \begin{ex}
+    If $2g+1$ is an odd prime then exists an automorphism $\sigma$ of the form $\sigma\colon (x,y) \mapsto (x+a,y)$ if and only if $p=2g+1$ and $f(x) = x^p - a^{p-1}x + a_0$, for some $a_0 \in k$.
+    In this case we may assume that $a_0 = 0$, since if it doesn't we can apply the automorphism $x \mapsto x+b, y\mapsto y$ to $K(X)$, where $b$ is a root of $f(x)$.
+    Moreover, given an equation of the form $y^2 = x^p - a^{p-1}x$, we can apply automorphism of $K(X)$ to replace the coefficient $a^{p-1}$ by $1$, namely $x \mapsto ax, y \mapsto a^{\frac{p}{2}}y$.
+    Hence we see that all such curves are isomorphic to those defined by $y^2 = x^p - x$.
+    In particular, it follows from \cite{canonicalrepresentation} that the short exact sequence in Proposition \ref{ses} doesn't split when the above conditions hold.
+    \end{ex}
 
 
 We now describe the action of $\sigma^*$ on $\lambda_i$.
-\begin{lem}
-For each $i \in \{ 0, \ldots, g-1\}$ then 
-\[
-\sigma^*(\lambda_i) = \sum_{k = 0}^i \binom{i}{k}a^{i-k}x^k.
-\]
-\end{lem}
-\begin{proof}
-Since $\sigma^*$ acts trivially on $y$, it follows that
-\[
-\sigma^*\left( \frac{x^i}{y} \right) = \sum_{k=0}^i \binom{i}{k}a^{i-k}\frac{x^k}{y}.
-\]
-The statement follows from this.
-\end{proof}
+    
+    \begin{lem}
+    For each $i \in \{ 0, \ldots, g-1\}$ then 
+        \[
+        \sigma^*(\lambda_i) = \sum_{k = 0}^i \binom{i}{k}a^{i-k}x^k.
+        \]
+    \end{lem}
+    \begin{proof}
+    Since $\sigma^*$ acts trivially on $y$, it follows that
+        \[
+        \sigma^*\left( \frac{x^i}{y} \right) = \sum_{k=0}^i \binom{i}{k}a^{i-k}\frac{x^k}{y}.
+        \]
+    The statement follows from this.
+    \end{proof}
 
 
-\begin{thm}
-Suppose that $\deg(f(x)) = p^n $ for some $n \in \NN$.
-Then the short exact sequence of $k[G]$-modules
-\[
-0 \ra \hzero \ra \derhamhone \ra \hone \ra 0
-\]
-does not split.
-\end{thm}
-\begin{proof}
-We suppose that the sequence does split, and that $s \colon \hone \ra \derhamhone$, given by $s \colon \bar\gamma_i \mapsto \gamma_i$, is the splitting map.
-
-We now examine the action of $\sigma^*$ on $\gamma_g$ and $\bar \gamma_g$.
-We first look at the sixth entry in $\nu_g$ from Proposition \ref{basis22}.
-This entry is
-\[
-\frac{t_g(x)y}{x^g(x-a)^g} = \frac{y}{(x-a)^g},
-\]
-and clearly $\sigma^*(y/(x-a)^g) = y/x^g$.
-Hence $\sigma^*(\bar\gamma_g) = \bar \gamma_g$, and $\sigma^*(\gamma_g) = \gamma_g + \sum_{i =0}^{g-1}c_i\lambda_i$, for some $c_i \in k$.
-We now compute $c_{g-1}$.
-
-We begin this by computing the lead term of the first entry of $\sigma^*(\gamma_g) \in \cechderhamhone(\cU)$.
-This is equal to the lead term of $\omega_{\sigma g}$ in $\nu_g$, since applying $\sigma^*$ doesn't change the lead term of any polynomials.
-As
-\[
-\deg(\psi_g(x)t_g(x)x) \leq g+1 + g+ 1 = 2g+1 < 3g+1 = \deg(\phi_g(x)r_g(x)x) = \deg(f(x)x^g)
-\]
-we need only compute the coefficient of $x^{3g+1}$ in $2gf(x)(-1)ax^g - \phi_g(x)r_g(x)x$ and show that it is non-zero to find the coefficient of the lead term.
-Rearranging $2g+1 = p^n $ gives us the identity
-\[
-g = \frac{p^n - 1}{2}.
-\]
-From this we see that the lead coefficient of $2gf(x)(-1)ax^g$ is 
-\[
-2\left( \frac{p^n-1}{2} \right) (-1)a = a
-\]
-since $\cha(k) = p$.
-On the other hand, the lead term of $-\phi_g(x)r_g(x)x$ is
-\[
--(p^n-2g)(-1)\binom{g}{g-1}a = 2\left(\frac{p^n -1 }{2}\right) (-1)\left( \frac{p^n - 1}{2} \right)a = -\frac{a}{2}.
-\]
-Finally, it follows that the lead coefficient of the numerator in the second term of is
-\[
-a - \frac{a}{2} = \frac{a}{2}.
-\]
-
-
-Since the denominator of $\omega_{a g}$ is of degree $2g+2$, we see that overall the degree of the first entry of $\gamma_g$ is $g-1$ (as a polynomial in $x$).
-Now the degree of $\frac{\psi_g(x)}{2yx^{g+1}}$ is less than this, as is the degree of the first entry in $\lambda_i$, unless $i=g-1$, in which case the degree of $\lambda_i$ is precisely $g-1$.
-Hence, by comparing coefficients, we see that $c_{g-1} = \frac{a}{2}$.
-
-Now suppose that 
-\[
-s(\bar\gamma_i)  = s( \bar \gamma_g) = \gamma_g + \sum_{i=0}^{g-1}d_i \lambda_i
-\]
-for some $d_i \in k$.
-Then, on the one hand,
-\[
-s(\sigma^*(\bar\gamma_g)) = \gamma_g + \sum_{i=0}^{g-1}d_i\lambda_i,
-\]
-whilst on the other hand
-\begin{align}
-\sigma^*(s(\bar\gamma_g)) & = \sigma^*(\gamma_g + \sum_{i=1}^{g-1} d_i\lambda_i ) \\
-& = \gamma_g + \frac{a}{2}\lambda_{g-1} + \sum_{i=0}^{g-2} c_i \lambda_k + \sum_{i=0}^{g-1} d_i \sum_{k=0}^{i} \binom{i}{k}a^{i-k}\lambda_k.
-\end{align}
-Hence we see that for $s(\sigma^*(\gamma_g))$ to equal $\sigma^*(s(\gamma_g))$ we require $\frac{a}{2} + d_{g-1} = d_{g-1}$; \ie that $\frac{a}{2} = 0$. 
-But then $a=0$, which is a contradiction.
-
-\end{proof}
-
-
-
-
-
-
-
-
+    \begin{thm}
+    Suppose that $\deg(f(x)) = p^n $ for some $n \in \NN$.
+    Then the short exact sequence of $k[G]$-modules
+        \[
+        0 \ra \hzero \ra \derhamhone \ra \hone \ra 0
+        \]
+    does not split.
+    \end{thm}
+    \begin{proof}
+    We suppose that the sequence does split, and that $s \colon \hone \ra \derhamhone$, given by $s \colon \bar\gamma_i \mapsto \gamma_i$, is the splitting map.
+    
+    We now examine the action of $\sigma^*$ on $\gamma_g$ and $\bar \gamma_g$.
+    We first look at the sixth entry in $\nu_g$ from Proposition \ref{basis22}.
+    This entry is
+        \[
+        \frac{t_g(x)y}{x^g(x-a)^g} = \frac{y}{(x-a)^g},
+        \]
+    and clearly $\sigma^*(y/(x-a)^g) = y/x^g$.
+    Hence $\sigma^*(\bar\gamma_g) = \bar \gamma_g$, and $\sigma^*(\gamma_g) = \gamma_g + \sum_{i =0}^{g-1}c_i\lambda_i$, for some $c_i \in k$.
+    We now compute $c_{g-1}$.
+    
+    We begin this by computing the lead term of the first entry of $\sigma^*(\gamma_g) \in \cechderhamhone(\cU)$.
+    This is equal to the lead term of $\omega_{\sigma g}$ in $\nu_g$, since applying $\sigma^*$ doesn't change the lead term of any polynomials.
+    As
+        \[
+        \deg(\psi_g(x)t_g(x)x) \leq g+1 + g+ 1 = 2g+1 < 3g+1 = \deg(\phi_g(x)r_g(x)x) = \deg(f(x)x^g)
+        \]
+    we need only compute the coefficient of $x^{3g+1}$ in $2gf(x)(-1)ax^g - \phi_g(x)r_g(x)x$ and show that it is non-zero to find the coefficient of the lead term.
+    Rearranging $2g+1 = p^n $ gives us the identity
+        \[
+        g = \frac{p^n - 1}{2}.
+        \]
+    From this we see that the lead coefficient of $2gf(x)(-1)ax^g$ is 
+        \[
+        2\left( \frac{p^n-1}{2} \right) (-1)a = a
+        \]
+    since $\cha(k) = p$.
+    On the other hand, the lead term of $-\phi_g(x)r_g(x)x$ is
+        \[
+        -(p^n-2g)(-1)\binom{g}{g-1}a = 2\left(\frac{p^n -1 }{2}\right) (-1)\left( \frac{p^n - 1}{2} \right)a = -\frac{a}{2}.
+        \]
+    Finally, it follows that the lead coefficient of the numerator in the second term of is
+        \[
+        a - \frac{a}{2} = \frac{a}{2}.
+        \]
+    
+    
+    Since the denominator of $\omega_{a g}$ is of degree $2g+2$, we see that overall the degree of the first entry of $\gamma_g$ is $g-1$ (as a polynomial in $x$).
+    Now the degree of $\frac{\psi_g(x)}{2yx^{g+1}}$ is less than this, as is the degree of the first entry in $\lambda_i$, unless $i=g-1$, in which case the degree of $\lambda_i$ is precisely $g-1$.
+    Hence, by comparing coefficients, we see that $c_{g-1} = \frac{a}{2}$.
+    
+    Now suppose that 
+        \[
+        s(\bar\gamma_i)  = s( \bar \gamma_g) = \gamma_g + \sum_{i=0}^{g-1}d_i \lambda_i
+        \]
+    for some $d_i \in k$.
+    Then, on the one hand,
+        \[
+        s(\sigma^*(\bar\gamma_g)) = \gamma_g + \sum_{i=0}^{g-1}d_i\lambda_i,
+        \]
+    whilst on the other hand
+        \begin{align}
+        \sigma^*(s(\bar\gamma_g)) & = \sigma^*(\gamma_g + \sum_{i=1}^{g-1} d_i\lambda_i ) \\
+        & = \gamma_g + \frac{a}{2}\lambda_{g-1} + \sum_{i=0}^{g-2} c_i \lambda_k + \sum_{i=0}^{g-1} d_i \sum_{k=0}^{i} \binom{i}{k}a^{i-k}\lambda_k.
+        \end{align}
+    Hence we see that for $s(\sigma^*(\gamma_g))$ to equal $\sigma^*(s(\gamma_g))$ we require $\frac{a}{2} + d_{g-1} = d_{g-1}$; \ie that $\frac{a}{2} = 0$. 
+    But then $a=0$, which is a contradiction.
+    \end{proof}
 
 
 
 \begin{comment}
 We now suppose that $X$ is of genus 2, and that
-\[
-f(x) = a_6x^6 + a_5x^5 + a_4x^4 + a_3x^3 + a_2x^2 + a_1x + a_0.
-\]
+    \[
+    f(x) = a_6x^6 + a_5x^5 + a_4x^4 + a_3x^3 + a_2x^2 + a_1x + a_0.
+    \]
 The existence of $\sigma^*$ places restrictions on the characteristic of $k$ and the coefficients of $f(x)$, as stated in the following lemma.
 
 \begin{lem}
