@@ -73,7 +73,10 @@ for any non-zero $\omega \in \Omega_{K(C)}$, and state the following lemma.
 \begin{defnlem}
  For any non-zero differential $\omega$ on $C$ there is a unique maximal divisor $W$ in $M(\omega)$, which we call the {\rm canonical divisor associated to $\omega$} (we associate the zero divisor to $0\in \Omega_{K(C)}$).
  We denote the divisor associated to $\omega$ by $\di (\omega)$.
- We call a divisor a {\rm canonical divisor} if it is the canonical divisor associated to some $\omega \in \Omega_{K(C)}$.\\
+ We call a divisor a {\rm canonical divisor} if it is the canonical divisor associated to some $\omega \in \Omega_{K(C)}$.
+
+
+
  Given any two non-zero canonical divisors, $W$ and $W'$, there exists an $x\in K(C)$ such that $W = W' + \di(x)$.
  Conversely, if $W$ is a canonical divisor, and $x\in K(C)$, then $W + \di(x)$ is a canonical divisor.
 \end{defnlem}
@@ -243,7 +246,6 @@ This can then be extended from a single point to a divisor on $Y$, in which case
 It should be noted that in the literature regarding function field theory, what we have denoted by $\pi^*(D)$ is normally called the conorm of $D$ and is denoted ${\rm Con}_{X/Y}(D)$. 
 We used the notation above, from algebraic geometry, to be consistent with the rest of this report.
 \end{rem}
-~
 
 \begin{defn}
  For any $Q\in Y$, let $\cO_{X,Q}'$ be the integral closure of $\cO_{X,Q}$ in $K(X)$.\todo{define this in text, remove instances in this and next lemma}
@@ -292,7 +294,10 @@ By \cite[Cor. 3.3.5]{stichtenoth}\todo{check citation}, we have $\cO_{X,Q}' = \{
  If we let $\{P_1,\ldots, P_l\} = \pi^{-1}(Q)$ then we can choose $x_i$ for $1\leq i \leq l$ such that $v_{P_i}(x_i) \leq v_{P_i}(y)$ for all $y\in I$.
  By the Approximation Lemma there exist $z_i$ such that $v_P (z_i) = 0$ if $P=P_i$ and $v_{P_j}(z_i) > v_{P_j}(z_j)$ for $j\neq i$.
  Now let $x = \sum_{i=1}^l x_iz_i \in I$.
- Clearly $v_{P_i}(x) = v_{P_i}(x_i)$ for all $1\leq i\leq l$.\\
+ Clearly $v_{P_i}(x) = v_{P_i}(x_i)$ for all $1\leq i\leq l$.
+
+
+
  Now we show that $I \subseteq x\cO_{X,Q}'$.
  If $y\in I$ then we let $z = x^{-1}y$.
  Then $v_{P_i}(z) = v_{P_i}(y) - v_{P_i}(x_i) \geq 0$ for all $1\leq i\leq l$.
@@ -345,7 +350,10 @@ where $z_i^*$ is the dual basis of $z_i$ for $1\leq i \leq n$.\todo{reference du
 	for all $i\in \{1,\ldots, n\}$ and all $P\in \pi^{-1}(Q)$.
 	Since $\cO'_Q = \cap_{P\mapsto Q} \cO_{X,P}$ (see, for example, \cite[Cor. 3.3.5]{stichtenoth}), then $x\cdot C_Q \subseteq \cO_{X,Q}'$.
 	Since $\cO_{X,Q}'$ is a principal ideal domain by Lemma \ref{pidlemma}, it follows that $x\cdot C_Q = y\cdot \cO_{X,Q}'$ for some $y\in \cO_{X,Q}'$.
-	If we let $t=x^{-1}y$ then $C_Q =t\cdot \cO_{X,Q}'$, proving the first part of the statement.\\
+	If we let $t=x^{-1}y$ then $C_Q =t\cdot \cO_{X,Q}'$, proving the first part of the statement.
+
+
+
 	Since $\cO_{X,Q}'\subseteq C_Q$ then $v_P(t)\leq 0$ for all $P\in \pi^{-1}(Q)$.
 	Now $t\cdot \cO_{X,Q}' = t'\cdot \cO_{X,Q}'$ if and only if both $tt'^{-1}$ and $t^{-1}t'$ are in $\cO_{X,Q}'$.
 	But this is the case if and only $v_P(tt'^{-1}) \geq 0$ and $v_P(t^{-1}t')\geq 0$ for all $P\in \pi^{-1}(Q)$, which is equivalent to $v_P(t)=v_P(t')$ for all such $P$.
@@ -426,7 +434,6 @@ For any divisor $D$ over $X$ we define
 
 \end{defn}
 
-~
 
 \begin{defnthm}\label{detailedhurwitz}
  For every differential $\omega\in H^0(Y,\Omega_Y)$ there is a unique $\omega'\in H^0(X,\Omega_X)$ such that

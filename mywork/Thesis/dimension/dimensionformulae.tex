@@ -16,7 +16,6 @@ In this section we compute the dimension of $H^0(X,\Omega_X^{\otimes m})$ and of
 
 We briefly describe an alternative, but equivalent, definition of the ramification divisor, which we will use later.
 In the tamely ramified case we will define it to have coefficients $e_P-1$, but to extend this to the wildly ramified case we will need the following the definition of higher ramification groups.
-\vskip1em
 
 
 \begin{defn}
@@ -33,7 +32,6 @@ More details can be found in \cite[Chap. IV, \S 1]{localfields}.%Citation is sli
 Note that $e_P = \ord (G_0(P))$ for any $P \in X$.
 Also, for any $Q \in Y$ we write $\delta_Q$ for $\delta_P$ and $e_Q$ for $e_P$, where $P\ \in \pi^{-1}(Q)$.
 We now state Hilbert's formula, relating our definition of the ramification divisor in section \ref{Hurwitzsection} to the ramification groups.
-\vskip1em
 
 
 \begin{thm}[Hilbert's Formula]\label{hilbertsformula}
@@ -54,7 +52,6 @@ We will use this for various calculations involving the ramification divisor.
 
 By Corollary \ref{dim=gc} we have $\dim_kH^0(X,\Omega_X)=g_X$.
 If $m\geq 2$, we have the following formula for $\dim_kH^0(X,\Omega_X^{\otimes m})$.
-\vskip1em
 
 
 
@@ -87,7 +84,6 @@ Finally, for any $P \in X$ let $\textrm{ord}_P$ and $\textrm{ord}_Q$ denote the 
 
 
 The next lemma is the main idea in the proof of our formula for $\dim_kH^0(X,\Omega_X^{\otimes m})^G$, see Proposition \ref{dim}. 
-\vskip1em
 
 
 
@@ -117,7 +113,6 @@ The next lemma is the main idea in the proof of our formula for $\dim_kH^0(X,\Om
 
 The following proposition contains the aforementioned formula for the dimension of the subspace of $H^0(X,\Omega_X^{\otimes m})$ fixed by $G$.
 In particular we see that this dimension is completely determined by $m$, $g_Y$ and $\deg \left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor$.
-\vskip1em
 
 
   \begin{prop}\label{dim}
@@ -193,11 +188,9 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
 If $m=1$ we reformulate Proposition \ref{dim} in the following slightly more concrete way. 
 Let $S$ denote the set of all points $Q\in Y$ such that $\pi$ is not tamely ramified at $Q$ and let $s$ denote the cardinality of $S$. 
 Note that $s=0$ if $p$ does not divide $n$.
-\vskip1em
 
 
 For the next corollary we recall the notations $e_Q$ and $\delta_Q$ for any $Q\in Y$ defined before Theorem \ref{hilbertsformula}.
-\vskip1em
 
 
 \begin{cor}\label{dim2}
@@ -370,7 +363,6 @@ Compared to arbitrary groups, it is considerably easier to compute when these gr
   Throughout this section, $P_1,\ldots ,P_r \in X$ denote the ramification points of $\pi$ and we write $e_i$ and $\delta_i$ for $e_{P_i}$ and $\delta_P{_i}$.
   Also, for $i=1, \ldots, r$, we define $N_i \in \NN$ by $\ord_{P_i}(\sigma(\pi_i) - \pi_i) = N_i +1$, where $\pi_i$ is a local parameter at the ramification point $P_i$ and $\sigma$ is a generator of $G(P_i)$. 
   We also assume that $g_X \geq 2$.
-  \vskip1em
 
 
   \begin{prop}\label{m=1}
@@ -404,7 +396,10 @@ Compared to arbitrary groups, it is considerably easier to compute when these gr
 	\end{eqnarray*}
 
     If $p=2$, the dimension of both $H^0(X,\Omega_X)$ and $H^0(X,\Omega_X)^G$ is therefore equal to $\frac{N+r-2}{2}$. 
-    This shows the if-direction in Proposition \ref{m=1}.\\
+    This shows the if-direction in Proposition \ref{m=1}.
+
+
+
     To prove the other direction we now assume that $G$ acts trivially on $H^0(X, \Omega_X)$.
     For each $i=1, \ldots, r$, we write $N_i = s_i p +t_i$ with $s_i \in \NN$ and $t_i \in \{1, \ldots, p-1\}$. 
     We furthermore put $S:=\sum_{i=1}^r s_i$ and $T:= \sum_{i=1}^r t_i \ge r$. 
@@ -445,7 +440,7 @@ Compared to arbitrary groups, it is considerably easier to compute when these gr
       \] 
   again a contradiction.
   \end{proof}
-~
+
   \begin{prop}\label{triv}
     Let $m \geq 2$. 
     Suppose that $G$ is a cyclic group of prime order $l$ (which may or may not be equal to $p$) and that $g_Y=0$. 
@@ -594,7 +589,6 @@ We first introduce some notation.
 Let $D = \sum_{P\in X} n_P[P]$ be a $G$-invariant divisor on $X$.
 Then let $\langle a \rangle$ denote the fractional part of any $a\in \mathbb{R}$, \ie $\langle a \rangle = a - \lfloor a \rfloor$.
 Also, for any $Q\in Y$ let $n_Q$ be equal to $n_P$ for any $P\in \pi^{-1}(Q)$.
-\vskip1em
 
 
 
@@ -671,7 +665,6 @@ In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representative
 \end{proof}
 
 	Similarly to the case $\deg(D)\geq 2g_X$ in Corollary \ref{this}, the following corollary derives necessary and sufficient conditions for trivial action from Proposition \ref{nakaj} in the case $\deg(D) =2g_X-1$.
-	\vskip1em
 
 
 
@@ -681,7 +674,7 @@ In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representative
 	\item  $p^l=2$ and $\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle=\frac{1}{2}$;
 	\item  $g_X=2$, $p^l=3$ and $e_Q\mid n_Q$ for all $Q\in Y$.
       \end{itemize}
-  \end{cor}~
+  \end{cor}
 
 
   \begin{rem}
@@ -711,7 +704,6 @@ In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representative
   
     \section{The main theorem}\label{maintheoremsection}
   In this section we prove the main theorem of the report, describing exactly when $G$ will act faithfully on $H^0(X,\Omega_X^{\otimes m})$.
-  \vskip1em
 
   
   \begin{unnumthm}
@@ -883,7 +875,7 @@ But $x$ maps $q$ and $j(q)$, and only these two points, to the same point in $\m
 So any meromorphic function in $\cL(D)^+$ can be written as a composition of $x$ and a meromorphic function on $\mathbb P_k^1$, such that the composition only has poles at $p$ and $q$ (\ie the meromorphic function on $\mathbb{P}_k^1$ only has poles at infinity.)
 The order of the pole at $p$ or $q$ cannot exceed $g+1$, hence $1,x,\ldots ,x^{g+1}$ forms a basis of $\cL(D)^+$.
 As this implies that $\dim\cL(D)^+ = g+2$, and as $\dim\cL(D) = g+3$, we see that $\dim\cL(D)^- = 1$, and so there is a non-trivial meromorphic function $y \in \cL(D)$ such that $j^*(y) = -y$.
-This is the $y$ we will use in the following proposition.\\
+This is the $y$ we will use in the following proposition.
 \end{comment}
 
 
@@ -894,7 +886,6 @@ Since each $dx_i$ can be written as $y_i dt$ for some $y_i\in K(X)$ and some uni
 We then define the order of $\omega$ at $P$ to be $\ord_P(\omega ) := \ord_P(y')$.
 In the particular case where $\omega = fdx \otimes \ldots \otimes fdx = f^m dx^{\otimes m}$, then we have $y_1 = \ldots = y_m = z$ for some $z$ when we change $x$ to a uniformising parameter.
 Hence in this instance \[ \ord_P(\omega) = \ord_P(z^m) = m\ord_P(z) = m\ord_P(dx).\]
-\vskip1em
 
 
 
@@ -1026,7 +1017,6 @@ By \cite[Prop. 7.4.24]{liu} this curve has a corresponding degree two extension 
 \end{equation}
 for some polynomials $h(x), f(x)\in k[x]$, with maximum degrees of $g+1$ and $2g+2$ respectively.
 We now show what conditions the smoothness of the curve imposes on $f(x)$ and $h(x)$.
-\vskip1em
 
 
 
@@ -1073,7 +1063,6 @@ We will also denote the corresponding ramification point by $P_i$.
 If the point at infinity is also a branch point, the point that maps to infinity will be written $P_{\infty}$.
 
 We will now compute the ramification divisor.
-\vskip1em
 
 
 \begin{lem}\label{char2ramification}
@@ -1124,7 +1113,6 @@ If $a\in \mathbb P_k^1$ is a branch point, we denote the point in the pre-image 
 In order to simplify our calculations we let $D_a := \pi^*([a])$ for any $a\in \mathbb P_k^1$.
 These will allow us to consider the case when 0 is or is not a branch point simultaneously. 
 We now compute the divisors of all the elements required to form a basis of $H^0(X,\Omega_X^{\otimes m})$.
-\vskip1em
 
 \begin{lem}\label{xchar2}
  The divisor of $x\in K(X)$ is 
@@ -1161,7 +1149,6 @@ Now we have already computed $R$ in Lemma \ref{char2ramification}, and $\pi^*\di
 Multiplying through by $m$ we obtain the desired result.
  \end{proof}
 
- \vskip1em
 
  
  \begin{lem}\label{h(x)char2}
@@ -1180,9 +1167,6 @@ At any other point of $X$ the order of $\frac{1}{h(x)}$ is clearly zero.
 We again consider the affine curve $X'$, and we let $\alpha_i \in \mathbb A_k^1$, for $1\leq i\leq l \leq 2g+1$, be the zeroes of $f(x)$.
 If $\alpha_i$ corresponds to a branch point then we label the unique point in $X$ that maps to it $Q_i$.
 Otherwise there are two points that map to it, and we denote these \[ Q_i:=(\alpha_i,0)\ {\rm and}\ Q_i':=(\alpha_i,h(\alpha_i)).\]
-
-
-~
 
 
 \begin{lem}\label{ychar2}
@@ -1225,7 +1209,6 @@ and this completes the proof.
 
 
 We now prove the following proposition, determining a basis of the space of global holomorphic poly-differentials as a vector space over $k$.
-\vskip1em
 
 \begin{prop}
 We assume that $g\geq 2$ and let $\omega:= \frac{dx^{\otimes m}}{h(x)^m}$. 
