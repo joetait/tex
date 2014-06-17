@@ -1,4 +1,4 @@
-\chapter{The Hurwitz formula} \label{Chapter:hurwitzformula}
+alignchapter{The Hurwitz formula} \label{Chapter:hurwitzformula}
 \section{The Riemann-Hurwitz formula}\label{Hurwitzsection}
 
 Let $X$ and $Y$ be two projective non-singular curves over an algebraically closed field $k$, with a map $\pi \colon X \rightarrow Y$ of degree $n$.
@@ -94,7 +94,7 @@ We can now define valuations on the differentials; namely, given some differenti
  The space of differentials, $\Omega_{K(C)}$, is a one-dimensional vector space over $K(C)$.
 \end{prop}
 \begin{proof}
- See \cite[Prop. 1.5.9]{stichtenoth}.\check{citation}
+ See \cite[Prop. 1.5.9]{stichtenoth}.\todo{check citation}
 \end{proof}
 
 
@@ -538,10 +538,10 @@ To show that $\omega_1(\alpha) = 0$ for any $\alpha \in \mathcal{A}_{X/Y}(W')$ t
 
 We choose $x\in K(Y)$ such that $v_Q(x) = v_Q(\omega)$.
 Then
-\begin{eqnarray}\label{remark}
+\begin{align}\label{remark}
  & v_P(x \alpha_P) = v_P(x) + v_P(\alpha_P) \geq e_P v_P(\omega) - v_P(W') \nonumber \\
  & = v_P(\pi^*((\omega)) - W') = -v_P(R) = -\delta_P. 
-\end{eqnarray}
+\end{align}
 By the definition of $C_Q$ and the ramification divisor, it is clear that $z\in C_Q$ if and only if $v_P(z)\geq -\delta_P$ for all $P\in \pi^{-1}(Q)$.
 It then follows from \eqref{remark} that $x \alpha_P$ is in $C_Q$ and hence that $v_Q(\Tr_{X/Y}(x \alpha_P)) \geq 0$, by definition of $C_Q$.
 Since $\Tr_{X/Y}(x \alpha_P) = x\cdot \Tr_{X/Y}(\alpha_P)$ and $v_Q(x) = v_Q(\omega)$, we have shown the first claim.
@@ -581,11 +581,11 @@ Let $\beta \in \mathcal{A}_{X/Y}$ be chosen  such that
            \end{cases}
 \end{equation*}
 Then for any $P\in \pi^{-1}(Q)$ we have
-\begin{eqnarray*}
- v_P(\beta) & = & -v_P(y) + v_P(z) \\
- & \geq & -v_P(\pi^*(\di (\omega))) + v_P(\pi^*(\di (\omega)) - \beta) \\
- & = & -v_P(B'),
-\end{eqnarray*}
+\begin{align*}
+ v_P(\beta) & =  -v_P(y) + v_P(z) \\
+ & \geq  -v_P(\pi^*(\di (\omega))) + v_P(\pi^*(\di (\omega)) - \beta) \\
+ & =  -v_P(B'),
+\end{align*}
 with the inequality following from the definition of $y$ and $J$.
 Hence $\beta \in \mathcal{A}_{X/Y}(B')$.
 Now $\omega_1(\beta) = \omega(\Tr_{X/Y}(\beta)) = \omega_Q(x) \neq 0$.
@@ -634,7 +634,7 @@ If differential is a unit at a point, it's precise value can be determined by th
 \[
 \omega'(\alpha) = \Tr_{X/Y}(\omega(\alpha)).
 \]
-{\bf check this last part}
+\todo{check this last part}
 \end{comment}
 \end{proof}
 

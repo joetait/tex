@@ -101,13 +101,13 @@ The next lemma is the main idea in the proof of our formula for $\dim_kH^0(X,\Om
     It therefore suffices to check that their stalks are equal. 
     For any $Q \in Y$ and $P \in \pi^{-1}(Q)$.
     We have
-      \begin{eqnarray*}
+      \begin{align*}
 	 \lefteqn{\pi_*^G\left(\cO_X(D)\right)_Q = \cO_X(D)_P \cap K(Y)}\\
-	  &=& \left\{f \in K(Y): \textrm{ord}_P(f) \ge -n_P\right\}\\
-	  &=& \left\{f \in K(Y): \textrm{ord}_Q(f) \ge - \frac{n_P}{e_P}\right\}\\
-	  &=& \left\{ f \in K(Y): \textrm{ord}_Q(f) \ge - \left\lfloor\frac{n_P}{e_P} \right\rfloor \right\}\\
-	  &=& \cO_Y\left(\left\lfloor \frac{\pi_*(D)}{n} \right\rfloor\right)_Q,
-      \end{eqnarray*}
+      &= \left\{f \in K(Y): \textrm{ord}_P(f) \ge -n_P\right\}\\
+	  &= \left\{f \in K(Y): \textrm{ord}_Q(f) \ge - \frac{n_P}{e_P}\right\}\\
+	  &= \left\{ f \in K(Y): \textrm{ord}_Q(f) \ge - \left\lfloor\frac{n_P}{e_P} \right\rfloor \right\}\\
+	  &= \cO_Y\left(\left\lfloor \frac{\pi_*(D)}{n} \right\rfloor\right)_Q,
+      \end{align*}
     as desired.
   \end{proof}
 
@@ -165,11 +165,11 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
 
 
   We will show below that in all other cases $\deg(E) > \deg(K_Y)$, and then the Riemann-Roch formula, Theorem \ref{riemannroch}, will give 
-     \begin{eqnarray*}
+     \begin{align*}
 	\lefteqn{\dim_kH^0(X,\Omega_X^{\otimes m})^G = \dim_kH^0\left(Y,\cO_Y\left( E \right)\right)} \\
-	& = & 1-g_Y+\deg\left(mK_Y+\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor\right) \\
-	& = & (2m-1)(g_Y-1)+\deg\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor,
-      \end{eqnarray*}
+	& =  1-g_Y+\deg\left(mK_Y+\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor\right) \\
+	& =  (2m-1)(g_Y-1)+\deg\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor,
+      \end{align*}
   completing the proof.
 
 
@@ -195,13 +195,13 @@ For the next corollary we recall the notations $e_Q$ and $\delta_Q$ for any $Q\i
 
 \begin{cor}\label{dim2}
   We have 
-    \begin{eqnarray*}
+    \begin{equation*}
       \dim_kH^0(X,\Omega_X)^G = 
 	\begin{cases}
 	  g_Y & \mbox{if } s=0, \\
 	  g_Y-1+\sum_{Q\in S}\left\lfloor \frac{\delta_Q}{e_Q} \right\rfloor & \mbox{otherwise}.
 	\end{cases}
-    \end{eqnarray*}
+    \end{equation*}
 \end{cor}
 \begin{proof}
   We have
@@ -258,11 +258,11 @@ Hence for $P\in U_k$ we have $\dim {\rm Ind}_{G_P}^G(\chi_P^d) = \frac{n}{k} \di
 
 
 Following this we can write 
-\begin{eqnarray*}
- n \cdot \dim N_{G,X} & = & \sum_{k=1}^n \sum_{P\in U_k} \sum_{d=1}^{e^t_P -1} d\cdot \dim {\rm Ind}_{G_P}^G\chi_P^d \\
- & = & \sum_{k=1}^n \sum_{P\in U_k} \sum_{d=1}^{k -1} d\cdot \frac{n}{k} \\
- & = & \sum_{k=1}^n \sum_{P\in U_k} \frac{(k-1)\cdot n}{2}
-\end{eqnarray*}
+\begin{align*}
+ n \cdot \dim N_{G,X} & = \sum_{k=1}^n \sum_{P\in U_k} \sum_{d=1}^{e^t_P -1} d\cdot \dim {\rm Ind}_{G_P}^G\chi_P^d \\
+ & =  \sum_{k=1}^n \sum_{P\in U_k} \sum_{d=1}^{k -1} d\cdot \frac{n}{k} \\
+ & =  \sum_{k=1}^n \sum_{P\in U_k} \frac{(k-1)\cdot n}{2}
+\end{align*}
 since the dimension of $\chi^d_P$ is $1$.
 Hence
 \[
@@ -390,10 +390,10 @@ Compared to arbitrary groups, it is considerably easier to compute when these gr
 	\ge \sum_{i=1}^r \left\lfloor \frac{2(p-1)}{p}\right\rfloor = r > 0.
       \] 
 	From Corollary \ref{dim2} we then conclude that 
-	\begin{eqnarray*}
-		\dim_kH^0\left(X,\Omega_X\right)^G & = & g_Y - 1 + \sum_{i=1}^r\left\lfloor \frac{\delta_i}{e_i}\right\rfloor \\
-		& = & -1 + N + r \sum_{i=1}^r\left\lfloor -\frac{N_i+1}{p}\right\rfloor.
-	\end{eqnarray*}
+	\begin{align*}
+		\dim_kH^0\left(X,\Omega_X\right)^G & =  g_Y - 1 + \sum_{i=1}^r\left\lfloor \frac{\delta_i}{e_i}\right\rfloor \\
+		& =  -1 + N + r \sum_{i=1}^r\left\lfloor -\frac{N_i+1}{p}\right\rfloor.
+	\end{align*}
 
     If $p=2$, the dimension of both $H^0(X,\Omega_X)$ and $H^0(X,\Omega_X)^G$ is therefore equal to $\frac{N+r-2}{2}$. 
     This shows the if-direction in Proposition \ref{m=1}.
@@ -422,11 +422,11 @@ Compared to arbitrary groups, it is considerably easier to compute when these gr
 	since $-p^2+3p-2 = - (p-1)(p-2)$. 
 
     Because $S \geq 0$, the numerator of this fraction is non-negative, that is
-      \begin{eqnarray*}
+      \begin{align*}
 	\lefteqn{0 \le (r-2)(1-p) - 2 + T (3-p)}\\
-	&\le & (r-2)(1-p) - 2 + r (3-p)\\
-	&=& 2 (r-1)(2-p).
-      \end{eqnarray*}
+	&\le  (r-2)(1-p) - 2 + r (3-p)\\
+	&= 2 (r-1)(2-p).
+      \end{align*}
     Hence we have that $r=1$ and that the numerator is $0$. 
     We conclude that $S=0$ and hence that $T=1$ or $p=3$. 
     If $T=1$ we also have $N=1$ and finally
@@ -477,20 +477,20 @@ Compared to arbitrary groups, it is considerably easier to compute when these gr
 	have $\dim_kH^0(X,\Omega_X^{\otimes m})^G=0$ by Proposition \ref{dim}, but we know that 
 	$\dim_kH^0(X,\Omega_X^{\otimes m})=(2m-1)(g_X-1)$ is strictly positive. 
 	So, using \eqref{altdim}, \eqref{altdim2} and Proposition \ref{dim} we see that
-		\begin{eqnarray}\label{bound}
+		\begin{align}\label{bound}
 			\lefteqn{(2m-1)\frac{M(p-1)-2p}{2} = \dim_kH^0(X,\Omega_X^{\otimes m})} \nonumber\\
-			& = & \dim_kH^0(X,\Omega_X^{\otimes m})^G \nonumber\\
-			& = & 1-2m+mM+\sum_{i=1}^r\left\lfloor\frac{-m(N_i+1)}{p}\right\rfloor\nonumber \\
-			& \leq & 1-2m+mM+\sum_{i=1}^r\frac{-m(N_i+1)}{p}\nonumber \\
-			& = & 1-2m+mM-\frac{mM}{p}.
-		\end{eqnarray}
+			& =  \dim_kH^0(X,\Omega_X^{\otimes m})^G \nonumber\\
+			& =  1-2m+mM+\sum_{i=1}^r\left\lfloor\frac{-m(N_i+1)}{p}\right\rfloor\nonumber \\
+			& \leq  1-2m+mM+\sum_{i=1}^r\frac{-m(N_i+1)}{p}\nonumber \\
+			& =  1-2m+mM-\frac{mM}{p}.
+		\end{align}
 
 	After multiplying by $2p$ and rearranging we obtain
-		\begin{eqnarray}\label{times2p}
-			0 & \geq & (2mM-M-4m+2)p^2+(-4mM+M-2+4m)p+2mM \nonumber \\
-			& = & (M-2)(2m-1)p^2-((M-2)(2m-1)+2mM)p+2mM \nonumber \\
-			& = & (p-1)((M-2)(2m-1)p-2mM).
-	\end{eqnarray}
+		\begin{align}\label{times2p}
+			0 & \geq  (2mM-M-4m+2)p^2+(-4mM+M-2+4m)p+2mM \nonumber \\
+			& =  (M-2)(2m-1)p^2-((M-2)(2m-1)+2mM)p+2mM \nonumber \\
+			& =  (p-1)((M-2)(2m-1)p-2mM).
+	\end{align}
 
 	Furthermore from \eqref{hur2} we obtain that $-2p+M(p-1)=2g_X-2 \geq 2$ and hence that 
 		\begin{equation}\label{greater2}
@@ -498,21 +498,21 @@ Compared to arbitrary groups, it is considerably easier to compute when these gr
 		\end{equation}
 
 	So from \eqref{times2p} and \eqref{greater2} we see that
-		\begin{eqnarray}\label{plessthan4}
-			p & \leq & \frac{2mM}{(M-2)(2m-1)}\nonumber\\
-			& = & \frac{M}{M-2}\cdot\frac{2m}{2m-1}\nonumber\\
-			& = & \left( 1+\frac{2}{M-2} \right) \left(1+\frac{1}{2m-1} \right)\\
-			& \leq & 4, \nonumber	
-		\end{eqnarray}
+		\begin{align}\label{plessthan4}
+			p & \leq  \frac{2mM}{(M-2)(2m-1)}\nonumber\\
+			& =  \frac{M}{M-2}\cdot\frac{2m}{2m-1}\nonumber\\
+			& =  \left( 1+\frac{2}{M-2} \right) \left(1+\frac{1}{2m-1} \right)\\
+			& \leq  4, \nonumber	
+		\end{align}
 
 	\ie $p=2$ or $p=3$. 
 
 	Suppose that $p=3$. Then from \eqref{greater2} we have $M\geq 4$. However, from  \eqref{plessthan4} we also have that 
-		\begin{eqnarray*}
-			3 & \leq &\left( 1+\frac{2}{M-2} \right) \left(1+\frac{1}{2m-1} \right)\\
-			& \leq & \left( 1+\frac{2}{M-2} \right) \frac{4}{3}\\
-			& \leq & \frac{8}{3},
-		\end{eqnarray*}
+		\begin{align*}
+			3 & \leq \left( 1+\frac{2}{M-2} \right) \left(1+\frac{1}{2m-1} \right)\\
+			& \leq  \left( 1+\frac{2}{M-2} \right) \frac{4}{3}\\
+			& \leq  \frac{8}{3},
+		\end{align*}
 	a contradiction.
 
 	Lastly, we come to the case when $p=2$. From \eqref{plessthan4} we see that $2\leq \left(1+\frac{2}{M-2}\right)\frac{4}{3}$ 
@@ -538,10 +538,10 @@ Compared to arbitrary groups, it is considerably easier to compute when these gr
     
     
     From Lemma \ref{dim3} and Proposition~\ref{dim} we obtain
-      \begin{eqnarray*}
+      \begin{align*}
 	\lefteqn{(2m-1)(g_X-1)=\dim_kH^0(X,\Omega_X^{\otimes m})} \\
-	& = & \dim_kH^0(X,\Omega_X^{\otimes m})^G=-(2m-1)+\sum_{i=1}^r \left\lfloor \frac{m\cdot \delta_i}{l} \right\rfloor
-      \end{eqnarray*}
+	& =  \dim_kH^0(X,\Omega_X^{\otimes m})^G=-(2m-1)+\sum_{i=1}^r \left\lfloor \frac{m\cdot \delta_i}{l} \right\rfloor
+      \end{align*}
     and hence
       \begin{equation*}
 	(2m-1)g_X = \sum_{i=1}^r \left\lfloor \frac{m\cdot \delta_i}{l} \right\rfloor
@@ -557,20 +557,20 @@ Compared to arbitrary groups, it is considerably easier to compute when these gr
 	(2m-1)(l-1)g_X=(2g_X+2(l-1))(m-q-1).
       \end{equation*}
     By rearranging we are able to compute $g_X$ in terms of $m,l$ and $q$:
-      \begin{eqnarray*}
+      \begin{align*}
 	\lefteqn{g_X = \frac{2(l-1)(m-q-1)}{(2m-1)(l-1)-2(m-q-1)}} \\
-	& = & 1 + \frac{2(m-q-1)-(2q+1)(l-1)}{(2m-1)(l-1)-2(m-q-1)} \\
-	& = & 1 + \frac{2s-1-l}{(2m-1)(l-1)-2(m-q-1)}  \\
-	& = & 1 + \frac{2(s-1)+1-l}{(2m-1-2q)(l-1)-2(s-1)}. 
-      \end{eqnarray*}
+	& =  1 + \frac{2(m-q-1)-(2q+1)(l-1)}{(2m-1)(l-1)-2(m-q-1)} \\
+	& =  1 + \frac{2s-1-l}{(2m-1)(l-1)-2(m-q-1)}  \\
+	& =  1 + \frac{2(s-1)+1-l}{(2m-1-2q)(l-1)-2(s-1)}. 
+      \end{align*}
     First, we show that if $l\geq 3$ the equation cannot hold whilst $g_X\geq 2$.
     Observe that the denominator is strictly greater than $l-1$, remembering that $m=ql+s$:
-      \begin{eqnarray*}
-	(2m-1-2q)(l-1)-2(s-1) & = & ((2q(l-1)+2s-1)(l-1)-2(s-1) \\
-	& \geq & (2s-1)(l-1)-2(s-1) \\
-	& \geq & (2s-1)(l-1)-2(s-1)(l-1) \\
-	& = & l-1;
-      \end{eqnarray*}
+      \begin{align*}
+	(2m-1-2q)(l-1)-2(s-1) & =  ((2q(l-1)+2s-1)(l-1)-2(s-1) \\
+	& \geq  (2s-1)(l-1)-2(s-1) \\
+	& \geq  (2s-1)(l-1)-2(s-1)(l-1) \\
+	& =  l-1;
+      \end{align*}
     here the two inequalities are equalities if and only if $q=0$ and $s=1$, respectively, and, as $m\geq 2$, not both inequalities can be equalities.
     Now the numerator is at most $l-1$, occurring when $s=l$. 
     Hence if $l\geq 3$ the fraction will be less than one and $g_X < 2$, contradicting our assumption.
@@ -618,11 +618,11 @@ In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representative
     It is clear that the $G$-invariant part of each sub-module $V_j$ is spanned by $e_1$. 
     Hence $\dim_kH^0(X,\cO_X(D))^G = \sum_{j=1}^{p^l} m_j$.
     By \cite[Thm. 2.1]{quaddiffequi}, which relies on \cite{cohogsheaves}, we have
-      \begin{eqnarray*}
-	\sum_{j=1}^{p^l} m_j & = & 1- g_Y +\sum_{Q\in Y} \left\lfloor \frac{n_Q}{e_Q}\right\rfloor\\
-	& = & 1- g_Y + \sum_{Q\in Y} \left( \frac{n_Q}{e_Q} - \left\langle \frac{n_Q}{e_Q}\right\rangle \right) \\
-  	& = & 1 - g_Y + \frac{1}{p^l}\deg(D) - \sum_{Q\in Y} \left\langle \frac{n_Q}{e_Q} \right\rangle.
-      \end{eqnarray*}
+      \begin{align*}
+	\sum_{j=1}^{p^l} m_j & =  1- g_Y +\sum_{Q\in Y} \left\lfloor \frac{n_Q}{e_Q}\right\rfloor\\
+	& =  1- g_Y + \sum_{Q\in Y} \left( \frac{n_Q}{e_Q} - \left\langle \frac{n_Q}{e_Q}\right\rangle \right) \\
+  	& =  1 - g_Y + \frac{1}{p^l}\deg(D) - \sum_{Q\in Y} \left\langle \frac{n_Q}{e_Q} \right\rangle.
+      \end{align*}
 
     Now as $\deg(D)>2g_X-2$ we have $\dim_kH^0(X,\cO_X(D)) =\deg(D)+1-g_X$ by the Riemann-Roch theorem. 
     So the action of $G$ on $H^0(X,\cO_X(D))$ is trivial if and only if
@@ -746,12 +746,12 @@ In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representative
       \end{equation*}
     For any $Q \in Y$ we let $\delta_Q$ denote the coefficient of the ramification divisor $R$ at any $P \in \pi^{-1}(Q)$ and let $e_Q := e_P$ for any $P \in \pi^{-1}(Q)$. 
     Rewriting the previous equation yields
-      \begin{eqnarray*}
+      \begin{align*}
 	\lefteqn{(2n-2)g_Y = 2n-4 + 2 \,\textrm{deg}\left \lfloor \frac{\pi_*(R)}{n}\right \rfloor - \textrm{deg}(R)}\\
-	&=& 2 \left(n-2 + \sum_{Q \in Y} \left(\left\lfloor \frac{n}{e_Q} \frac{\delta_Q}{n} \right\rfloor - \frac{n}{e_Q} \frac{\delta_Q}{2}\right) \right)\\
-	&=& 2 \left(n-2 + \sum_{Q \in Y} \left( \left\lfloor \frac{\delta_Q}{e_Q} \right\rfloor - \frac{\delta_Q}{e_Q} \frac{n}{2} \right)\right)\\
-	& \le & 2(n-2)
-      \end{eqnarray*}
+	&= 2 \left(n-2 + \sum_{Q \in Y} \left(\left\lfloor \frac{n}{e_Q} \frac{\delta_Q}{n} \right\rfloor - \frac{n}{e_Q} \frac{\delta_Q}{2}\right) \right)\\
+	&= 2 \left(n-2 + \sum_{Q \in Y} \left( \left\lfloor \frac{\delta_Q}{e_Q} \right\rfloor - \frac{\delta_Q}{e_Q} \frac{n}{2} \right)\right)\\
+	& \le  2(n-2)
+      \end{align*}
     because $\frac{n}{2} \ge 1$ and $\left\lfloor \frac{\delta_Q}{e_Q}\right\rfloor \le \frac{\delta_Q}{e_Q}$ for all $Q \in Y$. 
     Hence we obtain $g_Y \le \frac{n-2}{n-1} < 1$ and therefore $g_Y =0$, as desired.
 
@@ -763,10 +763,10 @@ In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representative
 	(2m-1)(g_X-1)=(2m-1)(g_Y-1)+\deg\left(\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor \right).
       \end{equation*}
     Combining this with the Riemann-Hurwitz formula, Corollary \ref{hur}, we see that
-      \begin{eqnarray*}
-	2(2m-1)(g_Y-1)+2\deg\left(\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor\right) & = & 2(2m-1)(g_X-1)\\
-	& = & 2n(2m-1)(g_Y-1)+(2m-1)\deg(R),
-      \end{eqnarray*}
+      \begin{align*}
+	2(2m-1)(g_Y-1)+2\deg\left(\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor\right) & =  2(2m-1)(g_X-1)\\
+	& =  2n(2m-1)(g_Y-1)+(2m-1)\deg(R),
+      \end{align*}
     which can be re-arranged as
       \begin{equation*}
 	(2m-1)(2n-2)(g_Y-1)=2\deg\left(\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor\right)-(2m-1)\deg(R).
@@ -777,7 +777,7 @@ In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representative
       \begin{align*}
 	\lefteqn{2\deg\left(\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor\right)-(2m-1)\deg(R)}\\
 	& = \sum_{Q \in Y} \left(2\left\lfloor m\cdot \frac{n}{e_Q}\frac{\delta_Q}{n}\right\rfloor -n(2m-1)\frac{\delta_Q}{e_Q}\right) \\
-	&\leq   \sum_{Q\in Y}\left( 2m\cdot\frac{\delta_Q}{e_Q}-n(2m-1)\frac{\delta_Q}{e_Q}\right) \\
+	\leq   \sum_{Q\in Y}\left( 2m\cdot\frac{\delta_Q}{e_Q}-n(2m-1)\frac{\delta_Q}{e_Q}\right) \\
 	& =  (2m-n(2m-1))\sum_{Q\in Y }\frac{\delta_Q}{e_Q}.
       \end{align*}
 
@@ -962,32 +962,33 @@ So
 We now show that the differentials listed in Proposition \ref{propneq2} are holomorphic.
 We consider the first two cases together.
 So if $m=1$ or $m\geq 2$, $g\geq 2$ then we have that
-\begin{eqnarray*}
- \di(x^i\omega) & = & \di \left( \frac{x^idx^{\otimes m}}{y^m} \right)\\ & = & i(D_0 -D_\infty) + m(R-2D_\infty) -m(R-(g+1)D_\infty) \\
- & = & iD_0 + (mg -m -i)D_\infty \\
- & = & iD_0 + (m(g-1) -i)D_\infty,
-\end{eqnarray*}
+\begin{align*}
+ \di(x^i\omega) & =  \di \left( \frac{x^idx^{\otimes m}}{y^m} \right)\\ 
+& =  i(D_0 -D_\infty) + m(R-2D_\infty) -m(R-(g+1)D_\infty) \\
+ & =  iD_0 + (mg -m -i)D_\infty \\
+ & =  iD_0 + (m(g-1) -i)D_\infty,
+\end{align*}
 which is positive for $0\leq i \leq m(g-1)$.
 Note that if $m=g=2$ then there are three elements, and since $\dim_kH^0(X,\Omega_X^{\otimes 2})=3$ by Lemma \ref{dim3}, these elements form a basis.
 Also, if $m=1$ then by Riemann-Roch $\dim_k H^0(X,\Omega_X)=g$, and we have $g$ linearly independent elements, so they again must form a basis.
 
 \begin{comment}
 If $m=g=2$ then we have that
-\begin{eqnarray*}
- \di\left(\frac{x^idx^{\otimes 2}}{y^2}\right) & = & i(D_0-D_\infty) + 2(R-2D_\infty) - 2(R-(g+1)D_\infty) \\
- & = & iD_0+ ((2g-2)-i)D_\infty \\
- & = & iD_0 +(2-i)D_\infty,
-\end{eqnarray*}
+\begin{align*}
+ \di\left(\frac{x^idx^{\otimes 2}}{y^2}\right) & =  i(D_0-D_\infty) + 2(R-2D_\infty) - 2(R-(g+1)D_\infty) \\
+ & =  iD_0+ ((2g-2)-i)D_\infty \\
+ & =  iD_0 +(2-i)D_\infty,
+\end{align*}
 which is positive for $0\leq 2$.
 By Lemma \ref{dim3} then $\dim_kH^0(X,\Omega_X^{\otimes 2})=3$, so again, we have three linearly independent elements, so they must form a basis.
 \end{comment}
 
 
 Now we consider the case where $m\geq 2$ and $g \geq 2$ and at least one of these inequalities is strict.
-\begin{eqnarray*}
- \di (x^iy\omega) & = & \di(x^i\omega) + R -(g+1)D_\infty \\
- & = & iD_0 + R +((m-1)(g-1)-2-i)D_\infty,
-\end{eqnarray*}
+\begin{align*}
+ \di (x^iy\omega) & =  \di(x^i\omega) + R -(g+1)D_\infty \\
+ & =  iD_0 + R +((m-1)(g-1)-2-i)D_\infty,
+\end{align*}
 which is positive for $0\leq i \leq (m-1)(g-1)-2$.
 By Lemma \ref{dim3} we know that 
 \[
@@ -1090,20 +1091,20 @@ Then the coefficient $\delta_P$ of the ramification divisor $R$ at $P\in X$ is g
  By Nakayama's lemma \cite[Prop. 2.6]{atiyahmacdonald},\todo{check citation} $y-b_i$ is therefore a local parameter at $P$.\todo{more specific citation}
  
  Using Hilbert's formula \cite[Chap. IV, \S 1, Prop. 4]{localfields} we obtain
- \begin{eqnarray*}
-  \delta_P & = & \sum_{i\geq 0} \left(\ord(G_i(P))-1\right) \\
-  & = & {\rm max\ }\left\{ i\in \NN | G_i(P)\neq \{1\}\right\} + 1 \\
-  & = & \ord_{P}(\sigma(y-b_i) - (y-b_i)).
-  \end{eqnarray*}
+ \begin{align*}
+  \delta_P & =  \sum_{i\geq 0} \left(\ord(G_i(P))-1\right) \\
+  & =  {\rm max\ }\left\{ i\in \NN | G_i(P)\neq \{1\}\right\} + 1 \\
+  & =  \ord_{P}(\sigma(y-b_i) - (y-b_i)).
+  \end{align*}
   
  By an argument similar to that used to show the correspondence between the solutions of $h(x)$ and the ramification points, it is clear $\sigma(y)=y+h(x)$.
  The following calculation then concludes the proof,
-  \begin{eqnarray*}
-  \delta_P & = & \ord_{P}(\sigma(y-b_i) - (y-b_i)) \\
-  & = & \ord_{P}(y-b_i+h(x) - y + b_i) \\
-  & = & 2\ord_{a_i}(h(x)) \\
-  & = & 2n_i.
- \end{eqnarray*}
+  \begin{align*}
+  \delta_P & =  \ord_{P}(\sigma(y-b_i) - (y-b_i)) \\
+  & =  \ord_{P}(y-b_i+h(x) - y + b_i) \\
+  & =  2\ord_{a_i}(h(x)) \\
+  & =  2n_i.
+ \end{align*}
 \end{proof}
 
 
@@ -1244,19 +1245,21 @@ But since the $y$ terms are all linear, and the extension is of degree two, it m
  
  We now show that the listed poly-differentials are holomorphic, \ie that their divisors are non-negative.
  Firstly we have
- \begin{eqnarray*}
-  \di(x^i\omega) & = & \di \left( \frac{x^i dx^{\otimes m}}{h(x)^m} \right)\\ & = & i(D_0 - D_\infty) +2m\sum_{i=1}^k n_i[P_i] + m(g-1-d)D_\infty\\
-  & & -2m\sum_{i=1}^k n_i [P_i] + dmD_\infty \\
-  & = & iD_0 + (m(g-1) -i)D_\infty
- \end{eqnarray*}
+ \begin{align*}
+  \di(x^i\omega) & =  \di \left( \frac{x^i dx^{\otimes m}}{h(x)^m} \right)\\ 
+& =  i(D_0 - D_\infty) +2m\sum_{i=1}^k n_i[P_i] + m(g-1-d)D_\infty\\
+  &  -2m\sum_{i=1}^k n_i [P_i] + dmD_\infty \\
+  & =  iD_0 + (m(g-1) -i)D_\infty
+ \end{align*}
   by Lemmas \ref{xchar2}, \ref{dxchar2} and \ref{h(x)char2}, and this is clearly non-negative for $0\leq i \leq m(g-1)$.
   
   Similarly the divisor 
-  \begin{eqnarray*}
-   \di(x^iy\omega) & = & \di \left( \frac{x^i ydx^{\otimes m}}{h(x)^m} \right)\\ & = & iD_0 + (m(g-1) -i)D_\infty + \sum_{i=1}^l m_i[Q_i] - (2g+1)[P_\infty] \\
-    & = & iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2m(g-1) -(2g+1) -2i)[P_\infty] \\
-   & = & iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2((m-1)(g-1) -1 -i)-1)[P_\infty]
-  \end{eqnarray*}
+  \begin{align*}
+   \di(x^iy\omega) & =  \di \left( \frac{x^i ydx^{\otimes m}}{h(x)^m} \right)\\ 
+& =  iD_0 + (m(g-1) -i)D_\infty + \sum_{i=1}^l m_i[Q_i] - (2g+1)[P_\infty] \\
+    & =  iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2m(g-1) -(2g+1) -2i)[P_\infty] \\
+   & =  iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2((m-1)(g-1) -1 -i)-1)[P_\infty]
+  \end{align*}
  is again clearly non-negative for $0 \leq i \leq (g-1)(m-1)-2$.
 
   \end{proof}
