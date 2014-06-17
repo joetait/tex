@@ -1,0 +1,139 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{landscape} % set up the page for landscape
+% read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage[obeyDraft]{todonotes}
+
+%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{mathtools}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+%\microtypecontext{spacing=nonfrench}
+% activate={true,nocompatibility} - activate protrusion and expansion
+% final - enable microtype; use "draft" to disable
+% tracking=true, kerning=true, spacing=true - activate these techniques
+% factor=1100 - add 10% to the protrusion amount (default is 1000)
+% stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsopn}
+\usepackage{amssymb}
+%\usepackage{natbib}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+%\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{cabin}
+%\usepackage{libertine}
+%\usepackage[T1]{fontenc}
+
+%Theorems and stuff
+\theoremstyle{plain}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{thm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{ex}[defn]{Example}
+\newtheorem*{unnumthm}{Theorem}
+\newtheorem{defnlem}[defn]{Definition/Lemma}
+\newtheorem{defnthm}[defn]{Theorem/Definition}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{note}{Note}
+
+
+\newcommand{\cO}{{\cal O}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\cL}{{\mathcal L}}
+\newcommand{\cA}{{\mathcal A}}
+\newcommand{\cD}{{\mathcal D}}
+\newcommand{\cU}{{\mathcal U}}
+\newcommand{\cech}{\v{C}ech }
+\newcommand{\hzero}{{H^0(X,\Omega_X)}}
+\newcommand{\hone}{H^1(X,\mathcal{O}_X)}
+\newcommand{\cechhone}{\check{H}^1(\mathcal U,\mathcal O_X)}
+\newcommand{\derhamhone}{H_{\text {dR}}^1(X/k)}
+
+
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\res}{Res}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\di}{div}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\gal}{Gal}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Ima}{Im}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Actions on spaces of differentials on algebraic curves}
+\author{Joseph Tait}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed
+
+\begin{document}
+\maketitle
+\newpage
+%\listoftodos
+
+\tableofcontents
+
+\include{./Introduction/Introduction}
+\include{./hurwitzstuff/hurwitz}
+\include{./dimension/dimensionformulae}
+\include{./valentinimadan/valandmad}
+\include{./simul_char/basis}
+
+\bibliographystyle{amsalpha}
+\bibliography{biblio}
+
+
+\end{document}
