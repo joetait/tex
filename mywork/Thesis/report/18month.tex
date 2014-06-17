@@ -127,13 +127,13 @@ In the tamely ramified case we will define it to have co-efficients $e_P-1$, but
 \begin{defn}
 	Let $G:=\gal(X/Y)$ and let $t$ be a uniformising parameter at $P\in X$.
 	Then for $i\geq -1$ we define the $i^{th}$ ramification group at $P$, denoted $G_i(P)$, to be the sub-group of $s\in G$ such that $\ord_P(s(t)-t)\geq i+1$.
-	This is	independent of the choice of $t$, as shown in { \em \cite[$\S$1, Ch. IV]{localfields}}.
+	This is	independent of the choice of $t$, as shown in { \em \cite[\S 1, Ch. IV]{localfields}}.
 \end{defn}
 
 Note that for any $P\in X$ we have that $G_{-1}(P)=G$, if $i$ is sufficiently large then $G_i(P)$ is trivial and $G_i(P)\supseteq G_{i+1}(P)$.
 Also, $G_1$ is a $p$-group and $\ord(G_0(P)/G_1(P))$ is co-prime to $p$.
 In particular, $\pi$ is tamely ramified at $P$ if and only if $G_1(P)$ is the trivial group.
-More details can be found in \cite[Ch. IV]{localfields}.
+More details can be found in \cite[Ch. IV]{localfields}.\todo{more specific citation}
 
 Note that $e_P = \ord (G_0(P))$ for any $P \in X$.
 Also, for any $Q \in Y$ we write $\delta_Q$ for $\delta_P$ and $e_Q$ for $e_P$, where $P\ \in \pi^{-1}(Q)$.
@@ -151,7 +151,7 @@ We now state Hilbert's formula, relating our definition of the ramification divi
 	where $e$ denotes the identity in $G$.
 \end{thm}
 \begin{proof}
-	For the sake of brevity we do not prove these statements here. See \cite[Prop 4, $\S$1, Ch IV]{localfields} for a proof of Hilbert's formula.
+	For the sake of brevity we do not prove these statements here. See \cite[Chap. IV, \S 1, Prop. 4]{localfields} for a proof of Hilbert's formula.
 \end{proof}
 
 We will use this for various calculations involving the ramification divisor.
@@ -269,7 +269,7 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
     \end{equation*}
 
 
-  For the third case, by \cite[Ex. 1.3.4, Ch IV]{hart} it suffices to show that $\deg \left( E \right) < 0$.
+  For the third case, by \cite[Chap. IV, Ex. 1.3.4]{hart} it suffices to show that $\deg \left( E \right) < 0$.
   As $g_Y=0$ we have $\deg(K_Y)=-2$, so $\deg(mK_Y)=-2m$, and $\deg \left( E \right)$ is indeed negative.
 
 
@@ -330,7 +330,7 @@ Thus Corollary \ref{dim2} follows from Proposition \ref{dim}.
 \end{rem}
 
 \begin{comment}
-We also consider an alternative approach to computing the fixed dimension of $H^0(X,\Omega_X^{\otimes m})$, relying on \citep[Thm 4.5]{galoisstruc}.
+We also consider an alternative approach to computing the fixed dimension of $H^0(X,\Omega_X^{\otimes m})$, relying on \cite[Thm. 4.5]{galoisstruc}.
 For the rest of this section we assume that $n$ is co-prime to $p$, that $g_X\geq 2$ and that $g_Y=0$.
 
 We now introduce some notation from \cite{galoisstruc}.
@@ -340,14 +340,14 @@ We also introduce the unique projective module $N_{G,X}$ satisfying
  \bigoplus^n N_{G,X} = \bigoplus_{P\in X} \bigoplus_{d=1}^{e^t_p-1} \bigoplus^d {\rm Ind}_{G_P}^G(\chi_P^d),
 \end{equation*}
 
-where $e^t_p$ denotes the (tame) ramification index at a point $P\in X$, as in \citep[Thm 4.3]{galoisstruc}.
+where $e^t_p$ denotes the (tame) ramification index at a point $P\in X$, as in \cite[Thm. 4.3]{galoisstruc}.
 
 Fix an integer $m\geq 2$. Now if we write $mK_X = \sum_{P\in X} n_P[P]$ then we can define $r_P\in \{0,\ldots, e^t_p - 1\}$ and $s_P\in \ZZ$ to be the unique values such that
 \[
  n_P = r_P + s_Pe_P^t.
 \]
 
-Finally, if for any $Q\in Y$ we let $\bar Q \in X$ be an element of the fibre with respect to $\pi$, we can state \citep[Thm 4.5]{galoisstruc}, which says that we have the following equality in $K_0(k[G])$:
+Finally, if for any $Q\in Y$ we let $\bar Q \in X$ be an element of the fibre with respect to $\pi$, we can state \cite[Thm. 4.5]{galoisstruc}, which says that we have the following equality in $K_0(k[G])$:
 \begin{equation}\label{eq}
  \chi(G,X,\Omega^{\otimes m}) = -[N_{G,X}] +\sum_{Q\in Y}\sum^{r_{\bar Q}}_{d=1} [{\rm Ind}_{G_{\bar Q}}^G(\chi_{\bar Q}^d)]  + \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right) [k[G]],
 \end{equation}
@@ -359,7 +359,7 @@ Hence the action will be trivial precisely when we have equality between the dim
 We will work out the dimension and fixed dimension of each of the components of the above sum separately, before combining them to give a complete answer.
 
 
-Before we look at the first two parts, we recall from \citep[Rem. 4.30]{introtoreps} that for a representation $V$ of a group $G$ and a subgroup $H\subseteq G$ we have
+Before we look at the first two parts, we recall from \cite[Rem. 4.30]{introtoreps} that for a representation $V$ of a group $G$ and a subgroup $H\subseteq G$ we have
 \[
   \dim \rm{Ind}_H^G(V) = \dim(V)\cdot\frac{|G|}{|H|}.
 \]
@@ -485,7 +485,7 @@ Compared to arbitrary groups, it is considerably easier to compute when these gr
     Then $G$ acts trivially on $H^0(X,\Omega_X)$ if and only if $p=2$. 
   \end{prop}
   \begin{proof}
-    From \cite[Lem 1, pg.87]{Naka} we know that $p$ does not divide $N_i$ for $i=1,\ldots ,r$, a fact we will use several times below. 
+    From \cite[Lem. 1, pg.87]{Naka} we know that $p$ does not divide $N_i$ for $i=1,\ldots ,r$, a fact we will use several times below. 
     Let $N:= \sum_{i=1}^r N_i$. 
     Using the Riemann-Hurwitz formula, Corollary \ref{hur}, we obtain
       \begin{equation}\label{hur2}
@@ -730,7 +730,7 @@ In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representative
 	
     It is clear that the $G$-invariant part of each sub-module $V_j$ is spanned by $e_1$. 
     Hence $\dim_kH^0(X,\cO_X(D))^G = \sum_{j=1}^{p^l} m_j$.
-    By \cite[Thm 2.1]{quaddiffequi}, which relies on \cite{cohogsheaves}, we have
+    By \cite[Thm. 2.1]{quaddiffequi}, which relies on \cite{cohogsheaves}, we have
       \begin{eqnarray*}
 	\sum_{j=1}^{p^l} m_j & = & 1- g_Y +\sum_{Q\in Y} \left\lfloor \frac{n_Q}{e_Q}\right\rfloor\\
 	& = & 1- g_Y + \sum_{Q\in Y} \left( \frac{n_Q}{e_Q} - \left\langle \frac{n_Q}{e_Q}\right\rangle \right) \\
@@ -906,7 +906,7 @@ In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representative
     
     Similarly, the $m=1$ case of the only if direction will follow from Proposition \ref{m=1} after we show that $p>0$ and there is a cyclic subgroup of $G$ of order $p$. 
     This is true as $\pi$ cannot be tamely ramified.
-    Indeed, if it were then $R=\sum_{P\in X} (e_P-1)[P]$ \cite[Cor 2.4,Ch IV]{hart}, and $\deg\left\lfloor \frac{\pi_*(R)}{n} \right\rfloor=0$, which we have already shown cannot be the case.
+    Indeed, if it were then $R=\sum_{P\in X} (e_P-1)[P]$ \cite[Chap. IV, Cor. 2.4]{hart}, and $\deg\left\lfloor \frac{\pi_*(R)}{n} \right\rfloor=0$, which we have already shown cannot be the case.
     Hence $p$ must be positive, and there is a cyclic subgroup of order $p$ which acts trivially.
   \end{proof}
 

@@ -12,12 +12,12 @@ Any element $\alpha \in K(X)$ defines a $K(Y)$~-~linear map $\mu_{\alpha} \colon
 We let $\Tr_{X/Y}(\alpha)$ be the trace of the matrix corresponding to $\mu_\alpha$.
 We call $\Tr_{X/Y}(\alpha)$ the trace of $\alpha$, and $\Tr_{X/Y}$ is a map $K(X) \ra K(Y)$.
 Note that $\Tr_{X/Y}$ is an additive map, and that for $\alpha \in K(Y)$ we have $\Tr_{X/Y}(\alpha) = n \alpha$.
-Also, since our extension is Galois (and hence, in particular, separable) then the trace map is non-zero (see, for example, \cite[Appendix A]{stichtenoth}).
+Also, since our extension is Galois (and hence, in particular, separable) then the trace map is non-zero (see, for example, \cite[Appendix A]{stichtenoth}).\todo{more specific citation}
 Finally, if $\alpha \in K(X)$ has minimum polynomial 
 \[
  f(X) = X^r + a_{r-1}X^{r-1} + \ldots +a_0 \in K(Y)[X]
 \]
- and $s= [K(X):K(Y)(\alpha)]$, then $\Tr_{X/Y}(\alpha) = -sa_{r-1}$ as in \cite[Appendix A]{stichtenoth}.
+ and $s= [K(X):K(Y)(\alpha)]$, then $\Tr_{X/Y}(\alpha) = -sa_{r-1}$ as in \cite[Appendix A]{stichtenoth}.\todo{more specific citation}
 
 Given a basis $\{z_1,\ldots,z_n\}$ of $K(X)$ over $K(Y)$, we now introduce its dual basis with respect to the trace.
 We denote the dual space of $K(X)$ over $K(Y)$ by \[K(X)^*:=\{\lambda \colon K(X) \rightarrow K(Y)| \lambda\ \text{is}\ K(Y)\text{-linear}\}.\]
@@ -78,7 +78,7 @@ for any non-zero $\omega \in \Omega_{K(C)}$, and state the following lemma.
  Conversely, if $W$ is a canonical divisor, and $x\in K(C)$, then $W + \di(x)$ is a canonical divisor.
 \end{defnlem}
 \begin{proof}
- See \cite[Lem. I.5.10 and Prop. I.5.13]{stichtenoth}.
+ See \cite[Lem. 1.5.10 and Prop. 1.5.13]{stichtenoth}.\todo{check citations}
 \end{proof}
 
 \todo[inline]{Introduce the idea of "the" canonical divisor $K_X$ here}
@@ -91,7 +91,7 @@ We can now define valuations on the differentials; namely, given some differenti
  The space of differentials, $\Omega_{K(C)}$, is a one-dimensional vector space over $K(C)$.
 \end{prop}
 \begin{proof}
- See \cite[Prop. I.5.9]{stichtenoth}.
+ See \cite[Prop. 1.5.9]{stichtenoth}.\check{citation}
 \end{proof}
 
 
@@ -121,7 +121,7 @@ Then for any divisor $D$ on $C$
 \]
 \end{thm}
 \begin{proof}
- See, for example, \cite[8.6]{fulton} or \cite[I.5.15]{stichtenoth}.
+ See, for example, \cite[8.6]{fulton} or \cite[Thm. 1.5.15]{stichtenoth}.\todo{check citations}
 \end{proof}
 
 
@@ -225,7 +225,7 @@ In order to do this we first define the complementary module and the ramificatio
 
 \begin{defn}
  Consider a point $P\in X$ in the pre-image of $Q\in Y$ under $\pi$.
- By \cite[Prop. III.1.4]{stichtenoth} there is an integer $e_P$ such that for any $x\in K(X)$ the equality $v_P(x) = e_P\cdot v_Q(x)$ holds.
+ By \cite[Prop. 3.1.4]{stichtenoth}\todo{check citations} there is an integer $e_P$ such that for any $x\in K(X)$ the equality $v_P(x) = e_P\cdot v_Q(x)$ holds.
  This value is called the ramification index of $P$.
  If $e_P>1$ then we say that $\pi$ is ramified at $P$.
 \end{defn}
@@ -264,7 +264,7 @@ Then there is an $x\in K(X)$ such that $v_{P_i}(x-x_i) \geq n_i$ for all $i$.
 
 \begin{rem}
 This result can be strengthened to also say that $v_P(x) \geq 0$ for any $P\notin \{P_1,\ldots ,P_m\}$.\todo{fix line break}
-We will not prove this here, for the sake of brevity, but the proof can be found in \cite[Ch. 1, \S 3]{localfields}.
+We will not prove this here, for the sake of brevity, but the proof can be found in \cite[Chap. 1, \S 3, pg. 12]{localfields}.
 \end{rem}
 \begin{proof}
 We let $R:= \cO_{P_i} \cap \ldots \cap \cO_{P_m}$, and we let $\mathcal{P}_i' := \mathcal{P}_i \cap R$.
@@ -287,7 +287,7 @@ Since ${\mathcal{P}_1'}^{n_1} \subseteq {\mathcal{P}_1}^{n_1}$ and ${\mathcal{P}
  Then $\cO_{X,Q}'$ is a principal ideal domain.
 \end{lem}
 \begin{proof}
-By \cite[Cor. III.3.5]{stichtenoth}, we have $\cO_{X,Q}' = \{x\in K(X)|v_P(x) \geq 0 \ \text{for all} \ P\in \pi^{-1}(Q)\}$.
+By \cite[Cor. 3.3.5]{stichtenoth}\todo{check citation}, we have $\cO_{X,Q}' = \{x\in K(X)|v_P(x) \geq 0 \ \text{for all} \ P\in \pi^{-1}(Q)\}$.
  Let $I$ be an ideal of $\cO_{X,Q}'$.
  If we let $\{P_1,\ldots, P_l\} = \pi^{-1}(Q)$ then we can choose $x_i$ for $1\leq i \leq l$ such that $v_{P_i}(x_i) \leq v_{P_i}(y)$ for all $y\in I$.
  By the Approximation Lemma there exist $z_i$ such that $v_P (z_i) = 0$ if $P=P_i$ and $v_{P_j}(z_i) > v_{P_j}(z_j)$ for $j\neq i$.
@@ -343,7 +343,7 @@ where $z_i^*$ is the dual basis of $z_i$ for $1\leq i \leq n$.\todo{reference du
 	By definition of $e_P$ it follows that
 	\[ v_P(xu_i) = e_Pv_Q(x) + v_P(u_i) \geq 0\]
 	for all $i\in \{1,\ldots, n\}$ and all $P\in \pi^{-1}(Q)$.
-	Since $\cO'_Q = \cap_{P\mapsto Q} \cO_{X,P}$ (see, for example, \cite[Cor. III.3.5]{stichtenoth}), then $x\cdot C_Q \subseteq \cO_{X,Q}'$.
+	Since $\cO'_Q = \cap_{P\mapsto Q} \cO_{X,P}$ (see, for example, \cite[Cor. 3.3.5]{stichtenoth}), then $x\cdot C_Q \subseteq \cO_{X,Q}'$.
 	Since $\cO_{X,Q}'$ is a principal ideal domain by Lemma \ref{pidlemma}, it follows that $x\cdot C_Q = y\cdot \cO_{X,Q}'$ for some $y\in \cO_{X,Q}'$.
 	If we let $t=x^{-1}y$ then $C_Q =t\cdot \cO_{X,Q}'$, proving the first part of the statement.\\
 	Since $\cO_{X,Q}'\subseteq C_Q$ then $v_P(t)\leq 0$ for all $P\in \pi^{-1}(Q)$.
@@ -638,17 +638,17 @@ We now show the equivalence of our two definitions of differential.
 Recall that for a curve $C$ a derivation of $K(C)$ is a $k$-linear map $d\colon K(C) \rightarrow M$ for some $K(C)$-module $M$ such that $d(ab) = ad(b) + d(a)b$ for all $a,b\in K(C)$.
 Note that of course, as $K(C)$ is a field, $M$ is a vector space, but this does hold more generally for rings and modules.
 
-By \cite[Prop. IV.1.4]{stichtenoth}, for each $x\in K(C)\backslash k$ there exists a unique derivation $d_x\colon K(C) \rightarrow K(C)$ such that $d_x(x) = 1$, which we call the {\em derivation with respect to $x$}.
+By \cite[Prop. 4.1.4]{stichtenoth}, for each $x\in K(C)\backslash k$ there exists a unique derivation $d_x\colon K(C) \rightarrow K(C)$ such that $d_x(x) = 1$, which we call the {\em derivation with respect to $x$}.
 
 If we let $Z:= \{(u,x)\in K(C)\times K(C) |x\notin k\}$, then we can define a relation on the elements of $Z$ by letting $(u,x) \sim (v,y)$ if $v = u\cdot d_y(x)$.
 Then we denote the equivalence class of $(1,x)\in Z$ by $dx$.
-It can then be shown that $Z$, when quotiented by the above relation, has the universal property of $\Omega_C$, and hence is isomorphic to $\Omega_C$ as a $K(C)$-module (see \cite[IV.1.8]{stichtenoth}).
+It can then be shown that $Z$, when quotiented by the above relation, has the universal property of $\Omega_C$, and hence is isomorphic to $\Omega_C$ as a $K(C)$-module (see \cite[Prop. 4.1.8]{stichtenoth}).
 \end{comment}
 
 Let $C$ be a smooth, projective, connected algebraic curve over $k$.
 We now show that our two different definitions of $\Omega_{K(C)}$ give rise to isomorphic differentials.
 Recall that $K(x)$ is the field of rational functions of the projective line.
-By \cite[Prop. I.7.4]{stichtenoth} there exists a unique differential $\omega \in \Omega_{K(x)}$ such that $\di (\omega) = -2[P_{\infty}]$ and $\omega(\iota_\infty(x^{-1})) = -1$, where $P_\infty \in \mathbb P_k^1$ is the point at infinity on the projective line.
+By \cite[Prop. 1.7.4]{stichtenoth} there exists a unique differential $\omega \in \Omega_{K(x)}$ such that $\di (\omega) = -2[P_{\infty}]$ and $\omega(\iota_\infty(x^{-1})) = -1$, where $P_\infty \in \mathbb P_k^1$ is the point at infinity on the projective line.
 
 
 Now for any $z\in K(C) \backslash k$ we have that $k(z)$ is isomorphic to $K(x)$.
@@ -661,7 +661,7 @@ This then induces a map $\mu\colon \Omega_{K(C)} \rightarrow \Omega_{K(C)}$, def
 The map $\mu\colon \Omega_{K(C)} \rightarrow \Omega_{K(C)}$ is an isomorphism.
 \end{thm}
 \begin{proof}
-See \cite[Thm. IV.3.2]{stichtenoth}.
+See \cite[Thm. 4.3.2]{stichtenoth}.
 \end{proof}
 
 We now define the order of a poly-differential at a point.
