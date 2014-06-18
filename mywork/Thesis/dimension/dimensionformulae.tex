@@ -80,7 +80,7 @@ Let $D=\sum_{P\in X}n_P[P]$ be a $G$-invariant divisor on $X$, \ie $n_{\sigma(P)
 Furthermore let $\pi_*^G(\cO_X(D))$ denote the sub-sheaf of the direct image $\pi_*(\cO_X(D))$ fixed by the obvious action of $G$ on $\pi_*(\cO_X(D))$ and let $\left\lfloor \frac{\pi_*(D)}{n}
 \right \rfloor$ denote the divisor on $Y$ obtained from the push-forward $\pi_*(D)$ by replacing the coefficient $m_Q$ of $Q$ in $\pi_*(D)$ with the integral part $\left \lfloor \frac{m_Q}{n} \right \rfloor$ of $\frac{m_Q}{n}$ for every $Q \in Y$. 
 The function fields of $X$ and~$Y$ are denoted by $K(X)$ and $K(Y)$ respectively. 
-Finally, for any $P \in X$ let $\textrm{ord}_P$ and $\textrm{ord}_Q$ denote the respective valuations of $K(X)$ and $K(Y)$ at $P$ and $Q:=\pi(P)$.
+Finally, for any $P \in X$ let $\ord_P$ and $\ord_Q$ denote the respective valuations of $K(X)$ and $K(Y)$ at $P$ and $Q:=\pi(P)$.
 
 
 
@@ -104,9 +104,9 @@ The next lemma is the main idea in the proof of our formula for $\dim_kH^0(X,\Om
     We have
         \begin{align*}
         \lefteqn{\pi_*^G\left(\cO_X(D)\right)_Q = \cO_X(D)_P \cap K(Y)}\\
-        &= \left\{f \in K(Y): \textrm{ord}_P(f) \ge -n_P\right\}\\
-        &= \left\{f \in K(Y): \textrm{ord}_Q(f) \ge - \frac{n_P}{e_P}\right\}\\
-        &= \left\{ f \in K(Y): \textrm{ord}_Q(f) \ge - \left\lfloor\frac{n_P}{e_P} \right\rfloor \right\}\\
+        &= \left\{f \in K(Y): \ord_P(f) \ge -n_P\right\}\\
+        &= \left\{f \in K(Y): \ord_Q(f) \ge - \frac{n_P}{e_P}\right\}\\
+        &= \left\{ f \in K(Y): \ord_Q(f) \ge - \left\lfloor\frac{n_P}{e_P} \right\rfloor \right\}\\
         &= \cO_Y\left(\left\lfloor \frac{\pi_*(D)}{n} \right\rfloor\right)_Q,
         \end{align*}
     as desired.
@@ -139,9 +139,9 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
         \]
     Using the previous lemma we conclude that $\pi_*^G(\Omega_X^{\otimes m}) \cong \cO_Y (E)$ and finally that
         \begin{equation*}
-        \textrm{dim}_k H^0(X,\Omega_X^{\otimes m})^G 
-        = \textrm{dim}_k H^0\left(Y, \pi_*^G(\Omega_X^{\otimes m})\right)
-        = \textrm{dim}_k H^0\left(Y, \cO_Y\left( E \right) \right).
+        \dim_k H^0(X,\Omega_X^{\otimes m})^G 
+        = \dim_k H^0\left(Y, \pi_*^G(\Omega_X^{\otimes m})\right)
+        = \dim_k H^0\left(Y, \cO_Y\left( E \right) \right).
         \end{equation*}
     
     
@@ -246,13 +246,13 @@ We also assume that $g_X \geq 2$.
         \end{equation}
     and hence
         \[
-        \textrm{dim}_kH^0(X,\Omega_X) = g_X =\frac{(N+r-2)(p-1)}{2}.
+        \dim_kH^0(X,\Omega_X) = g_X =\frac{(N+r-2)(p-1)}{2}.
         \] 
     Since $g_X \ge 0$ we obtain $r \ge 1$; that is, $\pi$ is not unramified. 
     As $\cha(k) = p = \ord(G)$, the morphism $\pi$ is not tamely ramified, and the cardinality $s$ defined before Corollary \ref{dim2} is not zero.
     Therefore we have 
         \[
-        \textrm{deg} \left\lfloor \frac{\pi_*(R)}{p} \right\rfloor =
+        \deg \left\lfloor \frac{\pi_*(R)}{p} \right\rfloor =
         \sum_{i=1}^r \left\lfloor \frac{(N_i+1)(p-1)}{p}\right\rfloor 
         \ge \sum_{i=1}^r \left\lfloor \frac{2(p-1)}{p}\right\rfloor = r > 0.
         \] 
@@ -272,7 +272,7 @@ We also assume that $g_X \geq 2$.
     We furthermore put $S:=\sum_{i=1}^r s_i$ and $T:= \sum_{i=1}^r t_i \ge r$. 
     Then we have
         \[ 
-        \frac{(N+r-2)(p-1)}{2} =\textrm{dim}_kH^0(X,\Omega_X)  = \textrm{dim}_k H^0(X,\Omega_X)^G = N-S-1 .
+        \frac{(N+r-2)(p-1)}{2} =\dim_kH^0(X,\Omega_X)  = \dim_k H^0(X,\Omega_X)^G = N-S-1 .
         \]
     Rearranging this equation we obtain
         \[
@@ -613,12 +613,12 @@ In this section we prove the main theorem of the report, describing exactly when
         \end{equation*}
     Substituting this in to the Riemann-Hurwitz formula, Corollary \ref{hur}, we see that
         \begin{equation*}
-        2\left(g_Y - 1 + \textrm{deg}\left \lfloor \frac{\pi_*(R)}{n} \right \rfloor -1 \right) = 2n (g_Y -1) + \textrm{deg}(R).
+        2\left(g_Y - 1 + \deg\left \lfloor \frac{\pi_*(R)}{n} \right \rfloor -1 \right) = 2n (g_Y -1) + \deg(R).
         \end{equation*}
     For any $Q \in Y$ we let $\delta_Q$ denote the coefficient of the ramification divisor $R$ at any $P \in \pi^{-1}(Q)$ and let $e_Q := e_P$ for any $P \in \pi^{-1}(Q)$. 
     Rewriting the previous equation yields
         \begin{align*}
-        \lefteqn{(2n-2)g_Y = 2n-4 + 2 \,\textrm{deg}\left \lfloor \frac{\pi_*(R)}{n}\right \rfloor - \textrm{deg}(R)}\\
+        \lefteqn{(2n-2)g_Y = 2n-4 + 2 \,\deg\left \lfloor \frac{\pi_*(R)}{n}\right \rfloor - \deg(R)}\\
         &= 2 \left(n-2 + \sum_{Q \in Y} \left(\left\lfloor \frac{n}{e_Q} \frac{\delta_Q}{n} \right\rfloor - \frac{n}{e_Q} \frac{\delta_Q}{2}\right) \right)\\
         &= 2 \left(n-2 + \sum_{Q \in Y} \left( \left\lfloor \frac{\delta_Q}{e_Q} \right\rfloor - \frac{\delta_Q}{e_Q} \frac{n}{2} \right)\right)\\
         & \le  2(n-2)
@@ -883,9 +883,9 @@ We will now compute the ramification divisor.
         \[
         \delta_P = \left\{
             \begin{array}{ll}
-            2n_i & {\rm if }\ P=P_i\ {\rm for\ some }\ i \in \{1,\ldots ,k\}, \\
-            2(g+1-d) & {\rm if }\  P=P_\infty, \\
-            0 & {\rm otherwise.} 
+            2n_i & \text{if }\ P=P_i\ \text{ for some }\ i \in \{1,\ldots ,k\}, \\
+            2(g+1-d) & \text{ if }\  P=P_\infty, \\
+            0 & \text{ otherwise.} 
             \end{array}
         \right.
         \]
@@ -904,7 +904,7 @@ We will now compute the ramification divisor.
     Using Hilbert's formula \cite[Chap. IV, \S 1, Prop. 4]{localfields} we obtain
         \begin{align*}
         \delta_P & =  \sum_{i\geq 0} \left(\ord(G_i(P))-1\right) \\
-        & =  {\rm max\ }\left\{ i\in \NN | G_i(P)\neq \{1\}\right\} + 1 \\
+        & =  \max\left\{ i\in \NN | G_i(P)\neq \{1\}\right\} + 1 \\
         & =  \ord_{P}(\sigma(y-b_i) - (y-b_i)).
         \end{align*}
     
@@ -980,7 +980,7 @@ We again consider the affine curve $X'$, and we let $\alpha_i \in \mathbb A_k^1$
 If $\alpha_i$ corresponds to a branch point then we label the unique point in $X$ that maps to it $Q_i$.
 Otherwise there are two points that map to it, and we denote these 
     \[  
-    Q_i:=(\alpha_i,0)\ {\rm and}\ Q_i':=(\alpha_i,h(\alpha_i)).
+    Q_i:=(\alpha_i,0)\ \text{ and}\ Q_i':=(\alpha_i,h(\alpha_i)).
     \]
 
 
