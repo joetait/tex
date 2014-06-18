@@ -101,7 +101,11 @@ We can now define valuations on the differentials; namely, given some differenti
 
 
 It should be noted that in algebraic geometry differentials are normally defined in a different, but equivalent, manner.
-Given a ring $K(X)$ and an $K(X)$-module $M$, we call any $K(X)$-linear map $D\colon K(X)\rightarrow M$ satisfying \[D(ab) = aD(b) + D(a)b\] for all $a,b\in K(X)$ a {\em derivation}.
+Given a ring $K(X)$ and an $K(X)$-module $M$, we call any $K(X)$-linear map $D\colon K(X)\rightarrow M$ satisfying 
+    \[
+    D(ab) = aD(b) + D(a)b
+    \]
+for all $a,b\in K(X)$ a {\em derivation}.
 There is a unique module, denoted $\Omega_{K(X)}$, with a map $d\colon K(X) \rightarrow \Omega_{K(X)}$, which every derivation must factor through; \ie if $D\colon K(X)\rightarrow M$ is a derivation then there is a unique map $f\colon \Omega_{K(X)}\rightarrow M$ such that $D = f\circ d$.\todo{change $f$}
 Given any differential $\omega$, we can write it as $fdx$ for some $x$ and some $f$ in $K(X)$.
 This is how we will consider differentials in the other sections of this report.

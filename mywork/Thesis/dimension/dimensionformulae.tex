@@ -726,7 +726,10 @@ Let $P$ be a point in $X$.
 Since each $dx_i$ can be written as $y_i dt$ for some $y_i\in K(X)$ and some uniformising parameter $t$ at $P$, we can rewrite $\omega$ as $y' dt \otimes \ldots \otimes dt$, where $y' = y \cdot y_1 \cdots y_m$.
 We then define the order of $\omega$ at $P$ to be $\ord_P(\omega ) := \ord_P(y')$.
 In the particular case where $\omega = fdx \otimes \ldots \otimes fdx = f^m dx^{\otimes m}$, then we have $y_1 = \ldots = y_m = z$ for some $z$ when we change $x$ to a uniformising parameter.
-Hence in this instance \[ \ord_P(\omega) = \ord_P(z^m) = m\ord_P(z) = m\ord_P(dx).\]
+Hence in this instance 
+    \[ 
+    \ord_P(\omega) = \ord_P(z^m) = m\ord_P(z) = m\ord_P(dx).
+    \]
 
 
 
@@ -975,7 +978,10 @@ We now compute the divisors of all the elements required to form a basis of $H^0
 
 We again consider the affine curve $X'$, and we let $\alpha_i \in \mathbb A_k^1$, for $1\leq i\leq l \leq 2g+1$, be the zeroes of $f(x)$.
 If $\alpha_i$ corresponds to a branch point then we label the unique point in $X$ that maps to it $Q_i$.
-Otherwise there are two points that map to it, and we denote these \[ Q_i:=(\alpha_i,0)\ {\rm and}\ Q_i':=(\alpha_i,h(\alpha_i)).\]
+Otherwise there are two points that map to it, and we denote these 
+    \[  
+    Q_i:=(\alpha_i,0)\ {\rm and}\ Q_i':=(\alpha_i,h(\alpha_i)).
+    \]
 
 
     \begin{lem}\label{ychar2}
@@ -999,7 +1005,10 @@ Otherwise there are two points that map to it, and we denote these \[ Q_i:=(\alp
     In this case we must have $m_i=1$.
     Otherwise we would also have $f'(x)|_{Q_i} = 0$, and since we also have $h(x)|_{Q_i} = f(x)|_{Q_i} = 0$ this would contradict Lemma \ref{smoothness}.
     So if we let $\tilde f(x) := \frac{f(x)}{x-\alpha_i}$ and $\tilde h(x) := \frac{h(x)}{x-\alpha_i}$ then $\tilde f(x)$ is a unit at $Q_i$.
-    Then we have \[y^2 = f(x) - yh(x) = (x-\alpha_i)(\tilde f(x) - \tilde h(x)y).\]
+    Then we have 
+        \[
+        y^2 = f(x) - yh(x) = (x-\alpha_i)(\tilde f(x) - \tilde h(x)y).
+        \]
     Hence
         \[
         \ord_{Q_i}(y^2) = \ord_{Q_i}(x-\alpha_i) + \ord_{Q_i}(\tilde f(x) - \tilde h(x)y).
