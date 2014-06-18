@@ -1,23 +1,62 @@
-\chapter{The Hurwitz formula} \label{Chapter:hurwitzformula}
-\section{The Riemann-Hurwitz formula}\label{Hurwitzsection}
+\chapter{The Riemann-Hurwitz formula} \label{Chapter:hurwitzformula}
+\section{Function fields}\label{Hurwitzsection}
 
-Let $X$ and $Y$ be two projective non-singular curves over an algebraically closed field $k$, with a map $\pi \colon X \rightarrow Y$ of degree $n$.
+Let $X$ and $Y$ be two projective, non-singular curves over an algebraically closed field $k$, with a map $\pi \colon X \rightarrow Y$ of degree $n$.
 We let $g_X$ and $g_Y$ be the genera of $X$ and $Y$ respectively.
 Let $K(X)$ and $K(Y)$ be the function fields of $X$ and $Y$ respectively.
 Note that $K(X)$ is a degree $n$ extension of $K(Y)$, and recall that $\pi$ induces a map $\pi^*\colon K(Y) \rightarrow K(X)$.
 As usual, for any $P \in X$ and $Q \in Y$ we denote the local ring formed by functions which are regular at $P$ and $Q$ by $\cO_{X,P}$ and $\cO_{X,Q}$ respectively.
 
-We recall some facts from Galois theory.
-Any element $\alpha \in K(X)$ defines a $K(Y)$~-~linear map $\mu_{\alpha} \colon  K(X) \rightarrow K(X)$, given by multiplication by $\alpha$.
-We let $\Tr_{X/Y}(\alpha)$ be the trace of the matrix corresponding to $\mu_\alpha$.
-We call $\Tr_{X/Y}(\alpha)$ the trace of $\alpha$, and $\Tr_{X/Y}$ is a map $K(X) \ra K(Y)$.
-Note that $\Tr_{X/Y}$ is an additive map, and that for $\alpha \in K(Y)$ we have $\Tr_{X/Y}(\alpha) = n \alpha$.
+We recall some facts from Galois theory for a field extension $L/K$ of degree $n$.
+Any element $\alpha \in L$ defines a $K$~-~linear map $\mu_{\alpha} \colon  L \rightarrow K$, given by multiplication by $\alpha$.
+We let $\tr_{L/K}(\alpha)$ be the trace of the matrix in $\operatorname{Mat}_{n \times n}(K)$ corresponding to $\mu_\alpha$.
+Hence we form the {\em trace map} $\tr_{L/K}\colon L \ra K$.
+When considering the trace map between the function fields $K(X)$ and $K(Y)$ we let $\tr_{X/Y} := \tr_{K(X)/K(Y)}$.
+Note that $\tr_{L/K}$ is an additive map, and that for $\alpha \in K$ we have $\tr_{L/K}(\alpha) = n \alpha$.
+    \begin{prop}
+    The trace map $\tr_{X/Y} \colon K(X) \ra K(Y)$ is non-zero.
+    \end{prop}
+    \begin{proof}
+    If the characteristic of $k$, and hence $K(Y)$, is zero, then $\tr_{X/Y}(1) = n \neq 0$.
+    Hence we assume that $\cha(k) = p \neq 0$.
+    
+    We now show the equality 
+        \[
+        \tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}} = \id_{\overline{K(Y)}}\otimes _{K(Y)} \tr_{X/Y} \colon \overline{K(Y)}\otimes_{K(Y)}K(X) \ra \overline{K(Y)},
+        \]
+    with the latter map given by $f\otimes h \mapsto f\tr_{X/Y}(h)$.
+    We let $h_1, \ldots, h_n$ be a $K(Y)$ basis of $K(X)$, and write $fh_j = \sum_{i=1}^n c_{ij}h_i$ for $c_{ij} \in K(Y)$.
+    Then a $\overline{K(Y)}$~-~basis of $\overline{K(Y)}\otimes_{K(Y)}K(X)$ is given by $1 \otimes h_1, \ldots, 1 \otimes h_n$, and 
+        \[
+        (f \otimes h)(1\otimes h_j) = f \otimes hh_j = \sum_{i=1}^n c_{ij}(f \otimes h_i) = \sum_{i=1}^n c_{ij}f(1 \otimes h_i).
+        \]  
+    Hence the matrix corresponding to $\mu_{f \otimes h}$ is $c_{ij}f$, and so
+        \[
+        \tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}(f \otimes h) = \sum_{i=1}^n c_{ii}f = f \tr_{X/Y}(h).
+        \]  
+
+    Since $K(X)$ is a Galois extension of $K(Y)$, and hence also separable, we can find $\alpha$ separable over $K(Y)$ such that $K(X) = K(Y)(\alpha)$.
+    We suppose that $\alpha$ has minimal (separable) polynomial $f(z) = (z - \beta_1)\cdots (z - \beta_n)$.
+    Now it follows from the previous paragraph that $\tr_{X/Y}$ is separable if and only if \todo{the next line follows from the previous paragraph, but why does this mean it is separable?}
+        \[
+        \overline{\tr} = \operatorname{id}_{\overline {K(Y)}} \otimes \tr_{X/Y} \colon \overline{K(Y)}\otimes_{K(Y)} K(X) \ra \overline{K(Y)}\otimes_{K(Y)}K(Y).
+        \]
+    Since
+        \[
+        K(X) \cong K(Y)(\alpha) \cong K(Y)(z)/(f(z)) \cong \bigoplus_{i=1}^n K(Y)(z)/((z-\beta_i)) \cong \bigoplus_{i=1}^n K(Y)
+        \]  
+    then $\overline{K(Y)}\otimes_{K(Y)} K(X) \cong \bigoplus_{i=1}^n \overline{K(Y)}$.
+    Now $\overline{\tr}$ is the sum of the trace map on each component.
+    But the trace map $\tr_{\overline{K}/\overline{K}}$ is the identity.\todo{define trace for general fields}
+    Hence $\overline{\tr}$ is surjective, and so $\tr_{X/Y}$ is too.
+    \end{proof}
+
 Also, since our extension is Galois (and hence, in particular, separable) then the trace map is non-zero (see, for example, \cite[Appendix A]{stichtenoth}).\todo{more specific citation}
 Finally, if $\alpha \in K(X)$ has minimum polynomial 
     \[
     f(X) = X^r + a_{r-1}X^{r-1} + \ldots +a_0 \in K(Y)[X]
     \]
-and $s= [K(X):K(Y)(\alpha)]$, then $\Tr_{X/Y}(\alpha) = -sa_{r-1}$ as in \cite[Appendix A]{stichtenoth}.\todo{more specific citation}
+and $s= [K(X):K(Y)(\alpha)]$, then $\tr_{X/Y}(\alpha) = -sa_{r-1}$ as in \cite[Appendix A]{stichtenoth}.\todo{more specific citation}
 
 Given a basis $\{z_1,\ldots,z_n\}$ of $K(X)$ over $K(Y)$, we now introduce its dual basis with respect to the trace.
 We denote the dual space of $K(X)$ over $K(Y)$ by 
@@ -25,11 +64,11 @@ We denote the dual space of $K(X)$ over $K(Y)$ by
     K(X)^*:=\{\lambda \colon K(X) \rightarrow K(Y)| \lambda\ \text{is}\ K(Y)\text{-linear}\}.
     \]
 We make $K(X)^*$ in to a one-dimensional $K(X)$-vector space by defining $z \lambda(w):=\lambda(z w)$.
-As $\Tr_{X/Y}$ is non-zero, then there exists a unique $z\in K(X)$ for every $\lambda \in K(X)^*$ such that $\lambda = z\cdot \Tr_{X/Y}$.
-In particular, if we choose $\lambda_j\in K(X)^*$ such that $\lambda_j(z_i) = \delta_{ij}$ (the Kronecker symbol), then there exist $z_j^*$ such that $\lambda_j = z_j^*\cdot \Tr_{X/Y}$.
+As $\tr_{X/Y}$ is non-zero, then there exists a unique $z\in K(X)$ for every $\lambda \in K(X)^*$ such that $\lambda = z\cdot \tr_{X/Y}$.
+In particular, if we choose $\lambda_j\in K(X)^*$ such that $\lambda_j(z_i) = \delta_{ij}$ (the Kronecker symbol), then there exist $z_j^*$ such that $\lambda_j = z_j^*\cdot \tr_{X/Y}$.
 Hence
     \[
-    \Tr_{X/Y}(z_iz_j^*) = (z_j^*\cdot \Tr_{X/Y})(z_i) = \lambda_j(z_i) = \delta_{ij}.
+    \tr_{X/Y}(z_iz_j^*) = (z_j^*\cdot \tr_{X/Y})(z_i) = \lambda_j(z_i) = \delta_{ij}.
     \]
 The elements $z_1^*, \ldots , z_n^*$ form the {\em dual basis} of $z_1, \ldots , z_n$.
 
@@ -221,10 +260,10 @@ Recall that $\cO_{X,Q}$ is an integrally closed subring of $K(Y)$ for any $Q\in 
 
     \begin{cor}\label{traceinclosure}
     Let $Q$ be a point in $Y$ and let $x\in K(X)$ be integral over $\cO_{X,Q}$ under $\pi$.
-    Then $\Tr_{X/Y}(x)\in \cO_{X,Q}$.
+    Then $\tr_{X/Y}(x)\in \cO_{X,Q}$.
     \end{cor}
     \begin{proof}
-    As noted earlier, if $\phi(T)=T^r+a_{r-1}T^{r-1} + \ldots + a_0\in K(Y)[T]$ is the minimal polynomial of $x$ over $K(Y)$, then $\Tr_{X/Y}(x)=-n_xa_{r-1}$, where $n_x : = [K(X):K(Y)(x)]$.
+    As noted earlier, if $\phi(T)=T^r+a_{r-1}T^{r-1} + \ldots + a_0\in K(Y)[T]$ is the minimal polynomial of $x$ over $K(Y)$, then $\tr_{X/Y}(x)=-n_xa_{r-1}$, where $n_x : = [K(X):K(Y)(x)]$.
     Hence the corollary follows from the previous proposition.
     \end{proof}
 
@@ -258,8 +297,8 @@ This can then be extended from a single point to a divisor on $Y$, in which case
     For any $Q\in Y$, let $\cO_{X,Q}'$ be the integral closure of $\cO_{X,Q}$ in $K(X)$.\todo{define this in text, remove instances in this and next lemma}
     We then define the complementary module over $\cO_{X,Q}$ to be
         \[
-        C_Q :=\{z\in K(X) | \Tr_{X/Y}(z\cdot \cO_{X,Q}') \subseteq \cO_{X,Q}\}.
-        \]\todo{is it okay to say $\Tr_{X/Y}(z\cdot \cO_{X,Q}')$?}
+        C_Q :=\{z\in K(X) | \tr_{X/Y}(z\cdot \cO_{X,Q}') \subseteq \cO_{X,Q}\}.
+        \]\todo{is it okay to say $\tr_{X/Y}(z\cdot \cO_{X,Q}')$?}
     \end{defn}
 
 
@@ -329,25 +368,25 @@ We will list some properties of the complementary module in a proposition, but f
     \begin{proof}
         \begin{enumerate}
         \item It is clear that $C_Q$ is an $\cO_{X,Q}'$ module.
-        Indeed, if $y\in \cO_{X,Q}'$, then $y\cdot \cO_{X,Q}' \subseteq \cO_{X,Q}'$ and hence $\Tr_{X/Y}(z y\cdot \cO_{X,Q}')\subseteq \Tr_{X/Y}(z\cdot \cO_{X,Q}') \subseteq \cO_{X,Q}$ for any $z\in C_Q$.
+        Indeed, if $y\in \cO_{X,Q}'$, then $y\cdot \cO_{X,Q}' \subseteq \cO_{X,Q}'$ and hence $\tr_{X/Y}(z y\cdot \cO_{X,Q}')\subseteq \tr_{X/Y}(z\cdot \cO_{X,Q}') \subseteq \cO_{X,Q}$ for any $z\in C_Q$.
         The fact that $\cO_{X,Q}'$ is contained in $C_Q$ follows from Corollary \ref{traceinclosure}.
         \item We first show that $C_Q \subseteq \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*$.
         Suppose $z\in C_Q$.
         Now $\{z_1^*, \ldots ,z_n^*\}$ is a basis of $K(X)$ over $K(Y)$, so there exist $x_1,\ldots , x_n\in K(Y)$ such that $z=\sum_{i=1}^n x_iz_i^*$.
-        As $z\in C_Q$ and $z_1,\ldots ,z_n\in \cO_{X,Q}'$, it follows by definition of $C_Q$ that $\Tr_{X/Y}(zz_j)\in \cO_{X,Q}$ for $j\in \{1,\ldots ,n\}$.
+        As $z\in C_Q$ and $z_1,\ldots ,z_n\in \cO_{X,Q}'$, it follows by definition of $C_Q$ that $\tr_{X/Y}(zz_j)\in \cO_{X,Q}$ for $j\in \{1,\ldots ,n\}$.
         We know that 
             \[
-            \Tr_{X/Y}(zz_j) = \Tr_{X/Y}\left(\sum_{i=1}^nx_iz_iz_j^*\right) = \sum_{i=1}^nx_i \cdot \Tr_{X/Y}(z_iz_j^*) = x_j,
+            \tr_{X/Y}(zz_j) = \tr_{X/Y}\left(\sum_{i=1}^nx_iz_iz_j^*\right) = \sum_{i=1}^nx_i \cdot \tr_{X/Y}(z_iz_j^*) = x_j,
             \]
         since $z_j^*$ is dual to $z_j$.
         Hence each $x_j$ is in $\cO_{X,Q}$, and $z\in \sum_{i=1}^n\cO_{X,Q}\cdot z_i^*$.
         
         Now suppose that $z\in \sum_{i=1}^n\cO_{X,Q}\cdot z_i^*$ and $u\in \cO_{X,Q}'$.
-        Then we need to show that $\Tr_{X/Y}(z u)\in \cO_{X,Q}$.
+        Then we need to show that $\tr_{X/Y}(z u)\in \cO_{X,Q}$.
         We can find $x_i, y_j\in \cO_{X,Q}$ such that $z=\sum_{i=1}^n x_iz_i^*$ and $u=\sum_{i=1}^ny_jz_j$.
         Then
             \[
-            \Tr_{X/Y}(zu) = \Tr_{X/Y}\left(\sum_{i,j=1}^n \left(x_iy_jz_i^*z_j\right)\right) = \sum_{i,j=1}^n x_iy_j\cdot \Tr_{X/Y}(z_i^*z_j) = \sum_{i=1}^n x_iy_i.
+            \tr_{X/Y}(zu) = \tr_{X/Y}\left(\sum_{i,j=1}^n \left(x_iy_jz_i^*z_j\right)\right) = \sum_{i,j=1}^n x_iy_j\cdot \tr_{X/Y}(z_i^*z_j) = \sum_{i=1}^n x_iy_i.
             \]
         Since $\sum_{i=1}^n x_iy_i\in \cO_{X,Q}$, it follows that $z\in C_Q$.
         \item By the previous part, we can find $u_i\in K(X)$ such that $C_Q = \sum_{i=1}^n \cO_{X,Q} \cdot u_i$.
@@ -389,10 +428,10 @@ We will list some properties of the complementary module in a proposition, but f
         \]
     
     If $z\in K(X)$ then there are $e_1,\ldots, e_n\in K(Y)$ such that $z=e_1z_1^*+\ldots +e_nz_n^*$.
-    If $z\in \cO_{X,Q}'$ then $zz_j\in \cO_{X,Q}'$ for $1\leq j\leq n$, and hence $\Tr_{X/Y}(zz_j)\in \cO_{X,Q}$, by Corollary \ref{traceinclosure}.
+    If $z\in \cO_{X,Q}'$ then $zz_j\in \cO_{X,Q}'$ for $1\leq j\leq n$, and hence $\tr_{X/Y}(zz_j)\in \cO_{X,Q}$, by Corollary \ref{traceinclosure}.
     As
         \[
-        \Tr_{X/Y}(zz_j) = \Tr_{X/Y}\left(\sum_{i=1}^n e_iz_jz_i^*\right) = \sum_{i=1}^ne_i\cdot \Tr_{X/Y}(z_jz_i^*) = e_j.
+        \tr_{X/Y}(zz_j) = \tr_{X/Y}\left(\sum_{i=1}^n e_iz_jz_i^*\right) = \sum_{i=1}^ne_i\cdot \tr_{X/Y}(z_jz_i^*) = e_j.
         \]
     Hence $e_j\in \cO_{X,Q}$, and $\cO_{X,Q}'\subseteq \sum_{i=1}^n\cO_{X,Q}\cdot z_i^*$.
     Since $\{z_1,\ldots, z_n\}$ also forms a basis we can run the same argument again to show that $\cO_{X,Q}'\subseteq \sum_{i=1}^n\cO_{X,Q}\cdot z_i$.
@@ -428,9 +467,9 @@ We now define the \adele space of $X$ over $Y$.
         \[
         \mathcal{A}_{X/Y} := \{\alpha \in \mathcal{A}_X | \alpha_P =\alpha_{P'}\ \text{if}\ \cO_{X,P}\cap K(Y) = \cO_{P'}\cap K(Y)\}.
         \]
-    We extend the trace function $\Tr_{X/Y}\colon K(X)\rightarrow K(Y)$ to a map $\Tr_{X/Y}\colon \mathcal{A}_{X/Y} \rightarrow \mathcal{A}_Y$,  by letting
+    We extend the trace function $\tr_{X/Y}\colon K(X)\rightarrow K(Y)$ to a map $\tr_{X/Y}\colon \mathcal{A}_{X/Y} \rightarrow \mathcal{A}_Y$,  by letting
         \[
-        (\Tr_{X/Y}(\alpha))_Q := \Tr_{X/Y}(\alpha_P)
+        (\tr_{X/Y}(\alpha))_Q := \tr_{X/Y}(\alpha_P)
         \]
     for any $\alpha \in \mathcal{A}_{X/Y}$, $Q\in Y$ and $P\in \pi^{-1}(Q)$.
     
@@ -445,7 +484,7 @@ We now define the \adele space of $X$ over $Y$.
     \begin{defnthm}\label{detailedhurwitz}
     For every differential $\omega\in H^0(Y,\Omega_Y)$ there is a unique $\omega'\in H^0(X,\Omega_X)$ such that
         \[
-        \omega'(\alpha) = \omega\left(\Tr_{X/Y}(\alpha)\right)
+        \omega'(\alpha) = \omega\left(\tr_{X/Y}(\alpha)\right)
         \]
     for all $\alpha \in {\mathcal A}_{X/Y}$.
     
@@ -491,21 +530,21 @@ We first give a lemma that is necessary for the proof of the theorem.
 We now prove Theorem \ref{detailedhurwitz}.
 
     \begin{proof}
-    We first construct a differential $\omega'\in H^0(X,\Omega_X)$ for every $\omega\in H^0(Y,\Omega_Y)$ such that $\omega'(\alpha) = \omega(\Tr_{X/Y}(\alpha))$ for every $\alpha \in \cA_{X/Y}$.
+    We first construct a differential $\omega'\in H^0(X,\Omega_X)$ for every $\omega\in H^0(Y,\Omega_Y)$ such that $\omega'(\alpha) = \omega(\tr_{X/Y}(\alpha))$ for every $\alpha \in \cA_{X/Y}$.
     If $\omega = 0$ then we can clearly let $\omega' = 0$, so we assume that $\omega \neq 0$.
     We will use the following divisor, $W' := \pi^*(\di (\omega)) + R$, throughout the proof.
     
-    We first prove two assertions about $\omega_1:= \omega\circ \Tr_{X/Y} \colon \mathcal{A}_{X/Y} \rightarrow k$.
+    We first prove two assertions about $\omega_1:= \omega\circ \tr_{X/Y} \colon \mathcal{A}_{X/Y} \rightarrow k$.
     Namely, we show that
         \begin{enumerate}[(i)]
         \item For any $\alpha \in \mathcal{A}_{X/Y}(W') + K(X)$ then $\omega_1(\alpha) = 0$;
         \item If $B'$ is a divisor on $X$ with $B' \nleq W'$ then there is a $\beta \in \mathcal{A}_{X/Y}(B')$ such that $\omega_1(\beta) \neq 0$.
         \end{enumerate}
-    To show (i) we start by noting that since $\Tr_{X/Y}$ and $\omega$ are $k$-linear, $\omega_1$ is too.
+    To show (i) we start by noting that since $\tr_{X/Y}$ and $\omega$ are $k$-linear, $\omega_1$ is too.
     Also, note that since $\omega$ is zero on $K(Y)$ then $\omega_1$ is zero on $K(X)$.
     To show that $\omega_1(\alpha) = 0$ for any $\alpha \in \mathcal{A}_{X/Y}(W')$ then it is sufficient to show that for any $Q\in Y$ and $P\in \pi^{-1}(Q)$ that
         \[
-        v_Q(\Tr_{X/Y}(\alpha_P)) \geq -v_Q(\omega).
+        v_Q(\tr_{X/Y}(\alpha_P)) \geq -v_Q(\omega).
         \]
     
     We choose $x\in K(Y)$ such that $v_Q(x) = v_Q(\omega)$.
@@ -515,8 +554,8 @@ We now prove Theorem \ref{detailedhurwitz}.
         & = v_P(\pi^*((\omega)) - W') = -v_P(R) = -\delta_P. 
         \end{align}
     By the definition of $C_Q$ and the ramification divisor, it is clear that $z\in C_Q$ if and only if $v_P(z)\geq -\delta_P$ for all $P\in \pi^{-1}(Q)$.
-    It then follows from \eqref{remark} that $x \alpha_P$ is in $C_Q$ and hence that $v_Q(\Tr_{X/Y}(x \alpha_P)) \geq 0$, by definition of $C_Q$.
-    Since $\Tr_{X/Y}(x \alpha_P) = x\cdot \Tr_{X/Y}(\alpha_P)$ and $v_Q(x) = v_Q(\omega)$, we have shown the first claim.
+    It then follows from \eqref{remark} that $x \alpha_P$ is in $C_Q$ and hence that $v_Q(\tr_{X/Y}(x \alpha_P)) \geq 0$, by definition of $C_Q$.
+    Since $\tr_{X/Y}(x \alpha_P) = x\cdot \tr_{X/Y}(\alpha_P)$ and $v_Q(x) = v_Q(\omega)$, we have shown the first claim.
     
     To show (ii) we let $Q_0\in Y$ be a point such that there is a $P^*\in \pi^{-1}(Q_0)$ with $v_{P^*}(\pi^*((\omega)) - B') < -\delta_P$.
     We know that such a $Q_0$ exists since $B' \nleq W'$.
@@ -531,20 +570,20 @@ We now prove Theorem \ref{detailedhurwitz}.
         \]
     for all $P^*\in \pi^{-1}(Q_0)$, and hence $J\nsubseteq C_{Q_0}$.
     (As noted earlier, $z\in \cO_{X,Q}$ if and only if $v_P(z) \geq -\delta_P$).
-    It is clear that $J\cdot \cO_{Q_0} \subseteq J$, and hence that $\Tr_{X/Y}(J) \nsubseteq \cO_{X,Q}$.
+    It is clear that $J\cdot \cO_{Q_0} \subseteq J$, and hence that $\tr_{X/Y}(J) \nsubseteq \cO_{X,Q}$.
     We let $t$ be an element of $K(Y)$ such that $v_Q(t) = 1$.
     Then there is an $r\in \mathbb N$ such that $t^r\cdot J \subseteq \cO_{X,Q}$, and then 
         \[ 
-        t^r\cdot \Tr_{X/Y}(J) = \Tr_{X/Y}(t^r\cdot J) \subseteq \cO_{X,Q}.
+        t^r\cdot \tr_{X/Y}(J) = \tr_{X/Y}(t^r\cdot J) \subseteq \cO_{X,Q}.
         \]
-    It is clear that $t^r\cdot \Tr_{X/Y} (J)$ is an ideal of $\cO_{X,Q}$, and so $\Tr_{X/Y}(J) = t^s\cdot \cO_{X,Q}$ for some negative integer $s$.
+    It is clear that $t^r\cdot \tr_{X/Y} (J)$ is an ideal of $\cO_{X,Q}$, and so $\tr_{X/Y}(J) = t^s\cdot \cO_{X,Q}$ for some negative integer $s$.
     Hence 
         \begin{equation}\label{traceinring}
-        t^{-1}\cdot \cO_{X,Q} \subseteq \Tr_{X/Y}(J).
+        t^{-1}\cdot \cO_{X,Q} \subseteq \tr_{X/Y}(J).
         \end{equation}
     By Proposition \ref{propertyofomega} we can find an $x\in K(Y)$ such that $v_Q(x) = -v_Q(\omega) - 1$ and $\omega_Q(x) \neq 0$.
     If we choose $y\in K(Y)$ such that $v_Q(y) = v_Q(\omega)$, then $xy \in t^{-1}\cO_{X,Q}$.
-    Hence by \eqref{traceinring} there is a $z\in J$ such that $\Tr_{X/Y} (z) = xy$.
+    Hence by \eqref{traceinring} there is a $z\in J$ such that $\tr_{X/Y} (z) = xy$.
     Let $\beta \in \mathcal{A}_{X/Y}$ be chosen  such that 
         \begin{equation*}
         \beta_P =
@@ -561,7 +600,7 @@ We now prove Theorem \ref{detailedhurwitz}.
         \end{align*}
     with the inequality following from the definition of $y$ and $J$.
     Hence $\beta \in \mathcal{A}_{X/Y}(B')$.
-    Now $\omega_1(\beta) = \omega(\Tr_{X/Y}(\beta)) = \omega_Q(x) \neq 0$.
+    Now $\omega_1(\beta) = \omega(\tr_{X/Y}(\beta)) = \omega_Q(x) \neq 0$.
     This shows (ii).
     
     By Lemma \ref{adelespacelemma} for each $\alpha \in \mathcal{A}_X$ there exists some $\beta \in \mathcal{A}_{X/Y}$ and $\gamma \in \mathcal{A}_X(W')$ such that $\alpha = \beta + \gamma$.
@@ -584,7 +623,7 @@ We now prove Theorem \ref{detailedhurwitz}.
         \end{enumerate}
     
     
-    Now it follows that for $\alpha \in \mathcal{A}_{X/Y}$ we have $\omega_2(\alpha) = \omega_1(\alpha) = \omega(\Tr_{X/Y}(\alpha))$.
+    Now it follows that for $\alpha \in \mathcal{A}_{X/Y}$ we have $\omega_2(\alpha) = \omega_1(\alpha) = \omega(\tr_{X/Y}(\alpha))$.
     This means that we have found the $\omega'$ in the statement of the theorem; namely $\omega' = \omega_2$.
     
     It is clear from (i$'$) and (ii$'$) that $\di(\omega') = W' = \pi^*(\di(\omega)) + R$.
@@ -592,7 +631,7 @@ We now prove Theorem \ref{detailedhurwitz}.
     We finally prove the uniqueness of $\omega'$.
     Suppose that $\omega''$ also satisfies 
         \[
-        \omega''(\alpha) = \omega(\Tr_{X/Y}(\alpha))
+        \omega''(\alpha) = \omega(\tr_{X/Y}(\alpha))
         \]
     for all $\alpha\in \cA_{X/Y}$.
     So if we let $\theta = \omega'' - \omega'$, then $\theta(\alpha) = 0$ for all $\alpha \in \cA_{X/Y}$.
