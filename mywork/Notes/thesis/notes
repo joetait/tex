@@ -1,0 +1,632 @@
+%%%%%%%%%%% Comment from the end of the de rham section (or de-Rham) %%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+We now suppose that $X$ is of genus 2, and that
+    \[
+    f(x) = a_6x^6 + a_5x^5 + a_4x^4 + a_3x^3 + a_2x^2 + a_1x + a_0.
+    \]
+The existence of $\sigma^*$ places restrictions on the characteristic of $k$ and the coefficients of $f(x)$, as stated in the following lemma.
+
+\begin{lem}
+The characteristic of $k$ is 3 or 5. 
+Moreover, if $\cha(k)=5$ then the coefficients $a_6, a_4, a_3$ and $a_2$ in \eqref{definingequation} are zero.
+\end{lem}
+\begin{proof}
+Since $\sigma^*(y) = y$, it follows that $f(x+a) = f(x)$.
+Expanding the left hand side we see that the coefficient of $x^5$ is $6aa_6 + a_5$.
+Since the coefficient of $x^5$ in $f(x)$ is $a_5$.
+We conclude that $6aa_6 = 0$, and hence either $6=0$ or $a_6=0$.
+If $6=0$ then it follows that $\cha (k)=3$.
+
+On the other hand, if $a_6=0$ then we compare the coefficients of $x^4$ in $f(x+a)$ and $f(x)$, which are $5aa_5+a_4$ and $a_4$ respectively.
+We conclude that $5aa_5=0$. Since the degree of $f(x)$ is either $2g+2=6$ or $2g+1=5$ it follows that at least one of $a_6$ and $a_5$ must be non-zero.
+Hence if $a_6=0$ it follows that $\cha(k) = 5$.
+
+The final statement follows again by comparing coefficients.
+\end{proof}
+
+
+Recall that $\sigma^*$ fixes $y$ and maps $x$ to $x+a$. 
+Note that this means that $\sigma^*(dx) = d(\sigma^*(x)) = d(x+a) = dx$.
+The action of $\sigma^*$ on $\nu_i$ is given by
+\begin{equation*}
+\sigma^*(\nu_i) = \left( \sigma^*( \omega_{\sigma i}), \sigma^*(\omega_{\infty i}), \sigma^*( f_{\sigma \infty i})\right).
+\end{equation*}
+
+Note that in this specific case the basis of $\cechderhamhone(\cU)$ is formed by
+\begin{align*}
+\gamma_1  = & \left( \frac{1}{y}dx, \frac{1}{y}dx, 0\right) \\
+\gamma_2 = & \left(\frac{x}{y}dx, \frac{x}{y}dx, 0\right) \\
+\gamma_3 = & \left( \frac{a_3x^3-a_1x-2a_0}{2yx^2}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx, \frac{y}{x} \right)\\
+\gamma_4 = & \left(\frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},\frac{-(2a_6x^3+a_5x^2)}{2y}dx , \frac{y}{x^2} \right).
+\end{align*}
+Also, the pre-image $\rho^{-1}(\tau_i)$ computed in the previous proposition can be more explicitly written as 
+\begin{multline*}
+\nu_1 = \left(\frac{a_3x^3-a_1x-2a_0}{2yx^2}dx, \frac{\lambda_1}{2y(x-a)^3}dx, \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y}dx,  \right. \\ \left. \frac{a^2y}{x(x-a)^2}, \frac{y}{x},  \frac{y(x-2a)}{(x-a)^2} \right)
+\end{multline*}
+and
+\begin{multline*}
+\nu_2 = \left( \frac{-(a_3x^3+2a_2x^2+3a_1x+4a_0)}{2yx^3},  \frac{\lambda_2}{2y(x-a)^3}dx, \frac{-(2a_6x^3+a_5x^2)}{2y}dx, \right. \\ \left.  \frac{y(a^2-2ax)}{x^2(x-a)^2},\frac{y}{x^2}, \frac{y}{(x-a)^2} \right),
+\end{multline*}
+where
+\begin{multline*}
+\lambda_1  := (4a^3a_6+a^2a_5+a_3)x^4 + (3a^3a_5+2a^2a_4-3aa_3)x^3 \\
+ + (2a^3a_4 + 6a^2a_3 - a_1)x^2 + (4a^2a_2 +3aa_1-2a_0)x+(2a^2a_1+6aa_0)
+\end{multline*}
+and
+\begin{multline*}
+\lambda_2  := (-6a^2a_6-2aa_5)x^4 + (2a^3a_6-3a^2a_5-4aa_4-a_3)x^3 \\ + (a^3a_5-3aa_3-2a_2)x^2 + (-2a_2a-3a_1)x +(-aa_1-4a_0).
+\end{multline*}
+
+We use this to prove the following proposition about the action of $\sigma^*$ on $\cechderhamhone(\cU)$.
+
+\begin{prop}
+The action of $\sigma^*$ on the basis elements of $\cechderhamhone(\cU)$ is
+\begin{align*}
+\sigma^*(\gamma_1) & = \gamma_1 \\
+\sigma^*(\gamma_2) & = \gamma_2 + a\gamma_1 \\
+\sigma^*(\gamma_3) & = \gamma_3 - a\gamma_4 + \frac{4a^3a_6 + a^2a_5}{2}\gamma_2 + a^3a_5\gamma_1 \\
+\sigma^*(\gamma_4) & =  \gamma_4 - \frac{2a^3a_6+a^2a_5}{2} \gamma_2 - aa_5\gamma_1.
+\end{align*}
+\end{prop}
+\begin{proof}
+The action on $\gamma_1$ and $\gamma_2$ is clear.
+
+For $\gamma_3$ and $\gamma_4$ we will consider this action entry by entry, starting with $\sigma^*(\omega_{\sigma 1})$, which is
+\begin{align*}
+\sigma^*( \omega_{\sigma}) & = \sigma^* \left( \frac{\lambda_1}{2y(x-a)^3} dx \right) \\
+& = \frac{\sigma^*(\lambda_1)}{2yx^3}dx.
+\end{align*}
+Now we compute $\sigma^*(\lambda_1)$, which is
+\begin{align*}
+\sigma^*(\lambda_1) & = (4a^3a_6+a^2a_5+a_3)x^4 + (16a^4a_6+7a^3a_5+2a^2a_4+aa_3)x^3 \\
+& + (24a^5a_6+15a^4a^5+8a^3a_4+3a^2a_3-a_1)x^2 \\
+& + (16a^6a_6+13a^5a_5+10a^4a_4+7a^3a_3+4a^2a_2+aa_1-2a_0)x \\
+& + a(4a^6a_6+4a^5a_5+4a^4a_4+4a^3a_3+4a^2a_2+4aa_1+4a_0).
+\end{align*}
+We use the fact $f(x+a) = f(x)$ to simplify the above expression, by equating the coefficients on both side.
+We list the identities we get from doing this here:
+\begin{enumerate}
+\item \label{1} $6aa_6=0$;
+\item \label{2} $15a^2a_6+5aa_5 = 0$;
+\item \label{3} $20a^3a_6+10a^2a_5+4aa_4 = 0$;
+\item \label{4} $15a^4a_6 + 10a^3a_5 + 6a^2a_4+3aa_3= 0$;
+\item \label{5} $6a^5a_6 + 5a^4a_5+4a^3a_4+3a^2a_3+2aa_2= 0$;
+\item \label{6} $a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1 = 0$.
+\end{enumerate}
+Hence the constant coefficient of $\sigma^* (\lambda_1)$ simplifies to
+\begin{equation*}
+ a(4a^6a_6+4a^5a_5+4a^4a_4+4a^3a_3+4a^2a_2+4aa_1+4a_0) =  4aa_0
+\end{equation*}
+by \ref{6}; the coefficient of $x$ simplifies to
+\[
+16a^6a_6+13a^5a_5+10a^4a_4+7a^3a_3+4a^2a_2+aa_1-2a_0 = 3aa_1 -2a_0
+\]
+by \ref{5} and \ref{6}; the coefficient of $x^2$ simplifies to 
+\[
+24a^5a_6+15a^4a^5+8a^3a_4+3a^2a_3-a_1 = 2a_2a^2-a_1
+\]
+by \ref{4} and \ref{5}; the coefficient of $x^3$ simplifies to 
+
+\[
+16a^4a_6+7a^3a_5+2a^2a_4+aa_3 = 2a^3a_5 +aa_3
+\]
+by \ref{1} and \ref{3}.
+Hence
+\begin{multline*}
+\sigma^*(\lambda_1) = \\ \frac{(4a^3a_6+a^2a_5+a_3)x^4+(2a^3a_5+aa_3)x^3+(2a^2a_2-a_1)x^2+(3aa_1-2a_0)x+4aa_0}{2yx^3}dx.
+\end{multline*}
+We also have
+\begin{align}\label{i=1sigmaaction}
+\sigma^*(f_{\sigma \infty 1}) & = \sigma^*\left(\frac{y(x-2a)}{(x-a)^2} \right) \nonumber\\
+& = \frac{y(x-a)}{x^2}  \
+ = \frac{y}{x} - \frac{ay}{x^2}.
+\end{align}
+From \eqref{i=1sigmaaction} we see that
+\begin{equation}\label{firstidentity}
+\sigma^*(\gamma_3) = \gamma_3 - a\gamma_4 + c_1\gamma_1 + c_2 \gamma_2
+\end{equation}
+for some $c_1,c_2 \in k$.
+Finally we have
+\begin{align*}
+\sigma^* (\omega_{\infty 1}) & = \sigma^*\left( \frac{-(4a_6x^4+3a_5x^3+2a_4x^2)}{2y} dx \right) \\
+& = - \left( \frac{4a_6x^4+(16aa_6+3a_5)x^3+(24a^2a_6+9aa_5+2a_4)x^2}{2y}\right. \\ 
+& \left. +\frac{(16a^3a_6+9a^2a_5+4aa_4)x+4a^4a_6+3a^3a_5+2a^2a_4}{2y}\right) dx.
+\end{align*}
+Using the above we can compute the $c_1$ and $c_2$ mentioned above.
+We compute the coefficient of $\omega_{\infty}$ (using the notation of \eqref{sixtupleconditions}) in $\sigma^*(\rho'(\nu_1)) - \gamma_3 + a\gamma_4$, which is
+\begin{multline*}
+ -\left( \frac{18aa_6x^3 +(24a^2a_6+10aa_5)x^2+(16a^3a_6+9a^2a_5+4aa_4)x}{2y} \right. \\
++ \left. \frac{4a^4a_6+3a^3a_5+2a^2a_4}{2y}\right) dx  = \frac{(4a^3a_6+a^2a_5)x +2a^3a_5}{2y}dx.
+\end{multline*}
+From this we see that $c_1= a^3a_5$ and that $c_2 = \frac{4a^3a_6+a^2a_5}{2}$.
+
+
+Now when $i=2$ we have
+\begin{align*}
+\sigma^*(\lambda_2) & = -(6a^2a_6+2aa_5)x^4 - (22a^3a_6+11a^2a_5+4aa_4+a_3)x^3 \\
+& - (30a^4a_6+20a^3a_5+12a^2a_4+6aa_3+2a_2)x^2 \\
+& - (18a^5a_6+15a^4a_5+12a^3a_4+9a^2a_3+6aa_2+3a_1)x \\
+& -4(a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1+a_0).
+\end{align*}
+Again, using the relations \ref{1} through \ref{6} we can simplify these coefficients:
+by \ref{6} the constant coefficient of $\sigma^*(\lambda_2)$ is
+\[
+-4(a^6a_6+a^5a_5+a^4a_4+a^3a_3+a^2a_2+aa_1+a_0) = -4a_0;
+\]
+by \ref{5} the coefficient of $x$ is
+\[
+- (18a^5a_6+15a^4a_5+12a^3a_4+9a^2a_3+6aa_2+3a_1) = -3a_1;
+\]
+by \ref{4} the coefficient of $x^2$ is 
+\[
+- (30a^4a_6+20a^3a_5+12a^2a_4+6aa_3+2a_2) = -2a_2;
+\]
+by \ref{3} the coefficient of $x^3$ is
+\[
+- (22a^3a_6+11a^2a_5+4aa_4+a_3) = -2a^3a_5-a^2a_5-a_3;
+\]
+and by \ref{1} the coefficient of $x^4$ is
+\[
+-(6a^2a_6+2aa_5) = -2aa_5.
+\]
+
+Next we compute the action of $\sigma^*$ on $f_{\sigma \infty 2}$, as follows:
+\begin{align*}
+\sigma^*( f_{\sigma \infty 2}) & = \sigma^* \left( \frac{y}{(x-a)^2} \right) \\
+& = \frac{y}{x^2}.
+\end{align*}
+Hence we see that
+\[
+\sigma^*( \gamma_4) = \gamma_4 + d_1\gamma_1 + d_2 \gamma_2
+\]
+for some $d_1, d_2 \in k$.
+Lastly, we compute the action on $\omega_{\infty 2}$, which is
+\begin{align*}
+\sigma^* ( \omega_{\infty 2}) & = \sigma^* \left( \frac{-(2a_6x^3+a_5x^2)}{2y}dx \right) \\
+& = \frac{-2a_6x^3-(6aa_6+a_5)x^2-(6a^2a_6+2aa_5)x-2a^3a_6-a^2a_5}{2y}dx \\
+& = \frac{-2a_6x^3-a_5x^2 -2aa_5x -2a^3a_6 - a^2a_5}{2y}dx,
+\end{align*}
+using \ref{6} for the last equality.
+We now use this to compute the $d_1$ and $d_2$ above, by computing the coefficient of $\omega_\infty$ of $\sigma^*(\rho'(\nu_1)) - \gamma_4$, as follows
+\begin{multline*}
+ \frac{-2a_6x^3-a_5x^2 -2aa_5x -2a^3a_6 - a^2a_5 + 2a_6x^3+a_5x^2}{2y}dx \\
+ = \frac{-(2aa_5x +(2a^3a_6+a^2a_5))}{2y}dx.
+\end{multline*}
+Hence $d_2 = -aa_5$ and $d_1 = -\frac{2a^3a_6+a^2a_5}{2}$.
+\end{proof}
+
+Having computed the action we can now prove the following proposition regarding the splitting of the short exact sequence described in \cite{derhamactions}.
+
+\begin{prop}
+The short exact sequence of $k[G]$-modules
+\begin{equation*}
+0 \ra \hzero \ra \derhamhone \xrightarrow{p} \hone \ra 0
+\end{equation*}
+does not split if $\deg(f) = 5$.
+\end{prop}
+\begin{rem}
+Note that $\deg(f)=5$ is equivalent to $\cha(k)=5$.
+\end{rem}
+\begin{proof}
+Suppose there is a $k[G]$-module homomorphism $s\colon \hone \ra \derhamhone$ such that $p \circ s  = {\rm id} \colon \hone \ra \hone$.
+Hence $s(\bar \gamma_3) = \gamma_3 + b_{31} \gamma_1 + b_{32} \gamma_2$ and $s(\bar \gamma_4) = \gamma_4 + b_{41} \gamma_1 + b_{42} \gamma_2$, for some $ b_{ij} \in k$.
+Since $s$ is a $k[G]$-module homomorphism it follows that
+\[
+s(\sigma^* ( \bar \gamma_4)) = s ( \bar \gamma_4) = \gamma_4 + b_{41}\gamma_1 + b_{42} \gamma_2
+\]
+and also that
+\begin{align*}
+\sigma^*(s(\bar \gamma_4))  & = \sigma^* (\gamma_4 + b_{14}\gamma_1 b_{24}\gamma_2 ) \\
+& = \gamma_4 -aa_5\gamma_2 - \left( \frac{2a^3a_6+a^2a_5}{2} \right) \gamma_1 + b_{14}\gamma_1 + b_{24}\gamma_2 + ab_{24}\gamma_1 \\
+& = \gamma_4 + (b_{42}-aa_5)\gamma_2 + \left( \frac{2b_{14}+2ab_{24}-2a^3a_6-a^2a_5}{2} \right) \gamma_1
+\end{align*}
+are equal.
+In particular we must have $b_{24}-aa_5 = b_{24}$, which implies that $aa_5 =0$.
+If $a=0$ then $\sigma^*$ acts trivially. 
+Hence $a \neq 0$ and it follows that $a_5=0$.
+But if $\deg(f) = 5$ this is a contraction.
+\end{proof}
+\begin{rem}
+Note that if $\deg(f) = 6$ then there is no contradiction with either term, and the short exact sequence can split. 
+However, because we are not considering the entire automorphism group we cannot say that it does split.
+\end{rem}
+\todo[inline]{say what restrictions on $s$ we get from the above?}
+\todo[inline]{state which exact sequences split from Kontogeorgis paper}
+
+The following is for the case where $g = 4$.
+In this case our curve must have 
+\[
+y^2 = x^9 + a_6x^6+ a^2a_6x^4+a_3x^3a^4a_6x^2 +2(a^8 + a^2a_3)x +a_0
+\]
+as its defining equation, where we also have the relations
+\begin{itemize}
+\item $2a^6a_6 + a^4a_4 = 0$;
+\item $a^a_4 + 2a^2a_2 = 0$;
+\item $a^9 + a^3a_3 + aa_1 = 0$.
+\end{itemize}
+Also, the characteristic of $k$ is necessarily three.
+As before, $sigma \colon x \to x+a$.
+We denote the basis elements that come from $\hzero$ by $\lambda_i$, as $i$ ranges from $0$ to $g-1$, and the basis elements that map to $\hone$ by $\gamma_i$ (same range for $i$, but plus one).
+Then we have the following lemma.
+\begin{lem}
+For $i = 0, \ldots , g-1$ then
+\[
+\sigma^*(\lambda_i) = \sum_{j=0}^1 \binom{i}{j} a^{i-j} \lambda_j.
+\]
+\end{lem}
+\begin{proof}
+Clear
+\end{proof}
+
+Next we explicitly write out the elements $\gamma_1, \ldots, \gamma_4$.
+\begin{align*}
+\gamma_1 & = \left( \frac{a^2a_6x^4 + 2a_3x^3 + 2(a^8 + a^2a_3)x + 2a_0}{x^2y}, \frac{x^7 +a_6x^3}{y}, \frac{y}{x} \right)\\
+\gamma_2 & = \left(\frac{a^4a_6x^2 +2a_3x^3 +2a_0}{2x^3y} , \frac{2(x^6 +a_6x^3)}{y}, \frac{y}{ x^2 }\right)\\
+\gamma_3 & = \left(\frac{a^2a_6x^4 + 2a^4a_6x^2 + 2(a^8 + a^2a_3)x }{2x^4y } , 0, \frac{y }{x^3 } \right)\\
+\gamma_4 & = \left(\frac{a^2a_6x^4 +2a_3x^3 + 2(a^8 +a^2a_3)x + 2a_0 }{x^5y } , \frac{x^4+a_6x }{ y}, \frac{y }{ x^4} \right)
+\end{align*}
+
+
+
+We now compute the action of $\sigma^*$ on the above elements, computed via the sixtuple elements given earlier:
+\begin{multline}
+\left( \frac{a^4x^8 + 2a^2a_6x^7 + (2a^6 + a^3a_6 + a_3)x^6 + (2a^7 + aa_3)x^5 + (a^8  + a^a_3)x^4 + 2(a^6a_6+2a^3a_3+2a_0)x^3 + 2(a^{10}+a^4a_3+2aa_0)x^2 + 2(a^{11}+a^5a_3)x + 2a^3a_0}{2yx^5} \right. \\ \left. \frac{x^7 + a^6 + (2a^3+a_6)x^4 + (2a^4+aa_6)x^3 + (a^6 + a^3a_6)x + a^4a_6 + a^7}{y}, \frac{y(x^3-ax^2+a^2x-a^3)}{x^4} \right).
+\end{multline}
+From this we see that
+\[
+\sigma^*(\gamma_1) = \gamma_1 - a\gamma_2 + a^2\gamma_3 - a^3\gamma_4 + a^4\lambda_4 + (2a^6 + a^3a_6)\lambda_2 + (2a^7 + 2a^4a_6)\lambda_1.
+\]
+\todo[inline]{there are sign errors in the above, when comparing the second entry. Happens in lower order terms}
+
+\begin{multline}
+\sigma^*(\gamma_2) = \left( \frac{2a^3x^8 + (a^6 + 2a^3a_6 + a_3)x^5 + a^4a_6x^4 + 2a^5a_6x^3 + 2(a^9 + a^3+a_0)x^2}{2yx^5} \right., \\
+\left. \frac{2(x^6 + (2a^3+a_6)x^3 + (a^6 + a^3a_6))}{y} , \frac{y(x^2 + ax}{x^4} \right).
+\end{multline}
+ 
+
+From this we deduce that
+\[
+\sigma^*(\gamma_2) = \gamma_2 + a \gamma_3 + 2a^3 \lambda_3 + (a^6 + a^3a_3 + 2a_3)\lambda_0.
+\]
+
+
+
+
+
+Next we compute $\sigma^*(\gamma_3)$, which is
+\begin{equation*}
+\left( \frac{a^2a_6x^5 + 2a^4a_6x^3 + (2a^8 + 2a^2a_3)x^2}{2yx^5}, 0, \frac{y}{x^3} \right)
+\end{equation*}
+
+
+Hence we conclude that $\sigma^*(\gamma_3) = \gamma_3)$.
+
+Lastly, we compute $\sigma^*(\gamma_4)$, which is
+\begin{multline*}
+\left( \frac{2ax^8 + 2a^3x^6 + (2a^4 +aa_6)x^5 + 2a^2a_6x^4 (a^3a_6 + a_3)x^3 + 2a^4a_6x^2 + (a^8 + a^2a_3)x + a^6a_6 +a_0 }{2yx^5},\right. \\ \left. \frac{x^4 +ax^3 +(a^3+a_6)x + a^4+aa_6}{y}, \frac{y}{x^4} \right)
+\end{multline*}
+
+Then the action of $\sigma^*(\gamma_4)$ is 
+\[
+\sigma^*(\gamma_4) = \gamma_4 + 2a\lambda_3 + 2a^3\lambda_1 + 2(a^4 + aa_0)\lambda_0.
+\]
+
+%--------
+%Could be useful to describe why the action of sigma changes covers
+Suppose that $v = (\omega_\sigma , \omega_\infty, f_{\sigma \infty})$ is an element of $\cechderhamhone(\cU')$.
+Then
+\begin{equation*}
+\sigma^*(v) := (\sigma^*(\omega_\sigma), \sigma^*(\omega_\infty), \sigma^*(f_{\sigma \infty})) \in \Omega_X(U_0) \times \Omega_X(U_\infty) \times \cO_X(U_\infty \cap U_0).
+\end{equation*}
+Since $\sigma^*(\omega_\sigma)-\sigma^*(\omega_\infty) = \sigma^*(\omega_\sigma - \omega_\infty) = \sigma^*(df_{\sigma \infty})$ we see that $\sigma^*(v)$ is an element of $\cechderhamhone(\cU)$.
+
+
+\end{comment}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%% Comments from dimension section %%%%%%%%%%%%%%%%%
+
+\begin{comment}
+We also consider an alternative approach to computing the fixed dimension of $H^0(X,\Omega_X^{\otimes m})$, relying on \cite[Thm. 4.5]{galoisstruc}.
+For the rest of this section we assume that $n$ is co-prime to $p$, that $g_X\geq 2$ and that $g_Y=0$.
+
+We now introduce some notation from \cite{galoisstruc}.
+We first denote by $\chi_P$ the representation of the decomposition group $G_P$ on the cotangent space $\mathfrak{m}_P/\mathfrak{m}_P^2$.
+We also introduce the unique projective module $N_{G,X}$ satisfying
+\begin{equation*}
+\bigoplus^n N_{G,X} = \bigoplus_{P\in X} \bigoplus_{d=1}^{e^t_p-1} \bigoplus^d {\rm Ind}_{G_P}^G(\chi_P^d),
+\end{equation*}
+where $e^t_p$ denotes the (tame) ramification index at a point $P\in X$, as in \cite[Thm. 4.3]{galoisstruc}.
+
+Fix an integer $m\geq 2$. Now if we write $mK_X = \sum_{P\in X} n_P[P]$ then we can define $r_P\in \{0,\ldots, e^t_p - 1\}$ and $s_P\in \ZZ$ to be the unique values such that
+\[
+n_P = r_P + s_Pe_P^t.
+\]
+
+Finally, if for any $Q\in Y$ we let $\bar Q \in X$ be an element of the fibre with respect to $\pi$, we can state \cite[Thm. 4.5]{galoisstruc}, which says that we have the following equality in $K_0(k[G])$:
+\begin{equation}\label{eq}
+\chi(G,X,\Omega^{\otimes m}) = -[N_{G,X}] +\sum_{Q\in Y}\sum^{r_{\bar Q}}_{d=1} [{\rm Ind}_{G_{\bar Q}}^G(\chi_{\bar Q}^d)]  + \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right) [k[G]],
+\end{equation}
+where for any $k[G]$ module $A$ then $[A]$ denotes that class of $A$ in $K_0[k[G]]$.
+
+We wish to find when the action of $G$ on $H^0(X,\Omega^{\otimes m})$ is trivial.
+Note that $[H^0(X,\Omega^{\otimes m})]$ is in the same class as $\chi(G,X,\Omega^{\otimes m})$ in $K_0(k[G])$, since $mK_X$ is non-special under our assumptions.
+Hence the action will be trivial precisely when we have equality between the dimension and the fixed dimension.
+We will work out the dimension and fixed dimension of each of the components of the above sum separately, before combining them to give a complete answer.
+
+
+Before we look at the first two parts, we recall from \cite[Rem. 4.30]{introtoreps} that for a representation $V$ of a group $G$ and a subgroup $H\subseteq G$ we have
+\[
+\dim \rm{Ind}_H^G(V) = \dim(V)\cdot\frac{|G|}{|H|}.
+\]
+
+We let $U_k\subset X$ be the set of points in $X$ whose ramification degree is precisely $k$.
+Then for any $P\in U_k$ the order of $G_P$ is also $k$.
+Hence for $P\in U_k$ we have $\dim {\rm Ind}_{G_P}^G(\chi_P^d) = \frac{n}{k} \dim \chi_P^d = \frac{n}{k}$.
+
+
+
+Following this we can write 
+\begin{align*}
+n \cdot \dim N_{G,X} & = \sum_{k=1}^n \sum_{P\in U_k} \sum_{d=1}^{e^t_P -1} d\cdot \dim {\rm Ind}_{G_P}^G\chi_P^d \\
+& =  \sum_{k=1}^n \sum_{P\in U_k} \sum_{d=1}^{k -1} d\cdot \frac{n}{k} \\
+& =  \sum_{k=1}^n \sum_{P\in U_k} \frac{(k-1)\cdot n}{2}
+\end{align*}
+since the dimension of $\chi^d_P$ is $1$.
+Hence
+\[
+\dim N_{G,X} = \sum_{k=1}^n \sum_{P\in U_k}  \frac{k-1}{2}.
+\]
+
+Now the fixed dimension of $\chi^d_P$ is precisely 0 for $d>0$, and hence we also have
+\[
+n\cdot \dim N_{G,X}^G = \sum_{k=1}^n \sum_{P\in U_k} \sum_{d=1}^{k-1} 0 = 0.
+\]
+
+We now move on to the second term in the sum.
+Let $W_k=\pi (U_k)$.
+Then its dimension is
+\[
+\dim \left(\sum_{k=1}^n \sum_{Q\in W_k} \sum_{d=1}^{r_{\bar Q}} \rm{Ind}_{G_{\bar Q}}^G (\chi_{\bar Q}^{-d})\right) = \sum_{k=1}^n \sum_{Q\in W_k} r_{\bar Q}\cdot \frac{n}{k}.
+\]
+Note that we can sum over all $Q\in Y$, since $r_{\bar Q}$ is zero for all but a finite number of points.
+
+
+On the other hand the fixed dimension is again zero.
+
+
+Finally, we now compute when 
+\[
+\dim \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right) k[G] = n \cdot \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right).
+\]
+On the other hand, the fixed dimension is
+\[
+\dim \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right) k[G]^G = 1 + \sum_{Q\in Y} s_{\bar Q}.
+\]
+
+By substituting all of these in to \eqref{eq}, we find that the dimension of $H^0(X,\Omega_X^{\otimes m})$ is
+\[
+-\sum_{k=1}^n \sum_{P\in U_k} \frac{k-1}{2} + \sum_{k=1}^n \sum_{Q\in W_k} r_{\bar Q} \frac{n}{k} + n\cdot \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right),
+\]
+whilst the dimension of the fixed subspace of $H^0(X,\Omega_X^{\otimes m})$ is just
+\[
+1 + \sum_{Q\in Y} s_{\bar Q}.
+\]
+
+Hence the group acts trivially if and only if
+\[
+-\sum_{k=1}^n \sum_{P\in U_k} \frac{k-1}{2} + \sum_{k=1}^n \sum_{Q\in W_k} r_{\bar Q} \frac{n}{k} + (n-1)\cdot \left( 1 + \sum_{Q\in Y} s_{\bar Q} \right),
+\]
+
+In order to compute this we first need to work out what $r_{\bar Q}$ and $s_{\bar Q}$ are.
+Denoting the ramification divisor of $\pi$ by $R$, recall that we can write $mK_X = m \pi^* K_Y + mR$.
+Since we are assuming that $g_Y=0$, we can write $K_Y=-2[Q']$ for some unramified point $Q'\in Y$.
+Also, we know that $R=\sum_{P\ {\rm ramified}} (e_P^t-1)[P]$.
+Clearly if $Q$ is not ramified and not $Q'$, then $r_{\bar Q}=s_{\bar Q}=0$.
+If $\bar Q \in \pi^{-1}(Q')$ then $-2m = r_{\bar Q} + s_{\bar Q}$.
+Finally, if $P$ is a ramified point then 
+\begin{equation}\label{remainder}
+m(e_P^t-1)=r_P + s_Pe^t_P.
+\end{equation}
+
+
+
+We now show that the new formula for the fixed space matches that from \ref{dim}, \ie, we check that
+\[
+1 + \sum_{Q\in Y} s_{\bar Q} = (2m-1)(g_Y-1) + \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor
+\]
+under the conditions we have imposed.
+
+First note that since $g_Y = 0$ we can simplify the right hand side to 
+\[
+1 - 2m + \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor,
+\]
+so all we have to show is that
+\[
+\sum_{Q\in Y} s_{\bar Q} =\deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor - 2m.
+\]
+
+Suppose $\bar Q \in \pi^{-1} (Q')$.
+Then since we assumed that $Q'$ is not a branch point (\ie $e^t_{\bar Q} = 1$), and since $r_{\bar Q}\in \{0,\ldots, e^t_{\bar Q}-1\}$, we see that $r_{\bar Q} = 0$.
+Hence $s_{\bar Q} = 0$.
+
+On the other hand, if $Q$ is a branch point, we denote by $l_{\bar Q}$ the number of points mapping to $Q$, \ie $l_{\bar Q} = \frac{n}{e_{\bar Q}}$.
+Then we can multiply \eqref{remainder} by $l_{\bar Q}$, and then re-arranging giving us
+\[
+s_{\bar Q} = \frac{l_{\bar Q}(m(e^t_{\bar Q}-1)-r_{\bar Q})}{n}.
+\]
+Since $r_{\bar Q} \leq e_{\bar Q}^t - 1 < e_{\bar Q}$ it follows that $r_{\bar Q} < l_{\bar Q}e^t_{\bar Q} = n$.
+Hence $s_{\bar Q}$ must be the integer part of $\frac{m l_{\bar Q} (e_{\bar Q}^t-1)}{n}$, which is precisely the coefficient of $[Q]$ in  $\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor$.
+So by comparing coefficients we see that the two formulas are equivalent.
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+(a) If $g_X = 0$ then $\deg(K_X)=-2$ and so $\deg(mK_X)<0$ for $m\geq1$. 
+Hence it follows that $H^0(X,\Omega_X^{\otimes m}) = \{0\}$ and $G$ acts trivially for all $m\geq 1$.
+
+
+(b) Suppose $g_X =1 $ (\ie $X$ is an elliptic curve) and that $G$ is a finite subgroup of $X(k)$ acting on $X$ by translations.
+Then $G$ leaves invariant any global non-vanishing holomorphic differential $\omega$ and hence $G$ acts trivially on $H^0(X,\Omega_X)$.
+Since $\omega^{\otimes m}$ is a basis of $H^0(X,\Omega_X^{\otimes m})$, this means that $G$ also acts trivially on  $H^0(X,\Omega_X^{\otimes m})$.
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{comment}
+We can define $j\in \aut(X)$ to be the map defined $q_1 \mapsto q_2$ for $q_1, q_2 \in x^{-1}(a)$. 
+Obviously this is the identity on the ramification points, and since $x$ is of degree $2$, $j^2$ is the identity map.
+We will now use this to show the existence of one more function, $y$, which is necessary to define the basis of $H^0(X,\Omega_X^{\otimes m})$.
+
+If we let $D$ be the divisor $(g+1)p + (g+1)q$ on $k$, then there exists a $y \in \cL(D)$ (unique up to a factor) such that $j^* (y) = -y$.
+To start, we have by the Riemann-Roch theorem that $l(D) = \dim\cL(D) = (2g+2)-g+1 = g+3$.
+So $\cL(D) \cong k^{g+3}$.
+Since $x(p) = x(q) = \infty$ then $j^*$ defines a linear map $\cL(D) \rightarrow \cL(D)$.
+Since $j^{*2} = 1$, the eigenvalues must be $\pm 1$, and as such we can decompose $\cL(D)$ in two subspaces, $\cL(D)^+$ and $\cL(D)^-$, corresponding to the eigenspaces of eigenvalues $1$ and $-1$ respectively.
+Note that $\cL(D) = \cL(D)^+ \oplus \cL(D)^-$.
+
+If $f\in \cL(D)^+$ then this means that $j^*(f(q))=f(j(q))=f(q)$ for all $q \in X$.
+But $x$ maps $q$ and $j(q)$, and only these two points, to the same point in $\mathbb P_k^1$ for all $q\in X$.
+So any meromorphic function in $\cL(D)^+$ can be written as a composition of $x$ and a meromorphic function on $\mathbb P_k^1$, such that the composition only has poles at $p$ and $q$ (\ie the meromorphic function on $\mathbb{P}_k^1$ only has poles at infinity.)
+The order of the pole at $p$ or $q$ cannot exceed $g+1$, hence $1,x,\ldots ,x^{g+1}$ forms a basis of $\cL(D)^+$.
+As this implies that $\dim\cL(D)^+ = g+2$, and as $\dim\cL(D) = g+3$, we see that $\dim\cL(D)^- = 1$, and so there is a non-trivial meromorphic function $y \in \cL(D)$ such that $j^*(y) = -y$.
+This is the $y$ we will use in the following proposition.
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{comment}
+For any $f\in K(X)$ we will denote by $(f)_0$ and $(f)_\infty$ the divisor of zeroes and divisor of poles of $f$ respectively.
+In particular, 
+\[
+(f)_0 := \sum_{\{P\in X|\ord_P(f)>0\}}\ord_P(f)[P],      
+\]
+and 
+\[
+(f)_\infty = \sum_{\{P\in X |\ord_P(f)<0\}} -\ord_P(f)[P].
+\]
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+Firstly, since $y(p_i)= y(j(p_i)) = j^*(y)(p_i)= -y(p_i)$ for all $i$ we see that $y(p_i)=0$.
+Therefore $\deg(y)_0 \geq \deg\left(\sum_{i = 1}^{2g +2} [p_i] \right) = 2g+2$.
+But since $y\in \cL(D)$, we know that $\deg(y)_{\infty} \leq \deg((g+1)D) = 2g + 2$, and as $\deg(y) = \deg(y)_0 - \deg(y)_{\infty} = 0$ then $\deg(y)_0 = \deg(y)_{\infty} = 2g+2$.
+So
+\[
+(y)_0 = \sum_{i=1}^{2g+2} [p_i], \ (y)_{\infty} = (g+1)D_\infty.
+\]
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+If $m=g=2$ then we have that
+\begin{align*}
+\di\left(\frac{x^idx^{\otimes 2}}{y^2}\right) & =  i(D_0-D_\infty) + 2(R-2D_\infty) - 2(R-(g+1)D_\infty) \\
+& =  iD_0+ ((2g-2)-i)D_\infty \\
+& =  iD_0 +(2-i)D_\infty,
+\end{align*}
+which is positive for $0\leq 2$.
+By Lemma \ref{dim3} then $\dim_kH^0(X,\Omega_X^{\otimes 2})=3$, so again, we have three linearly independent elements, so they must form a basis.
+\end{comment}
+
+%%%%%%%%%%%%   Notes from Hurwitz section  %%%%%%%%%%%%%%%%%
+
+\begin{comment}
+\begin{rem}
+ In the language of algebraic geometry, where we would write differentials as $dx$ for some $x\in K(X)$, then this would be phrased differently.
+ When we use the result in later sections, it will be written as
+ \[
+  \di (\pi^* (dx)) = \pi^*(\di (dx)) + R
+ \]
+for some holomorphic differential $dx$.
+
+Also, it should be noted that in theory of function fields, what we have denoted by $\pi^*(\omega)$ is called the cotrace of $\omega$, and denoted ${\rm Cotr}_{X/Y}(\omega)$.
+\end{rem}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+\begin{lem}
+ Let $V$ be a vector space over $K(X)$ and let $\mu\colon V\rightarrow K(Y)$ be a $K(Y)$ linear map.
+ Then thee is a unique $K(X)$ linear map $\mu'\colon V\rightarrow K(X)$ such that $\Tr_{X/Y}\circ \mu' = \mu$.
+\end{lem}
+\begin{proof}
+ {\bf is prop III.3.3 needed?}
+ Let $K(X)^:=\{ \lambda\colon K(X) \rightarrow K(Y)| \lambda L-\text{linear}\}$ be the space of linear forms, which forms a vector space over $K(X)$.
+ It is one dimensional over $K(X)$ {\bf (check why)}, and so any $\lambda \in K(X)^*$ can be written as $z\cdot \Tr_{X/Y}$ for some $z\in K(X)$.
+ 
+ If we fix a $v\in V$ then we can define an $L$-linear map $\lambda \colon K(X) \rightarrow K(Y)$ as $\lambda_v(a)\mapsto \mu(av)$.
+ So there exists a unique $z_v\in K(X)$ such that $\lambda_v = z_v\cdot \mu$, and we define $\mu'(v) := z_v$.
+ Hence
+ \[
+  \mu(av) = (\mu'(v)\cdot \Tr_{X/Y})(a) = \Tr_{X/Y}(a\cdot \mu'(diffv))
+ \]
+for every $a\in K(X)$ and $v\in V$.
+Since the trace function and $\mu$ are both linear, it follows that $\mu'$ is also.
+If we let $a=1$ then the equality $\mu = \Tr_{X/Y} \circ \mu'$, which proves existence.
+If there were another such map, say $\mu^*$, then the difference $\mu'-\mu^*\colon V\rightarrow K(X)$ would be surjective, but $\Tr_{X/Y}\circ (\mu'-\mu^*) = 0$.
+This implies that $\Tr_{X/Y}=0$, a contradiction, hence $\mu'$is unique.
+\end{proof}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+If $\omega = 0$ this is clear.
+The order of the differential at any point can be determined by the equality of divisors,
+\[
+(\pi^*(\omega) ) = \pi^*((\omega)) + R.
+\]
+If differential is a unit at a point, it's precise value can be determined by the equality
+\[
+\omega'(\alpha) = \Tr_{X/Y}(\omega(\alpha)).
+\]
+\todo{check this last part}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{comment}
+We now show the equivalence of our two definitions of differential.
+
+Recall that for a curve $C$ a derivation of $K(C)$ is a $k$-linear map $d\colon K(C) \rightarrow M$ for some $K(C)$-module $M$ such that $d(ab) = ad(b) + d(a)b$ for all $a,b\in K(C)$.
+Note that of course, as $K(C)$ is a field, $M$ is a vector space, but this does hold more generally for rings and modules.
+
+By \cite[Prop. 4.1.4]{stichtenoth}, for each $x\in K(C)\backslash k$ there exists a unique derivation $d_x\colon K(C) \rightarrow K(C)$ such that $d_x(x) = 1$, which we call the {\em derivation with respect to $x$}.
+
+If we let $Z:= \{(u,x)\in K(C)\times K(C) |x\notin k\}$, then we can define a relation on the elements of $Z$ by letting $(u,x) \sim (v,y)$ if $v = u\cdot d_y(x)$.
+Then we denote the equivalence class of $(1,x)\in Z$ by $dx$.
+It can then be shown that $Z$, when quotiented by the above relation, has the universal property of $\Omega_C$, and hence is isomorphic to $\Omega_C$ as a $K(C)$-module (see \cite[Prop. 4.1.8]{stichtenoth}).
+\end{comment}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Introduction Notes %%%%%%%%%%%%%%%%
+
+\begin{comment} It is a well known and fundamental fact of the theory of Riemann surfaces that Riemann surfaces can be classified as $n$-tori (including the sphere as the zero torus).
+This means that the topological invariant of genus is an invariant in this area of study too, where it is called the analytic genus.
+Equally as important is the correspondence between compact Riemann surfaces and connected, projective, smooth algebraic curves over the complex numbers.
+So it is natural to ask how the genus arises in the case of these curves.
+As a corollary to the Riemann-Roch theorem it can be seen that the dimension of the space of {\em holomorphic differentials} (see Section \ref{Hurwitzsection}) over $\mathbb C$, which we denote by $H^0(X,\Omega_X)$, is what corresponds to the analytic genus.
+This invariant is called the arithmetic genus, and can be extended to any curve over an algebraically closed field.
+For this reason, among others, the space of holomorphic differentials is a fundamental object in algebraic geometry, and widely studied.
+\end{comment}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
