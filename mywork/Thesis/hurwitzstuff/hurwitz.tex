@@ -1,5 +1,4 @@
 \chapter{The Riemann-Hurwitz formula} \label{Chapter:hurwitzformula}
-\section{Function fields}\label{Hurwitzsection}
 
 Let $X$ and $Y$ be two projective, non-singular curves over an algebraically closed field $k$, with a map $\pi \colon X \rightarrow Y$ of degree $n$.
 We let $g_X$ and $g_Y$ be the genera of $X$ and $Y$ respectively.
@@ -7,25 +6,25 @@ Let $K(X)$ and $K(Y)$ be the function fields of $X$ and $Y$ respectively.
 Note that $K(X)$ is a degree $n$ extension of $K(Y)$, and recall that $\pi$ induces a map $\pi^*\colon K(Y) \rightarrow K(X)$.
 As usual, for any $P \in X$ and $Q \in Y$ we denote the local ring formed by functions which are regular at $P$ and $Q$ by $\cO_{X,P}$ and $\cO_{X,Q}$ respectively.
 
+\section{Function fields}\label{Hurwitzsection}
+    
 We recall some facts from Galois theory for a field extension $L/K$ of degree $n$.
-Any element $\alpha \in L$ defines a $K$~-~linear map $\mu_{\alpha} \colon  L \rightarrow K$, given by multiplication by $\alpha$.
+Any element $\alpha \in L$ defines a $K$~-~linear map $\mu_{\alpha} \colon  L \rightarrow L$, given by multiplication by $\alpha$.
 We let $\tr_{L/K}(\alpha)$ be the trace of the matrix in $\operatorname{Mat}_{n \times n}(K)$ corresponding to $\mu_\alpha$.
 Hence we form the {\em trace map} $\tr_{L/K}\colon L \ra K$.
 When considering the trace map between the function fields $K(X)$ and $K(Y)$ we let $\tr_{X/Y} := \tr_{K(X)/K(Y)}$.
 Note that $\tr_{L/K}$ is an additive map, and that for $\alpha \in K$ we have $\tr_{L/K}(\alpha) = n \alpha$.
     \begin{prop}
-    The trace map $\tr_{X/Y} \colon K(X) \ra K(Y)$ is non-zero.
+    The trace map $\tr_{X/Y} \colon K(X) \ra K(Y)$ is surjective.
     \end{prop}
     \begin{proof}
-    If the characteristic of $k$, and hence $K(Y)$, is zero, then $\tr_{X/Y}(1) = n \neq 0$.
-    Hence we assume that $\cha(k) = p \neq 0$.
-    
-    We now show the equality 
+    We first show the equality 
         \[
         \tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}} = \id_{\overline{K(Y)}}\otimes _{K(Y)} \tr_{X/Y} \colon \overline{K(Y)}\otimes_{K(Y)}K(X) \ra \overline{K(Y)},
         \]
     with the latter map given by $f\otimes h \mapsto f\tr_{X/Y}(h)$.
-    We let $h_1, \ldots, h_n$ be a $K(Y)$ basis of $K(X)$, and write $fh_j = \sum_{i=1}^n c_{ij}h_i$ for $c_{ij} \in K(Y)$.
+    It then follows that the surjectivity of $\id_{\overline{K(Y)}}\otimes _{K(Y)} \tr_{X/Y}$ and $\tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}$ are equivalent.
+    We let $h_1, \ldots, h_n$ be a $K(Y)$ basis of $K(X)$, and write $hh_j = \sum_{i=1}^n c_{ij}h_i$ for $c_{ij} \in K(Y)$.
     Then a $\overline{K(Y)}$~-~basis of $\overline{K(Y)}\otimes_{K(Y)}K(X)$ is given by $1 \otimes h_1, \ldots, 1 \otimes h_n$, and 
         \[
         (f \otimes h)(1\otimes h_j) = f \otimes hh_j = \sum_{i=1}^n c_{ij}(f \otimes h_i) = \sum_{i=1}^n c_{ij}f(1 \otimes h_i).
@@ -35,29 +34,35 @@ Note that $\tr_{L/K}$ is an additive map, and that for $\alpha \in K$ we have $\
         \tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}(f \otimes h) = \sum_{i=1}^n c_{ii}f = f \tr_{X/Y}(h).
         \]  
 
+    We now show that $\tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}$ is surjective.
     Since $K(X)$ is a Galois extension of $K(Y)$, and hence also separable, we can find $\alpha$ separable over $K(Y)$ such that $K(X) = K(Y)(\alpha)$.
     We suppose that $\alpha$ has minimal (separable) polynomial $f(z) = (z - \beta_1)\cdots (z - \beta_n)$.
-    Now it follows from the previous paragraph that $\tr_{X/Y}$ is separable if and only if \todo{the next line follows from the previous paragraph, but why does this mean it is separable?}
-        \[
-        \overline{\tr} = \operatorname{id}_{\overline {K(Y)}} \otimes \tr_{X/Y} \colon \overline{K(Y)}\otimes_{K(Y)} K(X) \ra \overline{K(Y)}\otimes_{K(Y)}K(Y).
-        \]
     Since
         \[
         K(X) \cong K(Y)(\alpha) \cong K(Y)(z)/(f(z)) \cong \bigoplus_{i=1}^n K(Y)(z)/((z-\beta_i)) \cong \bigoplus_{i=1}^n K(Y)
         \]  
     then $\overline{K(Y)}\otimes_{K(Y)} K(X) \cong \bigoplus_{i=1}^n \overline{K(Y)}$.
-    Now $\overline{\tr}$ is the sum of the trace map on each component.
-    But the trace map $\tr_{\overline{K}/\overline{K}}$ is the identity.\todo{define trace for general fields}
-    Hence $\overline{\tr}$ is surjective, and so $\tr_{X/Y}$ is too.
+    Now $\tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}$ is the sum of the trace map on each component.
+    But the trace map $\tr_{\overline{K}/\overline{K}}$ is the identity.
+    Hence $\tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}$ is surjective, and so $\tr_{X/Y}$ is too.
     \end{proof}
 
-Also, since our extension is Galois (and hence, in particular, separable) then the trace map is non-zero (see, for example, \cite[Appendix A]{stichtenoth}).\todo{more specific citation}
-Finally, if $\alpha \in K(X)$ has minimum polynomial 
-    \[
-    f(X) = X^r + a_{r-1}X^{r-1} + \ldots +a_0 \in K(Y)[X]
-    \]
-and $s= [K(X):K(Y)(\alpha)]$, then $\tr_{X/Y}(\alpha) = -sa_{r-1}$ as in \cite[Appendix A]{stichtenoth}.\todo{more specific citation}
+    \begin{lem} 
+    Suppose that $\alpha \in K(X)$ has minimum polynomial 
+        \[
+        f(x) = x^r + a_{r-1}x^{r-1} + \ldots +a_0 \in K(Y)[x]
+        \]
+    and $s= [K(X):K(Y)(\alpha)]$, then $\tr_{X/Y}(\alpha) = -sa_{r-1}$.
+    \end{lem}
+    \begin{proof}
+    We first note that since $s = [K(X):K(Y)(\alpha)]$ it suffices to show the equality $\tr_{K(Y)(\alpha)/K(Y)}(\alpha) = -a_{r-1}$.
+    The elements $1, \alpha, \ldots, \alpha^{r-1}$ form a $K(Y)$-basis of $K(Y)(\alpha)$.
+    If $i \leq r-2$ then $\mu_{\alpha}(\alpha^i) = \alpha^{i+1}$, and hence the corresponding matrix has 1's below the diagonal and zeroes elsewhere on all columns except the final column.
+    Since $\mu_{\alpha}(\alpha^{r-1}) = \alpha^r = -a_0 - a_1\alpha - \ldots - a_{r-1}\alpha^{r-1}$ then the final consists of $-a_0, \ldots, a_{r-1}$.
+    Hence the only non-zero diagonal entry is $a_{r-1}$.
+    \end{proof}
 
+            
 Given a basis $\{z_1,\ldots,z_n\}$ of $K(X)$ over $K(Y)$, we now introduce its dual basis with respect to the trace.
 We denote the dual space of $K(X)$ over $K(Y)$ by 
     \[
