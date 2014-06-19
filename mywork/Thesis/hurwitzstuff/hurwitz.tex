@@ -14,7 +14,7 @@ We let $\tr_{L/K}(\alpha)$ be the trace of the matrix in $\operatorname{Mat}_{n 
 Hence we form the {\em trace map} $\tr_{L/K}\colon L \ra K$.
 When considering the trace map between the function fields $K(X)$ and $K(Y)$ we let $\tr_{X/Y} := \tr_{K(X)/K(Y)}$.
 Note that $\tr_{L/K}$ is an additive map, and that for $\alpha \in K$ we have $\tr_{L/K}(\alpha) = n \alpha$.
-    \begin{prop}
+    \begin{prop}\label{proptracelemmasurjective}
     The trace map $\tr_{X/Y} \colon K(X) \ra K(Y)$ is surjective.
     \end{prop}
     \begin{proof}
@@ -63,13 +63,13 @@ Note that $\tr_{L/K}$ is an additive map, and that for $\alpha \in K$ we have $\
     \end{proof}
 
             
-Given a basis $\{z_1,\ldots,z_n\}$ of $K(X)$ over $K(Y)$, we now introduce its dual basis with respect to the trace.
-We denote the dual space of $K(X)$ over $K(Y)$ by 
+Given a basis $\{z_1,\ldots,z_n\}$ of $K(X)$ over $K(Y)$, we now introduce its dual basis with respect to the trace map.
+We denote the {\em dual space} of $K(X)$ over $K(Y)$ by 
     \[
     K(X)^*:=\{\lambda \colon K(X) \rightarrow K(Y)| \lambda\ \text{is}\ K(Y)\text{-linear}\}.
     \]
 We make $K(X)^*$ in to a one-dimensional $K(X)$-vector space by defining $z \lambda(w):=\lambda(z w)$.
-As $\tr_{X/Y}$ is non-zero, then there exists a unique $z\in K(X)$ for every $\lambda \in K(X)^*$ such that $\lambda = z\cdot \tr_{X/Y}$.
+It follows from Proposition \ref{proptracelemmasurjective} that $\tr_{X/Y}$ is non-zero, and hence there exists a unique $z\in K(X)$ for every $\lambda \in K(X)^*$ such that $\lambda = z\cdot \tr_{X/Y}$.
 In particular, if we choose $\lambda_j\in K(X)^*$ such that $\lambda_j(z_i) = \delta_{ij}$ (the Kronecker symbol), then there exist $z_j^*$ such that $\lambda_j = z_j^*\cdot \tr_{X/Y}$.
 Hence
     \[
@@ -78,17 +78,16 @@ Hence
 The elements $z_1^*, \ldots , z_n^*$ form the {\em dual basis} of $z_1, \ldots , z_n$.
 
 We now briefly introduce differentials in terms of function fields.
-Let $C$ be any projective, non-singular curve over $k$, with function field $K(C)$, and with genus $g_C$.
-Then an {\em \adele on $C$} is a map $\alpha\colon  C \rightarrow K(C)$ such $\alpha(P) \in \cO_{X,P}$ for nearly all $P \in C$ (\ie all but a finite number of points).
-We can view $\alpha$ as an element of $\prod_{P\in C}K(C)$, and we write $\alpha_P := \alpha(P)$.
-We let the {\em \adele space} of $C$, denoted by $\cA_C$, be the space of all \adeles on $C$.
-There is a canonical injection $K(C) \hookrightarrow  \cA_C$, defined by sending $x\in K(C)$ to the \adele $\alpha$ for which $\alpha_P =  x$ at each point $P\in C$.
-The elements of $K(C)$ have natural valuations; for each $P\in C$ we choose a uniformising parameter $t\in \cO_{X,P}$, and we then define $v_P(x):=n$, where $n$ is the unique integer such that $x=ut^n$ for some unit $u\in \cO_{X,P}$.
-We can we can then extend this valuation to elements of $\cA_C$ by defining $v_P(\alpha) := v_P(\alpha_P)$.
+Then an {\em \adele on $X$} is a map $\alpha\colon  X \rightarrow K(X)$ such $\alpha(P) \in \cO_{X,P}$ for nearly all $P \in X$ (\ie all but a finite number of points).
+We can view $\alpha$ as an element of $\prod_{P\in X}K(X)$, and we write $\alpha_P := \alpha(P)$.
+We let the {\em \adele space} of $X$, denoted by $\cA_X$, be the space of all \adeles on $X$.
+There is a canonical injection $K(X) \hookrightarrow  \cA_X$, defined by sending $x\in K(X)$ to the \adele $\alpha$ for which $\alpha_P =  x$ at each point $P\in X$.
+The elements of $K(X)$ have natural valuations; for each $P\in X$ we choose a uniformising parameter $t\in \cO_{X,P}$, and we then define $v_P(x):=n$, where $n$ is the unique integer such that $x=ut^n$ for some unit $u\in \cO_{X,P}$.
+We can we can then extend this valuation to elements of $\cA_X$ by defining $v_P(\alpha) := v_P(\alpha_P)$.
 
-Recall that a divisor on $C$ is a finitely supported formal sum over $C$, with coefficients in $\mathbb Z$, which we write as 
+Recall that a divisor on $X$ is a finitely supported formal sum over $X$, with coefficients in $\mathbb Z$, which we write as 
     \[
-    D = \sum_{P\in C} n_P [P],
+    D = \sum_{P\in X} n_P [P],
     \]
 and that the degree of such a divisor $D$ is 
     \[
@@ -96,34 +95,34 @@ and that the degree of such a divisor $D$ is
     \]
 We then define the order of $D$ at $P$ to be $v_P(D) := n_P$.
 
-We let $\cD_C$ be the space of divisors of $C$.
-Note that for any $x\in K(C)$ we have a naturally associated divisor, which is
+We let $\cD_X$ be the space of divisors of $X$.
+Note that for any $x\in K(X)$ we have a naturally associated divisor, which is
     \[
-    \di(x) := \sum_{P\in C} v_P(x) [P].
+    \di(x) := \sum_{P\in X} v_P(x) [P].
     \]
 
-For any $D\in \cD_C$ we define $v_P(D)$ to be the coefficient of $[P]$ in $D$, and we let
+For any $D\in \cD_X$ we define $v_P(D)$ to be the coefficient of $[P]$ in $D$, and we let
     \[
-    \cA_C(D):=\{\alpha \in \cA_C | v_P(\alpha) \geq -v_P(D)\ \text{for all} \ P\in C\}
+    \cA_X(D):=\{\alpha \in \cA_X | v_P(\alpha) \geq -v_P(D)\ \text{for all} \ P\in X\}
     \]
 be the {\em \adele space associated to $D$}.
-Then we define a {\em differential} on $C$ to be a $k$-linear map $\omega\colon  \cA_C \rightarrow k$ such that $\omega$ is zero on $\cA_C(D) +K(C)$ for some divisor $D\in \cD_C$.
-Note that via the canonical embedding of $K(C)$ into $\cA_C$, we can view $\cA_C(D) +K(C)$ as a subspace of $\cA_C$.
-We will denote the space of differentials on $C$ by $\Omega_{K(C)}$.
+Then we define a {\em differential} on $X$ to be a $k$-linear map $\omega\colon  \cA_X \rightarrow k$ such that $\omega$ is zero on $\cA_X(D) +K(X)$ for some divisor $D\in \cD_X$.
+Note that via the canonical embedding of $K(X)$ into $\cA_X$, we can view $\cA_X(D) +K(X)$ as a subspace of $\cA_X$.
+We will denote the space of differentials on $X$ by $\Omega_{K(X)}$.
 
 Now we define 
     \[
-    M(\omega) := \{ D\in \cD_C | \omega \ \text{is zero on }\ \cA_C(D) + K(C)\}
+    M(\omega) := \{ D\in \cD_X | \omega \ \text{is zero on }\ \cA_X(D) + K(X)\}
     \]
-for any non-zero $\omega \in \Omega_{K(C)}$, and state the following lemma.
+for any non-zero $\omega \in \Omega_{K(X)}$, and state the following lemma.
 
     \begin{defnlem}
-    For any non-zero differential $\omega$ on $C$ there is a unique maximal divisor $W$ in $M(\omega)$, which we call the \text{ canonical divisor associated to $\omega$} (we associate the zero divisor to $0\in \Omega_{K(C)}$).
+    For any non-zero differential $\omega$ on $X$ there is a unique maximal divisor $W$ in $M(\omega)$, which we call the \text{ canonical divisor associated to $\omega$} (we associate the zero divisor to $0\in \Omega_{K(X)}$).
     We denote the divisor associated to $\omega$ by $\di (\omega)$.
-    We call a divisor a \text{ canonical divisor} if it is the canonical divisor associated to some $\omega \in \Omega_{K(C)}$.
+    We call a divisor a \text{ canonical divisor} if it is the canonical divisor associated to some $\omega \in \Omega_{K(X)}$.
     
-    Given any two non-zero canonical divisors, $W$ and $W'$, there exists an $x\in K(C)$ such that $W = W' + \di(x)$.
-    Conversely, if $W$ is a canonical divisor, and $x\in K(C)$, then $W + \di(x)$ is a canonical divisor.
+    Given any two non-zero canonical divisors, $W$ and $W'$, there exists an $x\in K(X)$ such that $W = W' + \di(x)$.
+    Conversely, if $W$ is a canonical divisor, and $x\in K(X)$, then $W + \di(x)$ is a canonical divisor.
     \end{defnlem}
     \begin{proof}
     See \cite[Lem. 1.5.10 and Prop. 1.5.13]{stichtenoth}.\todo{check citations}
@@ -136,7 +135,7 @@ We can now define valuations on the differentials; namely, given some differenti
 
 
     \begin{prop}
-    The space of differentials, $\Omega_{K(C)}$, is a one-dimensional vector space over $K(C)$.
+    The space of differentials, $\Omega_{K(X)}$, is a one-dimensional vector space over $K(X)$.
     \end{prop}
     \begin{proof}
     See \cite[Prop. 1.5.9]{stichtenoth}.\todo{check citation}
@@ -153,7 +152,7 @@ for all $a,b\in K(X)$ a {\em derivation}.
 There is a unique module, denoted $\Omega_{K(X)}$, with a map $d\colon K(X) \rightarrow \Omega_{K(X)}$, which every derivation must factor through; \ie if $D\colon K(X)\rightarrow M$ is a derivation then there is a unique map $f\colon \Omega_{K(X)}\rightarrow M$ such that $D = f\circ d$.\todo{change $f$}
 Given any differential $\omega$, we can write it as $fdx$ for some $x$ and some $f$ in $K(X)$.
 This is how we will consider differentials in the other sections of this report.
-At the end of this section we will describe an isomorphism between $\Omega_C$ and $\Omega_{K(C)}$.
+At the end of this section we will describe an isomorphism between $\Omega_X$ and $\Omega_{K(X)}$.
 
 Finally, we define a particular class of differentials that will play a crucial role in what follows.
 A differential $\omega \in \Omega_{K(X)}$ is called {\em holomorphic} if its associated divisor, $W$, is non-negative (\ie if $v_P(W) \geq 0$ for all $P\in X$).
@@ -166,10 +165,10 @@ This is sheaf theoretic notation, which would not normally be used in function f
 We can now state the celebrated Riemann-Roch theorem.
 
     \begin{thm}[Riemann-Roch]\label{riemannroch}
-    Let $W$ be a canonical divisor on $C$.
-    Then for any divisor $D$ on $C$ 
+    Let $W$ be a canonical divisor on $X$.
+    Then for any divisor $D$ on $X$ 
         \[
-        \dim H^0(C,\cO(D)) = \deg(D) + 1 - g_C + \dim H^0(C,\cO(W-D)).
+        \dim H^0(X,\cO(D)) = \deg(D) + 1 - g_X + \dim H^0(X,\cO(W-D)).
         \]
     \end{thm}
     \begin{proof}
@@ -178,27 +177,27 @@ We can now state the celebrated Riemann-Roch theorem.
 
 
     \begin{cor}\label{dim=gc}
-    For any canonical divisor $W$ on $C$, we have 
+    For any canonical divisor $W$ on $X$, we have 
         \[
-        \deg(W) = 2g_C-2
+        \deg(W) = 2g_X-2
         \]
     and 
         \[
-        \dim H^0(C,\cO(W)) = g_C.
+        \dim H^0(X,\cO(W)) = g_X.
         \]
     \end{cor}
     \begin{proof}
-    Since $\dim H^0(C,\cO(0)) = 1$ (recall that the only functions with no poles are the constant functions), we have by Riemann-Roch, $ 1= \dim H^0(C,\cO(0)) = 0 + 1 -g_C + \dim H^0(C,\cO(W))$.
+    Since $\dim H^0(X,\cO(0)) = 1$ (recall that the only functions with no poles are the constant functions), we have by Riemann-Roch, $ 1= \dim H^0(X,\cO(0)) = 0 + 1 -g_X + \dim H^0(X,\cO(W))$.
     Rearranging this gives the second statement.
     The first statement then follows by rearranging
         \[
-        g_C = \dim H^0(C,\cO(W)) = \deg(W) + 1 -g_C +  \dim H^0(C,\cO(W-W))= \deg(W) + 1 -g_C + 1.
+        g_X = \dim H^0(X,\cO(W)) = \deg(W) + 1 -g_X +  \dim H^0(X,\cO(W-W))= \deg(W) + 1 -g_X + 1.
         \]
     \end{proof}
 
 
-There is an alternative way to map $K(C)$ in to $\cA_C$, which we will make use of shortly.
-Given a point $P\in C$ we define $\iota_P\colon K(C) \rightarrow \cA_C$ by
+There is an alternative way to map $K(X)$ in to $\cA_X$, which we will make use of shortly.
+Given a point $P\in X$ we define $\iota_P\colon K(X) \rightarrow \cA_X$ by
     \begin{equation}
     (\iota_P(x))_Q:= 
         \begin{cases}
