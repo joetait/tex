@@ -6,10 +6,10 @@ Let $K(X)$ and $K(Y)$ be the function fields of $X$ and $Y$ respectively.
 Note that $K(X)$ is a degree $n$ extension of $K(Y)$, and recall that $\pi$ induces a map $\pi^*\colon K(Y) \rightarrow K(X)$.
 As usual, for any $P \in X$ and $Q \in Y$ we denote the local ring formed by functions which are regular at $P$ and $Q$ by $\cO_{X,P}$ and $\cO_{X,Q}$ respectively.
 
-\section{Function fields}\label{Hurwitzsection}
+\section{Galois Theory}\label{sectiongaloistheory}
     
 We recall some facts from Galois theory for a field extension $L/K$ of degree $n$.
-Any element $\alpha \in L$ defines a $K$~-~linear map $\mu_{\alpha} \colon  L \rightarrow L$, given by multiplication by $\alpha$.
+Any element $\alpha \in L$ defines a $K$-linear map $\mu_{\alpha} \colon  L \rightarrow L$, given by multiplication by $\alpha$.
 We let $\tr_{L/K}(\alpha)$ be the trace of the matrix in $\operatorname{Mat}_{n \times n}(K)$ corresponding to $\mu_\alpha$.
 Hence we form the {\em trace map} $\tr_{L/K}\colon L \ra K$.
 When considering the trace map between the function fields $K(X)$ and $K(Y)$ we let $\tr_{X/Y} := \tr_{K(X)/K(Y)}$.
@@ -25,7 +25,7 @@ Note that $\tr_{L/K}$ is an additive map, and that for $\alpha \in K$ we have $\
     with the latter map given by $f\otimes h \mapsto f\tr_{X/Y}(h)$.
     It then follows that the surjectivity of $\id_{\overline{K(Y)}}\otimes _{K(Y)} \tr_{X/Y}$ and $\tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}$ are equivalent.
     We let $h_1, \ldots, h_n$ be a $K(Y)$ basis of $K(X)$, and write $hh_j = \sum_{i=1}^n c_{ij}h_i$ for $c_{ij} \in K(Y)$.
-    Then a $\overline{K(Y)}$~-~basis of $\overline{K(Y)}\otimes_{K(Y)}K(X)$ is given by $1 \otimes h_1, \ldots, 1 \otimes h_n$, and 
+    Then a $\overline{K(Y)}$-basis of $\overline{K(Y)}\otimes_{K(Y)}K(X)$ is given by $1 \otimes h_1, \ldots, 1 \otimes h_n$, and 
         \[
         (f \otimes h)(1\otimes h_j) = f \otimes hh_j = \sum_{i=1}^n c_{ij}(f \otimes h_i) = \sum_{i=1}^n c_{ij}f(1 \otimes h_i).
         \]  
@@ -77,19 +77,23 @@ Hence
     \]
 The elements $z_1^*, \ldots , z_n^*$ form the {\em dual basis} of $z_1, \ldots , z_n$.
 
-We now briefly introduce differentials in terms of function fields.
+
+\section{Differentials and divisors}
+
+We first introduce differentials in terms of function fields.
 An {\em \adele on $X$} is a map $\alpha\colon  X \rightarrow K(X)$ such $\alpha(P) \in \cO_{X,P}$ for nearly all $P \in X$ (\ie all but a finite number of points).
-We can view $\alpha$ as an element of $\prod_{P\in X}K(X)$, and we write $\alpha_P := \alpha(P)$.
+We can represent $\alpha$ by some $(\alpha_P)_{P \in X} \in \prod_{P \in X} K(X)$, where $\alpha_P := \alpha(P)$.
 We let the {\em \adele space} of $X$, denoted by $\cA_X$, be the space of all \adeles on $X$.
 There is a canonical injection $K(X) \hookrightarrow  \cA_X$, defined by sending $x\in K(X)$ to the \adele $\alpha$ for which $\alpha_P =  x$ at each point $P\in X$.
-The elements of $K(X)$ have natural valuations; for each $P\in X$ we choose a uniformising parameter $t\in \cO_{X,P}$, and we then define $v_P(x):=n$, where $n$ is the unique integer such that $x=ut^n$ for some unit $u\in \cO_{X,P}$.
+The elements of $K(X)$ have natural valuations: for each $P\in X$ we choose a uniformising parameter $t\in \cO_{X,P}$, and then there is a unique $n \in \ZZ$ such that $x=ut^n$ for some unit $u\in \cO_{X,P}$.
+We then define the valuation of $x$ at $P$ to be $v(x)_P := n$.
 We can we can then extend this valuation to elements of $\cA_X$ by defining $v_P(\alpha) := v_P(\alpha_P)$.
 
 Recall that a divisor on $X$ is a finitely supported formal sum over $X$, with coefficients in $\mathbb Z$, which we write as 
     \[
-    D = \sum_{P\in X} n_P [P],
+    D = \sum_{P\in X} n_P [P].
     \]
-and that the degree of such a divisor $D$ is 
+The degree of such a divisor $D$ is 
     \[
     \deg(D) := \sum_{P\in X} n_P.
     \]
@@ -101,62 +105,54 @@ Note that for any $x\in K(X)$ we have a naturally associated divisor, which is
     \di(x) := \sum_{P\in X} v_P(x) [P].
     \]
 
-For any $D\in \cD_X$ we define $v_P(D)$ to be the coefficient of $[P]$ in $D$, and we let
+For any $D\in \cD_X$ we define the {\em \adele space associated to $D$} to be
     \[
-    \cA_X(D):=\{\alpha \in \cA_X | v_P(\alpha) \geq -v_P(D)\ \text{for all} \ P\in X\}
+    \cA_X(D):=\{\alpha \in \cA_X | v_P(\alpha) \geq -v_P(D)\ \text{for all} \ P\in X\}.
     \]
-be the {\em \adele space associated to $D$}.
-Then we define a {\em differential} on $X$ to be a $k$-linear map $\omega\colon  \cA_X \rightarrow k$ such that $\omega$ is zero on $\cA_X(D) +K(X)$ for some divisor $D\in \cD_X$.
-Note that via the canonical embedding of $K(X)$ into $\cA_X$, we can view $\cA_X(D) +K(X)$ as a subspace of $\cA_X$.
-We will denote the space of differentials on $X$ by $\Omega_{K(X)}$.
-
-Now we define 
-    \[
-    M(\omega) := \{ D\in \cD_X | \omega \ \text{is zero on }\ \cA_X(D) + K(X)\}
-    \]
-for any non-zero $\omega \in \Omega_{K(X)}$, and state the following lemma.
-
-    \begin{defnlem}
-    For any non-zero differential $\omega$ on $X$ there is a unique maximal divisor $W$ in $M(\omega)$, which we call the \text{ canonical divisor associated to $\omega$} (we associate the zero divisor to $0\in \Omega_{K(X)}$).
-    We denote the divisor associated to $\omega$ by $\di (\omega)$.
-    We call a divisor a \text{ canonical divisor} if it is the canonical divisor associated to some $\omega \in \Omega_{K(X)}$.
+Then we define a {\em differential} on $X$ to be a $k$-linear map $\omega\colon  \cA_X \rightarrow k$ such that $\omega$ is zero on $\cA_X(D) +K(X) \subset \cA_X$ for some divisor $D\in \cD_X$.
+We will denote the {\em space of differentials on $X$} by $\Omega_{K(X)}$.
     
-    Given any two non-zero canonical divisors, $W$ and $W'$, there exists an $x\in K(X)$ such that $W = W' + \di(x)$.
-    Conversely, if $W$ is a canonical divisor, and $x\in K(X)$, then $W + \di(x)$ is a canonical divisor.
-    \end{defnlem}
-    \begin{proof}
-    See \cite[Lem. 1.5.10 and Prop. 1.5.13]{stichtenoth}.\todo{check citations}
-    \end{proof}
-
-\todo[inline]{Introduce the idea of "the" canonical divisor $K_X$ here}
-We can now define valuations on the differentials; namely, given some differential $\omega $ on $X$, and its associated divisor $W$, we set $v_P(\omega):=v_P(W)$ for $P\in X$.
-
-
-
-
     \begin{prop}
     The space of differentials, $\Omega_{K(X)}$, is a one-dimensional vector space over $K(X)$.
     \end{prop}
     \begin{proof}
-    See \cite[Prop. 1.5.9]{stichtenoth}.\todo{check citation}
+    See \cite[Prop. 1.5.9]{stichtenoth}.
     \end{proof}
 
+    \begin{rem}
+    The definition of differential given here is particular to functions fields, and does not obviously correspond to the standard definition in algebraic geometry.
+    At the end of the section we collect some results showing the correspondence of these definitions with the more classical definitions.
+    \end{rem}
 
-
-It should be noted that in algebraic geometry differentials are normally defined in a different, but equivalent, manner.
-Given a ring $K(X)$ and an $K(X)$-module $M$, we call any $K(X)$-linear map $D\colon K(X)\rightarrow M$ satisfying 
+For any non-zero $\omega \in \Omega_{K(X)}$ we define
     \[
-    D(ab) = aD(b) + D(a)b
+    M(\omega) := \{ D\in \cD_X | \omega \ \text{is zero on }\ \cA_X(D) + K(X)\}.
     \]
-for all $a,b\in K(X)$ a {\em derivation}.
-There is a unique module, denoted $\Omega_{K(X)}$, with a map $d\colon K(X) \rightarrow \Omega_{K(X)}$, which every derivation must factor through; \ie if $D\colon K(X)\rightarrow M$ is a derivation then there is a unique map $f\colon \Omega_{K(X)}\rightarrow M$ such that $D = f\circ d$.\todo{change $f$}
-Given any differential $\omega$, we can write it as $fdx$ for some $x$ and some $f$ in $K(X)$.
-This is how we will consider differentials in the other sections of this report.
-At the end of this section we will describe an isomorphism between $\Omega_X$ and $\Omega_{K(X)}$.
 
-Finally, we define a particular class of differentials that will play a crucial role in what follows.
-A differential $\omega \in \Omega_{K(X)}$ is called {\em holomorphic} if its associated divisor, $W$, is non-negative (\ie if $v_P(W) \geq 0$ for all $P\in X$).
-We denote {\em the space of holomorphic differentials} by $H^0(X,\Omega_{K(X)})$.\todo{Change notation - $\Omega_{K(X)}$ is not a sheaf}
+    \begin{lem}\label{lemmamaximaldivisorassociatedtoomega}
+    For any non-zero differential $\omega \in \Omega_{K(X)}$ on $X$ there is a divisor $W$ in $M(\omega)$ such that for any $D \in M( \omega)$ then $D \leq W$.
+    \end{lem}
+    \begin{proof}
+    See \cite[Lem. 1.5.10]{stichtenoth}.
+    \end{proof}
+
+For any non-zero $\omega \in \Omega_X$ we call the corresponding divisor from Lemma \ref{lemmamaximaldivisorassociatedtoomega} {\em the canonical divisor associated to $\omega$}, and we associate the zero divisor to $0 \in \Omega_X$.
+We denote the canonical divisor associated to $\omega$ by $\di(\omega)$.
+We call a divisor a {\em canonical divisor} if it is the canonical divisor associated to some $\omega \in \Omega_{K(X)}$.
+    
+    \begin{lem}
+    Given any two non-zero canonical divisors, $W$ and $W'$, there exists an $x\in K(X)$ such that $W = W' + \di(x)$.
+    Conversely, if $W$ is a canonical divisor, and $x\in K(X)$, then $W + \di(x)$ is a canonical divisor.
+    \end{lem}
+    \begin{proof}
+    See \cite[Prop. 1.5.13]{stichtenoth}.
+    \end{proof}
+
+\todo[inline]{Introduce the idea of "the" canonical divisor $K_X$ here - maybe later? Maybe not at all in this section.}
+We define a valuation $v_P$ of $\omega \in \Omega_{K(X)}$ at $P \in X$ via the associated canonical divisor $W$, by letting $v_P(\omega) := v_P(W)$.
+We say that $\omega$ has a pole at $P \in X$ if $v_P(\omega) < 0$ and that $\omega$ has a zero at $P \in X$ if $v_P(\omega) >0$.
+Then we call a differential $\omega \in \Omega_{K(X)}$ a {\em holomorphic differential} if it is has no poles (\ie if $v_P(\omega) \geq 0 $ for every $P \in X$).
+We denote {\em the space of holomorphic differentials} by $\hzero$.
 Also, for any divisor $D$ on $X$ we define 
     \[
     H^0(X,\cO(D)) := \{x\in K(X) | v_P(x) \geq -v_P(D)\}\cup \{0\}.
@@ -164,7 +160,7 @@ Also, for any divisor $D$ on $X$ we define
 This is sheaf theoretic notation, which would not normally be used in function field theory, but we use it for consistency with the rest of the report.\todo{change this sentence after changing notation}
 We can now state the celebrated Riemann-Roch theorem.
 
-    \begin{thm}[Riemann-Roch]\label{riemannroch}
+    \begin{thm}[Riemann-Roch Theorem]\label{theoremriemannroch}
     Let $W$ be a canonical divisor on $X$.
     Then for any divisor $D$ on $X$ 
         \[
@@ -172,7 +168,7 @@ We can now state the celebrated Riemann-Roch theorem.
         \]
     \end{thm}
     \begin{proof}
-    See, for example, \cite[8.6]{fulton} or \cite[Thm. 1.5.15]{stichtenoth}.\todo{check citations}
+    See, for example, \cite[8.6]{fulton} or \cite[Thm. 1.5.15]{stichtenoth}.
     \end{proof}
 
 
@@ -187,7 +183,10 @@ We can now state the celebrated Riemann-Roch theorem.
         \]
     \end{cor}
     \begin{proof}
-    Since $\dim H^0(X,\cO(0)) = 1$ (recall that the only functions with no poles are the constant functions), we have by Riemann-Roch, $ 1= \dim H^0(X,\cO(0)) = 0 + 1 -g_X + \dim H^0(X,\cO(W))$.
+    Since $\dim H^0(X,\cO(0)) = 1$ (recall that the only functions with no poles are the constant functions), we have by the Riemann-Roch Theorem, 
+        \[
+        1= \dim H^0(X,\cO(0)) = 0 + 1 -g_X + \dim H^0(X,\cO(W)).
+        \]
     Rearranging this gives the second statement.
     The first statement then follows by rearranging
         \[
@@ -196,21 +195,20 @@ We can now state the celebrated Riemann-Roch theorem.
     \end{proof}
 
 
-There is an alternative way to map $K(X)$ in to $\cA_X$, which we will make use of shortly.
 Given a point $P\in X$ we define $\iota_P\colon K(X) \rightarrow \cA_X$ by
     \begin{equation}
     (\iota_P(x))_Q:= 
         \begin{cases}
         x & \text{if }\ P=Q\\
-        0 & \text{otherwise}.
+        0 & \text{otherwise},
         \end{cases}
     \end{equation}
-for $Q\in X$.
-For $\omega \in \Omega_{K(X)}$ we then define $\omega_P\colon K(X) \rightarrow k$ to be the map $\omega_P(x) := \omega(\iota_P(x))$.
+for each $Q\in X$.
+We then define $\omega_P\colon K(X) \rightarrow k$ to be the map $\omega_P(x) := \omega(\iota_P(x))$, for $\omega \in \Omega_{K(X)}$.
 This is called the {\em local component} of $\omega$; we will use these definitions to prove the following proposition.\todo{change this sentence}
 
     \begin{prop}\label{propertyofomega}
-    Let $\omega \neq 0$ be a differential on $X$ and let $P\in X$. Then
+    Let $\omega$ be a non-zero differential on $X$ and let $P\in X$. Then
         \[
         v_P(\omega) = \max \{r\in \mathbb{Z}|\omega_P(x) = 0\ \text{for all} \ x\in K(X) \ \text{with}\ v_P(x) \geq -r\}.
         \]
@@ -219,10 +217,10 @@ This is called the {\em local component} of $\omega$; we will use these definiti
     \begin{proof}
     Let $W$ be the divisor associated to $\omega$.
     Let $s:=v_P(\omega)$ be the order of $\omega$ at $P$.
-    If $x\in K(X)$ and $v_P(x)\geq -s$, then $\iota_P(x) \in \cA_X(W)$, by definition.
+    If $x\in K(X)$ and $v_P(x)\geq -s$, then $\iota_P(x) \in \cA_X(W)$, by definition (recall that $0 \in \cA(D)$ for all divisors $D \in \cD_X$).
     Hence $\omega_P(x) = 0$.
     On the other hand, suppose $\omega_P(x) = 0$ for any $x\in K(X)$ satisfying that $v_P(x) \geq -s-1$.
-    Let $\alpha\in \cA_X(W+[P])$.
+    Let $\alpha = (\alpha_P)_{P \in X} \in \cA_X(W+[P])$.
     Then we have
         \[
         \alpha = (\alpha-\iota_P(\alpha_P)) + \iota_P(\alpha_P).
@@ -234,15 +232,15 @@ This is called the {\em local component} of $\omega$; we will use these definiti
         \]
     and so $\omega$ is zero on $\cA_X(W+P)$.
     But this contradicts the maximality of $W$ in its definition.
-    
     \end{proof}
 
+\section{Algebraic results regarding function fields}
 
 
 We now give a small result regarding field extensions, after recalling some terminology.
-Recall that if $S$ is a subring of $R$, then an element $x\in R$ is integral over $S$ if there is a monic polynomial with coefficients in $S$ for which $x$ is a solution.
-Then an integral basis of $R$ over $S$ is a basis of $R$ over $S$, for which each basis elements is integral.
-Recall that $\cO_{X,Q}$ is an integrally closed subring of $K(Y)$ for any $Q\in Y$, and that $K(Y)$ is the field of fractions of $\cO_{X,Q}$.
+Recall that if $S$ is a subring of $R$, then an element $x\in R$ is {\em integral over $S$} if there is a monic polynomial with coefficients in $S$ for which $x$ is a solution.
+Then an {\em integral basis of $R$ over $S$} is a basis of $R$ over $S$, for which each basis elements is integral.
+Recall that $\cO_{X,P}$ is an integrally closed subring of $K(X)$ for any $P\in X$, and that $K(X)$ is the field of fractions of $\cO_{X,P}$.
 
 
     \begin{prop}
@@ -675,3 +673,20 @@ Hence in this instance
     \[ 
     \ord_P(\omega) = \ord_P(z^m) = m\ord_P(z) = m\ord_P(dx).
     \]
+
+
+
+
+
+It should be noted that in algebraic geometry differentials are normally defined in a different, but equivalent, manner.
+Given a ring $K(X)$ and an $K(X)$-module $M$, we call any $K(X)$-linear map $D\colon K(X)\rightarrow M$ satisfying 
+    \[
+    D(ab) = aD(b) + D(a)b
+    \]
+for all $a,b\in K(X)$ a {\em derivation}.
+There is a unique module, denoted $\Omega_{K(X)}$, with a map $d\colon K(X) \rightarrow \Omega_{K(X)}$, which every derivation must factor through; \ie if $D\colon K(X)\rightarrow M$ is a derivation then there is a unique map $f\colon \Omega_{K(X)}\rightarrow M$ such that $D = f\circ d$.\todo{change $f$}
+Given any differential $\omega$, we can write it as $fdx$ for some $x$ and some $f$ in $K(X)$.
+This is how we will consider differentials in the other sections of this report.
+At the end of this section we will describe an isomorphism between $\Omega_X$ and $\Omega_{K(X)}$.
+
+
