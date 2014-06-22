@@ -236,35 +236,40 @@ This is called the {\em local component} of $\omega$; we will use these definiti
     But this contradicts the maximality of $W$ in its definition.
     \end{proof}
 
-\section{Algebraic results regarding function fields}
+\section{The complementary module}
 
 
 We now prove some results giving algebraic relations between $K(X)$ and $K(Y)$.
 Recall that if $S$ is a subring of $R$, then an element $x\in R$ is {\em integral over $S$} if there is a monic polynomial with coefficients in $S$ for which $x$ is a solution.
 Then an {\em integral basis of $R$ over $S$} is a basis of $R$ over $S$, for which each basis elements is integral.
+Furthermore, we say that $S$ is integrally closed in $R$ if any element of $R$ which is integral over $S$ lies in $S$.
 Recall that $\cO_{X,P}$ is an integrally closed subring of $K(X)$ for any $P\in X$, and that $K(X)$ is the field of fractions of $\cO_{X,P}$.
 
 
     \begin{prop}
     For $z\in K(X)$ we let $\phi(T)\in K(Y)[T]$ be its minimal monic polynomial over $K(Y)$.
-    Then $z$ is integral over $\cO_{X,Q}$ if and only $\phi (T)\in \cO_{X,Q}[T]$.
+    Then $z$ is integral over $\cO_{Y,Q}$ if and only $\phi (T)\in \cO_{Y,Q}[T]$.
     \end{prop}
     \begin{proof}
     By definition $\phi(T)$ is the monic irreducible polynomial in $K(Y)[T]$ such that $\phi(z) = 0$. 
-    Hence if $\phi (T)$ has coefficients in $\cO_{X,Q}$, then $z$ is integral over $\cO_{X,Q}$ by definition.
+    Hence if $\phi (T)$ has coefficients in $\cO_{Y,Q}$ it follows that $z$ is integral over $\cO_{Y,Q}$ by definition.
     
-    We now suppose that $z\in K(X)$ is integral over $\cO_{X,Q}$.
-    Then we can choose some monic polynomial $f(T)\in \cO_{X,Q}[T]$ such that $f(z) = 0$.
-    Since $\phi(T)$ is minimal over $K(Y)$, then there exists some $\psi(T)\in K(Y)[T]$ such that $f(T) = \phi(T)\cdot \psi(T)$.
-    Let $F \supseteq K(X)$ be a finite extension of $K(X)$ containing all the roots of $\phi$, and let $R$ be the integral closure of $\cO_{X,Q}$ in $F$.
-    Now the roots of $\phi(T)$ are also roots of $f(T)$, and hence are in $R$.
-    Then the coefficients of $\phi(T)$ can be written as polynomials of the roots of $\phi(T)$, and as we just noted that these roots are in $R$ then $\phi(T) \in R[T]$.
-    But then $\phi(T)\in K(Y)[T]$, and since $R$ is integrally closed it follows that $K(Y)\cap R = \cO_{X,Q}$, hence $\phi(T)\in \cO_{X,Q}[T]$.
+    We now suppose that $z\in K(X)$ is integral over $\cO_{Y,Q}$.
+    Then we can choose some monic polynomial $f(T)\in \cO_{Y,Q}[T] \subset K(Y)[T]$ such that $f(z) = 0$.
+    Since $\phi(T)$ is minimal over $K(Y)$, then there exists some $\psi(T)\in K(Y)[T]$ such that $ f(T) = \phi(T)\cdot \psi(T)$.\todo{Could add proof of this - consider factorisation in the $K(X)$ adjoin the roots}
+    We suppose that $\deg(\phi(T)) = m$ and fix $\alpha_i \in \overline{K(X)}$ such that $\phi(T)$ factorises as 
+        \[  
+        \phi(T) = (T-\alpha_1)\cdots (T-\alpha_m).
+        \]
+    We then let $F := K(X)(\alpha_1, \ldots, \alpha_m)$ be a finite extension of $K(X)$, and let $R$ be the integral closure of $\cO_{X,Q}$ in $F$.
+    Now the roots of $f(T)$ are in $R$ by definition; in particular, we have $\alpha_1, \ldots, \alpha_m \in R$.
+    The coefficients of $\phi(T)$ can be written as polynomials of $\alpha_1, \ldots, \alpha_m$, and hence $\phi(T) \in R[T]$.
+    Since $R$ integrally closed $K(Y)\cap R = \cO_{Y,Q}$, and hence $\phi(T)\in \cO_{Y,Q}[T]$.
     \end{proof}
 
     \begin{cor}\label{traceinclosure}
-    Let $Q$ be a point in $Y$ and let $x\in K(X)$ be integral over $\cO_{X,Q}$ under $\pi$.
-    Then $\tr_{X/Y}(x)\in \cO_{X,Q}$.
+    Let $Q$ be a point in $Y$ and let $x\in K(X)$ be integral over $\cO_{X,Q}$.
+    Then $\tr_{X/Y}(x)\in \cO_{Y,Q}$.
     \end{cor}
     \begin{proof}
     As noted earlier, if $\phi(T)=T^r+a_{r-1}T^{r-1} + \ldots + a_0\in K(Y)[T]$ is the minimal polynomial of $x$ over $K(Y)$, then $\tr_{X/Y}(x)=-n_xa_{r-1}$, where $n_x : = [K(X):K(Y)(x)]$.
@@ -278,7 +283,7 @@ In order to do this we first define the complementary module and the ramificatio
 
     \begin{defn}
     Consider a point $P\in X$ in the pre-image of $Q\in Y$ under $\pi$.
-    By \cite[Prop. 3.1.4]{stichtenoth}\todo{check citations} there is an integer $e_P$ such that for any $x\in K(X)$ the equality $v_P(x) = e_P\cdot v_Q(x)$ holds.
+    By \cite[Prop. 3.1.4]{stichtenoth} there is an integer $e_P$ such that for any $x\in K(X)$ the equality $v_P(x) = e_P\cdot v_Q(x)$ holds.
     This value is called the ramification index of $P$.
     If $e_P>1$ then we say that $\pi$ is ramified at $P$.
     \end{defn}
@@ -293,22 +298,39 @@ This can then be extended from a single point to a divisor on $Y$, in which case
     \]
 
     \begin{rem}
-    It should be noted that in the literature regarding function field theory, what we have denoted by $\pi^*(D)$ is normally called the conorm of $D$ and is denoted $\text{ Con}_{X/Y}(D)$. 
-    We used the notation above, from algebraic geometry, to be consistent with the rest of this report.
+    It should be noted that in the literature regarding function field theory, what we have denoted by $\pi^*(D)$ is normally called the conorm of $D$ and is denoted $\operatorname{Con}_{X/Y}(D)$. 
+    We used the notation above, from algebraic geometry, to be consistent with the rest of the thesis.
     \end{rem}
 
+    For any $Q\in Y$ we let $\cO_{Y,Q}'$ be the integral closure of $\cO_{Y,Q}$ in $K(X)$.
+
     \begin{defn}
-    For any $Q\in Y$, let $\cO_{X,Q}'$ be the integral closure of $\cO_{X,Q}$ in $K(X)$.\todo{define this in text, remove instances in this and next lemma}
-    We then define the complementary module over $\cO_{X,Q}$ to be
+    For any $Q in Y$ we define the complementary module over $\cO_{Y,Q}$ to be
         \[
-        C_Q :=\{z\in K(X) | \tr_{X/Y}(z\cdot \cO_{X,Q}') \subseteq \cO_{X,Q}\}.
-        \]\todo{is it okay to say $\tr_{X/Y}(z\cdot \cO_{X,Q}')$?}
+        C_Q :=\{z\in K(X) | \tr_{X/Y}(z\cdot \cO_{Y,Q}') \subseteq \cO_{Y,Q}\}.
+        \]\todo{is it okay to say $\tr_{X/Y}(z\cdot \cO_{Y,Q}')$?}
     \end{defn}
 
 
-We will list some properties of the complementary module in a proposition, but first we require the following lemmas.
+The following proposition lists a number of important properties of $C_Q$.
 
-    \begin{lem}[Approximation lemma]\label{approximationlemma}
+\begin{prop}\label{propfactsaboutc'}
+    Fix $Q\in Y$. 
+        \begin{enumerate}
+        \item $C_Q$ is an $\cO_{Y,Q}'$-module, and $\cO_{Y,Q}' \subseteq C_Q$.
+        \item If $z_1,\ldots ,z_n$ is a (necessarily integral) basis of $\cO_{Y,Q}'$ over $\cO_{Y,Q}$, then 
+        \[
+        C_Q = \sum_{i=1}^n \cO_{Y,Q}\cdot z_i^*,
+        \]
+        where $z_1^*, \ldots, z_n^*$ is the dual basis of $z_1, \ldots, z_n$.
+        \item There is a $t\in K(X)$ such that $C_Q = t\cdot \cO_{Y,Q}'$ (note that $t$ depends on the choice of $Q$).
+        Moreover, $v_P(t) \leq 0$ for all $P\in \pi^{-1}(Q)$, and if $t'\in K(X)$ then $C_Q=t'\cdot \cO_{Y,Q}'$ if and only if $v_P(t) = v_P(t')$ for all $P\in \pi^{-1}(Q)$.
+        \end{enumerate}
+    \end{prop}
+
+However, before we can give a proof of this proposition, we require two lemmata.
+
+    \begin{lem}[Approximation lemma]\label{lemmaapproximationlemma}
     Let $m$ be a positive integer. 
     For each $i\in \{1,\ldots, m\}$ let $P_i\in X$, let $\mathcal{P}_i$ be the corresponding maximal ideal of $\cO_{P_i}$, let $x_i$ be an element of $K(X)$ and let $n_i$ be an integer.\todo{fix line break}
     Then there is an $x\in K(X)$ such that $v_{P_i}(x-x_i) \geq n_i$ for all $i$.
@@ -318,6 +340,7 @@ We will list some properties of the complementary module in a proposition, but f
     This result can be strengthened to also say that $v_P(x) \geq 0$ for any $P\notin \{P_1,\ldots ,P_m\}$.\todo{fix line break}
     We will not prove this here, for the sake of brevity, but the proof can be found in \cite[Chap. 1, \S 3, pg. 12]{localfields}.
     \end{rem}
+
     \begin{proof}
     We let $R:= \cO_{P_i} \cap \ldots \cap \cO_{P_m}$, and we let $\mathcal{P}_i' := \mathcal{P}_i \cap R$.
     We first prove the lemma assuming that $x_i \in R$.
@@ -328,13 +351,12 @@ We will list some properties of the complementary module in a proposition, but f
     Hence we can write $x_1 = x + y$, where $y \in {\mathcal{P}_1'}^{n_1}$ and $x\in {\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m}$.
     Since ${\mathcal{P}_1'}^{n_1} \subseteq {\mathcal{P}_1}^{n_1}$ and ${\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m} \subseteq \mathcal{P}_2^{n_2}\cdots \mathcal{P}_n^{n_m}$, the $x$ above is as described in the lemma, and this finishes the proof in the case $x_i \in R$.
     
-    
     In general one can write $x_i = \frac{a_i}{b}$ for $a_i\in R$ and $b\in R\backslash \{0\}$, and $x$ can be represented as $\frac{a}{s}$.
     Then we require that $v_{P_1}(a-a_i) \geq n_i + v_{P_i}(s)$ for all $i$ and that $v_P(a)_ \geq v_P(s)$ for all $P\notin \{P_1,\ldots ,P_m\}$.
     But after adding the points $P$ for which $v_P(s)$ is negative, this is precisely what we described in the statement of the lemma.
     \end{proof}
 
-    \begin{lem}\label{pidlemma}
+    \begin{lem}\label{lemmapidlemma}
     Let $Q\in Y$, and let $\cO_{X,Q}'$ be the integral closure of $\cO_{X,Q}$ in $K(X)$.
     Then $\cO_{X,Q}'$ is a principal ideal domain.
     \end{lem}
@@ -346,29 +368,14 @@ We will list some properties of the complementary module in a proposition, but f
     Now let $x = \sum_{i=1}^l x_iz_i \in I$.
     Clearly $v_{P_i}(x) = v_{P_i}(x_i)$ for all $1\leq i\leq l$.
     
-    
-    
     Now we show that $I \subseteq x\cO_{X,Q}'$.
     If $y\in I$ then we let $z = x^{-1}y$.
     Then $v_{P_i}(z) = v_{P_i}(y) - v_{P_i}(x_i) \geq 0$ for all $1\leq i\leq l$.
     Hence $z\in \cO_{X,Q}'$ and so $y = xz \in x\cO_{X,Q}'$, completing the proof.
     \end{proof}
 
+We now present a proof of Proposition \ref{propfactsaboutc}.
 
-    \begin{prop}\label{factsaboutc'}
-    Fix $Q\in Y$. 
-        \begin{enumerate}
-        \item $C_Q$ is an $\cO_{X,Q}'$-module, and $\cO_{X,Q}' \subseteq C_Q$.
-        \item If $\{z_1,\ldots ,z_n\}$ is a (necessarily integral) basis of $\cO_{X,Q}'$ over $\cO_{X,Q}$, then 
-        \[
-        C_Q = \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*,
-        \]
-        where $z_i^*$ is the dual basis of $z_i$ for $1\leq i \leq n$.\todo{reference dual basis defined earlier}
-        \item There is a $t\in K(X)$ such that $C_Q = t\cdot \cO_{X,Q}'$ (note that $t$ depends on the choice of $Q$).
-        Moreover, $v_P(t) \leq 0$ for all $P\in \pi^{-1}(Q)$, and if $t'\in K(X)$ then $C_Q=t'\cdot \cO_{X,Q}'$ if and only if $v_P(t) = v_P(t')$ for all $P\in \pi^{-1}(Q)$.
-        
-        \end{enumerate}
-    \end{prop}
     \begin{proof}
         \begin{enumerate}
         \item It is clear that $C_Q$ is an $\cO_{X,Q}'$ module.
@@ -401,7 +408,7 @@ We will list some properties of the complementary module in a proposition, but f
             \]
         for all $i\in \{1,\ldots, n\}$ and all $P\in \pi^{-1}(Q)$.
         Since $\cO'_Q = \cap_{P\mapsto Q} \cO_{X,P}$ (see, for example, \cite[Cor. 3.3.5]{stichtenoth}), then $x\cdot C_Q \subseteq \cO_{X,Q}'$.
-        Since $\cO_{X,Q}'$ is a principal ideal domain by Lemma \ref{pidlemma}, it follows that $x\cdot C_Q = y\cdot \cO_{X,Q}'$ for some $y\in \cO_{X,Q}'$.
+        Since $\cO_{X,Q}'$ is a principal ideal domain by Lemma \ref{lemmapidlemma}, it follows that $x\cdot C_Q = y\cdot \cO_{X,Q}'$ for some $y\in \cO_{X,Q}'$.
         If we let $t=x^{-1}y$ then $C_Q =t\cdot \cO_{X,Q}'$, proving the first part of the statement.
         
         
@@ -444,16 +451,16 @@ We will list some properties of the complementary module in a proposition, but f
         \[
         \sum_{i=1}^n \cO_{X,Q}\cdot z_i \subseteq \cO_{X,Q}' \subseteq \sum_{i=1}^n\cO_{X,Q}\cdot z_i^* \subseteq \cO_{X,Q}'\subseteq \sum_{i=1}^n \cO_{X,Q}\cdot z_i.
         \]
-    Since $C_Q = \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*$ by part 2 of Proposition \ref{factsaboutc'}, the result follows.
+    Since $C_Q = \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*$ by part 2 of Proposition \ref{propfactsaboutc'}, the result follows.
     \end{proof}
 
 We can now define the ramification divisor.
 
 
     \begin{defn}
-    For a point $Q\in X$ choose $t\in K(X)$ such that $C_Q = t\cdot \cO_{X,Q}'$, as in part 3 of Proposition \ref{factsaboutc'}.
+    For a point $Q\in X$ choose $t\in K(X)$ such that $C_Q = t\cdot \cO_{X,Q}'$, as in part 3 of Proposition \ref{propfactsaboutc'}.
     Then for any $P\in \pi^{-1}(Q)$ we define the different exponent to be $\delta_P := -v_P(t)$.
-    By Proposition \ref{factsaboutc'} this is well defined, and by Proposition \ref{almostallqiny} it is almost always zero.
+    By Proposition \ref{propfactsaboutc'} this is well defined, and by Proposition \ref{almostallqiny} it is almost always zero.
     Hence we can define the ramification divisor to be
         \[
         R := \sum_{P\in X} \delta_P [P].
