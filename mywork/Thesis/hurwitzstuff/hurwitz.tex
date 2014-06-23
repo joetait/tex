@@ -332,7 +332,7 @@ However, before we can give a proof of this proposition, we require two lemmata.
 
     \begin{lem}[Approximation lemma]\label{lemmaapproximationlemma}
     Let $m$ be a positive integer. 
-    For each $i\in \{1,\ldots, m\}$ let $P_i\in X$, let $\mathcal{P}_i$ be the corresponding maximal ideal of $\cO_{P_i}$, let $x_i$ be an element of $K(X)$ and let $n_i$ be an integer.\todo{fix line break}
+    For each $i\in \{1,\ldots, m\}$ let $P_i\in X$, let $\mathcal{P}_i$ be the corresponding maximal ideal of $\cO_{X,P_i}$, let $x_i$ be an element of $K(X)$ and let $n_i$ be an integer.\todo{fix line break}
     Then there is an $x\in K(X)$ such that $v_{P_i}(x-x_i) \geq n_i$ for all $i$.
     \end{lem}
     
@@ -342,16 +342,23 @@ However, before we can give a proof of this proposition, we require two lemmata.
     \end{rem}
 
     \begin{proof}
-    We let $R:= \cO_{P_i} \cap \ldots \cap \cO_{P_m}$, and we let $\mathcal{P}_i' := \mathcal{P}_i \cap R$.
+    We let $R:= \cO_{X,P_1} \cap \ldots \cap \cO_{X,P_m}$, and we let $\mathcal{P}_i' := \mathcal{P}_i \cap R$.
     We first prove the lemma assuming that $x_i \in R$.
     We may increase the $n_i$ such that $n_i\geq 0$ for all $i$.
-    By linearity we may assume that $x_2 = \ldots = x_m = 0$, since if we find an element for $x_1$ in this instance, we can similarly find an element for each $i$ and add them.
+    We may further assume that $x_2 = \ldots = x_m =0$ by linearity.
+    Indeed, if we find a function $x_1' \in K(X)$ such that $v_{P_1}(x_1' - x_1) \geq n_1$ and $v_{P_i}(x_1') \geq n_i$ for $i \in \{2, \ldots, m\}$, we can find similar $x_2', \ldots, x_m'$.
+    Then the sum $x_1' + \ldots + x_m'$  will satisfy the criteria of the lemma, since
+        \[
+        v_{P_i}(x_1' + \ldots + x_m' - x_i) \geq \inf\{v_{P_i}(x_1'), \ldots,  v_{P_i}(x_i' - x_i), \ldots, v_{P_m}(x_i)\} \geq n_i
+        \]  
+    for $i \in \{1, \ldots, m\}$.
     Let $I = {\mathcal{P}_1'}^{n_1} + {\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m}$.
-    This is an ideal of $R$, and since it has elements whose valuation at any $P_i$ is zero, it is in fact equal to $R$.
+    This is an ideal of $R$, and since it has elements whose valuation at any $P_i$ is zero, it is in fact equal to $R$.\todo{justify equality}
     Hence we can write $x_1 = x + y$, where $y \in {\mathcal{P}_1'}^{n_1}$ and $x\in {\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m}$.
-    Since ${\mathcal{P}_1'}^{n_1} \subseteq {\mathcal{P}_1}^{n_1}$ and ${\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m} \subseteq \mathcal{P}_2^{n_2}\cdots \mathcal{P}_n^{n_m}$, the $x$ above is as described in the lemma, and this finishes the proof in the case $x_i \in R$.
+    Since $x\in {\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m}$ it follows that $v_{P_i}(x) \geq n_i$ for $i \in \{2, \ldots, m\}$, and similarly we know $v_{P_1}(x - x_1) = v_{P_1}(y) \geq n_1$.
+    Hence satisfies the criteria of the lemma.
     
-    In general one can write $x_i = \frac{a_i}{b}$ for $a_i\in R$ and $b\in R\backslash \{0\}$, and $x$ can be represented as $\frac{a}{s}$.
+    In general one can write $x_i = \frac{a_i}{b}$ and $x = \frac{a}{s}$ for $a,a_i\in R$ and $s,b\in R\backslash \{0\}$, and $x$ can be represented as $\frac{a}{s}$.
     Then we require that $v_{P_1}(a-a_i) \geq n_i + v_{P_i}(s)$ for all $i$ and that $v_P(a)_ \geq v_P(s)$ for all $P\notin \{P_1,\ldots ,P_m\}$.
     But after adding the points $P$ for which $v_P(s)$ is negative, this is precisely what we described in the statement of the lemma.
     \end{proof}
