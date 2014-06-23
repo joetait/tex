@@ -358,30 +358,33 @@ However, before we can give a proof of this proposition, we require two lemmata.
     Since $x\in {\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m}$ it follows that $v_{P_i}(x) \geq n_i$ for $i \in \{2, \ldots, m\}$, and similarly we know $v_{P_1}(x - x_1) = v_{P_1}(y) \geq n_1$.
     Hence satisfies the criteria of the lemma.
     
-    In general one can write $x_i = \frac{a_i}{b}$ and $x = \frac{a}{s}$ for $a,a_i\in R$ and $s,b\in R\backslash \{0\}$, and $x$ can be represented as $\frac{a}{s}$.
-    Then we require that $v_{P_1}(a-a_i) \geq n_i + v_{P_i}(s)$ for all $i$ and that $v_P(a)_ \geq v_P(s)$ for all $P\notin \{P_1,\ldots ,P_m\}$.
-    But after adding the points $P$ for which $v_P(s)$ is negative, this is precisely what we described in the statement of the lemma.
+    In general one can write $x_i = \frac{a_i}{b}$ and $x = \frac{a}{b}$ for $a,a_i\in R$ and $b\in R\backslash \{0\}$.
+    Then we require that $v_{P_1}(a-a_i) \geq n_i + v_{P_i}(s)$ for each $i \in \{1, \ldots, m\}$.
+    But we can find such an $a \in R$ by the last paragraph.
     \end{proof}
 
     \begin{lem}\label{lemmapidlemma}
-    Let $Q\in Y$, and let $\cO_{X,Q}'$ be the integral closure of $\cO_{X,Q}$ in $K(X)$.
-    Then $\cO_{X,Q}'$ is a principal ideal domain.
+    Let $Q\in Y$, and let $\cO_{Y,Q}'$ be the integral closure of $\cO_{Y,Q}$ in $K(X)$.
+    Then $\cO_{Y,Q}'$ is a principal ideal domain.
     \end{lem}
     \begin{proof}
-    By \cite[Cor. 3.3.5]{stichtenoth}\todo{check citation}, we have $\cO_{X,Q}' = \{x\in K(X)|v_P(x) \geq 0 \ \text{for all} \ P\in \pi^{-1}(Q)\}$.
-    Let $I$ be an ideal of $\cO_{X,Q}'$.
-    If we let $\{P_1,\ldots, P_l\} = \pi^{-1}(Q)$ then we can choose $x_i$ for $1\leq i \leq l$ such that $v_{P_i}(x_i) \leq v_{P_i}(y)$ for all $y\in I$.
+    By \cite[Cor. 3.3.5]{stichtenoth}\todo{check citation}, we have 
+        \[
+        \cO_{Y,Q}' = \{x\in K(X)|v_P(x) \geq 0 \ \text{for all} \ P\in \pi^{-1}(Q)\}.
+        \]  
+    Let $I$ be an ideal of $\cO_{Y,Q}'$.
+    If we let $\{P_1,\ldots, P_l\} = \pi^{-1}(Q)$ then we can choose $x_i \in I$ for $1\leq i \leq l$ such that $v_{P_i}(x_i) \leq v_{P_i}(y)$ for all $y\in I$.
     By the Approximation Lemma there exist $z_i$ such that $v_P (z_i) = 0$ if $P=P_i$ and $v_{P_j}(z_i) > v_{P_j}(z_j)$ for $j\neq i$.
     Now let $x = \sum_{i=1}^l x_iz_i \in I$.
     Clearly $v_{P_i}(x) = v_{P_i}(x_i)$ for all $1\leq i\leq l$.
     
-    Now we show that $I \subseteq x\cO_{X,Q}'$.
+    Now we show that $I \subseteq x\cO_{Y,Q}'$.
     If $y\in I$ then we let $z = x^{-1}y$.
     Then $v_{P_i}(z) = v_{P_i}(y) - v_{P_i}(x_i) \geq 0$ for all $1\leq i\leq l$.
-    Hence $z\in \cO_{X,Q}'$ and so $y = xz \in x\cO_{X,Q}'$, completing the proof.
+    Hence $z\in \cO_{Y,Q}'$ and so $y = xz \in x\cO_{Y,Q}'$, completing the proof.
     \end{proof}
 
-We now present a proof of Proposition \ref{propfactsaboutc}.
+We now present a proof of Proposition \ref{propfactsaboutc'}.
 
     \begin{proof}
         \begin{enumerate}
