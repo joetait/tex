@@ -332,8 +332,8 @@ However, before we can give a proof of this proposition, we require two lemmata.
 
     \begin{lem}[Approximation lemma]\label{lemmaapproximationlemma}
     Let $m$ be a positive integer. 
-    For each $i\in \{1,\ldots, m\}$ let $P_i\in X$, let $\mathcal{P}_i$ be the corresponding maximal ideal of $\cO_{X,P_i}$, let $x_i$ be an element of $K(X)$ and let $n_i$ be an integer.\todo{fix line break}
-    Then there is an $x\in K(X)$ such that $v_{P_i}(x-x_i) \geq n_i$ for all $i$.
+    For each $i\in \{1,\ldots, m\}$ let $P_i\in X$, let $\mathcal{P}_i$ be the corresponding maximal ideal of $\cO_{X,P_i}$, let $x_i$ be an element of $K(X)$ and let $r_i$ be an integer.\todo{fix line break}
+    Then there is an $x\in K(X)$ such that $v_{P_i}(x-x_i) = r_i$ for all $i$.
     \end{lem}
     
     \begin{rem}
@@ -342,6 +342,7 @@ However, before we can give a proof of this proposition, we require two lemmata.
     \end{rem}
 
     \begin{proof}
+    We first show that there exists an $x$ such that $v_{P_i}(x- x_i) \geq n_i = r_i +1$ for $i \in \{1, \ldots, n\}$.
     We let $R:= \cO_{X,P_1} \cap \ldots \cap \cO_{X,P_m}$, and we let $\mathcal{P}_i' := \mathcal{P}_i \cap R$.
     We first prove the lemma assuming that $x_i \in R$.
     We may increase the $n_i$ such that $n_i\geq 0$ for all $i$.
@@ -361,6 +362,18 @@ However, before we can give a proof of this proposition, we require two lemmata.
     In general one can write $x_i = \frac{a_i}{b}$ and $x = \frac{a}{b}$ for $a,a_i\in R$ and $b\in R\backslash \{0\}$.
     Then we require that $v_{P_1}(a-a_i) \geq n_i + v_{P_i}(s)$ for each $i \in \{1, \ldots, m\}$.
     But we can find such an $a \in R$ by the last paragraph.
+
+    We now show that there exists an $x \in K(X)$ such that $v_{P_i}(x - x_i) = r_i$.
+    We first choose $z \in K(X)$ such that $v_{P_i}(z - x_i) > r_i$, as above.
+    We then choose $z_i \in K(X)$ such that $v_{P_i}(z_i) = r_i$, and pick a corresponding $z' \in K(X)$ such that $v_{P_i}(z - z_i) > r_i$ (again, this can be done by the above argument).
+    Then
+        \[
+        v_{P_i}(z') = v_{P_i}((z'-z_i) + z_i) = \min\{v_{P_i}(z'-z_i),v_{P_i}(z_i)\} = r_i.
+        \]
+    Finally, if we let $x = z + z'$, then
+        \[
+        v_{P_i}(x - x_i) = v_{P_i}((z-x_i) + z') = \min\{v_{P_i}(z - x_i), v_{P_i}(z')\} = r_i.
+        \]  
     \end{proof}
 
     \begin{lem}\label{lemmapidlemma}
