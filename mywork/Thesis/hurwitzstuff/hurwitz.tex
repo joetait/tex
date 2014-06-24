@@ -554,7 +554,7 @@ We first note that this immediately implies the Riemann-Hurwitz formula.
     \end{proof}
 
 
-We now give a lemma that is necessary for the proof of Theorem \ref{theoremdetailedhurwitz}.
+We now prove some short lemmas that are necessary for the proof of Theorem \ref{theoremdetailedhurwitz}.
 
 % Stichtenoth  Lemma 3.4.9
 
@@ -572,22 +572,14 @@ We now give a lemma that is necessary for the proof of Theorem \ref{theoremdetai
     Hence $\alpha = \beta + (\alpha - \beta) \in \mathcal{A}_{X/Y} + \mathcal{A}_X(D)$.
     \end{proof}
 
-We now prove Theorem \ref{theoremdetailedhurwitz}.
-
+    \begin{lem}\label{lemmapart1}
+    We fix $0 \neq \omega \in H^0(Y,\Omega_Y)$ and let $W = \pi^*(\di(\omega)) + R$.
+    Then $\psi := \omega\circ \tr_{X/Y}(\alpha) = 0$ for any $\alpha \in \mathcal{A}_{X/Y}(W') + K(X)$.
+    \end{lem}
     \begin{proof}
-    We first construct a differential $\omega'\in H^0(X,\Omega_X)$ for every $\omega\in H^0(Y,\Omega_Y)$ such that $\omega'(\alpha) = \omega(\tr_{X/Y}(\alpha))$ for every $\alpha \in \cA_{X/Y}$.
-    If $\omega = 0$ then we can clearly let $\omega' = 0$, so we assume that $\omega \neq 0$.
-    We will use the following divisor, $W' := \pi^*(\di (\omega)) + R$, throughout the proof.
-    
-    We first prove two assertions about $\omega_1:= \omega\circ \tr_{X/Y} \colon \mathcal{A}_{X/Y} \rightarrow k$.
-    Namely, we show that
-        \begin{enumerate}[(i)]
-        \item For any $\alpha \in \mathcal{A}_{X/Y}(W') + K(X)$ then $\omega_1(\alpha) = 0$;
-        \item If $B'$ is a divisor on $X$ with $B' \nleq W'$ then there is a $\beta \in \mathcal{A}_{X/Y}(B')$ such that $\omega_1(\beta) \neq 0$.
-        \end{enumerate}
-    To show (i) we start by noting that since $\tr_{X/Y}$ and $\omega$ are $k$-linear, $\omega_1$ is too.
-    Also, note that since $\omega$ is zero on $K(Y)$ then $\omega_1$ is zero on $K(X)$.
-    To show that $\omega_1(\alpha) = 0$ for any $\alpha \in \mathcal{A}_{X/Y}(W')$ then it is sufficient to show that for any $Q\in Y$ and $P\in \pi^{-1}(Q)$ that
+    We start by noting that since $\tr_{X/Y}$ and $\omega$ are $k$-linear, $\psi$ is too.
+    Also, note that since $\omega$ is zero on $K(Y)$ then $\psi$ is zero on $K(X)$.
+    To show that $\psi(\alpha) = 0$ for any $\alpha \in \mathcal{A}_{X/Y}(W)$ then it is sufficient to show that for any $Q\in Y$ and $P\in \pi^{-1}(Q)$ that
         \[
         v_Q(\tr_{X/Y}(\alpha_P)) \geq -v_Q(\omega).
         \]
@@ -595,23 +587,29 @@ We now prove Theorem \ref{theoremdetailedhurwitz}.
     We choose $x\in K(Y)$ such that $v_Q(x) = v_Q(\omega)$.
     Then
         \begin{align}\label{remark}
-        & v_P(x \alpha_P) = v_P(x) + v_P(\alpha_P) \geq e_P v_P(\omega) - v_P(W') \nonumber \\
-        & = v_P(\pi^*((\omega)) - W') = -v_P(R) = -\delta_P. 
+        & v_P(x \alpha_P) = v_P(x) + v_P(\alpha_P) \geq e_P v_P(\omega) - v_P(W) \nonumber \\
+        & = v_P(\pi^*((\omega)) - W) = -v_P(R) = -\delta_P. 
         \end{align}
     By the definition of $C_Q$ and the ramification divisor, it is clear that $z\in C_Q$ if and only if $v_P(z)\geq -\delta_P$ for all $P\in \pi^{-1}(Q)$.
     It then follows from \eqref{remark} that $x \alpha_P$ is in $C_Q$ and hence that $v_Q(\tr_{X/Y}(x \alpha_P)) \geq 0$, by definition of $C_Q$.
     Since $\tr_{X/Y}(x \alpha_P) = x\cdot \tr_{X/Y}(\alpha_P)$ and $v_Q(x) = v_Q(\omega)$, we have shown the first claim.
-    
-    To show (ii) we let $Q_0\in Y$ be a point such that there is a $P^*\in \pi^{-1}(Q_0)$ with $v_{P^*}(\pi^*((\omega)) - B') < -\delta_P$.
-    We know that such a $Q_0$ exists since $B' \nleq W'$.
+    \end{proof}
+
+    \begin{lem}\label{lemmapart2}
+    We choose $W$ and $\psi$ as in Lemma \ref{lemmapart1}.
+    If $D$ is a divisor on $X$ with $D \nleq W$ then there exists a $\beta \in \cA_{X/Y}(D)$ such that $\psi(\beta) \neq 0$.
+    \end{lem}
+    \begin{proof}
+    We let $Q_0\in Y$ be a point such that there is a $P^*\in \pi^{-1}(Q_0)$ with $v_{P^*}(\pi^*((\omega)) - D) < -\delta_P$.
+    We know that such a $Q_0$ exists since $D \nleq W$.
     As before we will denote by $\cO_{Q_0}'$ the integral closure of $\cO_{Q_0}$ in $K(X)$.
     We let 
         \[
-        J := \{ z\in K(X) | v_{P^*}(z) \geq v_{P^*}(\pi^*(\di (\omega)) - B')\ \text{for all}\ P^*\in \pi^{-1}(Q_0)\}.
+        J := \{ z\in K(X) | v_{P^*}(z) \geq v_{P^*}(\pi^*(\di (\omega)) - D)\ \text{for all}\ P^*\in \pi^{-1}(Q_0)\}.
         \]
     By the approximation lemma, there exists a $u\in J$ such that 
         \[
-        v_{P^*}(u) = v_{P^*}(\pi^*(\di (\omega))-B')
+        v_{P^*}(u) = v_{P^*}(\pi^*(\di (\omega))-D)
         \]
     for all $P^*\in \pi^{-1}(Q_0)$, and hence $J\nsubseteq C_{Q_0}$.
     (As noted earlier, $z\in \cO_{X,Q}$ if and only if $v_P(z) \geq -\delta_P$).
@@ -641,12 +639,23 @@ We now prove Theorem \ref{theoremdetailedhurwitz}.
         \begin{align*}
         v_P(\beta) & =  -v_P(y) + v_P(z) \\
         & \geq  -v_P(\pi^*(\di (\omega))) + v_P(\pi^*(\di (\omega)) - \beta) \\
-        & =  -v_P(B'),
+        & =  -v_P(D),
         \end{align*}
     with the inequality following from the definition of $y$ and $J$.
-    Hence $\beta \in \mathcal{A}_{X/Y}(B')$.
+    Hence $\beta \in \mathcal{A}_{X/Y}(D)$.
     Now $\omega_1(\beta) = \omega(\tr_{X/Y}(\beta)) = \omega_Q(x) \neq 0$.
-    This shows (ii).
+    \end{proof}
+
+
+
+We now prove Theorem \ref{theoremdetailedhurwitz}.
+
+
+    \begin{proof}
+    We first construct a differential $\omega'\in H^0(X,\Omega_X)$ for every $\omega\in H^0(Y,\Omega_Y)$ such that $\omega'(\alpha) = \omega(\tr_{X/Y}(\alpha))$ for every $\alpha \in \cA_{X/Y}$.
+    If $\omega = 0$ then we can clearly let $\omega' = 0$, so we assume that $\omega \neq 0$.
+    We let $W' := \pi^*(\di (\omega)) + R$ $\omega_1:= \omega\circ \tr_{X/Y} \colon \mathcal{A}_{X/Y} \rightarrow k$.
+    
     
     By Lemma \ref{lemmaadelespace} for each $\alpha \in \mathcal{A}_X$ there exists some $\beta \in \mathcal{A}_{X/Y}$ and $\gamma \in \mathcal{A}_X(W')$ such that $\alpha = \beta + \gamma$.
     We now define a new differential $\omega_2 \colon  \mathcal{A}_X \rightarrow k$ by letting $\omega_2(\alpha) := \omega_1(\beta)$.
@@ -655,14 +664,14 @@ We now prove Theorem \ref{theoremdetailedhurwitz}.
         \[
         \beta - \beta' = \gamma' - \gamma \in \mathcal{A}_{X/Y} \cap \mathcal{A}_X(W') = \mathcal{A}_{X/Y}(W').
         \]
-    It then follows from (i) that 
+    It then follows from Lemma \ref{lemmapart1} that 
         \[
         \omega_1(\beta) - \omega_1(\beta') = \omega_1(\beta - \beta') = 0.
         \]
     and hence $\omega_2$ is well defined.
     It is also clear that $\omega_2$ is $k$-linear.
-    Also, by the first two points we proved, (i) and (ii), we have:
-        \begin{enumerate}[(i$'$)]
+    Also, by Lemma \ref{lemmapart1} and Lemma \ref{lemmapart2}, we have:
+        \begin{enumerate}[(i)]
         \item $\omega_2(\alpha) = 0$ for all $\alpha \in \mathcal{A}_X(W') + K(X)$.
         \item If $B'$ is a divisor on $X$ such that $B'\nleq W'$ then there is a $\beta \in \mathcal{A}_X(B')$ with $\omega_2(\beta) \neq 0$.
         \end{enumerate}
@@ -671,7 +680,7 @@ We now prove Theorem \ref{theoremdetailedhurwitz}.
     Now it follows that for $\alpha \in \mathcal{A}_{X/Y}$ we have $\omega_2(\alpha) = \omega_1(\alpha) = \omega(\tr_{X/Y}(\alpha))$.
     This means that we have found the $\omega'$ in the statement of the theorem; namely $\omega' = \omega_2$.
     
-    It is clear from (i$'$) and (ii$'$) that $\di(\omega') = W' = \pi^*(\di(\omega)) + R$.
+    It is clear from (i) and (ii) that $\di(\omega') = W' = \pi^*(\di(\omega)) + R$.
     
     We finally prove the uniqueness of $\omega'$.
     Suppose that $\omega''$ also satisfies 
