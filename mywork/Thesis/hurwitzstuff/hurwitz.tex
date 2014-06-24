@@ -522,7 +522,7 @@ We now define the \adele space of $X$ over $Y$.
     \end{defn}
 
 
-    \begin{defn}\label{detailedhurwitz}
+    \begin{defn}\label{theoremdetailedhurwitz}
     For every differential $\omega\in H^0(Y,\Omega_Y)$ there is a unique $\omega'\in H^0(X,\Omega_X)$ such that
         \[
         \omega'(\alpha) = \omega\left(\tr_{X/Y}(\alpha)\right)
@@ -530,36 +530,39 @@ We now define the \adele space of $X$ over $Y$.
     for all $\alpha \in {\mathcal A}_{X/Y}$.
     
     This differential is called the pullback of $\omega$, and is denoted $\pi^*(\omega)$. 
+    \end{defn}
+
+The following theorem gives a significant strengthening to the standard statement of the Riemann-Hurwitz formula, and gives a deeper understanding of the underlying mechanics.\todo{improve phrasing}
+    \begin{thm}
     If $\omega\neq 0$ and $(\omega)$ is the associated divisor, then 
         \[
         \di ( \pi^*(\omega)) = \pi^*(\di(\omega)) + R.
         \]
-    \end{defnthm}
+    \end{thm}
+
 We first note that this immediately implies the Riemann-Hurwitz formula.
 
-
-
-
     \begin{cor}\label{hur}[Riemann-Hurwitz Formula]
-    Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $f\colon X \rightarrow Y$, then
+    Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $\pi\colon X \rightarrow Y$, then
         \[
         2g_X - 2 = n(2g_Y -2) + \deg(R),
         \]
-    where $R$ is the ramification divisor of $f$.
+    where $R$ is the ramification divisor of $\pi$.
     \end{cor}
     \begin{proof}
-    This follows from Theorem \ref{detailedhurwitz} and Corollary \ref{dim=gc}, after taking degrees.
+    This follows from Theorem \ref{theoremdetailedhurwitz} and Corollary \ref{dim=gc}, after taking degrees.
     \end{proof}
 
 
-We first give a lemma that is necessary for the proof of the theorem.
+We now give a lemma that is necessary for the proof of Theorem \ref{theoremdetailedhurwitz}.
 
+% Stichtenoth  Lemma 3.4.9
 
-    \begin{lem}\label{adelespacelemma}
+    \begin{lem}\label{lemmaadelespace}
     For any divisor $D$ over $X$ we have $\mathcal {A}_X = \mathcal{A}_{X/Y} + \mathcal{A}_X(D)$.
     \end{lem}
     \begin{proof}
-    Let $\alpha \in \mathcal{A}_X$. Then by the approximation lemma there is an element $x_Q\in K(X)$ for each $Q\in Y$ such that 
+    Let $\alpha \in \mathcal{A}_X$. Then, by the approximation lemma, for each $Q\in Y$ there is an element $x_Q\in K(X)$ such that 
         \[
         v_P(\alpha_P - x_Q) \geq -v_P(D)
         \]
@@ -568,7 +571,8 @@ We first give a lemma that is necessary for the proof of the theorem.
     Then $\beta \in \mathcal{A}_{X/Y}$ and the difference $\alpha - \beta$ is in $\mathcal{A}_X(D)$ by definition of $\beta$.
     Hence $\alpha = \beta + (\alpha - \beta) \in \mathcal{A}_{X/Y} + \mathcal{A}_X(D)$.
     \end{proof}
-We now prove Theorem \ref{detailedhurwitz}.
+
+We now prove Theorem \ref{theoremdetailedhurwitz}.
 
     \begin{proof}
     We first construct a differential $\omega'\in H^0(X,\Omega_X)$ for every $\omega\in H^0(Y,\Omega_Y)$ such that $\omega'(\alpha) = \omega(\tr_{X/Y}(\alpha))$ for every $\alpha \in \cA_{X/Y}$.
@@ -644,7 +648,7 @@ We now prove Theorem \ref{detailedhurwitz}.
     Now $\omega_1(\beta) = \omega(\tr_{X/Y}(\beta)) = \omega_Q(x) \neq 0$.
     This shows (ii).
     
-    By Lemma \ref{adelespacelemma} for each $\alpha \in \mathcal{A}_X$ there exists some $\beta \in \mathcal{A}_{X/Y}$ and $\gamma \in \mathcal{A}_X(W')$ such that $\alpha = \beta + \gamma$.
+    By Lemma \ref{lemmaadelespace} for each $\alpha \in \mathcal{A}_X$ there exists some $\beta \in \mathcal{A}_{X/Y}$ and $\gamma \in \mathcal{A}_X(W')$ such that $\alpha = \beta + \gamma$.
     We now define a new differential $\omega_2 \colon  \mathcal{A}_X \rightarrow k$ by letting $\omega_2(\alpha) := \omega_1(\beta)$.
     Suppose we have two representations of $\alpha$, say $\beta+ \gamma$ and $\beta' + \gamma'$, where $\beta, \beta' \in \mathcal{A}_{X/Y}$ and $\gamma, \gamma' \in \mathcal{A}_{X}(W')$.
     Then 
@@ -676,7 +680,7 @@ We now prove Theorem \ref{detailedhurwitz}.
         \]
     for all $\alpha\in \cA_{X/Y}$.
     So if we let $\theta = \omega'' - \omega'$, then $\theta(\alpha) = 0$ for all $\alpha \in \cA_{X/Y}$.
-    But then if we choose a large enough divisor $D$ in Lemma \ref{adelespacelemma}, this implies that $\theta = 0$ and $\cA_X$, and hence $\omega' = \omega''$.
+    But then if we choose a large enough divisor $D$ in Lemma \ref{lemmaadelespace}, this implies that $\theta = 0$ and $\cA_X$, and hence $\omega' = \omega''$.
     \end{proof}
 
 
