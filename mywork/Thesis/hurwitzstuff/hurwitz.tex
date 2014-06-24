@@ -283,7 +283,7 @@ In order to do this we first define the complementary module and the ramificatio
 
     \begin{defn}
     Consider a point $P\in X$ in the pre-image of $Q\in Y$ under $\pi$.
-    By \cite[Prop. 3.1.4]{stichtenoth} there is an integer $e_P$ such that for any $x\in K(X)$ the equality $v_P(x) = e_P\cdot v_Q(x)$ holds.
+    By \cite[Prop. 3.1.4]{stichtenoth} there is an integer $e_P$ such that for any $x\in K(Y)$ the equality $v_P(x) = e_P\cdot v_Q(x)$ holds.
     This value is called the ramification index of $P$.
     If $e_P>1$ then we say that $\pi$ is ramified at $P$.
     \end{defn}
@@ -329,6 +329,7 @@ The following proposition lists a number of important properties of $C_Q$.
     \end{prop}
 
 However, before we can give a proof of this proposition, we require two lemmata.
+% Approximation lemma - page 12 Serre and Thm 1.3.1 Stichtenoth
 
     \begin{lem}[Approximation lemma]\label{lemmaapproximationlemma}
     Let $m$ be a positive integer. 
@@ -343,7 +344,7 @@ However, before we can give a proof of this proposition, we require two lemmata.
     \todo[inline]{Check proof for consistent notation}
 
     \begin{proof}
-    We first show that there exists an $x$ such that $v_{P_i}(x- x_i) \geq n_i = r_i +1$ for $i \in \{1, \ldots, n\}$.\todo{do we need to define n_i like this or is it clear}
+    We first show that there exists an $x$ such that $v_{P_i}(x- x_i) \geq n_i = r_i +1$ for $i \in \{1, \ldots, n\}$.\todo{do we need to define $n_i$ like this or is it clear}
     We let $R:= \cO_{X,P_1} \cap \ldots \cap \cO_{X,P_m}$, and we let $\mathcal{P}_i' := \mathcal{P}_i \cap R$.
     We first prove the lemma assuming that $x_i \in R$.
     We may increase the $n_i$ such that $n_i\geq 0$ for all $i$.
@@ -377,6 +378,8 @@ However, before we can give a proof of this proposition, we require two lemmata.
         \]  
     \end{proof}
 
+% Thm 3.2.10 Stichtenoth
+
     \begin{lem}\label{lemmapidlemma}
     Let $Q\in Y$, and let $\cO_{Y,Q}'$ be the integral closure of $\cO_{Y,Q}$ in $K(X)$.
     Then $\cO_{Y,Q}'$ is a principal ideal domain.
@@ -388,10 +391,12 @@ However, before we can give a proof of this proposition, we require two lemmata.
         \]  
     Let $I$ be an ideal of $\cO_{Y,Q}'$.
     If we let $\{P_1,\ldots, P_l\} = \pi^{-1}(Q)$ then we can choose $x_i \in I$ for $1\leq i \leq l$ such that $v_{P_i}(x_i) \leq v_{P_i}(y)$ for all $y\in I$.
-    By the Approximation Lemma there exist $z_i$ such that $v_P (z_i) = 0$ if $P=P_i$ and $v_{P_j}(z_i) > v_{P_j}(z_j)$ for $j\neq i$.
-    Now let $x = \sum_{i=1}^l x_iz_i \in I$.
-    Clearly $v_{P_i}(x) = v_{P_i}(x_i)$ for all $1\leq i\leq l$.
-    
+    By the Approximation Lemma there exist $z_i$ such that $v_P (z_i) = 0$ if $P=P_i$ and $v_{P_j}(z_i) > v_{P_j}(x_j)$ for $j\neq i$.
+    Now let $x = \sum_{i=1}^l x_iz_i$ and note that that $v_{P_i}(x) = v_{P_i}(x_i)$ for all $1\leq i\leq l$.
+    Then we claim that $I = x \cO_{Y,Q}'$.
+
+
+    The inclusion $x\cO_{Y,Q}' \subseteq I$ follows immediately from the observation that $x \in I$.
     Now we show that $I \subseteq x\cO_{Y,Q}'$.
     If $y\in I$ then we let $z = x^{-1}y$.
     Then $v_{P_i}(z) = v_{P_i}(y) - v_{P_i}(x_i) \geq 0$ for all $1\leq i\leq l$.
@@ -402,80 +407,81 @@ We now present a proof of Proposition \ref{propfactsaboutc'}.
 
     \begin{proof}
         \begin{enumerate}
-        \item It is clear that $C_Q$ is an $\cO_{X,Q}'$ module.
-        Indeed, if $y\in \cO_{X,Q}'$, then $y\cdot \cO_{X,Q}' \subseteq \cO_{X,Q}'$ and hence $\tr_{X/Y}(z y\cdot \cO_{X,Q}')\subseteq \tr_{X/Y}(z\cdot \cO_{X,Q}') \subseteq \cO_{X,Q}$ for any $z\in C_Q$.
-        The fact that $\cO_{X,Q}'$ is contained in $C_Q$ follows from Corollary \ref{traceinclosure}.
-        \item We first show that $C_Q \subseteq \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*$.
+        \item It is clear that $C_Q$ is an $\cO_{Y,Q}'$ module.
+        Indeed, if $y\in \cO_{Y,Q}'$, then $y\cdot \cO_{Y,Q}' \subseteq \cO_{Y,Q}'$ and hence $\tr_{X/Y}(z y\cdot \cO_{Y,Q}')\subseteq \tr_{X/Y}(z\cdot \cO_{Y,Q}') \subseteq \cO_{Y,Q}$ for any $z\in C_Q$.
+        The fact that $\cO_{Y,Q}'$ is contained in $C_Q$ follows from Corollary \ref{traceinclosure}.
+        \item We first show that $C_Q \subseteq \sum_{i=1}^n \cO_{Y,Q}\cdot z_i^*$.
         Suppose $z\in C_Q$.
-        Now $\{z_1^*, \ldots ,z_n^*\}$ is a basis of $K(X)$ over $K(Y)$, so there exist $x_1,\ldots , x_n\in K(Y)$ such that $z=\sum_{i=1}^n x_iz_i^*$.
-        As $z\in C_Q$ and $z_1,\ldots ,z_n\in \cO_{X,Q}'$, it follows by definition of $C_Q$ that $\tr_{X/Y}(zz_j)\in \cO_{X,Q}$ for $j\in \{1,\ldots ,n\}$.
+        Now $\{z_1^*, \ldots ,z_n^*\}$ is a basis of $K(X)$ over $K(Y)$, so there exist $x_1,\ldots , x_n\in K(Y)$ such that $z=\sum_{i=1}^n x_iz_i^*$.\todo{not a basis of $K(X)$ over $K(Y)$, but of the dual space - correct this}
+        As $z\in C_Q$ and $z_1,\ldots ,z_n\in \cO_{X,Q}'$, it follows by definition of $C_Q$ that $\tr_{X/Y}(zz_j)\in \cO_{Y,Q}$ for $j\in \{1,\ldots ,n\}$.
         We know that 
             \[
             \tr_{X/Y}(zz_j) = \tr_{X/Y}\left(\sum_{i=1}^nx_iz_iz_j^*\right) = \sum_{i=1}^nx_i \cdot \tr_{X/Y}(z_iz_j^*) = x_j,
             \]
         since $z_j^*$ is dual to $z_j$.
-        Hence each $x_j$ is in $\cO_{X,Q}$, and $z\in \sum_{i=1}^n\cO_{X,Q}\cdot z_i^*$.
+        Hence each $x_j$ is in $\cO_{Y,Q}$, and $z\in \sum_{i=1}^n\cO_{Y,Q}\cdot z_i^*$.
         
-        Now suppose that $z\in \sum_{i=1}^n\cO_{X,Q}\cdot z_i^*$ and $u\in \cO_{X,Q}'$.
-        Then we need to show that $\tr_{X/Y}(z u)\in \cO_{X,Q}$.
-        We can find $x_i, y_j\in \cO_{X,Q}$ such that $z=\sum_{i=1}^n x_iz_i^*$ and $u=\sum_{i=1}^ny_jz_j$.
+        Now suppose that $z\in \sum_{i=1}^n\cO_{Y,Q}\cdot z_i^*$ and $u\in \cO_{Y,Q}'$.
+        Then we need to show that $\tr_{X/Y}(z u)\in \cO_{Y,Q}$.
+        We can find $x_i, y_j\in \cO_{Y,Q}$ such that $z=\sum_{i=1}^n x_iz_i^*$ and $u=\sum_{i=1}^ny_jz_j$.
         Then
             \[
             \tr_{X/Y}(zu) = \tr_{X/Y}\left(\sum_{i,j=1}^n \left(x_iy_jz_i^*z_j\right)\right) = \sum_{i,j=1}^n x_iy_j\cdot \tr_{X/Y}(z_i^*z_j) = \sum_{i=1}^n x_iy_i.
             \]
-        Since $\sum_{i=1}^n x_iy_i\in \cO_{X,Q}$, it follows that $z\in C_Q$.
-        \item By the previous part, we can find $u_i\in K(X)$ such that $C_Q = \sum_{i=1}^n \cO_{X,Q} \cdot u_i$.
+        Since $\sum_{i=1}^n x_iy_i\in \cO_{Y,Q}$, it follows that $z\in C_Q$.
+            
+        \item By part 2 we can find $u_i\in K(X)$ such that $C_Q = \sum_{i=1}^n \cO_{Y,Q} \cdot u_i$.\todo{should have "*"s?}
         Choose some $x\in K(Y)$ such that $v_Q(x)\geq 0$ and also $v_Q(x)\geq -v_P(u_i)$ for all $P\in \pi^{-1}(Q)$ and $i\in \{1,\ldots ,n\}$.
         By definition of $e_P$ it follows that
             \[ 
             v_P(xu_i) = e_Pv_Q(x) + v_P(u_i) \geq 0
             \]
         for all $i\in \{1,\ldots, n\}$ and all $P\in \pi^{-1}(Q)$.
-        Since $\cO'_Q = \cap_{P\mapsto Q} \cO_{X,P}$ (see, for example, \cite[Cor. 3.3.5]{stichtenoth}), then $x\cdot C_Q \subseteq \cO_{X,Q}'$.
-        Since $\cO_{X,Q}'$ is a principal ideal domain by Lemma \ref{lemmapidlemma}, it follows that $x\cdot C_Q = y\cdot \cO_{X,Q}'$ for some $y\in \cO_{X,Q}'$.
-        If we let $t=x^{-1}y$ then $C_Q =t\cdot \cO_{X,Q}'$, proving the first part of the statement.
+        Since $\cO'_{Y,Q} = \cap_{P\mapsto Q} \cO_{X,P}$ (see, for example, \cite[Cor. 3.3.5]{stichtenoth}), then $x\cdot C_Q \subseteq \cO_{Y,Q}'$.
+        Since $\cO_{Y,Q}'$ is a principal ideal domain by Lemma \ref{lemmapidlemma}, it follows that $x\cdot C_Q = y\cdot \cO_{Y,Q}'$ for some $y\in \cO_{Y,Q}'$.
+        If we let $t=x^{-1}y$ then $C_Q =t\cdot \cO_{Y,Q}'$, proving the first part of the statement.
         
         
         
-        Since $\cO_{X,Q}'\subseteq C_Q$ then $v_P(t)\leq 0$ for all $P\in \pi^{-1}(Q)$.
-        Now $t\cdot \cO_{X,Q}' = t'\cdot \cO_{X,Q}'$ if and only if both $tt'^{-1}$ and $t^{-1}t'$ are in $\cO_{X,Q}'$.
+        Since $\cO_{Y,Q}'\subseteq C_Q$ then $v_P(t)\leq 0$ for all $P\in \pi^{-1}(Q)$.
+        Now $t\cdot \cO_{Y,Q}' = t'\cdot \cO_{Y,Q}'$ if and only if both $tt'^{-1}$ and $t^{-1}t'$ are in $\cO_{Y,Q}'$.
         But this is the case if and only $v_P(tt'^{-1}) \geq 0$ and $v_P(t^{-1}t')\geq 0$ for all $P\in \pi^{-1}(Q)$, which is equivalent to $v_P(t)=v_P(t')$ for all such $P$.
         \end{enumerate}
     \end{proof}
 
     \begin{prop}\label{almostallqiny}
-    For almost all $Q\in Y$ we have $C_Q= \cO_{X,Q}'$.
+    For almost all $Q\in Y$ we have $C_Q= \cO_{Y,Q}'$.
     \end{prop}
     \begin{proof}
-    We first show that, given a basis of $K(X)$ over $K(Y)$, it is almost always integral over $\cO_{X,Q}$ given $Q\in Y$.
-    Recall that $\cO_{X,Q}$ is integrally closed in $K(Y)$, and its quotient field is $K(Y)$.
-    As before, we denote by $\cO_{X,Q}'$ the integral closure of $\cO_{X,Q}$ in $K(X)$, and we consider a basis $\{z_1,\ldots ,z_n\}$ of $K(X)$ over $K(Y)$.
-    Let $\{z_1^*,\ldots ,z_n^*\}$ be the dual basis.
-    Now the minimal polynomials of $z_1,\ldots, z_n,z_1^*,\ldots z_n^*$ have finitely many coefficients in $K(Y)$.
-    Hence if $S\subseteq Y$ is the set of poles of these coefficients, then $S$ is finite and for $Q\notin S$ then we have
+    We first show that, given a basis of $K(X)$ over $K(Y)$, it is almost always integral over $\cO_{Y,Q}$ given $Q\in Y$.
+    Recall that $\cO_{Y,Q}$ is integrally closed in $K(Y)$, and its quotient field is $K(Y)$.
+    We consider a basis $z_1,\ldots ,z_n$ of $K(X)$ over $K(Y)$ and we let $z_1^*,\ldots ,z_n^*$ be the dual basis.
+    Now the minimal polynomials of $z_1,\ldots, z_n,z_1^*,\ldots, z_n^*$ have finitely many coefficients in $K(Y)$.
+    Hence if $S\subseteq Y$ is the set of poles of these coefficients, then $S$ is finite and for $Q\notin S$ then 
         \[
-        z_1,\ldots,z_n,z_1^*,\ldots, z_n^*\in \cO_{X,Q}'.
+        z_1,\ldots,z_n,z_1^*,\ldots, z_n^*\in \cO_{Y,Q}'.
         \]
     
-    Now we assume that $\{z_1,\ldots ,z_n,z_1^*,\ldots z_n^*\}\subseteq \cO_{X,Q}'$ and then we show that 
+    Now we fix $Q \notin S$ and assume that $\{z_1,\ldots ,z_n,z_1^*,\ldots, z_n^*\}\subseteq \cO_{Y,Q}'$. 
+    Then we show that 
         \[
-        \cO_{X,Q}' \subseteq \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*.
+        \cO_{Y,Q}' \subseteq \sum_{i=1}^n \cO_{Y,Q}\cdot z_i^*.
         \]
     
     If $z\in K(X)$ then there are $e_1,\ldots, e_n\in K(Y)$ such that $z=e_1z_1^*+\ldots +e_nz_n^*$.
-    If $z\in \cO_{X,Q}'$ then $zz_j\in \cO_{X,Q}'$ for $1\leq j\leq n$, and hence $\tr_{X/Y}(zz_j)\in \cO_{X,Q}$, by Corollary \ref{traceinclosure}.
-    As
+    If $z\in \cO_{Y,Q}'$ then $zz_j\in \cO_{Y,Q}'$ for $1\leq j\leq n$, and hence $\tr_{X/Y}(zz_j)\in \cO_{Y,Q}$, by Corollary \ref{traceinclosure}.
+    Since
         \[
         \tr_{X/Y}(zz_j) = \tr_{X/Y}\left(\sum_{i=1}^n e_iz_jz_i^*\right) = \sum_{i=1}^ne_i\cdot \tr_{X/Y}(z_jz_i^*) = e_j.
         \]
-    Hence $e_j\in \cO_{X,Q}$, and $\cO_{X,Q}'\subseteq \sum_{i=1}^n\cO_{X,Q}\cdot z_i^*$.
-    Since $\{z_1,\ldots, z_n\}$ also forms a basis we can run the same argument again to show that $\cO_{X,Q}'\subseteq \sum_{i=1}^n\cO_{X,Q}\cdot z_i$.
+    then $e_j\in \cO_{Y,Q}$, and hence $\cO_{Y,Q}'\subseteq \sum_{i=1}^n\cO_{Y,Q}\cdot z_i^*$.
+    Since $z_1,\ldots, z_n$ also forms a basis we can run the same argument again to show that $\cO_{Y,Q}'\subseteq \sum_{i=1}^n\cO_{Y,Q}\cdot z_i$.
     
     We then have the following set of inequalities:
         \[
-        \sum_{i=1}^n \cO_{X,Q}\cdot z_i \subseteq \cO_{X,Q}' \subseteq \sum_{i=1}^n\cO_{X,Q}\cdot z_i^* \subseteq \cO_{X,Q}'\subseteq \sum_{i=1}^n \cO_{X,Q}\cdot z_i.
+        \sum_{i=1}^n \cO_{Y,Q}\cdot z_i \subseteq \cO_{Y,Q}' \subseteq \sum_{i=1}^n\cO_{Y,Q}\cdot z_i^* \subseteq \cO_{Y,Q}'\subseteq \sum_{i=1}^n \cO_{Y,Q}\cdot z_i.
         \]
-    Since $C_Q = \sum_{i=1}^n \cO_{X,Q}\cdot z_i^*$ by part 2 of Proposition \ref{propfactsaboutc'}, the result follows.
+        Since $C_Q = \sum_{i=1}^n \cO_{Y,Q}\cdot z_i^*$ by part 2 of Proposition \ref{propfactsaboutc'}, the result follows.
     \end{proof}
 
 We can now define the ramification divisor.
@@ -516,14 +522,14 @@ We now define the \adele space of $X$ over $Y$.
     \end{defn}
 
 
-    \begin{defnthm}\label{detailedhurwitz}
+    \begin{defn}\label{detailedhurwitz}
     For every differential $\omega\in H^0(Y,\Omega_Y)$ there is a unique $\omega'\in H^0(X,\Omega_X)$ such that
         \[
         \omega'(\alpha) = \omega\left(\tr_{X/Y}(\alpha)\right)
         \]
     for all $\alpha \in {\mathcal A}_{X/Y}$.
     
-    This differential is called the \text{ pullback} of $\omega$, and is denoted $\pi^*(\omega)$. 
+    This differential is called the pullback of $\omega$, and is denoted $\pi^*(\omega)$. 
     If $\omega\neq 0$ and $(\omega)$ is the associated divisor, then 
         \[
         \di ( \pi^*(\omega)) = \pi^*(\di(\omega)) + R.
