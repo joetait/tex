@@ -3,24 +3,24 @@
 
 
 
-For the rest of the report, unless otherwise stated, we assume that $X$ is a connected smooth projective algebraic curve over an algebraically closed field $k$ of characteristic $p \geq 0$.
+Throughout this chapter, unless otherwise stated, we assume that $X$ is a connected, smooth, projective algebraic curve over an algebraically closed field $k$ of characteristic $p \geq 0$.
 We furthermore assume that $G$ is a finite group of order $n$ that acts faithfully on $X$.
 Note that $G$ also induces an action on the vector space $H^0(X,\Omega_X^{\otimes m})$ of global holomorphic poly-differentials of order $m$.
 We let $Y$ denote the quotient curve $X/G$, and we let $\pi:X\rightarrow Y$ be the canonical projection.
-Finally, as before, we denote by $g_X$ and $g_Y$ the genus of $X$ and $Y$ respectively, and we let $K_X$ and $K_Y$ be canonical divisors on $X$ and $Y$.
+Finally, we denote by $g_X$ and $g_Y$ the genus of $X$ and $Y$ respectively, and we let $K_X$ and $K_Y$ be canonical divisors on $X$ and $Y$.\todo{put comment in previous section regarding divisors}
 
 
 In this section we compute the dimension of $H^0(X,\Omega_X^{\otimes m})$ and of $H^0(X,\Omega_X^{\otimes m})^G$, the subspace of $H^0(X,\Omega_X^{\otimes m})$ fixed by $G$.
 
 
-We briefly describe an alternative, but equivalent, definition of the ramification divisor, which we will use later.
-In the tamely ramified case we will define it to have coefficients $e_P-1$, but to extend this to the wildly ramified case we will need the following the definition of higher ramification groups.
+We briefly describe an alternative, but equivalent, definition of the ramification divisor (Definition \ref{definitionramificationdivisor}), which we will use later.
+In the tamely ramified case then the ramification divisor is $R = \sum_{P \in X}e_P-1 [P]$, but to extend this to the wildly ramified case we will need the following the definition of higher ramification groups.
 
 
     \begin{defn}
     Let $G:=\gal(X/Y)$ and let $t$ be a uniformising parameter at $P\in X$.
-    Then for $i\geq -1$ we define the $i^{th}$ ramification group at $P$, denoted $G_i(P)$, to be the sub-group of $s\in G$ such that $\ord_P(s(t)-t)\geq i+1$.
-    This is	independent of the choice of $t$, as shown in \cite[Chap. IV, \S 1, pg. 62]{localfields}.
+    Then for $i\geq -1$ we define the $i^{th}$ ramification group at $P$, denoted $G_i(P)$, to be the subgroup of $s\in G$ such that $i_G(s) := \ord_P(s(t)-t)$ is at least $i+1$.
+    This is	independent of the choice of $t$, see \cite[Chap. IV, \S 1, pg. 62]{localfields}.
     \end{defn}
 
 Note that for any $P\in X$ we have that $G_{-1}(P)=G$, if $i$ is sufficiently large then $G_i(P)$ is trivial and $G_i(P)\supseteq G_{i+1}(P)$.
@@ -29,13 +29,12 @@ In particular, $\pi$ is tamely ramified at $P$ if and only if $G_1(P)$ is the tr
 More details can be found in \cite[Chap. IV, \S 1]{localfields}.%Citation is slightly ambiguous, but only references four pages, so is okay.
 
 Note that $e_P = \ord (G_0(P))$ for any $P \in X$.
-Also, for any $Q \in Y$ we write $\delta_Q$ for $\delta_P$ and $e_Q$ for $e_P$, where $P\ \in \pi^{-1}(Q)$.
-We now state Hilbert's formula, relating our definition of the ramification divisor in section \ref{Chapter:hurwitzformula} to the ramification groups.
+Also, for any $Q \in Y$ we write $\delta_Q$ for $\delta_P$ and $e_Q$ for $e_P$, where $P\ \in \pi^{-1}(Q)$.\todo{explain why this is well defined}
+We now state Hilbert's formula, relating our definition of the ramification divisor in Chapter \ref{Chapter:hurwitzformula} (see Definition \ref{definitionramificationdivisor}) to the ramification groups, making future computations easier.
 
 
     \begin{thm}[Hilbert's Formula]\label{hilbertsformula}
-    Suppose that $P\in X$ and that $t$ is a uniformising parameter in $\cO_{P}(X)$.
-    Then we define $i_G(s):=\ord_{P}(s(t)-t)$ for each $s\in G$.
+    Suppose that $P\in X$ and that $t$ is a uniformising parameter in $\cO_{X,P}$.
     Then we have
         \begin{equation}
         \delta_P = \sum_{s\neq e}i_G(s)=\sum_{j=0}^{\infty}\left(\ord(G_i(P))-1\right),\label{ramdiv}
@@ -46,13 +45,8 @@ We now state Hilbert's formula, relating our definition of the ramification divi
     For the sake of brevity we do not prove these statements here. See \cite[Chap. IV, \S 1, Prop. 4]{localfields} for a proof of Hilbert's formula.
     \end{proof}
 
-We will use this for various calculations involving the ramification divisor.
-
-
 By Corollary \ref{dim=gc} we have $\dim_kH^0(X,\Omega_X)=g_X$.
 If $m\geq 2$, we have the following formula for $\dim_kH^0(X,\Omega_X^{\otimes m})$.
-
-
 
     \begin{lem}\label{dim3}
     Let $m\geq 2$. Then
@@ -68,17 +62,17 @@ If $m\geq 2$, we have the following formula for $\dim_kH^0(X,\Omega_X^{\otimes m
     \begin{proof}
     The trivial cases of $g_X =0$ and $g_X=1$ are explicitly explained in examples (a) and (b) in section \ref{examplessection}.
     
-    If $g_X\geq 2$ then $\deg(K_X)\geq1$, so $\deg(mK_X)>\deg(K_X)$, and then by the Riemann-Roch theorem, Theorem \ref{theoremriemannroch}, we see that 
+    If $g_X\geq 2$ then $\deg(K_X)\geq1$, so $\deg(mK_X)>\deg(K_X)$.
+    Since $H^0(X,\Omega_X^{\otimes m}) \cong H^0(X,\Omega_X(mK_X))$ it then follows from the Riemann-Roch theorem (Theorem \ref{theoremriemannroch}) that
         \[
-        \dim_kH^0(X,\Omega_X^{\otimes m})=\deg(mK_X)+1-g_X=(2m-1)(g_X-1),
+        \dim_kH^0(X,\Omega_X^{\otimes m})=\deg(mK_X)+1-g_X=(2m-1)(g_X-1).
         \]
-    since $H^0(X,\Omega_X^{\otimes m}) \cong H^0(X,\Omega_X(mK_X))$.
     \end{proof}
 
 We now introduce some notations. 
-Let $D=\sum_{P\in X}n_P[P]$ be a $G$-invariant divisor on $X$, \ie $n_{\sigma(P)} = n_P$ for all $\sigma \in G$ and $P\in X$, and let $\cO_X(D)$ denote the corresponding equivariant invertible $\cO_X$-module, as usual. 
-Furthermore let $\pi_*^G(\cO_X(D))$ denote the sub-sheaf of the direct image $\pi_*(\cO_X(D))$ fixed by the obvious action of $G$ on $\pi_*(\cO_X(D))$ and let $\left\lfloor \frac{\pi_*(D)}{n}
-\right \rfloor$ denote the divisor on $Y$ obtained from the push-forward $\pi_*(D)$ by replacing the coefficient $m_Q$ of $Q$ in $\pi_*(D)$ with the integral part $\left \lfloor \frac{m_Q}{n} \right \rfloor$ of $\frac{m_Q}{n}$ for every $Q \in Y$. 
+Let $D=\sum_{P\in X}n_P[P]$ be a $G$-invariant divisor on $X$ (\ie $n_{\sigma(P)} = n_P$ for all $\sigma \in G$ and $P\in X$) and let $\cO_X(D)$ denote the corresponding equivariant invertible $\cO_X$-module. 
+Furthermore, let $\pi_*^G(\cO_X(D))$ denote the sub-sheaf of the direct image $\pi_*(\cO_X(D))$ fixed by the obvious action of $G$ on $\pi_*(\cO_X(D))$.
+We also let $\left\lfloor \frac{\pi_*(D)}{n} \right \rfloor$ denote the divisor on $Y$ obtained from the push-forward $\pi_*(D)$ by replacing the coefficient $m_Q$ of $Q$ in $\pi_*(D)$ with the integral part $\left \lfloor \frac{m_Q}{n} \right \rfloor$ of $\frac{m_Q}{n}$ for each $Q \in Y$. 
 The function fields of $X$ and~$Y$ are denoted by $K(X)$ and $K(Y)$ respectively. 
 Finally, for any $P \in X$ let $\ord_P$ and $\ord_Q$ denote the respective valuations of $K(X)$ and $K(Y)$ at $P$ and $Q:=\pi(P)$.
 
@@ -90,15 +84,15 @@ The next lemma is the main idea in the proof of our formula for $\dim_kH^0(X,\Om
 
     \begin{lem}
     Let $D=\sum_{P\in X}n_P[P]$ be a $G$-invariant divisor on $X$.
-    Then the sheaves $\pi_*^G(\cO_X(D))$ and $\cO_Y\left(\left\lfloor \frac{\pi_*(D)}{n}\right \rfloor\right)$ are equal as sub-sheaves of the constant sheaf $K(Y)$ on $Y$. 
-    In particular the sheaf $\pi_*^G(\cO_X(D))$ is an invertible $\cO_Y$-module.
+    Then the sheaves $\pi_*^G(\cO_X(D))$ and $\cO_Y\left(\left\lfloor \frac{\pi_*(D)}{n}\right \rfloor\right)$ are equal as subsheaves of the constant sheaf $K(Y)$ on $Y$. 
+    In particular, the sheaf $\pi_*^G(\cO_X(D))$ is an invertible $\cO_Y$-module.
     \end{lem}
     \begin{proof}
     For every open subset $V$ of $Y$ we have 
         \[
         \pi_*^G(\cO_X(D))(V) = \cO_X(D) (\pi^{-1}(V))^G \subseteq K(X)^G = K(Y).
         \]
-    In particular both sheaves are sub-sheaves of the constant sheaf $K(Y)$ as stated. 
+    In particular, both sheaves are subsheaves of the constant sheaf $K(Y)$ as stated. 
     It therefore suffices to check that their stalks are equal. 
     For any $Q \in Y$ and $P \in \pi^{-1}(Q)$.
     We have
@@ -118,17 +112,19 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
 
     \begin{prop}\label{dim}
     Let $m\geq 1$. Then the dimension of $H^0(X,\Omega_X^{\otimes m})^G$ is equal to
-        \begin{equation*}
-            \begin{cases}
-            g_Y & \mbox{if } m=1 \mbox{ and } \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor = 0, \\
-            \\
-            g_Y = 1 & \mbox{if } g_Y=1 \mbox{ and } \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor = 0, \\ 
-            \\
-            g_Y = 0 & \mbox{if } g_Y=0 \mbox{ and } \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor < 2m-1, \\
-            \\
-            (2m-1)(g_Y-1) + \deg\left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor & \mbox{otherwise}.
-            \end{cases}
-        \end{equation*}
+        \[
+        \dim_k \left( H^0(X,\Omega_X^{\otimes m})^G \right) = (2m-1)(g_Y-1) + \deg\left\lfloor\frac{m\pi_*(R)}{n},
+        \]  
+    unless one of the following conditions holds:
+        \begin{itemize}
+        \item $m=1 \mbox{ and } \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor = 0$ or
+        \item $g_Y=1 \mbox{ and } \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor = 0$ or
+        \item  $g_Y=0 \mbox{ and } \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor < 2m-1$,
+        \end{itemize}
+    in which case 
+        \[
+        \dim_k \left( H^0(X,\Omega_X^{\otimes m})^G \right) = g_Y.
+        \]      
     \end{prop}
     \begin{proof}
     Let $E$ denote the divisor $\left\lfloor \frac{\pi_*(mK_X)}{n} \right\rfloor$ on $Y$. As $K_X=\pi^*(K_Y)+R$ we have
@@ -151,7 +147,7 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
         \end{equation*}
     
     
-    In the second case again $\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor$ is the zero divisor. 
+    In the second case $\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor$ is again the zero divisor. 
     Furthermore, as $g_Y=1$, the divisor $K_Y$ is equivalent to the zero divisor, and hence $mK_Y$ is too. 
     This means that
         \begin{equation*}
@@ -166,24 +162,27 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
     
     
     
-    We will show below that in all other cases $\deg(E) > \deg(K_Y)$, and then the Riemann-Roch formula, Theorem \ref{theoremriemannroch}, will give 
+    We will show below that in all other cases $\deg(E) > \deg(K_Y)$, and then the Riemann-Roch formula (Theorem \ref{theoremriemannroch}) will give 
         \begin{align*}
         \lefteqn{\dim_kH^0(X,\Omega_X^{\otimes m})^G = \dim_kH^0\left(Y,\cO_Y\left( E \right)\right)} \\
         & =  1-g_Y+\deg\left(mK_Y+\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor\right) \\
         & =  (2m-1)(g_Y-1)+\deg\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor,
         \end{align*}
-    completing the proof.
+    completing the proof for this case.
     
     
     All that remains is to show that $\deg(E)>\deg(K_Y)$ in all other cases.
-    Firstly, if $g_Y=0$ and $\deg \left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor \geq 2m-1$ then, as $\deg(mK_Y)=-2m$, we have $\deg \left( E \right) \geq -1 >-2 = \deg(K_Y)$.
+    Firstly, if $g_Y=0$ and $\deg \left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor \geq 2m-1$ then, since $\deg(mK_Y)=-2m$, we have 
+        \[
+        \deg \left( E \right) \geq -1 >-2 = \deg(K_Y).
+        \]
     Similarly, if $g_Y=1$ and $\deg \left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor >0$ then, as $\deg \left( mK_Y \right)=0$, we have $\deg \left( E \right) > 0 = \deg (K_Y)$.
     If $m=1$ and $\deg \left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor >0$ then clearly $\deg \left( E \right) > \deg (K_Y)$.
     Lastly, if $m\geq 2$ and $g_Y\geq 2$ then $\deg (K_Y) > 0$ and we have 
         \begin{equation*}
         \deg \left( E \right) \geq \deg\left( mK_Y \right) > \deg (K_Y).
         \end{equation*}
-    So in all other cases we have $\deg(E)>\deg(K_Y)$, and the proof is complete.
+    So in all other cases $\deg(E)>\deg(K_Y)$, and the proof is complete.
     \end{proof}
 
 
@@ -215,8 +214,7 @@ For the next corollary we recall the notations $e_Q$ and $\delta_Q$ for any $Q\i
     \end{proof}
 
     \begin{rem}
-    Note that if $p>0$ and $G$ is cyclic then Corollary \ref{dim2} can be derived from Proposition $6$ in the recent pre-print
-    \cite{kako} by Karanikolopoulos and Kontogeorgis.
+    Note that if $p>0$ and $G$ is cyclic then Corollary \ref{dim2} can be derived from Proposition $6$ in the recent pre-print \cite{kako} by Karanikolopoulos and Kontogeorgis.\tod{check to see if preprint is now published}
     \end{rem}
 
 
@@ -330,7 +328,7 @@ We also assume that $g_X \geq 2$.
     
     Furthermore, we have
         \begin{equation}\label{altdim}
-        \deg\left\lfloor \frac{m\pi_*(R)}{p} \right\rfloor = \sum_{i=1}^r\left\lfloor \frac{m(N_i+1)(p-1)}{p} \right\rfloor  = mM + \sum_{i=1}^r\left\lfloor \frac{-m(N_i+1)}{p} \right\rfloor
+        \deg\left\lfloor \frac{m\pi_*(R)}{p} \right\rfloor = \sum_{i=1}^r\left\lfloor \frac{m(N_i+1)(p-1)}{p} \right\rfloor  = mM + \sum_{i=1}^r\left\lfloor \frac{-m(N_i+1)}{p} \right\rfloor.
         \end{equation}
     If we have $p=g_X=m=2$, then on the one hand we see that $\dim_kH^0(X,\Omega_X^{\otimes m}) =3$. 
     On the other hand, we first note that \eqref{simplehur} implies $M=6$.
@@ -348,7 +346,7 @@ We also assume that $g_X \geq 2$.
     Now we assume that the action is trivial. This first implies that 
     $\deg \left\lfloor\frac{m\pi_*(R)}{p}\right\rfloor \geq 2m-1$ because otherwise we would 
     have $\dim_kH^0(X,\Omega_X^{\otimes m})^G=0$ by Proposition \ref{dim}, but we know that 
-    $\dim_kH^0(X,\Omega_X^{\otimes m})=(2m-1)(g_X-1)$ is strictly positive. 
+    $\dim_kH^0(X,\Omega_X^{\otimes m})=(2m-1)(g_X-1)$ is strictly positive.\todo{rewrite sentence}
     So, using \eqref{altdim}, \eqref{altdim2} and Proposition \ref{dim} we see that
         \begin{align}\label{bound}
         \lefteqn{(2m-1)\frac{M(p-1)-2p}{2} = \dim_kH^0(X,\Omega_X^{\otimes m})} \nonumber\\
@@ -361,7 +359,7 @@ We also assume that $g_X \geq 2$.
     After multiplying by $2p$ and rearranging we obtain
         \begin{align}\label{times2p}
         0 & \geq  (2mM-M-4m+2)p^2+(-4mM+M-2+4m)p+2mM \nonumber \\
-        & =  (M-2)(2m-1)p^2-((M-2)(2m-1)+2mM)p+2mM \nonumber \\
+            & =  (M-2)(2m-1)p^2-((M-2)(2m-1)+2mM)p+2mM \nonumber \\
         & =  (p-1)((M-2)(2m-1)p-2mM).
         \end{align}
     
@@ -393,13 +391,13 @@ We also assume that $g_X \geq 2$.
     This completes the only if direction of the proof when $l=p$.
     
     Now if $l\neq p$ then we know that all the coefficients $\delta_i$ of the ramification divisor are equal to $l-1$. 
-    To show the if direction in this case, first note that from Lemma~\ref{dim3} we see that $\dim_kH^0(X,\Omega_X^{\otimes m})=3$. 
-    On the other hand, the Riemann-Hurwitz formula, Corollary \ref{hur}, implies that $2 = 2g_X-2=-2l+\deg(R)=-2l+r(l-1)$, and hence that $r=6$. 
+    To show the if direction in this case, first note that $\dim_kH^0(X,\Omega_X^{\otimes m})=3$ by Lemma~\ref{dim3}. 
+    On the other hand, the Riemann-Hurwitz formula (Corollary \ref{hur}) implies that $2 = 2g_X-2=-2l+\deg(R)=-2l+r(l-1)$, and hence that $r=6$. 
     Finally Proposition \ref{dim} gives us
         \begin{equation*}
         \dim_kH^0(X,\Omega_X^{\otimes m})^G = -(2m-1) + \sum_{i=1}^r \left\lfloor \frac{m\cdot \delta_i}{l} \right\rfloor
         = -3 +\sum_{i=1}^6 \left\lfloor \frac{m(l-1)}{l} \right\rfloor
-        = 3
+        = 3,
         \end{equation*}
     since $m=l=2$.
     As the dimensions of $H^0(X,\Omega_X^{\otimes m})$ and $H^0(X,\Omega_X^{\otimes m})^G$ are equal, the action is trivial.
@@ -424,17 +422,17 @@ We also assume that $g_X \geq 2$.
         \begin{equation}\label{eq:mult}
         (2m-1)g_X=r(m-q-1).
         \end{equation}
-    If we multiply (\ref{eq:mult}) by $l-1$ and then substitute in for the $r(l-1)$ term in the Riemann-Hurwitz formula, Corollary \ref{hur}, we get
+    If we multiply (\ref{eq:mult}) by $l-1$ and then substitute in for the $r(l-1)$ term in the Riemann-Hurwitz formula (Corollary \ref{hur}) we get
         \begin{equation*}
         (2m-1)(l-1)g_X=(2g_X+2(l-1))(m-q-1).
         \end{equation*}
     By rearranging we are able to compute $g_X$ in terms of $m,l$ and $q$:
-        \begin{align*}
-        \lefteqn{g_X = \frac{2(l-1)(m-q-1)}{(2m-1)(l-1)-2(m-q-1)}} \\
-        & =  1 + \frac{2(m-q-1)-(2q+1)(l-1)}{(2m-1)(l-1)-2(m-q-1)} \\
-        & =  1 + \frac{2s-1-l}{(2m-1)(l-1)-2(m-q-1)}  \\
+        \begin{align}\label{equationgxintermsofmandlandq}
+        \lefteqn{g_X = \frac{2(l-1)(m-q-1)}{(2m-1)(l-1)-2(m-q-1)}} \nonumber \\
+        & =  1 + \frac{2(m-q-1)-(2q+1)(l-1)}{(2m-1)(l-1)-2(m-q-1)}  \nonumber\\
+        & =  1 + \frac{2s-1-l}{(2m-1)(l-1)-2(m-q-1)} \nonumber  \\
         & =  1 + \frac{2(s-1)+1-l}{(2m-1-2q)(l-1)-2(s-1)}. 
-        \end{align*}
+        \end{align}
     First, we show that if $l\geq 3$ the equation cannot hold whilst $g_X\geq 2$.
     Observe that the denominator is strictly greater than $l-1$, remembering that $m=ql+s$:
         \begin{align*}
@@ -445,14 +443,14 @@ We also assume that $g_X \geq 2$.
         \end{align*}
     here the two inequalities are equalities if and only if $q=0$ and $s=1$, respectively, and, as $m\geq 2$, not both inequalities can be equalities.
     Now the numerator is at most $l-1$, occurring when $s=l$. 
-    Hence if $l\geq 3$ the fraction will be less than one and $g_X < 2$, contradicting our assumption.
+    Hence if $l\geq 3$ the fraction in \eqref{equationgxintermsofmandlandq} will be less than one and $g_X < 2$, contradicting our assumption.
     If $l=2$, then $s$ is either 1 or 2.
     If $s=1$ the fraction is negative, and $g_X<1$, which again contradicts our assumption.
     Finally, if $s=2$ then $g_X\leq 2$, with equality if and only if $q=0$, \ie~if and only if $m=2$.
     So if $g_X \geq 2$ then the action being trivial implies that $g_X=l=m=2$, and the proof is complete.    
     \end{proof}
 
-For the rest of this section we assume that $p>0$ and that $G$ is a cyclic group of order $p^l$ for some $l$.
+For the rest of this section we assume that $p>0$ and that $G$ is a cyclic group of order $p^l$ for some $l \in \NN$.
 What we are now going to do will not be used in the proof of the main theorem, but is included because it generalises the previous results.
 More precisely, we do not restrict ourselves to looking at $H^0(X,\Omega_X^{\otimes m})$, but using a comparatively deep result from \cite{kako} we study $H^0(X,\cO(D))$ for any $G$-invariant divisor $D$ such that $\deg(D)>2g_X-2$.
 
@@ -476,7 +474,7 @@ Also, for any $Q\in Y$ let $n_Q$ be equal to $n_P$ for any $P\in \pi^{-1}(Q)$.
     \begin{proof}
     We first remind the reader of the notation in \cite{kako}.
     Let $\sigma$ be a generator of $G$.
-    Let $V$ be the $k[G]$ module with $k$-basis $e_1,\ldots ,e_{p^l}$ and $G$-action defined by $\sigma\cdot e_i=e_i+e_{i-1}$, $1\leq i \leq p^l,\ e_0=0$.
+    Let $V$ be the $k[G]$ module with $k$-basis $e_1,\ldots ,e_{p^l}$ and $G$-action defined by $\sigma( e_i)=e_i+e_{i-1}$, $1\leq i \leq p^l,\ e_0=0$.\todo{changed from $\sigma \cdot e_i$ to how is now. Check rest of work for issues}
     Then $V_j$, defined to be the subspace of $V$ spanned by $e_1,\ldots ,e_j$ over $k$, is also a $k[G]$ module.
     In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representatives for the set of isomorphism classes of indecomposable $k[G]$-modules. For each $j=1,\ldots,p^l$ let $m_j$ denote the multiplicity of $V_j$ in the $k[G]$-module $H^0(X,\cO_x(D))$, \ie we have $H^0(X,\cO_x(D))\cong \oplus_{j=1}^{p^l}m_jV_j$.
     
@@ -487,7 +485,7 @@ Also, for any $Q\in Y$ let $n_Q$ be equal to $n_P$ for any $P\in \pi^{-1}(Q)$.
         \dim_k H^0(X,\cO_X(D))^G =\dim_k H^0(X,\cO_X(D)).
         \end{equation}
     
-    It is clear that the $G$-invariant part of each sub-module $V_j$ is spanned by $e_1$. 
+    It is clear that the $G$-invariant part of each submodule $V_j$ is spanned by $e_1$. 
     Hence $\dim_kH^0(X,\cO_X(D))^G = \sum_{j=1}^{p^l} m_j$.
     By \cite[Thm. 2.1]{quaddiffequi}, which relies on \cite{cohogsheaves}, we have
         \begin{align*}
@@ -574,7 +572,7 @@ Similarly to the case $\deg(D)\geq 2g_X$ in Corollary \ref{this}, the following 
 
 
 \section{The main theorem}\label{maintheoremsection}
-In this section we prove the main theorem of the report, describing exactly when $G$ will act faithfully on $H^0(X,\Omega_X^{\otimes m})$.
+In this section we prove the main theorem of this chapter, describing exactly when $G$ will act faithfully on $H^0(X,\Omega_X^{\otimes m})$.
 
 
     \begin{unnumthm}
@@ -600,28 +598,28 @@ In this section we prove the main theorem of the report, describing exactly when
     We start the proof by showing that $g_Y=0$, which is shown separately for the cases when $m=1$ and when $m\geq 2$.
     In the case when $m=1$ we start by showing that $\deg  \left\lfloor \frac {\pi_*(R)}{n} \right\rfloor >0$ by contradiction.
     Suppose that $\deg\left\lfloor \frac{\pi_*(R)}{n} \right\rfloor =0$.
-    As $G$ acts trivially then by Proposition~\ref{dim} we have:
+    As $G$ acts trivially it follows from Proposition~\ref{dim} that:
         \begin{equation*}
         g_X=\dim_k H^0(X,\Omega_X)=\dim_k H^0(X,\Omega_X)^G=g_Y.
         \end{equation*}
-    Substituting this into the Riemann-Hurwitz formula, Corollary \ref{hur}, yields the desired contradiction because $g_X\geq 2, n\geq 2$ and $\deg(R)\geq 0$.
+    Substituting this into the Riemann-Hurwitz formula (Corollary \ref{hur}) yields the desired contradiction because $g_X\geq 2, n\geq 2$ and $\deg(R)\geq 0$.
     
     Thus $\deg\left( \left\lfloor \frac{\pi_*(R)}{n} \right\rfloor \right) >0$. 
     Now Proposition~\ref{dim} gives us that
         \begin{equation*}
         g_X=\dim_k H^0(X,\Omega_X)=\dim_k H^0(X,\Omega_X)^G= g_Y-1+\deg\left\lfloor \frac{\pi_*(R)}{n} \right\rfloor.
         \end{equation*}
-    Substituting this in to the Riemann-Hurwitz formula, Corollary \ref{hur}, we see that
+    Substituting this in to the Riemann-Hurwitz formula we see that
         \begin{equation*}
         2\left(g_Y - 1 + \deg\left \lfloor \frac{\pi_*(R)}{n} \right \rfloor -1 \right) = 2n (g_Y -1) + \deg(R).
         \end{equation*}
     For any $Q \in Y$ we let $\delta_Q$ denote the coefficient of the ramification divisor $R$ at any $P \in \pi^{-1}(Q)$ and let $e_Q := e_P$ for any $P \in \pi^{-1}(Q)$. 
-    Rewriting the previous equation yields
+    Rewriting the previous equation then yields
         \begin{align*}
         \lefteqn{(2n-2)g_Y = 2n-4 + 2 \,\deg\left \lfloor \frac{\pi_*(R)}{n}\right \rfloor - \deg(R)}\\
         &= 2 \left(n-2 + \sum_{Q \in Y} \left(\left\lfloor \frac{n}{e_Q} \frac{\delta_Q}{n} \right\rfloor - \frac{n}{e_Q} \frac{\delta_Q}{2}\right) \right)\\
         &= 2 \left(n-2 + \sum_{Q \in Y} \left( \left\lfloor \frac{\delta_Q}{e_Q} \right\rfloor - \frac{\delta_Q}{e_Q} \frac{n}{2} \right)\right)\\
-        & \le  2(n-2)
+        & \le  2(n-2),
         \end{align*}
     because $\frac{n}{2} \ge 1$ and $\left\lfloor \frac{\delta_Q}{e_Q}\right\rfloor \le \frac{\delta_Q}{e_Q}$ for all $Q \in Y$. 
     Hence we obtain $g_Y \le \frac{n-2}{n-1} < 1$ and therefore $g_Y =0$, as desired.
@@ -646,33 +644,32 @@ In this section we prove the main theorem of the report, describing exactly when
     
     Using the same notation as in the case when $m=1$, we calculate:
         \begin{align*}
-        \lefteqn{2\deg\left(\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor\right)-(2m-1)\deg(R)}\\
-        & = \sum_{Q \in Y} \left(2\left\lfloor m\cdot \frac{n}{e_Q}\frac{\delta_Q}{n}\right\rfloor -n(2m-1)\frac{\delta_Q}{e_Q}\right) \\
-        \leq   \sum_{Q\in Y}\left( 2m\cdot\frac{\delta_Q}{e_Q}-n(2m-1)\frac{\delta_Q}{e_Q}\right) \\
+        2\deg\left(\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor\right)-(2m-1)\deg(R) & = \sum_{Q \in Y} \left(2\left\lfloor m\cdot \frac{n}{e_Q}\frac{\delta_Q}{n}\right\rfloor -n(2m-1)\frac{\delta_Q}{e_Q}\right) \\
+        & \leq   \sum_{Q\in Y}\left( 2m\cdot\frac{\delta_Q}{e_Q}-n(2m-1)\frac{\delta_Q}{e_Q}\right) \\
         & =  (2m-n(2m-1))\sum_{Q\in Y }\frac{\delta_Q}{e_Q}.
         \end{align*}
     
     Now as $n,m\geq 2$ then we have $2m-n(2m-1)\leq 2m-2(2m-1)=2(1-m)<0$ and we are done as $\sum_{Q\in Y}\frac{\delta_Q}{e_Q}$ is positive.
     
-    So we have shown for all $m\geq 1$, if the non-trivial group $G$ acts trivially  on $H^0(X,\Omega_X^{\otimes m})$ then $g_Y=0$.
-    Now if $m\geq 2$ then first note that $G$ must contain a cyclic subgroup of prime order, say $H$, and $H$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$, since $G$ does.
+    So we have shown for all $m\geq 1$, if the group $G$ acts trivially  on $H^0(X,\Omega_X^{\otimes m})$ then $g_Y=0$.
+    Now if $m\geq 2$ then first note that $G$ must contain a cyclic subgroup of prime order, say $H$, such that $H$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$.
     Now Proposition \ref{triv} tells us that $m=g_X=2$, and that the order of $H$ must also be 2.
-    Hence, if we denote this subgroup by $H$, then $X/H\cong \mathbb{P}_k^1$, thus completing the only if direction for $m\geq 2$.
+    Hence $X/H\cong \mathbb{P}_k^1$, and this completes the only if direction for $m\geq 2$.
     
     Similarly, the $m=1$ case of the only if direction will follow from Proposition \ref{m=1} after we show that $p>0$ and there is a cyclic subgroup of $G$ of order $p$. 
-    This is true as $\pi$ cannot be tamely ramified.
+    This is true since $\pi$ cannot be tamely ramified.
     Indeed, if it were then $R=\sum_{P\in X} (e_P-1)[P]$ \cite[Chap. IV, Cor. 2.4]{hart}, and $\deg\left\lfloor \frac{\pi_*(R)}{n} \right\rfloor=0$, which we have already shown cannot be the case.
     Hence $p$ must be positive, and there is a cyclic subgroup of order $p$ which acts trivially.
     \end{proof}
 
     \begin{rem}
-    Note that the existence of a hyperelliptic involution $\sigma$ in $G$ means not only that the genus of $X/\langle \sigma \rangle$ but also the genus of $Y=X/G$ is $0$ (by the Riemann-Hurwitz formula).
-    If moreover $p=2$, then the canonical projection $X\rightarrow X/\langle \sigma \rangle$ is not unramified (again by the Riemann-Hurwitz formula) and hence not tamely ramified; then $\pi$ cannot be tamely ramified either.
+    Note that the existence of a hyperelliptic involution $\sigma$ in $G$ means not only that the genus of $X/\langle \sigma \rangle$, but also the genus of $Y=X/G$, is $0$ (by the Riemann-Hurwitz formula).
+    If, moreover $p=2$, then the canonical projection $X\rightarrow X/\langle \sigma \rangle$ is not unramified (again by the Riemann-Hurwitz formula) and hence not tamely ramified; then $\pi$ cannot be tamely ramified either.
     \end{rem}
 
 
 \section{Examples}
-We will know give some examples of a finite group acting on a curve, and its consequent action on the holomorphic poly-differentials. 
+We will now give some examples of a finite group acting on a curve, and the consequent action on the holomorphic poly-differentials. 
 We start with some examples in which $G$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$.
 We then follow this with the example of hyperelliptic curves, for which we compute an explicit basis of $H^0(X,\Omega_X^{\otimes m})$, allowing us to see when the action is trivial.
 
@@ -681,7 +678,7 @@ We then follow this with the example of hyperelliptic curves, for which we compu
 
 
 (a) Let $g_X = 0$, \ie $X\cong \mathbb P_k^1$.
-Then $\deg(K_X) = -2$ and so $\deg(mK_X) < 0$ for $m\geq 1$.
+Then $\deg(K_X) = -2$ and so $\deg(mK_X) < 0$ for $m~\geq~1$.
 Hence $H^0(X,\Omega_X^{\otimes m}) =\{0\}$ by \cite[Lem. 2, pg. 295]{hart}\todo{check citation} and $G$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$ for all $m\geq 1$.
 
 (b) Let $g_X = 1$, \ie $X$ is an elliptic curve.
@@ -694,9 +691,9 @@ On the other hand, if $p\neq 2$ and $X$ is given by the Weierstrass equation of 
 
 
 \subsection{Hyperelliptic curves, characteristic unequal to 2}\label{charneq2}
-Let $X$ be a smooth, projective, connected hyperelliptic algebraic curve of genus $g$ over an algebraically closed field $k$, with $\cha (k) \neq 2$.
+Let $X$ be a smooth, projective, connected, hyperelliptic algebraic curve of genus $g$ over an algebraically closed field $k$, with $\cha (k) \neq 2$.
 Let $x:X\rightarrow \mathbb{P}_k^1$ be the corresponding holomorphic map of degree $2$.
-This curve then has a corresponding degree two extension $k(x,y)$ of the rational function field in one variable over $k$, $k(x)$, where
+This curve then has a corresponding degree two extension $k(x,y)$ of the rational function field in one variable over $k$, $K(\mathbb P_k^1) = k(x)$, where
    \begin{equation}\label{definingequation}
    y^2 = f(x)
    \end{equation}
@@ -712,8 +709,8 @@ By the Riemann-Hurwitz formula, Corollary \ref{hur},
     \deg(R) = 2g -2 +2\cdot 2 = 2g + 2.
     \]
 Since $x$ is of degree $2$ and at most tamely ramified, the coefficients of the ramification divisor are $1$ (see the start of Section \ref{dimsection}), and hence $R = p_1 + \ldots + p_{2g+2}$, for distinct $p_i\in X$.
-We let $a_i = x(p_i)$ and $D_i = \div_{a_i}(x)$.
-Moreover, for a general point $a \in \mathbb P_k^1$ we let $D_a = \div_x(x)$.
+We let $a_i = x(p_i)$ and $D_i = \di_{a_i}(x)$.
+Moreover, for a general point $a \in \mathbb P_k^1$ we let $D_a = \di_x(x)$.
 We now show that the ramification points correspond to the zeroes of $f(x)$.
 Since there are no repeated roots in $f(x)$, then \eqref{definingequation} defines a non-singular affine curve $X'$, with a degree two projection $x': X'\rightarrow \mathbb A_k^1$.
 Clearly for any point $a\in \mathbb A_k^1$ which is not a solution to $f(x)$, then there are two points in the pre-image, namely $(a,\pm \sqrt{a})$, and the point is not ramified.
@@ -736,12 +733,12 @@ Hence in this instance
     \begin{prop}\label{propneq2}
     Let $m\geq 1$.
     Let $X$, $x$ and $y$ be as above, and let $\omega := \frac{dx^{\otimes m}}{y^m}$. 
-    Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by
-        $\begin{cases}
-        \omega, x\omega, \ldots , x^{g-1}\omega &  \mbox{if}\ m=1 \\
-        \omega, x\omega, x^2\omega & \mbox{if}\ m=g=2 \\
-        \omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots x^{(m-1)(g-1)-2}y\omega & \mbox{otherwise.}
-        \end{cases}$
+    Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by:
+        \begin{itemize}
+        \item $\omega, x\omega, \ldots , x^{g-1}\omega$ if $m=1$ 
+        \item $\omega, x\omega, x^2\omega$  if $m=g=2$ 
+        \item $\omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots x^{(m-1)(g-1)-2}y\omega$ otherwise.
+        \end{itemize}
     \end{prop}
     
     \begin{rem}
