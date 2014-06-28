@@ -1060,7 +1060,7 @@ Hence, if $a = \sigma(0)$, the following diagram also commutes:
 Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordinates and on the second, third and sixth coordinates respectively.
 
 
-    \begin{lem}
+    \begin{lem}\label{lemmatauactsbyplusminusoneony}
     Suppose that $\tau \in \aut(X)$ is such that $\tau^*\colon x \mapsto x+a$.
     Then the action of $\sigma^*$ on $y$ is given by $\sigma^*(y) = y$ or $\sigma^*(y) = -y$.
     Moreover, if such an automorphism of $X$ exists, then $p$ divides the degree of$f(x)$.
@@ -1113,7 +1113,38 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
     Then sequence \eqref{equationderhamcohomologyshortexactseqeunce} does not split when as a sequence of $k[G]$-modules.\todo{possibly rephrase}
     \end{thm}
     \begin{proof}
+    By Lemma \ref{lemmatauactsbyplusminusoneony} we have $\tau^*(y) = y$ or $\tau^*(y) = -y$.
+    Without loss of generality we may as well assume that $\tau(y) = y$ since, if $\tau(y) = -y$, we may replace $tau$ by $\tau \circ \sigma$ (where $\sigma$ is the hyperelliptic involution of $X$) and notice the sequence splits as a sequence of $K[G]$-modules if and only if it splits as a  $K[\langle \tau \circ \sigma \rangle]$-modules (see remark after Corollary).\todo{reference corollary, check statement} 
     
+    We now suppose that the sequence \eqref{equationderhamcohomologyshortexactseqeunce} does split, and that $s \colon \hone \ra \derhamhone$ is the splitting map.
+    Then it follows that for all $\alpha \in \hone$ then
+        \[
+        s(\tau^*(\alpha)) = \tau^*(s(\alpha)) \in \derhamhone.
+        \]
+    We will show that this equality gives rise to a contradiction when $\alpha$ is the residue class of $\frac{y}{x^g}|_{U_0 \cap U_\infty}$ in $\hone$ (see \todo{find references - $\hone$ isomorphism } and Theorem \ref{basish1}).  
+    It will then follow that no splitting map (and hence no splitting map) can exist.
+
+    We first compute the action of $\tau^*$ on the residue class $\left[\frac{y}{x^g}\right]$.
+    In order to do this we consider the following obvious commutative diagram of isomorphisms:
+        \[
+        \begin{array}{cccc}
+        \hone \cong \cechhone(\cU)  & \xleftarrow{\rho} & \cechhone(\cU'')  \\
+                \tau^*\downarrow & ~ & \rho'\downarrow  \\
+        \hone \cong \cechhone(\cU)  & \xleftarrow{\tau^*} & \cechhone(\cU')
+        \end{array}
+        \]
+    From the proof of Proposition \todo{label and reference sixtuple proposition} we know that $\rho^{-1} \left(\left[\frac{y}{x^g}\right]\right)$ is the residue class of
+        \[
+        \left( \frac{r_g(x)y}{x^g(x-a)^g}, \frac{y}{x^g}, \frac{t_g(x)y}{x^g(x-a)^g} \right) = \left( \frac{((x-a)^g-x^g)y}{x^g(x-a)^g}; \frac{y}{x^g}, \frac{y}{(x-a)^g} \right).
+        \]  \todo{State where this lives?}
+    Therefore 
+        \begin{align*}
+        \tau^* \left( \left[ \frac{y}{x^g} \right] \right)  & = \tau^* \left( \rho' \left(\rho^{-1}\left(\left[\frac{y}{x^g}\right)\right)\right) \\
+        & = \tau^*\left( \rho' \left( \left[ \frac{((x-a)^g-x^g)y}{x^g(x-a)^g}, \frac{y}{x^g}, \frac{y}{x^g}, \frac{y}{(x-a)^g} \right] \right) \right) \\
+        & = \tau^*\left( \left[ \frac{y}{(x-a)^g} \right] \right) \\
+        & = \left[ \frac{y}{x^g} \right],
+        \end{align*}
+    \ie the element $\left[ \frac{y}{x^g} \right] \in \hone$ is fixed by $\tau^*$.
     \end{proof}
 
     \begin{ex}
