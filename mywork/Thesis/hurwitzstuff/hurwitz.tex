@@ -38,7 +38,7 @@ Note that $\tr_{L/K}$ is an additive map, and that for $\alpha \in K$ we have $\
 
     We now show that $\tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}$ is surjective.
     Since $K(X)$ is a Galois extension of $K(Y)$, and hence also separable, we can find $\alpha$ separable over $K(Y)$ such that $K(X) = K(Y)(\alpha)$.
-    We suppose that $\alpha$ has minimal (separable) polynomial $f(z) = (z - \beta_1)\cdots (z - \beta_n)$.
+    We suppose that $\alpha$ has minimal (separable) polynomial ${f(z) = (z - \beta_1)\cdots (z - \beta_n)}$.
     Since
         \[
         K(X) \cong K(Y)(\alpha) \cong K(Y)(z)/(f(z)) \cong \bigoplus_{i=1}^n K(Y)(z)/((z-\beta_i)) \cong \bigoplus_{i=1}^n K(Y)
@@ -305,7 +305,7 @@ This can then be extended from a single point to a divisor on $Y$, in which case
     For any $Q\in Y$ we let $\cO_{Y,Q}'$ be the integral closure of $\cO_{Y,Q}$ in $K(X)$.
 
     \begin{defn}
-    For any $Q in Y$ we define the complementary module over $\cO_{Y,Q}$ to be
+    For any $Q \in Y$ we define the complementary module over $\cO_{Y,Q}$ to be
         \[
         C_Q :=\{z\in K(X) | \tr_{X/Y}(z\cdot \cO_{Y,Q}') \subseteq \cO_{Y,Q}\}.
         \]\todo{is it okay to say $\tr_{X/Y}(z\cdot \cO_{Y,Q}')$?}
@@ -574,12 +574,12 @@ We now prove some short lemmas that are necessary for the proof of Theorem \ref{
 
     \begin{lem}\label{lemmapart1}
     We fix $0 \neq \omega \in H^0(Y,\Omega_Y)$ and let $W = \pi^*(\di(\omega)) + R$.
-    Then $\psi := \omega\circ \tr_{X/Y}(\alpha) = 0$ for any $\alpha \in \mathcal{A}_{X/Y}(W') + K(X)$.
+    Then $\psi := \omega\circ \tr_{X/Y} = 0$ is the zero map on $\mathcal{A}_{X/Y}(W) + K(X)$.
     \end{lem}
     \begin{proof}
     We start by noting that since $\tr_{X/Y}$ and $\omega$ are $k$-linear, $\psi$ is too.
-    Also, note that since $\omega$ is zero on $K(Y)$ then $\psi$ is zero on $K(X)$.
-    To show that $\psi(\alpha) = 0$ for any $\alpha \in \mathcal{A}_{X/Y}(W)$ then it is sufficient to show that for any $Q\in Y$ and $P\in \pi^{-1}(Q)$ that
+    Also, since $\omega$ is zero on $K(Y)$ and $\tr_{X/Y}(K(X)) \subseteq K(Y)$, then $\psi$ is zero on $K(X)$.
+    To show that $\psi(\alpha) = 0$ for any $\alpha \in \mathcal{A}_{X/Y}(W)$ then it is sufficient to show that given any $Q\in Y$ and $P\in \pi^{-1}(Q)$ then
         \[
         v_Q(\tr_{X/Y}(\alpha_P)) \geq -v_Q(\omega).
         \]
@@ -588,44 +588,44 @@ We now prove some short lemmas that are necessary for the proof of Theorem \ref{
     Then
         \begin{align}\label{remark}
         & v_P(x \alpha_P) = v_P(x) + v_P(\alpha_P) \geq e_P v_P(\omega) - v_P(W) \nonumber \\
-        & = v_P(\pi^*((\omega)) - W) = -v_P(R) = -\delta_P. 
+        & = v_P(\pi^*(\di(\omega)) - W) = -v_P(R) = -\delta_P. 
         \end{align}
     By the definition of $C_Q$ and the ramification divisor, it is clear that $z\in C_Q$ if and only if $v_P(z)\geq -\delta_P$ for all $P\in \pi^{-1}(Q)$.
     It then follows from \eqref{remark} that $x \alpha_P$ is in $C_Q$ and hence that $v_Q(\tr_{X/Y}(x \alpha_P)) \geq 0$, by definition of $C_Q$.
-    Since $\tr_{X/Y}(x \alpha_P) = x\cdot \tr_{X/Y}(\alpha_P)$ and $v_Q(x) = v_Q(\omega)$, we have shown the first claim.
+    Since $\tr_{X/Y}(x \alpha_P) = x\cdot \tr_{X/Y}(\alpha_P)$ and $v_Q(x) = v_Q(\omega)$, the proof is complete.
     \end{proof}
 
     \begin{lem}\label{lemmapart2}
-    We choose $W$ and $\psi$ as in Lemma \ref{lemmapart1}.
+    We choose $\omega$, $W$ and $\psi$ as in Lemma \ref{lemmapart1}.
     If $D$ is a divisor on $X$ with $D \nleq W$ then there exists a $\beta \in \cA_{X/Y}(D)$ such that $\psi(\beta) \neq 0$.
     \end{lem}
     \begin{proof}
-    We let $Q_0\in Y$ be a point such that there is a $P^*\in \pi^{-1}(Q_0)$ with $v_{P^*}(\pi^*((\omega)) - D) < -\delta_P$.
-    We know that such a $Q_0$ exists since $D \nleq W$.
-    As before we will denote by $\cO_{Q_0}'$ the integral closure of $\cO_{Q_0}$ in $K(X)$.
+    We let $Q\in Y$ be a point such that there is a $P\in \pi^{-1}(Q)$ with $v_{P}(\pi^*(\di(\omega)) - D) < -\delta_P$.
+    We know that such a $Q$ exists since $D \nleq W$.
+    As before we will denote by $\cO_{Q,Y}'$ the integral closure of $\cO_{Q,Y}$ in $K(X)$.
     We let 
         \[
-        J := \{ z\in K(X) | v_{P^*}(z) \geq v_{P^*}(\pi^*(\di (\omega)) - D)\ \text{for all}\ P^*\in \pi^{-1}(Q_0)\}.
+        J := \{ z\in K(X) | v_{P}(z) \geq v_{P}(\pi^*(\di (\omega)) - D)\ \text{for all}\ P^*\in \pi^{-1}(Q)\}.
         \]
-    By the approximation lemma, there exists a $u\in J$ such that 
+    By the approximation lemma (Lemma \ref{lemmaapproximationlemma}), there exists a $u\in J$ such that 
         \[
-        v_{P^*}(u) = v_{P^*}(\pi^*(\di (\omega))-D)
+        v_{P}(u) = v_{P}(\pi^*(\di (\omega))-D)
         \]
-    for all $P^*\in \pi^{-1}(Q_0)$, and hence $J\nsubseteq C_{Q_0}$.
-    (As noted earlier, $z\in \cO_{X,Q}$ if and only if $v_P(z) \geq -\delta_P$).
-    It is clear that $J\cdot \cO_{Q_0} \subseteq J$, and hence that $\tr_{X/Y}(J) \nsubseteq \cO_{X,Q}$.
+    for all $P\in \pi^{-1}(Q)$, and hence $J\nsubseteq C_{Q}$.
+    (As stated in the proof of Lemma \ref{lemmapart1}, $z\in C_Q$ if and only if $v_P(z) \geq -\delta_P$).
+    It is clear that $J\cdot \cO_{X,Q}' \subseteq J$, and hence that $\tr_{X/Y}(J) \nsubseteq \cO_{Y,Q}$.
     We let $t$ be an element of $K(Y)$ such that $v_Q(t) = 1$.
-    Then there is an $r\in \mathbb N$ such that $t^r\cdot J \subseteq \cO_{X,Q}$, and then 
+    Then there is an $r\in \mathbb N$ such that $t^r\cdot J \subseteq \cO_{Y,Q}'$, and then 
         \[ 
-        t^r\cdot \tr_{X/Y}(J) = \tr_{X/Y}(t^r\cdot J) \subseteq \cO_{X,Q}.
+        t^r\cdot \tr_{X/Y}(J) = \tr_{X/Y}(t^r\cdot J) \subseteq \cO_{Y,Q}.
         \]
-    It is clear that $t^r\cdot \tr_{X/Y} (J)$ is an ideal of $\cO_{X,Q}$, and so $\tr_{X/Y}(J) = t^s\cdot \cO_{X,Q}$ for some negative integer $s$.
+    It is clear that $t^r\cdot \tr_{X/Y} (J)$ is an ideal of $\cO_{Y,Q}$, and so $\tr_{X/Y}(J) = t^s\cdot \cO_{Y,Q}$ for some negative integer $s$.
     Hence 
         \begin{equation}\label{traceinring}
-        t^{-1}\cdot \cO_{X,Q} \subseteq \tr_{X/Y}(J).
+        t^{-1}\cdot \cO_{Y,Q} \subseteq \tr_{X/Y}(J).
         \end{equation}
     By Proposition \ref{propertyofomega} we can find an $x\in K(Y)$ such that $v_Q(x) = -v_Q(\omega) - 1$ and $\omega_Q(x) \neq 0$.
-    If we choose $y\in K(Y)$ such that $v_Q(y) = v_Q(\omega)$, then $xy \in t^{-1}\cO_{X,Q}$.
+    If we choose $y\in K(Y)$ such that $v_Q(y) = v_Q(\omega)$, then $xy \in t^{-1}\cO_{Y,Q}$.
     Hence by \eqref{traceinring} there is a $z\in J$ such that $\tr_{X/Y} (z) = xy$.
     Let $\beta \in \mathcal{A}_{X/Y}$ be chosen  such that 
         \begin{equation*}
@@ -643,7 +643,7 @@ We now prove some short lemmas that are necessary for the proof of Theorem \ref{
         \end{align*}
     with the inequality following from the definition of $y$ and $J$.
     Hence $\beta \in \mathcal{A}_{X/Y}(D)$.
-    Now $\omega_1(\beta) = \omega(\tr_{X/Y}(\beta)) = \omega_Q(x) \neq 0$.
+    Finally $\omega(\beta) = \omega(\tr_{X/Y}(\beta)) = \omega_Q(x) \neq 0$.
     \end{proof}
 
 
@@ -652,9 +652,10 @@ We now prove Theorem \ref{theoremdetailedhurwitz}.
 
 
     \begin{proof}
-    We first construct a differential $\omega'\in H^0(X,\Omega_X)$ for every $\omega\in H^0(Y,\Omega_Y)$ such that $\omega'(\alpha) = \omega(\tr_{X/Y}(\alpha))$ for every $\alpha \in \cA_{X/Y}$.
-    If $\omega = 0$ then we can clearly let $\omega' = 0$, so we assume that $\omega \neq 0$.
-    We let $W' := \pi^*(\di (\omega)) + R$ $\omega_1:= \omega\circ \tr_{X/Y} \colon \mathcal{A}_{X/Y} \rightarrow k$.
+    We first construct a differential $\omega'\in H^0(X,\Omega_X)$ for each $\omega\in H^0(Y,\Omega_Y)$ such that $\omega'(\alpha) = \omega(\tr_{X/Y}(\alpha))$ for every $\alpha \in \cA_{X/Y}$.
+    If $\omega = 0$ then we can clearly let $\omega' = 0$, so we fix some $0 \neq \omega \in H^0(Y,\Omega_Y)$.
+    We let $W' := \pi^*(\di (\omega)) + R$ and we let $\omega_1:= \omega\circ \tr_{X/Y} \colon \mathcal{A}_{X/Y} \rightarrow k$.
+    \todo[inline]{Remove $\omega_1$ and just define $\omega_2$ as $\psi$ in terms of trace and $\omega$ later?}
     
     
     By Lemma \ref{lemmaadelespace} for each $\alpha \in \mathcal{A}_X$ there exists some $\beta \in \mathcal{A}_{X/Y}$ and $\gamma \in \mathcal{A}_X(W')$ such that $\alpha = \beta + \gamma$.
@@ -689,7 +690,7 @@ We now prove Theorem \ref{theoremdetailedhurwitz}.
         \]
     for all $\alpha\in \cA_{X/Y}$.
     So if we let $\theta = \omega'' - \omega'$, then $\theta(\alpha) = 0$ for all $\alpha \in \cA_{X/Y}$.
-    But then if we choose a large enough divisor $D$ in Lemma \ref{lemmaadelespace}, this implies that $\theta = 0$ and $\cA_X$, and hence $\omega' = \omega''$.
+    But then if we choose a large enough divisor $D$ in Lemma \ref{lemmaadelespace}, this implies that $\theta$ is zero on $\cA_X$, and hence $\omega' = \omega''$.
     \end{proof}
 
 
