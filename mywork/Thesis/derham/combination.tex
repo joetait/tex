@@ -139,7 +139,7 @@ Then the maps
 
 \section{\cech cohomology and de Rham cohomology for\\ hyperelliptic curves}
 
-In addition to the assumptions in section 1, we now assume that $X$ is hyperelliptic of genus $g \geq 2$.
+In addition to the assumptions in section 1, we now assume that $X$ is hyperelliptic of genus $g \geq 2$.\todo{Do we require the genus to be two?}
 We recall that a curve is hyperelliptic if there exists a finite, separable morphism of degree two from the curve to $\mathbb P_k^1$.
 We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$ (see \cite[Rem. 7.4.30]{liu}).
 In this section we describe $\hone$ and $\hzero$ concretely for such an $X$, using \cech cohomology.
@@ -475,16 +475,16 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
         & = {\displaystyle \sum_{i=1}^l} m_i[Q_i] -iD_0 -(2g+1 - 2i)[P_\infty]
         \end{align*}
     if $\infty$ is a branch point and
-        \begin{equation*}
+        \begin{align*}
         \di \left( \frac{y}{x^i} \right)  & =  \di(y) - i\di(x) \\  
         & = {\displaystyle \sum_{i=1}^l} m_i[Q_i] - iD_0 +(g+1-\deg(F(x)) + i)[P_\infty] - (g+1-i)[P_\infty']
-        \end{equation*}
+        \end{align*}
     otherwise.
     These equalities follow from Proposition \ref{divyp=2} and \eqref{divxp=2}.
     The divisors are clearly positive on $U_0 \cap U_\infty$.
     
     Next we recall from \cite[Prop. 7.4.26]{liu} that if $p=2$ a basis of $\hzero$ is given by $\frac{1}{H(x)}dx, \ldots, \frac{x^{g-1}}{H(x)}dx$.\todo{change reference in thesis}
-    We then deduce from Lemma \ref{tracemaplemma} that when $\infty$ is not a branch point
+    We then deduce from Lemma \ref{lemmatracemaplemma} that when $\infty$ is not a branch point
         \[
         \left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = \res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P_\infty'}\left( \frac{yx^{i-j}}{H(x)} dx \right).
         \]
@@ -492,7 +492,7 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
     Then it follows that
         \begin{align*}
         \left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle & = \res_{P_ \infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P_ \infty} \left( \frac{(y+H(x))x^{i-j}}{H(x)}dx \right) \\
-        & = 2\res_{P_\infty}\left( \frac{yx^{i-j}{H(x)}dx \right) + \res_{P \infty}(x^{i-j}dx) \\
+        & = 2\res_{P_\infty}\left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P \infty}(x^{i-j}dx) \\
         & = \res_{P_\infty}(x^{i-j}dx),
         \end{align*}\todo{check this makes sense}
     since we are assuming that $\cha(k) = 2$.
@@ -509,7 +509,7 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
         & = \sum_{i=1}^l m_i[Q_i] + (2j-3-2i)[P_\infty] + (i-j)D_0.
         \end{align*}
     We see that there is a pole of order one at $P_\infty$ if $2j - 3 - 2i = -1$, or equivalently if $j = i+1$.
-    Hence $\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right\rangle = \res_{P_ \infty}\left( \frac{yx^{i-j}{H(x)}dx\right)  \neq 0$ in this case.\todo{what is the residue?}
+    Hence $\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right\rangle = \res_{P_ \infty}\left( \frac{yx^{i-j}}{H(x)}dx\right)  \neq 0$ in this case.\todo{what is the residue?}
     
     We also check that if $j \neq i+1$ then $\left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = 0$.
     Indeed, if $j-i \geq 2$ then clearly $\frac{yx^{i-j}}{H(x)}dx$ does not have a pole at $P_\infty$.
@@ -519,42 +519,45 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
 
 %Mittag-Leffler style corollary
 
+We now give a corollary to Theorem \ref{basish1}, which is of the same style as the Mittag-Leffler theorem, but for hyperelliptic curves.
+
     \begin{cor}
     For each $P \in X$ we fix $f_P \in K(X)/\cO_{X,P}$, such that $f_P = 0$ for almost all $P \in X$.
-    Then there exist unique $\alpha_1, \ldots, \alpha_g \in k$ such that after replacing $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for $P \in \pi^{-1}(\infty)$, we can find an $f \in K(X)$ such that the Laurent tail of $f$ at $P$ in $X$ is $f_P$.
+    Then there exist unique $\alpha_1, \ldots, \alpha_g \in k$ such that, after replacing $f_P$ by $f_P - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right)$ for $P \in \pi^{-1}(\infty)$, we can find an $f \in K(X)$ which has a Laurent tail of $f_P$ at $P$ for all $P \in X$.
     \end{cor}
     \begin{proof}
     Since $f_P = 0$ for almost all $P \in X$ then $(f_P)_{P \in X} \in \bigoplus_{P \in X} K(X)/\cO_{X,P}$.
     From Lemma \ref{exactsequencelemma} we have the following exact sequence
         \begin{equation*}
-        0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \xrightarrow{\delta} \hone \ra 0.
-        \end{equation*}
-    Since $\frac{x}{y}, \ldots, \frac{x^g}{y}$ form a basis of $\hone$, it follows that there exist unique $\alpha_1, \ldots, \alpha_g$ such that
+        0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \rightarrow \hone \ra 0.
+        \end{equation*}\todo{introduce final map as $\delta$}
+    By Theorem \ref{basish1} the residue classes $ \gamma_ 1= \left[ \frac{x}{y}\right], \ldots, \gamma_n = \left[\frac{x^g}{y}\right]$ form a basis of $\hone$, it follows that there exist unique $\alpha_1, \ldots, \alpha_g$ such that
         \[
-        \delta\left( (f_P)_{P \in X} \right) - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) = 0.
+        \delta\left( (f_P)_{P \in X} \right) - \left( \alpha_1\gamma_1 + \ldots + \alpha_n\gamma_n \right) = 0.
         \]
-    We can derive \eqref{dualitysesfunctions} by applying the snake lemma to the \cech complex of \eqref{serredualitysesfunctions} over $\cU$, which is
+    We can derive the exact sequence \eqref{dualitysesfunctions} by applying the snake lemma to the \cech complex of \eqref{serredualitysesfunctions} over $\cU$, which is
         \begin{equation}
-        \xymatrix{\cO_X(U_0)\times\cO_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \underline{K}(X) \times \underline{K}(X) \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} K(X)/\cO_{X,P} \times \bigoplus \limits_{P \in U_\infty} K(X)/\cO_{X,P} \ar[d]^{d_3} \\
-        \cO_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \underline{K}(X) \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} K(X)/\cO_{X,P} }
+        \xymatrix{\cO_X(U_0)\times\cO_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & K(X) \times K(X) \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} K(X)/\cO_{X,P} \times \bigoplus \limits_{P \in U_\infty} K(X)/\cO_{X,P} \ar[d]^{d_3} \\
+        \cO_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & K(X) \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} K(X)/\cO_{X,P} }
         \end{equation}
     Analogously to \eqref{dualitydiagram2}, the kernel of $d_3$ is $\bigoplus_{P \in X}K(X)/\cO_{X,P}$ and the cokernel of $d_1$ is $\hone$.
-    Via a diagram chase on $- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) \in \hone$ we can find a corresponding element 
+    Via a diagram chase on $\left( \gamma_1 + \ldots + \gamma_g \right) \in \hone$ we can find a corresponding element \todo{B: not precise enough, rather write $\delta$ maps ... to ...}
         \begin{equation}\label{immediate}
-        \left(0, \left(- \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) \right)_P\right) \in \bigoplus_{P \in U_0}K(X)/\cO_{X,P} \times \bigoplus_{P \in U_\infty}K(X)/\cO_{X,P}.
+        \left( \left(\left( \gamma_1 + \ldots + \gamma_g \right) \right)_{P \in U_0}, 0\right) \in \bigoplus_{P \in U_0}K(X)/\cO_{X,P} \times \bigoplus_{P \in U_\infty}K(X)/\cO_{X,P}.
         \end{equation}
-    Since $(\alpha_ix^i/y$ is regular on $U_\infty \cap U_0$, \eqref{immediate} is equivalent to $\left(0, (g_P)_{P \in U_\infty}\right)$, where
+    Since $(\alpha_ix^i/y$ is regular on $U_\infty \cap U_0$, \eqref{immediate} is equal to $\left( (g_P)_{P \in U_\infty}\, 0\right)$, where
         \[
         g_P =
             \begin{cases}
-            - \left( \frac{\alpha_1 x}{y} + \ldots + \frac{\alpha_g x^g}{y}\right) & \quad \text{if}\ P \in \pi^{-1}(\infty) \\
+            \left( \gamma_1 + \ldots + \gamma_g \right) & \quad \text{if}\ P \in \pi^{-1}(\infty) \\
             0 & \quad \text{else.}
             \end{cases}
         \]
-    Clearly $(0, g_P) \in \ker (d_3) = \bigoplus_{P \in X} K(X)/\cO_{X,P}$, and $\delta((f_P)_{P \in X} - (g_P)_{P \in X}) = 0$, by choice of $(g_P)_{P \in X}$.
+    Clearly $\left( (g_P)_{P \in U_0},0\right) \in \ker (d_3) = \bigoplus_{P \in X} K(X)/\cO_{X,P}$, and $\delta((f_P)_{P \in X} - (g_P)_{P \in X}) = 0$, by choice of $(g_P)_{P \in X}$.
     By the exactness of \eqref{dualitysesfunctions} it follows that there exists an $f \in K(X)$ which has Laurent tail $f_P - g_P$ at each $P \in X$, as required in the statement of the corollary.
     \end{proof}
 
+\todo[inline]{possible new section here?}
 
 In order to state a basis of $\derhamhone$, as well as to shorten the proof of the following theorem, we define the following polynomials. 
 We suppose that $1 \leq i \leq g$.
@@ -569,13 +572,12 @@ and when $p = 2$ we define
 
 We now decompose these polynomials into two parts, which will be used in the sequel.
 Firstly, we write $s_i(x)$ as $s_i(x) = \phi_i(x) + \psi_i(x)$, where $\psi_i(x)\in k(x)$ and $\phi_i(x) \in k[x]$ are the unique polynomials such that the degree of $\psi_i (x)$ is at most $g+1$ and $x^{g+2}$ divides $\phi_i(x)$.
-
-For the second case we define $A_{j,i} \in k$ for $1 \leq j \leq 2g+2$, and $B_{k,i} \in k$ for $0\leq k \leq g+1$ by the equation
+Secondly we define $A_{j,i} \in k$ for $1 \leq j \leq 2g+2$, and $B_{k,i} \in k$ for $0\leq k \leq g+1$ by the equation
     \[
     S_i(x,y) = A_{2g+2,i}x^{2g+2} + \ldots + A_{1,i} x + y(B_{g+1,i} x^{g+1} + \ldots + B_{1,i} x + B_{0,i}).
     \]
 Note that many of these coefficients may be zero.
-In particular we remark that the $x^i$ term of $xH'(x) + iH(x)$ is always zero, since $B_{i,i}x^i = x \cdot B_ix^{i-1} + B_i x^i = 2B_{i,i}x^i = 0$.
+In particular we remark that the $x^i$ term of $xH'(x) + iH(x)$ is always zero, since $B_{i,i}x^i = x \cdot iB_ix^{i-1} + iB_i x^i = 2iB_{i,i}x^i = 0$.
 
 
 We now define the following polynomials:
@@ -616,7 +618,7 @@ Viewing $\derhamhone$ as a quotient of \eqref{derhamconditions}, we now give a $
 Before proving this theorem we use it to prove the following corollary.
 
     \begin{cor}
-    The action of $G$ on $\derhamhone$ is faithful unless $G$ contains a hyperelliptic involution and $p=2$, in which case the action of the hyperelliptic involution is trivial.
+    The action of $G := \aut(X)$ on $\derhamhone$ is faithful unless $G$ contains a hyperelliptic involution and $p=2$, in which case the action of the hyperelliptic involution is trivial.
     \end{cor}
 
     \begin{proof}
@@ -852,23 +854,28 @@ We now prove Theorem \ref{basis}.
 \section{Splitting of the short exact sequence}
 
 
-As in the previous section, we assume $X$ is a hyperelliptic curve of genus $g$ over an algebraically closed field $k$ characteristic $p \neq 2$, and we retain the relevant notation introduced.
+We keep the assumptions of the previous section, except that we now also assume that $\cha(k) = p$ is odd.
 
 In the previous section (Theorem \ref{basis}) we found a basis for the de Rham cohomology of any hyperelliptic curve using \cech cohomology, with respect to the cover $\cU = \{ U_0 , U_\infty\}$.
 We let $\lambda_i$ and $\gamma_i$ denote the elements of this basis by defining
     \begin{align*}
-    \lambda_i  = & \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) ,\quad i=0, \ldots, g-1 \\
+    \lambda_i  = & \left[ \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) \right] ,\quad i=0, \ldots, g-1 \\
     \intertext{and}
-    \gamma_i = & \left ( \frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{-\phi_i(x)}{2yx^{i+1}}dx, x^{-i}y \right), \quad i=1,\ldots ,g.
+    \gamma_i = & \left[ \left ( \frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{-\phi_i(x)}{2yx^{i+1}}dx, x^{-i}y \right), \right] \quad i=1,\ldots ,g,
     \end{align*}
-We now fix some $a \in \mathbb P_k^1\backslash \{0, \infty\}$ and define $U_a : = X \backslash \pi^{-1}(a)$ and $\cU''~:=~\{U_0,U_a, U_\infty\}$.
-Then $\cechderhamhone(\cU'')$ can be defined as the $k$-vector space 
+where $[z]$ denotes the residue class of $z$.
+In this section we moreover consider the covers $\cU' = \{U_a, U_\infty\}$ and $\cU' = \{U_0, U_a, U_\infty\}$ for some fixed $a \in \mathbb{P}_k^1\backslash \{0, \infty\}$.
+Then $\cechderhamhone(\cU'')$ is isomorphic to the $k$-vector space 
     \begin{multline}\label{sixtupleconditions}
     \left\{ (\omega_0, \omega_a, \omega_\infty , f_{0a}, f_{0 \infty},f_{a \infty}) | \omega_i \in \Omega_X(U_i), f_{ij} \in \cO_X(U_i \cap U_j), \right. \\ \left. f_{0a} - f_{0\infty} + f_{a \infty} = 0, df_{ij} = \omega_i - \omega_j \right\}
     \end{multline}
 quotiented by the subspace 
     \[
     \left\{ df_0, df_a df_\infty, f_0- f_a, f_0 - f_\infty, f_a - f_\infty | f_i \in \cO_X(U_i)\right\}.
+    \]
+We have a canonical projection $\rho\colon \cechderhamhone(\cU'') \ra \cechderhamhone(cU)$, given by 
+    \[
+    \rho \colon (\omega_0, \omega_a, \omega_\infty , f_{0a}, f_{0 \infty},f_{a \infty}) \mapsto (\omega_0, \omega_\infty , f_{0 \infty}).
     \]
 
 We also define the following polynomials for $1 \leq i \leq g$
@@ -880,25 +887,20 @@ and
     t_i(x) := \sum_{k=i}^{g} (-1)^{g-k}\binom{g}{k} a^{g-k} x^k,
     \]
 splitting the polynomial $(x-a)^g$ in to two parts.
-The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
 
 
     \begin{prop}\label{basis22}
-    The pre-image of $\rho^{-1}(\gamma_i)$ for $i \in \{1, \ldots, g\}$ is the residue class of
+    The pre-image $\rho^{-1}(\gamma_i)$ for $i \in \{1, \ldots, g\}$ is the residue class of
         \begin{multline*}
-        \nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right).
+        \nu_i = \left(\frac{\psi_i(x)}{2yx^{i+1}}dx, \frac{(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i}{2yx^{i+1}(x-a)^{g+1}}dx,\right. \\\left. \frac{-\phi_i(x)}{2yx^{i+1}}dx,  \frac{r_i(x)y}{x^i(x-a)^g}, \frac{y}{x^i},  \frac{t_i(x)y}{x^i(x-a)^g} \right).
         \end{multline*}
     \end{prop}
-    \begin{rem}
-    Note that the third term, $\frac{\phi_i(x)}{2yx^{i+1}} dx$, has a different sign than the equivalent term in $\gamma_i$.
-    This is due the increased number of open sets in the cover moving it from the second to third position.
-    \end{rem}
     \begin{proof}
     In order to be able to refer to the entries in $\nu_i$ we let
         \[
         \nu_i = \left( \omega_{0 i}, \omega_{a i}, \omega_{\infty i}, f_{0 a i}, f_{0 \infty i}, f_{a \infty i} \right).
         \]
-    First, note that it follows from the proof of Theorem \ref{basis} that $d(f_{0 \infty i}) = \omega_{0 i} + \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
+    First, note that it follows from the proof of Theorem \ref{basis} that $d(f_{0 \infty i}) = \omega_{0 i} - \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
     
     Since $r_i(x)+t_i(x)$ is the binary expansion of $(x-a)^g$ then
         \begin{align*}
@@ -909,7 +911,7 @@ The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
     
     
     
-    We now check that differentials and functions are regular on the appropriate open sets by computing the relevant divisors.
+    We now check that differentials and functions in $\nu_i$ are regular on the appropriate open sets by computing the relevant divisors.
     Firstly, by \eqref{divxp=2} and \eqref{differentialdivisor},
         \begin{align*}
         \di \left( f_{0 a i} \right) & = \di \left( \frac{r_i(x)y}{x^i(x-a)^g} \right) \\
@@ -918,6 +920,7 @@ The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
         & = \di_0(r_i(x)) +R -iD_0 - gD_a,
         \end{align*}
     which is non-negative on $U_0 \cap U_a$.
+    Note that the second and third line are not necessarily equal, since the coefficient of $x^{i-1}$ may be divisible by $p$.
     On the other hand, by \eqref{divxp=2} and \eqref{differentialdivisor},
         \begin{align*}
         \di \left( f_{a \infty i} \right) & = \di \left( \frac{t_i(x)y}{x^i(x-a)^g} \right) \\
@@ -926,7 +929,7 @@ The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
         & = \di_0 \left( \frac{t_i(x)}{x^i} \right) +R - gD_a -(g-i+1)D_\infty,
         \end{align*}
     where the third equality holds because $t_i(x)/x^i$ is regular on $U_\infty$.
-    Since $y$ is also regular on $U_\infty$  we conclude that $({t_i(x)y})/({x^i(x-a)^g})$ is regular on $U_a \cap U_\infty$.
+    We conclude that $f_{0 infty i}$ is regular on $U_a \cap U_\infty$.
     
     To show that
         \begin{equation}\label{longequation}
@@ -944,7 +947,7 @@ The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
         \begin{equation}\label{numerator}
         {(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i},
         \end{equation}
-    has degree less then $2g+i+2$, from which it follows that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
+    has degree less than $2g+i+2$, from which it follows that \eqref{longequation} doesn't have a pole at the point(s) in $\pi^{-1}(\infty)$.
     The degree of $\psi_i(x)t_i(x)(x-a)$ is at most $2g+2$, which is less than $2g+2+i$ for all $i \geq 1$.
     If $\deg(f) = 2g+1$, then clearly
         \[
@@ -956,10 +959,10 @@ The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
         \]
     Lastly, if $\deg(f(x)) = 2g+2$ then the term of degree $2g+i+2$ in $-\phi_i(x)r_i(x)(x-a)$ is
         \begin{align*}
-        -((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
+        -((2g+2)a_{2g+2}x^{2g+2}-2ia_{2g+2}x^{2g+2})&\left( (-1)^{g-i+1}\binom{g}{i-1}a^{g-i+1}x^i\right) \\
         &  = 2(-1)^{g-i+2}\left( (g-i+1)\binom{g}{i-1} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
         & = 2(-1)^{g-i} \left( \frac{g!}{(i-1)!(g-i)!} \right) a_{2g+2}a^{g-i+1}x^{2g+i+2} \\
-        & = 2i(-1)^{g-i}\binom{g}{i}a_{2g+2}x^{2g+i+2},
+        & = 2i(-1)^{g-i}\binom{g}{i}a_{2g+2}a^{2g+2}x^{2g+i+2},
         \end{align*}
     which cancels with the term of the same degree in $2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$.
     Since these terms cancel, we again have the that the degree of \eqref{numerator} is at most $2g+i+1$, and \eqref{longequation} has no pole(s) at the point(s) in $\pi^{-1}(\infty)$.
@@ -972,13 +975,9 @@ The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
         \]
     and
         \[
-         (-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right).
+         (-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right)(-a).
         \]
-    Since
-        \[
-        (-a)(-2ia_0)\left( (-1)^{g-i}\binom{g}{i}a^{g-i}x^i \right) = 2ia_0(-1)^{g-i+2}\binom{g}{i}a^{g-i+1}x^i,
-        \]
-    it follows that when adding $\psi_i(x)t_i(x)(x-a)$ and $2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ these terms will cancel.
+    When adding $\psi_i(x)t_i(x)(x-a)$ and $2if(x)(-1)^{g-i+1}\binom{g}{i}a^{g-i+1}x^i$ these two terms obviously cancel.
     Hence the numerator \eqref{numerator} is divisible by $x^{i+1}$.
     
     
@@ -987,12 +986,12 @@ The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
         \begin{align*}
         df_{0 a i} & = d \left( \frac{y r_i(x)}{x^i(x-a)^g} \right) \\
         & = \frac{r_i(x)}{x^i(x-a)^g}dy + y d\left( \frac{r_i(x)}{x^i(x-a)^g} \right) \\
-        & = \frac{f(x)'r_i(x)}{2yx^i(x-a)^g}dx + y\left( \frac{r_i(x)'}{x^i(x-a)^g} -\frac{i r_i(x)}{x^{i+1}(x-a)^g} - \frac{gr_i(x)}{x^i(x-a)^{g+1}}\right) dx \\
-        & = \frac{xf(x)'r_i(x)(x-a) + 2f(xr_i(x)'(x-a) - i(x-a)r_i(x) - gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}} dx.
+        & = \frac{f'(x)r_i(x)}{2yx^i(x-a)^g}dx + y\left( \frac{r_i(x)}{x^i(x-a)^g} -\frac{i r_i(x)}{x^{i+1}(x-a)^g} - \frac{gr_i(x)}{x^i(x-a)^{g+1}}\right) dx \\
+        & = \frac{xf'(x)r_i(x)(x-a) + 2f(xr_i'(x)(x-a) - i(x-a)r_i(x) - gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}} dx.
         \end{align*}
     Hence $\omega_{0 i} - df_{0 a i}$ expands to
         \[
-        \frac{\psi_i(x)(x-a)^{g+1} - xf(x)'r_i(x)(x-a) - 2f(x)\left(xr_i(x)'(x-a)-i(x-a)r_i(x)-gxr_i(x)\right)}{2yx^{i+1}(x-a)^{g+1}}dx.
+        \frac{\psi_i(x)(x-a)^{g+1} - xf'(x)r_i(x)(x-a) - 2f(x)\left(xr_i'(x)(x-a)-i(x-a)r_i(x)-gxr_i(x)\right)}{2yx^{i+1}(x-a)^{g+1}}dx.
         \]
     Now
         \[
@@ -1000,24 +999,24 @@ The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
         \]
     and
         \begin{multline*}
-        xf(x)'r_i(x)(x-a) - 2if(x)r_i(x)(x-a) = r_i(x)(x-a)(xf(x)'-2if(x)) \\
+        xf'(x)r_i(x)(x-a) - 2if(x)r_i(x)(x-a) = r_i(x)(x-a)(xf'(x)-2if(x)) \\
         = r_i(x)(x-a)(\psi_i(x) + \phi_i(x)).
         \end{multline*}
     So
         \[
-        \psi_i(x)(x-a)^{g+1} - xf(x)'r_i(x)(x-a) - 2if(x)r_i(x)(x-a) = (\psi_i(x)t_i(x) - \phi_i(x) r_i(x))(x-a).
+        \psi_i(x)(x-a)^{g+1} - xf'(x)r_i(x)(x-a) + 2if(x)r_i(x)(x-a) = (\psi_i(x)t_i(x) - \phi_i(x) r_i(x))(x-a).
         \]
     
     
-    We now compute $(x-a)r_i(x)'-gr_i(x)$.
+    We now compute $(x-a)r_i'(x)-gr_i(x)$.
     First, we note that
         \begin{align*}
-        r_i(x)' & = \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
+        r_i'(x) & = \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} \\
         & = \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k.
         \end{align*}
     From this it follows that
         \begin{align*}
-        r_i(x)'(x-a) & = x \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} - a \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k \\
+        r_i'(x)(x-a) & = x \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} - a \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k \\
         & = \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^k  + \sum_{k=0}^{i-2} (k+1) (-1)^{g-k} \binom{g}{k+1}a^{g-k} x^k \\
         & = gr_i(x) + (-1)^{g-i+2}i \binom{g}{i}a^{g-i+1}x^i,
         \end{align*}
@@ -1028,7 +1027,7 @@ The following proposition allows computes a basis of $\cechderhamhone(\cU'')$.
         & = \frac{g\cdot g!}{k!(g-k)!} \\
         & = g \binom{g}{k}.
         \end{align*}
-    Hence $r_i(x)'-gr_i(x)= (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i$. 
+    Hence $r_i'(x)-gr_i(x)= (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i$.\todo{check if a factor of $x$ is missing}
     
     Combining the above we conclude that
         \[
@@ -1048,7 +1047,7 @@ We note that for any $\sigma \in \aut(X)$ the following diagram commutes,
     \downarrow\pi & & \downarrow\pi \\
     \mathbb P^1_k & \xrightarrow[\sigma] & \mathbb P_k^1
     \end{array}
-    \]
+    \]\todo{change to $\tau$?}
 since the hyperelliptic involution $j$ is in the centre of $\aut(X)$.
 Hence, if $a = \sigma(0)$, the following diagram also commutes:
     \[
@@ -1061,11 +1060,13 @@ Hence, if $a = \sigma(0)$, the following diagram also commutes:
 Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordinates and on the second, third and sixth coordinates respectively.
 
 
-Clearly if $\sigma^* \colon x \mapsto x+a$ then $a = \sigma(0)$, and we assume in what follows that $\sigma$ is such an automorphism.
     \begin{lem}
-    The action of $\sigma^*$ on $y$ is given by $\sigma^*(y) = y$ or $\sigma^*(y) = -y$.
+    Suppose that $\tau \in \aut(X)$ is such that $\tau^*\colon x \mapsto x+a$.
+    Then the action of $\sigma^*$ on $y$ is given by $\sigma^*(y) = y$ or $\sigma^*(y) = -y$.
+    Moreover, if such an automorphism of $X$ exists, then $p$ divides the degree of$f(x)$.
     \end{lem}
     \begin{proof}
+    We first show that $\tau^*(y) = \pm y$.
     Since $y^2 \in k(x)$ then there must exist $g_1(x), g_2(x) \in k(x)$ such that 
         \begin{equation*}
         \sigma^*(y) = g_1(x)y + g_2(x) \in k(x,y).
@@ -1084,7 +1085,15 @@ Clearly if $\sigma^* \colon x \mapsto x+a$ then $a = \sigma(0)$, and we assume i
     If $g_1(x) = 0$ then $\sigma^*$ would not be an automorphism, since $y$ would not be in the image.
     Hence $\sigma^*(y) = g_1(x)y$.
     Also, by comparing the degrees in \eqref{easylemma} we see that $\deg(g_1(x)) = 0$, and then by comparing coefficients in the same equation we see that $g_1(x)^2 = 1$.
-    Hence $\sigma^*(y) = \pm y$.
+    Hence $\tau^*(y) = \pm y$.
+
+    We now show that $d_f := \deg(f(x))$ is divisible by $p$.
+    Clearly 
+        \[
+        f(x) = y^2 = (\tau^*(y))^2 = \tau(f(x)) = f(x+a).  
+        \]  
+    Comparing the terms of degree $d_f-1$ on each side we see that $d_f - a_{d_f -1} = a_{d_f-1}$.
+    Hence $d_f = 0$ in $k$, and since $\deg(f(x)) > 0$ it follows that $p \mid d_f$.
     \end{proof}
 
     \begin{rem}
