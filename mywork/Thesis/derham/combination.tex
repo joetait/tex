@@ -1118,9 +1118,9 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
     
     We now suppose that the sequence \eqref{equationderhamcohomologyshortexactseqeunce} does split, and that $s \colon \hone \ra \derhamhone$ is the splitting map.
     Then it follows that for all $\alpha \in \hone$ then
-        \[
+        \begin{equation}\label{equationcommutativityoftauandsplittingmap}
         s(\tau^*(\alpha)) = \tau^*(s(\alpha)) \in \derhamhone.
-        \]
+        \end{equation}
     We will show that this equality gives rise to a contradiction when $\alpha$ is the residue class of $\frac{y}{x^g}|_{U_0 \cap U_\infty}$ in $\hone$ (see \todo{find references - $\hone$ isomorphism } and Theorem \ref{basish1}).  
     It will then follow that no splitting map (and hence no splitting map) can exist.
 
@@ -1145,6 +1145,98 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
         & = \left[ \frac{y}{x^g} \right],
         \end{align*}
     \ie the element $\left[ \frac{y}{x^g} \right] \in \hone$ is fixed by $\tau^*$.
+
+    Since the residue class of $\left[ \frac{y}{x^g} \right]$ maps to the basis element $\gamma_g \in derhamhone$ it follows that
+        \[
+        \tau^*(\gamma_g) = \gamma_g + \sum_{i=0]^{g-1} c_i\lambda_i
+        \]
+    for some $c_0, \ldots, c_{g-1} \in k$.
+    On the other hand, we also have
+        \[
+        s\left( \left[ \frac{y}{x^g} \right] \right)  = \gamma_g + \sum_{i=0}^{g-1}d_i \lambda_i
+        \]
+    for some $d_0, \ldots, d_{g-1} \in k$.
+    Now the action of $\tau^*$ on $\lambda$ is easily seen to be given by
+        \begin{align*}
+        \tau^*(\lambda_i) & = \tau^*\left( \left[ \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right] \right) \\
+        & = \left[ \frac{(x+a)^i}{y}dx, (x+a)^i}{y}dx, 0 \right] \\
+        & = \sum_{i=0}^i \binom{i}{k} a^{i-k} \lambda_i.
+        \end{align*}
+    Then, by \eqref{equationcommutativityoftauandsplittingmap}, it follows that
+        \begin{align*}
+        \gamma_g + \sum_{i=0}^{g-1} d_i\lambda_i & = s \left( \left[ \frac{y}{x^g} \right] \right) \\
+        & = \left( \tau^*\left( \left[ \frac{y}{x^g} \right] \right) \right) \\
+        & = \tau^* \left( \gamma_g + \sum_{i=0}^{g-1} d_i \lambda_i \right) \\
+        & = \left( \gamma_g + \sum_{i=0}^{g-1} d_i \lambda_i \right) + \sum_{i=0}^{g-1} d_i \left( \sum_{k = 0}^i \binom{k}{i} a^{i-k} \lambda_i \right),
+        \end{align*}
+    and hence, by comparing coefficents of the basis elements $\lambda_{g-1}$, we see that $c_{g-1} = 0$.
+    We now show that the defining equation
+        \[
+        \tau^*(\gamma_g) = \gamma_g + \sum_{i=0}^{g-1} c_i \lambda_i
+        \]
+    implies that $c_{g-1} = a/4$.
+    Since we assumed that $a \neq 0$ this will give us the contradiction we desire.
+
+    To compute $\tau^*(\gamma_g)$ we consider the following commutative of isomorphisms
+        \[
+        \begin{array}{ccc}
+        \derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\rho} & \cechderhamhone(\cU'')  \\
+                \tau^*\downarrow & ~ & \rho'\downarrow  \\
+        \derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\tau^*} & \cechderhamhone(\cU')
+        \end{array}
+        \]\todo{have both $\rho$ and $\rho'$ been defined?}
+%Rewrite the below to just consider the second entry, using notation in comment on next five lines?
+%    Recalling the notation
+%        \[
+%        \nu_g = \left( \omega_{0 g}, \omega_{a g}, \omega_{\infty g}, f_{0 a g}, f_{0 \infty g}, f_{a \infty g} \right).
+%        \]
+%    used in the proof of Proposition \ref{basis22}.
+    Then 
+        \begin{align*}
+        \tau^*(\gamma_g) & = \tau^*(\rho'(\rho^{-1}(\gamma_g))) aa
+        & = \tau^*\left[ \left( \ldots, \frac{- \phi_g(x)}{2yx^{g+1} dx, \frac{y}{(x-a)^g} \right) \right]
+        & = \left[ \left( \tau^*(\ldots) , \frac{-\phi_g(x+a)}{2y(x+a)^{g+1}}dx, \frac{y}{x^g} \right) \right].
+        \end{align*}
+    On the other hand, we have 
+        \begin{equation*}
+        \gamma_g + \sum_{i=0}^{g-1} c_i lambda_i = \left[ \left( frac{\psi_g(x)}{2yx^{g+1}}dx, frac{-\phi_g(x)}{2yx^{g+1}}dx, \frac{y}{x^g} \right) \right] \\ + \sum_{i=0}^{g-1} c_i \left[ \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0 \right) \right].
+        \end{equation*}
+    Since any element of the form $(\omega_0, \omega_\infty, 0)$ in the subspace \todo{get reference} of the space \todo{getreference} is in fact zero, we conclude that
+        \[
+        - \frac{\phi_g(x+a)}{2y(x+a)^g} dx = -\frac{\phi_g(x)}{2yx^{g+1}}dx + \sum_{i = 0}^{g-1} c_i \frac{x^i}{y}dx
+        \]
+    in $\Omega_{K(X)}$.
+    
+    Since $dx$ is a basis of $\Omega_{K(X)}$ considered as a $K(X)$-vector space, and as $K(X) = k(x) \oplus y^{-1}k(x)$, the equation above is equivalent to
+        \[
+        \frac{\phi_g(x+a)}{2(x+a)^{g+1}} = \frac{\phi_g(x)}{2x^{g+1}} - \sum_{i=0}^{g-1} c_i x^i,
+        \]
+    and this, in turn, is equivalent to
+        \[
+        \phi_g(x+a)x^{g+1} = \phi_g(x)(x+a)^{g+1} - 2(x+a)^{g+1}x^{g+1}\sum_{i=0}^{g-1}c_i x^i,
+        \]
+    in $k(x)$.
+
+    The terms of highest degree in $\phi_g(x)$ are the same as the terms of highest degree in 
+        \[
+        s_g(x) = xf'(x) - 2gf(x) = x^{2g+1} + 0\cdot x^{2g} + \ldots.
+        \]
+    We therefore obtain
+        \[
+        \left( (x+a)^{2g+1} + 0 \cdot (x+a)^{2g} + \ldots \right) x^{g+1} = (x^{2g+1} + 0 \cdot x^{2g} + \ldots )(x+a)^{g+1} - 2(x+a)^{g+1}x^{g+1}(c_{g-1}x^{g-1} + \ldots ),
+        \]
+    and hence
+        \[
+        (2g+1)ax^{3g+1} = (g+1)ax^{3g+1} - 2c_{g-1}x^{3g+1}.
+        \]
+    Finally, since
+        \[
+        g = \frac{p^n\cdot m -1}{2} = -\frac{1}{2}
+        \]
+    for some $m\in \ZZ$ coprime to $p$ (by Lemma \todo{reference}), we obtain
+        \[
+        c_{g-1} = \frac{((g+1) - (2g+1))a}{2} = \frac{a}{4}.
+        \]  
     \end{proof}
 
     \begin{ex}
