@@ -24,7 +24,7 @@ The following lemma gives us a useful description of $H^1(X,\Omega_X)$.
         \end{rem}
     \begin{proof}
     The short exact sequence
-        \begin{equation}\label{equationseconadydualitysesfunctions}
+        \begin{equation}\label{equationsecondarydualitysesfunctions}
         0 \rightarrow \cO_X \rightarrow \underline{K}(X) \rightarrow \underline{K}(X)/\cO_X \rightarrow 0
         \end{equation}
     is a flasque resolution of $\cO_X$ (see \cite[Chap. II, ex. 1.16]{hart}).
@@ -50,9 +50,9 @@ The following lemma gives us a useful description of $H^1(X,\Omega_X)$.
     Hence the image of $f$ in $\prod_{P \in X} i_*\left(K(X)/\cO_{X,P}\right)$ is zero in almost all factors.
     From this the isomorphism in \eqref{equationsheafisomorphism} follows.\todo{Add more details - mention adjoint}
     
-    Replacing $\underline{K}(X)/\Omega_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{equationsecondarydualitysesfunctions} yields
+    Replacing $\underline{K}(X)/\cO_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{equationsecondarydualitysesfunctions} yields
         \begin{equation}\label{equationresolutionofox}
-        0 \ra \cO_X \ra \underline{K}(X) \ra \bigoplus_{P \in X}i_* \left( K(X)/\cO_{X,P} \right)
+        0 \ra \cO_X \ra \underline{K}(X) \ra \bigoplus_{P \in X}i_* \left( K(X)/\cO_{X,P} \right) \ra 0
         \end{equation}
     Taking cohomology then yields the exact sequence \eqref{equationinitialdualitysesfunctions}.
     
@@ -175,7 +175,7 @@ We now describe how the trace map acts on $H^1(X,\Omega_X)$ via the presentation
     \end{lem}
     \begin{proof}
     We take the \cech complex of \eqref{equationsecondarydualitysesfunctions} over the cover $\cU$, yielding the following bicomplex
-        \begin{equation}\label{equationdualitycommutativediagramdiffientials}
+        \begin{equation}\label{equationdualitycommutativediagramdifferentials}
         \xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \Omega_{K(X)} \times \Omega_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
         \Omega_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \Omega_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
         \end{equation}
@@ -462,7 +462,7 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
     
     
     Recall that the differentials $\omega_0 = y^{-1}dx, \ldots, \omega_{g-1} = x^{g-1}y^{-1}dx$ form a basis of $\hzero$ (see, for example, \cite[Prop. 7.4.26]{liu}).
-    By Lemma \ref{tracemaplemma} we know that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx)$.
+    By Lemma \ref{lemmatracemaplemma} we know that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx)$.
     It follows immediately from Theorem \ref{theoremresiduemap} that $\sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx) = -2$ if $i-j=-1$ and is zero otherwise (regardless of whether $\infty$ is a branch point).
     It then follows from Theorem \ref{theoremserreduality} that the residue classes of $ yx^{-1}|_{U_0\cap U_\infty},\ldots,yx^{-g}|_{U_0\cap U_\infty}$ form a basis of $\hone$.
     
@@ -501,7 +501,7 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
     
     
     
-    If $P_\infty$ is a branch point then we compute the divisor of $ \frac{y}{x^j} \cdot \frac{x^i}{H(x)}dx$, using \eqref{equationdivxpis2}, \eqref{differentialdivisor}, \eqref{equationdivisorofH} and Proposition \ref{propdivisorofypis2}:
+    If $P_\infty$ is a branch point then we compute the divisor of $ \frac{y}{x^j} \cdot \frac{x^i}{H(x)}dx$, using \eqref{equationdivxpis2}, \eqref{equationdifferentialdivisor}, \eqref{equationdivisorofH} and Proposition \ref{propdivisorofypis2}:
         \begin{align*}
         \di\left( \frac{yx^{i-j}}{H(x)}dx \right) & = \di(y) + \di(x^{i-j}) + \di( dx) - \di(H(x)) \\
         & = \sum_{i=1}^l m_i[Q_i] - (2g+ 1 )[P_\infty] + (i-j)D_0 - (i-j)D_\infty + R - 2D_\infty \\
@@ -595,7 +595,7 @@ Viewing $\derhamhone$ as a quotient of \eqref{equationderhamspace}, we now give 
 
     \begin{thm}\label{theorembasisofderham}
     If $p \neq 2$ then the residue classes of 
-        \begin{equation}\label{equationhonebasislementofderhampnot2}
+        \begin{equation}\label{equationhonebasiselementofderhampnot2}
          \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right), i=1, \ldots ,g,
         \end{equation}
     along with the residue classes of 
@@ -609,7 +609,7 @@ Viewing $\derhamhone$ as a quotient of \eqref{equationderhamspace}, we now give 
         \left( \left(\frac{\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right), i =1, \ldots , g,
         \end{equation}
     together with the residue classes of 
-        \begin{equation}\label{equationzerobasiselementofderhampis2}
+        \begin{equation}\label{equationhzerobasiselementofderhampis2}
         \left( \frac{x^{i}}{H(x)} dx, \frac{x^{i}}{H(x)} dx, 0 \right), i=0, \ldots, g-1,
         \end{equation}
     form a basis of $\derhamhone$.
@@ -642,7 +642,7 @@ Before proving this theorem we use it to prove the following corollary.
         H_{1,i}(x) = B_{i-1}x^{i-1} + \ldots + B_1x + B_0 \quad \text{ and } \quad H_{2,i}(x) = -( x^d + B_{d-1}x^{d-1} + \ldots + B_ix^i).
         \]
     
-    We now consider the action of $\sigma$ on the entries in \eqref{equationhonebasiselementofderhamis2}.
+    We now consider the action of $\sigma$ on the entries in \eqref{equationhonebasiselementofderhampis2}.
     Firstly we see that
         \begin{align*}
         \sigma \left( \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} dx\right) & = \frac{-\sigma(\Psi_i(x,y))}{x^{i+1} H(x)} dx \\
@@ -661,12 +661,12 @@ Before proving this theorem we use it to prove the following corollary.
     Lastly, it is clear that $\sigma(x^{-i}y) = x^{-i}(y+H(x))$.
     
     
-    We can now describe exactly how sigma acts on the elements of \eqref{equationhonebasiselementofderhamis2} using $H_{1,i}(x)$ and $H_{2,i}(x)$:
+    We can now describe exactly how sigma acts on the elements of \eqref{equationhonebasiselementofderhampis2} using $H_{1,i}(x)$ and $H_{2,i}(x)$:
         \begin{multline*}
         \sigma \left( \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right)\right) = \\
          \left( \left(\frac{-\Psi_i(x,y)}{x^{i+1}H(x)} \right) dx + d\left(\frac{H_{1,i}(x)}{x^i}\right),  \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx+ d\left(\frac{H_{2,i}(x)}{x^i} \right), \frac{y+H(x)}{x^i} \right).
         \end{multline*}
-    So the action of $\sigma$ on the basis elements in \eqref{equationhonebasiselementofderhamis2} amounts to adding 
+    So the action of $\sigma$ on the basis elements in \eqref{equationhonebasiselementofderhampis2} amounts to adding 
         \[
         \left( d\left(\frac{H(x)_{1,i}}{x^i}\right), d\left(\frac{H(x)_{2,i}}{x^i}\right), \frac{H(x)}{x^i} \right),
         \]
@@ -675,7 +675,7 @@ Before proving this theorem we use it to prove the following corollary.
     \end{proof}
 
     \begin{rem}
-    We briefly study the action of $\sigma$ on the elements \eqref{equationhonebasisofderhampnot2} (when $p\neq 2$).
+    We briefly study the action of $\sigma$ on the elements \eqref{equationhonebasiselementofderhampnot2} (when $p\neq 2$).
     When $p \neq 2$ then $\sigma$ acts by $(x,y) \mapsto (x,-y)$.
     If we let
         \[
@@ -697,16 +697,16 @@ Before proving this theorem we use it to prove the following corollary.
     \end{rem}
 
 
-We now prove Theorem \ref{thoerembasisofderham}.
+We now prove Theorem \ref{theorembasisofderham}.
 
     \begin{proof}
     We make use of the fact that the short exact sequence in Lemma \ref{propshortexactsequence} splits as a sequence of vector spaces over $k$, and that we know bases of the outer two terms.
     
-    It is clear that the elements in \eqref{equationhzerobasiselementoderhampnot2} and \eqref{equationhzerobasiselementofderhampis2} are elements of the space \eqref{equationderhamspace}. 
+    It is clear that the elements in \eqref{equationhzerobasiselementofderhampnot2} and \eqref{equationhzerobasiselementofderhampis2} are elements of the space \eqref{equationderhamspace}. 
     In fact, it follows from \cite[Thm. 6.1]{faithfulaction}\todo{reference in thesis} that they are the image of a basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
     
-    Moreover, it is obvious that if the elements in \eqref{equationhonebasisofderhampnot2} and \eqref{equationhonebasiselementofderhamis2} are well defined elements of the space \eqref{equationderhamspace} then they will map to the basis of $\hone$ given in Theorem \ref{theorembasisofhone}.
-    So we need only show that the terms in \eqref{equationhonebasisofderhampnot2} and \eqref{equationhonebasiselementofderhamis2} satisfy the conditions stated in \eqref{equationderhamspace}.
+    Moreover, it is obvious that if the elements in \eqref{equationhonebasiselementofderhampnot2} and \eqref{equationhonebasiselementofderhampis2} are well defined elements of the space \eqref{equationderhamspace} then they will map to the basis of $\hone$ given in Theorem \ref{theorembasisofhone}.
+    So we need only show that the terms in \eqref{equationhonebasiselementofderhampnot2} and \eqref{equationhonebasiselementofderhampis2} satisfy the conditions stated in \eqref{equationderhamspace}.
     For the rest of the proof we fix $i \in \{1, \ldots ,g\}$.
     
     
@@ -721,7 +721,7 @@ We now prove Theorem \ref{thoerembasisofderham}.
         & =  d(yx^{-i}),
         \end{align*}
     with the penultimate line following from the defining equation \eqref{equationdefiningequationpnot2}.
-    This shows that the elements in \eqref{equationhonebasisofderhampnot2} satisfy $df_{0, \infty} = \omega_0 - \omega_\infty$, one of the conditions of \eqref{equationderhamspace}.
+    This shows that the elements in \eqref{equationhonebasiselementofderhampnot2} satisfy $df_{0, \infty} = \omega_0 - \omega_\infty$, one of the conditions of \eqref{equationderhamspace}.
     Since we saw in the proof of Theorem \ref{theorembasisofhone} that $\frac{y}{x^i}$ is regular on $U_0\cap U_\infty$ it only remains to show that $\frac{\phi_i(x)}{2yx^{i+1}}dx$ and $\frac{-\psi_i(x)}{2yx^{i+1}}dx$ are regular on $U_\infty$ and $U_0$ respectively.
     
     
@@ -781,7 +781,7 @@ We now prove Theorem \ref{thoerembasisofderham}.
         \end{align*}
     with the fourth equality following from \eqref{equationdivisorofdypis2}.
     We have also already seen in the proof of Theorem \ref{theorembasisofhone} that $\frac{y}{x^i}$ is regular on $U_0 \cap U_\infty$.
-    So in order to prove that for $i\in \{1, \ldots, g\}$ the elements of \eqref{equationhonebasiselementofderhamis2} are satisfy the conditions of \eqref{equationderhamspace} it only remains to show that the differentials $\frac{\Phi_i(x,y)}{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x,y)}{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.
+    So in order to prove that for $i\in \{1, \ldots, g\}$ the elements of \eqref{equationhonebasiselementofderhampis2} are satisfy the conditions of \eqref{equationderhamspace} it only remains to show that the differentials $\frac{\Phi_i(x,y)}{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x,y)}{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.
     We denote the degrees of the polynomials defined in \eqref{equationsplittingphiandpsi} by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$.
     
     
@@ -794,7 +794,7 @@ We now prove Theorem \ref{thoerembasisofderham}.
         & = (R-2D_\infty) - ((i+1)D_0 - (i+1)D_\infty) - (R - (g+1)D_\infty) \nonumber \\
         & = (g+i)D_\infty - (i+1)D_0,
         \end{align*}
-    using \eqref{differentialdivisor}, \eqref{equationdivisorofH} and \eqref{equationdivxpis2}.
+    using \eqref{equationdifferentialdivisor}, \eqref{equationdivisorofH} and \eqref{equationdivxpis2}.
     We now use this along with Proposition \ref{propdivisorofypis2} and the polynomials \eqref{equationsplittingphiandpsi} to complete the proof.
     
     We begin by computing the divisors associated to $\Phi_i(x,y)$.
@@ -856,7 +856,7 @@ We now prove Theorem \ref{thoerembasisofderham}.
 
 We keep the assumptions of the previous section, except that we now also assume that $\cha(k) = p$ is odd.
 
-In the previous section (Theorem \ref{thoerembasisofderham}) we found a basis for the de Rham cohomology of any hyperelliptic curve using \cech cohomology, with respect to the cover $\cU = \{ U_0 , U_\infty\}$.
+In the previous section (Theorem \ref{theorembasisofderham}) we found a basis for the de Rham cohomology of any hyperelliptic curve using \cech cohomology, with respect to the cover $\cU = \{ U_0 , U_\infty\}$.
 We let $\lambda_i$ and $\gamma_i$ denote the elements of this basis by defining
     \begin{align*}
     \lambda_i  = & \left[ \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) \right] ,\quad i=0, \ldots, g-1 \\
@@ -900,7 +900,7 @@ splitting the polynomial $(x-a)^g$ in to two parts.
         \[
         \nu_i = \left( \omega_{0 i}, \omega_{a i}, \omega_{\infty i}, f_{0 a i}, f_{0 \infty i}, f_{a \infty i} \right).
         \]
-    First, note that it follows from the proof of Theorem \ref{thoerembasisofderham} that $d(f_{0 \infty i}) = \omega_{0 i} - \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
+    First, note that it follows from the proof of Theorem \ref{theorembasisofderham} that $d(f_{0 \infty i}) = \omega_{0 i} - \omega_{\infty i}$, and that $f_{0 \infty i}, \omega_{0 i}$ and $\omega_{\infty i}$ are regular on the appropriate open sets.
     
     Since $r_i(x)+t_i(x)$ is the binary expansion of $(x-a)^g$ then
         \begin{align*}
@@ -912,7 +912,7 @@ splitting the polynomial $(x-a)^g$ in to two parts.
     
     
     We now check that differentials and functions in $\nu_i$ are regular on the appropriate open sets by computing the relevant divisors.
-    Firstly, by \eqref{equationdivxpis2} and \eqref{differentialdivisor},
+    Firstly, by \eqref{equationdivxpis2} and \eqref{equationdifferentialdivisor},
         \begin{align*}
         \di \left( f_{0 a i} \right) & = \di \left( \frac{r_i(x)y}{x^i(x-a)^g} \right) \\
         &  = \di(r_i(x)) + \di(y) - i\di(x) - g\di(x-a) \\
@@ -921,7 +921,7 @@ splitting the polynomial $(x-a)^g$ in to two parts.
         \end{align*}
     which is non-negative on $U_0 \cap U_a$.
     Note that the second and third line are not necessarily equal, since the coefficient of $x^{i-1}$ may be divisible by $p$.
-    On the other hand, by \eqref{equationdivxpis2} and \eqref{differentialdivisor},
+    On the other hand, by \eqref{equationdivxpis2} and \eqref{equationdifferentialdivisor},
         \begin{align*}
         \di \left( f_{a \infty i} \right) & = \di \left( \frac{t_i(x)y}{x^i(x-a)^g} \right) \\
         & = \di\left(\frac{t_i(x)}{x^i}\right) + \di(y) - g\di(x-a) \\
@@ -942,7 +942,7 @@ splitting the polynomial $(x-a)^g$ in to two parts.
         & \quad - (g+1)D_a + (g+1)D_\infty \\
         & = (2g+i+1)D_\infty -(i+1)D_0 - (g+1)D_a,
         \end{align*}
-    using \eqref{equationdivxpis2}, \eqref{differentialdivisor} and \eqref{equationdivisorofypnot2}.
+    using \eqref{equationdivxpis2}, \eqref{equationdifferentialdivisor} and \eqref{equationdivisorofypnot2}.
     We next show that the numerator of \eqref{equationexpandomegaai},
         \begin{equation}\label{equationnumerator}
         {(\psi_i(x)t_i(x) - \phi_i(x)r_i(x))(x-a) + 2if(x)(-1)^{g-i+1}\binom{g}{i} a^{g-i+1}x^i},
@@ -1139,7 +1139,7 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
         \]  \todo{State where this lives?}
     Therefore 
         \begin{align*}
-        \tau^* \left( \left[ \frac{y}{x^g} \right] \right)  & = \tau^* \left( \rho' \left(\rho^{-1}\left(\left[\frac{y}{x^g}\right)\right)\right) \\
+        \tau^* \left( \left[ \frac{y}{x^g} \right] \right)  & = \tau^* \left( \rho' \left(\rho^{-1}\left(\left[\frac{y}{x^g}\right]\right)\right)\right) \\
         & = \tau^*\left( \rho' \left( \left[ \frac{((x-a)^g-x^g)y}{x^g(x-a)^g}, \frac{y}{x^g}, \frac{y}{x^g}, \frac{y}{(x-a)^g} \right] \right) \right) \\
         & = \tau^*\left( \left[ \frac{y}{(x-a)^g} \right] \right) \\
         & = \left[ \frac{y}{x^g} \right],
@@ -1148,7 +1148,7 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
 
     Since the residue class of $\left[ \frac{y}{x^g} \right]$ maps to the basis element $\gamma_g \in derhamhone$ it follows that
         \[
-        \tau^*(\gamma_g) = \gamma_g + \sum_{i=0]^{g-1} c_i\lambda_i
+        \tau^*(\gamma_g) = \gamma_g + \sum_{i=0}^{g-1} c_i\lambda_i
         \]
     for some $c_0, \ldots, c_{g-1} \in k$.
     On the other hand, we also have
@@ -1159,7 +1159,7 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
     Now the action of $\tau^*$ on $\lambda$ is easily seen to be given by
         \begin{align*}
         \tau^*(\lambda_i) & = \tau^*\left( \left[ \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right] \right) \\
-        & = \left[ \frac{(x+a)^i}{y}dx, (x+a)^i}{y}dx, 0 \right] \\
+        & = \left[ \frac{(x+a)^i}{y}dx, \frac{(x+a)^i}{y}dx, 0 \right] \\
         & = \sum_{i=0}^i \binom{i}{k} a^{i-k} \lambda_i.
         \end{align*}
     Then, by \eqref{equationcommutativityoftauandsplittingmap}, it follows that
@@ -1193,8 +1193,8 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
 %    used in the proof of Proposition \ref{propbasisoftriplecoverderham}.
     Then 
         \begin{align*}
-        \tau^*(\gamma_g) & = \tau^*(\rho'(\rho^{-1}(\gamma_g))) aa
-        & = \tau^*\left[ \left( \ldots, \frac{- \phi_g(x)}{2yx^{g+1} dx, \frac{y}{(x-a)^g} \right) \right]
+        \tau^*(\gamma_g) & = \tau^*(\rho'(\rho^{-1}(\gamma_g))) \\  
+        & = \tau^*\left( \left[ \ldots, \frac{- \phi_g(x)}{2yx^{g+1}} dx, \frac{y}{(x-a)^g} \right) \right] \\
         & = \left[ \left( \tau^*(\ldots) , \frac{-\phi_g(x+a)}{2y(x+a)^{g+1}}dx, \frac{y}{x^g} \right) \right].
         \end{align*}
     On the other hand, we have 
