@@ -575,14 +575,14 @@ Similarly to the case $\deg(D)\geq 2g_X$ in Corollary \ref{this}, the following 
 In this section we prove the main theorem of this chapter, describing exactly when $G$ will act faithfully on $H^0(X,\Omega_X^{\otimes m})$.
 
 
-    \begin{unnumthm}
+    \begin{thm}\label{theoremfaithfulaction}
     Suppose that $g_X\geq 2$ and let $m\geq1$. 
     Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ contains a hyperelliptic involution and one of the following two sets of conditions holds:
         \begin{itemize}
         \item $m=1$ and $p=2$;
         \item $m=2$ and $g_X=2$.
         \end{itemize}
-    \end{unnumthm}
+    \end{thm}
     \begin{proof}
     We first show the if direction. 
     In the case when $m=1$, the hyperelliptic involution contained in $G$ generates a subgroup of order $2$.
@@ -730,7 +730,7 @@ Hence in this instance
 
 
 
-    \begin{prop}\label{propneq2}
+    \begin{prop}\label{prophyperellipticbasispnot2}
     Let $m\geq 1$.
     Let $X$, $x$ and $y$ be as above, and let $\omega := \frac{dx^{\otimes m}}{y^m}$. 
     Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by:
@@ -776,7 +776,7 @@ Hence in this instance
         \di(y) = \sum_{i=1}^{2g+2} [p_i]- (g+1)D_\infty = R - (g+1)D_{\infty}.
         \]
     
-    We now show that the differentials listed in Proposition \ref{propneq2} are holomorphic.
+    We now show that the differentials listed in Proposition \ref{prophyperellipticbasispnot2} are holomorphic.
     We consider the first two cases together.
     So if $m=1$ or $m\geq 2$, $g\geq 2$ then we have that
         \begin{align*}
@@ -1020,7 +1020,7 @@ Otherwise there are two points that map to it, and we denote these
 
 We now prove the following proposition, determining a basis of the space of global holomorphic poly-differentials as a vector space over $k$.
 
-    \begin{prop}
+    \begin{prop}\label{propbasishyperellipticp=2}
     We assume that $g\geq 2$ and let $\omega:= \frac{dx^{\otimes m}}{h(x)^m}$. 
     Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by
         $\begin{cases}

@@ -283,6 +283,7 @@ The following lemma shows that $\derhamhone$ fits in to a short exact sequence.
     \end{proof}
 
 \section{Bases of $\hone$ and $\derhamhone$}
+\subsection{basis of $\hone$}
 
 We keep the assumptions of the previous section.
 In this section we will give an explicit basis of $\hone$ and $\derhamhone$, using the results of the previous sections along with methods similar to those found in \cite{canonicalrepresentation}.
@@ -494,10 +495,10 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
         \left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle & = \res_{P_ \infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P_ \infty} \left( \frac{(y+H(x))x^{i-j}}{H(x)}dx \right) \\
         & = 2\res_{P_\infty}\left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P \infty}(x^{i-j}dx) \\
         & = \res_{P_\infty}(x^{i-j}dx),
-        \end{align*}\todo{check this makes sense}
+        \end{align*}
     since we are assuming that $\cha(k) = 2$.
     As in the previous case, it follows from the definition of $\res_P$ that $\res_{P_\infty}(x^{i-j}dx) = -1$ if $i-j = -1$ and is zero otherwise.
-    Hence it follows from Theorem \ref{theoremserreduality} that the residue classes of $\frac{y}{x}|_{U_0 \cap U_\infty}, \ldots, \frac{y}{x^g}|_{U_0 \cap U_\infty}$ form a basis of $\hone$.
+    Hence the residue classes of $\frac{y}{x}|_{U_0 \cap U_\infty}, \ldots, \frac{y}{x^g}|_{U_0 \cap U_\infty}$ form a basis of $\hone$ when $p = 2$ and $\infty$ is not ramified, by Theorem \ref{theoremserreduality}.
     
     
     
@@ -514,7 +515,7 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
     We also check that if $j \neq i+1$ then $\left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = 0$.
     Indeed, if $j-i \geq 2$ then clearly $\frac{yx^{i-j}}{H(x)}dx$ does not have a pole at $P_\infty$.
     On the other hand, if $j-i \leq 0$ then the differential $\frac{yx^{i-j}}{H(x)}dx$ is regular on $U_\infty$, and hence the residue on this set is zero.
-    Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the Theorem \ref{theoremresiduetheorem} the residue of $\frac{yx^{i-j}}{H(x)}dx$ at $P_\infty$ is also zero, and hence the residue classes of the elements $\frac{y}{x}|_{U_0 \cap U_\infty}, \ldots, \frac{y}{x^g}|_{U_0 \cap U_g}$ form a basis of $\hone$.\todo{rephrase this bit due to repetitiveness}
+    Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the Theorem \ref{theoremresiduetheorem} the residue of $\frac{yx^{i-j}}{H(x)}dx$ at $P_\infty$ is also zero, and hence the residue classes of the elements $\frac{y}{x}|_{U_0 \cap U_\infty}, \ldots, \frac{y}{x^g}|_{U_0 \cap U_g}$ form a basis of $\hone$, in all cases.
     \end{proof}
 
 %Mittag-Leffler style corollary
@@ -530,7 +531,8 @@ We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the sam
     From Lemma \ref{lemmaexactsequenceofhoneandhzero} we have the following exact sequence
         \begin{equation*}
         0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \rightarrow \hone \ra 0.
-        \end{equation*}\todo{introduce final map as $\delta$}
+        \end{equation*}
+    and we let $\delta$ denote the map $\bigoplus_{P \in X} K(X)/\cO_{X,P} \rightarrow \hone$.
     By Theorem \ref{theorembasisofhone} the residue classes $ \gamma_ 1= \left[ \frac{x}{y}\right], \ldots, \gamma_n = \left[\frac{x^g}{y}\right]$ form a basis of $\hone$, it follows that there exist unique $\alpha_1, \ldots, \alpha_g$ such that
         \[
         \delta\left( (f_P)_{P \in X} \right) - \left( \alpha_1\gamma_1 + \ldots + \alpha_n\gamma_n \right) = 0.
@@ -545,7 +547,7 @@ We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the sam
         \begin{equation}\label{immediate}
         \left( \left(\left( \gamma_1 + \ldots + \gamma_g \right) \right)_{P \in U_0}, 0\right) \in \bigoplus_{P \in U_0}K(X)/\cO_{X,P} \times \bigoplus_{P \in U_\infty}K(X)/\cO_{X,P}.
         \end{equation}
-    Since $(\alpha_ix^i/y$ is regular on $U_\infty \cap U_0$, \eqref{immediate} is equal to $\left( (g_P)_{P \in U_\infty}\, 0\right)$, where
+    Since $\alpha_ix^i/y$ is regular on $U_\infty \cap U_0$, \eqref{immediate} is equal to $\left( (g_P)_{P \in U_\infty}\, 0\right)$, where
         \[
         g_P =
             \begin{cases}
@@ -557,7 +559,7 @@ We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the sam
     By the exactness of \eqref{equationinitialdualitysesfunctions} it follows that there exists an $f \in K(X)$ which has Laurent tail $f_P - g_P$ at each $P \in X$, as required in the statement of the corollary.
     \end{proof}
 
-\todo[inline]{possible new section here?}
+\subsection{Basis of $\derhamhone$}
 
 In order to state a basis of $\derhamhone$, as well as to shorten the proof of the following theorem, we define the following polynomials. 
 We suppose that $1 \leq i \leq g$.
@@ -617,16 +619,16 @@ Viewing $\derhamhone$ as a quotient of \eqref{equationderhamspace}, we now give 
 
 Before proving this theorem we use it to prove the following corollary.
 
-    \begin{cor}
+    \begin{cor}\label{corfaithfulactiononderhamhone}
     The action of $G := \aut(X)$ on $\derhamhone$ is faithful unless $G$ contains a hyperelliptic involution and $p=2$, in which case the action of the hyperelliptic involution is trivial.
     \end{cor}
 
     \begin{proof}
     Recall from Proposition \ref{propshortexactsequence} that $H^0(X,\Omega_X)$ injects into $\derhamhone$.
-    Then if $p \neq 2$ or $G$ does not contain a hyperelliptic involution it follows from \cite[Thm. 4.2]{faithfulaction}\todo{reference in thesis} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
+    Then if $p \neq 2$ or $G$ does not contain a hyperelliptic involution it follows from Theorem \ref{theoremfaithfulaction} that $G$ acts faithfully on $H^0(X,\Omega_X)$, and hence $G$ acts faithfully on $\derhamhone$.
     
     We now suppose that $p=2$ and that $G$ contains a hyperelliptic involution, which we denote by $\sigma$.
-    By the same theorem from \cite{faithfulaction}\todo{reference in thesis} we know that $\sigma$ acts trivially on $\hzero$.
+    Again by Theorem \ref{theoremfaithfulaction} we know that $\sigma$ acts trivially on $\hzero$.
     
     Since $\hzero$ is dual to $\hone$ then $\sigma$ also acts trivially on $\hone$.
     We can study exactly why this is from the view of \cech cohomology, and this will also help to determine the action of $\sigma$ on $\derhamhone$.
@@ -700,10 +702,10 @@ Before proving this theorem we use it to prove the following corollary.
 We now prove Theorem \ref{theorembasisofderham}.
 
     \begin{proof}
-    We make use of the fact that the short exact sequence in Lemma \ref{propshortexactsequence} splits as a sequence of vector spaces over $k$, and that we know bases of the outer two terms.
+    We make use of the fact that the short exact sequence in Proposition \ref{propshortexactsequence} splits as a sequence of vector spaces over $k$, and that we know bases of the outer two terms.
     
     It is clear that the elements in \eqref{equationhzerobasiselementofderhampnot2} and \eqref{equationhzerobasiselementofderhampis2} are elements of the space \eqref{equationderhamspace}. 
-    In fact, it follows from \cite[Thm. 6.1]{faithfulaction}\todo{reference in thesis} that they are the image of a basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
+    In fact, it follows from Propositions \ref{prophyperellipticbasispnot2} and \ref{propbasishyperellipticp=2} that they are the image of a basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
     
     Moreover, it is obvious that if the elements in \eqref{equationhonebasiselementofderhampnot2} and \eqref{equationhonebasiselementofderhampis2} are well defined elements of the space \eqref{equationderhamspace} then they will map to the basis of $\hone$ given in Theorem \ref{theorembasisofhone}.
     So we need only show that the terms in \eqref{equationhonebasiselementofderhampnot2} and \eqref{equationhonebasiselementofderhampis2} satisfy the conditions stated in \eqref{equationderhamspace}.
@@ -1018,7 +1020,7 @@ splitting the polynomial $(x-a)^g$ in to two parts.
         \begin{align*}
         r_i'(x)(x-a) & = x \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^{k-1} - a \sum_{k=0}^{i-2} (k+1) (-1)^{g-k-1} \binom{g}{k+1}a^{g-k-1} x^k \\
         & = \sum_{k=1}^{i-1} k (-1)^{g-k} \binom{g}{k} a^{g-k} x^k  + \sum_{k=0}^{i-2} (k+1) (-1)^{g-k} \binom{g}{k+1}a^{g-k} x^k \\
-        & = gr_i(x) + (-1)^{g-i+2}i \binom{g}{i}a^{g-i+1}x^i,
+        & = gr_i(x) + (-1)^{g-i+2}i \binom{g}{i}a^{g-i+1}x^{i-1},
         \end{align*}
     since
         \begin{align*}
@@ -1027,7 +1029,7 @@ splitting the polynomial $(x-a)^g$ in to two parts.
         & = \frac{g\cdot g!}{k!(g-k)!} \\
         & = g \binom{g}{k}.
         \end{align*}
-    Hence $r_i'(x)-gr_i(x)= (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i$.\todo{check if a factor of $x$ is missing}
+    Hence $x(r_i'(x)(x-a)-gr_i(x))= (-1)^{g-i+2}i\binom{g}{i} a^{g-i+1}x^i$.
     
     Combining the above we conclude that
         \[
@@ -1040,15 +1042,15 @@ splitting the polynomial $(x-a)^g$ in to two parts.
         \]
     \end{proof}
 
-We note that for any $\sigma \in \aut(X)$ the following diagram commutes,
+We note that for any $\tau \in \aut(X)$ the following diagram commutes,
     \[
     \begin{array}{ccc}
-    X & \xrightarrow[\sigma] & X \\
+    X & \xrightarrow[\tau] & X \\
     \downarrow\pi & & \downarrow\pi \\
-    \mathbb P^1_k & \xrightarrow[\sigma] & \mathbb P_k^1
+    \mathbb P^1_k & \xrightarrow[\tau] & \mathbb P_k^1
     \end{array}
-    \]\todo{change to $\tau$?}
-since the hyperelliptic involution $j$ is in the centre of $\aut(X)$.
+    \]
+since the hyperelliptic involution $\sigma$ is in the centre of $\aut(X)$.
 Hence, if $a = \sigma(0)$, the following diagram also commutes:
     \[
     \begin{array}{ccc}
@@ -1061,20 +1063,19 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
 
 
     \begin{lem}\label{lemmatauactsbyplusminusoneony}
-    Suppose that $\tau \in \aut(X)$ is such that $\tau^*\colon x \mapsto x+a$.
-    Then the action of $\sigma^*$ on $y$ is given by $\sigma^*(y) = y$ or $\sigma^*(y) = -y$.
-    Moreover, if such an automorphism of $X$ exists, then $p$ divides the degree of$f(x)$.
+    Suppose that $\tau \in \aut(X)$ is such that the induced automporhism $\bar \tau \colon \mathbb P_k^1 \ra \mathbb P_k^1$ is given by $x \mapsto x+ a$.
+    Then the action of $\tau^*$ on $y$ is given by $\tau^*(y) = y$ or $\tau^*(y) = -y$.
+    Moreover, if such an automorphism of $X$ exists, then $p$ divides the degree of $f(x)$.
     \end{lem}
-    \todo[inline]{Change statement to match that of following theorem}
     \begin{proof}
     We first show that $\tau^*(y) = \pm y$.
     Since $y^2 \in k(x)$ then there must exist $g_1(x), g_2(x) \in k(x)$ such that 
         \begin{equation*}
-        \sigma^*(y) = g_1(x)y + g_2(x) \in k(x,y).
+        \tau^*(y) = g_1(x)y + g_2(x) \in k(x,y).
         \end{equation*}
     Hence
         \begin{equation}\label{equationexpandingysquared}
-        f(x+a) = \sigma^*(y^2) = (\sigma^*(y))^2 = g_1(x)^2f(x)+2g_1(x)g_2(x)y + g_2(x)^2.
+        f(x+a) = \tau^*(y^2) = (\tau^*(y))^2 = g_1(x)^2f(x)+2g_1(x)g_2(x)y + g_2(x)^2.
         \end{equation}
     Firstly, note that if neither $g_1(x)$ nor $g_2(x)$ are zero then
         \[
@@ -1083,8 +1084,8 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
     which contradicts the fact $K(X)$ is a degree two extension of $k(x)$.
     Hence one of $g_1(x)$ or $g_2(x)$ must be zero.
     
-    If $g_1(x) = 0$ then $\sigma^*$ would not be an automorphism, since $y$ would not be in the image.
-    Hence $\sigma^*(y) = g_1(x)y$.
+    If $g_1(x) = 0$ then $\tau^*$ would not be an automorphism, since $y$ would not be in the image.
+    Hence $\tau^*(y) = g_1(x)y$.
     Also, by comparing the degrees in \eqref{equationexpandingysquared} we see that $\deg(g_1(x)) = 0$, and then by comparing coefficients in the same equation we see that $g_1(x)^2 = 1$.
     Hence $\tau^*(y) = \pm y$.
 
@@ -1102,26 +1103,26 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
 %    Hence we will assume throughout the rest of the paper that $\sigma^*(y) = y$.
 %    \end{rem}
 
-    Recall from Proposition \todo{find refernece} that we have a canonical short exact sequence
+    Recall from Proposition \ref{propshortexactsequence} that we have a canonical short exact sequence
         \begin{equation}\label{equationderhamcohomologyshortexactseqeunce}
         0 \ra \hzero \ra \derhamhone \ra \hone \ra 0.
         \end{equation}
         
     \begin{thm}
-    Suppose that $\tau \in \aut(X)$ is such that the induced automorphism $\bar \tau \colon \mathbb P_k^1 \ra \mathbb P_k^1$ is given by $x \mapsto x+a$ for some $0 \neq a \ in k$.
+    Suppose that $\tau \in \aut(X)$ is such that the induced automorphism $\bar \tau \colon \mathbb P_k^1 \ra \mathbb P_k^1$ is given by $x \mapsto x+a$ for some $0 \neq a \in k$.
     Then let $G = \langle \tau \rangle$ be the subgroup of $\aut(X)$ generated by $\tau$.
-    Then sequence \eqref{equationderhamcohomologyshortexactseqeunce} does not split when as a sequence of $k[G]$-modules.\todo{possibly rephrase}
+    Then sequence \eqref{equationderhamcohomologyshortexactseqeunce} does not split as a sequence of $k[G]$-modules.
     \end{thm}
     \begin{proof}
     By Lemma \ref{lemmatauactsbyplusminusoneony} we have $\tau^*(y) = y$ or $\tau^*(y) = -y$.
-    Without loss of generality we may as well assume that $\tau(y) = y$ since, if $\tau(y) = -y$, we may replace $tau$ by $\tau \circ \sigma$ (where $\sigma$ is the hyperelliptic involution of $X$) and notice the sequence splits as a sequence of $K[G]$-modules if and only if it splits as a  $K[\langle \tau \circ \sigma \rangle]$-modules (see remark after Corollary).\todo{reference corollary, check statement} 
+    Without loss of generality we may as well assume that $\tau(y) = y$ since, if $\tau(y) = -y$, we may replace $tau$ by $\tau \circ \sigma$ (where $\sigma$ is the hyperelliptic involution of $X$) and notice the sequence splits as a sequence of $K[G]$-modules if and only if it splits as a  $K[\langle \tau \circ \sigma \rangle]$-modules (see remark after Corollary \ref{corfaithfulactiononderhamhone}).\todo{check statement} 
     
     We now suppose that the sequence \eqref{equationderhamcohomologyshortexactseqeunce} does split, and that $s \colon \hone \ra \derhamhone$ is the splitting map.
     Then it follows that for all $\alpha \in \hone$ then
         \begin{equation}\label{equationcommutativityoftauandsplittingmap}
         s(\tau^*(\alpha)) = \tau^*(s(\alpha)) \in \derhamhone.
         \end{equation}
-    We will show that this equality gives rise to a contradiction when $\alpha$ is the residue class of $\frac{y}{x^g}|_{U_0 \cap U_\infty}$ in $\hone$ (see \todo{find references - $\hone$ isomorphism } and Theorem \ref{theorembasisofhone}).  
+    We will show that this equality gives rise to a contradiction when $\alpha$ is the residue class of $\frac{y}{x^g}|_{U_0 \cap U_\infty}$ in $\hone$ (see \eqref{equationcechhoneisomorphismfunctions} and Theorem \ref{theorembasisofhone}).  
     It will then follow that no splitting map (and hence no splitting map) can exist.
 
     We first compute the action of $\tau^*$ on the residue class $\left[\frac{y}{x^g}\right]$.
@@ -1133,7 +1134,7 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
         \hone \cong \cechhone(\cU)  & \xleftarrow{\tau^*} & \cechhone(\cU')
         \end{array}
         \]
-    From the proof of Proposition \todo{label and reference sixtuple proposition} we know that $\rho^{-1} \left(\left[\frac{y}{x^g}\right]\right)$ is the residue class of
+    From the proof of Proposition \ref{propbasisoftriplecoverderham} we know that $\rho^{-1} \left(\left[\frac{y}{x^g}\right]\right)$ is the residue class of
         \[
         \left( \frac{r_g(x)y}{x^g(x-a)^g}, \frac{y}{x^g}, \frac{t_g(x)y}{x^g(x-a)^g} \right) = \left( \frac{((x-a)^g-x^g)y}{x^g(x-a)^g}; \frac{y}{x^g}, \frac{y}{(x-a)^g} \right).
         \]  \todo{State where this lives?}
@@ -1201,7 +1202,7 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
         \begin{equation*}
         \gamma_g + \sum_{i=0}^{g-1} c_i lambda_i = \left[ \left( frac{\psi_g(x)}{2yx^{g+1}}dx, frac{-\phi_g(x)}{2yx^{g+1}}dx, \frac{y}{x^g} \right) \right] \\ + \sum_{i=0}^{g-1} c_i \left[ \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0 \right) \right].
         \end{equation*}
-    Since any element of the form $(\omega_0, \omega_\infty, 0)$ in the subspace \todo{get reference} of the space \todo{getreference} is in fact zero, we conclude that
+    Since any element of the form $(\omega_0, \omega_\infty, 0)$ in the subspace \eqref{equationderhamquotient} of the space \eqref{equationderhamspace} is in fact zero, we conclude that
         \[
         - \frac{\phi_g(x+a)}{2y(x+a)^g} dx = -\frac{\phi_g(x)}{2yx^{g+1}}dx + \sum_{i = 0}^{g-1} c_i \frac{x^i}{y}dx
         \]
@@ -1233,7 +1234,7 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
         \[
         g = \frac{p^n\cdot m -1}{2} = -\frac{1}{2}
         \]
-    for some $m\in \ZZ$ coprime to $p$ (by Lemma \todo{reference}), we obtain
+    for some $m\in \ZZ$ coprime to $p$ (by Lemma \ref{lemmatauactsbyplusminusoneony}), we obtain
         \[
         c_{g-1} = \frac{((g+1) - (2g+1))a}{2} = \frac{a}{4}.
         \]  
