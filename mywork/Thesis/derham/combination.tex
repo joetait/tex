@@ -37,18 +37,18 @@ The following lemma gives us a useful description of $H^1(X,\Omega_X)$.
         \end{equation}
     
     
-    To explain the isomorphism in \eqref{equationsheafisomorphism} we first construct a map from $\underline{K}(X)/\cO_{X,P}$ in to the product $\prod_{P \in X} i_*\left({K(X)}/\cO_{X,P}\right)$, and then show that this map has finite support.\todo{B: Not the whole map}
+    To explain the isomorphism in \eqref{equationsheafisomorphism} we first construct a map from $\underline{K}(X)/\cO_{X,P}$ in to the product $\prod_{P \in X} i_*\left({K(X)}/\cO_{X,P}\right)$, and then show that this map has finite support.\todo[inline]{B: Not the whole map}
     
     Given $i\colon \{P\} \hookrightarrow X$ we have the following equalities
         \begin{align*}
         i^{-1}\left(\underline{K}(X)/\cO_X\right) & = \left(\underline{K}(X)/\cO_X\right)_P \\
-        & = \underline{K(X)}_P/\cO_{X,P} \\
+        & = \underline{K}(X)_P/\cO_{X,P} \\
         & = K(X)/\cO_{X,P}.
         \end{align*}
-    It follows that for any $P \in X$ we can map $f \in \underline{K}(X)/\cO_X$ to $i_*i^{-1}(f) \in i_* \left( K(X)/\cO_{X,P} \right)$.\todo{B: Notation (of $I_*i^{-1}(f)$}
-    Recall that for any $f \in K(X)$then $f$ lies in $\cO_{X,P}$ for all but a finite number of points $P \in X$.
-    Hence the image of $f$ in $\prod_{P \in X} i_*\left(K(X)/\cO_{X,P}\right)$ is zero in almost all factors.
-    From this the isomorphism in \eqref{equationsheafisomorphism} follows.\todo{Add more details - mention adjoint}
+    It follows that for any $P \in X$ we can map $f \in \underline{K}(X)/\cO_X$ to $i_*(i^{-1}(f)) \in i_* \left( K(X)/\cO_{X,P} \right)$.
+    Since $i_*$ and $i^{-1}$ are adjoint then the above map is an isomorphism at the level of stalks --- \ie $i_* \circ i^{-1} \colon K(X)/\cO_{X,P} \ra i_*\left( K(X)/\cO_{X,P} \right)$ is an isomorphism.
+    Moreover, for any $f \in K(X)$ then $f$ lies in $\cO_{X,P}$ for all but a finite number of points $P \in X$ hence the image of $f$ in $\prod_{P \in X} i_*\left(K(X)/\cO_{X,P}\right)$ is zero in almost all factors.
+    From this the isomorphism in \eqref{equationsheafisomorphism} follows.
     
     Replacing $\underline{K}(X)/\cO_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{equationsecondarydualitysesfunctions} yields
         \begin{equation}\label{equationresolutionofox}
@@ -56,9 +56,31 @@ The following lemma gives us a useful description of $H^1(X,\Omega_X)$.
         \end{equation}
     Taking cohomology then yields the exact sequence \eqref{equationinitialdualitysesfunctions}.
     
-    We can also tensor \eqref{equationresolutionofox} with $\Omega_X$ to get\todo{replace tensoring with repeating above argument again}
+    We now perform a similar computation to produce the second exact sequence \eqref{equationinitialdualitysesdifferentials}.
+    We start with the short exact sequence
+        \[
+        0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \underline{\Omega}_{K(X)}/\Omega_X \ra 0,
+        \]
+    which is a flasque resolution of $\Omega_X$ (see \cite[Chap. II, ex. 1.16]{hart}).
+    For each $P \in X$ we again have a natural injection $i \colon \{ P \} \ra X$, giving rise to the induced sheaf $i_*\left( K(X)/\cO_{X,P} \right)$ on $X$.
+    We now construct an isomorphism
+        \begin{equation}\label{equationsheafisomorphismdifferentials}
+        \underline{\Omega}_{K(X)}/\Omega_X \cong \bigoplus_{P \in X} i_* \left( \Omega_{K(X)}/\Omega_{X,P}\right),
+        \end{equation}
+    similar to that in \eqref{equationsheafisomorphismdifferentials}.
+
+    We have the following equalities
+        \begin{align*}
+        i^{-1} \left( \underline{\Omega}_{K(X)} \right) & = \left( \underline{\Omega}_{K(X)}/\Omega_X \right)_P \\  
+        & = \left(\left(\underline{\Omega}_{K(X)}\right)_P/\Omega_{X,P} \right) \\
+        & = \Omega_{K(X)}/\Omega_{X,P}.
+        \end{align*}
+    Then for any $P \in X$ we have the map $i_* \circ i^{-1} \colon \underline{\Omega}_{K(X)}/\Omega_X \ra i_*\left( \Omega_{K(X)}/\Omega_{X,P} \right)$, which as an isomorphism of stalks.
+    Finally, the image in  $\prod_{P \in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors, and from this we derive the isomorphism in \eqref{equationsheafisomorphismdifferentials}.
+
+    Hence we arrive at the short exact sequence
         \begin{equation}\label{equationsecondarydualitysesdifferentials}
-        0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \bigoplus_{P \in X} i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right).
+        0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \bigoplus_{P \in X} i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right)  \ra 0
         \end{equation}
     Taking cohomology of this then yields the second exact sequence \eqref{equationinitialdualitysesdifferentials}.
     \end{proof}
@@ -139,7 +161,7 @@ Then the maps
 
 \section{\cech cohomology and de Rham cohomology for\\ hyperelliptic curves}
 
-In addition to the assumptions in section 1, we now assume that $X$ is hyperelliptic of genus $g \geq 2$.\todo{Do we require the genus to be two?}
+In addition to the assumptions in section 1, we now assume that $X$ is hyperelliptic of genus $g \geq 2$.\todo[inline]{Do we require the genus to be two?}
 We recall that a curve is hyperelliptic if there exists a finite, separable morphism of degree two from the curve to $\mathbb P_k^1$.
 We  fix a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$ (see \cite[Rem. 7.4.30]{liu}).
 In this section we describe $\hone$ and $\hzero$ concretely for such an $X$, using \cech cohomology.
@@ -169,7 +191,7 @@ We now describe how the trace map acts on $H^1(X,\Omega_X)$ via the presentation
     Let $ \omega \in \Omega_X(U_0 \cap U_\infty)$ and let $[\omega]$ denote its residue class in $\hone$ via the isomorphism \eqref{equationcechhoneisomorphismdifferentials}.
     Then we have
         \[
-        t(\bar \omega) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
+        t\left([ \omega ]\right) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
         \]
     Note that when computing $\res_P(\omega)$, we consider $\omega$ as an element of $\Omega_{K(X)}$ via the canonical injection $\Omega_X(U_0 \cap U_\infty) \hookrightarrow \Omega_{K(X)}$.
     \end{lem}
@@ -183,7 +205,7 @@ We now describe how the trace map acts on $H^1(X,\Omega_X)$ via the presentation
     In fact, this sequence is isomorphic to the sequence \eqref{equationinitialdualitysesdifferentials} found in Lemma \ref{lemmaexactsequenceofhoneandhzero}.
     However, we will only exhibit isomorphisms between $\ker(d_3)$ and $\operatorname{coker}(d_1)$ and, respectively, the third and fourth terms of \eqref{equationinitialdualitysesdifferentials}, since this is all we need to examine the trace map.
     The fact that $H^1(X,\Omega_X) \cong {\rm coker}(d_1)$ follows from the above discussion of \cech cohomology.
-    To show the isomorphism $\ker(d_3) \cong \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}$ we first recall that $d_3$ is defined by $((\omega_P)_{P \in U_0}, (\omega_P')_{P \in U_\infty}) \mapsto \omega_P - \omega_P')_{P_ \in U_0 \cap U_\infty}$.
+    To show the isomorphism $\ker(d_3) \cong \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P}$ we first recall that $d_3$ is defined by $((\omega_P)_{P \in U_0}, (\omega_P')_{P \in U_\infty}) \mapsto (\omega_P - \omega_P')_{P_ \in U_0 \cap U_\infty}$.
     Then the kernel of $d_3$ is formed of pairs $ ((\omega_P)_{P \in U_0}, (\omega_P')_{P \in U_\infty})\in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \right) \times \left( \bigoplus_{P \in  U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right)$ such that $\omega_P = \omega_P'$ for $ P \in U_0 \cap U_\infty$.
     It follows that the map 
         \[
@@ -192,7 +214,7 @@ We now describe how the trace map acts on $H^1(X,\Omega_X)$ via the presentation
     is an isomorphism.
     
     The proof now follows from a diagram chase on \eqref{equationdualitycommutativediagramdifferentials}.
-     We start with the residue class $\bar \omega \in \hone$ with representative $\omega \in \Omega_X(U_0 \cap U_\infty)$.
+     We start with the residue class $[ \omega ] \in H^0(X,\Omega_X)$ of $\omega \in \Omega_X(U_0 \cap U_\infty)$.
     This then injects in to $\Omega_{K(X)}$, and since $d_2$ is surjective we can choose an element of $\Omega_{K(X)} \times \Omega_{K(X)}$ mapping to $\omega$.
     In particular, we choose $(\omega,0)$.
     This then maps to 
@@ -200,10 +222,10 @@ We now describe how the trace map acts on $H^1(X,\Omega_X)$ via the presentation
         \psi = ((\bar{\omega}_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right).
         \]
     By commutativity of the diagram $\psi \in \ker(d_3)$.
-    In particular, this means that $\bar \omega_P$, and hence also $\psi$, is zero for any $P \in U_0 \cap U_\infty$.
+    This means that $\bar \omega_P$, and hence also $\psi$, is zero for any $P \in U_0 \cap U_\infty$.
     Since $\psi$ is also zero for $P \in U_0$ it follows that 
         \[
-        t(\bar \omega) = \sum_{P \in X}\res_P(\psi) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega).
+        t\left([ \omega ] \right) = \sum_{P \in X}\res_P(\psi) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega).
         \]
     \end{proof}
 
@@ -279,11 +301,14 @@ The following lemma shows that $\derhamhone$ fits in to a short exact sequence.
     Now $H^1(X,\Omega_X)$ is isomorphic to $k$ via the residue map \cite[Chap. III, Thm. 7.14.1]{hart}, and if we can show that this isomorphism factors through $\alpha$ it will follow that $\alpha$ is injective.
     Considering the \cech cohomology constructions of $H^1(X,\Omega_X)$ and $H^2_{\text {dR}}(X/k)$, it suffices to show that the trace map is zero on $\Ima \left( d \colon \cO_X(U_0 \cap U_\infty) \ra \Omega_X(U_0 \cap U_\infty) \right)$.
     This follows from Theorem \ref{theoremresiduemap}, which says that given any $f \in K(X)$ then $\res_P(df)=0$ for any $P \in X$, and in particular for any $P \in \pi^{-1}(\infty)$.
-    Hence $t(\bar(df)) = 0$ by Lemma \ref{lemmatracemaplemma}, and so the residue isomorphism factors through $\alpha$, and $p$ is surjective.
+    %\todo[inline]{Should this really be $f \in K(X)$ and not $f \in \cO_X(U_0 \cap U_\infty)$. Affects whether $t$ is applied to $df$ or $[df]$ below.}
+    Hence $t\left([df]\right) = 0$ by Lemma \ref{lemmatracemaplemma}, and so the residue isomorphism factors through $\alpha$, and $p$ is surjective.
     \end{proof}
 
 \section{Bases of $\hone$ and $\derhamhone$}
 \subsection{basis of $\hone$}
+
+\todo[inline]{if remove genus assumption in last section add it again here}
 
 We keep the assumptions of the previous section.
 In this section we will give an explicit basis of $\hone$ and $\derhamhone$, using the results of the previous sections along with methods similar to those found in \cite{canonicalrepresentation}.
@@ -358,7 +383,7 @@ If $p \neq 2$ then
 whilst if $p=2$ then the divisor of $H(x)$ is
     \begin{equation}\label{equationdivisorofH}
     \di (H(x))  = R - (g+1)D_\infty. 
-    \end{equation}\todo{reference in other part of thesis}
+    \end{equation}\todo[inline]{reference in other part of thesis}
 
 
 
@@ -465,9 +490,7 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
     Recall that the differentials $\omega_0 = y^{-1}dx, \ldots, \omega_{g-1} = x^{g-1}y^{-1}dx$ form a basis of $\hzero$ (see, for example, \cite[Prop. 7.4.26]{liu}).
     By Lemma \ref{lemmatracemaplemma} we know that $\langle x^iy^{-1}dx, yx^{-j} \rangle = \sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx)$.
     It follows immediately from Theorem \ref{theoremresiduemap} that $\sum_{P \in \pi^{-1}(\infty)}\res_P(x^{i-j}dx) = -2$ if $i-j=-1$ and is zero otherwise (regardless of whether $\infty$ is a branch point).
-    It then follows from Theorem \ref{theoremserreduality} that the residue classes of $ yx^{-1}|_{U_0\cap U_\infty},\ldots,yx^{-g}|_{U_0\cap U_\infty}$ form a basis of $\hone$.
-    
-    
+    It then follows from Theorem \ref{theoremserreduality} that the residue classes $\left[yx^{-1}\right],\ldots,\left[yx^{-g}\right]$ form a basis of $\hone$.
     
     We now suppose that $p=2$, and again start by checking that for $i \in \{1, \ldots , g\}$ the function $yx^{-i}$ is regular on $U_0 \cap U_\infty$.
     This follows once we compute the divisor of $yx^{-i}$, which is
@@ -484,7 +507,7 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
     These equalities follow from Proposition \ref{propdivisorofypis2} and \eqref{equationdivxpis2}.
     The divisors are clearly positive on $U_0 \cap U_\infty$.
     
-    Next we recall from \cite[Prop. 7.4.26]{liu} that if $p=2$ a basis of $\hzero$ is given by $\frac{1}{H(x)}dx, \ldots, \frac{x^{g-1}}{H(x)}dx$.\todo{change reference in thesis}
+    Next we recall from \cite[Prop. 7.4.26]{liu} that if $p=2$ a basis of $\hzero$ is given by $\frac{1}{H(x)}dx, \ldots, \frac{x^{g-1}}{H(x)}dx$.\todo[inline]{change reference in thesis}
     We then deduce from Lemma \ref{lemmatracemaplemma} that when $\infty$ is not a branch point
         \[
         \left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = \res_{P_\infty} \left( \frac{yx^{i-j}}{H(x)}dx \right) + \res_{P_\infty'}\left( \frac{yx^{i-j}}{H(x)} dx \right).
@@ -510,12 +533,12 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
         & = \sum_{i=1}^l m_i[Q_i] + (2j-3-2i)[P_\infty] + (i-j)D_0.
         \end{align*}
     We see that there is a pole of order one at $P_\infty$ if $2j - 3 - 2i = -1$, or equivalently if $j = i+1$.
-    Hence $\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right\rangle = \res_{P_ \infty}\left( \frac{yx^{i-j}}{H(x)}dx\right)  \neq 0$ in this case.\todo{what is the residue?}
+    Hence $\left\langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right\rangle = \res_{P_ \infty}\left( \frac{yx^{i-j}}{H(x)}dx\right)  \neq 0$ in this case.\todo[inline]{what is the residue?}
     
     We also check that if $j \neq i+1$ then $\left \langle \frac{x^i}{H(x)}dx, \frac{y}{x^j} \right \rangle = 0$.
     Indeed, if $j-i \geq 2$ then clearly $\frac{yx^{i-j}}{H(x)}dx$ does not have a pole at $P_\infty$.
     On the other hand, if $j-i \leq 0$ then the differential $\frac{yx^{i-j}}{H(x)}dx$ is regular on $U_\infty$, and hence the residue on this set is zero.
-    Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the Theorem \ref{theoremresiduetheorem} the residue of $\frac{yx^{i-j}}{H(x)}dx$ at $P_\infty$ is also zero, and hence the residue classes of the elements $\frac{y}{x}|_{U_0 \cap U_\infty}, \ldots, \frac{y}{x^g}|_{U_0 \cap U_g}$ form a basis of $\hone$, in all cases.
+    Since $X \backslash U_\infty = \{P_\infty\}$ it follows from the Theorem \ref{theoremresiduetheorem} the residue of $\frac{yx^{i-j}}{H(x)}dx$ at $P_\infty$ is also zero, and hence the residue classes of the elements $\left[\frac{y}{x}\right], \ldots, \left[\frac{y}{x^g}\right]$ form a basis of $\hone$, in all cases.
     \end{proof}
 
 %Mittag-Leffler style corollary
@@ -530,10 +553,10 @@ We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the sam
     Since $f_P = 0$ for almost all $P \in X$ then $(f_P)_{P \in X} \in \bigoplus_{P \in X} K(X)/\cO_{X,P}$.
     From Lemma \ref{lemmaexactsequenceofhoneandhzero} we have the following exact sequence
         \begin{equation*}
-        0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \rightarrow \hone \ra 0.
+        0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \rightarrow \hone \ra 0,
         \end{equation*}
     and we let $\delta$ denote the map $\bigoplus_{P \in X} K(X)/\cO_{X,P} \rightarrow \hone$.
-    By Theorem \ref{theorembasisofhone} the residue classes $ \gamma_ 1= \left[ \frac{x}{y}\right], \ldots, \gamma_n = \left[\frac{x^g}{y}\right]$ form a basis of $\hone$, it follows that there exist unique $\alpha_1, \ldots, \alpha_g$ such that
+    By Theorem \ref{theorembasisofhone} the residue classes $ \gamma_ 1= \left[ \frac{x}{y}\right], \ldots, \gamma_g = \left[\frac{x^g}{y}\right]$ form a basis of $\hone$, and it follows that there exist unique $\alpha_1, \ldots, \alpha_g \in k$ such that
         \[
         \delta\left( (f_P)_{P \in X} \right) - \left( \alpha_1\gamma_1 + \ldots + \alpha_n\gamma_n \right) = 0.
         \]
@@ -543,7 +566,7 @@ We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the sam
         \cO_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & K(X) \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} K(X)/\cO_{X,P} }
         \end{equation}
     Analogously to \eqref{equationdualitycommutativediagramdifferentials}, the kernel of $d_3$ is $\bigoplus_{P \in X}K(X)/\cO_{X,P}$ and the cokernel of $d_1$ is $\hone$.
-    Via a diagram chase on $\left( \gamma_1 + \ldots + \gamma_g \right) \in \hone$ we can find a corresponding element \todo{B: not precise enough, rather write $\delta$ maps ... to ...}
+    Via a diagram chase on $\left( \gamma_1 + \ldots + \gamma_g \right) \in \hone$ we can find a corresponding element \todo[inline]{B: not precise enough, rather write $\delta$ maps ... to ...}
         \begin{equation}\label{immediate}
         \left( \left(\left( \gamma_1 + \ldots + \gamma_g \right) \right)_{P \in U_0}, 0\right) \in \bigoplus_{P \in U_0}K(X)/\cO_{X,P} \times \bigoplus_{P \in U_\infty}K(X)/\cO_{X,P}.
         \end{equation}
@@ -787,7 +810,7 @@ We now prove Theorem \ref{theorembasisofderham}.
     We denote the degrees of the polynomials defined in \eqref{equationsplittingphiandpsi} by $d_{\Phi}^x, d_{\Psi}^x, d_{\Phi}^y$ and $d_{\Psi}^y$.
     
     
-    By \eqref{equationsplittingphiandpsi} $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x,y) }{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x,y) }{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.\todo{note that some stuff was removed before this para}
+    By \eqref{equationsplittingphiandpsi} $\Phi_i(x,y) = \Phi_i^x(x) + y\Phi_i^y(x)$ and $\Psi_i (x,y)= \Psi_i^x(x) + y\Psi_i^y(x)$, and we will use these splittings to show that $\frac{ \Phi_i(x,y) }{x^{i+1}H(x)}dx$ and $\frac{\Psi_i(x,y) }{x^{i+1}H(x)}dx$ are regular on $U_\infty$ and $U_0$ respectively.\todo[inline]{note that some stuff was removed before this para}
     
     We start by computing the divisor of $\frac{1}{x^{i+1}H(x)}dx$, since it is a common component to all the differentials we need to look at.
     This yields
@@ -1115,7 +1138,7 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
     \end{thm}
     \begin{proof}
     By Lemma \ref{lemmatauactsbyplusminusoneony} we have $\tau^*(y) = y$ or $\tau^*(y) = -y$.
-    Without loss of generality we may as well assume that $\tau(y) = y$ since, if $\tau(y) = -y$, we may replace $tau$ by $\tau \circ \sigma$ (where $\sigma$ is the hyperelliptic involution of $X$) and notice the sequence splits as a sequence of $K[G]$-modules if and only if it splits as a  $K[\langle \tau \circ \sigma \rangle]$-modules (see remark after Corollary \ref{corfaithfulactiononderhamhone}).\todo{check statement} 
+    Without loss of generality we may as well assume that $\tau(y) = y$ since, if $\tau(y) = -y$, we may replace $tau$ by $\tau \circ \sigma$ (where $\sigma$ is the hyperelliptic involution of $X$) and notice the sequence splits as a sequence of $K[G]$-modules if and only if it splits as a  $K[\langle \tau \circ \sigma \rangle]$-modules (see remark after Corollary \ref{corfaithfulactiononderhamhone}).\todo[inline]{check statement} 
     
     We now suppose that the sequence \eqref{equationderhamcohomologyshortexactseqeunce} does split, and that $s \colon \hone \ra \derhamhone$ is the splitting map.
     Then it follows that for all $\alpha \in \hone$ then
@@ -1137,7 +1160,7 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
     From the proof of Proposition \ref{propbasisoftriplecoverderham} we know that $\rho^{-1} \left(\left[\frac{y}{x^g}\right]\right)$ is the residue class of
         \[
         \left( \frac{r_g(x)y}{x^g(x-a)^g}, \frac{y}{x^g}, \frac{t_g(x)y}{x^g(x-a)^g} \right) = \left( \frac{((x-a)^g-x^g)y}{x^g(x-a)^g}; \frac{y}{x^g}, \frac{y}{(x-a)^g} \right).
-        \]  \todo{State where this lives?}
+        \]  \todo[inline]{State where this lives?}
     Therefore 
         \begin{align*}
         \tau^* \left( \left[ \frac{y}{x^g} \right] \right)  & = \tau^* \left( \rho' \left(\rho^{-1}\left(\left[\frac{y}{x^g}\right]\right)\right)\right) \\
@@ -1185,7 +1208,7 @@ Here $\rho$ and $\rho'$ are the projections on the first, third and fifth coordi
                 \tau^*\downarrow & ~ & \rho'\downarrow  \\
         \derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\tau^*} & \cechderhamhone(\cU')
         \end{array}
-        \]\todo{have both $\rho$ and $\rho'$ been defined?}
+        \]\todo[inline]{have both $\rho$ and $\rho'$ been defined?}
 %Rewrite the below to just consider the second entry, using notation in comment on next five lines?
 %    Recalling the notation
 %        \[
