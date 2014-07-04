@@ -1,5 +1,4 @@
 \chapter{Group actions on algebraic de-Rham cohomology} \label{Chapter:De-Rham cohomology}
-\todo[inline]{introduce [] notation}
 
 \todo[inline]{change references to preprint when in thesis}
 
@@ -139,7 +138,7 @@ where $(f\omega)_P$ denotes the product of $f_P \in K(X)$ with the residue class
 
 We now combine the product map in \eqref{equationproductmap} with the trace map $t$ to get a map 
     \[
-     \hzero \times \hone \ra k,\quad (\omega, \overline{(f_P)}_{P \in X}) \mapsto \langle \omega, \overline{(f_P)}_{P \in X} \rangle := t \left( \overline{(f \omega)_P} \right)_{P \in X}.
+    \hzero \times \hone \ra k,\quad (\omega, \overline{(f_P)}_{P \in X}) \mapsto \langle \omega, \overline{(f_P)}_{P \in X} \rangle := t \left( \overline{(f \omega)}_P \right)_{P \in X}.
     \]
 
     \begin{thm}\label{theoremserreduality}
@@ -159,14 +158,14 @@ Then the maps
     \theta \colon H^0(X,\Omega_X) \ra \hom(\hone, k)
     \]
     are isomorphisms and are dual to each other.
-    In particular, given a $k$-basis $\omega_1, \ldots, \omega_g$ of $\hzero$, we can find a basis $f_1, \ldots , f_g$ of $\hone$ such that $\theta(\omega_i)(f_i) = 1$ for all $1 \leq i \leq n$ and $\theta(\omega_i)(f_j) = 0$ if $i \neq j$ (and similarly for $\psi$).
+    In particular, given a $k$-basis $\omega_1, \ldots, \omega_g$ of $\hzero$, we can find a basis $f_1, \ldots , f_g$ of $\hone$ such that $\theta(\omega_i)(f_i) = 1$ for all $1 \leq i \leq n$ and $\theta(\omega_i)(f_j) = 0$ if $i \neq j$, and contrariwise, given a basis of $\hone$ we can find corresponding basis of $H^0(X,\Omega_X)$. We can do the same for $\psi$, {\em mutatis mutandis}.
 
 
 \section{\cech cohomology and de Rham cohomology for\\ hyperelliptic curves}
 
 In addition to the assumptions in Section 1, we now assume that $X$ is hyperelliptic of genus $g \geq 2$.
 We recall that a curve is hyperelliptic if there exists a finite, separable morphism of degree two from the curve to $\mathbb P_k^1$.
-We fix such a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphim of $\mathbb P_k^1$ (see \cite[Rem. 7.4.30]{liu}).
+We fix such a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$ (see \cite[Rem. 7.4.30]{liu}).
 In this section we describe $\hone$ and $\hzero$ concretely for such an $X$, using \cech cohomology.
 
 By Leray's theorem \cite[Thm. 5.2.12]{liu} and Serre's affineness criterion \cite[Thm. 5.2.23]{liu} we know that, if we use an affine cover, the first \cech cohomology group of $\cO_X$ will be isomorphic to $\hone$.
@@ -182,15 +181,17 @@ The first cohomology group of this chain complex is $\cechhone = \frac{\cO_X(U_0
     \hone \cong \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(\check{d})}  
      = \frac{\cO_X(U_0 \cap U_\infty)}{\{f_0 - f_\infty | f_i \in \cO_X(U_i) \}}.
     \end{equation}
+When describing elements of $\hone$ using the isomorphism we will denote the residue class of $f \in \cO_X(U_0 \cap U_\infty)$ in the quotient by $[f]$.
 
 If we replace $\cO_X$ by $\Omega_X$ in the previous paragraph then everything still holds, and we conclude that
     \begin{equation}\label{equationcechhoneisomorphismdifferentials}
     H^1(X,\Omega_X) \cong \frac{\Omega_X(U_0 \cap U_\infty)}{\Ima(\check{d})} = \frac{\Omega_X(U_0 \cap U_\infty)}{\{\omega_0 - \omega_ \infty | \omega_i \in \Omega_X(U_i)\}}.
     \end{equation}
+Again, we denote the residue class of $\omega \in \Omega_X(U_0 \cap U_\infty)$ in $H^1(X,\Omega_X)$ by $[\omega]$.
 
 We now describe how the trace map acts on $H^1(X,\Omega_X)$ via the presentation \eqref{equationcechhoneisomorphismdifferentials}.
     \begin{lem}\label{lemmatracemaplemma}
-    Let $ \omega \in \Omega_X(U_0 \cap U_\infty)$ and let $[\omega]$ denote its residue class in $\hone$ via the isomorphism \eqref{equationcechhoneisomorphismdifferentials}.
+    Let $ \omega \in \Omega_X(U_0 \cap U_\infty)$ with residue class $[\omega]$ in $\hone$.
     Then we have
         \[
         t\left([ \omega ]\right) = \sum_{P \in \pi^{-1}(\infty)}\res_P(\omega).
@@ -338,7 +339,7 @@ We require that $\deg(H(x)) \leq g+1$, with equality if and only if $\infty$ is 
 Again applying an automorphism of $\mathbb P_k^1$ if necessary, we can assume that $H(x)$ is monic.
 
 We recall that the assumptions made about the polynomials, $f(x)$ and $F(x)$ and $H(x)$ mean that the affine plane curves defined by \eqref{equationdefiningequationpnot2} and \eqref{equationdefiningequationpis2}, respectively, are smooth.
-We now recall the details of some divisors discussed in Chapter \todo{cite}, which we will need later.
+We now recall the details of some divisors discussed in Chapter \ref{Chapter:Faithfulactions}, which we will need later.
 Henceforth we let $P_a$ and $P_a'$ denote the unique elements of $\pi^{-1}(a)$ for any point $a \in \mathbb P_k^1$ that is not a branch point.
 If $a \in \mathbb P_k^1$ is a branch point we denote the unique point in $\pi^{-1}(a)$ by $P_a$.
 We also define $D_a$ to be the divisor $\pi^*\left([a]\right)$ for any $a \in \mathbb P_k^1$, and hence
@@ -486,17 +487,21 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
 
 \subsection{Basis of $\hone$}
 
+We now compute the basis of $\hone$, and then give a corollary which is of the same style as the Mittag-Leffler theorem \cite[Chap. 5, \S 2, Thm. 4]{ahlfors}.
+
     \begin{thm}\label{theorembasisofhone}
      Via the isomorphism \eqref{equationcechhoneisomorphismfunctions} the residue classes of $\frac{y}{x}, \ldots , \frac{y}{x^g} \in K(X)$, restricted to $U_0 \cap U_\infty$, form a basis of $H^1(X,\cO_X)$.
     \end{thm}
     \begin{proof}
     We start by considering the case $p \neq 2$ and first check that the functions $\frac{y}{x}, \ldots, \frac{y}{x^g}$ are indeed regular on $U_0 \cap U_\infty$ (as required by \eqref{equationcechhoneisomorphismfunctions}) by computing their divisors.
     From \eqref{equationdivxpis2} and \eqref{equationdivisorofypnot2} we see that
-        \begin{align}\label{equationdivisorofyoverx}
-        \di \left( \frac{y}{x^i} \right) & = \di (y) - \di ( x^i) \nonumber \\
-        & = R - (g+1)D_\infty - iD_0 + iD_\infty \nonumber \\
+        \begin{equation}\label{equationdivisorofyoverx}
+        \begin{split}
+        \di \left( \frac{y}{x^i} \right) & = \di (y) - \di ( x^i) \\
+        & = R - (g+1)D_\infty - iD_0 + iD_\infty \\
         & = R - iD_0 - (g+1 - i)D_\infty.
-        \end{align}\todo{centre number}
+        \end{split}
+        \end{equation}
     Since $R$ is a positive divisor this is non-negative on $U_0 \cap U_\infty$ for all $i \in \ZZ$, and hence in particular for $i\in \{0, \ldots, g-1\}$.
     
     
@@ -555,7 +560,7 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
 
 %Mittag-Leffler style corollary
 
-We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the same style as the Mittag-Leffler theorem\todo{reference}, but for hyperelliptic curves.
+We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the same style as the Mittag-Leffler theorem. For a description of the classical Mittag-Leffler problem see \cite[Pgs. 180-181]{miranda}.
 
     \begin{cor}
     For each $P \in X$ we fix $f_P \in K(X)/\cO_{X,P}$, such that $f_P = 0$ for almost all $P \in X$.
@@ -578,7 +583,7 @@ We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the sam
         \cO_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & K(X) \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} K(X)/\cO_{X,P} }
         \end{equation}
     %Analogously to \eqref{equationdualitycommutativediagramdifferentials}, the kernel of $d_3$ is $\bigoplus_{P \in X}K(X)/\cO_{X,P}$ and the cokernel of $d_1$ is $\hone$.
-    Now $\delta$ is the differential map $\ker(d_3) = \bigoplus_{P \in X}K(X)/\cO_{X,P} \ra \operatorname{coker}(d_1) = \hone$ in the statement of the snake lemma.\todo{reference snake lemma}
+    Now $\delta$ is the differential map $\ker(d_3) = \bigoplus_{P \in X}K(X)/\cO_{X,P} \ra \operatorname{coker}(d_1) = \hone$ in the statement of the snake lemma \cite[Lem. 1.3.2]{weibel}.
     Hence we can perform a diagram chase to find the element in $\ker(d_3)$ which maps to $\left( \gamma_1 + \ldots + \gamma_g \right) \in \hone$ via this differential.
     Firstly, it is clear that $\gamma_1 + \ldots + \gamma_g$ pulls back to 
         \begin{equation}\label{immediate}
