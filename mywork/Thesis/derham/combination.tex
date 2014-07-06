@@ -12,7 +12,7 @@ We also let $\underline{\Omega}_{K(X)}$ and $\underline{K}(X)$ denote the consta
 The following lemma gives us useful descriptions of $\hone$ and $H^1(X,\Omega_X)$.
     \begin{lem}\label{lemmaexactsequenceofhoneandhzero}
     We have canonical exact sequences as follows:
-        \begin{equation}\label{equationinitialdualitysesfunctions}
+        \begin{equation}\label{equationinitialdualitylesfunctions}
         0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \rightarrow \hone \ra  0;
         \end{equation}
         \begin{equation}\label{equationinitialdualitysesdifferentials}
@@ -24,7 +24,7 @@ The following lemma gives us useful descriptions of $\hone$ and $H^1(X,\Omega_X)
         \end{rem}
     \begin{proof}
     The short exact sequence
-        \begin{equation}\label{equationsecondarydualitysesfunctions}
+        \begin{equation}\label{equationinitialdualitysesfunctions}
         0 \rightarrow \cO_X \rightarrow \underline{K}(X) \rightarrow \underline{K}(X)/\cO_X \rightarrow 0
         \end{equation}
     is a flasque resolution of $\cO_X$ (see \cite[Chap.\ II, ex.\ 1.16]{hart}).
@@ -51,11 +51,11 @@ The following lemma gives us useful descriptions of $\hone$ and $H^1(X,\Omega_X)
     Moreover, any $f \in K(X)$ lies in $\cO_{X,P}$ for all but a finite number of points $P \in X$, and hence the image of $f$ in $\prod_{P \in X} i_*\left(K(X)/\cO_{X,P}\right)$ is zero in almost all factors.
     From this the isomorphism in \eqref{equationsheafisomorphism} follows.
     
-    Replacing $\underline{K}(X)/\cO_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{equationsecondarydualitysesfunctions} yields
-        \begin{equation}
+    Replacing $\underline{K}(X)/\cO_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{equationinitialdualitysesfunctions} yields
+        \begin{equation}\label{equationshortexactsequencefunctionsdirectsum}
         0 \ra \cO_X \ra \underline{K}(X) \ra \bigoplus_{P \in X}i_* \left( K(X)/\cO_{X,P} \right) \ra 0.
         \end{equation}
-    Taking cohomology we arrive at the exact sequence \eqref{equationinitialdualitysesfunctions}.
+    Taking cohomology we arrive at the exact sequence \eqref{equationinitialdualitylesfunctions}.
     
     We now perform a similar computation to produce the second exact sequence \eqref{equationinitialdualitysesdifferentials}.
     We start with the short exact sequence
@@ -80,7 +80,7 @@ The following lemma gives us useful descriptions of $\hone$ and $H^1(X,\Omega_X)
     Finally, the image of any $\omega \in \underline{\Omega}_{K(X)}/\Omega_{X,P}$ in $\prod_{P \in X} i_*\left( \Omega_{K(X)}/\Omega_{X,P}\right)$ is zero in almost all factors, and from this we derive the isomorphism in \eqref{equationsheafisomorphismdifferentials}.
 
     Hence we arrive at the short exact sequence
-        \begin{equation}
+        \begin{equation}\label{equationshortexactsequencedifferentialsdirectsum}
         0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \bigoplus_{P \in X} i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right)  \ra 0.
         \end{equation}
     Taking cohomology of this then yields the second exact sequence \eqref{equationinitialdualitysesdifferentials}.
@@ -200,7 +200,7 @@ We now describe how the trace map acts on $H^1(X,\Omega_X)$ via the presentation
     Note that when computing $\res_P(\omega)$, we consider $\omega$ as an element of $\Omega_{K(X)}$ via the canonical injection $\Omega_X(U_0 \cap U_\infty) \hookrightarrow \Omega_{K(X)}$.
     \end{lem}
     \begin{proof}
-    We take the \cech complex of \eqref{equationsheafisomorphismdifferentials} over the cover $\cU$, yielding the following bicomplex
+    We take the \cech complex of \eqref{equationshortexactsequencedifferentialsdirectsum} over the cover $\cU$, yielding the following bicomplex
         \begin{equation}\label{equationdualitycommutativediagramdifferentials}
         \xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \Omega_{K(X)} \times \Omega_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
         \Omega_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \Omega_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
@@ -285,9 +285,9 @@ The following lemma shows that $\derhamhone$ fits in to a short exact sequence w
     
     \begin{prop}\label{propshortexactsequence}
     We have a canonical short exact sequence as follows:
-        \begin{equation}\label{equationses}
+        \begin{equation*}
         0 \ra H^0(X,\Omega_X) \rightarrow \derhamhone \rightarrow H^1(X,\cO_X) \ra 0.
-        \end{equation}
+        \end{equation*}
     \end{prop}
     \begin{proof}
     Let $T$ be the total complex of \eqref{equationcechbicomplex}.
@@ -497,13 +497,13 @@ We now compute the basis of $\hone$, and then give a corollary which is of the s
     \begin{proof}
     We start by considering the case $p \neq 2$ and first check that the functions $\frac{y}{x}, \ldots, \frac{y}{x^g}$ are indeed regular on $U_0 \cap U_\infty$ (as required by \eqref{equationcechhoneisomorphismfunctions}) by computing their divisors.
     From \eqref{equationdivxpis2} and \eqref{equationdivisorofypnot2} we see that
-        \begin{equation}\label{equationdivisorofyoverx}
+        \begin{equation*}\label{equationdivisorofyoverx}
         \begin{split}
         \di \left( \frac{y}{x^i} \right) & = \di (y) - \di ( x^i) \\
         & = R - (g+1)D_\infty - iD_0 + iD_\infty \\
         & = R - iD_0 - (g+1 - i)D_\infty.
         \end{split}
-        \end{equation}
+        \end{equation*}
     Since $R$ is a positive divisor this is non-negative on $U_0 \cap U_\infty$ for all $i \in \ZZ$, and hence in particular for $i\in \{0, \ldots, g-1\}$.
     
     
@@ -579,11 +579,11 @@ We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the sam
         \[
         \delta\left( (f_P)_{P \in X} \right) - \left( \alpha_1\gamma_1 + \ldots + \alpha_g\gamma_g \right) = 0.
         \]
-    We can derive the exact sequence \eqref{equationinitialdualitysesfunctions} by applying the snake lemma to the \cech complex of \eqref{equationsecondarydualitysesfunctions} over $\cU$, which is
-        \begin{equation}
+    We can derive the exact sequence \eqref{equationinitialdualitylesfunctions} by applying the snake lemma to the \cech complex of \eqref{equationshortexactsequencefunctionsdirectsum} over $\cU$, which is
+        \begin{equation*}
         \xymatrix{\cO_X(U_0)\times\cO_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & K(X) \times K(X) \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} K(X)/\cO_{X,P} \times \bigoplus \limits_{P \in U_\infty} K(X)/\cO_{X,P} \ar[d]^{d_3} \\
         \cO_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & K(X) \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} K(X)/\cO_{X,P} }
-        \end{equation}
+        \end{equation*}
     %Analogously to \eqref{equationdualitycommutativediagramdifferentials}, the kernel of $d_3$ is $\bigoplus_{P \in X}K(X)/\cO_{X,P}$ and the cokernel of $d_1$ is $\hone$.
     Now $\delta$ is the differential map $\ker(d_3) = \bigoplus_{P \in X}K(X)/\cO_{X,P} \ra \operatorname{coker}(d_1) = \hone$ in the statement of the snake lemma \cite[Lem. 1.3.2]{weibel}.
     Hence we can perform a diagram chase to find the element in $\ker(d_3)$ which maps to $\left( \gamma_1 + \ldots + \gamma_g \right) \in \hone$ via this differential.
@@ -600,7 +600,7 @@ We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the sam
             \end{cases}
         \]
     Clearly $\left( (g_P)_{P \in U_0},0\right) \in \ker (d_3) = \bigoplus_{P \in X} K(X)/\cO_{X,P}$, and $\delta \left( (g_P)_{P \in U_0}, 0 \right) = \gamma_1 + \ldots + \gamma_g$.
-    Hence $\delta((f_P)_{P \in X} - (g_P)_{P \in X}) = 0$, and by the exactness of \eqref{equationinitialdualitysesfunctions} it follows that there exists an $f \in K(X)$ which has Laurent tail $f_P - g_P$ at each $P \in X$, as required in the statement of the corollary.
+    Hence $\delta((f_P)_{P \in X} - (g_P)_{P \in X}) = 0$, and by the exactness of \eqref{equationinitialdualitylesfunctions} it follows that there exists an $f \in K(X)$ which has Laurent tail $f_P - g_P$ at each $P \in X$, as required in the statement of the corollary.
     \end{proof}
 
 \subsection{Basis of $H^1_{\rm dR}(X/k)$}
@@ -692,7 +692,7 @@ Before proving this theorem we use it to prove the following corollary.
     Firstly we see that
         \begin{align*}
         \sigma \left( \frac{-\Psi_i(x,y)}{x^{i+1}H(x)} dx\right) & = \frac{-\sigma(\Psi_i(x,y))}{x^{i+1} H(x)} dx \\
-        & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{H(x)\left(xH_{1,i}'(x) + iH_{1,i}(x)\right)}{x^{i+1}H(x)}dx\\
+        & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{H(x)(xH_{1,i}'(x) + iH_{1,i}(x))}{x^{i+1}H(x)}dx\\
         & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx + \frac{xH_{1,i}'(x) + iH_{1,i}(x)}{x^{i+1}}dx \\
         & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx +  \frac{H_{1,i}'(x)}{x^i}dx + \frac{iH_{1,i}(x)}{x^{i+1}}dx \\
         & = \frac{-\Psi_i(x,y)}{x^{i+1}H(x)}dx +  \frac{1}{x^i}d\left( H_{1,i}(x) \right) + H_{1,i}(x) d \left( \frac{1}{x^i} \right) \\
@@ -721,7 +721,7 @@ Before proving this theorem we use it to prove the following corollary.
     \end{proof}
 
     \begin{rem}
-    We briefly study the action of the hyperelliptic involution $\sigma$ on the elements \eqref{equationhonebasiselementofderhampnot2} (when $p\neq 2$).
+    We briefly study the action of the hyperelliptic involution $\sigma$ on the elements \eqref{equationhonebasiselementofderhampnot2} and \eqref{equationhzerobasiselementofderhampnot2}. 
     When $p \neq 2$ then $\sigma$ acts by $(x,y) \mapsto (x,-y)$.
     If we let
         \[
@@ -1246,11 +1246,13 @@ since the hyperelliptic involution $\sigma$ is in the centre of $\aut(X)$ (see \
 %        \]
 %    used in the proof of Proposition \ref{propbasisoftriplecoverderham}.
     Then 
-        \begin{align}\label{equationactionoftauongamma}
+        \begin{equation}\label{equationactionoftauongamma}
+        \begin{split}
         \tau^*(\gamma_g) & = \tau^*(\rho'(\rho^{-1}(\gamma_g))) \\  
         & = \tau^*\left( \left[ \omega_{a g}, \frac{- \phi_g(x)}{2yx^{g+1}} dx, \frac{y}{(x-a)^g} \right) \right] \\
         & = \left[ \left( \tau^*(\omega_{a g}) , \frac{-\phi_g(x+a)}{2y(x+a)^{g+1}}dx, \frac{y}{x^g} \right) \right],
-        \end{align}
+        \end{split}
+        \end{equation}
     where $\omega_{a g}$ is the second entry in $\nu_g$, as in the proof of Proposition \ref{propbasisoftriplecoverderham}.
     On the other hand, we have 
         \begin{equation}\label{equationimageofgammaunders}
