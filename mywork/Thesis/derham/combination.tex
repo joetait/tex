@@ -11,7 +11,7 @@ Furthermore, we let $K(X)$ denote the function field of $X$ and we define $\Omeg
 We also let $\underline{\Omega}_{K(X)}$ and $\underline{K}(X)$ denote the constant sheaves of $\Omega_{K(X)}$ and $K(X)$ respectively, and $\Omega_X$ denote the sheaf of differentials on $X$.
 The following lemma gives us useful descriptions of $\hone$ and $H^1(X,\Omega_X)$.
     \begin{lem}\label{lemmaexactsequenceofhoneandhzero}
-    We have canonical exact sequences as follows:
+    We have canonical exact sequences as follow:
         \begin{equation}\label{equationinitialdualitylesfunctions}
         0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \rightarrow \hone \ra  0;
         \end{equation}
@@ -1304,22 +1304,25 @@ since the hyperelliptic involution $\sigma$ is in the centre of $\aut(X)$ (see \
     In particular, it follows from \cite[Thm.\ 3.1]{canonicalrepresentation} that the short exact sequence in Proposition \ref{propshortexactsequence} doesn't split when the above conditions hold.
     \end{ex}
 
-We now give the general form of curves with an automorphism $\tau \colon (x,y) \mapsto (x+a, y)$, for $g_X = 4$ and $g_X = 7$.
+We now give the general form of curves with an automorphism $\tau \colon (x,y) \mapsto (x+a, y)$ when $g_X = 4$.
 
     \begin{ex}
-    It is easy to verify that if 
-        \begin{equation}\label{equationgenusfourgeneralcurve}
+    It is easy to verify that
+        \begin{equation*}
         f(x) = x^9 + a_6x^6 + a^2a_6x^4 + a_3x^3 + a^4a_6x^2 + 2(a^8 + a^2a_3)x + a_0
-        \end{equation}
+        \end{equation*}
     satisfies the condition $f(x+a) = f(x)$ for any $a, a_6, a_3, a_0 \in k$.
-    Now we fix $a_6, a_3, a \in k$.
+    Now we fix $a_6, a_3, a \in k$, such that both $a$ and either $a_6$ or $a_3 + a^6$ are non-zero.
+
+
     Then $f'(x) = a^2a_6x^3 + 2a^4a_6x + 2(a^8 + a^2a_3)$, and we let $\beta_1, \beta_2$ and $\beta_3$ denote the roots of $f'(x)$ (which may not be distinct, and are independent of the choice of $a_0$).
-    Then we can compute 
+    Then we can define
         \[
-        \beta_i' :=\beta_i^9 + a_6\beta_i^6 + a^2a_6\beta_i^4 + a_3\beta_i^3 + a^4a_6\beta_i^2 + 2(a^8 + a^2a_3)\beta_i 
+        \beta_i' :=\beta_i^9 + a_6\beta_i^6 + a^2a_6\beta_i^4 + a_3\beta_i^3 + a^4a_6\beta_i^2 + 2(a^8 + a^2a_3)\beta_i.
         \]
-    which again does not depend on $a_0 \in k$.
-    It is then clear that if we choose $a_0 \in k \backslash {-\beta_1', -\beta_2', -\beta_3'}$ then $f'(x)$ and $f(x)$ will not share any roots, and hence $f(x)$ has no repeated roots.
+    We now fix $a_0 \in k \backslash \{-\beta_1', -\beta_2', -\beta_3'\}$, and it is clear that $f'(x)$ and $f(x)$ do not share any roots, and hence $f(x)$ has no repeated roots.
+
+
     From this it follows that the equation $y^2  = f(x)$ defines a genus $4$ hyperelliptic curve over $k$, for which the exact sequence in Proposition \ref{propshortexactsequence} does not split, by Theorem \ref{theoremsplittingtheorem}.
     By considering the genus we can see that this is a new example, distinct from those in \cite{canonicalrepresentation}.
     \end{ex}
