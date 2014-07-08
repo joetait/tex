@@ -1,6 +1,6 @@
 \section{$K[G]$-module structure of $\hzero$ when $|G|=p$}
 
-In this subsection we give an alternative proof of Lemma \todo{reference}, using a result of Valentini and Madan \cite{valmadan}.
+In this subsection we give an alternative proof of Lemma \ref{m=1}, using a result of Valentini and Madan \cite{valmadan}.
 We let $X$ be a smooth, projective, connected algebraic curve curve of genus $g_X$ over an algebraically closed field $k$ of characteristic $p >0$.
 We suppose that $G$ is a subgroup of $\aut(X)$ of order $p$.
 We then define $Y:= X/G$ to be the quotient of $X$ by the action of $G$.
@@ -69,27 +69,26 @@ Since $G$ is cyclic of order $p$, $K(X)/K(Y)$ is a degree $p$ Artin extension, a
     y^p - y = a
     \]
 for some $a \in K(X)$.
-We can and do choose $y$ and $b$ to satisfy the conditions of \cite[App.\ 5, Lem.\ 5.1]{quaddiffequi}, which we state below.
+We can and do choose $y$ and $a$ to satisfy the conditions of \cite[App.\ 5, Lem.\ 5.1]{quaddiffequi}, which we state below.
 
     \begin{lem}
     Let $L/K$ be a totally ramified Galois extension of degree $p$.
     Then there exists an element $y \in L$ with valuation $-m$, where $m$ is coprime to $p$ and positive, such that $y^p - y \in K$ and $L = K(y)$.
-    Then if $M$ is the largest integer such that the higher ramification group $G_M$ doesn't vanish, we have $M = m$.
+    Then if $M$ is the largest integer such that the higher ramification group $G_M$ is non-trivial, we have $M = m$.
     \end{lem}
-\todo[inline]{check this statement}
 
-We let $Q_1, \ldots, Q_s \in Y$ be the branch points of $\pi$, and we let $P_1, \ldots, P_S$ be the corresponding ramifiction points (note that since $|G|$ is prime it follows that there is only one point in $\pi^{-1}(Q_i)$ for $1 \leq i \leq s$.
-We let $v_i = v_{P_i}$ denote the valuation at each $Q_i \in Y$.
-Now if we let $\alpha_i = -v_i(a) = m$\todo{why are they all equal to $m$?} then we can compute the exponent of the different \todo{check terminology} at $P_i$, which is
+We let $Q_1, \ldots, Q_s \in Y$ be the branch points of $\pi$, and we let $P_1, \ldots, P_S$ be the corresponding ramification points (note that since $|G|$ is prime it follows that there is only one point in $\pi^{-1}(Q_i)$ for $1 \leq i \leq s$).
+We let $v_i = v_{P_i}$ denote the valuation at each $P_i \in X$.
+Now if we let $\alpha_i = -v_i(a) = m$\todo[inline]{why are they all equal to $m$? I think it is because the valuation is being divided by the ramification index, which is $p$ in this case. Need to check} then we can compute the exponent of the different \todo[inline]{check terminology} at $P_i$, which is
     \[
     \delta_i = (p-1)(\alpha_i + 1) = (p-1)(m+1).
-    \]\todo{check that this is clear}
+    \]\todo[inline]{check that this is clear}
 Now we set
     \[
     \gamma_{i,k} = \left\lfloor \frac{\delta_i - k \alpha_i}{p} \right\rfloor, \qquad k = 0, \ldots, p-1,
-    \]\todo{make clear that and why this is the coefficient of the ramification divisor}
+    \]\todo[inline]{make clear that and why this is the coefficient of the ramification divisor}
 where $\lfloor c \rfloor$ denotes the largest integer less than $c$, for any $c \in \mathbb R$.
-Then $\gamma_{i,k}$ is the coefficient of $P_i$ in $R$ the ramification divisor. \todo{give references for this}
+Then $\gamma_{i,k}$ is the coefficient of $P_i$ in $R$ the ramification divisor. \todo[inline]{give references for this}
 We let $\Gamma_k = \sum_{i=1}^s \gamma_{i,k}$.
 
 We now state the main theorem of \cite{valmadan}, making the appropriate substitutions given our assumptions.
@@ -104,10 +103,10 @@ We now state the main theorem of \cite{valmadan}, making the appropriate substit
     See \cite[Thm.\ 1]{valmadan}.
     \end{proof}
 
-Using the above theorem we now give an alternative proof of Lemma \todo{citation, here and below}.
+Using the above theorem we now give an alternative proof of Lemma \todo[inline]{citation, here and below}.
 
     \begin{proof}[Proof of Lemma]
-    Note that $g_Y= 0$ by assumption.\todo{check this}
+    Note that $g_Y= 0$ by assumption.\todo[inline]{check this}
     Now suppose that $p >2$ and that $g_X  \geq 2$, and that the action of $G$ on $\hzero$ is trivial.
     
     We first observe that for any $i \in \{1, \ldots, s \}$ we have
@@ -116,11 +115,11 @@ Using the above theorem we now give an alternative proof of Lemma \todo{citation
         \]  
     and hence $\Gamma_{p-1} = \sum_{ i=1}^s \gamma_{i, (p-1)} = 0$.
 
-    Now since we are assuming that the action of $G$ is trivial, it must follow that $d_k = 0$ for all $k \neq 1$.\todo{check this is already mentioned}
-    By Theorem \todo{citation} it follows that $\Gamma_{p-2} - \Gamma_{p-1} -1 = 0$, and hence $\Gamma_{p-2} = 1$.
-    We can then show inductively that for $2 \leq k \leq p-2$ then $\Gamma_k = 1$, using the relation $\Gamma_{k-1} - \Gamma_k = 0$ from theorem \todo{citation}.
+    Now since we are assuming that the action of $G$ is trivial, it must follow that $d_k = 0$ for all $k \neq 1$.\todo[inline]{check this is already mentioned}
+    By Theorem \todo[inline]{citation} it follows that $\Gamma_{p-2} - \Gamma_{p-1} -1 = 0$, and hence $\Gamma_{p-2} = 1$.
+    We can then show inductively that for $2 \leq k \leq p-2$ then $\Gamma_k = 1$, using the relation $\Gamma_{k-1} - \Gamma_k = 0$ from theorem \todo[inline]{citation}.
 
-    Finally, we derive a contradicton when $k =1$.
+    Finally, we derive a contradiction when $k =1$.
     Since $p | \delta_i$, we can write 
         \begin{equation}\label{equationdifferenceofgamma0andgamma1}
         \Gamma_0  - \Gamma_1 = \sum_{i=1}^s \left( \left \lfloor \frac{\delta_i}{p} \right \rfloor - \left \lfloor \frac{\delta_i - \alpha_i}{p} \right \rfloor \right) = \sum_{i=1}^s -\left\lfloor \frac{-\alpha_i}{p} \right \rfloor.
@@ -131,44 +130,11 @@ Using the above theorem we now give an alternative proof of Lemma \todo{citation
         \]
     and also since the terms of this sum are all non-negative, we see that for one value of $i$ we have $1 \leq \alpha_i=0 \leq p-1$, and for all other $i$ we have $\alpha_i = 0$.
     Without loss of generality we may assume that $ 1 \leq \alpha_1 \leq p-1$.
-    Combining this with \eqref{equationdifferenceofgamma0andgamma1} and the action being trivial \todo{is this second part actually needed?} we conclude that
+    Combining this with \eqref{equationdifferenceofgamma0andgamma1} and the action being trivial \todo[inline]{is this second part actually needed?} we conclude that
         \[
         1 = - \left \lfloor \frac{\alpha_i}{p} \right \rfloor = \Gamma_0 - \Gamma_1 = g_X.
-        \]  \todo{why is this equal to $g_X$?}
+        \]  \todo[inline]{why is this equal to $g_X$?}
     Since we assumed that $g_X \geq 2$ we have a contradiction.
     \end{proof}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
