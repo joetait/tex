@@ -79,16 +79,16 @@ We can and do choose $y$ and $a$ to satisfy the conditions of \cite[App.\ 5, Lem
 
 We let $Q_1, \ldots, Q_s \in Y$ be the branch points of $\pi$, and we let $P_1, \ldots, P_S$ be the corresponding ramification points (note that since $|G|$ is prime it follows that there is only one point in $\pi^{-1}(Q_i)$ for $1 \leq i \leq s$).
 We let $v_i = v_{P_i}$ denote the valuation at each $P_i \in X$.
-Now if we let $\alpha_i = -v_i(a) = m$\todo[inline]{why are they all equal to $m$? I think it is because the valuation is being divided by the ramification index, which is $p$ in this case. Need to check} then we can compute the exponent of the different \todo[inline]{check terminology} at $P_i$, which is
+Now if we let $\alpha_i = -v_i(a) = m$\todo[inline]{why are they all equal to $m$? I think it is because the valuation is being divided by the ramification index, which is $p$ in this case. Need to check} then we can compute the different exponent (see Definition \ref{definitiondifferent}) at $P_i$.
+From Hilbert's formula (Theorem \ref{hilbertsformula}) we can conclude that
     \[
-    \delta_i = (p-1)(\alpha_i + 1) = (p-1)(m+1).
-    \]\todo[inline]{check that this is clear}
+    \delta_i = \sum_{j=0}^\infty (\ord(G_j(P_i)) = \sum_{i=0}^{m}(p-1) = (p-1)(m+1).
+    \]
 Now we set
     \[
     \gamma_{i,k} = \left\lfloor \frac{\delta_i - k \alpha_i}{p} \right\rfloor, \qquad k = 0, \ldots, p-1,
-    \]\todo[inline]{make clear that and why this is the coefficient of the ramification divisor}
+    \]
 where $\lfloor c \rfloor$ denotes the largest integer less than $c$, for any $c \in \mathbb R$.
-Then $\gamma_{i,k}$ is the coefficient of $P_i$ in $R$ the ramification divisor. \todo[inline]{give references for this}
 We let $\Gamma_k = \sum_{i=1}^s \gamma_{i,k}$.
 
 We now state the main theorem of \cite{valmadan}, making the appropriate substitutions given our assumptions.
