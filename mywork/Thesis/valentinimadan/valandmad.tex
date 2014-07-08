@@ -93,7 +93,7 @@ We let $\Gamma_k = \sum_{i=1}^s \gamma_{i,k}$.
 
 We now state the main theorem of \cite{valmadan}, making the appropriate substitutions given our assumptions.
 
-    \begin{thm}
+    \begin{thm}\label{theoremofvalentiniandmadan}
     Let $G$ be a cyclic group of automorphisms of $X$ of order $p$.
     Let $Y : = X/G$ be the quotient of $X$ by the action of $G$, with genus $g_Y$.
     The regular representation of $G$ occurs $g_Y$ times in the representation of $G$ on $\hzero$.
@@ -106,8 +106,13 @@ We now state the main theorem of \cite{valmadan}, making the appropriate substit
 Using the above theorem we now give an alternative proof of Lemma \ref{m=1}.
 
     \begin{proof}[Proof of Lemma \ref{m=1}]
-    Note that $g_Y= 0$ by assumption.\todo[inline]{check this}
-    Now suppose that $p >2$ and that $g_X  \geq 2$, and that the action of $G$ on $\hzero$ is trivial.
+    We first show that if $p=2$ then the action is trivial.
+    In this case there are only two representations - the regular representation and the identity represenation.
+    By Theorem \ref{theoremofvalentiniandmadan}, the regular representation occurs $g_Y$ times.
+    Since we assumed that $g_Y = 0$ it follows that the action of $G$ on $\hzero$ only affords the identity representation, and hence $G$ acts trivially.
+    
+    We now prove the other direction, recalling that $g_Y= 0$ by assumption.
+    We further suppose that $p >2$ and that $g_X  \geq 2$, and that the action of $G$ on $\hzero$ is trivial.
     
     We first observe that for any $i \in \{1, \ldots, s \}$ we have
         \[
@@ -115,9 +120,9 @@ Using the above theorem we now give an alternative proof of Lemma \ref{m=1}.
         \]  
     and hence $\Gamma_{p-1} = \sum_{ i=1}^s \gamma_{i, (p-1)} = 0$.
 
-    Now since we are assuming that the action of $G$ is trivial, it must follow that $d_k = 0$ for all $k \neq 1$.\todo[inline]{check this is already mentioned}
-    By Theorem \todo[inline]{citation} it follows that $\Gamma_{p-2} - \Gamma_{p-1} -1 = 0$, and hence $\Gamma_{p-2} = 1$.
-    We can then show inductively that for $2 \leq k \leq p-2$ then $\Gamma_k = 1$, using the relation $\Gamma_{k-1} - \Gamma_k = 0$ from theorem \todo[inline]{citation}.
+    Now since we are assuming that the action of $G$ is trivial, it must follow that $d_k = 0$ for all $k \neq 1$, as previously discussed.
+    By Theorem \ref{theoremofvalentiniandmadan} it follows that $\Gamma_{p-2} - \Gamma_{p-1} -1 = 0$, and hence $\Gamma_{p-2} = 1$.
+    We can then show inductively that for $2 \leq k \leq p-2$ then $\Gamma_k = 1$, using the relation $\Gamma_{k-1} - \Gamma_k = 0$ from Theorem \ref{theoremofvalentiniandmadan}.
 
     Finally, we derive a contradiction when $k =1$.
     Since $p | \delta_i$, we can write 
@@ -129,12 +134,13 @@ Using the above theorem we now give an alternative proof of Lemma \ref{m=1}.
         1 = \Gamma_{p-2} = \sum_{i=1}^s \left\lfloor \frac{\alpha_i + p -1}{p} \right \rfloor,
         \]
     and also since the terms of this sum are all non-negative, we see that for one value of $i$ we have $1 \leq \alpha_i=0 \leq p-1$, and for all other $i$ we have $\alpha_i = 0$.
-    Without loss of generality we may assume that $ 1 \leq \alpha_1 \leq p-1$.
-    Combining this with \eqref{equationdifferenceofgamma0andgamma1} and the action being trivial \todo[inline]{is this second part actually needed?} we conclude that
+    Without loss of generality we may assume that $ 1 \leq \alpha_1 \leq p-1$ and that $\alpha_i = 0$ for $i\geq 2$.
+    Combining this with \eqref{equationdifferenceofgamma0andgamma1} and the action being trivial we conclude that
         \[
-        1 = - \left \lfloor \frac{\alpha_i}{p} \right \rfloor = \Gamma_0 - \Gamma_1 = g_X.
-        \]  \todo[inline]{why is this equal to $g_X$?}
-    Since we assumed that $g_X \geq 2$ we have a contradiction.
+        1 = - \left \lfloor \frac{\alpha_i}{p} \right \rfloor = \Gamma_0 - \Gamma_1. 
+        \]  
+    From the statement of Theorem \ref{theoremofvalentiniandmadan} we know that $\Gamma_0 - \Gamma_1 = d_1$.
+    However, for $G$ to act trivially we require that $d_1 = g_X$, and since we assumed that $g_X \geq 2$ this gives a contradiction.
     \end{proof}
 
 
