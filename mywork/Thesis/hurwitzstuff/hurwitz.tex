@@ -6,14 +6,14 @@ Let $X$ and $Y$ be two projective, non-singular curves over an algebraically clo
 We let $g_X$ and $g_Y$ be the genera of $X$ and $Y$ respectively.
 Let $K(X)$ and $K(Y)$ be the function fields of $X$ and $Y$ respectively.
 Note that $K(X)$ is a degree $n$ extension of $K(Y)$, and recall that $\pi$ induces a map $\pi^*\colon K(Y) \rightarrow K(X)$.
-As usual, for any $P \in X$ and $Q \in Y$ we denote the local ring formed by functions which are regular at $P$ and $Q$ by $\cO_{X,P}$ and $\cO_{X,Q}$ respectively.
+As usual, for any $P \in X$ and $Q \in Y$ we denote the local ring formed by functions which are regular at $P$ and $Q$ by $\cO_{X,P}$ and $\cO_{Y,Q}$ respectively.
 
-\section{Galois Theory}\label{sectiongaloistheory}
+\section{Galois theory}\label{sectiongaloistheory}
     
 We recall some facts from Galois theory for a field extension $L/K$ of degree $n$.
 Any element $\alpha \in L$ defines a $K$-linear map $\mu_{\alpha} \colon  L \rightarrow L$, given by multiplication by $\alpha$.
 We let $\tr_{L/K}(\alpha)$ be the trace of the matrix in $\operatorname{Mat}_{n \times n}(K)$ corresponding to $\mu_\alpha$.
-Hence we form the {\em trace map} $\tr_{L/K}\colon L \ra K$.
+Hence we form the {\em trace map}, $\tr_{L/K}\colon L \ra K$.
 When considering the trace map between the function fields $K(X)$ and $K(Y)$ we let $\tr_{X/Y} := \tr_{K(X)/K(Y)}$.
 Note that $\tr_{L/K}$ is an additive map, and that for $\alpha \in K$ we have $\tr_{L/K}(\alpha) = n \alpha$.
     \begin{prop}\label{proptracelemmasurjective}
@@ -24,21 +24,23 @@ Note that $\tr_{L/K}$ is an additive map, and that for $\alpha \in K$ we have $\
         \[
         \tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}} = \id_{\overline{K(Y)}}\otimes _{K(Y)} \tr_{X/Y} \colon \overline{K(Y)}\otimes_{K(Y)}K(X) \ra \overline{K(Y)},
         \]
-    with the latter map given by $f\otimes h \mapsto f\tr_{X/Y}(h)$.
-    It then follows that the surjectivity of $\id_{\overline{K(Y)}}\otimes _{K(Y)} \tr_{X/Y}$ and $\tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}$ are equivalent.
+    with the latter map given by $f\otimes h \mapsto f\tr_{X/Y}(h)$, where $f \in \overline{K(Y)}$ and $ h \in K(X)$.
+    From this equivalence it follows that $\tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}$ is surjective if and only if $\id_{\overline{K(Y)}}\otimes _{K(Y)} \tr_{X/Y}$ is surjective.
+    Moreover, if the latter term is surjective it follows that $\tr_{X/Y}$ is surjective, since tensoring with the identity preserves surjectivity.
+            
     We let $h_1, \ldots, h_n$ be a $K(Y)$ basis of $K(X)$, and write $hh_j = \sum_{i=1}^n c_{ij}h_i$ for $c_{ij} \in K(Y)$.
     Then a $\overline{K(Y)}$-basis of $\overline{K(Y)}\otimes_{K(Y)}K(X)$ is given by $1 \otimes h_1, \ldots, 1 \otimes h_n$, and 
         \[
         (f \otimes h)(1\otimes h_j) = f \otimes hh_j = \sum_{i=1}^n c_{ij}(f \otimes h_i) = \sum_{i=1}^n c_{ij}f(1 \otimes h_i).
         \]  
-    Hence the matrix corresponding to $\mu_{f \otimes h}$ is $c_{ij}f$, and so
+    Hence the matrix corresponding to $\mu_{f \otimes h}$ is $(c_{ij}f)_{1 \leq i,j \leq n}$, and so
         \[
         \tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}(f \otimes h) = \sum_{i=1}^n c_{ii}f = f \tr_{X/Y}(h).
         \]  
 
     We now show that $\tr_{\overline{K(Y)}\otimes_{K(Y)}K(X)/\overline{K(Y)}}$ is surjective.
     Since $K(X)$ is a Galois extension of $K(Y)$, and hence also separable, we can find $\alpha$ separable over $K(Y)$ such that $K(X) = K(Y)(\alpha)$.
-    We suppose that $\alpha$ has minimal (separable) polynomial ${f(z) = (z - \beta_1)\cdots (z - \beta_n)}$.
+    We suppose that $\alpha$ has minimal (separable) polynomial $f(z) = (z - \beta_1)\cdots (z - \beta_n)$, for some $\beta_i \in K(Y)$.
     Since
         \[
         K(X) \cong K(Y)(\alpha) \cong K(Y)(z)/(f(z)) \cong \bigoplus_{i=1}^n K(Y)(z)/((z-\beta_i)) \cong \bigoplus_{i=1}^n K(Y)
@@ -52,32 +54,38 @@ Note that $\tr_{L/K}$ is an additive map, and that for $\alpha \in K$ we have $\
     \begin{lem} 
     Suppose that $\alpha \in K(X)$ has minimum polynomial 
         \[
-        f(x) = x^r + a_{r-1}x^{r-1} + \ldots +a_0 \in K(Y)[x]
+        f(T) = T^r + a_{r-1}T^{r-1} + \ldots +a_0 \in K(Y)[T]
         \]
-    and $s= [K(X):K(Y)(\alpha)]$, then $\tr_{X/Y}(\alpha) = -sa_{r-1}$.
+    and $s= [K(X):K(Y)(\alpha)]$.
+    Then $\tr_{X/Y}(\alpha) = -sa_{r-1}$.
     \end{lem}
     \begin{proof}
     We first note that since $s = [K(X):K(Y)(\alpha)]$ it suffices to show the equality $\tr_{K(Y)(\alpha)/K(Y)}(\alpha) = -a_{r-1}$.
     The elements $1, \alpha, \ldots, \alpha^{r-1}$ form a $K(Y)$-basis of $K(Y)(\alpha)$.
-    If $i \leq r-2$ then $\mu_{\alpha}(\alpha^i) = \alpha^{i+1}$, and hence the corresponding matrix has 1's below the diagonal and zeroes elsewhere on all columns except the final column.
-    Since $\mu_{\alpha}(\alpha^{r-1}) = \alpha^r = -a_0 - a_1\alpha - \ldots - a_{r-1}\alpha^{r-1}$ then the final consists of $-a_0, \ldots, a_{r-1}$.
-    Hence the only non-zero diagonal entry is $a_{r-1}$.
+    If $i \leq r-2$ then $\mu_{\alpha}(\alpha^i) = \alpha^{i+1}$, and hence the corresponding matrix has 1's below the diagonal and zeroes elsewhere on all columns, except the final column.
+    Since 
+        \[
+        \mu_{\alpha}(\alpha^{r-1}) = \alpha^r = -a_0 - a_1\alpha - \ldots - a_{r-1}\alpha^{r-1}
+        \]
+    then the final column consists of $-a_0, \ldots, a_{r-1}$.
+    Hence the only non-zero diagonal entry of the matrix is $a_{r-1}$, occuring in the $(r,r)$ position.
     \end{proof}
 
             
-Given a basis $\{z_1,\ldots,z_n\}$ of $K(X)$ over $K(Y)$, we now introduce its dual basis with respect to the trace map.
+Given a basis $z_1,\ldots,z_n$ of $K(X)$ over $K(Y)$, we now introduce its dual basis with respect to the trace map.
 We denote the {\em dual space} of $K(X)$ over $K(Y)$ by 
     \[
     K(X)^*:=\{\lambda \colon K(X) \rightarrow K(Y)| \lambda\ \text{is}\ K(Y)\text{-linear}\}.
     \]
 We make $K(X)^*$ in to a one-dimensional $K(X)$-vector space by defining $z \lambda(w):=\lambda(z w)$.
-It follows from Proposition \ref{proptracelemmasurjective} that $\tr_{X/Y}$ is non-zero, and hence there exists a unique $z\in K(X)$ for every $\lambda \in K(X)^*$ such that $\lambda = z\cdot \tr_{X/Y}$.
-In particular, if we choose $\lambda_j\in K(X)^*$ such that $\lambda_j(z_i) = \delta_{ij}$ (the Kronecker symbol), then there exist $z_j^*$ such that $\lambda_j = z_j^*\cdot \tr_{X/Y}$.
+It follows from Proposition \ref{proptracelemmasurjective} that $\tr_{X/Y}$ is non-zero, and hence for each $\lambda \in K(X)^*$ there exists a unique $z\in K(X)$ such that $\lambda = z\cdot \tr_{X/Y}$.
+In particular, if we choose $\lambda_j\in K(X)^*$ such that $\lambda_j(z_i) = \delta_{ij}$ (the Kronecker symbol), then there exist $z_j^* \in K(X)$ such that $\lambda_j = z_j^*\cdot \tr_{X/Y}$.
 Hence
     \[
     \tr_{X/Y}(z_iz_j^*) = (z_j^*\cdot \tr_{X/Y})(z_i) = \lambda_j(z_i) = \delta_{ij}.
     \]
 The elements $z_1^*, \ldots , z_n^*$ form the {\em dual basis} of $z_1, \ldots , z_n$.
+Note that $z_1^*, \ldots, z_n^*$ form a $K(Y)$ basis of $K(X)$, not $K(X)^*$.
 
 
 \section{Differentials and divisors}
@@ -86,12 +94,12 @@ We first introduce differentials in terms of function fields.
 An {\em \adele on $X$} is a map $\alpha\colon  X \rightarrow K(X)$ such $\alpha(P) \in \cO_{X,P}$ for nearly all $P \in X$ (\ie all but a finite number of points).
 We can represent $\alpha$ by some $(\alpha_P)_{P \in X} \in \prod_{P \in X} K(X)$, where $\alpha_P := \alpha(P)$.
 We let the {\em \adele space} of $X$, denoted by $\cA_X$, be the space of all \adeles on $X$.
-There is a canonical injection $K(X) \hookrightarrow  \cA_X$, defined by sending $x\in K(X)$ to the \adele $\alpha$ for which $\alpha_P =  x$ at each point $P\in X$.
-The elements of $K(X)$ have natural valuations: for each $P\in X$ we choose a uniformising parameter $t\in \cO_{X,P}$, and then there is a unique $n \in \ZZ$ such that $x=ut^n$ for some unit $u\in \cO_{X,P}$.
-We then define the valuation of $x$ at $P$ to be $v(x)_P := n$.
+There is a canonical injection $K(X) \hookrightarrow  \cA_X$, defined by sending $f\in K(X)$ to the \adele $\alpha$ for which $\alpha_P =  f$ at each point $P\in X$.
+The elements of $K(X)$ have natural valuations: for each $P\in X$ we choose a uniformising parameter $t\in \cO_{X,P}$, and then there is a unique $n \in \ZZ$ such that $f=ut^n$ for some unit $u\in \cO_{X,P}$.
+We then define the valuation of $f$ at $P$ to be $v(x)_P := n$.
 We can we can then extend this valuation to elements of $\cA_X$ by defining $v_P(\alpha) := v_P(\alpha_P)$.
 
-Recall that a divisor on $X$ is a finitely supported formal sum over $X$, with coefficients in $\mathbb Z$, which we write as 
+A divisor on $X$ is a finitely supported formal sum over $X$, with coefficients in $\mathbb Z$, which we write as 
     \[
     D = \sum_{P\in X} n_P [P].
     \]
@@ -102,17 +110,21 @@ The degree of such a divisor $D$ is
 We then define the order of $D$ at $P$ to be $v_P(D) := n_P$.
 
 We let $\cD_X$ be the space of divisors of $X$.
-Note that for any $x\in K(X)$ we have a naturally associated divisor, which is
+Note that for any $f\in K(X)$ we have a naturally associated divisor, which is
     \[
-    \di(x) := \sum_{P\in X} v_P(x) [P].
+    \di(f) := \sum_{P\in X} v_P(f) [P].
     \]
 
 For any $D\in \cD_X$ we define the {\em \adele space associated to $D$} to be
     \[
     \cA_X(D):=\{\alpha \in \cA_X | v_P(\alpha) \geq -v_P(D)\ \text{for all} \ P\in X\}.
     \]
-Then we define a {\em differential} on $X$ to be a $k$-linear map $\omega\colon  \cA_X \rightarrow k$ such that $\omega$ is zero on $\cA_X(D) +K(X) \subset \cA_X$ for some divisor $D\in \cD_X$.
-We will denote the {\em space of differentials on $X$} by $\Omega_{K(X)}$.
+
+
+    \begin{defn}
+    We define a {\em differential} on $X$ to be a $k$-linear map $\omega\colon  \cA_X \rightarrow k$ such that $\omega$ is zero on $\cA_X(D) +K(X) \subset \cA_X$ for some divisor $D\in \cD_X$.
+    We will denote the {\em space of differentials on $X$} by $\Omega_{K(X)}$.
+    \end{defn}
     
     \begin{prop}
     The space of differentials, $\Omega_{K(X)}$, is a one-dimensional vector space over $K(X)$.
@@ -132,7 +144,7 @@ For any non-zero $\omega \in \Omega_{K(X)}$ we define
     \]
 
     \begin{lem}\label{lemmamaximaldivisorassociatedtoomega}
-    For any non-zero differential $\omega \in \Omega_{K(X)}$ on $X$ there is a divisor $W$ in $M(\omega)$ such that for any $D \in M( \omega)$ then $D \leq W$.
+    For any non-zero differential $\omega \in \Omega_{K(X)}$ on $X$ there is a divisor $W$ in $M(\omega)$ such that $D \leq W$ for all $D \in M( \omega)$.
     \end{lem}
     \begin{proof}
     See \cite[Lem. 1.5.10]{stichtenoth}.
@@ -143,8 +155,8 @@ We denote the canonical divisor associated to $\omega$ by $\di(\omega)$.
 We call a divisor a {\em canonical divisor} if it is the canonical divisor associated to some $\omega \in \Omega_{K(X)}$.
     
     \begin{lem}
-    Given any two non-zero canonical divisors, $W$ and $W'$, there exists an $x\in K(X)$ such that $W = W' + \di(x)$.
-    Conversely, if $W$ is a canonical divisor, and $x\in K(X)$, then $W + \di(x)$ is a canonical divisor.
+    Given any two non-zero canonical divisors, $W$ and $W'$, there exists an $f\in K(X)$ such that $W = W' + \di(f)$.
+    Conversely, if $W$ is a canonical divisor, and $f\in K(X)$, then $W + \di(f)$ is a canonical divisor.
     \end{lem}
     \begin{proof}
     See \cite[Prop. 1.5.13]{stichtenoth}.
@@ -157,9 +169,9 @@ Then we call a differential $\omega \in \Omega_{K(X)}$ a {\em holomorphic differ
 We denote {\em the space of holomorphic differentials} by $\hzero$.
 Also, for any divisor $D$ on $X$ we define 
     \[
-    H^0(X,\cO(D)) := \{x\in K(X) | v_P(x) \geq -v_P(D)\}\cup \{0\}.
+    H^0(X,\cO(D)) := \{f\in K(X) | v_P(f) \geq -v_P(D)\}\cup \{0\}.
     \]\todo{change this notation to Fulton's or Stichtenoth's}
-This is sheaf theoretic notation, which would not normally be used in function field theory, but we use it for consistency with the rest of the report.\todo{change this sentence after changing notation}
+This is sheaf theoretic notation, which would not normally be used in function field theory, but we use it for consistency with the rest of the thesis.\todo{change this sentence after changing notation}
 We can now state the celebrated Riemann-Roch theorem.
 
     \begin{thm}[Riemann-Roch Theorem]\label{theoremriemannroch}
@@ -185,58 +197,58 @@ We can now state the celebrated Riemann-Roch theorem.
         \]
     \end{cor}
     \begin{proof}
-    Since $\dim H^0(X,\cO(0)) = 1$ (recall that the only functions with no poles are the constant functions), we have by the Riemann-Roch Theorem, 
+    Since $\dim H^0(X,\cO(0)) = 1$ (the only functions with no poles are the constant functions), we have by the Riemann-Roch theorem, 
         \[
         1= \dim H^0(X,\cO(0)) = 0 + 1 -g_X + \dim H^0(X,\cO(W)).
         \]
     Rearranging this gives the second statement.
     The first statement then follows by rearranging
-        \[
-        g_X = \dim H^0(X,\cO(W)) = \deg(W) + 1 -g_X +  \dim H^0(X,\cO(W-W))= \deg(W) + 1 -g_X + 1.
-        \]
+        \begin{multline*}
+        g_X = \dim H^0(X,\cO(W)) = \deg(W) + 1 -g_X +  \dim H^0(X,\cO(W-W))\\ = \deg(W) + 1 -g_X + 1.
+        \end{multline*}
     \end{proof}
 
 
 Given a point $P\in X$ we define $\iota_P\colon K(X) \rightarrow \cA_X$ by
     \begin{equation}
-    (\iota_P(x))_Q:= 
+    (\iota_P(f))_{P'}:= 
         \begin{cases}
-        x & \text{if }\ P=Q\\
+        f & \text{if }\ P=P'\\
         0 & \text{otherwise},
         \end{cases}
     \end{equation}
-for each $Q\in X$.
-We then define $\omega_P\colon K(X) \rightarrow k$ to be the map $\omega_P(x) := \omega(\iota_P(x))$, for $\omega \in \Omega_{K(X)}$.
-This is called the {\em local component} of $\omega$; we will use these definitions to prove the following proposition.\todo{change this sentence}
+for each $P'\in X$.
+For $\omega \in \Omega_{K(X)}$ we define $\omega_P\colon K(X) \rightarrow k$ to be the map $\omega_P(f) := \omega(\iota_P(f))$.
+We call $\omega_P$ the {\em local component} of $\omega$.
 
     \begin{prop}\label{propertyofomega}
     Let $\omega$ be a non-zero differential on $X$ and let $P\in X$. Then
         \[
-        v_P(\omega) = \max \{r\in \mathbb{Z}|\omega_P(x) = 0\ \text{for all} \ x\in K(X) \ \text{with}\ v_P(x) \geq -r\}.
+        v_P(\omega) = \max \{r\in \mathbb{Z}|\omega_P(f) = 0\ \text{for all} \ f\in K(X) \ \text{with}\ v_P(f) \geq -r\}.
         \]
     In particular $\omega_P \neq 0$.\todo{make clear that the maximum exists and hence that this is well defined}
     \end{prop}
     \begin{proof}
     Let $W$ be the divisor associated to $\omega$.
-    Let $s:=v_P(\omega)$ be the order of $\omega$ at $P$.
-    If $x\in K(X)$ and $v_P(x)\geq -s$, then $\iota_P(x) \in \cA_X(W)$, by definition (recall that $0 \in \cA(D)$ for all divisors $D \in \cD_X$).
-    Hence $\omega_P(x) = 0$.
-    On the other hand, suppose $\omega_P(x) = 0$ for any $x\in K(X)$ satisfying that $v_P(x) \geq -s-1$.
+    Let $r:=v_P(\omega)$ be the order of $\omega$ at $P$.
+    If $f\in K(X)$ and $v_P(f)\geq -r$, then $\iota_P(f) \in \cA_X(W)$, by definition (recall that $0 \in \cA(D)$ for all divisors $D \in \cD_X$).
+    Hence $\omega_P(f) = 0$.
+    On the other hand, suppose $\omega_P(f) = 0$ for any $f\in K(X)$ satisfying that $v_P(f) \geq -r-1$.
     Let $\alpha = (\alpha_P)_{P \in X} \in \cA_X(W+[P])$.
-    Then we have
+    Then we can write $\alpha$ as
         \[
         \alpha = (\alpha-\iota_P(\alpha_P)) + \iota_P(\alpha_P).
         \]
-    Note that $\alpha - \iota_P(\alpha_P)\in \cA_X(W)$ and $v_P(\alpha_P) \geq -s-1$.
+    Note that $\alpha - \iota_P(\alpha_P)\in \cA_X(W)$ and $v_P(\alpha_P) \geq -r-1$.
     Hence
         \[
         \omega(\alpha) = \omega(\alpha-\iota_P(\alpha_P))  + \omega_P(\alpha_P) = 0,
         \]
-    and so $\omega$ is zero on $\cA_X(W+P)$.
+    so $\omega$ is zero on $\cA_X(W+P)$.
     But this contradicts the maximality of $W$ in its definition.
     \end{proof}
 
-\section{The complementary module}
+\section{The complementary module and the ramification divisor}
 
 
 We now prove some results giving algebraic relations between $K(X)$ and $K(Y)$.
@@ -247,32 +259,32 @@ Recall that $\cO_{X,P}$ is an integrally closed subring of $K(X)$ for any $P\in 
 
 
     \begin{prop}
-    For $z\in K(X)$ we let $\phi(T)\in K(Y)[T]$ be its minimal monic polynomial over $K(Y)$.
-    Then $z$ is integral over $\cO_{Y,Q}$ if and only $\phi (T)\in \cO_{Y,Q}[T]$.
+    For $f\in K(X)$ we let $\phi(T)\in K(Y)[T]$ be its minimal monic polynomial over $K(Y)$.
+    Then $f$ is integral over $\cO_{Y,Q}$ if and only $\phi (T)\in \cO_{Y,Q}[T]$.
     \end{prop}
     \begin{proof}
     By definition $\phi(T)$ is the monic irreducible polynomial in $K(Y)[T]$ such that $\phi(z) = 0$. 
-    Hence if $\phi (T)$ has coefficients in $\cO_{Y,Q}$ it follows that $z$ is integral over $\cO_{Y,Q}$ by definition.
+    Hence if $\phi (T)$ has coefficients in $\cO_{Y,Q}$ it follows that $f$ is integral over $\cO_{Y,Q}$ by definition.
     
-    We now suppose that $z\in K(X)$ is integral over $\cO_{Y,Q}$.
-    Then we can choose some monic polynomial $f(T)\in \cO_{Y,Q}[T] \subset K(Y)[T]$ such that $f(z) = 0$.
-    Since $\phi(T)$ is minimal over $K(Y)$, then there exists some $\psi(T)\in K(Y)[T]$ such that $ f(T) = \phi(T)\cdot \psi(T)$.\todo{Could add proof of this - consider factorisation in the $K(X)$ adjoin the roots}
+    We now suppose that $f\in K(X)$ is integral over $\cO_{Y,Q}$.
+    Then we can choose some monic polynomial $\xi(T)\in \cO_{Y,Q}[T] \subset K(Y)[T]$ such that $\xi(f) = 0$.
+    Since $\phi(T)$ is minimal over $K(Y)$, then there exists some $\psi(T)\in K(Y)[T]$ such that $ \xi(T) = \phi(T)\cdot \psi(T)$.\todo{Could add proof of this - consider factorisation in the $K(X)$ adjoin the roots}
     We suppose that $\deg(\phi(T)) = m$ and fix $\alpha_i \in \overline{K(X)}$ such that $\phi(T)$ factorises as 
         \[  
         \phi(T) = (T-\alpha_1)\cdots (T-\alpha_m).
         \]
     We then let $F := K(X)(\alpha_1, \ldots, \alpha_m)$ be a finite extension of $K(X)$, and let $R$ be the integral closure of $\cO_{X,Q}$ in $F$.
-    Now the roots of $f(T)$ are in $R$ by definition; in particular, we have $\alpha_1, \ldots, \alpha_m \in R$.
+    Now the roots of $\xi(T)$ are in $R$ by definition; in particular, we have $\alpha_1, \ldots, \alpha_m \in R$.
     The coefficients of $\phi(T)$ can be written as polynomials of $\alpha_1, \ldots, \alpha_m$, and hence $\phi(T) \in R[T]$.
     Since $R$ integrally closed $K(Y)\cap R = \cO_{Y,Q}$, and hence $\phi(T)\in \cO_{Y,Q}[T]$.
     \end{proof}
 
     \begin{cor}\label{traceinclosure}
-    Let $Q$ be a point in $Y$ and let $x\in K(X)$ be integral over $\cO_{X,Q}$.
-    Then $\tr_{X/Y}(x)\in \cO_{Y,Q}$.
+    Let $Q$ be a point in $Y$ and let $f\in K(X)$ be integral over $\cO_{X,Q}$.
+    Then $\tr_{X/Y}(f)\in \cO_{Y,Q}$.
     \end{cor}
     \begin{proof}
-    As noted earlier, if $\phi(T)=T^r+a_{r-1}T^{r-1} + \ldots + a_0\in K(Y)[T]$ is the minimal polynomial of $x$ over $K(Y)$, then $\tr_{X/Y}(x)=-n_xa_{r-1}$, where $n_x : = [K(X):K(Y)(x)]$.
+    As noted earlier, if $\phi(T)=T^r+a_{r-1}T^{r-1} + \ldots + a_0\in K(Y)[T]$ is the minimal polynomial of $f$ over $K(Y)$, then $\tr_{X/Y}(f)=-n_fa_{r-1}$, where $n_f : = [K(X):K(Y)(f)]$.
     Hence the corollary follows from the previous proposition.
     \end{proof}
 
@@ -283,7 +295,7 @@ In order to do this we first define the complementary module and the ramificatio
 
     \begin{defn}\label{definitionramificationdivisor}
     Consider a point $P\in X$ in the pre-image of $Q\in Y$ under $\pi$.
-    By \cite[Prop. 3.1.4]{stichtenoth} there is an integer $e_P$ such that for any $x\in K(Y)$ the equality $v_P(x) = e_P\cdot v_Q(x)$ holds.
+    By \cite[Prop. 3.1.4]{stichtenoth} there is an integer $e_P$ such that for any $f\in K(Y)$ the equality $v_P(f) = e_P\cdot v_Q(f)$ holds.
     This value is called the ramification index of $P$.
     If $e_P>1$ then we say that $\pi$ is ramified at $P$.
     \end{defn}
@@ -307,7 +319,7 @@ This can then be extended from a single point to a divisor on $Y$, in which case
     \begin{defn}
     For any $Q \in Y$ we define the complementary module over $\cO_{Y,Q}$ to be
         \[
-        C_Q :=\{z\in K(X) | \tr_{X/Y}(z\cdot \cO_{Y,Q}') \subseteq \cO_{Y,Q}\}.
+        C_Q :=\{f\in K(X) | \tr_{X/Y}(f\cdot \cO_{Y,Q}') \subseteq \cO_{Y,Q}\}.
         \]\todo{is it okay to say $\tr_{X/Y}(z\cdot \cO_{Y,Q}')$?}
     \end{defn}
 
@@ -318,11 +330,11 @@ The following proposition lists a number of important properties of $C_Q$.
     Fix $Q\in Y$. 
         \begin{enumerate}
         \item $C_Q$ is an $\cO_{Y,Q}'$-module, and $\cO_{Y,Q}' \subseteq C_Q$.
-        \item If $z_1,\ldots ,z_n$ is a (necessarily integral) basis of $\cO_{Y,Q}'$ over $\cO_{Y,Q}$, then 
+        \item If $f_1,\ldots ,f_n$ is a (necessarily integral) basis of $\cO_{Y,Q}'$ over $\cO_{Y,Q}$, then 
         \[
-        C_Q = \sum_{i=1}^n \cO_{Y,Q}\cdot z_i^*,
+        C_Q = \sum_{i=1}^n \cO_{Y,Q}\cdot f_i^*,
         \]
-        where $z_1^*, \ldots, z_n^*$ is the dual basis of $z_1, \ldots, z_n$.
+        where $f_1^*, \ldots, f_n^*$ is the dual basis of $f_1, \ldots, f_n$.
         \item There is a $t\in K(X)$ such that $C_Q = t\cdot \cO_{Y,Q}'$ (note that $t$ depends on the choice of $Q$).
         Moreover, $v_P(t) \leq 0$ for all $P\in \pi^{-1}(Q)$, and if $t'\in K(X)$ then $C_Q=t'\cdot \cO_{Y,Q}'$ if and only if $v_P(t) = v_P(t')$ for all $P\in \pi^{-1}(Q)$.
         \end{enumerate}
@@ -333,48 +345,48 @@ However, before we can give a proof of this proposition, we require two lemmata.
 
     \begin{lem}[Approximation lemma]\label{lemmaapproximationlemma}
     Let $m$ be a positive integer. 
-    For each $i\in \{1,\ldots, m\}$ let $P_i\in X$, let $\mathcal{P}_i$ be the corresponding maximal ideal of $\cO_{X,P_i}$, let $x_i$ be an element of $K(X)$ and let $r_i$ be an integer.\todo{fix line break}
-    Then there is an $x\in K(X)$ such that $v_{P_i}(x-x_i) = r_i$ for all $i$.
+    For each $i\in \{1,\ldots, m\}$ let $P_i\in X$, let $\mathcal{P}_i$ be the corresponding maximal ideal of $\cO_{X,P_i}$, let $f_i$ be an element of $K(X)$ and let $r_i$ be an integer.
+    Then there is an $x\in K(X)$ such that $v_{P_i}(f-f_i) = r_i$ for all $i$.
     \end{lem}
     
     \begin{rem}
-    This result can be strengthened to also say that $v_P(x) \geq 0$ for any $P\notin \{P_1,\ldots ,P_m\}$.\todo{fix line break}
+    This result can be strengthened to also say that $v_P(f) \geq 0$ for any $P\notin \{P_1,\ldots ,P_m\}$.
     We will not prove this here, for the sake of brevity, but the proof can be found in \cite[Chap. 1, \S 3, pg. 12]{localfields}.
     \end{rem}
     \todo[inline]{Check proof for consistent notation}
 
     \begin{proof}
-    We first show that there exists an $x$ such that $v_{P_i}(x- x_i) \geq n_i = r_i +1$ for $i \in \{1, \ldots, n\}$.\todo{do we need to define $n_i$ like this or is it clear}
+    We first show that there exists an $f$ such that $v_{P_i}(f- f_i) \geq n_i = r_i +1$ for $i \in \{1, \ldots, n\}$.
     We let $R:= \cO_{X,P_1} \cap \ldots \cap \cO_{X,P_m}$, and we let $\mathcal{P}_i' := \mathcal{P}_i \cap R$.
-    We first prove the lemma assuming that $x_i \in R$.
+    We first prove the lemma assuming that $f_i \in R$.
     We may increase the $n_i$ such that $n_i\geq 0$ for all $i$.
-    We may further assume that $x_2 = \ldots = x_m =0$ by linearity.
-    Indeed, if we find a function $x_1' \in K(X)$ such that $v_{P_1}(x_1' - x_1) \geq n_1$ and $v_{P_i}(x_1') \geq n_i$ for $i \in \{2, \ldots, m\}$, we can find similar $x_2', \ldots, x_m'$.
-    Then the sum $x_1' + \ldots + x_m'$  will satisfy the criteria of the lemma, since
+    We may further assume that $f_2 = \ldots = f_m =0$ by linearity.
+    Indeed, if we find a function $f_1' \in K(X)$ such that $v_{P_1}(f_1' - f_1) \geq n_1$ and $v_{P_i}(f_1') \geq n_i$ for $i \in \{2, \ldots, m\}$, we can find similar $f_2', \ldots, f_m'$.
+    Then the sum $f_1' + \ldots + f_m'$  will satisfy the criteria of the lemma, since
         \[
-        v_{P_i}(x_1' + \ldots + x_m' - x_i) \geq \inf\{v_{P_i}(x_1'), \ldots,  v_{P_i}(x_i' - x_i), \ldots, v_{P_m}(x_i)\} \geq n_i
+        v_{P_i}(f_1' + \ldots + f_m' - f_i) \geq \inf\{v_{P_i}(f_1'), \ldots,  v_{P_i}(f_i' - f_i), \ldots, v_{P_m}(f_i)\} \geq n_i
         \]  
     for $i \in \{1, \ldots, m\}$.
     Let $I = {\mathcal{P}_1'}^{n_1} + {\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m}$.
     This is an ideal of $R$, and since it has elements whose valuation at any $P_i$ is zero, it is in fact equal to $R$.\todo{justify equality}
-    Hence we can write $x_1 = x + y$, where $y \in {\mathcal{P}_1'}^{n_1}$ and $x\in {\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m}$.
-    Since $x\in {\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m}$ it follows that $v_{P_i}(x) \geq n_i$ for $i \in \{2, \ldots, m\}$, and similarly we know $v_{P_1}(x - x_1) = v_{P_1}(y) \geq n_1$.
+    Hence we can write $f_1 = f + y$, where $y \in {\mathcal{P}_1'}^{n_1}$ and $f\in {\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m}$.
+    Since $f\in {\mathcal{P}_2'}^{n_2}\cdots {\mathcal{P}_n'}^{n_m}$ it follows that $v_{P_i}(f) \geq n_i$ for $i \in \{2, \ldots, m\}$, and similarly we know $v_{P_1}(f - f_1) = v_{P_1}(y) \geq n_1$.
     Hence satisfies the criteria of the lemma.
     
-    In general one can write $x_i = \frac{a_i}{b}$ and $x = \frac{a}{b}$ for $a,a_i\in R$ and $b\in R\backslash \{0\}$.
+    In general one can write $f_i = \frac{a_i}{b}$ and $f = \frac{a}{b}$ for $a,a_i\in R$ and $b\in R\backslash \{0\}$.
     Then we require that $v_{P_1}(a-a_i) \geq n_i + v_{P_i}(s)$ for each $i \in \{1, \ldots, m\}$.
     But we can find such an $a \in R$ by the last paragraph.
 
-    We now show that there exists an $x \in K(X)$ such that $v_{P_i}(x - x_i) = r_i$.
-    We first choose $z \in K(X)$ such that $v_{P_i}(z - x_i) > r_i$, as above.
-    We then choose $z_i \in K(X)$ such that $v_{P_i}(z_i) = r_i$, and pick a corresponding $z' \in K(X)$ such that $v_{P_i}(z - z_i) > r_i$ (again, this can be done by the above argument).
+    We now show that there exists an $f \in K(X)$ such that $v_{P_i}(f - f_i) = r_i$.
+    We first choose $h \in K(X)$ such that $v_{P_i}(h - f_i) > r_i$, as above.
+    We then choose $h_i \in K(X)$ such that $v_{P_i}(h_i) = r_i$, and pick a corresponding $h' \in K(X)$ such that $v_{P_i}(h - h_i) > r_i$ (again, this can be done by the above argument).
     Then
         \[
-        v_{P_i}(z') = v_{P_i}((z'-z_i) + z_i) = \min\{v_{P_i}(z'-z_i),v_{P_i}(z_i)\} = r_i.
+        v_{P_i}(h') = v_{P_i}((h'-h_i) + h_i) = \min\{v_{P_i}(h'-h_i),v_{P_i}(h_i)\} = r_i.
         \]
-    Finally, if we let $x = z + z'$, then
+    Finally, if we let $f = h + h'$, then
         \[
-        v_{P_i}(x - x_i) = v_{P_i}((z-x_i) + z') = \min\{v_{P_i}(z - x_i), v_{P_i}(z')\} = r_i.
+        v_{P_i}(f - f_i) = v_{P_i}((h-f_i) + h') = \min\{v_{P_i}(h - f_i), v_{P_i}(h')\} = r_i.
         \]  
     \end{proof}
 
@@ -387,20 +399,20 @@ However, before we can give a proof of this proposition, we require two lemmata.
     \begin{proof}
     By \cite[Cor. 3.3.5]{stichtenoth}, we have 
         \[
-        \cO_{Y,Q}' = \{x\in K(X)|v_P(x) \geq 0 \ \text{for all} \ P\in \pi^{-1}(Q)\}.
+        \cO_{Y,Q}' = \{f\in K(X)|v_P(f) \geq 0 \ \text{for all} \ P\in \pi^{-1}(Q)\}.
         \]  
     Let $I$ be an ideal of $\cO_{Y,Q}'$.
-    If we let $\{P_1,\ldots, P_l\} = \pi^{-1}(Q)$ then we can choose $x_i \in I$ for $1\leq i \leq l$ such that $v_{P_i}(x_i) \leq v_{P_i}(y)$ for all $y\in I$.
-    By the Approximation Lemma there exist $z_i$ such that $v_P (z_i) = 0$ if $P=P_i$ and $v_{P_j}(z_i) > v_{P_j}(x_j)$ for $j\neq i$.
-    Now let $x = \sum_{i=1}^l x_iz_i$ and note that that $v_{P_i}(x) = v_{P_i}(x_i)$ for all $1\leq i\leq l$.
-    Then we claim that $I = x \cO_{Y,Q}'$.
+    If we let $\{P_1,\ldots, P_l\} = \pi^{-1}(Q)$ then we can choose $f_i \in I$ for $1\leq i \leq l$ such that $v_{P_i}(f_i) \leq v_{P_i}(y)$ for all $y\in I$.
+    By the Approximation Lemma there exist $h_i$ such that $v_P (h_i) = 0$ if $P=P_i$ and $v_{P_j}(h_i) > v_{P_j}(f_j)$ for $j\neq i$.
+    Now let $f = \sum_{i=1}^l f_ih_i$ and note that that $v_{P_i}(f) = v_{P_i}(f_i)$ for all $1\leq i\leq l$.
+    Then we claim that $I = f \cO_{Y,Q}'$.
 
 
-    The inclusion $x\cO_{Y,Q}' \subseteq I$ follows immediately from the observation that $x \in I$.
-    Now we show that $I \subseteq x\cO_{Y,Q}'$.
-    If $y\in I$ then we let $z = x^{-1}y$.
-    Then $v_{P_i}(z) = v_{P_i}(y) - v_{P_i}(x_i) \geq 0$ for all $1\leq i\leq l$.
-    Hence $z\in \cO_{Y,Q}'$ and so $y = xz \in x\cO_{Y,Q}'$, completing the proof.
+    The inclusion $f\cO_{Y,Q}' \subseteq I$ follows immediately from the observation that $f \in I$.
+    Now we show that $I \subseteq f\cO_{Y,Q}'$.
+    If $y\in I$ then we let $h = f^{-1}y$.
+    Then $v_{P_i}(h) = v_{P_i}(y) - v_{P_i}(f_i) \geq 0$ for all $1\leq i\leq l$.
+    Hence $h\in \cO_{Y,Q}'$ and so $y = fh \in f\cO_{Y,Q}'$, completing the proof.
     \end{proof}
 
 We now present a proof of Proposition \ref{propfactsaboutc'}.
@@ -408,38 +420,38 @@ We now present a proof of Proposition \ref{propfactsaboutc'}.
     \begin{proof}
         \begin{enumerate}
         \item It is clear that $C_Q$ is an $\cO_{Y,Q}'$ module.
-        Indeed, if $y\in \cO_{Y,Q}'$, then $y\cdot \cO_{Y,Q}' \subseteq \cO_{Y,Q}'$ and hence $\tr_{X/Y}(z y\cdot \cO_{Y,Q}')\subseteq \tr_{X/Y}(z\cdot \cO_{Y,Q}') \subseteq \cO_{Y,Q}$ for any $z\in C_Q$.
+        Indeed, if $y\in \cO_{Y,Q}'$, then $y\cdot \cO_{Y,Q}' \subseteq \cO_{Y,Q}'$ and hence $\tr_{X/Y}(f y\cdot \cO_{Y,Q}')\subseteq \tr_{X/Y}(f\cdot \cO_{Y,Q}') \subseteq \cO_{Y,Q}$ for any $h\in C_Q$.
         The fact that $\cO_{Y,Q}'$ is contained in $C_Q$ follows from Corollary \ref{traceinclosure}.
-        \item We first show that $C_Q \subseteq \sum_{i=1}^n \cO_{Y,Q}\cdot z_i^*$.
-        Suppose $z\in C_Q$.
-        Now $\{z_1^*, \ldots ,z_n^*\}$ is a basis of $K(X)$ over $K(Y)$, so there exist $x_1,\ldots , x_n\in K(Y)$ such that $z=\sum_{i=1}^n x_iz_i^*$.\todo{not a basis of $K(X)$ over $K(Y)$, but of the dual space - correct this}
-        As $z\in C_Q$ and $z_1,\ldots ,z_n\in \cO_{X,Q}'$, it follows by definition of $C_Q$ that $\tr_{X/Y}(zz_j)\in \cO_{Y,Q}$ for $j\in \{1,\ldots ,n\}$.
+        \item We first show that $C_Q \subseteq \sum_{i=1}^n \cO_{Y,Q}\cdot f_i^*$.
+        Suppose $f\in C_Q$.
+        Now $f_1^*, \ldots ,f_n^*$ is a basis of $K(X)$ over $K(Y)$, so there exist $h_1,\ldots , h_n\in K(Y)$ such that $f=\sum_{i=1}^n h_if_i^*$.
+        As $f\in C_Q$ and $f_1,\ldots ,f_n\in \cO_{X,Q}'$, it follows by definition of $C_Q$ that $\tr_{X/Y}(ff_j)\in \cO_{Y,Q}$ for $j\in \{1,\ldots ,n\}$.
         We know that 
             \[
-            \tr_{X/Y}(zz_j) = \tr_{X/Y}\left(\sum_{i=1}^nx_iz_iz_j^*\right) = \sum_{i=1}^nx_i \cdot \tr_{X/Y}(z_iz_j^*) = x_j,
+            \tr_{X/Y}(ff_j) = \tr_{X/Y}\left(\sum_{i=1}^nh_if_if_j^*\right) = \sum_{i=1}^nh_i \cdot \tr_{X/Y}(f_if_j^*) = h_j,
             \]
-        since $z_j^*$ is dual to $z_j$.
-        Hence each $x_j$ is in $\cO_{Y,Q}$, and $z\in \sum_{i=1}^n\cO_{Y,Q}\cdot z_i^*$.
+        since $f_j^*$ is dual to $f_j$.
+        Hence each $h_j$ is in $\cO_{Y,Q}$, and $f\in \sum_{i=1}^n\cO_{Y,Q}\cdot f_i^*$.
         
-        Now suppose that $z\in \sum_{i=1}^n\cO_{Y,Q}\cdot z_i^*$ and $u\in \cO_{Y,Q}'$.
-        Then we need to show that $\tr_{X/Y}(z u)\in \cO_{Y,Q}$.
-        We can find $x_i, y_j\in \cO_{Y,Q}$ such that $z=\sum_{i=1}^n x_iz_i^*$ and $u=\sum_{i=1}^ny_jz_j$.
+        Now suppose that $f\in \sum_{i=1}^n\cO_{Y,Q}\cdot f_i^*$ and $u\in \cO_{Y,Q}'$.
+        Then we need to show that $\tr_{X/Y}(f u)\in \cO_{Y,Q}$.
+        We can find $h_i, y_j\in \cO_{Y,Q}$ such that $f=\sum_{i=1}^n h_if_i^*$ and $u=\sum_{i=1}^ny_jf_j$.
         Then
             \[
-            \tr_{X/Y}(zu) = \tr_{X/Y}\left(\sum_{i,j=1}^n \left(x_iy_jz_i^*z_j\right)\right) = \sum_{i,j=1}^n x_iy_j\cdot \tr_{X/Y}(z_i^*z_j) = \sum_{i=1}^n x_iy_i.
+            \tr_{X/Y}(fu) = \tr_{X/Y}\left(\sum_{i,j=1}^n \left(h_iy_jf_i^*f_j\right)\right) = \sum_{i,j=1}^n h_iy_j\cdot \tr_{X/Y}(f_i^*f_j) = \sum_{i=1}^n h_iy_i.
             \]
-        Since $\sum_{i=1}^n x_iy_i\in \cO_{Y,Q}$, it follows that $z\in C_Q$.
+        Since $\sum_{i=1}^n h_iy_i\in \cO_{Y,Q}$, it follows that $f\in C_Q$.
             
-        \item By part 2 we can find $u_i\in K(X)$ such that $C_Q = \sum_{i=1}^n \cO_{Y,Q} \cdot u_i$.\todo{should have "*"s?}
-        Choose some $x\in K(Y)$ such that $v_Q(x)\geq 0$ and also $v_Q(x)\geq -v_P(u_i)$ for all $P\in \pi^{-1}(Q)$ and $i\in \{1,\ldots ,n\}$.
+        \item By part 2 we can find $u_i\in K(X)$ such that $C_Q = \sum_{i=1}^n \cO_{Y,Q} \cdot u_i^*$.
+        Choose some $h\in K(Y)$ such that $v_Q(h)\geq 0$ and also $v_Q(h)\geq -v_P(u_i)$ for all $P\in \pi^{-1}(Q)$ and $i\in \{1,\ldots ,n\}$.
         By definition of $e_P$ it follows that
             \[ 
-            v_P(xu_i) = e_Pv_Q(x) + v_P(u_i) \geq 0
+            v_P(hu_i) = e_Pv_Q(h) + v_P(u_i) \geq 0
             \]
         for all $i\in \{1,\ldots, n\}$ and all $P\in \pi^{-1}(Q)$.
-        Since $\cO'_{Y,Q} = \cap_{P\mapsto Q} \cO_{X,P}$ (see, for example, \cite[Cor. 3.3.5]{stichtenoth}), then $x\cdot C_Q \subseteq \cO_{Y,Q}'$.
-        Since $\cO_{Y,Q}'$ is a principal ideal domain by Lemma \ref{lemmapidlemma}, it follows that $x\cdot C_Q = y\cdot \cO_{Y,Q}'$ for some $y\in \cO_{Y,Q}'$.
-        If we let $t=x^{-1}y$ then $C_Q =t\cdot \cO_{Y,Q}'$, proving the first part of the statement.
+        Since $\cO'_{Y,Q} = \cap_{P\mapsto Q} \cO_{X,P}$ (see, for example, \cite[Cor. 3.3.5]{stichtenoth}), then $h\cdot C_Q \subseteq \cO_{Y,Q}'$.
+        Since $\cO_{Y,Q}'$ is a principal ideal domain by Lemma \ref{lemmapidlemma}, it follows that $h\cdot C_Q = y\cdot \cO_{Y,Q}'$ for some $y\in \cO_{Y,Q}'$.
+        If we let $t=h^{-1}y$ then $C_Q =t\cdot \cO_{Y,Q}'$, proving the first part of the statement.
         
         
         
@@ -455,33 +467,33 @@ We now present a proof of Proposition \ref{propfactsaboutc'}.
     \begin{proof}
     We first show that, given a basis of $K(X)$ over $K(Y)$, it is almost always integral over $\cO_{Y,Q}$ given $Q\in Y$.
     Recall that $\cO_{Y,Q}$ is integrally closed in $K(Y)$, and its quotient field is $K(Y)$.
-    We consider a basis $z_1,\ldots ,z_n$ of $K(X)$ over $K(Y)$ and we let $z_1^*,\ldots ,z_n^*$ be the dual basis.
-    Now the minimal polynomials of $z_1,\ldots, z_n,z_1^*,\ldots, z_n^*$ have finitely many coefficients in $K(Y)$.
+    We consider a basis $f_1,\ldots ,f_n$ of $K(X)$ over $K(Y)$ and we let $f_1^*,\ldots ,f_n^*$ be the dual basis.
+    Now the minimal polynomials of $f_1,\ldots, f_n,f_1^*,\ldots, f_n^*$ have finitely many coefficients in $K(Y)$.
     Hence if $S\subseteq Y$ is the set of poles of these coefficients, then $S$ is finite and for $Q\notin S$ then 
         \[
-        z_1,\ldots,z_n,z_1^*,\ldots, z_n^*\in \cO_{Y,Q}'.
+        f_1,\ldots,f_n,f_1^*,\ldots, f_n^*\in \cO_{Y,Q}'.
         \]
     
-    Now we fix $Q \notin S$ and assume that $\{z_1,\ldots ,z_n,z_1^*,\ldots, z_n^*\}\subseteq \cO_{Y,Q}'$. 
+    Now we fix $Q \notin S$ and assume that $\{f_1,\ldots ,f_n,f_1^*,\ldots, f_n^*\}\subseteq \cO_{Y,Q}'$. 
     Then we show that 
         \[
-        \cO_{Y,Q}' \subseteq \sum_{i=1}^n \cO_{Y,Q}\cdot z_i^*.
+        \cO_{Y,Q}' \subseteq \sum_{i=1}^n \cO_{Y,Q}\cdot f_i^*.
         \]
     
-    If $z\in K(X)$ then there are $e_1,\ldots, e_n\in K(Y)$ such that $z=e_1z_1^*+\ldots +e_nz_n^*$.
-    If $z\in \cO_{Y,Q}'$ then $zz_j\in \cO_{Y,Q}'$ for $1\leq j\leq n$, and hence $\tr_{X/Y}(zz_j)\in \cO_{Y,Q}$, by Corollary \ref{traceinclosure}.
+    If $f\in K(X)$ then there are $h_1,\ldots, h_n\in K(Y)$ such that $f=h_1f_1^*+\ldots +h_nf_n^*$.
+    If $f\in \cO_{Y,Q}'$ then $ff_j\in \cO_{Y,Q}'$ for $1\leq j\leq n$, and hence $\tr_{X/Y}(ff_j)\in \cO_{Y,Q}$, by Corollary \ref{traceinclosure}.
     Since
         \[
-        \tr_{X/Y}(zz_j) = \tr_{X/Y}\left(\sum_{i=1}^n e_iz_jz_i^*\right) = \sum_{i=1}^ne_i\cdot \tr_{X/Y}(z_jz_i^*) = e_j.
+        \tr_{X/Y}(ff_j) = \tr_{X/Y}\left(\sum_{i=1}^n h_if_jf_i^*\right) = \sum_{i=1}^nh_i\cdot \tr_{X/Y}(f_jf_i^*) = h_j.
         \]
-    then $e_j\in \cO_{Y,Q}$, and hence $\cO_{Y,Q}'\subseteq \sum_{i=1}^n\cO_{Y,Q}\cdot z_i^*$.
-    Since $z_1,\ldots, z_n$ also forms a basis we can run the same argument again to show that $\cO_{Y,Q}'\subseteq \sum_{i=1}^n\cO_{Y,Q}\cdot z_i$.
+    then $h_j\in \cO_{Y,Q}$, and hence $\cO_{Y,Q}'\subseteq \sum_{i=1}^n\cO_{Y,Q}\cdot f_i^*$.
+    Since $f_1,\ldots, f_n$ also forms a basis we can run the same argument again to show that $\cO_{Y,Q}'\subseteq \sum_{i=1}^n\cO_{Y,Q}\cdot f_i$.
     
     We then have the following set of inequalities:
         \[
-        \sum_{i=1}^n \cO_{Y,Q}\cdot z_i \subseteq \cO_{Y,Q}' \subseteq \sum_{i=1}^n\cO_{Y,Q}\cdot z_i^* \subseteq \cO_{Y,Q}'\subseteq \sum_{i=1}^n \cO_{Y,Q}\cdot z_i.
+        \sum_{i=1}^n \cO_{Y,Q}\cdot f_i \subseteq \cO_{Y,Q}' \subseteq \sum_{i=1}^n\cO_{Y,Q}\cdot f_i^* \subseteq \cO_{Y,Q}'\subseteq \sum_{i=1}^n \cO_{Y,Q}\cdot f_i.
         \]
-        Since $C_Q = \sum_{i=1}^n \cO_{Y,Q}\cdot z_i^*$ by part 2 of Proposition \ref{propfactsaboutc'}, the result follows.
+        Since $C_Q = \sum_{i=1}^n \cO_{Y,Q}\cdot f_i^*$ by part 2 of Proposition \ref{propfactsaboutc'}, the result follows.
     \end{proof}
 
 We can now define the ramification divisor.
@@ -498,8 +510,13 @@ We can now define the ramification divisor.
     \end{defn}
 
     \begin{rem}
-    It should be noted that when considering the theory of function fields the ramification divisor is called the different, and denoted $\text{ Diff}_{X/Y}$.
+    It should be noted that when considering the theory of function fields the ramification divisor is called the different, and denoted $\operatorname{Diff}_{X/Y}$.
     \end{rem}
+
+
+\section{The Riemann-Hurwitz formula}
+
+In this subsection we build on our previous work to state and prove our main result, the Riemann-Hurwitz formula.
 
 We now define the \adele space of $X$ over $Y$.
 
@@ -694,7 +711,9 @@ We now prove Theorem \ref{theoremdetailedhurwitz}.
     \end{proof}
 
 
+\section{Relations to classical algebraic geometry}
 
+In this section we make clear the relations between the objects we have studied and the equivalent objects that arise in classical algebraic geometry.
 
 
 Let $C$ be a smooth, projective, connected algebraic curve over $k$.
