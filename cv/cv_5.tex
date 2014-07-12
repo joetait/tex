@@ -1,0 +1,226 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compact Academic CV
+% LaTeX Template
+% Version 1.0 (10/6/2012)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Dario Taraborelli (http://nitens.org/taraborelli/home)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important:
+% This template needs to be compiled using XeLaTeX
+%
+% Note: this template has the option to use the Hoefler Text font, see the
+% font configurations section below for instructions on using this font
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt, a4paper]{article} % Document font size and paper size
+
+\usepackage{fontspec} % Allows the use of OpenType fonts
+
+\usepackage{geometry} % Allows the configuration of document margins
+\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in} % Document margin settings
+\setlength\parindent{0in} % Remove paragraph indentation
+
+\usepackage[usenames,dvipsnames]{xcolor} % Custom colors
+
+\usepackage{sectsty} % Allows changing the font options for sections in a document
+\usepackage[normalem]{ulem} % Custom underlining
+\usepackage{xunicode} % Allows generation of unicode characters from accented glyphs
+\defaultfontfeatures{Mapping=tex-text} % Converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+
+\usepackage{marginnote} % For margin years
+\newcommand{\years}[1]{\marginnote{\scriptsize #1}} % New command for including margin years
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt} % Slightly increase the distance of the margin years from the contant
+\reversemarginpar
+
+\usepackage[xetex, bookmarks, colorlinks, breaklinks, pdftitle={Albert Einstein - vita},pdfauthor={Albert Einstein}]{hyperref} % PDF setup - set your name and the title of the document to be incorporated into the final PDF file meta-information
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} % Link colors
+
+%----------------------------------------------------------------------------------------
+%	FONT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+% Two font choices are available in this template, the default is Linux Libertine, available for free at: http://www.linuxlibertine.org while the secondary choice is Hoefler Text which comes bundled with Mac OSX.
+% To use Hoefler Text, comment out the Linux Libertine block below and uncomment the Hoefler Text block. You will also need to replace the "\&" characters with "\amper{}" in section titles.
+
+% Linux Libertine Font (default)
+\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux Libertine O} % Main text font
+%\setmonofont[Scale=0.8]{Monaco} % Set mono font (e.g. phone numbers)
+\sectionfont{\mdseries\upshape\Large} % Set font options for sections
+\subsectionfont{\mdseries\scshape\normalsize} % Set font options for subsections
+\subsubsectionfont{\mdseries\upshape\large} % Set font options for subsubsections
+\chardef\&="E050 % Custom ampersand character
+
+% Hoefler Text Font (bundled with Mac OSX)
+%\setromanfont [Ligatures={Common}, Numbers={OldStyle}]{Hoefler Text} % Main text font
+%\setmonofont[Scale=0.8]{Monaco} % Set mono font (e.g. phone numbers)
+%\setsansfont[Scale=0.9]{Optima Regular} % Set sans font, used in the main name and titles in the document
+%\newcommand{\amper}{{\fontspec[Scale=.95]{Hoefler Text}\selectfont\itshape\&}} % Custom ampersand character
+%\sectionfont{\sffamily\mdseries\large\underline} % Set font options for sections
+%\subsectionfont{\rmfamily\mdseries\scshape\normalsize} % Set font options for subsections
+%\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize} % Set font options for subsubsections
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	CONTACT AND GENERAL INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+{\LARGE Joseph Tait}\\[5mm] % Your name
+Flat 9 Marshall Place\\ % Your address
+445 Winchester Road\\
+Southampton \\
+Hampshire \texttt{SO16 7BD}
+U.K.\\[.2cm]
+Phone: \texttt{07809770837}\\ % Your phone number
+%Fax: \texttt{609-924-8399}\\[.2cm] % Your fax number
+Email: \href{mailto:joe.tait@soton.ac.uk}{joe.tait@soton.ac.uk}\\ % Your email address
+\textsc{url}: \href{http://www.personal.soton.ac.uk/jjt1e10/}{http://www.personal.soton.ac.uk/jjt1e10/}\\ % Your academic/personal website
+
+\vskip 1em % Whitespace between contact information and specific CV information
+
+%------------------------------------------------
+
+Born: September 8th, 1987---Crawley, U.K.\\ % Your date of birth
+Nationality: British % Your nationality
+
+%------------------------------------------------
+
+\section*{Current position}
+
+\emph{PhD student}, The University of Southampton, Southampton % Your current or previous employment position
+
+%------------------------------------------------
+
+\section*{Areas of specialization}
+
+Algebraic Geometry. % Your primary areas of research interest
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+%\section*{Appointments held}
+%
+%\years{1903-1908}Swiss Patent Office, Bern\\
+%\years{1908-1911}University of Bern\\
+%\years{1911-1912}University of Zürich\\
+%\years{1912-1914}Charles University of Prague\\
+%\years{1914-1932}Prussian Academy of Sciences, Berlin\\
+%\years{1920-1930}University of Leiden\\
+%\years{1932-1955}Institute for Advanced Study, Princeton
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section*{Education}
+
+\years{2010-14}\textsc{PhD} in Mathematics, The University of Southampton \\
+\years{2006-10}\textsc{First class MMath} in Mathematics, The University of Warwick \\
+\years{2004-06}\textsc{A-levels} 4 A-grades, Hazelwick school \\
+\years{2004-06}\textsc{AS-levels} 2 A-grades, Hazelwick school \\
+
+%----------------------------------------------------------------------------------------
+%	GRANTS, HONORS AND AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+%\section*{Grants, honors \& awards}
+%
+%\years{1921}Nobel Prize in Physics, Nobel Foundation
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS AND TALKS SECTION
+%----------------------------------------------------------------------------------------
+
+\section*{Publications \& talks}
+
+\subsection*{Journal articles}
+
+\years{2014}K\"ock, Bernhard and Tait, Joseph (2014), “Group actions on the de Rham cohomology of hyperelliptic curves", \emph{In preparation.} \\
+\years{2014}K\"ock, Bernhard and Tait, Joseph (2014), “Faithfulness of Actions on Riemann-Roch Spaces", \emph{Canad. J. Math.} Accepted. \\
+
+
+\subsection*{Theses}
+\years{2014} “Group actions on differentials of curves and cohomology bases of hyperelliptic curves", \emph{PhD Thesis,} Supervisor: Dr. Bernhard K\"ock \\
+\years{2010} “An Introduction to K-Theory", \emph{Master's Thesis,} Supervisor: Prof. John Jones \\
+
+\subsection*{Talks}
+\years{2014} “Group actions on the de Rham cohomology of hyperelliptic curves", \emph{Southampton lunchtime seminar}, The University of Southampton, Southampton. Invited speaker. \\
+\years{2013} “Faithful actions on the space of holomorphic polydifferentials on algebraic curves", \emph{Young researchers in mathematics}, The University of Edinburgh, Edinburgh. Contributed talk. \\
+\years{2013} “Faithful actions on spaces of holomorphic polydifferentials on curves", \emph{Characteristic $p$-methods in algebraic geometry}, Imperial College, London. Contributed talk. \\
+\years{2012} “Faithful actions on the space of holomorphic polydifferentials on algebraic curves", \emph{Groups and Riemann surfaces: A conference in honour of Gareth Jones}, Universidad Aut\`onoma de Madrid, Madrid. Invited speaker. \\
+\years{2010-14} Various talks, \emph{Southampton postgraduate seminar series}, The University of Southampton, Southampton. Invited Speaker.
+\years{2009} “An introduction to K-Theory", \emph{Warwick undergraduate seminar series}, The University of Warwick, Coventry. Invited Speaker.
+
+
+%\subsection*{Books}
+%
+%\years{1954}Einstein, Albert (1954), \emph{Ideas and Opinions}, New York: Random House, ISBN 0-517-00393-7
+
+%------------------------------------------------
+
+\section*{Conferences attended}
+
+\years{2013} \emph{Young researchers in mathematics}, The University of Edinburgh, Edinburgh. \\
+\years{2013} \emph{Characteristic $p$-methods in algebraic geometry}, Imperial College, London. \\
+\years{2012} \emph{Groups and Riemann surfaces: A conference in honour of Gareth Jones}, Universidad Aut\`onoma de Madrid, Madrid. \\
+\years{2012} \emph{Interactions of birational geometry with other fields --- LMS-EPSRC Durham symposium}, Durham University, Durham. \\
+\years{2012} \emph{British Mathematical Colloquium}, The University of Kent, Canterbury. \\
+
+%----------------------------------------------------------------------------------------
+%	TEACHING SECTION
+%----------------------------------------------------------------------------------------
+
+\section*{Teaching}
+
+\years{2010-14} Teaching Assistant - I was employed by the University of Southampton to teach classes of approx 30 to 150 students, accompanied by a senior lecturer. Courses taught include Number Theory, Calculus, Linear Algebra, Analysis and Mathematical methods for Chemists.
+\years{2009-10} Undergraduate supervisor - I was employed by the University of Warwick to teach two groups of five undergraduates, as well as mark their work. Courses covered include Analysis, Linear Algebra and Vectors and Matrices. \\
+
+%------------------------------------------------
+
+\section{Other work}
+
+\years{2013-14} Administrator for Mathematics for Engineers - I was required to help undergraduates understand how the course was run, record and administor marks and deal with queries from the students.
+
+
+%------------------------------------------------
+
+\section{Other skills}
+
+\years{Programming} Python, Sage, \LaTeX, Bash
+\years{Computer Skills} HTML, CSS, git
+\years{OS's} Linux, Windows
+%------------------------------------------------
+
+\section*{References}
+
+Available on request.
+
+\vfill{} % Whitespace before final footer
+
+%----------------------------------------------------------------------------------------
+%	FINAL FOOTER
+%----------------------------------------------------------------------------------------
+
+\begin{center}
+{\scriptsize Last updated: \today }%\- •\- \href{http://www.LaTeXTemplates.com}{http://www.LaTeXTemplates.com}} % Any final footer text such as a URL to the latest version of your CV, last updated date, compiled in XeTeX, etc
+\end{center}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
