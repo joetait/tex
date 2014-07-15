@@ -3,17 +3,17 @@
 In this section we will introduce the basic concepts, notation and terminology required in the study of algebraic curves.
 
 Throughout this thesis $k$ will denote an algebraically closed field of characteristic $p \geq 0$.
-It should be noted that while the majority of results in the thesis hold for all characterisitcs, including $p=0$, our main focus will be on the case $p > 0$.
+It should be noted that while the majority of results in the thesis hold for all characteristics, including $p=0$, our main focus will be on the case $p > 0$.
 
 When we refer to a \emph{curve} we will mean a smooth, connected, projective variety of dimension one over $k$.
 % Similarly, when we refer to an \emph{affine curve} we mean a smooth, connected, affine variety of dimension one over $k$. % Add if needed
 
 
-A \emph{meromophirc function} on $X$ is a morphism $f \colon X \ra \PP_k^1$.
+A \emph{meromorphic function} on $X$ is a morphism $f \colon X \ra \PP_k^1$.
 The collection of meromorphic functions on $X$ is denoted $K(X)$, and called the \emph{function field} of $X$.
 
-We recall that the category of algebraic curves up to birational  equivalence is actually equivalent to the category of function fields over $k$ (which can be defined independantly of curves as fields of transcendence degree one over $k$).
-Furthermore, if $k = \CC$ then we have a triple equivalence of categories, between function fields over $\CC$, algebraic curves (up to biratioanl equivalence) and the category of compact Riemann surfaces.\todo{References. Maybe Miranda, Stichtenoth and/or Hartshorne.}
+We recall that the category of algebraic curves up to birational  equivalence is actually equivalent to the category of function fields over $k$ (which can be defined independently of curves as fields of transcendence degree one over $k$).
+Furthermore, if $k = \CC$ then we have a triple equivalence of categories, between function fields over $\CC$, algebraic curves (up to birational equivalence) and the category of compact Riemann surfaces.\todo{References. Maybe Miranda, Stichtenoth and/or Hartshorne.}
 
 We say that a meromorphic function on $X$ is \emph{regular} on an open set $U \subseteq X$ if the image $f(U)$ lies in $k = \AA_k^1 \subset \PP_k^1$.
 We let $H^0(U,\cO_X)$ denote the space of functions in $K(X)$ which are regular on $U$.
@@ -40,9 +40,9 @@ We call any element $t \in \cO_{X,P}$ with order 1 at $P$ a \emph{uniformising p
 
 \section{Differentials}
 
-We now introduce the concept of a differential on the xurve $X$.
+We now introduce the concept of a differential on the curve $X$.
 
-Let $R$ be any commutaitive ring containing $k$ and let $M$ be an $R$-module.
+Let $R$ be any commutative ring containing $k$ and let $M$ be an $R$-module.
 Then a $k$-linear map $D \colon R \ra M$ satisfying $D(fg) = fD(g) + gD(f)$ is called a \emph{derivation} of $R$ in to $M$ over $k$.
 
 There exists a unique module $\Omega_k(R)$, and a derivation $d \colon R \ra \Omega_k(R)$, through which all derivations must factor.
@@ -74,7 +74,7 @@ We call differential on an open subset $U \subset X$ \emph{holomorphic on $U$} i
     H^0(U, \Omega_X) := \{ \omega \in \Omega_{K(X)} | \ord_P(\omega) \geq 0\ \text{for all}\ P \in X\}
     \]\todo{check spacing of ''for all"}
 be \emph{the space of holomorphic differentials on $U$}.
-If $\omega \in \Omega_{K(X)}$ is homolorphic on $X$ we say that $\omega$ is \emph{holomorphic}, and we let $\hzero$ be \emph{the space of holomorphic differentials}.
+If $\omega \in \Omega_{K(X)}$ is holomorphic on $X$ we say that $\omega$ is \emph{holomorphic}, and we let $\hzero$ be \emph{the space of holomorphic differentials}.
 
 \section{The Riemann-Roch theorem}
 
@@ -108,8 +108,8 @@ Now for any differential $0 \neq \omega \in \Omega_{K(X)}$ we define the \emph{d
     \]
 If $W$ is a divisor on $X$ and $W = \di(\omega)$ for some $ \omega \in \Omega_{K(X)}$ then we say that $W$ is a \emph{canonical divisor} on $X$.
 
-The principal divisors of $X$ form a subgroup of $\di(X)$, and we say that two divisors $D, D' \in \di(X)$ are equivalent, denoted $D \tilde D'$, if their image in the quptiemt of $\di(X)$ by the group of principal divisors is the same; \ie if there exists $f \in K(X)$ such that $ D = D' + \di(f)$.
-By the following, it makes sense to refer to \emph{the} canonical divisor on $X$, up to equivalnce, which we write as $K_X$.
+The principal divisors of $X$ form a subgroup of $\di(X)$, and we say that two divisors $D, D' \in \di(X)$ are equivalent, denoted $D \tilde D'$, if their image in the quotient of $\di(X)$ by the group of principal divisors is the same; \ie if there exists $f \in K(X)$ such that $ D = D' + \di(f)$.
+By the following, it makes sense to refer to \emph{the} canonical divisor on $X$, up to equivalence, which we write as $K_X$.
 
     \begin{thm}
     Let $W$ and $W'$ be canonical divisors on $X$.
@@ -128,7 +128,7 @@ Given any divisor $D = \sum_{P \in X} n_P[P]$ we let
     H^0(X,\cO_X(D)) : = \{ f \in K(X) | \ord_P(f) \geq n_P\ \text{for all}\ P \in X\}
     \]
 be the \emph{vector space of meromorphic functions associated to $D$}.
-Similary, we let 
+Similarly, we let 
     \[
     H^0(X,\Omega_X(D)) :  = \{ \omega \in \omega_{K(X)} | \ord_P(\omega) \geq n_P \ \text{for all} \ P \in X\}
     \]
@@ -227,7 +227,7 @@ Otherwise we say that $P$ is tamely ramified.
         \]
     \end{defn}
 
-Note that $\phi^*$ defines a group homorphism $\di(Y) \ra \di(X)$.
+Note that $\phi^*$ defines a group homomorphism $\di(Y) \ra \di(X)$.
 
     \begin{defn}[Ramification divisor]
     The ramification divisor of $\phi \colon X \ra Y$ is 
