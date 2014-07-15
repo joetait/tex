@@ -25,7 +25,7 @@ The collection of functions regular at $P$ form a ring, which we call $\cO_{X,P}
     \begin{lem}
     For any $P \in X$ the ring $\cO_{X,P}$ is a discrete valuation ring, with maximal ideal
         \[
-        \mathcal {M}_{X,P} := \{ f \in \cO_X,P} | f(P) = 0 \}.
+        \mathcal {M}_{X,P} := \{ f \in \cO_{X,P} | f(P) = 0 \}.
         \]
     \end{lem}
     \begin{proof}
@@ -201,9 +201,110 @@ Then a \emph{morphism of curves} is a continuous map $\phi \colon X \ra Y$ such 
 
 A particular manner in which morphisms often arise comes from considering the quotient of $X$ by some subgroup $G$ of the automorphism group $\aut(X)$.
 Then we have a natural projection $\pi \colon \ra X/G$, which is a morphism of curves.
-The majority of the topics considered in this thesis will 
+The majority of the topics considered in this thesis will focussed on situations where we have such a projection.
+
+We not return to assuming that $\phi \colon X \ra Y$ is an arbitrary morphism of curves.
+
+    \begin{defn}
+    For any point $P \in X$ the ramification index $e_P$ of $\phi$ at $P$ is defined as follows: let $t \in \cO_{Y,f(P)}$ be a uniformising parameter; then 
+        \[
+        e_P := \ord_P(\phi^*(t)).
+        \]
+    \end{defn}
+
+Note that $e_P =1$ for almost all points $P \in X$.
+We say that the point $Q \in Y$ is \emph{branch point} of $\phi$ is there exists some $P \in \phi^{-1}(Q)$ for which $e_P >1$.
+We say that $P \in X$ is a \emph{ramification point} of $X$ if $e_P >1$.
+Suppose $P \in X$ is a ramification point.
+Then if $p = \cha(k)$ divides $e_P$ we say that $P$ is \emph{wildly ramified}, and we also say $\phi$ is wildly ramified if this holds for any point in $X$.
+Otherwise we say that $P$ is tamely ramified.
+
+    \begin{defn}
+    Let $D = \sum_{Q \in Y}n_Q [Q]$ be a divisor on $Y$.
+    Then the pull back of $D$ with respect to $\phi$ is
+        \[
+        \phi^*(D) := \sum_{Q \in Y} \sum_{P \mapsto Q} e_P \cdot n_Q [Q].
+        \]
+    \end{defn}
+
+Note that $\phi^*$ defines a group homorphism $\di(Y) \ra \di(X)$.
+
+    \begin{defn}[Ramification divisor]
+    The ramification divisor of $\phi \colon X \ra Y$ is 
+        \[
+        R:= \sum_{P \in X} \delta_P [P].
+        \]
+    If $\phi$ is tamely ramified then 
+        \[
+        R: = \sum_{P \in X} (e_P - 1)[P].
+        \]
+    \end{defn}
+
+Hilbert's formula, stated below, gives an alternative presentation of the ramification divisor, which will ease computations later in the thesis.
+However, in order to do this we need to introduce higher ramification groups.
+
+   \begin{defn}
+    Let $G:=\gal(X/Y)$ and let $t$ be a uniformising parameter at $P\in X$.
+    Then for $i\geq -1$ we define the $i^{th}$ ramification group at $P$, denoted $G_i(P)$, to be the subgroup of $s\in G$ such that $i_G(s) := \ord_P(s(t)-t)$ is at least $i+1$.
+    This is	independent of the choice of $t$, see \cite[Chap. IV, \S 1, pg. 62]{localfields}.
+    \end{defn}
+
+Note that for any $P\in X$ we have that $G_{-1}(P)=G$, if $i$ is sufficiently large then $G_i(P)$ is trivial and $G_i(P)\supseteq G_{i+1}(P)$.
+Also, $G_1$ is a $p$-group and $\ord(G_0(P)/G_1(P))$ is co-prime to $p$.
+In particular, $\pi$ is tamely ramified at $P$ if and only if $G_1(P)$ is the trivial group.
+More details can be found in \cite[Chap. IV, \S 1]{localfields}.%Citation is slightly ambiguous, but only references four pages, so is okay.
+
+Note that $e_P = \ord (G_0(P))$ for any $P \in X$.
+Also, for any $Q \in Y$ we write $\delta_Q$ for $\delta_P$ and $e_Q$ for $e_P$, where $P\ \in \pi^{-1}(Q)$.\todo{explain why this is well defined}
+We now state Hilbert's formula, relating our definition of the ramification divisor in Chapter \ref{Chapter:hurwitzformula} (see Definition \ref{definitionramificationdivisor}) to the ramification groups, making future computations easier.
 
 
+    \begin{thm}[Hilbert's Formula]\label{hilbertsformula}
+    Suppose that $P\in X$ and that $t$ is a uniformising parameter in $\cO_{X,P}$.
+    Then we have
+        \begin{equation}
+        \delta_P = \sum_{s\neq e}i_G(s)=\sum_{j=0}^{\infty}\left(\ord(G_i(P))-1\right),\label{ramdiv}
+        \end{equation}
+    where $e$ denotes the identity in $G$.
+    \end{thm}
+    \begin{proof}
+    For the sake of brevity we do not prove these statements here. See \cite[Chap. IV, \S 1, Prop. 4]{localfields} for a proof of Hilbert's formula.
+    \end{proof}
+
+ 
+Given any differential $ \omega = gdf \in \Omega_{K(Y)}$ we define the pullback of $\omega$ by $\phi$ to be
+    \[
+    \phi^*(\omega) := \phi^*(g)d\phi^*(f).
+    \]
+Clearly $\phi^*(\omega)$ is a differential on $X$.
+
+    \begin{thm}
+    If $0 \neq \omega \in \Omega_{K(Y)}$ and $W$ is the divisor associated to $\omega$, then
+        \begin{equation}\label{equationstronghurwitzformula}
+        \di(\phi^*(\omega)) = \phi^*(\di(\omega)) + R.
+        \end{equation}
+    In particular, we have
+        \[
+        K_X \tilde \phi^*(K_Y) + R.
+        \]
+    \end{thm}
+    \begin{proof}
+    See \todo{reference Stichtenoth and hartshorne}
+    \end{proof}
+
+
+As a corollary to this we have the Riemann-Hurwitz formula.
+
+    \begin{cor}\label{hur}[Riemann-Hurwitz Formula]
+    Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $\pi\colon X \rightarrow Y$, then
+        \[
+        2g_X - 2 = n(2g_Y -2) + \deg(R),
+        \]
+    where $R$ is the ramification divisor of $\pi$.
+    \end{cor}
+    \begin{proof}
+    This follows from Corollary \ref{dim=gc}, after taking degrees in \eqref{equationstronghurwitzformula}.
+    \end{proof}
 
 
 
