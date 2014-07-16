@@ -1,14 +1,14 @@
 h1, h2, h3, h4{
-	color:black;
+	color:orange;
 	font-weight:normal;
-	line-height: 1.9em;
+	line-height: 1.9em
 	margin: 0 0 .5em 0;
 }
 
 h1{font-size: 1.7em; }
-h2{ font-size: 1.5em; text-decoration: underline;}
+h2{ font-size: 1.5em; }
 a{
-	color: blue;
+	color: black;
 	text-decoration: none;
 }
 	a:hover,
@@ -19,11 +19,11 @@ body{
 	font-size: 100%;
 	line-height: 1.7em;
 	width: 98%;
-	margin: 20px 0 0 10px;
-/*	background: #009999;*/
+	margin: 10 0 0 10;
+	background: #eee;
 }
 
-/* #page{margin 20px; } */
+#page{margin 20px; }
 
 #logo{
 	width: 55%;
@@ -45,39 +45,31 @@ body{
 		}
 	#nav ul li a{
 		padding: 20px;
-		margin: 0px 2px;
-		background: #ff7400;
-		color: black;
-		box-shadow: 5px 5px 9px #999;
+		background: orange;
+		color: white;
 		}			
 	#nav ul li a:hover{
-		background-color: #ff9033;
+		background-color: #ffb424;
 		box-shadow: 0px 1px 1px #666;
 		}
-	#nav ul li a:active{ background-color: #6ff9033; }
-	/* #nav ul li a{box-shadow: 5px 5px 9px #999;} */
+	#nav ul li a:active{ background-color: #ff8f00; }
 
 #content{
-	margin: 30px 100px;
-	/*background: #006363;*/
+	margin: 30px 0;
+	background: white;
 	padding: 20px;
 	clear: both;
-/*	color: #f2e7bf;
-	border: 1px solid black;*/
 }
 #footer{
-	border-bottom: 1px #03436A solid;
+	border-bottom: 1px #ccc solid;
 	margin-bottom: 10px;
-	border-top: 1px #03436A solid;
-	margin-top: 10px;
 }
 	#footer p{
+		text-align: right;
 		text-transform: uppercase;
 		font-size: 1em; 
-		color: #245A7A;
+		color: grey;
 	}
-#wrapper{
-max-width:960px;
-	 position:relative;
-	margin-left:auto;
-	margin-right:auto;}
+
+#content,
+ul li a{box-shadow: 0px 1px 1px #999}
