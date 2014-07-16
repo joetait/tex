@@ -1,6 +1,6 @@
 \chapter{Background}\label{chapterbackground}
 
-In this section we will introduce the basic concepts, notation and terminology required in the study of algebraic curves.
+In this section we will introduce the basic concepts, notation and terminology required for the study of algebraic curves.
 
 Throughout this thesis $k$ will denote an algebraically closed field of characteristic $p \geq 0$.
 It should be noted that while the majority of results in the thesis hold for all characteristics, including $p=0$, our main focus will be on the case $p > 0$.
@@ -8,18 +8,25 @@ It should be noted that while the majority of results in the thesis hold for all
 When we refer to a \emph{curve} we will mean a smooth, connected, projective variety of dimension one over $k$.
 % Similarly, when we refer to an \emph{affine curve} we mean a smooth, connected, affine variety of dimension one over $k$. % Add if needed
 
+\section{Functions and differentials}
+
+In this section we define functions and differentials on a curve $X$ and give basic results pertaining to these objects.
+
 
 A \emph{meromorphic function} on $X$ is a morphism $f \colon X \ra \PP_k^1$.
 The collection of meromorphic functions on $X$ is denoted $K(X)$, and called the \emph{function field} of $X$.
 
-We recall that the category of algebraic curves up to birational  equivalence is actually equivalent to the category of function fields over $k$ (which can be defined independently of curves as fields of transcendence degree one over $k$).
-Furthermore, if $k = \CC$ then we have a triple equivalence of categories, between function fields over $\CC$, algebraic curves (up to birational equivalence) and the category of compact Riemann surfaces.\todo{References. Maybe Miranda, Stichtenoth and/or Hartshorne.}
+We recall that the category of algebraic curves, up to birational, equivalence is actually equivalent to the category of function fields over $k$ (which can be defined independently of curves as fields of transcendence degree one over $k$).
+An overview of this correspondence is given in \cite[Appendix B]{stichtenoth}.
+Furthermore, if $k = \CC$ then we have a triple equivalence of categories, between function fields over $\CC$, algebraic curves (up to birational equivalence) and the category of compact Riemann surfaces. 
+A short explanation of the correspondence between complex curves and Riemann surfaces is given in \cite[Chap.\ 1, \S 2]{griffiths}, whilst \cite{miranda} exhibits the connection between the two structures throughout.
+
 
 We say that a meromorphic function on $X$ is \emph{regular} on an open set $U \subseteq X$ if the image $f(U)$ lies in $k = \AA_k^1 \subset \PP_k^1$.
 We let $H^0(U,\cO_X)$ denote the space of functions in $K(X)$ which are regular on $U$.
-Moreover, if $f \in K(X)$ is regular on the whole curve we say that $f$ is \emph{regular}, and then $H^1(X,\cO_X)$ is the space of regular functions.
+Moreover, if $f \in K(X)$ is regular on $X$ we say that $f$ is \emph{regular}, and then $H^0(X,\cO_X)$ is the space of regular functions.
 
-For any $P \in X$ a meromorphic function $f \in K(X)$ is \emph{regular at $P$} if $f(P) \in k \subset \PP_k^1$.
+Given $P \in X$ we say that a meromorphic function $f \in K(X)$ is \emph{regular at $P$} if $f(P) \in k \subset \PP_k^1$.
 The collection of functions regular at $P$ form a ring, which we call $\cO_{X,P}$.
 
     \begin{lem}
@@ -29,28 +36,39 @@ The collection of functions regular at $P$ form a ring, which we call $\cO_{X,P}
         \]
     \end{lem}
     \begin{proof}
-    \todo[inline]{Proof or reference here}
+    See \cite[Chap.\ 1, \S 4]{fulton}.
     \end{proof}
 
 The valuation on $\cO_{X,P}$ can be given as follows.
 Let $t \in \cO_{X,P}$ be a generator of $\mathcal{M}_{X,P}$.
 Now any $f \in \cO_{X,P}$ can be written as $f = ut^n$ for some unique $n \in \ZZ$ and some unit $u \in \cO_{X,P}\backslash \mathcal{M}_{X,P}$.
-We then define \emph{the order of $f$ at $P$} to be $v_P(f) := n$.
-We call any element $t \in \cO_{X,P}$ with order 1 at $P$ a \emph{uniformising parameter at $P$}.
+We then define \emph{the order of $f$ at $P$} to be $\ord_P(f) := n$.
+If $\ord_P(f) = n >0$ we say that $f$ has a \emph{zero of order $n$} at $P$, whilst if $\ord_P(f) = n < 0$ then we say that $f$ has a \emph{pole of order $n$} at $P$.
+Clearly, for any $f, g \in K(X)$ and $P \in X$ it is true that $\ord_P(fg) = \ord_P(f) + \ord_P(g)$.
+We call any element $t \in \cO_{X,P}$ for which we have $\ord_P(t)=1$ a \emph{uniformising parameter at $P$}.
 
-\section{Differentials}
+    \begin{prop}\label{propfinitelymanyzeroesandpoles}
+    Any non-zero meromorphic function $f$ on $X$ has finitely many poles and zeroes.
+    Moreover, the number of poles and zeroes of $f$ are equal, counting multiplicity; \ie 
+        \[
+        \sum_{P \in X} \ord_P(f) = 0.
+        \]
+    \end{prop}
+    \begin{proof}
+    See \cite[Chap.\ 8, \S 1, Prop.\ 1]{fulton}.
+    \end{proof}
+
 
 We now introduce the concept of a differential on the curve $X$.
-
 Let $R$ be any commutative ring containing $k$ and let $M$ be an $R$-module.
 Then a $k$-linear map $D \colon R \ra M$ satisfying $D(fg) = fD(g) + gD(f)$ is called a \emph{derivation} of $R$ in to $M$ over $k$.
 
-There exists a unique module $\Omega_k(R)$, and a derivation $d \colon R \ra \Omega_k(R)$, through which all derivations must factor.
+There exists a unique module $\Omega_k(R)$, and a derivation $d \colon R \ra \Omega_k(R)$, through which all derivations of $R$ over $k$ must factor.
 We can describe this more concretely as the free module generated by $[f]$ for all $f \in K(X)$, quotiented by the relations
     \begin{itemize}
-    \item $[f]+[g] = [f+g]$;
-    \item $[cf] = c[f]$;
-    \item $[fg] = f[g] + g[f]$;
+    \item $[f]+[g] = [f+g]$,
+    \item $[cf] = c[f]$,
+    \item $[fg] = f[g] + g[f]$,
     \end{itemize}
 where $f, g \in R$ and $c \in k$.
 
@@ -61,20 +79,20 @@ We then call $\Omega_{K(X)}$ the \emph{module of differentials of $X$}, and we c
     The module of differentials, $\Omega_{K(X)}$, is a one dimensional vector space over $K(X)$.
     \end{prop}
     \begin{proof}
-    See \cite[Prop. 1.5.9]{stichtenoth}.\todo{check citation}
+    See \cite[Prop. 1.5.9]{stichtenoth}.
     \end{proof}
 
-We suppose that $P \in X$ we choose a uniformising parameter $t \in \cO_{X,P}$.
-Then for any $ 0 \neq \omega \in \Omega_{K(X)}$ there exists a unique integer $n \in \ZZ$ and unit $u \in \cO_{X,P}$ such that $\omega = ut^ndt$.
+We suppose that $P \in X$ and we choose a uniformising parameter $t \in \cO_{X,P}$.
+Then for any $ 0 \neq \omega \in \Omega_{K(X)}$ there exists a unique integer $n \in \ZZ$ and unit $u \in \cO_{X,P}$ such that $\omega = ut^ndt$, by Proposition \ref{propdifferentialsareonedimensional}.
 Then we define the \emph{order of $\omega$ at $P$} to be $\ord_P(\omega) := n$.
-Note that this is well defined by Proposition \ref{propdifferentialsareonedimensional}.
 
-We call differential on an open subset $U \subset X$ \emph{holomorphic on $U$} if $\ord_P(\omega) \geq 0$ for all $P \in U$, and we let
+Let $U$ be an open subset of $X$.
+We call a differential $\omega$ \emph{holomorphic on $U$} if $\ord_P(\omega) \geq 0$ for all $P \in U$, and we let
     \[
     H^0(U, \Omega_X) := \{ \omega \in \Omega_{K(X)} | \ord_P(\omega) \geq 0\ \text{for all}\ P \in X\}
-    \]\todo{check spacing of ''for all"}
+    \]
 be \emph{the space of holomorphic differentials on $U$}.
-If $\omega \in \Omega_{K(X)}$ is holomorphic on $X$ we say that $\omega$ is \emph{holomorphic}, and we let $\hzero$ be \emph{the space of holomorphic differentials}.
+If $\omega \in \Omega_{K(X)}$ is holomorphic on $X$ we say that $\omega$ is \emph{holomorphic}, and so $\hzero$ is the space of holomorphic differentials.
 
 \section{The Riemann-Roch theorem}
 
@@ -82,17 +100,20 @@ We now recall the relevant facts and definitions needed to state the Riemann-Roc
 
 We first recall that a \emph{divisor} on $X$ is a finitely supported formal sum 
     \[
-    D = \sum_{P \in X} n_P[P].
+    D = \sum_{P \in X} n_P[P],
     \]
-The set off all divisors forms an additive group, $\di (X)$.
-The \emph{degree} of the divisor $D$ is $\deg(D) = \sum_{P \in X} n_P$.
-Given any function $f \in K(X)$ we have the \emph{divisor associated to $f$}, which is
+with coefficients in $\ZZ$.
+The set off all divisors on $X$ forms an additive group, denoted $\di (X)$.
+The \emph{degree} of the divisor $D$ is $\deg(D) := \sum_{P \in X} n_P$.
+
+
+Given any function $f \in K(X)$ we define the \emph{divisor associated to $f$} to be
     \[
     \di(f) := \sum_{P \in X} \ord_P(f) [P].
     \]
-Note that this is well defined by Lemma. \todo{write and cite lemma about finitely many poles and zeroes}
+Note that by Proposition \ref{propfinitelymanyzeroesandpoles} this has finite support.
 We call any divisor $D$ which is equal to $\di(f)$ for some $f \in K(X)$ a \emph{principal divisor}.
-Is is clear that for any $f, g \in K(X)$ we have $\di(fg) = \di(f) + \di(g)$.\todo{make same remark about orders}
+Is is clear that for any $f, g \in K(X)$ we have $\di(fg) = \di(f) + \di(g)$.
 Also, for any $f \in K(X)$ we define $\di_0(f)$ and $\di_\infty (f)$, the \emph{divisor of zeroes} and the \emph{divisor of poles} of $f$ respectively, as follows:
     \[
     \di_0(f) := \sum_{\ord_P(f) >0} \ord_P(f)[P]
@@ -104,12 +125,12 @@ and then
 
 Now for any differential $0 \neq \omega \in \Omega_{K(X)}$ we define the \emph{divisor associated to $\omega$} to be
     \[
-    \di(\omega) := \sum_{P \in X} \ord_P(\omega).
+    \di(\omega) := \sum_{P \in X} \ord_P(\omega)[P].
     \]
 If $W$ is a divisor on $X$ and $W = \di(\omega)$ for some $ \omega \in \Omega_{K(X)}$ then we say that $W$ is a \emph{canonical divisor} on $X$.
 
-The principal divisors of $X$ form a subgroup of $\di(X)$, and we say that two divisors $D, D' \in \di(X)$ are equivalent, denoted $D \tilde D'$, if their image in the quotient of $\di(X)$ by the group of principal divisors is the same; \ie if there exists $f \in K(X)$ such that $ D = D' + \di(f)$.
-By the following, it makes sense to refer to \emph{the} canonical divisor on $X$, up to equivalence, which we write as $K_X$.
+The principal divisors of $X$ form a subgroup of $\di(X)$, and we say that two divisors $D, D' \in \di(X)$ are equivalent, denoted $D \sim D'$, if their image in the quotient of $\di(X)$ by the group of principal divisors is the same; \ie if there exists $f \in K(X)$ such that $ D = D' + \di(f)$.
+By the following theorem, it makes sense to refer to the (unique) canonical divisor on $X$, up to equivalence, which we write as $K_X$.
 
     \begin{thm}
     Let $W$ and $W'$ be canonical divisors on $X$.
@@ -117,10 +138,12 @@ By the following, it makes sense to refer to \emph{the} canonical divisor on $X$
     Moreover, the divisor $W + \di(f)$ is canonical for every $f \in K(X)$.
     \end{thm}
     \begin{proof}
-    The first statement follows from the fact that $\Omega_{K(X)}$ is a $K(X)$ and from the definition of canonical divisor.
-    Suppose that $\omega, \omega' \in \Omega_{K(X)}$ are the differentials such that $W = \di(\omega)$ and $W' = \di(\omega')$.
-    Then, by Proposition \todo{reference one dim prop} there exists an $f \in K(X)$ such that $\omega = f \omega'$.
-    Then the first statement follows once we take the divisor of both sides.
+    The second statement follows from the fact that $\Omega_{K(X)}$ is a $K(X)$ vector space, and from the definition of canonical divisor.
+
+
+    To prove the first statement, suppose that $\omega, \omega' \in \Omega_{K(X)}$ are differentials such that $W = \di(\omega)$ and $W' = \di(\omega')$.
+    Then, by Proposition \ref{propdifferentialsareonedimensional}, there exists an $f \in K(X)$ such that $\omega = f \omega'$.
+    We conclude the proof by taking the divisors of both sides of this equation.
     \end{proof}
 
 Given any divisor $D = \sum_{P \in X} n_P[P]$ we let
@@ -130,9 +153,9 @@ Given any divisor $D = \sum_{P \in X} n_P[P]$ we let
 be the \emph{vector space of meromorphic functions associated to $D$}.
 Similarly, we let 
     \[
-    H^0(X,\Omega_X(D)) :  = \{ \omega \in \omega_{K(X)} | \ord_P(\omega) \geq n_P \ \text{for all} \ P \in X\}
+    H^0(X,\Omega_X(D)) :  = \{ \Omega \in \omega_{K(X)} | \ord_P(\omega) \geq n_P \ \text{for all} \ P \in X\}
     \]
-be the \emph{vector space of meromorphic differentials associated to $D$}.\todo{check spacing of ''for all" in sets}
+be the \emph{vector space of meromorphic differentials associated to $D$}.
 In particular, when $D$ is the zero divisor we have $H^0(X,\Omega(0)) = \hzero$, and similarly $H^0(X,\cO_X(0)) = H^0(X,\cO_X)$.
 
 We now state the celebrated Riemann-Roch theorem.
@@ -141,7 +164,7 @@ We now state the celebrated Riemann-Roch theorem.
     Let $D$ be any divisor on $X$, and let $W$ be any canonical divisor on $X$.
     Then
         \[
-        \dim_k(H^0(X,\Omega_X(D))) = \deg(D) + 1 - g_X + \dim_k(H^0(X,\Omega)X(W-D)), 
+        \dim_k(H^0(X,\Omega_X(D))) = \deg(D) + 1 - g_X + \dim_k(H^0(X,\Omega_X(W-D)), 
         \]
     for some constant $g_X \in \ZZ_{\geq 0}$, which is independent of the choice of $W$ and $D$.
     \end{thm}
@@ -150,13 +173,14 @@ We now state the celebrated Riemann-Roch theorem.
     \end{proof}
 
     \begin{defn}
-    We call the constant $g_X$ in the statement of the Riemann-Roch theorem the genus of $X$.
+    The constant $g_X$ in the statement of the Riemann-Roch theorem is the genus of $X$.
     \end{defn}
 
 The genus is an invariant of fundamental importance in the study of algebraic curves.
 In particular, we remark that if $k = \CC$ then the genus of an algebraic curve (also called the arithmetic genus) is the same as the topological genus of the corresponding Riemann surface.
 
 We now give a corollary to the Riemann-Roch theorem, which shows some of the properties of the genus.
+\todo[inline]{The statement below uses $\cO_X$, where as R.R. uses $\Omega_X$}
 
     \begin{cor}\label{dim=gc}
     For any canonical divisor $W$ on $X$, we have 
@@ -182,53 +206,69 @@ We now give a corollary to the Riemann-Roch theorem, which shows some of the pro
 
 \section{Ramification and the Hurwitz formula}
 
-In this section we will introduce the concept of ramification, and conclude by stating the Hurwitz formula, relating the genera of two curves with a map between via the ramification divisor.
+In this section we will introduce the concept of ramification, and conclude by stating the Hurwitz formula, which relates the genera of two curves via the ramification divisor.
 
 
 
 Let $X$ and $Y$ be curves over $k$.
-We start doing this by defining what it means for a map $\phi \colon X \ra Y$ to be a morphism of curves.
-We first note that given an map of sets $\phi \colon X \ra Y$ we have an induced ring homomorphism on the function fields,
+We begin by defining what it means for a map $\phi \colon X \ra Y$ to be a morphism of curves.
+We first note that given a map of sets $\phi \colon X \ra Y$ we have an induced ring homomorphism on the function fields,
     \[
     \phi^* \colon K(Y) \ra K(X),
     \]
-given by composition with $\phi$.\todo{define $\phi^*$ in words}
+given by composition with $\phi$; \ie $\phi^*(f) = f \circ \phi$.
+Moreover, it transpires that $\phi^*$ is an injection, and hence we can view $K(Y)$ as a subfield of $K(X)$.
+We then define the \emph{degree} of $\phi$ to be the degree of the extension $K(X)/K(Y)$.
 
 Then a \emph{morphism of curves} is a continuous map $\phi \colon X \ra Y$ such that for every open set $U \subseteq Y$ we have
     \[
     \phi^*(H^0(U,\cO_Y)) \subseteq H^0(\phi^{-1}(U),\cO_X).
     \]
 
-A particular manner in which morphisms often arise comes from considering the quotient of $X$ by some subgroup $G$ of the automorphism group $\aut(X)$.
-Then we have a natural projection $\pi \colon \ra X/G$, which is a morphism of curves.
+When considering the quotient $X/G$ of $X$ by some subgroup $G$ of the automorphism group $\aut(X)$ we have a morphism $\phi \colon X \ra X/G$, which is a projection.
 The majority of the topics considered in this thesis will focussed on situations where we have such a projection.
 
-We not return to assuming that $\phi \colon X \ra Y$ is an arbitrary morphism of curves.
-
+We now return to assuming that $\phi \colon X \ra Y$ is an arbitrary morphism of curves.
     \begin{defn}
-    For any point $P \in X$ the ramification index $e_P$ of $\phi$ at $P$ is defined as follows: let $t \in \cO_{Y,f(P)}$ be a uniformising parameter; then 
+    Let $P \in X$ and choose a uniformising parameter $t \in \cO_{Y,f(P)}$.
+    We define the ramification index $e_P$ of $\phi$ at $P$ to be
         \[
         e_P := \ord_P(\phi^*(t)).
         \]
     \end{defn}
 
 Note that $e_P =1$ for almost all points $P \in X$.
-We say that the point $Q \in Y$ is \emph{branch point} of $\phi$ is there exists some $P \in \phi^{-1}(Q)$ for which $e_P >1$.
+We say that the point $Q \in Y$ is a \emph{branch point} of $\phi$ if there exists some $P \in \phi^{-1}(Q)$ for which $e_P >1$.
 We say that $P \in X$ is a \emph{ramification point} of $X$ if $e_P >1$.
+
+    
 Suppose $P \in X$ is a ramification point.
 Then if $p = \cha(k)$ divides $e_P$ we say that $P$ is \emph{wildly ramified}, and we also say $\phi$ is wildly ramified if this holds for any point in $X$.
-Otherwise we say that $P$ is tamely ramified.
+If $p$ does not divide $e_P$ we say that $P$ is tamely ramified.
 
     \begin{defn}
     Let $D = \sum_{Q \in Y}n_Q [Q]$ be a divisor on $Y$.
     Then the pull back of $D$ with respect to $\phi$ is
         \[
-        \phi^*(D) := \sum_{Q \in Y} \sum_{P \mapsto Q} e_P \cdot n_Q [Q].
+        \phi^*(D) := \sum_{Q \in Y} \sum_{P \mapsto Q} e_P \cdot n_Q [P].
         \]
     \end{defn}
 
 Note that $\phi^*$ defines a group homomorphism $\di(Y) \ra \di(X)$.
+Now we define the different exponent, which we require to define the ramification divisor.
+    
+    \begin{defn}
+    For any $P\in X$ let $Q = \phi(P) \in Y$.
+    Moreover, we choose uniformising parameters $s \in \cO_{X,P}$ and $t \in \cO_{Y,Q}$.
+    Then by Proposition \ref{propdifferentialsareonedimensional} there exists a unique $f \in K(X)$ such that $\phi^*(dt) = f\cdot ds$.
+    Then we define the different exponent at $P$ to be 
+        \[
+        \delta_P : = \ord_P(f).
+        \]
+    \end{defn}
 
+Note that since $s$ is a uniformising parameter at $P$, and $\phi^*(t)$ is regular at $P$, it follows that $f$ is regular at $P$; in particular, $\delta_P$ is non-negative for all $P \in X$.
+ 
     \begin{defn}[Ramification divisor]
     The ramification divisor of $\phi \colon X \ra Y$ is 
         \[
@@ -250,12 +290,11 @@ However, in order to do this we need to introduce higher ramification groups.
     \end{defn}
 
 Note that for any $P\in X$ we have that $G_{-1}(P)=G$, if $i$ is sufficiently large then $G_i(P)$ is trivial and $G_i(P)\supseteq G_{i+1}(P)$.
-Also, $G_1$ is a $p$-group and $\ord(G_0(P)/G_1(P))$ is co-prime to $p$.
-In particular, $\pi$ is tamely ramified at $P$ if and only if $G_1(P)$ is the trivial group.
+Also, $G_1$ is a $p$-group and $\ord(G_0(P)/G_1(P))$ is coprime to $p$.
+In particular, $\phi$ is tamely ramified at $P$ if and only if $G_1(P)$ is the trivial group.
 More details can be found in \cite[Chap. IV, \S 1]{localfields}.%Citation is slightly ambiguous, but only references four pages, so is okay.
 
 Note that $e_P = \ord (G_0(P))$ for any $P \in X$.
-Also, for any $Q \in Y$ we write $\delta_Q$ for $\delta_P$ and $e_Q$ for $e_P$, where $P\ \in \pi^{-1}(Q)$.\todo{explain why this is well defined}
 We now state Hilbert's formula, relating our definition of the ramification divisor in Chapter \ref{Chapter:hurwitzformula} (see Definition \ref{definitionramificationdivisor}) to the ramification groups, making future computations easier.
 
 
@@ -272,35 +311,35 @@ We now state Hilbert's formula, relating our definition of the ramification divi
     \end{proof}
 
  
-Given any differential $ \omega = gdf \in \Omega_{K(Y)}$ we define the pullback of $\omega$ by $\phi$ to be
+Given any differential $ \omega = g\cdot df \in \Omega_{K(Y)}$ we define the pullback of $\omega$ by $\phi$ to be
     \[
     \phi^*(\omega) := \phi^*(g)d\phi^*(f).
     \]
 Clearly $\phi^*(\omega)$ is a differential on $X$.
 
     \begin{thm}
-    If $0 \neq \omega \in \Omega_{K(Y)}$ and $W$ is the divisor associated to $\omega$, then
+    If $0 \neq \omega \in \Omega_{K(Y)}$ then
         \begin{equation}\label{equationstronghurwitzformula}
         \di(\phi^*(\omega)) = \phi^*(\di(\omega)) + R.
         \end{equation}
     In particular, we have
         \[
-        K_X \tilde \phi^*(K_Y) + R.
+        K_X \sim \phi^*(K_Y) + R.
         \]
     \end{thm}
     \begin{proof}
-    See \todo{reference Stichtenoth and hartshorne}
+    See \cite[Chap.\ IV, \S 2, Prop.\ 2.3]{hart} for a sheaf theoretic approach, or alternatively \cite[Thm. 3.4.6]{stichtenoth}, for a proof involving function fields.
     \end{proof}
 
 
 As a corollary to this we have the Riemann-Hurwitz formula.
 
     \begin{cor}\label{hur}[Riemann-Hurwitz Formula]
-    Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $\pi\colon X \rightarrow Y$, then
+    Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $\phi\colon X \rightarrow Y$, then
         \[
         2g_X - 2 = n(2g_Y -2) + \deg(R),
         \]
-    where $R$ is the ramification divisor of $\pi$.
+    where $R$ is the ramification divisor of $\phi$.
     \end{cor}
     \begin{proof}
     This follows from Corollary \ref{dim=gc}, after taking degrees in \eqref{equationstronghurwitzformula}.
