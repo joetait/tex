@@ -13,38 +13,6 @@ Finally, we denote by $g_X$ and $g_Y$ the genus of $X$ and $Y$ respectively, and
 In this section we compute the dimension of $H^0(X,\Omega_X^{\otimes m})$ and of $H^0(X,\Omega_X^{\otimes m})^G$, the subspace of $H^0(X,\Omega_X^{\otimes m})$ fixed by $G$.
 
 
-We briefly describe an alternative, but equivalent, definition of the ramification divisor (Definition \ref{definitionramificationdivisor}), which we will use later.
-In the tamely ramified case then the ramification divisor is $R = \sum_{P \in X}e_P-1 [P]$, but to extend this to the wildly ramified case we will need the following the definition of higher ramification groups.
-
-
-    \begin{defn}
-    Let $G:=\gal(X/Y)$ and let $t$ be a uniformising parameter at $P\in X$.
-    Then for $i\geq -1$ we define the $i^{th}$ ramification group at $P$, denoted $G_i(P)$, to be the subgroup of $s\in G$ such that $i_G(s) := \ord_P(s(t)-t)$ is at least $i+1$.
-    This is	independent of the choice of $t$, see \cite[Chap. IV, \S 1, pg. 62]{localfields}.
-    \end{defn}
-
-Note that for any $P\in X$ we have that $G_{-1}(P)=G$, if $i$ is sufficiently large then $G_i(P)$ is trivial and $G_i(P)\supseteq G_{i+1}(P)$.
-Also, $G_1$ is a $p$-group and $\ord(G_0(P)/G_1(P))$ is co-prime to $p$.
-In particular, $\pi$ is tamely ramified at $P$ if and only if $G_1(P)$ is the trivial group.
-More details can be found in \cite[Chap. IV, \S 1]{localfields}.%Citation is slightly ambiguous, but only references four pages, so is okay.
-
-Note that $e_P = \ord (G_0(P))$ for any $P \in X$.
-Also, for any $Q \in Y$ we write $\delta_Q$ for $\delta_P$ and $e_Q$ for $e_P$, where $P\ \in \pi^{-1}(Q)$.\todo{explain why this is well defined}
-We now state Hilbert's formula, relating our definition of the ramification divisor in Chapter \ref{Chapter:hurwitzformula} (see Definition \ref{definitionramificationdivisor}) to the ramification groups, making future computations easier.
-
-
-    \begin{thm}[Hilbert's Formula]\label{hilbertsformula}
-    Suppose that $P\in X$ and that $t$ is a uniformising parameter in $\cO_{X,P}$.
-    Then we have
-        \begin{equation}
-        \delta_P = \sum_{s\neq e}i_G(s)=\sum_{j=0}^{\infty}\left(\ord(G_i(P))-1\right),\label{ramdiv}
-        \end{equation}
-    where $e$ denotes the identity in $G$.
-    \end{thm}
-    \begin{proof}
-    For the sake of brevity we do not prove these statements here. See \cite[Chap. IV, \S 1, Prop. 4]{localfields} for a proof of Hilbert's formula.
-    \end{proof}
-
 By Corollary \ref{dim=gc} we have $\dim_kH^0(X,\Omega_X)=g_X$.
 If $m\geq 2$, we have the following formula for $\dim_kH^0(X,\Omega_X^{\otimes m})$.
 
@@ -238,7 +206,7 @@ We also assume that $g_X \geq 2$.
     \begin{proof}
     From \cite[Lem. 1]{Naka} we know that $p$ does not divide $N_i$ for $i=1,\ldots ,r$, a fact we will use several times below. \todo{more specific citation}
     Let $N:= \sum_{i=1}^r N_i$. 
-    Using the Riemann-Hurwitz formula, Corollary \ref{hur}, we obtain
+    Using the Riemann-Hurwitz formula, Corollary \ref{corhurwitzformula}, we obtain
         \begin{equation}\label{hur2}
         2g_X - 2 = -2p + (N+r)(p-1)
         \end{equation}
@@ -392,7 +360,7 @@ We also assume that $g_X \geq 2$.
     
     Now if $l\neq p$ then we know that all the coefficients $\delta_i$ of the ramification divisor are equal to $l-1$. 
     To show the if direction in this case, first note that $\dim_kH^0(X,\Omega_X^{\otimes m})=3$ by Lemma~\ref{dim3}. 
-    On the other hand, the Riemann-Hurwitz formula (Corollary \ref{hur}) implies that $2 = 2g_X-2=-2l+\deg(R)=-2l+r(l-1)$, and hence that $r=6$. 
+    On the other hand, the Riemann-Hurwitz formula (Corollary \ref{corhurwitzformula}) implies that $2 = 2g_X-2=-2l+\deg(R)=-2l+r(l-1)$, and hence that $r=6$. 
     Finally Proposition \ref{dim} gives us
         \begin{equation*}
         \dim_kH^0(X,\Omega_X^{\otimes m})^G = -(2m-1) + \sum_{i=1}^r \left\lfloor \frac{m\cdot \delta_i}{l} \right\rfloor

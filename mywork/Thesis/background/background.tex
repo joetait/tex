@@ -160,16 +160,16 @@ In particular, when $D$ is the zero divisor we have $H^0(X,\Omega(0)) = \hzero$,
 
 We now state the celebrated Riemann-Roch theorem.
 
-    \begin{thm}[Riemann-Roch theorem]
+    \begin{thm}[Riemann-Roch theorem]\label{theoremriemannroch}
     Let $D$ be any divisor on $X$, and let $W$ be any canonical divisor on $X$.
     Then
         \[
-        \dim_k(H^0(X,\Omega_X(D))) = \deg(D) + 1 - g_X + \dim_k(H^0(X,\Omega_X(W-D)), 
+        \dim_k(H^0(X,\cO_X(D))) = \deg(D) + 1 - g_X + \dim_k(H^0(X,\cO_X(W-D)), 
         \]
     for some constant $g_X \in \ZZ_{\geq 0}$, which is independent of the choice of $W$ and $D$.
     \end{thm}
     \begin{proof}
-    See, for example, \todo{reference hartshorne and fulton}
+    See \cite[Chap.\ IV, \S 1, Thm.\ 1.3]{hart} or, for a more elementary approach, \cite[Chap.\ 8, \S 6]{fulton}.
     \end{proof}
 
     \begin{defn}
@@ -180,7 +180,6 @@ The genus is an invariant of fundamental importance in the study of algebraic cu
 In particular, we remark that if $k = \CC$ then the genus of an algebraic curve (also called the arithmetic genus) is the same as the topological genus of the corresponding Riemann surface.
 
 We now give a corollary to the Riemann-Roch theorem, which shows some of the properties of the genus.
-\todo[inline]{The statement below uses $\cO_X$, where as R.R. uses $\Omega_X$}
 
     \begin{cor}\label{dim=gc}
     For any canonical divisor $W$ on $X$, we have 
@@ -257,7 +256,7 @@ If $p$ does not divide $e_P$ we say that $P$ is tamely ramified.
 Note that $\phi^*$ defines a group homomorphism $\di(Y) \ra \di(X)$.
 Now we define the different exponent, which we require to define the ramification divisor.
     
-    \begin{defn}
+    \begin{defn}\label{definitiondifferent}
     For any $P\in X$ let $Q = \phi(P) \in Y$.
     Moreover, we choose uniformising parameters $s \in \cO_{X,P}$ and $t \in \cO_{Y,Q}$.
     Then by Proposition \ref{propdifferentialsareonedimensional} there exists a unique $f \in K(X)$ such that $\phi^*(dt) = f\cdot ds$.
@@ -269,7 +268,7 @@ Now we define the different exponent, which we require to define the ramificatio
 
 Note that since $s$ is a uniformising parameter at $P$, and $\phi^*(t)$ is regular at $P$, it follows that $f$ is regular at $P$; in particular, $\delta_P$ is non-negative for all $P \in X$.
  
-    \begin{defn}[Ramification divisor]
+    \begin{defn}[Ramification divisor]\label{defnramificationdivisor}
     The ramification divisor of $\phi \colon X \ra Y$ is 
         \[
         R:= \sum_{P \in X} \delta_P [P].
@@ -295,7 +294,7 @@ In particular, $\phi$ is tamely ramified at $P$ if and only if $G_1(P)$ is the t
 More details can be found in \cite[Chap. IV, \S 1]{localfields}.%Citation is slightly ambiguous, but only references four pages, so is okay.
 
 Note that $e_P = \ord (G_0(P))$ for any $P \in X$.
-We now state Hilbert's formula, relating our definition of the ramification divisor in Chapter \ref{Chapter:hurwitzformula} (see Definition \ref{definitionramificationdivisor}) to the ramification groups, making future computations easier.
+We now state Hilbert's formula, relating our presentation of the ramification divisor in Definition \ref{defnramificationdivisor} to the ramification groups, which will make future computations easier.
 
 
     \begin{thm}[Hilbert's Formula]\label{hilbertsformula}
@@ -317,7 +316,7 @@ Given any differential $ \omega = g\cdot df \in \Omega_{K(Y)}$ we define the pul
     \]
 Clearly $\phi^*(\omega)$ is a differential on $X$.
 
-    \begin{thm}
+    \begin{thm}\label{theoremdetailedhurwitz}
     If $0 \neq \omega \in \Omega_{K(Y)}$ then
         \begin{equation}\label{equationstronghurwitzformula}
         \di(\phi^*(\omega)) = \phi^*(\di(\omega)) + R.
@@ -334,7 +333,7 @@ Clearly $\phi^*(\omega)$ is a differential on $X$.
 
 As a corollary to this we have the Riemann-Hurwitz formula.
 
-    \begin{cor}\label{hur}[Riemann-Hurwitz Formula]
+    \begin{cor}\label{corhurwitzformula}[Riemann-Hurwitz Formula]
     Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $\phi\colon X \rightarrow Y$, then
         \[
         2g_X - 2 = n(2g_Y -2) + \deg(R),
