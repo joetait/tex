@@ -390,7 +390,7 @@ We also assume that $g_X \geq 2$.
         \begin{equation}\label{eq:mult}
         (2m-1)g_X=r(m-q-1).
         \end{equation}
-    If we multiply (\ref{eq:mult}) by $l-1$ and then substitute in for the $r(l-1)$ term in the Riemann-Hurwitz formula (Corollary \ref{hur}) we get
+    If we multiply (\ref{eq:mult}) by $l-1$ and then substitute in for the $r(l-1)$ term in the Riemann-Hurwitz formula (Corollary \ref{corhurwitzformula}) we get
         \begin{equation*}
         (2m-1)(l-1)g_X=(2g_X+2(l-1))(m-q-1).
         \end{equation*}
@@ -570,7 +570,7 @@ In this section we prove the main theorem of this chapter, describing exactly wh
         \begin{equation*}
         g_X=\dim_k H^0(X,\Omega_X)=\dim_k H^0(X,\Omega_X)^G=g_Y.
         \end{equation*}
-    Substituting this into the Riemann-Hurwitz formula (Corollary \ref{hur}) yields the desired contradiction because $g_X\geq 2, n\geq 2$ and $\deg(R)\geq 0$.
+    Substituting this into the Riemann-Hurwitz formula (Corollary \ref{corhurwitzformula}) yields the desired contradiction because $g_X\geq 2, n\geq 2$ and $\deg(R)\geq 0$.
     
     Thus $\deg\left( \left\lfloor \frac{\pi_*(R)}{n} \right\rfloor \right) >0$. 
     Now Proposition~\ref{dim} gives us that
@@ -599,7 +599,7 @@ In this section we prove the main theorem of this chapter, describing exactly wh
         \begin{equation*}
         (2m-1)(g_X-1)=(2m-1)(g_Y-1)+\deg\left(\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor \right).
         \end{equation*}
-    Combining this with the Riemann-Hurwitz formula, Corollary \ref{hur}, we see that
+    Combining this with the Riemann-Hurwitz formula, Corollary \ref{corhurwitzformula}, we see that
         \begin{align*}
         2(2m-1)(g_Y-1)+2\deg\left(\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor\right) & =  2(2m-1)(g_X-1)\\
         & =  2n(2m-1)(g_Y-1)+(2m-1)\deg(R),
@@ -672,7 +672,7 @@ In the first case then $\infty \in \mathbb P_k^1$ will be a branch point, where 
 We now show some preliminary results about $x$. 
 Firstly, $x$ is ramified at precisely $2g + 2$ branch points.
 This follows from computing the degree of the ramification divisor $R$ of $x$.
-By the Riemann-Hurwitz formula, Corollary \ref{hur},
+By the Riemann-Hurwitz formula, Corollary \ref{corhurwitzformula},
     \[ 
     \deg(R) = 2g -2 +2\cdot 2 = 2g + 2.
     \]
@@ -858,7 +858,7 @@ We will now compute the ramification divisor.
     \begin{proof}
     We first show that it will suffice to prove that the coefficient of $[P_i]$ is $2n_i$ for $1\leq i \leq k$.
     Note that by the Riemann-Hurwitz formula $\deg(R) = 2g+2$.
-    Then the coefficient at $P_\infty$ is $\deg(R) - \sum_{i=1}^k2n_i$, which, by the Riemann-Hurwitz formula (Corollary \ref{hur}), is equal to $2g+2-2d = 2(g+1-d)$, as stated.
+    Then the coefficient at $P_\infty$ is $\deg(R) - \sum_{i=1}^k2n_i$, which, by the Riemann-Hurwitz formula (Corollary \ref{corhurwitzformula}), is equal to $2g+2-2d = 2(g+1-d)$, as stated.
     
     Let $P=P_i$ for some $i\in \{1,\ldots , k\}$.
     Then $y-b_i$ is a local parameter at $P$.
