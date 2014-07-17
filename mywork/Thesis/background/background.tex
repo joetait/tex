@@ -10,7 +10,7 @@ When we refer to a \emph{curve} we will mean a smooth, connected, projective var
 
 \section{Functions and differentials}
 
-In this section we define functions and differentials on a curve $X$ and give basic results pertaining to these objects.
+In this section we define both functions and differentials on a curve $X$ and give basic results pertaining to these objects.
 
 
 A \emph{meromorphic function} on $X$ is a morphism $f \colon X \ra \PP_k^1$.
@@ -18,13 +18,16 @@ The collection of meromorphic functions on $X$ is denoted $K(X)$, and called the
 
 We recall that the category of algebraic curves, up to birational, equivalence is actually equivalent to the category of function fields over $k$ (which can be defined independently of curves as fields of transcendence degree one over $k$).
 An overview of this correspondence is given in \cite[Appendix B]{stichtenoth}.
-Furthermore, if $k = \CC$ then we have a triple equivalence of categories, between function fields over $\CC$, algebraic curves (up to birational equivalence) and the category of compact Riemann surfaces. 
-A short explanation of the correspondence between complex curves and Riemann surfaces is given in \cite[Chap.\ 1, \S 2]{griffiths}, whilst \cite{miranda} exhibits the connection between the two structures throughout.
+Furthermore, when working over the complex numbers $\CC$ we actually have a triple equivalence of categories.
+The category of function fields over $\CC$ and the category of algebraic curves (up to birational equivalence) are both equivalent to the category of compact Riemann surfaces. 
+A short explanation of the correspondence between complex curves and Riemann surfaces is given in \cite[Chap.\ 1, \S 2]{griffiths}, whilst \cite{miranda} exhibits the connection between all three categories throughout.
 
 
-We say that a meromorphic function on $X$ is \emph{regular} on an open set $U \subseteq X$ if the image $f(U)$ lies in $k = \AA_k^1 \subset \PP_k^1$.
+Returning to our study of functions on $X$, we say that a meromorphic function $f$ on $X$ is \emph{regular} on an open set $U \subseteq X$ if the image $f(U)$ lies in $k = \AA_k^1 \subset \PP_k^1$.
 We let $H^0(U,\cO_X)$ denote the space of functions in $K(X)$ which are regular on $U$.
 Moreover, if $f \in K(X)$ is regular on $X$ we say that $f$ is \emph{regular}, and then $H^0(X,\cO_X)$ is the space of regular functions.
+The reader should note that we are using sheaf theoretic notation here. 
+We will not give details of sheaves and sheaf cohomology (since it will not be needed), but we will consistently use the notation, in order to be with consistent with current work in the area.
 
 Given $P \in X$ we say that a meromorphic function $f \in K(X)$ is \emph{regular at $P$} if $f(P) \in k \subset \PP_k^1$.
 The collection of functions regular at $P$ form a ring, which we call $\cO_{X,P}$.
@@ -44,8 +47,8 @@ Let $t \in \cO_{X,P}$ be a generator of $\mathcal{M}_{X,P}$.
 Now any $f \in \cO_{X,P}$ can be written as $f = ut^n$ for some unique $n \in \ZZ$ and some unit $u \in \cO_{X,P}\backslash \mathcal{M}_{X,P}$.
 We then define \emph{the order of $f$ at $P$} to be $\ord_P(f) := n$.
 If $\ord_P(f) = n >0$ we say that $f$ has a \emph{zero of order $n$} at $P$, whilst if $\ord_P(f) = n < 0$ then we say that $f$ has a \emph{pole of order $n$} at $P$.
-Clearly, for any $f, g \in K(X)$ and $P \in X$ it is true that $\ord_P(fg) = \ord_P(f) + \ord_P(g)$.
-We call any element $t \in \cO_{X,P}$ for which we have $\ord_P(t)=1$ a \emph{uniformising parameter at $P$}.
+Clearly, for any $f, g \in K(X)$ and $P \in X$, it is true that $\ord_P(fg) = \ord_P(f) + \ord_P(g)$.
+We call any element $t \in \cO_{X,P}$ which has order $1$ at $P$ a \emph{uniformising parameter at $P$}.
 
     \begin{prop}\label{propfinitelymanyzeroesandpoles}
     Any non-zero meromorphic function $f$ on $X$ has finitely many poles and zeroes.
@@ -111,7 +114,7 @@ Given any function $f \in K(X)$ we define the \emph{divisor associated to $f$} t
     \[
     \di(f) := \sum_{P \in X} \ord_P(f) [P].
     \]
-Note that by Proposition \ref{propfinitelymanyzeroesandpoles} this has finite support.
+Note that by Proposition \ref{propfinitelymanyzeroesandpoles} this has finite support and degree zero.
 We call any divisor $D$ which is equal to $\di(f)$ for some $f \in K(X)$ a \emph{principal divisor}.
 Is is clear that for any $f, g \in K(X)$ we have $\di(fg) = \di(f) + \di(g)$.
 Also, for any $f \in K(X)$ we define $\di_0(f)$ and $\di_\infty (f)$, the \emph{divisor of zeroes} and the \emph{divisor of poles} of $f$ respectively, as follows:
@@ -138,7 +141,8 @@ By the following theorem, it makes sense to refer to the (unique) canonical divi
     Moreover, the divisor $W + \di(f)$ is canonical for every $f \in K(X)$.
     \end{thm}
     \begin{proof}
-    The second statement follows from the fact that $\Omega_{K(X)}$ is a $K(X)$ vector space, and from the definition of canonical divisor.
+    For any $f \in K(X)$ and differential $\omega \in \Omega_{K(X)}$ it is true that $\di(f \omega) = \di(f) + \di(\omega)$.
+    Then the second statement follows from the fact that $\Omega_{K(X)}$ is a $K(X)$ vector space.
 
 
     To prove the first statement, suppose that $\omega, \omega' \in \Omega_{K(X)}$ are differentials such that $W = \di(\omega)$ and $W' = \di(\omega')$.
@@ -177,7 +181,7 @@ We now state the celebrated Riemann-Roch theorem.
     \end{defn}
 
 The genus is an invariant of fundamental importance in the study of algebraic curves.
-In particular, we remark that if $k = \CC$ then the genus of an algebraic curve (also called the arithmetic genus) is the same as the topological genus of the corresponding Riemann surface.
+In particular, we remark that if $k = \CC$ then the genus of an algebraic curve (also called the arithmetic genus) is the same as the topological genus of the corresponding Riemann surface (the corresponding Riemann surface being found via the equivalence of categories mentioned earlier).
 
 We now give a corollary to the Riemann-Roch theorem, which shows some of the properties of the genus.
 
@@ -203,9 +207,9 @@ We now give a corollary to the Riemann-Roch theorem, which shows some of the pro
         \end{multline*}
     \end{proof}
 
-\section{Ramification and the Hurwitz formula}
+\section{Ramification and the Riemann-Hurwitz formula}
 
-In this section we will introduce the concept of ramification, and conclude by stating the Hurwitz formula, which relates the genera of two curves via the ramification divisor.
+In this section we will introduce the concept of ramification, and conclude by stating the Riemann-Hurwitz formula, which relates the canonical divisor of two curves via the ramification divisor.
 
 
 
@@ -224,7 +228,8 @@ Then a \emph{morphism of curves} is a continuous map $\phi \colon X \ra Y$ such 
     \phi^*(H^0(U,\cO_Y)) \subseteq H^0(\phi^{-1}(U),\cO_X).
     \]
 
-When considering the quotient $X/G$ of $X$ by some subgroup $G$ of the automorphism group $\aut(X)$ we have a morphism $\phi \colon X \ra X/G$, which is a projection.
+Let $G$ be a subgroup of the automorphism group of $X$.
+Then have a natural morphism $\pi \colon X \ra X/G$, which is a projection of $X$ on to the quotient of $X$ by the action of $G$.
 The majority of the topics considered in this thesis will focussed on situations where we have such a projection.
 
 We now return to assuming that $\phi \colon X \ra Y$ is an arbitrary morphism of curves.
@@ -254,8 +259,16 @@ If $p$ does not divide $e_P$ we say that $P$ is tamely ramified.
     \end{defn}
 
 Note that $\phi^*$ defines a group homomorphism $\di(Y) \ra \di(X)$.
-Now we define the different exponent, which we require to define the ramification divisor.
-    
+
+
+We also define the pullback of a differential $\omega = g\cdot df \in \Omega_{K(Y)}$ by $\phi$ to be
+    \[
+    \phi^*(\omega) := \phi^*(g)d\phi^*(f).
+    \]
+Clearly $\phi^*(\omega)$ is a differential on $X$.
+
+
+Now we describe the different exponent, which we require to define the ramification divisor.
     \begin{defn}\label{definitiondifferent}
     For any $P\in X$ let $Q = \phi(P) \in Y$.
     Moreover, we choose uniformising parameters $s \in \cO_{X,P}$ and $t \in \cO_{Y,Q}$.
@@ -279,9 +292,38 @@ Note that since $s$ is a uniformising parameter at $P$, and $\phi^*(t)$ is regul
         \]
     \end{defn}
 
-Hilbert's formula, stated below, gives an alternative presentation of the ramification divisor, which will ease computations later in the thesis.
-However, in order to do this we need to introduce higher ramification groups.
+The following theorem has the classical Riemann-Hurwitz formula as a corollary, but also goes further, actually relating the canonical divisors on $X$ and $Y$.
+    \begin{thm}\label{theoremdetailedhurwitz}
+    If $0 \neq \omega \in \Omega_{K(Y)}$ then
+        \begin{equation}\label{equationstronghurwitzformula}
+        \di(\phi^*(\omega)) = \phi^*(\di(\omega)) + R.
+        \end{equation}
+    In particular, we have
+        \[
+        K_X \sim \phi^*(K_Y) + R.
+        \]
+    \end{thm}
+    \begin{proof}
+    See \cite[Chap.\ IV, \S 2, Prop.\ 2.3]{hart} for a sheaf theoretic approach, or alternatively \cite[Thm. 3.4.6]{stichtenoth}, for a proof involving function fields.
+    \end{proof}
 
+
+As a corollary to this we have the Riemann-Hurwitz formula.
+    \begin{cor}\label{corhurwitzformula}[Riemann-Hurwitz Formula]
+    Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $\phi\colon X \rightarrow Y$, then
+        \[
+        2g_X - 2 = n(2g_Y -2) + \deg(R),
+        \]
+    where $R$ is the ramification divisor of $\phi$.
+    \end{cor}
+    \begin{proof}
+    This follows from Corollary \ref{dim=gc}, after taking degrees in \eqref{equationstronghurwitzformula}.
+    \end{proof}
+
+
+We will use the above statements in the subsequent sections.
+In order to make full use of them however, we need to use Hilbert's formula, which gives an alternative description of $\delta_P$ which is easier to compute.
+However, in order to state Hilbert's formula we need to introduce higher ramification groups.
    \begin{defn}
     Let $G:=\gal(X/Y)$ and let $t$ be a uniformising parameter at $P\in X$.
     Then for $i\geq -1$ we define the $i^{th}$ ramification group at $P$, denoted $G_i(P)$, to be the subgroup of $s\in G$ such that $i_G(s) := \ord_P(s(t)-t)$ is at least $i+1$.
@@ -310,39 +352,154 @@ We now state Hilbert's formula, relating our presentation of the ramification di
     \end{proof}
 
  
-Given any differential $ \omega = g\cdot df \in \Omega_{K(Y)}$ we define the pullback of $\omega$ by $\phi$ to be
-    \[
-    \phi^*(\omega) := \phi^*(g)d\phi^*(f).
-    \]
-Clearly $\phi^*(\omega)$ is a differential on $X$.
+\section{Serre duality for curves}
 
-    \begin{thm}\label{theoremdetailedhurwitz}
-    If $0 \neq \omega \in \Omega_{K(Y)}$ then
-        \begin{equation}\label{equationstronghurwitzformula}
-        \di(\phi^*(\omega)) = \phi^*(\di(\omega)) + R.
+In this section we give the details of Serre duality, in such a way that we will be able to perform explicit computations using Serre duality in later chapters.
+
+
+We retain the notations of the previous sections.
+We further let $\underline{\Omega}_{K(X)}$ and $\underline{K}(X)$ denote the constant sheaves of $\Omega_{K(X)}$ and $K(X)$ respectively, and $\Omega_X$ denote the sheaf of differentials on $X$.
+The following lemma gives us useful descriptions of $\hone$ and $H^1(X,\Omega_X)$.
+    \begin{lem}\label{lemmaexactsequenceofhoneandhzero}
+    We have canonical exact sequences as follows:
+        \begin{equation}\label{equationinitialdualitylesfunctions}
+        0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \rightarrow \hone \ra  0;
         \end{equation}
-    In particular, we have
+        \begin{equation}\label{equationinitialdualitysesdifferentials}
+        0 \rightarrow \hzero \ra \Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P} \rightarrow H^1(X,\Omega_X) \ra 0.
+        \end{equation}
+    \end{lem}
+    \begin{rem}
+    Note that a sketch of the proof below can be found in \cite[Pg.\ 248]{hart}.
+        \end{rem}
+    \begin{proof}
+    The short exact sequence
+        \begin{equation}\label{equationinitialdualitysesfunctions}
+        0 \rightarrow \cO_X \rightarrow \underline{K}(X) \rightarrow \underline{K}(X)/\cO_X \rightarrow 0
+        \end{equation}
+    is a flasque resolution of $\cO_X$ (see \cite[Chap.\ II, ex.\ 1.16]{hart}).
+    
+    For each $P \in X$ we have a natural embedding $i\colon \{P\} \hookrightarrow X$, and we view the module $K(X)/\cO_{X,P}$ as a sheaf on the singleton $\{P\}$.
+    Then for each $P\in X$ we have the induced sheaf $i_*\left( K(X)/\cO_{X,P} \right)$ on $X$.
+    If we consider the direct sum of these induced sheaves over all points $P\in X$ we have the following isomorphism
+        \begin{equation}\label{equationsheafisomorphism}
+        \underline{K}(X)/\cO_X\cong \bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right).
+        \end{equation}
+    
+    
+    To explain this isomorphism we first construct a map from $\underline{K}(X)/\cO_X$ in to the product $\prod_{P \in X} i_*\left({K(X)}/\cO_{X,P}\right)$, and then show that the image of each element under this map has finite support.
+    
+    Given $i\colon \{P\} \hookrightarrow X$ we have the following equalities
+        \begin{align*}
+        i^{-1}\left(\underline{K}(X)/\cO_X\right) & = \left(\underline{K}(X)/\cO_X\right)_P \\
+        & = \underline{K}(X)_P/\cO_{X,P} \\
+        & = K(X)/\cO_{X,P}.
+        \end{align*}
+    It follows that for any $P \in X$ we have the adjunction map $\underline{K}(X)/\cO_X \ra i_* \left( K(X)/\cO_{X,P} \right)$.
+    Since we have an injection $i$ for every $P \in X$, we can actually produce a map in to the product $\prod_{P \in X} i_*\left(K(X)/\cO_{X,P}\right)$.
+    Moreover, the stalk $i_*\left( K(X)/\cO_{X,P} \right)_Q$ is zero for $Q \neq P$ and is $K(X)/\cO_{X,P}$ when $Q = P$.
+    Hence the product is actually isomorphic to the sum $\bigoplus_{P \in X} \left( i_*\left(K(X)/\cO_{X,P} \right)\right)$, and from this the isomorphism in \eqref{equationsheafisomorphism} follows.
+    
+    Replacing $\underline{K}(X)/\cO_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{equationinitialdualitysesfunctions} yields
+        \begin{equation}\label{equationshortexactsequencefunctionsdirectsum}
+        0 \ra \cO_X \ra \underline{K}(X) \ra \bigoplus_{P \in X}i_* \left( K(X)/\cO_{X,P} \right) \ra 0.
+        \end{equation}
+    Taking cohomology we arrive at the exact sequence \eqref{equationinitialdualitylesfunctions}.
+    
+    We now perform a similar computation to produce the second exact sequence \eqref{equationinitialdualitysesdifferentials}.
+    We start with the short exact sequence
         \[
-        K_X \sim \phi^*(K_Y) + R.
+        0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \underline{\Omega}_{K(X)}/\Omega_X \ra 0,
         \]
+    which is a flasque resolution of $\Omega_X$ (see \cite[Chap.\ II, ex.\ 1.16]{hart}).
+    For each $P \in X$ we again have a natural injection $i \colon \{ P \} \hookrightarrow X$, giving rise to the induced sheaf $i_*\left( K(X)/\cO_{X,P} \right)$ on $X$.
+    Then we have an isomorphism
+        \begin{equation}\label{equationsheafisomorphismdifferentials}
+        \underline{\Omega}_{K(X)}/\Omega_X \cong \bigoplus_{P \in X} i_* \left( \Omega_{K(X)}/\Omega_{X,P}\right),
+        \end{equation}
+    similar to that in \eqref{equationsheafisomorphism}.
+
+    Hence we arrive at the short exact sequence
+        \begin{equation}\label{equationshortexactsequencedifferentialsdirectsum}
+        0 \ra \Omega_X \ra \underline{\Omega}_{K(X)} \ra \bigoplus_{P \in X} i_* \left( \Omega_{K(X)}/\Omega_{X,P} \right)  \ra 0.
+        \end{equation}
+    Taking cohomology of this then yields the second exact sequence \eqref{equationinitialdualitysesdifferentials}.
+    \end{proof}
+
+    \begin{rem}
+        When considering elements of $H^1(X,\Omega_X)$ as elements in the cokernel of the map $\Omega_{K(X)} \ra \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$ above, we will denote them by $\overline{(\omega_P)}_{P \in X}$, where ${(\omega_P)}_{P \in X}\in \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$.
+        Similarly, when considering elements of $\hone$ as elements of the cokernel of the map $K(X) \ra \bigoplus_{P \in X}K(X)/\cO_{X,P}$, we will denote them by $\overline{(f_P)}_{P \in X}$, where ${(f_P)}_{P \in X} \in \bigoplus_{P \in X}K(X)/\cO_{X,P}$.
+    \end{rem}
+
+The residue map $\res_P \colon \Omega_{K(X)} \ra k$ is of fundamental importance in the computations that follow.
+We define the {\em residue map}, $\res_P$, to be the unique map identified in the following theorem.
+
+    \begin{thm}\label{theoremresiduemap}
+    For any $P\in X$ there exists a unique $k$-linear map $\res_P \colon \Omega_{K(X)} \ra k$ defined by the following properties:
+        \begin{itemize}
+            \item $\res_P(\omega) = 0$ for all $\omega \in \Omega_{X,P}$;
+            \item $\res_P(f^ndf) = 0$ for all $f \in K(X)^*$ and all $n \neq -1$;
+            \item $\res_P(f^{-1}df) = \ord_P(f)$, where $\ord_P(f)$ is the order of $f$ at $P$.
+        \end{itemize}
     \end{thm}
     \begin{proof}
-    See \cite[Chap.\ IV, \S 2, Prop.\ 2.3]{hart} for a sheaf theoretic approach, or alternatively \cite[Thm. 3.4.6]{stichtenoth}, for a proof involving function fields.
+    See \cite[Chap.\ II, \S 7 and \S 11]{algebraicgroupsandclassfields} or \cite{residuesofdifferentialsoncurve}.
     \end{proof}
 
 
-As a corollary to this we have the Riemann-Hurwitz formula.
-
-    \begin{cor}\label{corhurwitzformula}[Riemann-Hurwitz Formula]
-    Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $\phi\colon X \rightarrow Y$, then
-        \[
-        2g_X - 2 = n(2g_Y -2) + \deg(R),
-        \]
-    where $R$ is the ramification divisor of $\phi$.
-    \end{cor}
+    \begin{thm}[Residue Theorem]\label{theoremresiduetheorem}
+    Given any differential $\omega \in \Omega_{K(X)}$ on $X$ then $\sum_{P \in X}\res_P(\omega) = 0$.
+    \end{thm}
     \begin{proof}
-    This follows from Corollary \ref{dim=gc}, after taking degrees in \eqref{equationstronghurwitzformula}.
+    See \cite[Chap.\ II, Prop.\ 6]{algebraicgroupsandclassfields} or \cite[Pg.\ 155]{residuesofdifferentialsoncurve}.
     \end{proof}
+
+Since $\Omega_{X,P} \subseteq \ker (\res_P)$, it follows that $\res_P$ is a well defined function on the quotient $\Omega_{K(X)}/\Omega_{X,P}$.
+Hence by the residue theorem the map
+    \begin{equation*} 
+    \bigoplus_{P \in X} \Omega_{K(X)}/\Omega_{X,P} \ra k, \quad (\omega_P)_{P \in X} \mapsto \sum_{P\in X} \res_P(\omega_P)
+    \end{equation*} 
+vanishes on the image of $\Omega_{K(X)}$, which allows us to make the following definition.
+    
+    \begin{defn}
+    Let $\overline{(\omega_P)}_{P \in X} \in H^1(X,\Omega_X)$.
+    Then we define the trace map to be 
+        \[
+    t \colon H^1\left(X, \Omega_X\right) \ra k, \qquad \overline{(\omega_P)}_{P \in X}  \mapsto \sum_{P \in X} \res_P(\omega_P).
+        \]
+    \end{defn}
+
+We now use the trace map to define a pairing between the $k$-vector spaces $\hone$ and $\hzero$.
+Since $\Omega_{K(X)}$ is a $K(X)$-module, we can define the product map 
+    \begin{equation}\label{equationproductmap}
+    \hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto ( \overline {(f  \omega)_P})_{P \in X},
+    \end{equation}
+where $(f\omega)_P$ denotes the product of $f_P \in K(X)/\cO_{X,P}$ with the residue class of $\omega$ in $\Omega_{K(X)}/\Omega_{X,P}$.
+
+We now combine the product map in \eqref{equationproductmap} with the trace map $t$ to get a map 
+    \[
+    \hzero \times \hone \ra k,\quad (\omega, \overline{(f_P)}_{P \in X}) \mapsto \langle \omega, \overline{(f_P)}_{P \in X} \rangle := t \left( \overline{(f \omega)}_P \right)_{P \in X}.
+    \]
+
+    \begin{thm}\label{theoremserreduality}
+    Via the pairing $\langle\ ,\ \rangle$, the $k$-vector spaces $\hone$ and $\hzero$ are dual to each other.
+    \end{thm}
+    \begin{proof}
+    This is a specialisation of \cite[Chap.\ II, Thm.\ 2]{algebraicgroupsandclassfields}.
+    \end{proof}
+
+More explicitly, this theorem means the following.
+If we fix any $\omega \in \hzero$ we produce a map $\theta(\omega)\colon \hone \ra k$, given by $\theta(\omega)(f) = \langle \omega , f\rangle$.
+Similarly, if we fix any $f \in \hone$ then we get a map $\psi(f) \colon \hzero \ra k$.
+Then the maps 
+    \[
+    \psi \colon \hone \ra \hom(H^0(X,\Omega_X),k) \quad
+    \text{and} \quad    
+    \theta \colon H^0(X,\Omega_X) \ra \hom(\hone, k)
+    \]
+are isomorphisms.
+In particular, given a $k$-basis $\omega_1, \ldots, \omega_g$ of $\hzero$, we can find a basis $f_1, \ldots , f_g$ of $\hone$ such that $\langle \omega_i, f_j \rangle = 1$ for all $1 \leq i \leq n$ and $\langle \omega_i, f)j \rangle = 0$ if $i \neq j$, and likewise, starting with a basis of $\hone$ we can find corresponding basis of $H^0(X,\Omega_X)$. 
+
 
 
 
