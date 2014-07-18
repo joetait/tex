@@ -1,33 +1,40 @@
 \chapter{Background}\label{chapterbackground}
 
+\todo{Throughout - change definitions to be roman, and the italicise the "definition" part}
+
 In this section we will introduce the basic concepts, notation and terminology required for the study of algebraic curves.
 
 Throughout this thesis $k$ will denote an algebraically closed field of characteristic $p \geq 0$.
 It should be noted that while the majority of results in the thesis hold for all characteristics, including $p=0$, our main focus will be on the case $p > 0$.
 
-When we refer to a \emph{curve} we will mean a smooth, connected, projective variety of dimension one over $k$.
-% Similarly, when we refer to an \emph{affine curve} we mean a smooth, connected, affine variety of dimension one over $k$. % Add if needed
+When we refer to an \emph{algebraic curve} (or often just a \emph{curve}) we will mean a smooth, connected, projective variety of dimension one over $k$.
+In particular, we let $\PP_k^1$ be the projective.
+Similarly, when we refer to an \emph{affine curve} we mean a smooth, connected, affine variety of dimension one over $k$. % Add if needed
+We recall that a morphism of affine curves $X$ and $Y$ is just polynomial map $\phi \colon X \ra Y$.
+Then if $X$ and $Y$ are algebraic curves then a map $\phi \colon X \ra Y$ is a morphism if we can write $X = \cup X_i$ and $Y = \cup Y_i$ for open $X_i$ and $Y_i$ such that $\phi(X_i) \subseteq Y_i$ and $\phi|_{X_i}$ is a morphism for every $i$.
+
+
 
 \section{Functions and differentials}
 
-In this section we define both functions and differentials on a curve $X$ and give basic results pertaining to these objects.
+In this section we recall the basic results pertaining to functions and differentials on $X$.
 
+A \emph{meromorphic function} on $X$ is any morphism $f \colon X \ra \PP_k^1$, other than the morphism mapping all points to infinity.
+The collection of meromorphic functions on $X$ is denoted $K(X)$, and called the \emph{function field} of $X$.\todo{B: and non-constant morphisms}
 
-A \emph{meromorphic function} on $X$ is a morphism $f \colon X \ra \PP_k^1$.
-The collection of meromorphic functions on $X$ is denoted $K(X)$, and called the \emph{function field} of $X$.
-
-We recall that the category of algebraic curves, up to birational, equivalence is actually equivalent to the category of function fields over $k$ (which can be defined independently of curves as fields of transcendence degree one over $k$).
+We recall that the category of algebraic curves is actually equivalent to the category of function fields over $k$ (which can be defined independently of curves as fields of transcendence degree one over $k$).
 An overview of this correspondence is given in \cite[Appendix B]{stichtenoth}.
 Furthermore, when working over the complex numbers $\CC$ we actually have a triple equivalence of categories.
-The category of function fields over $\CC$ and the category of algebraic curves (up to birational equivalence) are both equivalent to the category of compact Riemann surfaces. 
+The category of function fields over $\CC$ and the category of algebraic curves are both equivalent to the category of compact Riemann surfaces. 
 A short explanation of the correspondence between complex curves and Riemann surfaces is given in \cite[Chap.\ 1, \S 2]{griffiths}, whilst \cite{miranda} exhibits the connection between all three categories throughout.
 
 
-Returning to our study of functions on $X$, we say that a meromorphic function $f$ on $X$ is \emph{regular} on an open set $U \subseteq X$ if the image $f(U)$ lies in $k = \AA_k^1 \subset \PP_k^1$.
+Returning to our study of functions on $X$, we recall that a meromorphic function $f$ on $X$ is \emph{regular} on an open set $U \subseteq X$ if the image $f(U)$ lies in $k = \AA_k^1 \subset \PP_k^1$.
 We let $H^0(U,\cO_X)$ denote the space of functions in $K(X)$ which are regular on $U$.
 Moreover, if $f \in K(X)$ is regular on $X$ we say that $f$ is \emph{regular}, and then $H^0(X,\cO_X)$ is the space of regular functions.
+Since $X$ is projective $H^0(X,\cO_X)$ is in fact isomorphic to $k$ --- \ie the only regular functions are constant functions.
 The reader should note that we are using sheaf theoretic notation here. 
-We will not give details of sheaves and sheaf cohomology (since it will not be needed), but we will consistently use the notation, in order to be with consistent with current work in the area.
+We will not give details of sheaves and sheaf cohomology (since it will rarely be needed), but we will consistently use the notation, in order to be with consistent with current work in the area.
 
 Given $P \in X$ we say that a meromorphic function $f \in K(X)$ is \emph{regular at $P$} if $f(P) \in k \subset \PP_k^1$.
 The collection of functions regular at $P$ form a ring, which we call $\cO_{X,P}$.
@@ -44,8 +51,10 @@ The collection of functions regular at $P$ form a ring, which we call $\cO_{X,P}
 
 The valuation on $\cO_{X,P}$ can be given as follows.
 Let $t \in \cO_{X,P}$ be a generator of $\mathcal{M}_{X,P}$.
-Now any $f \in \cO_{X,P}$ can be written as $f = ut^n$ for some unique $n \in \ZZ$ and some unit $u \in \cO_{X,P}\backslash \mathcal{M}_{X,P}$.
+Now any $0 \neq f \in \cO_{X,P}$ can be written as $f = ut^n$ for some unique $n \in \ZZ$ and some unit $u \in \cO_{X,P}\backslash \mathcal{M}_{X,P}$.
 We then define \emph{the order of $f$ at $P$} to be $\ord_P(f) := n$.
+For any $f \in K(X)^*$ and $P \in X$ at least one $f$ or $1/f$ is an element of $ \cO_{X,P}$.
+Hence we may extend the definition of $\ord_P$ to the whole $K(X)^*$, by letting $\ord_P(f) := - \ord_P(1/f)$ whenever $f \notin \cO_{X,P}$.
 If $\ord_P(f) = n >0$ we say that $f$ has a \emph{zero of order $n$} at $P$, whilst if $\ord_P(f) = n < 0$ then we say that $f$ has a \emph{pole of order $n$} at $P$.
 Clearly, for any $f, g \in K(X)$ and $P \in X$, it is true that $\ord_P(fg) = \ord_P(f) + \ord_P(g)$.
 We call any element $t \in \cO_{X,P}$ which has order $1$ at $P$ a \emph{uniformising parameter at $P$}.
