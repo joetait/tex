@@ -1,8 +1,25 @@
 \chapter{Background}\label{chapterbackground}
 
-\todo{Throughout - change definitions to be roman, and the italicise the "definition" part}
+In this section we give the basic definitions and results that will be used throughout the thesis.
+The vast majority results apply to smooth, connected, projective curves over any algebraically closed fields, with no further assumptions, though occasionally we do specialise slightly more than this.
+All definitions and results should be available in any elementary text on algebraic curves or algebraic geometry in general, such as \cite{hart}, \cite{fulton} or \cite{griffithsfirstcourse}.
 
-In this section we will introduce the basic concepts, notation and terminology required for the study of algebraic curves.
+In the first two sections we define precisely what we mean by a curve, and by functions and differentials on a curve.
+We then go on to give some basic results about these objects, and finally define the genus of a curve.
+
+In the next section we define divisors, canonical divisors and the spaces associated to divisors.
+We then reach the highlight of the section with the statement of the Riemann-Roch theorem, which we follow with some corollaries, to show its applications.
+
+In the penultimate section of this chapter we consider ramification.
+We define ramification and branch points, and subsequently the ramification divisor.
+We then use this to state a strong version of the Riemann-Hurwitz formula, at the level of divisors.
+The section concludes by looking at group actions on curves, and defining higher ramification to state Hilbert's formula.
+
+The chapter finishes by discussing Serre duality, which will be of particular use in the fourth chapter of the thesis.
+In particular the dual maps are described explicitly, using \cech cohomology to do so.
+
+
+\section{Set up}
 
 Throughout this thesis $k$ will denote an algebraically closed field of characteristic $p \geq 0$.
 It should be noted that while the majority of results in the thesis hold for all characteristics, including $p=0$, our main focus will be on the case $p > 0$.
@@ -191,7 +208,7 @@ Also, it follows immediately from Proposition \ref{propfinitelymanyzeroesandpole
     where $W$ is any canonical divisor on $X$.
     \end{lem}
     \begin{proof}
-    Choose$\omega \in \Omega_{K(X)}$ and let $W = \di(\omega)$.
+    Choose $\omega \in \Omega_{K(X)}$ and let $W = \di(\omega)$.
     Since $\di(f \omega) = \di(f) + \di(\omega)$, it follows that if $f \in H^(X,\cO_X))$ if and only if $f \omega \in H^0(X,\Omega_X(D - W)$.
     Since $\Omega_{K(X)}$ is a one dimensional vector space over $K(X)$ we can find a unique $f \in K(X)$ for every differential $\omega'$ in $H^0(X,\Omega_X(D - W)$ such that $\omega' = f \omega$.
     Hence the map $f \mapsto f\omega$ is an isomorphism.
