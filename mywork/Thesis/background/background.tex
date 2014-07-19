@@ -111,7 +111,7 @@ be \emph{the space of holomorphic differentials on $U$}.
 If $\omega \in \Omega_{K(X)}$ is holomorphic on $X$ we say that $\omega$ is \emph{holomorphic}, and so $\hzero$ is the space of holomorphic differentials.
 
     \begin{defn}\label{definitiongenus}
-    We define the genus of $X$ to be
+    We define the \emph{genus} of $X$ to be
         \[
         g_X := \dim_k \left( H^0(X,\Omega_X)\right).
         \]
@@ -268,7 +268,7 @@ Recall that we have
 
     \begin{defn}
     Let $P \in X$ and choose a uniformising parameter $t \in \cO_{Y,\phi(P)}$.
-    We define the ramification index $e_P$ of $\phi$ at $P$ to be
+    We define the \emph{ramification index} $e_P$ of $\phi$ at $P$ to be
         \[
         e_P := \ord_P(\phi^*(t)).
         \]
@@ -298,7 +298,7 @@ If $p$ does not divide $e_P$ we say that $P$ is tamely ramified.
 
     \begin{defn}
     Let $D = \sum_{Q \in Y}n_Q [Q]$ be a divisor on $Y$.
-    Then the pull back of $D$ with respect to $\phi$ is
+    Then the \emph{pull back} of $D$ with respect to $\phi$ is
         \[
         \phi^*(D) := \sum_{Q \in Y} \sum_{P \mapsto Q} e_P \cdot n_Q [P].
         \]
@@ -317,7 +317,7 @@ Clearly $\phi^*(\omega)$ is a differential on $X$.
 Now we describe the different exponent, which we require to define the ramification divisor.
     \begin{defn}\label{definitiondifferent}
     For any $P\in X$ we choose a uniformising parameter $t \in \cO_{Y,\phi(P)}$.
-    Then we define the different exponent at $P$ to be 
+    Then we define the \emph{different exponent} at $P$ to be 
         \[
         \delta_P : = \ord_P(\phi^*(dt)).
         \]
@@ -326,7 +326,7 @@ Now we describe the different exponent, which we require to define the ramificat
 Note that since $\phi^*(t)$ is regular at $P$ it follows that $\delta_P$ is non-negative for all $P \in X$.
  
     \begin{defn}[Ramification divisor]\label{defnramificationdivisor}
-    The ramification divisor of $\phi \colon X \ra Y$ is 
+    The \emph{ramification divisor} of $\phi \colon X \ra Y$ is 
         \[
         R:= \sum_{P \in X} \delta_P [P].
         \]
@@ -349,7 +349,7 @@ The following theorem has the classical Riemann-Hurwitz formula as a corollary, 
 
 
 As a corollary to this we have the Riemann-Hurwitz formula.
-    \begin{cor}\label{corhurwitzformula}(Riemann-Hurwitz Formula)
+    \begin{cor}[Riemann-Hurwitz Formula]\label{corhurwitzformula}
     Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $\phi\colon X \rightarrow Y$, then
         \[
         2g_X - 2 = n(2g_Y -2) + \deg(R),
@@ -373,7 +373,7 @@ This formula will then be used in subsequent chapters to compute the ramificatio
 
    \begin{defn}
     Let $G$ be finite subgroup of $\aut(X)$ and let $t$ be a uniformising parameter at $P\in X$.
-    Then for $i\geq -1$ we define the $i^{th}$ ramification group at $P$, denoted $G_i(P)$, to be the subgroup of $s\in G$ such that $i_G(s) := \ord_P(s(t)-t)$ is at least $i+1$.
+    Then for $i\geq -1$ we define the \emph{$i^{th}$ ramification group} at $P$, denoted $G_i(P)$, to be the subgroup of $s\in G$ such that $i_G(s) := \ord_P(s(t)-t)$ is at least $i+1$.
     This is	independent of the choice of $t$, see \cite[Chap. IV, \S 1, pg. 62]{localfields}.
     \end{defn}
 
@@ -508,7 +508,7 @@ vanishes on the image of $\Omega_{K(X)}$, which allows us to make the following 
     
     \begin{defn}
     Let $\overline{(\omega_P)}_{P \in X} \in H^1(X,\Omega_X)$.
-    Then we define the trace map to be 
+    Then we define the \emph{trace map} to be 
         \[
     t \colon H^1\left(X, \Omega_X\right) \ra k, \qquad \overline{(\omega_P)}_{P \in X}  \mapsto \sum_{P \in X} \res_P(\omega_P).
         \]
