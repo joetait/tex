@@ -1,7 +1,22 @@
 \chapter{Faithful actions on Riemann-Roch spaces} \label{Chapter:Faithfulactions}
+
+In this section our main aim is to compute when a subgroup of the automorphism group of an algebraic curve acts faithfully on the space of holomorphic differentials and polydifferentials.
+Our approach uses the fact that if any finite group $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ then there exists a subgroup of $G$ which fixes at least one element of this $k$ vector space, and the dimension of the space fixed by this subgroup will be positive.
+
+To this end, we start by computing the dimension of $H^0(X,\Omega_X^{\otimes m})$, and the dimension of the fixed space $H^0(X,\Omega_X^{\otimes m})^G$.
+These dimensions rely primarily on the genus of the quotient curve $Y:=X/G$, $m$ and the ramification divisor of $\pi \colon X \ra Y$.
+
+Then we use these formulae to compute exactly when a cyclic group of prime order will act trivially on $H^0(X,\Omega_X^{\otimes m})$.
+In this case of holomorphic differentials (when $m=1$), this depends solely on the characteristic of $k$, whilst for polydifferentials (\ie when $m \geq 2$) this is independent of $\cha (k)$.
+In the same section we also give similar results for more general Riemann-Roch spaces.
+
+We then move on to the main theorem, which answers the question of when $G$ acts faithfully on $H^0(X,\Omega_X^{\otimes m})$.
+After giving the main theorem we give examples which illustrate both when we do and do not have faithful actions.
+In particular, we use results of Chapter 3 to explicitly show the result holds for hyperelliptic curves.
+
+We close the chapter with an alternative proof of when a cyclic group of prime order acts faithfully on $\hzero$, by studying the $k[G]$-module structure, which was determined in \cite{valmadan}.
+
 \section{Dimension formulae}\label{dimsection}
-
-
 
 Throughout this chapter, unless otherwise stated, we assume that $X$ is a connected, smooth, projective algebraic curve over an algebraically closed field $k$ of characteristic $p \geq 0$.
 We furthermore assume that $G$ is a finite group of order $n$ that acts faithfully on $X$.
