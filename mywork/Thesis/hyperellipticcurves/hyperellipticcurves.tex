@@ -5,42 +5,90 @@ In this section we recall the definition and basic details of hyperelliptic curv
 The next chapter will then make use of this, working almost exclusively with hyperelliptic curves.
 We will also use them to effectively demonstrate the underlying  \todo{fill in} ideas of the main theorem in the final chapter.
 
-\section{Hyperelliptic curves, characteristic unequal to 2}\label{charneq2}
-Let $X$ be a smooth, projective, connected, hyperelliptic algebraic curve of genus $g$ over an algebraically closed field $k$, with $\cha (k) \neq 2$.
-Let $x:X\rightarrow \mathbb{P}_k^1$ be the corresponding holomorphic map of degree $2$.
-This curve then has a corresponding degree two extension $k(x,y)$ of the rational function field in one variable over $k$, $K(\mathbb P_k^1) = k(x)$, where
-   \begin{equation}\label{definingequation}
-   y^2 = f(x)
-   \end{equation}
-for some $f(x)\in k[x]$ with no repeated roots (see, for example, \cite[Rem. 7.4.25]{liu}).
-Also, the degree of $f(x)$ must be $2g+1$ or $2g+2$, as will be shown in the next paragraph.
-In the first case then $\infty \in \mathbb P_k^1$ will be a branch point, where as in the second case it is not.
+Before going in to the details of hyperelliptic curves, which vary depending on whether the characteristic of $k$ is two or not, we recall that a curve $X$ is hyperelliptic if there exists a finite separable morphism $\pi \colon X \ra \PP_k^1$ of degree two.
+We let $X$ be a hyperelliptic curve of genus $g$ throughout the chapter, and $\pi$ be the corresponding map.  
+Throughout the chapter we let $P_a$ and $P_a'$ denote the unique elements of $\pi^{-1}(a)$ for any point $a \in \mathbb P_k^1$ that is not a branch point.
+If $a \in \mathbb P_k^1$ is a branch point we denote the unique point in $\pi^{-1}(a)$ by $P_a$.
+We also define $D_a$ to be the divisor $\pi^*\left([a]\right)$ for any $a \in \mathbb P_k^1$, and hence
+    \begin{equation*}
+    D_a= 
+        \begin{cases}
+         2[P_a] & \text{if $a$ is a branch point}, \\
+         [P_a] + [P_a'] & \text{otherwise.}
+        \end{cases}
+    \end{equation*}
 
-We now show some preliminary results about $x$. 
-Firstly, $x$ is ramified at precisely $2g + 2$ branch points.
-This follows from computing the degree of the ramification divisor $R$ of $x$.
-By the Riemann-Hurwitz formula, Corollary \ref{corhurwitzformula},
+\section{Hyperelliptic curves, characteristic unequal to 2}\label{charneq2}
+
+In this section we assume that $\cha(k) = p \neq 2$.
+Then the extension $K(X)$ of $K(\mathbb P_k^1) = k(x)$ corresponding to $ \pi \colon X \ra \mathbb P_k^1$ will be $k(x,y)$, where $y$ satisfies
+    \begin{equation}\label{equationdefiningequationpnot2}
+    y^2 = f(x)
+    \end{equation}
+for some polynomial $f(x) \in k[x]$ which has no repeated roots and is of degree $2g+1$ or $2g+2$ \cite[Prop.\ 7.4.24]{liu}.
+Moreover, by applying an automorphism of $\mathbb P_k^1$ if necessary, we can and will assume that $f(x)$ is monic.
+
+If we let $d_f:=\deg(f(x))$ then 
+    \begin{equation}\label{equationexpansionoff(x)}
+    f(x) = \prod_{i=1}^{d_f} (x-a_i) = x^{d_f} + b_{d_f - 1}x^{d_f-1} + \ldots + b_0,
+    \end{equation}
+for some $a_i, b_i \in k$.
+We now show that the $a_i \in \AA_i^1$, and possibly $\infty \in \PP_k^1$, are the branch points of $\pi$.
+
+Firstly, observe that by the Riemann-Hurwitz formula, Corollary \ref{corhurwitzformula},
     \[ 
     \deg(R) = 2g -2 +2\cdot 2 = 2g + 2.
     \]
-Since $x$ is of degree $2$ and at most tamely ramified, the coefficients of the ramification divisor are $1$ (see the start of Section \ref{dimsection}), and hence $R = p_1 + \ldots + p_{2g+2}$, for distinct $p_i\in X$.
-We let $a_i = x(p_i)$ and $D_i = \di_{a_i}(x)$.
-Moreover, for a general point $a \in \mathbb P_k^1$ we let $D_a = \di_x(x)$.
-We now show that the ramification points correspond to the zeroes of $f(x)$.
-Since there are no repeated roots in $f(x)$, then \eqref{definingequation} defines a non-singular affine curve $X'$, with a degree two projection $x': X'\rightarrow \mathbb A_k^1$.
-Clearly for any point $a\in \mathbb A_k^1$ which is not a solution to $f(x)$, then there are two points in the pre-image, namely $(a,\pm \sqrt{a})$, and the point is not ramified.
-On the other hand, if $a\in \mathbb A_k^1$ is a solution to $f(x)$, then there is only one point in the pre-image and hence it is ramified.
-Since there are $2g+2$ solutions of $f(x)$, and the degree of $R$ is $2g+2$, then we conclude that these are all the ramification points.
+Since $\pi$ is of degree two and hence only tamely ramified,\todo{reference this} it follows that the coefficient of each ramification point is $1$.
+From this is follows that each branch point has precisely one corresponding ramification point, and that there are precisely $2g+2$ ramification points.
+Also, since there are no repeated roots in $f(x)$, then \eqref{definingequation} defines a non-singular affine curve $X'$ with a degree two projection $\pi'\colon X'\rightarrow \mathbb A_k^1$.
+For any point $a\in \mathbb A_k^1$ which is not a solution to $f(x)$ there are two points in the pre-image, namely $(a,\pm \sqrt{a})$, and the point is not a branch point.
+On the other hand, if $a = a_i \in \mathbb A_k^1$ is a solution to $f(x)$, then there is only one point in the pre-image and hence it is a branch point.
+We let $P_i = P_{a_i}$ denote the ramification point corresponding to $a_i$.
+Since $\deg(R) = 2g+2$ we conclude that if $d_f = 2g+1$ then $\infty \in \mathbb P_k^1$ is also a branch point and we define $P_{2g+2} := P_\infty$ in this case.
+Hence the ramification divisor $R$ of $\pi$ is
+    \[
+    R = \sum_{i=1}^{2g+2} [P_i] .
+    \]
 
-Next we will need to define precisely what the divisor of a poly-differential is.
-If we consider an element of the tensor product $\omega \in \Omega_X^{\otimes m}$ then it can be locally written as $y dx_1\otimes \ldots \otimes dx_m$, where $x_i \in K(X)$ for all $1 \leq i \leq m$.
+We also have, for $x \in K(X)$, that
+    \begin{equation}\label{equationdivxpis2}
+    \di (x)  = D_0 - D_\infty
+    \end{equation}
+and
+    \begin{equation}\label{equationdifferentialdivisor}
+    \di(dx) = R - 2D_\infty.
+    \end{equation}\todo{reference Riemann-Hurwitz formula for this}
+
+In the following lemma we compute that divisor of $y \in K(X)$.
+    \begin{lem}\label{lemmadivisorofycharacteristicnot2}
+    The divisor of $y \in K(X)$ is 
+        \begin{equation}\label{equationdivisorofypnot2}
+        \di(y)  = R - (g+1)D_\infty.
+        \end{equation}
+    \end{lem}
+    \begin{proof}
+    Since $\di (y^2) = \di (f(x))$ and hence $\di(y) = \frac{1}{2}\di(f(x))$, we need only compute the divisor of $f(x)$.
+    As noted earlier, the solutions to $f$ correspond to the ramification points.
+    So for any $P\notin x^{-1}(\infty)$ then $\ord_P(y) =  \frac{1}{2}\ord_P(f(x)) = 1$ if $P$ is a ramification point, and $\ord_P(y) = \frac{1}{2}\ord_P(f(x)) = 0$ otherwise.
+    Finally, if $P\in x^{-1}(\infty)$, then $\ord_P(y)  = \frac{1}{2}\ord_P(f(x)) = - \frac{1}{2} (2g+2) = -(g+1)$.
+    So, overall, we conclude
+        \[
+        \di(y) = \sum_{i=1}^{2g+2} [p_i]- (g+1)D_\infty = R - (g+1)D_{\infty}.
+        \]
+    \end{proof}
+
+
+
+We now recall precisely what we mean by a polydifferential.
+If we consider an element of the tensor product $\omega \in \Omega_X^{\otimes m}$ then it can be locally written as $f dx_1\otimes \ldots \otimes dx_m$, where $f, x_i \in K(X)$ for all $1 \leq i \leq m$.
 Let $P$ be a point in $X$.
-Since each $dx_i$ can be written as $y_i dt$ for some $y_i\in K(X)$ and some uniformising parameter $t$ at $P$, we can rewrite $\omega$ as $y' dt \otimes \ldots \otimes dt$, where $y' = y \cdot y_1 \cdots y_m$.
+Since each $dx_i$ can be written as $f_i dt$ for some $f_i\in K(X)$ and some uniformising parameter $t$ at $P$, we can rewrite $\omega$ as $f' dt \otimes \ldots \otimes dt$, where $f' = f \cdot f_1 \cdots f_m$.
 We then define the order of $\omega$ at $P$ to be $\ord_P(\omega ) := \ord_P(y')$.
-In the particular case where $\omega = fdx \otimes \ldots \otimes fdx = f^m dx^{\otimes m}$, then we have $y_1 = \ldots = y_m = z$ for some $z$ when we change $x$ to a uniformising parameter.
+In the particular case where $\omega = fdx \otimes \ldots \otimes fdx = f^m dx^{\otimes m}$, then we have $f_1 = \ldots = f_m = h$ for some $h \in K(X)$ when we change $x$ to a uniformising parameter.
 Hence in this instance 
     \[ 
-    \ord_P(\omega) = \ord_P(z^m) = m\ord_P(z) = m\ord_P(dx).
+    \ord_P(\omega) = \ord_P(h^m) = m\ord_P(h) = m\ord_P(dx).
     \]
 
 
@@ -133,7 +181,7 @@ This proves the main theorem for hyperelliptic curves over a field of characteri
 
 \section{Hyperelliptic curves, characteristic 2}
 Let $X$ be a smooth, projective, connected hyperelliptic algebraic curve of genus $g$ over an algebraically closed field $k$ of characteristic two.
-Let $\pi:X \rightarrow \mathbb P_k^1$ be the corresponding holomorphic map of degree two.
+Let $\pi\colon X \rightarrow \mathbb P_k^1$ be the corresponding holomorphic map of degree two.
 By \cite[Prop. 7.4.24]{liu} this curve has a corresponding degree two extension $k(x,y)$ of the function field of one variable over $k$, $k(x)$, where
     \begin{equation}\label{ext}
     y^2 - h(x)y = f(x)
