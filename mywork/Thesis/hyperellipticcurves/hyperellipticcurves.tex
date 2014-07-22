@@ -53,12 +53,17 @@ Hence the ramification divisor $R$ of $\pi$ is
 
 We also have, for $x \in K(X)$, that
     \begin{equation}\label{equationdivxpis2}
-    \di (x)  = D_0 - D_\infty
+    \di (x)  = D_0 - D_\infty.
     \end{equation}
-and
+Furthermore, the strong Riemann-Hurwitz formula (Theorem \ref{theoremdetailedhurwitz}) gives us
+    \[
+    \di_X (dx) = \pi^*( \di_{\mathbb P^1_k}(dx)) + R = R - 2D_{\infty},
+    \]
+and since $\di_{\PP_k^1}(dx) = -2[\infty]$, it follows that $\pi^*(\di_{\PP_k^1}(dx)) = -2D_\infty$.
+Hence we conclude that
     \begin{equation}\label{equationdifferentialdivisor}
     \di(dx) = R - 2D_\infty.
-    \end{equation}\todo{reference Riemann-Hurwitz formula for this}
+    \end{equation}
 
 In the following lemma we compute that divisor of $y \in K(X)$.
     \begin{lem}\label{lemmadivisorofycharacteristicnot2}
@@ -69,14 +74,15 @@ In the following lemma we compute that divisor of $y \in K(X)$.
     \end{lem}
     \begin{proof}
     Since $\di (y^2) = \di (f(x))$ and hence $\di(y) = \frac{1}{2}\di(f(x))$, we need only compute the divisor of $f(x)$.
-    As noted earlier, the solutions to $f$ correspond to the ramification points.
+    As noted earlier, the solutions to $f(x)$ correspond to the ramification points.
     So for any $P\notin x^{-1}(\infty)$ then $\ord_P(y) =  \frac{1}{2}\ord_P(f(x)) = 1$ if $P$ is a ramification point, and $\ord_P(y) = \frac{1}{2}\ord_P(f(x)) = 0$ otherwise.
-    Finally, if $P\in x^{-1}(\infty)$, then $\ord_P(y)  = \frac{1}{2}\ord_P(f(x)) = - \frac{1}{2} (2g+2) = -(g+1)$.
+    Finally, if $P\in \pi^{-1}(\infty)$, then $\ord_P(y)  = \frac{1}{2}\ord_P(f(x)) = - \frac{1}{2} (2g+2) = -(g+1)$.
     So, overall, we conclude
         \[
-        \di(y) = \sum_{i=1}^{2g+2} [p_i]- (g+1)D_\infty = R - (g+1)D_{\infty}.
+        \di(y) = \sum_{i=1}^{2g+2} [P_i]- (g+1)D_\infty = R - (g+1)D_{\infty}.
         \]
     \end{proof}
+\todo[inline]{Sort out what happens at $\infty$}
 
 
 
@@ -115,29 +121,8 @@ Hence in this instance
     To show that they are indeed holomorphic differentials, we show that their divisors are greater than $0$.
     We first compute the divisors associated to $x$, $y$ and $dx^{\otimes m}$.
     
-    Let $D_0 = [p']+[q']$ with $p',q' \in X$ (note that we could have $p' = q'$) be the divisor of zeroes of $x$. 
-    Then $ i D_0$ is the divisor of zeroes of $x^i$. 
-    If we also let $D_\infty = [p] + [q]$, with $p$ and $q$ defined as above, be the divisor of poles of $x$. 
-    So overall $\di (x^i) = i D_0 - i D_\infty$.
-    
-    
     To compute $\di (dx^{\otimes m})$, we first note that it suffices to compute the divisor of $dx$, since $\di (dx^{\otimes m}) =m\di (dx)$, as noted above.
-    Since $x$ can viewed as the projection of $X$ on to the projective line, or as a function on the projective line, we will use $\di_X (dx)$ and $\di_{\mathbb P^1} (dx)$ to differentiate these cases.
-    We first recall that the Riemann-Hurwitz formula (Theorem \ref{theoremdetailedhurwitz}) tells us that
-        \[
-        \di_X (dx) = \pi^*( \di_{\mathbb P^1}(dx)) + R = R - 2D_{\infty},
-        \]
-    since $\di_{\mathbb P^1}(dx) = -2[\infty]$ and hence $\pi^* (\di_{\mathbb P^1}(dx)) = -2D_\infty$.
     
-    Finally, we compute $\di (y)$.
-    Since $\di (y^2) = \di (f(x))$ and hence $\di(y) = \frac{1}{2}\di(f(x))$, we need only compute the divisor of $f(x)$.
-    As noted earlier, the solutions to $f$ correspond to the ramification points.
-    So for any $P\notin x^{-1}(\infty)$ then $\ord_P(y) =  \frac{1}{2}\ord_P(f(x)) = 1$ if $P$ is a ramification point, and $\ord_P(y) = \frac{1}{2}\ord_P(f(x)) = 0$ otherwise.
-    Finally, if $P\in x^{-1}(\infty)$, then $\ord_P(y)  = \frac{1}{2}\ord_P(f(x)) = - \frac{1}{2} (2g+2) = -(g+1)$.
-    So, overall, we have 
-        \[
-        \di(y) = \sum_{i=1}^{2g+2} [p_i]- (g+1)D_\infty = R - (g+1)D_{\infty}.
-        \]
     
     We now show that the differentials listed in Proposition \ref{prophyperellipticbasispnot2} are holomorphic.
     We consider the first two cases together.
@@ -150,7 +135,7 @@ Hence in this instance
         \end{align*}
     which is positive for $0\leq i \leq m(g-1)$.
     Note that if $m=g=2$ then there are three elements, and since $\dim_kH^0(X,\Omega_X^{\otimes 2})=3$ by Lemma \ref{dim3}, these elements form a basis.
-    Also, if $m=1$ then by Riemann-Roch $\dim_k H^0(X,\Omega_X)=g$, and we have $g$ linearly independent elements, so they again must form a basis.
+    Also, if $m=1$ then by the Riemann-Roch theorem (Theorem \ref{theoremriemannroch}) $\dim_k H^0(X,\Omega_X)=g$, and we have $g$ linearly independent elements, so they again must form a basis.
     
     
     
@@ -171,22 +156,16 @@ Hence in this instance
     it is clear that these elements form a basis.
     \end{proof}
 
-We denote by $\sigma$ the automorphism of $X$ of order 2, which maps each point to its corresponding point in the pre-image of $x$.
-Since $\sigma(y) = -y$, and $\sigma$ acts trivially on $x$, we can see that in the case where $m=g=2$ the action will be trivial, since the only power of $y$ is two, and of course $y^2 = (-y)^2$.
-In any other case we have an odd power of $y$ in the basis, and hence the action of $\sigma$ is not trivial.
-This proves the main theorem for hyperelliptic curves over a field of characteristic not equal to 2.
-
-
-
 
 \section{Hyperelliptic curves, characteristic 2}
-Let $X$ be a smooth, projective, connected hyperelliptic algebraic curve of genus $g$ over an algebraically closed field $k$ of characteristic two.
-Let $\pi\colon X \rightarrow \mathbb P_k^1$ be the corresponding holomorphic map of degree two.
-By \cite[Prop. 7.4.24]{liu} this curve has a corresponding degree two extension $k(x,y)$ of the function field of one variable over $k$, $k(x)$, where
+
+In this section we assume that $\cha(k) = p  =2$.   
+In this case, by \cite[Prop. 7.4.24]{liu}, the function field $K(X)$ is $k(x,y)$, a two extension of the function field of one variable over $k$, $k(x) = k(\PP_k^1)$, where
     \begin{equation}\label{ext}
     y^2 - h(x)y = f(x)
     \end{equation}
-for some polynomials $h(x), f(x)\in k[x]$, with maximum degrees of $g+1$ and $2g+2$ respectively.
+for some polynomials $h(x), f(x)\in k[x]$.
+We require that $\deg(H(x)) \leq g+1$, with equality if and only if $\infty$ is not a branch point, and that $\deg(F(x)) \leq 2g+2$ with $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point  \cite[Prop.\ 7.4.24]{liu}.
 We now show what conditions the smoothness of the curve imposes on $f(x)$ and $h(x)$.
 
 
@@ -213,15 +192,6 @@ We now show what conditions the smoothness of the curve imposes on $f(x)$ and $h
     But this is the case if and only if $h(x) = 0$ and $h'(x)^2f(x) + f'(x) = 0$ at $P$, which is what we wished to show.
     \end{proof}
 
-By an automorphism of $\mathbb P_k^1$, similarly to the previous section, we can assume that $\infty\in \mathbb P_1^k$ is a branch point.
-As will be shown, this means that the degree of $h(x)$ is strictly less than $g+1$.
-By \cite[Prop. 7.4.24]{liu} this also forces the degree of $f(x)$ to be $2g+1$.
-We will show that this also means that
-Let $d$ be the degree of $h(x)$, and let $k< g+1$ be the number of distinct roots of $h(x)$ in $\mathbb A_k^1$.
-We will denote by $\sigma$ the automorphism of order two on $X$, which sends each point to its corresponding point in the preimage of $\pi$. 
-Note that we have $X/\langle \sigma \rangle \cong \mathbb P_k^1$.
-
-
 We first describe the ramified points of $\pi$, in order to compute the ramification divisor.
 By Lemma \ref{smoothness} if we consider the affine curve defined by this equation it will be smooth.
 We denote this curve by $X'$.
@@ -229,12 +199,15 @@ Then $\pi$ restricts to a map $X'\rightarrow \mathbb A^1_k$, the projection on t
 Let $a\in \mathbb A_k^1$.
 Then if $(a,b)$ is a point in $\pi^{-1}(a)$, so is the point $(a,b+h(a))$, which is clearly distinct if and only if $h(a)\neq 0$.
 Since the extension is degree two, this shows that the ramified points in the affine part correspond to the roots of $h(x)$.
-We denote the zeroes of $h(x)$ by $a_i$ for $1\leq i \leq k$.
-For each $a_i$ there is a corresponding $b_i$, which is the square root of $f(a_i)$.
-We will also denote the corresponding ramification point by $P_i$.
-If the point at infinity is also a branch point, the point that maps to infinity will be written $P_{\infty}$.
+We let $d_H = \deg(H(x))$ and then further let
+    \begin{equation}\label{equationcapitalh}
+    H(x) = \prod_{i=1}^{d_H} (x-A_i)^{n_i} = x^{d_H} + B_{{d_H}-1}x^{{d_H}-1} + \ldots + B_1x + B_0
+    \end{equation}
+for some $A_i, B_i \in  k$ and $n_i \in \mathbb N$.
+As above, the $A_i$ are branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points.
+Note that for each $A_i$ there is a corresponding $K_i$, which is the square root of $f(A_i)$.
 
-We will now compute the ramification divisor.
+We now compute the ramification divisor of $\pi$.
 
 
     \begin{lem}\label{char2ramification}
@@ -243,8 +216,8 @@ We will now compute the ramification divisor.
         \[
         \delta_P = \left\{
             \begin{array}{ll}
-            2n_i & \text{if }\ P=P_i\ \text{ for some }\ i \in \{1,\ldots ,k\}, \\
-            2(g+1-d) & \text{ if }\  P=P_\infty, \\
+            2n_i & \text{if }\ P\in {P_1,\ldots ,P_k\}, \\
+            2(g+1-d_H) & \text{ if }\  P \in \pi^{-1}\infty, \\
             0 & \text{ otherwise.} 
             \end{array}
         \right.
