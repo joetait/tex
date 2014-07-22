@@ -27,24 +27,19 @@ Finally, we denote by $g_X$ and $g_Y$ the genus of $X$ and $Y$ respectively, and
 
 
 In this section we compute the dimension of $H^0(X,\Omega_X^{\otimes m})$ and of $H^0(X,\Omega_X^{\otimes m})^G$, the subspace of $H^0(X,\Omega_X^{\otimes m})$ fixed by $G$.
+We first recall that by Definition \ref{definitiongenus} we have $\dim_kH^0(X,\Omega_X)=g_X$.
+We also computed the dimension of $H^0(X,\Omega_X^{\otimes m})$ when $g_X,m \geq 2$ in Lemma \ref{dim3}.
+Finally, as we will see in examples (a) and (b) in Section \ref{sectionexamples}, if $g_X$ is zero or one then $\dim_k(H^0(X,\Omega_X^{\otimes m})= g_X$, for all $m \in \ZZ\geq 1$.
 
 
-By Corollary \ref{dim=gc} we have $\dim_kH^0(X,\Omega_X)=g_X$.
-If $m\geq 2$, we have the following formula for $\dim_kH^0(X,\Omega_X^{\otimes m})$.
-
-    \todo[inline]{Lemma re dimension of $H^0(X,\Omega_X^{\otimes m})$ was removed from here}
-    We now introduce some notations. 
+We now introduce some notations. 
 Let $D=\sum_{P\in X}n_P[P]$ be a $G$-invariant divisor on $X$ (\ie $n_{\sigma(P)} = n_P$ for all $\sigma \in G$ and $P\in X$) and let $\cO_X(D)$ denote the corresponding equivariant invertible $\cO_X$-module. 
 Furthermore, let $\pi_*^G(\cO_X(D))$ denote the sub-sheaf of the direct image $\pi_*(\cO_X(D))$ fixed by the obvious action of $G$ on $\pi_*(\cO_X(D))$.
 We also let $\left\lfloor \frac{\pi_*(D)}{n} \right \rfloor$ denote the divisor on $Y$ obtained from the push-forward $\pi_*(D)$ by replacing the coefficient $m_Q$ of $Q$ in $\pi_*(D)$ with the integral part $\left \lfloor \frac{m_Q}{n} \right \rfloor$ of $\frac{m_Q}{n}$ for each $Q \in Y$. 
 The function fields of $X$ and~$Y$ are denoted by $K(X)$ and $K(Y)$ respectively. 
 Finally, for any $P \in X$ let $\ord_P$ and $\ord_Q$ denote the respective valuations of $K(X)$ and $K(Y)$ at $P$ and $Q:=\pi(P)$.
 
-
-
 The next lemma is the main idea in the proof of our formula for $\dim_kH^0(X,\Omega_X^{\otimes m})^G$, see Proposition \ref{dim}. 
-
-
 
     \begin{lem}
     Let $D=\sum_{P\in X}n_P[P]$ be a $G$-invariant divisor on $X$.
@@ -61,7 +56,7 @@ The next lemma is the main idea in the proof of our formula for $\dim_kH^0(X,\Om
     For any $Q \in Y$ and $P \in \pi^{-1}(Q)$.
     We have
         \begin{align*}
-        \lefteqn{\pi_*^G\left(\cO_X(D)\right)_Q = \cO_X(D)_P \cap K(Y)}\\
+        \pi_*^G\left(\cO_X(D)\right)_Q & = \cO_X(D)_P \cap K(Y) \\
         &= \left\{f \in K(Y): \ord_P(f) \ge -n_P\right\}\\
         &= \left\{f \in K(Y): \ord_Q(f) \ge - \frac{n_P}{e_P}\right\}\\
         &= \left\{ f \in K(Y): \ord_Q(f) \ge - \left\lfloor\frac{n_P}{e_P} \right\rfloor \right\}\\
@@ -78,7 +73,7 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
         \[
         \dim_k \left( H^0(X,\Omega_X^{\otimes m})^G \right) = (2m-1)(g_Y-1) + \deg\left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor,
         \]  
-    unless one of the following conditions holds:
+    unless 
         \begin{itemize}
         \item $m=1 \mbox{ and } \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor = 0$ or
         \item $g_Y=1 \mbox{ and } \deg\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor = 0$ or
@@ -92,15 +87,11 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
     \begin{proof}
     Let $E$ denote the divisor $\left\lfloor \frac{\pi_*(mK_X)}{n} \right\rfloor$ on $Y$. As $K_X=\pi^*(K_Y)+R$ we have
         \[ 
-        E = 
-        \left \lfloor \frac{\pi_*\pi^*(mK_Y) + \pi_*(mR)}{n} \right \rfloor =
-        mK_Y + \left \lfloor \frac{m\pi_*(R)}{n} \right \rfloor.
+        E = \left \lfloor \frac{\pi_*\pi^*(mK_Y) + \pi_*(mR)}{n} \right \rfloor = mK_Y + \left \lfloor \frac{m\pi_*(R)}{n} \right \rfloor.
         \]
     Using the previous lemma we conclude that $\pi_*^G(\Omega_X^{\otimes m}) \cong \cO_Y (E)$ and finally that
         \begin{equation*}
-        \dim_k H^0(X,\Omega_X^{\otimes m})^G 
-        = \dim_k H^0\left(Y, \pi_*^G(\Omega_X^{\otimes m})\right)
-        = \dim_k H^0\left(Y, \cO_Y\left( E \right) \right).
+        \dim_k H^0(X,\Omega_X^{\otimes m})^G = \dim_k H^0\left(Y, \pi_*^G(\Omega_X^{\otimes m})\right) = \dim_k H^0\left(Y, \cO_Y\left( E \right) \right).
         \end{equation*}
     
     
@@ -114,9 +105,7 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
     Furthermore, as $g_Y=1$, the divisor $K_Y$ is equivalent to the zero divisor, and hence $mK_Y$ is too. 
     This means that
         \begin{equation*}
-        \dim_kH^0(X,\Omega_X^{\otimes m})^G = \dim_kH^0\left( Y,\cO_Y\left( E \right) \right) 
-        = \dim_k  H^0\left( Y,\cO_Y\left( 0 \right) \right)
-        = 1.
+        \dim_kH^0(X,\Omega_X^{\otimes m})^G = \dim_kH^0\left( Y,\cO_Y\left( E \right) \right) = \dim_k  H^0\left( Y,\cO_Y\left( 0 \right) \right) = 1.
         \end{equation*}
     
     
@@ -127,7 +116,7 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
     
     We will show below that in all other cases $\deg(E) > \deg(K_Y)$, and then the Riemann-Roch formula (Theorem \ref{theoremriemannroch}) will give 
         \begin{align*}
-        \lefteqn{\dim_kH^0(X,\Omega_X^{\otimes m})^G = \dim_kH^0\left(Y,\cO_Y\left( E \right)\right)} \\
+        \dim_kH^0(X,\Omega_X^{\otimes m})^G  & = \dim_kH^0\left(Y,\cO_Y\left( E \right)\right) \\
         & =  1-g_Y+\deg\left(mK_Y+\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor\right) \\
         & =  (2m-1)(g_Y-1)+\deg\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor,
         \end{align*}
@@ -251,8 +240,8 @@ We also assume that $g_X \geq 2$.
     
     Because $S \geq 0$, the numerator of this fraction is non-negative, that is
         \begin{align*}
-        \lefteqn{0 \le (r-2)(1-p) - 2 + T (3-p)}\\
-        &\le  (r-2)(1-p) - 2 + r (3-p)\\
+        0 & \le (r-2)(1-p) - 2 + T (3-p)\\ 
+        & \le  (r-2)(1-p) - 2 + r (3-p)\\
         &= 2 (r-1)(2-p).
         \end{align*}
     Hence we have that $r=1$ and that the numerator is $0$. 
@@ -312,7 +301,7 @@ We also assume that $g_X \geq 2$.
     $\dim_kH^0(X,\Omega_X^{\otimes m})=(2m-1)(g_X-1)$ is strictly positive.\todo{rewrite sentence}
     So, using \eqref{altdim}, \eqref{altdim2} and Proposition \ref{dim} we see that
         \begin{align}\label{bound}
-        \lefteqn{(2m-1)\frac{M(p-1)-2p}{2} = \dim_kH^0(X,\Omega_X^{\otimes m})} \nonumber\\
+        (2m-1)\frac{M(p-1)-2p}{2} & = \dim_kH^0(X,\Omega_X^{\otimes m}) \nonumber\\
         & =  \dim_kH^0(X,\Omega_X^{\otimes m})^G \nonumber\\
         & =  1-2m+mM+\sum_{i=1}^r\left\lfloor\frac{-m(N_i+1)}{p}\right\rfloor\nonumber \\
         & \leq  1-2m+mM+\sum_{i=1}^r\frac{-m(N_i+1)}{p}\nonumber \\
@@ -372,8 +361,9 @@ We also assume that $g_X \geq 2$.
     
     From Lemma \ref{dim3} and Proposition~\ref{dim} we obtain
         \begin{align*}
-        \lefteqn{(2m-1)(g_X-1)=\dim_kH^0(X,\Omega_X^{\otimes m})} \\
-        & =  \dim_kH^0(X,\Omega_X^{\otimes m})^G=-(2m-1)+\sum_{i=1}^r \left\lfloor \frac{m\cdot \delta_i}{l} \right\rfloor
+        (2m-1)(g_X-1)& =\dim_kH^0(X,\Omega_X^{\otimes m}) \\
+        & =  \dim_kH^0(X,\Omega_X^{\otimes m})^G\\
+        & =-(2m-1)+\sum_{i=1}^r \left\lfloor \frac{m\cdot \delta_i}{l} \right\rfloor
         \end{align*}
     and hence
         \begin{equation*}
@@ -391,7 +381,7 @@ We also assume that $g_X \geq 2$.
         \end{equation*}
     By rearranging we are able to compute $g_X$ in terms of $m,l$ and $q$:
         \begin{align}\label{equationgxintermsofmandlandq}
-        \lefteqn{g_X = \frac{2(l-1)(m-q-1)}{(2m-1)(l-1)-2(m-q-1)}} \nonumber \\
+        g_X & = \frac{2(l-1)(m-q-1)}{(2m-1)(l-1)-2(m-q-1)} \nonumber \\
         & =  1 + \frac{2(m-q-1)-(2q+1)(l-1)}{(2m-1)(l-1)-2(m-q-1)}  \nonumber\\
         & =  1 + \frac{2s-1-l}{(2m-1)(l-1)-2(m-q-1)} \nonumber  \\
         & =  1 + \frac{2(s-1)+1-l}{(2m-1-2q)(l-1)-2(s-1)}. 
@@ -579,7 +569,7 @@ In this section we prove the main theorem of this chapter, describing exactly wh
     For any $Q \in Y$ we let $\delta_Q$ denote the coefficient of the ramification divisor $R$ at any $P \in \pi^{-1}(Q)$ and let $e_Q := e_P$ for any $P \in \pi^{-1}(Q)$. 
     Rewriting the previous equation then yields
         \begin{align*}
-        \lefteqn{(2n-2)g_Y = 2n-4 + 2 \,\deg\left \lfloor \frac{\pi_*(R)}{n}\right \rfloor - \deg(R)}\\
+        (2n-2)g_Y & = 2n-4 + 2 \,\deg\left \lfloor \frac{\pi_*(R)}{n}\right \rfloor - \deg(R)\\
         &= 2 \left(n-2 + \sum_{Q \in Y} \left(\left\lfloor \frac{n}{e_Q} \frac{\delta_Q}{n} \right\rfloor - \frac{n}{e_Q} \frac{\delta_Q}{2}\right) \right)\\
         &= 2 \left(n-2 + \sum_{Q \in Y} \left( \left\lfloor \frac{\delta_Q}{e_Q} \right\rfloor - \frac{\delta_Q}{e_Q} \frac{n}{2} \right)\right)\\
         & \le  2(n-2),
@@ -631,7 +621,7 @@ In this section we prove the main theorem of this chapter, describing exactly wh
     \end{rem}
 
 
-\section{Examples}
+\section{Examples}\label{sectionexamples}
 We will now give some examples of a finite group acting on a curve, and the consequent action on the holomorphic poly-differentials. 
 We start with some examples in which $G$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$.
 We then follow this with the example of hyperelliptic curves, for which we compute an explicit basis of $H^0(X,\Omega_X^{\otimes m})$, allowing us to see when the action is trivial.

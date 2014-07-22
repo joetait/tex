@@ -121,7 +121,7 @@ We define the \emph{order of $\omega$ at $P$} to be $\ord_P(\omega) := n$.
 The set of differentials regular at $P$ form a module over $\cO_{X,P}$, which we call the \emph{module of differentials regular at $P$}, and denote by $P$.
 
     \begin{lem}
-    Fix $P \in X$ and let $t \in cO_{X,P}$ be a uniformising parameter.
+    Fix $P \in X$ and let $t \in \cO_{X,P}$ be a uniformising parameter.
     Then $\Omega_{X,P}$ is generated as a $\cO_{X,P}$-module by $dt$.
     \end{lem}
     \begin{proof}
@@ -134,7 +134,8 @@ Then $\ord_{P}(f - a) \geq 1$, and also $df = d(f-a)$, since the image of $d$ on
 So it suffices to show our claim for $f \in \mathcal{M}_{X,P}$.
 Any such $f$ is equal to $ut^n$ for some unit $u$, uniformising parameter $t$ and $n \in \NN$.
 Then $d(ut^n) = utd(t^{n-1}) + t^{n-1}d(ut) = (n-1)ut^{n-1}dt + t^{n-1}d(ut)$.
-Since $ut$ is also a uniformising parameter, both terms are regular at $P$, and by the triangle inequality their sum is too.\todo{rephrase? Mention triangle inequality earlier}
+Since $ut$ is also a uniformising parameter, both terms are regular at $P$.
+Finally, as $\ord_P(\omega - \omega') \geq \max\{\ord_P(\omega), \ord_P(\omega')\}$ (see \todo{citation}), it follows that $\ord_P(f) \geq 0$.
 
 Let $U$ be an open subset of $X$.
 We call a differential $\omega$ \emph{holomorphic on $U$} if $\ord_P(\omega) \geq 0$ for all $P \in U$, and we let
@@ -153,6 +154,18 @@ If $\omega \in \Omega_{K(X)}$ is holomorphic on $X$ we say that $\omega$ is \emp
 
 The genus is an invariant of fundamental importance in the study of algebraic curves.
 In particular, we remark that if $k = \CC$ then the genus of an algebraic curve (also called the arithmetic genus) is the same as the topological genus of the corresponding Riemann surface (the corresponding Riemann surface being found via the equivalence of categories mentioned earlier).
+
+We now briefly recall the notion of a polydifferential.
+If we consider an element of the tensor product $\omega \in \Omega_X^{\otimes m}$ then it can be locally written as $f dx_1\otimes \ldots \otimes dx_m$, where $f, x_i \in K(X)$ for all $1 \leq i \leq m$.
+Let $P$ be a point in $X$.
+Since each $dx_i$ can be written as $f_i dt$ for some $f_i\in K(X)$ and some uniformising parameter $t$ at $P$, we can rewrite $\omega$ as $f' dt \otimes \ldots \otimes dt$, where $f' = f \cdot f_1 \cdots f_m$.
+We then define the order of $\omega$ at $P$ to be $\ord_P(\omega ) := \ord_P(y')$.
+In the particular case where $\omega = fdx \otimes \ldots \otimes fdx = f^m dx^{\otimes m}$, then we have $f_1 = \ldots = f_m = h$ for some $h \in K(X)$ when we change $x$ to a uniformising parameter.
+Hence in this instance 
+    \[ 
+    \ord_P(\omega) = \ord_P(h^m) = m\ord_P(h) = m\ord_P(dx).
+    \]
+
 
 \section{The Riemann-Roch theorem}
 
@@ -208,12 +221,12 @@ By the following corollary, it makes sense to refer to the (unique) canonical di
 
 Given any divisor $D = \sum_{P \in X} n_P[P]$ we let
     \[
-    H^0(X,\cO_X(D)) : = \{ f \in K(X) | \ord_P(f) \geq n_P\ \text{for all}\ P \in X\}
+    H^0(X,\cO_X(D)) : = \{ f \in K(X) | \ord_P(f) \geq -n_P\ \text{for all}\ P \in X\}
     \]
 be the \emph{vector space of meromorphic functions associated to $D$}.
 Similarly, we let 
     \[
-    H^0(X,\Omega_X(D)) :  = \{ \omega \in \Omega_{K(X)} | \ord_P(\omega) \geq n_P \ \text{for all} \ P \in X\}
+    H^0(X,\Omega_X(D)) :  = \{ \omega \in \Omega_{K(X)} | \ord_P(\omega) \geq -n_P \ \text{for all} \ P \in X\}
     \]
 be the \emph{vector space of meromorphic differentials associated to $D$}.
 In particular, when $D$ is the zero divisor we have $H^0(X,\Omega(0)) = \hzero$, and similarly $H^0(X,\cO_X(0)) = H^0(X,\cO_X)$.
@@ -223,12 +236,12 @@ Also, it follows immediately from Proposition \ref{propfinitelymanyzeroesandpole
     Given any divisor $D$ on $X$ we have the following isomorphism,
         \[
         H^0(X,\cO_X(D)) \cong H^0(X,\Omega_X(D - W))
-        \]\todo{check this is the right way round, and also whether I need to add minuses to coefficients}
+        \]
     where $W$ is any canonical divisor on $X$.
     \end{lem}
     \begin{proof}
     Choose $\omega \in \Omega_{K(X)}$ and let $W = \di(\omega)$.
-    Since $\di(f \omega) = \di(f) + \di(\omega)$, it follows that if $f \in H^(X,\cO_X))$ if and only if $f \omega \in H^0(X,\Omega_X(D - W)$.
+    Since $\di(f \omega) = \di(f) + \di(\omega)$, it follows that if $f \in H^0(X,\cO_X(D))$ if and only if $f \omega \in H^0(X,\Omega_X(D - W))$.
     Since $\Omega_{K(X)}$ is a one dimensional vector space over $K(X)$ we can find a unique $f \in K(X)$ for every differential $\omega'$ in $H^0(X,\Omega_X(D - W)$ such that $\omega' = f \omega$.
     Hence the map $f \mapsto f\omega$ is an isomorphism.
     \end{proof}
@@ -254,7 +267,7 @@ We now state the celebrated Riemann-Roch theorem.
 
 We now give two corollaries to the Riemann-Roch theorem.
 
-    \begin{cor}\label{dim=gc}
+    \begin{cor}\label{cordegreeofcanonicaldivisor}
     For any canonical divisor $W$ on $X$, we have 
         \[
         \deg(W) = 2g_X-2.
@@ -263,7 +276,7 @@ We now give two corollaries to the Riemann-Roch theorem.
     \begin{proof}
     The statement follows by rearranging
         \begin{align*}
-        g_X & = \dim H^0(X,\cO_X(W)) & \\ = \deg(W) + 1 -g_X +  \dim H^0(X,\cO_X(W-W))\\ & = \deg(W) + 1 -g_X + 1,
+        g_X & = \dim H^0(X,\cO_X(W))  \\ & = \deg(W) + 1 -g_X +  \dim_k H^0(X,\cO_X(W-W))\\ & = \deg(W) + 1 -g_X + 1,
         \end{align*}
     where the first equality is Definition \ref{definitiongenus}, and the second equality follows from the Riemann-Roch theorem.
     \end{proof}
@@ -283,7 +296,7 @@ We now give two corollaries to the Riemann-Roch theorem.
         \]
     \end{proof}
 
-Using the Riemann-Roch theorem and Corollary \ref{dim=gc} we can compute the dimension of the space of \emph{holomorphic polydifferentials} of degree $m$\todo{Check if degree is correct}, denoted $H^0(X,\Omega_X^{\otimes m})$, where $m \in \ZZ_{> 0}$.
+Using the Riemann-Roch theorem and Corollary \ref{cordegreeofcanonicaldivisor} we can compute the dimension of the space of \emph{holomorphic polydifferentials} of order $m$, denoted $H^0(X,\Omega_X^{\otimes m})$, where $m \in \ZZ_{> 0}$.
 
     \begin{lem}\label{dim3}
     Let $g_X, m\geq 2$. Then
@@ -293,7 +306,7 @@ Using the Riemann-Roch theorem and Corollary \ref{dim=gc} we can compute the dim
     \end{lem}
     \todo[inline]{removed cases $g_X = 0,1$, mention in chapter 5}
     \begin{proof}
-    Since $g_X\geq 2$ it follows from Corollary \ref{dimg=c} that $\deg(W)\geq1$, and hence $\deg(mW)>\deg(W)$.
+    Since $g_X\geq 2$ it follows from Corollary \ref{cordegreeofcanonicaldivisor} that $\deg(W)\geq1$, and hence $\deg(mW)>\deg(W)$.
     Since $H^0(X,\Omega_X^{\otimes m}) \cong H^0(X,\Omega_X(mW))$ it then follows from the Riemann-Roch theorem (Theorem \ref{theoremriemannroch}) that
         \[
         \dim_kH^0(X,\Omega_X^{\otimes m})=\deg(mW)+1-g_X=(2m-1)(g_X-1).
@@ -316,7 +329,7 @@ given by composition with $\phi$; \ie $\phi^*(f) = f \circ \phi$.
 Moreover, it transpires that $\phi^*$ is an injection, and hence we can view $K(Y)$ as a subfield of $K(X)$.
 We then define the \emph{degree} of $\phi$, denoted $\deg(\phi)$, to be the degree of the extension $K(X)/K(Y)$, which is always finite.
 
-We henceforth assume that $\phi \ colon X \ra Y$ is an arbitrary non-constant morphism of curves.
+We henceforth assume that $\phi \colon X \ra Y$ is an arbitrary non-constant morphism of curves.
 Recall that we have
     \[
     \phi^*(H^0(U,\cO_Y)) \subseteq H^0(\phi^{-1}(U),\cO_X).
@@ -413,7 +426,7 @@ As a corollary to this we have the Riemann-Hurwitz formula.
     where $R$ is the ramification divisor of $\phi$.
     \end{cor}
     \begin{proof}
-    This follows from Corollary \ref{dim=gc} and Theorem \ref{theoremdetailedhurwitz}, by taking degrees in \eqref{equationstronghurwitzformula}.
+    This follows from Corollary \ref{cordegreeofcanonicaldivisor} and Theorem \ref{theoremdetailedhurwitz}, by taking degrees in \eqref{equationstronghurwitzformula}.
     \end{proof}
 
 Let $G$ be a finite subgroup of the automorphism group of $X$ (recall that if $g_X \geq 2$ then the automorphism group itself is finite).
