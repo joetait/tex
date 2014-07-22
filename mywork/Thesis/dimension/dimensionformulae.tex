@@ -32,28 +32,8 @@ In this section we compute the dimension of $H^0(X,\Omega_X^{\otimes m})$ and of
 By Corollary \ref{dim=gc} we have $\dim_kH^0(X,\Omega_X)=g_X$.
 If $m\geq 2$, we have the following formula for $\dim_kH^0(X,\Omega_X^{\otimes m})$.
 
-    \begin{lem}\label{dim3}
-    Let $m\geq 2$. Then
-        \begin{equation}
-        \dim_kH^0(X,\Omega_X^{\otimes m}) =
-            \begin{cases}
-            0 & \mbox{if } g_X=0,\\
-            1 & \mbox{if } g_X=1,\\
-            (2m-1)(g_X-1) & \mbox{otherwise}.
-            \end{cases}
-        \end{equation}
-    \end{lem}
-    \begin{proof}
-    The trivial cases of $g_X =0$ and $g_X=1$ are explicitly explained in examples (a) and (b) in section \ref{examplessection}.
-    
-    If $g_X\geq 2$ then $\deg(K_X)\geq1$, so $\deg(mK_X)>\deg(K_X)$.
-    Since $H^0(X,\Omega_X^{\otimes m}) \cong H^0(X,\Omega_X(mK_X))$ it then follows from the Riemann-Roch theorem (Theorem \ref{theoremriemannroch}) that
-        \[
-        \dim_kH^0(X,\Omega_X^{\otimes m})=\deg(mK_X)+1-g_X=(2m-1)(g_X-1).
-        \]
-    \end{proof}
-
-We now introduce some notations. 
+    \todo[inline]{Lemma re dimension of $H^0(X,\Omega_X^{\otimes m})$ was removed from here}
+    We now introduce some notations. 
 Let $D=\sum_{P\in X}n_P[P]$ be a $G$-invariant divisor on $X$ (\ie $n_{\sigma(P)} = n_P$ for all $\sigma \in G$ and $P\in X$) and let $\cO_X(D)$ denote the corresponding equivariant invertible $\cO_X$-module. 
 Furthermore, let $\pi_*^G(\cO_X(D))$ denote the sub-sheaf of the direct image $\pi_*(\cO_X(D))$ fixed by the obvious action of $G$ on $\pi_*(\cO_X(D))$.
 We also let $\left\lfloor \frac{\pi_*(D)}{n} \right \rfloor$ denote the divisor on $Y$ obtained from the push-forward $\pi_*(D)$ by replacing the coefficient $m_Q$ of $Q$ in $\pi_*(D)$ with the integral part $\left \lfloor \frac{m_Q}{n} \right \rfloor$ of $\frac{m_Q}{n}$ for each $Q \in Y$. 

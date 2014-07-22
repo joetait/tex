@@ -117,13 +117,24 @@ We say that $\omega \in \Omega_{K(X)}$ is a \emph{meromorphic differential}.
 
 We suppose that $P \in X$ and we choose a uniformising parameter $t \in \cO_{X,P}$.
 Then for any $ 0 \neq \omega \in \Omega_{K(X)}$ there exists a unique integer $n \in \ZZ$ and unit $u \in \cO_{X,P}$ such that $\omega = ut^ndt$, by Proposition \ref{propdifferentialsareonedimensional}.
-Then we define the \emph{order of $\omega$ at $P$} to be $\ord_P(\omega) := n$.
+We define the \emph{order of $\omega$ at $P$} to be $\ord_P(\omega) := n$.
+The set of differentials regular at $P$ form a module over $\cO_{X,P}$, which we call the \emph{module of differentials regular at $P$}, and denote by $P$.
 
-We now show that if $f\in \cO_{X,P}$ then $\ord_P(df) \geq 0$.
-First we assume that $f$ is a unit in $\cO_{X,P}$.
-Then $df  = d (f^2/f) = f^2d(1/f) + 2df$ and hence $f^2df = -df$.
-We conclude that $\ord_P(df) = \ord_P(d(1/f)) = -\ord_P(df)$, and hence $\ord_P(df) = 0$.
-In general, if $f = ut^n$ for some unit $u \in \cO_{X,P}$ and uniformising parameter $t\in \cO_{X,P}$, then we have $df = d(ut^n) = t^ndu + unt^{n-1}dt$, and the order of the right hand side is clearly positive.
+    \begin{lem}
+    Fix $P \in X$ and let $t \in cO_{X,P}$ be a uniformising parameter.
+    Then $\Omega_{X,P}$ is generated as a $\cO_{X,P}$-module by $dt$.
+    \end{lem}
+    \begin{proof}
+    As stated in \cite[Pg.\ 300]{hart}, this follows from \cite[Chap.\ II, \S 8, Prop.\ 8.7 and Thm.\ 8.8]{hart}.
+    \end{proof}
+
+Using the previous lemma we now show that if $f \in K(X)$ is regular at $P \in X$ then so is $df$.
+Firstly, if $f$ is a unit at $P$ then we let $a:= f(P) \in k$.
+Then $\ord_{P}(f - a) \geq 1$, and also $df = d(f-a)$, since the image of $d$ on $k$ is zero.
+So it suffices to show our claim for $f \in \mathcal{M}_{X,P}$.
+Any such $f$ is equal to $ut^n$ for some unit $u$, uniformising parameter $t$ and $n \in \NN$.
+Then $d(ut^n) = utd(t^{n-1}) + t^{n-1}d(ut) = (n-1)ut^{n-1}dt + t^{n-1}d(ut)$.
+Since $ut$ is also a uniformising parameter, both terms are regular at $P$, and by the triangle inequality their sum is too.\todo{rephrase? Mention triangle inequality earlier}
 
 Let $U$ be an open subset of $X$.
 We call a differential $\omega$ \emph{holomorphic on $U$} if $\ord_P(\omega) \geq 0$ for all $P \in U$, and we let
@@ -212,7 +223,7 @@ Also, it follows immediately from Proposition \ref{propfinitelymanyzeroesandpole
     Given any divisor $D$ on $X$ we have the following isomorphism,
         \[
         H^0(X,\cO_X(D)) \cong H^0(X,\Omega_X(D - W))
-        \]
+        \]\todo{check this is the right way round, and also whether I need to add minuses to coefficients}
     where $W$ is any canonical divisor on $X$.
     \end{lem}
     \begin{proof}
@@ -237,6 +248,8 @@ We now state the celebrated Riemann-Roch theorem.
     \begin{proof}
     See \cite[Chap.\ IV, \S 1, Thm.\ 1.3]{hart} or, for a more elementary approach, \cite[Chap.\ 8, \S 6]{fulton}.
     \end{proof}
+
+
 
 
 We now give two corollaries to the Riemann-Roch theorem.
@@ -269,6 +282,24 @@ We now give two corollaries to the Riemann-Roch theorem.
         \dim_k(H^0(X,\cO_X(D + [P]))) = \deg(D +[P]) + 1 - g_X = \deg(D) + 1 + 1 - g_X = \dim_k(H^0(X,\cO_X(D)) + 1.
         \]
     \end{proof}
+
+Using the Riemann-Roch theorem and Corollary \ref{dim=gc} we can compute the dimension of the space of \emph{holomorphic polydifferentials} of degree $m$\todo{Check if degree is correct}, denoted $H^0(X,\Omega_X^{\otimes m})$, where $m \in \ZZ_{> 0}$.
+
+    \begin{lem}\label{dim3}
+    Let $g_X, m\geq 2$. Then
+        \begin{equation}
+        \dim_kH^0(X,\Omega_X^{\otimes m}) = (2m-1)(g_X-1) 
+        \end{equation}
+    \end{lem}
+    \todo[inline]{removed cases $g_X = 0,1$, mention in chapter 5}
+    \begin{proof}
+    Since $g_X\geq 2$ it follows from Corollary \ref{dimg=c} that $\deg(W)\geq1$, and hence $\deg(mW)>\deg(W)$.
+    Since $H^0(X,\Omega_X^{\otimes m}) \cong H^0(X,\Omega_X(mW))$ it then follows from the Riemann-Roch theorem (Theorem \ref{theoremriemannroch}) that
+        \[
+        \dim_kH^0(X,\Omega_X^{\otimes m})=\deg(mW)+1-g_X=(2m-1)(g_X-1).
+        \]
+    \end{proof}
+
 
 \section{Ramification and the Riemann-Hurwitz formula}
 
