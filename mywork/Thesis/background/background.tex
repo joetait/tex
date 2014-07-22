@@ -2,7 +2,7 @@
 
 In this section we give the basic definitions and results that will be used throughout the thesis.
 The vast majority results apply to smooth, connected, projective curves over any algebraically closed fields, with no further assumptions, though occasionally we do specialise slightly more than this.
-All definitions and results should be available in elementary texts on algebraic curves or algebraic geometry in general, such as \cite{hart}, \cite{fulton} or \cite{griffithsfirstcourse}.
+All definitions and results should be available in elementary texts on algebraic curves or algebraic geometry in general, such as \cite{fulton} or \cite{hart} .
 
 We start by defining precisely what we mean by a curve, and by functions and differentials on a curve.
 We then go on to give some basic results about these objects, and finally define the genus of a curve.
@@ -29,7 +29,7 @@ When we refer to an \emph{algebraic curve} (or often just a \emph{curve}) we wil
 In particular, we let $\PP_k^1$ be the projective.
 Similarly, when we refer to an \emph{affine curve} we mean a smooth, connected, affine variety of dimension one over $k$. % Add if needed
 We recall that a morphism of affine curves $X$ and $Y$ is just polynomial map $\phi \colon X \ra Y$.
-Then if $X$ and $Y$ are algebraic curves then a map $\phi \colon X \ra Y$ is a morphism if we can write $X = \cup X_i$ and $Y = \cup Y_i$ for open $X_i$ and $Y_i$ such that $\phi(X_i) \subseteq Y_i$ and $\phi|_{X_i}$ is a morphism for every $i$.
+Then if $X$ and $Y$ are algebraic curves a map $\phi \colon X \ra Y$ is a morphism if we can write $X = \cup X_i$ and $Y = \cup Y_i$ for open, affine $X_i$ and $Y_i$, such that $\phi(X_i) \subseteq Y_i$ and $\phi|_{X_i}$ is a morphism for every $i$.
 
 
 
@@ -38,9 +38,9 @@ Then if $X$ and $Y$ are algebraic curves then a map $\phi \colon X \ra Y$ is a m
 In this section we recall the basic results pertaining to functions and differentials on $X$.
 
 A \emph{meromorphic function} on $X$ is any morphism $f \colon X \ra \PP_k^1$, other than the morphism mapping all points to infinity.
-The collection of meromorphic functions on $X$ is denoted $K(X)$, and called the \emph{function field} of $X$.\todo{B: and non-constant morphisms}
+The collection of meromorphic functions on $X$ is denoted $K(X)$, and called the \emph{function field} of $X$.
 
-We recall that the category of algebraic curves is actually equivalent to the category of function fields over $k$ (which can be defined independently of curves as fields of transcendence degree one over $k$).
+We recall that the category of algebraic curves and non-constant morphisms is actually equivalent to the category of function fields over $k$ (which can be defined independently of curves as fields of transcendence degree one over $k$).
 An overview of this correspondence is given in \cite[Appendix B]{stichtenoth}.
 Furthermore, when working over the complex numbers $\CC$ we actually have a triple equivalence of categories.
 The category of function fields over $\CC$ and the category of algebraic curves are both equivalent to the category of compact Riemann surfaces. 
@@ -118,7 +118,12 @@ We say that $\omega \in \Omega_{K(X)}$ is a \emph{meromorphic differential}.
 We suppose that $P \in X$ and we choose a uniformising parameter $t \in \cO_{X,P}$.
 Then for any $ 0 \neq \omega \in \Omega_{K(X)}$ there exists a unique integer $n \in \ZZ$ and unit $u \in \cO_{X,P}$ such that $\omega = ut^ndt$, by Proposition \ref{propdifferentialsareonedimensional}.
 Then we define the \emph{order of $\omega$ at $P$} to be $\ord_P(\omega) := n$.
-Note that any $f\in \cO_{X,P}$ will have non-negative order at $P$, since $df = dut^n = nt^n-1dt$\todo{finish this}
+
+We now show that if $f\in \cO_{X,P}$ then $\ord_P(df) \geq 0$.
+First we assume that $f$ is a unit in $\cO_{X,P}$.
+Then $df  = d (f^2/f) = f^2d(1/f) + 2df$ and hence $f^2df = -df$.
+We conclude that $\ord_P(df) = \ord_P(d(1/f)) = -\ord_P(df)$, and hence $\ord_P(df) = 0$.
+In general, if $f = ut^n$ for some unit $u \in \cO_{X,P}$ and uniformising parameter $t\in \cO_{X,P}$, then we have $df = d(ut^n) = t^ndu + unt^{n-1}dt$, and the order of the right hand side is clearly positive.
 
 Let $U$ be an open subset of $X$.
 We call a differential $\omega$ \emph{holomorphic on $U$} if $\ord_P(\omega) \geq 0$ for all $P \in U$, and we let
@@ -170,7 +175,9 @@ and then
 Now for any differential $0 \neq \omega \in \Omega_{K(X)}$ we define the \emph{divisor associated to $\omega$} to be
     \[
     \di(\omega) := \sum_{P \in X} \ord_P(\omega)[P].
-    \]\todo{justify finite support}
+    \]
+To show that does indeed have finite support we start by recalling for any $P \in X$ and $f \in K(X)$ then $\ord_P(df) = 0$ if $f$ is a unit in $\cO_{x,P}$.
+Then, since any differential $\omega$ can be written as $gdf$ for some $f,g \in K(X)$, and $\ord_P(\omega) = \ord_P(g) + \ord_P(df)$, it follows that $\omega$ has only finitely many zeroes and poles --- \ie $\di(\omega)$ has finite support.
 If $W$ is a divisor on $X$ and $W = \di(\omega)$ for some $ 0 \neq \omega \in \Omega_{K(X)}$ then we say that $W$ is a \emph{canonical divisor} on $X$.
 
 The principal divisors of $X$ form a subgroup of $\di(X)$, and we say that two divisors $D, D' \in \di(X)$ are \emph{equivalent}, denoted $D \sim D'$, if their image in the quotient of $\di(X)$ by the group of principal divisors is the same; \ie if there exists $f \in K(X)$ such that $ D = D' + \di(f)$.
@@ -245,7 +252,7 @@ We now give two corollaries to the Riemann-Roch theorem.
         \begin{align*}
         g_X & = \dim H^0(X,\cO_X(W)) & \\ = \deg(W) + 1 -g_X +  \dim H^0(X,\cO_X(W-W))\\ & = \deg(W) + 1 -g_X + 1,
         \end{align*}
-    where the first equality is stated prior to the Riemann-Roch theorem, and the second equality follows from the Riemann-Roch theorem itself.\todo{check references here}
+    where the first equality is Definition \ref{definitiongenus}, and the second equality follows from the Riemann-Roch theorem.
     \end{proof}
 
     \begin{cor}
@@ -380,11 +387,12 @@ As a corollary to this we have the Riemann-Hurwitz formula.
 
 Let $G$ be a finite subgroup of the automorphism group of $X$ (recall that if $g_X \geq 2$ then the automorphism group itself is finite).
 The $G$ has a natural action on the function field of $X$, given by $g\cdot f(P) := f(g \cdot P)$ for every $P \in X$.
-Then the quotient $Y := X/G$ of $X$ by the action of $G$ is again a curve (see \cite[Pgs. 126-7]{griffithsfirstcourse}), and the function field of the quotient curve is the subfield of $K(X)$ fixed by this action.
+Then the quotient $Y := X/G$ of $X$ by the action of $G$ is again a curve (see \cite[Chap.\ 2, \S 1.7, Ex.\ 8]{pretendshafarevichalggeom1}), and the function field of the quotient curve is the subfield of $K(X)$ fixed by this action, which we denote $K(X)^G$.
 We let $\pi \colon X \ra Y$ be the projection of $X$ on to the quotient.
-Note that $G$ acts transitively on the fibres of $\pi$.
-We also recall that the stabiliser of a point $P \in X$ is the subgroup $G_P : = \{ g \in G | g \cdot P = P\}$ of $G$.
-The majority of the topics considered in this thesis will focussed on situations where we have such a projection.\todo{to be edited}
+Note that $G$ acts transitively on the fibres of $\pi$ (\textit{ibid.}).
+We also recall that the stabiliser of a point $P \in X$ is the subgroup $G(P) : = \{ g \in G | g \cdot P = P\}$ of $G$.
+The majority of the topics considered in this thesis will focus on situations where we have such a projection.
+
 
 We now introduce the higher ramification groups, which we will use to state Hilbert's formula. 
 This formula will then be used in subsequent chapters to compute the ramification divisor.
