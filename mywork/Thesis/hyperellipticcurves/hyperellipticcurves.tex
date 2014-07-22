@@ -87,10 +87,6 @@ In the following lemma we compute that divisor of $y \in K(X)$.
 \todo[inline]{Sort out what happens at $\infty$}
 
 
-
-
-
-
     \begin{prop}\label{prophyperellipticbasispnot2}
     Let $m\geq 1$.
     Let $X$, $x$ and $y$ be as above, and let $\omega := \frac{dx^{\otimes m}}{y^m}$. 
@@ -154,34 +150,34 @@ In the following lemma we compute that divisor of $y \in K(X)$.
 In this section we assume that $\cha(k) = p  =2$.   
 In this case, by \cite[Prop. 7.4.24]{liu}, the function field $K(X)$ is $k(x,y)$, a two extension of the function field of one variable over $k$, $k(x) = k(\PP_k^1)$, where
     \begin{equation}\label{ext}
-    y^2 - h(x)y = f(x)
+    y^2 - H(x)y = F(x)
     \end{equation}
-for some polynomials $h(x), f(x)\in k[x]$.
+for some polynomials $H(x), F(x)\in k[x]$.
 We require that $\deg(H(x)) \leq g+1$, with equality if and only if $\infty$ is not a branch point, and that $\deg(F(x)) \leq 2g+2$ with $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point  \cite[Prop.\ 7.4.24]{liu}.
-We now show what conditions the smoothness of the curve imposes on $f(x)$ and $h(x)$.
+We now show what conditions the smoothness of the curve imposes on $F(x)$ and $H(x)$.
 
 
 
-    \begin{lem}\label{smoothness}
-    Since the curve is smooth we have $h(x)$ and $h'(x)^2 f(x) + f'(x)$ have no common zeroes on $X$.
+\begin{lem}\label{smoothness}
+    Since the curve is smooth we have $H(x)$ and $H'(x)^2 F(x) + F'(x)$ have no common zeroes on $X$.
     \end{lem}
     \begin{proof}
     The Jacobian criterion (see, for example, \cite[Thm. 4.2.19]{liu}), states that if the derivatives of \eqref{ext} with respect to $x$ and with respect to $y$ are zero at a point $P\in X$ then the curve is not smooth, and otherwise it is.
     Clearly
         \[
-        \frac{d}{dy} (y^2 -h(x)y -f(x)) = h(x)
+        \frac{d}{dy} (y^2 -H(x)y -F(x)) = H(x)
         \]
     since the characteristic of $k$ is 2.
     On the other hand,
         \[
-        \frac{d}{dx} (y^2 - h(x)y -f(x)) = h'(x)y - f'(x).
+        \frac{d}{dx} (y^2 - H(x)y -F(x)) = H'(x)y - F'(x).
         \]
-    Since this is zero if and only if its square is zero, $h(x)$ and $h'(x)^2 f(x) + f'(x)$ have a common zero if and only if
+    Since this is zero if and only if its square is zero, $H(x)$ and $H'(x)^2 F(x) + F'(x)$ have a common zero if and only if
         \[
-        (h'(x)y-f'(x))^2 = h'(x)^2y^2 -f'(x)^2 = h'(x)^2h(x)y + h'(x)^2f(x) - f'(x)^2
+        (H'(x)y-F'(x))^2 = H'(x)^2y^2 -F'(x)^2 = H'(x)^2H(x)y + H'(x)^2F(x) - F'(x)^2
         \]
-    and $h(x)$ are zero at some $P\in X$.
-    But this is the case if and only if $h(x) = 0$ and $h'(x)^2f(x) + f'(x) = 0$ at $P$, which is what we wished to show.
+    and $H(x)$ are zero at some $P\in X$.
+    But this is the case if and only if $H(x) = 0$ and $H'(x)^2F(x) + F'(x) = 0$ at $P$, which is what we wished to show.
     \end{proof}
 
 We first describe the ramified points of $\pi$, in order to compute the ramification divisor.
@@ -190,7 +186,7 @@ We denote this curve by $X'$.
 Then $\pi$ restricts to a map $X'\rightarrow \mathbb A^1_k$, the projection on to the $x$ co-ordinate.
 Let $a\in \mathbb A_k^1$.
 Then if $(a,b)$ is a point in $\pi^{-1}(a)$, so is the point $(a,b+h(a))$, which is clearly distinct if and only if $h(a)\neq 0$.
-Since the extension is degree two, this shows that the ramified points in the affine part correspond to the roots of $h(x)$.
+Since the extension is degree two, this shows that the ramified points in the affine part correspond to the roots of $H(x)$.
 We let $d_H = \deg(H(x))$ and then further let
     \begin{equation}\label{equationcapitalh}
     H(x) = \prod_{i=1}^{d_H} (x-A_i)^{n_i} = x^{d_H} + B_{{d_H}-1}x^{{d_H}-1} + \ldots + B_1x + B_0
@@ -203,7 +199,7 @@ We now compute the ramification divisor of $\pi$.
 
 
     \begin{lem}\label{char2ramification}
-    Let $n_i$ be the order of $h(x)$ at $a_i\in \mathbb A_k^1$.
+    Let $n_i$ be the order of $H(x)$ at $a_i\in \mathbb A_k^1$.
     Then the coefficient $\delta_P$ of the ramification divisor $R$ at $P\in X$ is given by
         \[
         \delta_P = \left\{
@@ -233,123 +229,118 @@ We now compute the ramification divisor of $\pi$.
         & =  \ord_{P}(\sigma(y-b_i) - (y-b_i)).
         \end{align*}
     
-    By an argument similar to that used to show the correspondence between the solutions of $h(x)$ and the ramification points, it is clear $\sigma(y)=y+h(x)$.
+    By an argument similar to that used to show the correspondence between the solutions of $H(x)$ and the ramification points, it is clear $\sigma(y)=y+H(x)$.
     The following calculation then concludes the proof,
         \begin{align*}
         \delta_P & =  \ord_{P}(\sigma(y-b_i) - (y-b_i)) \\
-        & =  \ord_{P}(y-b_i+h(x) - y + b_i) \\
-        & =  2\ord_{a_i}(h(x)) \\
+        & =  \ord_{P}(y-b_i+H(x) - y + b_i) \\
+        & =  2\ord_{a_i}(H(x)) \\
         & =  2n_i.
         \end{align*}
     \end{proof}
 
 
 
-We will now compute the divisors associated to $h(x)$, $x$ and $y$ in $K(X)$, and also to $dx$.
-If $a\in \mathbb P_k^1$ is a branch point, we denote the point in the pre-image by $P_a$, otherwise we denote the points in the pre-image by $P_a'$ and $P_a''$.
-In order to simplify our calculations we let $D_a := \pi^*([a])$ for any $a\in \mathbb P_k^1$.
-These will allow us to consider the case when 0 is or is not a branch point simultaneously. 
-We now compute the divisors of all the elements required to form a basis of $H^0(X,\Omega_X^{\otimes m})$.
 
-    \begin{lem}\label{xchar2}
-    The divisor of $x\in K(X)$ is 
-        \[
-        \di (x)= D_0 - D_\infty.
-        \]
-    \end{lem}
-    \begin{proof}
-    Given our notations above, this is clear.
-    \end{proof}
-
-
-    \begin{lem}\label{dxchar2}
-    Let $m\geq 1$.
-    The divisor associated to the poly-differential $dx^{\otimes m}$ is 
-        \[
-        \di (dx^{\otimes m}) =mR + m(g-1-d)D_\infty
-        \]
-    \end{lem}
-    \begin{proof}
-    We first note that it suffices to compute $\di (dx)$, since $\di (dx^{\otimes m}) = m\di (dx)$, as described above.
-    
-    Now we compute the divisor of $dx$.
-    We will need to consider the divisor of $dx$ both as a differential on $X$ and on $\mathbb P_k^1$. 
-    We will use the notation of $\di_X(dx)$ and $\di_{\mathbb P^1}(dx)$ to differentiate between the two cases.
-    Then the Riemann-Hurwitz formula (Theorem \ref{theoremdetailedhurwitz}) states that
-        \[
-        \di_X( dx) = \pi^*\di_{\mathbb P^1}(dx) + R.
-        \]
-    Now we have already computed $R$ in Lemma \ref{char2ramification}, and $\pi^*\di_{\mathbb P^1}(dx) = -2D_\infty$ hence we have
-        \[
-        \di_X( dx) = \sum_{i=1}^k 2n_iP_i + (g+1-d)D_\infty - 2D_\infty = \sum_{i=1}^k D_{a_i} + (g-1-d)D_\infty.
-        \]
-    Multiplying through by $m$ we obtain the desired result.
-    \end{proof}
+The divisors of $x$ and $dx$ are the same as when $\cha(k) = 2$, see \eqref{equationdivxpis2} and \eqref{equationdifferentialdivisor}.
+We now compute the divisor of $H(x)$ too.
 
 
 
     \begin{lem}\label{h(x)char2}
-    The divisor associated to $\frac{1}{h(x)}$ is
+    The divisor associated to $\frac{1}{H(x)}$ is
         \[
-        \di \left(\frac{1}{h(x)}\right) = - \sum_{i=1}^k D_{a_i} + dD_\infty = dD_\infty - R
+        \di \left(\frac{1}{H(x)}\right) = - \sum_{i=1}^k D_{a_i} + dD_\infty = dD_\infty - R
         \]
     \end{lem}
     \begin{proof}
-    Since $\pi$ is ramified at infinity then $\ord_{P_{\infty}}\left(\frac{1}{h(x)}\right) = -\ord_{P_{\infty}}(h(x)) = 2d$.
-    If it is not ramified, then $\ord_{P_{\infty}'}\left(\frac{1}{h(x)}\right) = \ord_{P_{\infty}''}\left(\frac{1}{h(x)}\right)=d$.
-    For the ramified points $P_i$, $1\leq i \leq k$, then $\ord_{P_i}\left(\frac{1}{h(x)}\right) = -\ord_{P_i}(h(x))= -2n_i$.
-    At any other point of $X$ the order of $\frac{1}{h(x)}$ is clearly zero.
+    Since $\pi$ is ramified at infinity then $\ord_{P_{\infty}}\left(\frac{1}{H(x)}\right) = -\ord_{P_{\infty}}(H(x)) = 2d$.
+    If it is not ramified, then $\ord_{P_{\infty}'}\left(\frac{1}{H(x)}\right) = \ord_{P_{\infty}''}\left(\frac{1}{H(x)}\right)=d$.
+    For the ramified points $P_i$, $1\leq i \leq k$, then $\ord_{P_i}\left(\frac{1}{H(x)}\right) = -\ord_{P_i}(H(x))= -2n_i$.
+    At any other point of $X$ the order of $\frac{1}{H(x)}$ is clearly zero.
     \end{proof}
+    
+Finally, we describe the divisor of $y$ when $p=2$.
+In order to do this we need to distinguish the zeroes of $F(x)$.
+Suppose that $F(x)$ has $l \leq \deg(F(x))$ distinct zeroes, and let $\gamma_1, \ldots, \gamma_l \in k \subseteq \mathbb P_k^1$ be these zeroes.
+Then if $\gamma_i$ is a branch point let $Q_i = (\gamma_i, 0)$ be the unique point in the pre-image $\pi^{-1}(\gamma_i)$.
+If $\gamma_i$ is not a branch point then let $Q_i = (\gamma_i, 0)$ and $Q_i' = (\gamma_i, H(\gamma_i))$ be the unique points that form the pre-image $\pi^{-1}(\gamma_i)$.
+Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in \NN$.
 
-We again consider the affine curve $X'$, and we let $\alpha_i \in \mathbb A_k^1$, for $1\leq i\leq l \leq 2g+1$, be the zeroes of $f(x)$.
-If $\alpha_i$ corresponds to a branch point then we label the unique point in $X$ that maps to it $Q_i$.
-Otherwise there are two points that map to it, and we denote these 
-    \[  
-    Q_i:=(\alpha_i,0)\ \text{ and}\ Q_i':=(\alpha_i,h(\alpha_i)).
-    \]
 
-
-    \begin{lem}\label{ychar2}
-    Let $m_i$ be the order of $f(x)$ at $\alpha_i\in \mathbb A_k^1$.
-    Then 
-        \[
-        \di(y) = \sum_{i=1}^l m_i[Q_i] - (2g+1)[P_\infty].
-        \]
-    \end{lem}
+    \begin{prop}\label{propdivisorofypis2}
+    Suppose that $p=2$.
+    Then, if $\infty$ is a branch point, the divisor of $y$ is
+        \begin{equation*}
+        \di(y) = 
+         {\displaystyle \sum_{i=1}^l} m_i[Q_i] -(2g+1)[P_\infty].
+        \end{equation*}
+    If $\infty$ is not a branch point then, after possibly swapping the notations for the two points $P_\infty$ and $P_\infty'$ in $\pi^{-1}(\infty)$, we have
+        \begin{equation*}
+        \di(y) = {\displaystyle \sum_{i=1}^l} m_i[Q_i] +(g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'].
+        \end{equation*}
+    \end{prop}
     \begin{proof}
-    First note that if $P\in X'$ is not a zero of $f(x)$ (\ie $P\neq Q_i$ for any $i$), then it is clear that $y|_P \neq 0$.
-    Indeed, if it were zero then $f(x)|_P = y^2 + h(x)y|_P = 0$, a contradiction.
+    We first show that $\di_0(y)$, the divisor of the zeroes of $y$, is $\sum_{i=1}^l m_i [Q_i]$.
     
-    If $Q_i$ is not ramified then $h(\alpha_i) \neq 0$, and $y|_{Q_i} = 0$, hence $y+h(x)$ is a unit at $Q_i$.
-    Since $y(y+h(x)) = f(x)$, we have
+    It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{equationdefiningequationpis2} \ie~in $U_\infty$.
+    Suppose $P\in U_\infty$.
+    If $\left. F \right|_P \neq 0$ then it follows that $y|_P \neq 0$, since $F(x) = y (y + H(x))$.
+    Hence $\di_0(y)$ has a coefficient  of zero for any point in $U_\infty\backslash \{Q_1, \ldots, Q_l \}$.
+    
+    Suppose that $P= Q_i = (\gamma_i, 0)$ is an unramified point in $U_\infty$.
+    Then $H(\gamma_i) \neq 0$ and $\left. y \right|_P = 0$, so $y + H(x)$ is a unit at $P$.
+    Since $y(y+H(x)) = F(x)$ we find that
+        \begin{equation*}
+        \ord_P(y) = \ord_P\left( \frac{F(x)}{y + H(x)} \right) = \ord_P(F(x)) = m_i.
+        \end{equation*}
+    
+    We now look at when $P = Q_i = (\gamma_i, 0)$ is a ramification point.
+    Since $H(x)$ and $H'(x)^2F(x) + F'(x)^2$ cannot share roots it follows that $m_i = 1$.
+    Hence the function $\tilde F(x) := (x- \gamma_i)^{-1}F(x)$ is a unit at $P$.
+    We let $\tilde H(x) = (x- \gamma_i)^{-1}H(x)$.
+    
+    
+    Now 
         \[
-        \ord_{Q_i}(y) = \ord_{Q_i}\left(\frac{f(x)}{y+h(x)}\right) = \ord_{Q_i}(f(x)) -\ord_{Q_i}(y+h(x)) = m_i.
+        y^2 = F(x) - y H(x) = (x- \gamma_i) \left(\tilde F(x) - y \tilde H(x)\right),
+        \]
+    and hence
+        \[
+        \ord_P(y^2 ) = \ord_P(x-\gamma_i) + \ord_P(\tilde F(x) - y \tilde H(x)).
+        \]
+    Since $\ord_P(x-\gamma_i) = 2$ and $\ord_P\left(\tilde F(x) - y \tilde H(x)\right) \geq 0$ we know that $\ord_P(y) \geq 1$.
+    Hence $(y \tilde H(x)) \big|_P = 0$, and since $\tilde F(x)$ is a unit at $P$, we conclude that $\tilde F(x) - y \tilde H(x)$ is a unit at $P$.
+    Hence $\ord_P(y^2) = 2$, and so $\ord_P(y) = 1 = m_i$.
+    It follows that $\di_0(y) =  \sum_{i=1}^l m_i [Q_i]$.
+    
+    We now consider the poles of $y$.
+    If $\infty$ is a branch point then $\deg(F(x)) = 2g+1$ and hence $\sum_{i=1}^l m_i = 2g+1$.
+    Since $y$ can only have a pole at $P_\infty$, we conclude that the degree of this pole is $2g+1$, and hence
+        \[
+        \di(y) = \sum_{i=1}^l m_i [Q_i] - (2g+1)[P_\infty].
         \]
     
-    This only leaves the case when $Q_i$ is ramified. 
-    In this case we must have $m_i=1$.
-    Otherwise we would also have $f'(x)|_{Q_i} = 0$, and since we also have $h(x)|_{Q_i} = f(x)|_{Q_i} = 0$ this would contradict Lemma \ref{smoothness}.
-    So if we let $\tilde f(x) := \frac{f(x)}{x-\alpha_i}$ and $\tilde h(x) := \frac{h(x)}{x-\alpha_i}$ then $\tilde f(x)$ is a unit at $Q_i$.
-    Then we have 
-        \[
-        y^2 = f(x) - yh(x) = (x-\alpha_i)(\tilde f(x) - \tilde h(x)y).
-        \]
-    Hence
-        \[
-        \ord_{Q_i}(y^2) = \ord_{Q_i}(x-\alpha_i) + \ord_{Q_i}(\tilde f(x) - \tilde h(x)y).
-        \]
-    But since $\tilde f(x) - \tilde h(x) y$ does not have an affine pole, and $\tilde f(x)$ is a unit at $Q_i$, and $Q_i$ is a zero of $\tilde h(x) y$, it follows that $\ord_{Q_i}(\tilde f(x) -  \tilde h(x) y) = 0$
-    and hence $\ord_{Q_i}(y^2) = \ord_{Q_i}(x-\alpha_i) = 2$, and we have determined the zero divisor of $y$.
+    If $\infty$ is not a branch point then there are two points at which $y$ may have a pole, namely $P_\infty$ and $P_\infty'$.
+    The hyperelliptic involution $\sigma$ switches these two points.
+    Furthermore, since $\sigma \colon y \mapsto y+H(x)$ it follows that $\ord_{P_\infty'}(y) = \ord_{P_ \infty}(y+H(x))$, a fact we use below.
     
-    Since there is only one point at which $y$ can have a pole, namely $P_\infty$, and since the degree of $\di (y)$ is zero, then we have the pole divisor must be $(2g+1)[P_\infty]$, and this completes the proof.
+    
+    We now consider three cases, firstly supposing that $\ord_{P_\infty}(y) < -(g+1)$.
+    Then $\ord_{P_\infty}(y) < \ord_{P_\infty}(H(x))$ and hence $ \ord_{P_\infty}(y) = \ord_{P_\infty}(y+H(x))$.
+    But this contradicts $\ord_{P_\infty}(y) + \ord_{P_\infty}(y+H(x)) = \ord_{P_\infty}(F(x))$, since the left hand side is less than $-2(g+1)$, which is the minimum value of the right hand side.
+    
+    We now suppose that $\ord_{P_\infty} (y) = -(g+1)$. Since $y(y+H(x)) = F(x)$ it follows that $-(g+1) + \ord_{P_\infty}(y+H(x)) = \ord_{P_\infty}(F(x))$, and hence $\ord_{P_\infty'}(y) = \ord_{P_\infty}(y+H(x)) = -\deg(F(x)) + g + 1$.
+    
+    We now consider the case in which $\ord_{P_\infty}(y) > -(g+1)$.
+    Then, since $\ord_{P_\infty}(H(x)) = -(g+1)$, it follows that $\ord_{P_\infty'}(y) = \ord_{P_\infty} (y+H(x)) = -(g+1)$.
+    It now follows from a computation similar to that in the previous paragraph that $\ord_{P_\infty}(y) = -\deg(F(x)) + g +1$, completing the proof.
     \end{proof}
-
-
 
 We now prove the following proposition, determining a basis of the space of global holomorphic poly-differentials as a vector space over $k$.
 
     \begin{prop}\label{propbasishyperellipticp=2}
-    We assume that $g\geq 2$ and let $\omega:= \frac{dx^{\otimes m}}{h(x)^m}$. 
+    We assume that $g\geq 2$ and let $\omega:= \frac{dx^{\otimes m}}{H(x)^m}$. 
     Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by
         $\begin{cases}
         \omega, x\omega, \ldots , x^{g-1}\omega &  \mbox{if}\ m=1 \\
@@ -381,16 +372,16 @@ We now prove the following proposition, determining a basis of the space of glob
     We now show that the listed poly-differentials are holomorphic, \ie that their divisors are non-negative.
     Firstly we have
         \begin{align*}
-        \di(x^i\omega) & =  \di \left( \frac{x^i dx^{\otimes m}}{h(x)^m} \right)\\ 
+        \di(x^i\omega) & =  \di \left( \frac{x^i dx^{\otimes m}}{H(x)^m} \right)\\ 
         & =  i(D_0 - D_\infty) +2m\sum_{i=1}^k n_i[P_i] + m(g-1-d)D_\infty\\
         &  -2m\sum_{i=1}^k n_i [P_i] + dmD_\infty \\
         & =  iD_0 + (m(g-1) -i)D_\infty
         \end{align*}
-    by Lemmas \ref{xchar2}, \ref{dxchar2} and \ref{h(x)char2}, and this is clearly non-negative for $0\leq i \leq m(g-1)$.
+    by Lemmas \ref{xchar2}, \ref{dxchar2} and \ref{H(x)char2}, and this is clearly non-negative for $0\leq i \leq m(g-1)$.
     
     Similarly the divisor 
         \begin{align*}
-        \di(x^iy\omega) & =  \di \left( \frac{x^i ydx^{\otimes m}}{h(x)^m} \right)\\ 
+        \di(x^iy\omega) & =  \di \left( \frac{x^i ydx^{\otimes m}}{H(x)^m} \right)\\ 
         & =  iD_0 + (m(g-1) -i)D_\infty + \sum_{i=1}^l m_i[Q_i] - (2g+1)[P_\infty] \\
         & =  iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2m(g-1) -(2g+1) -2i)[P_\infty] \\
         & =  iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2((m-1)(g-1) -1 -i)-1)[P_\infty]
@@ -399,8 +390,5 @@ We now prove the following proposition, determining a basis of the space of glob
     
     \end{proof}
 
-Since $\sigma$ acts trivially on $x$, it is clear that in both the $m=1$ case and the case where $m=g=2$ that the group action is trivial.
-On other hand, since $\sigma(y) = y+h(x)$, we can see that in the other cases the action is not trivial, as there are $y$ coefficients of the basis elements.
-Hence this proves the main theorem in the case of hyperelliptic curves in characteristic two.
 
 
