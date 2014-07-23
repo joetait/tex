@@ -1,13 +1,14 @@
-\chapter{Background}\label{chapterbackground}
+\chapter{Background on algebraic curves}\label{chapterbackground}
 
-In this section we give the basic definitions and results that will be used throughout the thesis.
-The vast majority results apply to smooth, connected, projective curves over any algebraically closed fields, with no further assumptions, though occasionally we do specialise slightly more than this.
+In this chapter we give basic definitions and results that will be used throughout the thesis.
+The vast majority of these results apply to smooth, connected, projective curves over any algebraically closed fields, with no further assumptions, though occasionally we do specialise slightly more than this.
 All definitions and results should be available in elementary texts on algebraic curves or algebraic geometry in general, such as \cite{fulton} or \cite{hart} .
+As such, we will rarely provide proofs for results given.
 
 We start by defining precisely what we mean by a curve, and by functions and differentials on a curve.
 We then go on to give some basic results about these objects, and finally define the genus of a curve.
 
-In the next section we define divisors, canonical divisors and the spaces associated to divisors.
+In the next section we define divisors, canonical divisors and the Riemann-Roch spaces associated to divisors.
 We then reach the highlight of the section with the statement of the Riemann-Roch theorem.
 We give corollaries to this, which show some of its applications.
 
@@ -16,8 +17,8 @@ We define ramification and branch points, and subsequently the ramification divi
 We then use this to state a strong version of the Riemann-Hurwitz formula, at the level of divisors.
 The section concludes by looking at group actions on curves, and defining higher ramification to state Hilbert's formula.
 
-The chapter finishes by discussing Serre duality, which will be of particular use in the fourth chapter of the thesis.
-In particular the dual maps are described explicitly, using \cech cohomology to do so.
+The chapter finishes by discussing Serre duality, which will be used in the fourth chapter of the thesis.
+In particular, we use \cech cohomology to give an explicit description of this duality.
 
 
 \section{Set up}
@@ -229,6 +230,7 @@ Similarly, we let
     H^0(X,\Omega_X(D)) :  = \{ \omega \in \Omega_{K(X)} | \ord_P(\omega) \geq -n_P \ \text{for all} \ P \in X\}
     \]
 be the \emph{vector space of meromorphic differentials associated to $D$}.
+Both of the spaces mentioned above are also referred to as \emph{Riemann-Roch spaces}.
 In particular, when $D$ is the zero divisor we have $H^0(X,\Omega(0)) = \hzero$, and similarly $H^0(X,\cO_X(0)) = H^0(X,\cO_X)$.
 Also, it follows immediately from Proposition \ref{propfinitelymanyzeroesandpoles} that if $D \in Di(X)$ is a divisor with negative degree then $H^0(X,\cO_X(D)) = \{0\}$.
 
@@ -467,7 +469,7 @@ In particular, $\phi$ is tamely ramified at $P$ if and only if $G_1(P)$ is the t
     \end{proof}
 
  
-\section{Serre duality for curves}
+\section{Serre duality}
 
 In this section we give the details of Serre duality, in such a way that we will be able to perform explicit computations using Serre duality in later chapters.
 
