@@ -30,7 +30,7 @@ When we refer to an \emph{algebraic curve} (or often just a \emph{curve}) we wil
 In particular, we let $\PP_k^1$ be the projective.
 Similarly, when we refer to an \emph{affine curve} we mean a smooth, connected, affine variety of dimension one over $k$. % Add if needed
 We recall that a morphism of affine curves $X$ and $Y$ is just polynomial map $\phi \colon X \ra Y$.
-Then if $X$ and $Y$ are algebraic curves a map $\phi \colon X \ra Y$ is a morphism if we can write $X = \cup X_i$ and $Y = \cup Y_i$ for open, affine $X_i$ and $Y_i$, such that $\phi(X_i) \subseteq Y_i$ and $\phi|_{X_i}$ is a morphism for every $i$.
+Then if $X$ and $Y$ are algebraic curves, a map $\phi \colon X \ra Y$ is a morphism if we can write $X = \cup X_i$ and $Y = \cup Y_i$ for open, affine $X_i$ and $Y_i$, such that $\phi(X_i) \subseteq Y_i$ and $\phi|_{X_i}$ is a morphism for every $i$.
 
 
 
@@ -53,7 +53,7 @@ We let $H^0(U,\cO_X)$ denote the space of functions in $K(X)$ which are regular 
 Moreover, if $f \in K(X)$ is regular on $X$ we say that $f$ is \emph{regular}, and then $H^0(X,\cO_X)$ is the space of regular functions.
 Since $X$ is projective $H^0(X,\cO_X)$ is in fact isomorphic to $k$ --- \ie the only regular functions are constant functions.
 The reader should note that we are using sheaf theoretic notation here. 
-We will not give details of sheaves and sheaf cohomology (since it will rarely be needed), but we will consistently use the notation, in order to be with consistent with current work in the area.
+We will not give details of sheaves and sheaf cohomology (since it will rarely be needed), but we will still use the notation, in order to be with consistent with current work in the area.
 
 Given $P \in X$ we say that a meromorphic function $f \in K(X)$ is \emph{regular at $P$} if $f(P) \in k \subset \PP_k^1$.
 The collection of functions regular at $P$ form a ring, which we call $\cO_{X,P}$.
@@ -119,7 +119,7 @@ We say that $\omega \in \Omega_{K(X)}$ is a \emph{meromorphic differential}.
 We suppose that $P \in X$ and we choose a uniformising parameter $t \in \cO_{X,P}$.
 Then for any $ 0 \neq \omega \in \Omega_{K(X)}$ there exists a unique integer $n \in \ZZ$ and unit $u \in \cO_{X,P}$ such that $\omega = ut^ndt$, by Proposition \ref{propdifferentialsareonedimensional}.
 We define the \emph{order of $\omega$ at $P$} to be $\ord_P(\omega) := n$.
-The set of differentials regular at $P$ form a module over $\cO_{X,P}$, which we call the \emph{module of differentials regular at $P$}, and denote by $P$.
+The set of differentials regular at $P$ form a module over $\cO_{X,P}$, which we call the \emph{module of differentials regular at $P$}, and denote by $\Omega_{X,P}$.
 
     \begin{lem}
     Fix $P \in X$ and let $t \in \cO_{X,P}$ be a uniformising parameter.
@@ -201,7 +201,7 @@ Now for any differential $0 \neq \omega \in \Omega_{K(X)}$ we define the \emph{d
     \[
     \di(\omega) := \sum_{P \in X} \ord_P(\omega)[P].
     \]
-To show that does indeed have finite support we start by recalling for any $P \in X$ and $f \in K(X)$ then $\ord_P(df) = 0$ if $f$ is a unit in $\cO_{x,P}$.
+To show that does indeed have finite support we start by recalling for any $P \in X$ and $f \in K(X)$ then $\ord_P(df) = 0$ if $f$ is a unit in $\cO_{X,P}$, which is the case for all but finitely many points $P$ in $X$.
 Then, since any differential $\omega$ can be written as $gdf$ for some $f,g \in K(X)$, and $\ord_P(\omega) = \ord_P(g) + \ord_P(df)$, it follows that $\omega$ has only finitely many zeroes and poles --- \ie $\di(\omega)$ has finite support.
 If $W$ is a divisor on $X$ and $W = \di(\omega)$ for some $ 0 \neq \omega \in \Omega_{K(X)}$ then we say that $W$ is a \emph{canonical divisor} on $X$.
 
@@ -231,10 +231,10 @@ Similarly, we let
     \]
 be the \emph{vector space of meromorphic differentials associated to $D$}.
 Both of the spaces mentioned above are also referred to as \emph{Riemann-Roch spaces}.
-In particular, when $D$ is the zero divisor we have $H^0(X,\Omega(0)) = \hzero$, and similarly $H^0(X,\cO_X(0)) = H^0(X,\cO_X)$.
-Also, it follows immediately from Proposition \ref{propfinitelymanyzeroesandpoles} that if $D \in Di(X)$ is a divisor with negative degree then $H^0(X,\cO_X(D)) = \{0\}$.
+Note that when $D$ is the zero divisor we have $H^0(X,\Omega(0)) = \hzero$, and similarly $H^0(X,\cO_X(0)) = H^0(X,\cO_X)$.
+Also, it follows immediately from Proposition \ref{propfinitelymanyzeroesandpoles} that if $D \in \Di(X)$ is a divisor with negative degree then $H^0(X,\cO_X(D)) = \{0\}$.
 
-    \begin{lem}
+    \begin{lem}\label{lemisomorphismofdifferentialsandfunctions}
     Given any divisor $D$ on $X$ we have the following isomorphism,
         \[
         H^0(X,\cO_X(D)) \cong H^0(X,\Omega_X(D - W))
@@ -264,7 +264,7 @@ We now state the celebrated Riemann-Roch theorem.
     See \cite[Chap.\ IV, \S 1, Thm.\ 1.3]{hart} or, for a more elementary approach, \cite[Chap.\ 8, \S 6]{fulton}.
     \end{proof}
 
-
+Note that by Lemma \ref{lemisomorphismofdifferentialsandfunctions} we can essentially replace $\cO_X$ by $\Omega_X$ in the statement of the Riemann-Roch theorem.
 
 
 We now give two corollaries to the Riemann-Roch theorem.
@@ -293,9 +293,9 @@ We now give two corollaries to the Riemann-Roch theorem.
     Since $\deg(D) > 2g-2$, it follows from the previous lemma that $\deg(W-D) <0$.
     Then $\dim_k(H^0(,\cO_X(W - D)))  = 0$.
     We then apply the Riemann-Roch theorem and see that
-        \[
-        \dim_k(H^0(X,\cO_X(D + [P]))) = \deg(D +[P]) + 1 - g_X = \deg(D) + 1 + 1 - g_X = \dim_k(H^0(X,\cO_X(D)) + 1.
-        \]
+        \begin{multline*}
+        \dim_k(H^0(X,\cO_X(D + [P]))) = \deg(D +[P]) + 1 - g_X \\ = \deg(D) + 1 + 1 - g_X = \dim_k(H^0(X,\cO_X(D)) + 1.
+        \end{multline*}
     \end{proof}
 
 Using the Riemann-Roch theorem and Corollary \ref{cordegreeofcanonicaldivisor} we can compute the dimension of the space of \emph{holomorphic polydifferentials} of order $m$, denoted $H^0(X,\Omega_X^{\otimes m})$, where $m \in \ZZ_{> 0}$.
@@ -306,7 +306,6 @@ Using the Riemann-Roch theorem and Corollary \ref{cordegreeofcanonicaldivisor} w
         \dim_kH^0(X,\Omega_X^{\otimes m}) = (2m-1)(g_X-1) 
         \end{equation}
     \end{lem}
-    \todo[inline]{removed cases $g_X = 0,1$, mention in chapter 5}
     \begin{proof}
     Since $g_X\geq 2$ it follows from Corollary \ref{cordegreeofcanonicaldivisor} that $\deg(W)\geq1$, and hence $\deg(mW)>\deg(W)$.
     Since $H^0(X,\Omega_X^{\otimes m}) \cong H^0(X,\Omega_X(mW))$ it then follows from the Riemann-Roch theorem (Theorem \ref{theoremriemannroch}) that
@@ -365,7 +364,7 @@ The following theorem asserts that the degree of $\phi$ is the same as the numbe
     
 Suppose $P \in X$ is a ramification point.
 Then if $p = \cha(k)$ divides $e_P$ we say that $P$ is \emph{wildly ramified}, and we also say $\phi$ is wildly ramified if this holds for any point in $X$.
-If $p$ does not divide $e_P$ we say that $P$ is tamely ramified.
+If $p$ does not divide $e_P$ we say that $P$ is \emph{tamely ramified}.
 
     \begin{defn}
     Let $D = \sum_{Q \in Y}n_Q [Q]$ be a divisor on $Y$.
