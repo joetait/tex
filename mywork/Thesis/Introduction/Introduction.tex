@@ -2,109 +2,86 @@
 
 
 Geometry and topology are perhaps the greatest source of intuition and vision in mathematics, whilst algebra balances the scales, being the exemplar of precision and abstraction. 
-Perhaps the greatest example of the interplay between these two areas is the triple equivalence of Riemann surfaces, complex function fields and complex curves.
+Perhaps the best example of the interplay between these two areas is the triple equivalence of Riemann surfaces, complex function fields and complex curves.
 On the one hand, compact Riemann surfaces constitute all spaces that occur in the topological classification of connected, compact, orientable surfaces.
 On the other hand, complex function fields lie strongly in the algebraic end of the spectrum, with strong relations to number theory and Galois theory.
 Finally, it is algebraic curves that most clearly unites algebra and geometry.
 
 The genus is arguably the most important invariant of topological surfaces, it even being possible to use it to define the Euler characteristic (the genus also benefits from being very easy to define --- the genus of a connected, compact, orientable surface is just the number of ``holes" or ``handles" it has).
 Given this, any theory that claims to be equivalent to the study of Riemann surfaces would do well to explain how it gives rise to the concept of genus.
-The Riemann-Roch theorem allowed exactly this to be done in the field of algebraic curves.
-Proved in \todo{cite}, originally only for Riemann surfaces, it focussed on meromorphic functions and differentials.
-This allowed the theorem to be generalised to algebraic curves (first over $\CC$, then over any algebraically closed field $k$\todo{citations}).
-The genus appears as a constant in the Riemann-Roch theorem for Riemann surfaces, and since this constant remains even once the theorem is generalised it was natural to label this as the genus of an algebraic curve.
 
-In particular, it is a simple consequence of the Riemann-Roch theorem that for any smooth, projective algebraic curve $X$ over an algebraically closed field $k$, the dimension of the $k$ vector space of holomorphic differentials, $\hzero$, is precisely the genus of $X$, $g_X$.
-This demonstrates one of the reasons that differentials, and in particular holomorphic differentials, play such an important role in the theory of algebraic curves.
+In the case of algebraic curves, it is Riemann-Roch theory that allows us to extend the definition of genus.
+Originally only for Riemann surfaces, the theory focusses on meromorphic functions and differentials, and it this which allows it to be generalised, first just to algebraic curves, then to curves over any algebraically closed field $k$.
+The genus appears as a constant in the Riemann-Roch theory of Riemann surfaces, both as the dimension of the vector space of holomorphic differentials and in the Riemann-Roch theorem itself.
+Since this constant remains after generalising to algebraic curves, it was natural to continue calling this constant the genus.
+The fact that the genus can be defined in terms of differentials demonstrates why differentials, and in particular holomorphic differentials, play such an important role in the theory of algebraic curves.
 
-On the other hand, we may recall that Weyl famously said
-{\quote {\it ``Whenever you have to deal with a structure endowed entity, try to determine its automorphism group"} --- Hermann Weyl}
+\newpage 
+
+On the other hand, we may recall the famous quote
+\begin{quotation}
+``Whenever you have to deal with a structure endowed entity, try to determine its automorphism group" --- Hermann Weyl
+\end{quotation}
 With this in mind, determining the automorphism group of collections of differentials, such as $\hzero$, and more generally how group actions on such objects behave, is a worthwhile pursuit in its own right.
 Moreover, the automorphism groups of Riemann surfaces, in particular, have given rise to many interesting theories.
-Most notably, it is known that every finite group is the full group of isometries of some Riemann surface.
+Most notably, it is known that every finite group is the full automorphism group of some Riemann surface.\todo{reference}
 
-The main focus of this thesis will lie in considering the $k[G]$-module structure of various spaces of differentials on $X$, for a subgroup $G$ of the automorphism group $\aut(X)$.
+The main focus of this thesis will lie in considering the $k[G]$-module structure of various spaces of differentials on $X$, and related spaces, for a subgroup $G$ of the automorphism group $\aut(X)$.
 Moreover, we will focus on what happens in positive characteristic.
-Of course, if $p$ divides the order of $G$ the theory is often a lot more complex --- for example, we no longer have Maschke's theorem, a fundamental results in representation theory.
+Of course, if $p$ divides the order of $G$ the theory is often a lot more complex --- for example, we no longer have Maschke's theorem, a fundamental result in representation theory.
 
 The thesis is broken in to four main chapters (excluding this one).
 The first gives background and fixes notation.
 We proceed to describe and motivate the other three chapters below.
 
-\begin{comment}
-
-
-
-
-Riemann planted the seeds for this to happen when he, along with Roch, proved the Riemann-Roch theorem, showing the pre-eminent role that meromorphic functions and differentials play in the study of Riemann surfaces.\todo{reference Riemann's thesis}
-In his study of this area, Riemann viewed differentials from an geometric-analytic perspective, as maps on tangent space bundle of the surfaces he was considering.
-
-It was known at the time that the existence of meromorphic functions implied gave the equivalence of compact Riemann surfaces and smooth complex curves, but what the Riemann-Roch theorem gave was a way to define the genus of a curve, in terms of the dimension of the space of holomorphic differentials, $\hzero$.\todo{reference original paper of Riemann-Roch}
-It is for this reason that differentials, and in particular holomorphic differentials, have played such a pivotal role in the development of the theory of algebraic curves.
-
-On the other hand, the automorphism groups of curves are of interest themselves. \todo{expand}
-
-Of course, any action on a Riemann surface $X$ also gives rise to an action on the functions and differentials on $X$.
-It is therefore a natural thing that in \todo{find year} Hecke asked what the $\CC [G]$-module structure of $\hzero$ was.
-It is with this problem in mind that the bulk of this thesis was written.
-
-Now the problem as stated above, for complex curves,  was solved by Chevalley and Weil, who completely described the $\CC[G]$-module structure of the space of holomorphic differentials of a smooth curve in \todo{cite}.
-However, as the century progressed, it became more natural to ask the same questions over an arbitrary field $k$.\todo{change to general curve}
-
-However, there is much more difficulty when the characterisitic of $p$ does divide the order of $G$.
-In fact, the $k[G]$-module structure of $\hzero$ is still unknown in this case.
-However, there are 
-\end{comment}
-
-
 \section{Bases of spaces of (poly)differentials on hyperelliptic curves}
 
-Hyperelliptic curves are a classically studied example of algebraic curves, characterised by being double covers of the projective line.
+Hyperelliptic curves are a classically studied class of algebraic curves, characterised by being double covers of the projective line.
 They can be viewed as a natural extension of elliptic curves to higher genera, sharing a similar defining equation of $y^2 = f(x)$ (if $\cha(k) \neq 2$).
 It is this concrete and relatively simple defining equation that allows explicit calculations to be made for them.
 Added to this, there exist hyperelliptic curves with every possible genus (except one and zero), so in this sense they are not a very restrictive class to consider.
 Hyperelliptic curves also have a number of nice geometric properties --- for example, they can be characterised entirely in terms of Weierstrass points, and also every genus 2 curve is hyperelliptic.
 
-It is for these reasons that we make regular use of hyperelliptic curves throughout this thesis.
-However, despite being commonplace in algebraic geometry, it is not always easy to find precise statements in the literature, especially when working over a field of characterisitc two.
-For this reason we collect a number of results in Chapter 3 which we require later in the thesis.
+It is for these reasons that we study hyperelliptic curves throughout this thesis.
+However, despite being commonplace in algebraic geometry, it is not always easy to find precise statements in the literature, especially when working over a field of characterisitc two, where hyperelliptic curves behave very differently.
+It is for these reasons that we split this chapter in two sections, according to the characteristic of $k$, and start each section by collecting results that will be needed, either later in the chapter or the rest of thesis.
 
-The highlight of the chapter is Proposition \ref{propbasishyperellipticp=2} and Proposition \ref{prophyperellipticbasispnot2}, which give bases of both the space of holomorphic differentials and the space of polydifferentials when the characteristic of $k$ is two and is not two, respecitively.
+The highlights of the chapter are Proposition \ref{propbasishyperellipticp=2} and Proposition \ref{prophyperellipticbasispnot2}, which give bases of both the space of holomorphic differentials and the space of polydifferentials when the characteristic of $k$ is two and is not two, respectively.
 We first state the basis when the characteristic of $k$ is not 2, recalling that in this case the function field $K(X)$ is equal to $k(x,y)$, where $y$ satisfies $y^2 = f(x)$ for some polynomial $f(x)$.
-    \begin{prop}
+    \begin{unnumprop}
     Let $m\geq 1$ and let $\omega := \frac{dx^{\otimes m}}{y^m}$. 
-    Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by:
-        \begin{itemize}
-        \item $\omega, x\omega, \ldots , x^{g-1}\omega$ if $m=1$ 
-        \item $\omega, x\omega, x^2\omega$  if $m=g=2$ 
-        \item $\omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots x^{(m-1)(g-1)-2}y\omega$ otherwise.
-        \end{itemize}
-    \end{prop}
+    Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by:\\
+        \begin{tabular}{c c}
+        $\omega, x\omega, \ldots , x^{g-1}\omega$ &  if $m=1$, \\
+        $\omega, x\omega, x^2\omega$  &  if $m=g=2$, \\
+        $\omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots x^{(m-1)(g-1)-2}y\omega$ &  otherwise.
+        \end{tabular}
+    \end{unnumprop}
     
 Note that the case where $m=1$ is already in the literature, for example see \cite[Prop. 7.4.26]{liu} or \cite[Ch. IV, \S 4, Prop. 4.3]{griffiths}.
  
 On the other hand, if $\cha(k) = 2$ then $K(X)$ is still equal to an extension of $k(x)$ of the form $k(x,y)$, but this time we require $y$ to satisfy $y^2 + H(x)y = F(x)$, where $F(x)$ and $H(x)$ are polynomial, whose degrees will determine the genus.
 We now give another basis for this case.
-    \begin{prop}\label{propbasishyperellipticp=2}
-    We assume that $g\geq 2$ and let $\omega:= \frac{dx^{\otimes m}}{H(x)^m}$. 
-    Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by
-        $\begin{cases}
-        \omega, x\omega, \ldots , x^{g-1}\omega &  \mbox{if}\ m=1 \\
-        \omega, x\omega, x^2\omega & \mbox{if}\ m=g=2 \\
-        \omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots x^{(m-1)(g-1)-2}y\omega & \mbox{otherwise.}
-        \end{cases}$
-    \end{prop}
+    \begin{unnumprop}
+    Let $m\geq 1$ and let $\omega:= \frac{dx^{\otimes m}}{H(x)^m}$. 
+    Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by:\\
+        \begin{tabular}{c c}
+        $\omega, x\omega, \ldots , x^{g-1}\omega$ &  if $m=1$, \\
+        $\omega, x\omega, x^2\omega$ & if $m=g=2$, \\
+        $\omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots x^{(m-1)(g-1)-2}y\omega$ & otherwise.
+        \end{tabular}
+    \end{unnumprop}
     
 Note that the case where $m=1$ can again be found in \cite[Prop. 7.4.26]{liu}.
 
-Equipped with the knowledge of these explicit basis we can examine group actions on $H^0(X,\Omega_X^{\otimes m})$ much more readily.
+Equipped with the knowledge of these explicit bases we can examine group actions on $H^0(X,\Omega_X^{\otimes m})$ much more readily.
 For example, from work done in Chapter 5 we know that to see whether the action of $\aut(X)$ on $H^0(X,\Omega_X^{\otimes m})$ is faithful it suffices to check that the action of the hyperelliptic involution is not trivial.
-We then use the above propositions to compute the action of the hyperelliptic involution on the above bases, whereupon it is clear when the action is trivial and when it is not.
+We then use the above propositions to compute the action of the hyperelliptic involution on the above bases, whereupon it is clear when the action is trivial and when it is not.\todo{correct this}
 
-\section{Group actions on algebraic de Rham}
+\section{Group actions on algebraic de Rham cohomology}
 
 In the study of smooth manifolds de Rham cohomology is a well-established tool, which determines to what extent closed differential forms on a smooth manifold $M$ fail to be exact.
-Moreover, in 1931 Georges de Rham \todo{citation} proved de Rham's theorem.
+Moreover, in 1931 Georges de Rham \cite{derhamstheorem} proved de Rham's theorem.
     \begin{unnumthm}[de Rham's theorem]
     For any smooth real or complex manifold $M$ we have an isomorphism
         \[
@@ -115,71 +92,72 @@ Moreover, in 1931 Georges de Rham \todo{citation} proved de Rham's theorem.
 
 Of course, if de Rham cohomlogy can be defined on complex manifolds, one can compute the de Rham cohomology of Riemann surfaces.
 This leads to the obvious question as to whether one can define analog of de Rham cohomology for algebraic curves.
-Grothendieck answered this in a letter to Atiyah \todo{citation}, where in fact he defined the algebraic de Rham cohomology of a scheme.
-The Hodge-de Rham spectral sequence arose from this definition, and has been much studied. \todo{citations}
-In particular, Deligne and Illusie proved that if, for example $X$ is a complex, projective variety, over a field of characeristic zero then
+Grothendieck answered this in a letter to Atiyah \cite{grothendiecklettertoatiyah}, where in fact he defined the algebraic de Rham cohomology of a scheme.
+The Hodge-de Rham spectral sequence arose from this definition, and has been much studied.
+In particular, Deligne and Illusie proved that if, for example $X$ is a complex, projective variety, over a field of characteristic zero then
     \begin{equation}\label{equationhodgetheorydecomposition}
-    H^n_{\text{dR}}(X) \cong \bigoplus_{i=0}^n H^i(X,\Omega_X^{n-i}).
-    \end{equation}\todo{citation}
+    H^n_{\text{dR}}(X) \cong \bigoplus_{i=0}^n H^i(X,\Omega_X^{n-i}),
+    \end{equation}
+see \cite{deligneillusie}.
 Of course, when $X$ is a curve this is equivalent to saying that we have a canonical short exact sequence
     \begin{equation}\label{equationafterhodgetheorydecomposition}
     0 \ra \hzero \ra \derhamhone \ra \hone \ra 0.
     \end{equation}
 Moreover, in general (for example, when $\cha(k) = 0$), this sequence splits not only as $k$ vector spaces, but also as $k[G]$-modules, where $G$ is a subgroup of $\aut(X)$.
 However, this is not always the case --- in particular, if $\cha(k) = p >0$ divides the order $G$, the sequence may not split.
-In \todo{cite} Hortsch demonstrated that if $X$ is a hyperelliptic curve over $k$, a field of characteristic $p$, has $y^2 = x^p-x$ as a defining equation, then \eqref{equationafterhodgetheorydecomposition} does not split.
+In \cite{hortsch} Hortsch demonstrated that if $X$ is a hyperelliptic curve over $k$, an algebraically closed field of characteristic $p$, has $y^2 = x^p-x$ as a defining equation, then \eqref{equationafterhodgetheorydecomposition} does not split.
 
 In Chapter 4 we generalise this result to the following theorem.
-    \begin{thm}
+    \begin{unnumthm}
     Let $X$ be a hyperelliptic curve over an algebraically closed field $k$ of characteristic at least 3.
     Suppose there exists $\tau \in \aut(X)$ such that the induced automorphism $\bar \tau \colon \mathbb P_k^1 \ra \mathbb P_k^1$ is given by $x \mapsto x+a$ for some $0 \neq a \in k$.
     We let $G = \langle \tau \rangle$ be the subgroup of $\aut(X)$ generated by $\tau$.
     Then the sequence \eqref{equationderhamcohomologyshortexactseqeunce} does not split as a sequence of $k[G]$-modules.
-    \end{thm}
+    \end{unnumthm}
 Such curves exist in every genus and every characteristic greater than 2.
-We give examples of such curves, and also give an example from \todo{cite} of a curve that is as described in theorem, except that it is not ramified above $\infty \in \PP_k^1$, and show that for this curve the short exact sequence \eqref{equationafterhodgetheorydecomposition} does split.
+We give examples of such curves, and also give an example from \cite{automorphismshyperellipticmodular} of a curve that is as described in theorem, except that it is not ramified above $\infty \in \PP_k^1$, and show that for this curve the short exact sequence \eqref{equationafterhodgetheorydecomposition} does split.
 
 We prove the above theorem by first computing explicit bases of each of the spaces in \eqref{equationafterhodgetheorydecomposition}.
 As mentioned, in the preceding chapter we already computed a basis of $\hone$, and we use this along with Serre duality to compute a basis of $\hone$.
-    \begin{thm}
+    \begin{unnumthm}
     The elements $\frac{y}{x}, \ldots, \frac{y}{x^g} \in K(X)$ are regular on $U_0 \cap U_\infty$, and their residue classes $\left [ \frac{y}{x} \right ],  \ldots, \left [ \frac{y}{x^g} \right]$ form a basis of $\hone$.
-    \end{thm}\todo{edit theorem}
+    \end{unnumthm}\todo{edit theorem}
  It should be noted that this basis is the same regardless of characteristic --- since this is not the case for the dual space $\hzero$, this may be surprising.
- We then go on to compute the basis of $\derhamhone$ as well\todo{cite}, but this is slightly more involved, so we do not state it here.
+ We then go on to compute the basis of $\derhamhone$ as well, given in Theorem \ref{theorembasisofderham}, but this is slightly more involved, so we do not state it here.
 
 
  \section{Faithful actions on Riemann-Roch spaces}
 
  A significant open problem is to, given a smooth, projective curve over an algebraically closed field $k$, completely determine the $k[G]$-module structure of $\hzero$, for any subgroup $G$ of $\aut(X)$.
- This was originally asked by Hecke in \todo{cite}, for the complex case, and in \textbf{year} Chevalley and Weil completely determined $\CC[G]$-module structure.
-This was generalised to a curve over any algebraically closed field of characteristic zero in \textbf{year} separately by Broughton and Lewittes in \todo{cite}.
-The question has also been answered by Kani \todo{cite} and Nakajima \todo{cite} if the projection $\pi \colon X \ra Y:= X/G$ is tamely ramified.
+ This was originally asked by Hecke in \todo{cite}, for the complex case, and in 1934 Chevalley and Weil completely determined $\CC[G]$-module structure in \cite{chev}.
+This was later generalised to a curve over any algebraically closed field of characteristic zero by Lewittes \cite{lewittes}.
+The question has also been answered by Kani \cite{Kani} and Nakajima \cite{naka2} if the projection $\pi \colon X \ra Y:= X/G$ is tamely ramified.
 Valentini and Madan determined the structure when $\pi$ may be wildly ramified, but they assume that $G$ is a cyclic group of order $p^n$, and this was recently generalised by Karanikolopoulos and Kontogeorgis to any cyclic group.
 Other papers look at this - read intros to and then write a sentence about other papers already referenced in our paper.
 
 A weaker, but naturally related, question is: "When does a group $G$ act faithfully on $H^0(X,\Omega_X)$."
 We answer this in full generality, and also extend the result to look at the space of holomorphic polydifferentials denoted $H^0(X,\Omega_X^{\otimes m})$.
 In particular we obtain the following theorem.
-    \begin{thm}\label{theoremfaithfulaction}
+    \begin{unnumthm}
     Suppose that $g_X\geq 2$ and let $m\geq1$. 
     Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ contains a hyperelliptic involution and one of the following two sets of conditions holds:
         \begin{itemize}
         \item $m=1$ and $p=2$;
         \item $m=2$ and $g_X=2$.
         \end{itemize}
-    \end{thm}
+    \end{unnumthm}
 Our main method of attack in proving this is comparing the dimension of $H^0(X,\Omega_X^{\otimes m})$ to its fixed space, $H^0(X,\Omega_X^{\otimes m})^G$, for a cyclic group $G$ of prime order.
 We then aim to reduce the general case down to this somewhat more manageable example.
 
 We use similar techniques to compute when $G$ acts trivially on more general Riemann-Roch spaces, and in particular we prove the following proposition.
-    \begin{prop}\label{nakaj}
+    \begin{unnumprop}\label{nakaj}
     Suppose $p>0$ and $G$ is a cyclic group of order $p^l$ for some $l\geq 1$.
     Let $D$ be a $G$-invariant divisor on $X$ such that $\deg(D)>2g_X-2$.
     Then the action of~$G$ on $H^0(X,\cO_X(D))$ is trivial if and only if
         \[ 
         (p^l-1)\deg(D)=p^l\left(g_X-g_Y-\sum_{Q\in Y}\left\langle \frac{n_Q}{e_Q} \right\rangle\right).
         \]
-    \end{prop}
+    \end{unnumprop}
 
 
 
@@ -206,7 +184,7 @@ Also, in 1986 Broughton \cite{Broughton} computed the $k[G]$-module structure of
 In this report we will not look directly at the $k[G]$-module structure, but rather at the related question of determining when the action of $G$ on $H^0(X,\Omega_X)$, and also on $H^0(X,\Omega_X^{\otimes m})$, is faithful.
 The following is our main result:
 
-    \begin{unnumthm}{\bf 1}\label{maintheorem}
+    \begin{unnumthm}
     Suppose that $g_X\geq 2$ and let $m\geq1$. 
     Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ contains a hyperelliptic involution and one of the following two sets of conditions holds:
         \begin{itemize}
