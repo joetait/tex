@@ -18,7 +18,7 @@ We then use this to state a strong version of the Riemann-Hurwitz formula, at th
 The section concludes by looking at group actions on curves, and defining higher ramification to state Hilbert's formula.
 
 The chapter finishes by discussing Serre duality, which will be used in the fourth chapter of the thesis.
-In particular, we use \cech cohomology to give an explicit description of this duality.
+We do this using a particularly explicit description of $\hone$ and $\hzero$, so that explicit computations can be made.
 
 
 \section{Set up}
@@ -27,16 +27,16 @@ Throughout this thesis $k$ will denote an algebraically closed field of characte
 It should be noted that while the majority of results in the thesis hold for all characteristics, including $p=0$, our main focus will be on the case $p > 0$.
 
 When we refer to an \emph{algebraic curve} (or often just a \emph{curve}) we will mean a smooth, connected, projective variety of dimension one over $k$.
-In particular, we let $\PP_k^1$ be the projective.
+In particular, we let $\PP_k^1$ be the projective line.
 Similarly, when we refer to an \emph{affine curve} we mean a smooth, connected, affine variety of dimension one over $k$. % Add if needed
-We recall that a morphism of affine curves $X$ and $Y$ is just polynomial map $\phi \colon X \ra Y$.
+We recall that a morphism of affine curves $X$ and $Y$ is just a polynomial map $\phi \colon X \ra Y$.
 Then if $X$ and $Y$ are algebraic curves, a map $\phi \colon X \ra Y$ is a morphism if we can write $X = \cup X_i$ and $Y = \cup Y_i$ for open, affine $X_i$ and $Y_i$, such that $\phi(X_i) \subseteq Y_i$ and $\phi|_{X_i}$ is a morphism for every $i$.
 
 
 
 \section{Functions and differentials}
 
-In this section we recall the basic results pertaining to functions and differentials on $X$.
+In this section we recall basic results pertaining to functions and differentials on a curve $X$. 
 
 A \emph{meromorphic function} on $X$ is any morphism $f \colon X \ra \PP_k^1$, other than the morphism mapping all points to infinity.
 The collection of meromorphic functions on $X$ is denoted $K(X)$, and called the \emph{function field} of $X$.
@@ -75,7 +75,7 @@ We then define \emph{the order of $f$ at $P$} to be $\ord_P(f) := n$.
 For any $f \in K(X)^*$ and $P \in X$ at least one $f$ or $1/f$ is an element of $ \cO_{X,P}$.
 Hence we may extend the definition of $\ord_P$ to the whole $K(X)^*$, by letting $\ord_P(f) := - \ord_P(1/f)$ whenever $f \notin \cO_{X,P}$.
 If $\ord_P(f) = n >0$ we say that $f$ has a \emph{zero of order $n$} at $P$, whilst if $\ord_P(f) = n < 0$ then we say that $f$ has a \emph{pole of order $n$} at $P$.
-Clearly, for any $f, g \in K(X)^*$ and $P \in X$, it is true that $\ord_P(fg) = \ord_P(f) + \ord_P(g)$.
+Clearly, for any $f, g \in K(X)^*$ and $P \in X$, it is true that $\ord_P(fg) = \ord_P(f) + \ord_P(g)$.\todo{inequality}
 We call any element $t \in \cO_{X,P}$ which has order $1$ at $P$ a \emph{uniformising parameter at $P$}.
 
     \begin{prop}\label{propfinitelymanyzeroesandpoles}
@@ -106,7 +106,7 @@ Then $d(f)$ is the image of $[f]$ in this quotient.
 
 In particular, when $R = K(X)$ we let $\Omega_{K(X)} := \Omega_k(K(X))$.
 Then we call the map $d \colon K(X) \ra \Omega_{K(X)}$ the \emph{differential map} and we let $df := d(f)$.
-We say that $\omega \in \Omega_{K(X)}$ is a \emph{meromorphic differential}.
+We say that $\omega \in \Omega_{K(X)}$ is a \emph{meromorphic differential} on $X$.
 
     \begin{prop}\label{propdifferentialsareonedimensional}
     The module of differentials, $\Omega_{K(X)}$, is a one dimensional vector space over $K(X)$.
@@ -115,57 +115,52 @@ We say that $\omega \in \Omega_{K(X)}$ is a \emph{meromorphic differential}.
     \begin{proof}
     See \cite[Prop. 1.5.9]{stichtenoth}.
     \end{proof}
+\todo[inline]{mention that $\Omega_{X,P}$ is module of differentials of $\cO_{X,P}$. $dt$ generates as a $\co_{X,P}$ module}
 
 We suppose that $P \in X$ and we choose a uniformising parameter $t \in \cO_{X,P}$.
-Then for any $ 0 \neq \omega \in \Omega_{K(X)}$ there exists a unique integer $n \in \ZZ$ and unit $u \in \cO_{X,P}$ such that $\omega = ut^ndt$, by Proposition \ref{propdifferentialsareonedimensional}.
-We define the \emph{order of $\omega$ at $P$} to be $\ord_P(\omega) := n$.
+Then for any $ 0 \neq \omega \in \Omega_{K(X)}$ there exists a unique $f \in K(X)$ such that $\omega = fdt$, by Proposition \ref{propdifferentialsareonedimensional}.
+We define the \emph{order of $\omega$ at $P$} to be $\ord_P(\omega) := \ord_P(f)$, and remark that this is independent of the choice of $t$.
 The set of differentials regular at $P$ form a module over $\cO_{X,P}$, which we call the \emph{module of differentials regular at $P$}, and denote by $\Omega_{X,P}$.
+Note that for any functions $f \in K(X)$ and differentials $\omega, \omega' \in \Omega_{K(X)}$ we have $\ord_P(f\omega) = \ord_P(f) + \ord_P(\omega)$ and $\ord_P(\omega + \omega') \geq \inf\{\ord_P(\omega), \ord_P(\omega')\}$.
 
-    \begin{lem}
-    Fix $P \in X$ and let $t \in \cO_{X,P}$ be a uniformising parameter.
-    Then $\Omega_{X,P}$ is generated as a $\cO_{X,P}$-module by $dt$.
-    \end{lem}
-    \begin{proof}
-    As stated in \cite[Pg.\ 300]{hart}, this follows from \cite[Chap.\ II, \S 8, Prop.\ 8.7 and Thm.\ 8.8]{hart}.
-    \end{proof}
-
-Using the previous lemma we now show that if $f \in K(X)$ is regular at $P \in X$ then so is $df$.
-Firstly, if $f$ is a unit at $P$ then we let $a:= f(P) \in k$.
-Then $\ord_{P}(f - a) \geq 1$, and also $df = d(f-a)$, since the image of $d$ on $k$ is zero.
-So it suffices to show our claim for $f \in \mathcal{M}_{X,P}$.
-Any such $f$ is equal to $ut^n$ for some unit $u$, uniformising parameter $t$ and $n \in \NN$.
-Then $d(ut^n) = utd(t^{n-1}) + t^{n-1}d(ut) = (n-1)ut^{n-1}dt + t^{n-1}d(ut)$.
-Since $ut$ is also a uniformising parameter, both terms are regular at $P$.
-Finally, as $\ord_P(\omega - \omega') \geq \max\{\ord_P(\omega), \ord_P(\omega')\}$ (see \todo{citation}), it follows that $\ord_P(f) \geq 0$.
+Note that for $f \in \cO_{X,P}$ we have $df \in \Omega_{X,P}$.
+If $f$ is a local parameter at $P$ this follows from the definition of $\Omega_{X,P}$, and if $\ord_P(f) >1$ it then follows from this and the product rule.
+Finally, if $f$ is a unit at $P$ then it is true because $df = df(f - f(P))$.
 
 Let $U$ be an open subset of $X$.
-We call a differential $\omega$ \emph{holomorphic on $U$} if $\ord_P(\omega) \geq 0$ for all $P \in U$, and we let
+We call a differential $\omega \in \Omega_{K(X)}$ \emph{holomorphic on $U$} if $\ord_P(\omega) \geq 0$ for all $P \in U$, and we let
     \[
     H^0(U, \Omega_X) := \{ \omega \in \Omega_{K(X)} | \ord_P(\omega) \geq 0\ \text{for all}\ P \in X\} \cup \{ 0 \}
     \]
 be \emph{the space of holomorphic differentials on $U$}.
-If $\omega \in \Omega_{K(X)}$ is holomorphic on $X$ we say that $\omega$ is \emph{holomorphic}, and so $\hzero$ is the space of holomorphic differentials.
+If $\omega \in \Omega_{K(X)}$ is holomorphic on $X$ we say that $\omega$ is \emph{holomorphic}, and so $\hzero$ is the space of global holomorphic differentials.
+As in \cite[Chap.\ 8, \S 2, Prop.\ 3]{fulton}, the $k$-vector space $\hzero$ is finite dimensional.
 
     \begin{defn}\label{definitiongenus}
     We define the \emph{genus} of $X$ to be
         \[
-        g_X := \dim_k \left( H^0(X,\Omega_X)\right).
+        g_X := \dim_k H^0(X,\Omega_X).
         \]
     \end{defn}
 
 The genus is an invariant of fundamental importance in the study of algebraic curves.
 In particular, we remark that if $k = \CC$ then the genus of an algebraic curve (also called the arithmetic genus) is the same as the topological genus of the corresponding Riemann surface (the corresponding Riemann surface being found via the equivalence of categories mentioned earlier).
 
-We now briefly recall the notion of a polydifferential.
-If we consider an element of the tensor product $\omega \in \Omega_X^{\otimes m}$ then it can be locally written as $f dx_1\otimes \ldots \otimes dx_m$, where $f, x_i \in K(X)$ for all $1 \leq i \leq m$.
+We now briefly recall the notion of a \emph{polydifferential}.
+If we consider an element of the tensor product $\omega \in \Omega_{K(X)}^{\otimes m}$, for some $m \in \ZZ_{>0}$, then it can be written as $f dx_1\otimes \ldots \otimes dx_m$, where $f, x_i \in K(X)$ for all $1 \leq i \leq m$.
 Let $P$ be a point in $X$.
 Since each $dx_i$ can be written as $f_i dt$ for some $f_i\in K(X)$ and some uniformising parameter $t$ at $P$, we can rewrite $\omega$ as $f' dt \otimes \ldots \otimes dt$, where $f' = f \cdot f_1 \cdots f_m$.
-We then define the order of $\omega$ at $P$ to be $\ord_P(\omega ) := \ord_P(y')$.
-In the particular case where $\omega = fdx \otimes \ldots \otimes fdx = f^m dx^{\otimes m}$, then we have $f_1 = \ldots = f_m = h$ for some $h \in K(X)$ when we change $x$ to a uniformising parameter.
-Hence in this instance 
+We then define the order of $\omega$ at $P$ to be $\ord_P(\omega ) := \ord_P(f')$.
+In the particular case where $\omega' = \omega^{\otimes m}$ for some $\omega \in \Omega_{K(X)}$ then we have the equality
     \[ 
-    \ord_P(\omega) = \ord_P(h^m) = m\ord_P(h) = m\ord_P(dx).
+    \ord_P(\omega') = m\ord_P(\omega).
     \]
+Finally, for any open $U \subseteq X$ we define 
+    \[
+    H^0(X,\Omega_{K(X)}^{\otimes m}):= \{\omega \in \Omega_{K(X)}^{\otimes m} | \ord_P(\omega) \geq 0 \ \text{for all}\ P \in X\}
+    \]
+to be the \emph{space of holomorphic polydifferentials} on $U$.
+We call the elements of $H^0(X,\Omega_{K(X)}^{\otimes m})$ \emph{global holomorphic polydifferentials} on $X$.
 
 
 \section{The Riemann-Roch theorem}
@@ -201,11 +196,13 @@ Now for any differential $0 \neq \omega \in \Omega_{K(X)}$ we define the \emph{d
     \[
     \di(\omega) := \sum_{P \in X} \ord_P(\omega)[P].
     \]
-To show that does indeed have finite support we start by recalling for any $P \in X$ and $f \in K(X)$ then $\ord_P(df) = 0$ if $f$ is a unit in $\cO_{X,P}$, which is the case for all but finitely many points $P$ in $X$.
-Then, since any differential $\omega$ can be written as $gdf$ for some $f,g \in K(X)$, and $\ord_P(\omega) = \ord_P(g) + \ord_P(df)$, it follows that $\omega$ has only finitely many zeroes and poles --- \ie $\di(\omega)$ has finite support.
+To show that $\di(\omega)$ does indeed have finite support we recall that by Proposition \ref{propdifferentialsareonedimensional} then $\omega$ can be written in the form $fdg$ for some $f, g \in K(X)$.
+Then every pole of $\omega$ is a pole of $f$ or a pole of $g$.
+Thus, by Proposition \ref{propfinitelymanyzeroesandpoles} it follows that $\omega$ has only finitely many poles.
+It can be shown that $\omega$ has finitely many zeroes in a similar fashion.
 If $W$ is a divisor on $X$ and $W = \di(\omega)$ for some $ 0 \neq \omega \in \Omega_{K(X)}$ then we say that $W$ is a \emph{canonical divisor} on $X$.
 
-The principal divisors of $X$ form a subgroup of $\di(X)$, and we say that two divisors $D, D' \in \di(X)$ are \emph{equivalent}, denoted $D \sim D'$, if their image in the quotient of $\di(X)$ by the group of principal divisors is the same; \ie if there exists $f \in K(X)$ such that $ D = D' + \di(f)$.
+The principal divisors of $X$ form a subgroup of $\Di(X)$, and we say that two divisors $D, D' \in \di(X)$ are \emph{equivalent}, denoted $D \sim D'$, if their image in the quotient of $\Di(X)$ by the group of principal divisors is the same; \ie if there exists $f \in K(X)$ such that $ D = D' + \di(f)$.
 By the following corollary, it makes sense to refer to the (unique) canonical divisor on $X$, up to equivalence, which we write as $K_X$.
 
     \begin{cor}
@@ -243,7 +240,7 @@ Also, it follows immediately from Proposition \ref{propfinitelymanyzeroesandpole
     \end{lem}
     \begin{proof}
     Choose $\omega \in \Omega_{K(X)}$ and let $W = \di(\omega)$.
-    Since $\di(f \omega) = \di(f) + \di(\omega)$, it follows that if $f \in H^0(X,\cO_X(D))$ if and only if $f \omega \in H^0(X,\Omega_X(D - W))$.
+    Since $\di(f \omega) = \di(f) + \di(\omega)$, it follows that $f \in H^0(X,\cO_X(D))$ if and only if $f \omega \in H^0(X,\Omega_X(D - W))$.
     Since $\Omega_{K(X)}$ is a one dimensional vector space over $K(X)$ we can find a unique $f \in K(X)$ for every differential $\omega'$ in $H^0(X,\Omega_X(D - W)$ such that $\omega' = f \omega$.
     Hence the map $f \mapsto f\omega$ is an isomorphism.
     \end{proof}
@@ -257,17 +254,14 @@ We now state the celebrated Riemann-Roch theorem.
     Furthermore, let $D$ be any divisor on $X$, and let $W$ be any canonical divisor on $X$.
     Then
         \[
-        \dim_k(H^0(X,\cO_X(D))) = \deg(D) + 1 - g_X + \dim_k(H^0(X,\cO_X(W-D)).
+        \dim_k H^0(X,\cO_X(D)) = \deg(D) + 1 - g_X + \dim_k H^0(X,\cO_X(W-D).
         \]
     \end{thm}
     \begin{proof}
     See \cite[Chap.\ IV, \S 1, Thm.\ 1.3]{hart} or, for a more elementary approach, \cite[Chap.\ 8, \S 6]{fulton}.
     \end{proof}
 
-Note that by Lemma \ref{lemisomorphismofdifferentialsandfunctions} we can essentially replace $\cO_X$ by $\Omega_X$ in the statement of the Riemann-Roch theorem.
-
-
-We now give two corollaries to the Riemann-Roch theorem.
+We now give some corollaries to the Riemann-Roch theorem.
 
     \begin{cor}\label{cordegreeofcanonicaldivisor}
     For any canonical divisor $W$ on $X$, we have 
@@ -278,29 +272,30 @@ We now give two corollaries to the Riemann-Roch theorem.
     \begin{proof}
     The statement follows by rearranging
         \begin{align*}
-        g_X & = \dim H^0(X,\cO_X(W))  \\ & = \deg(W) + 1 -g_X +  \dim_k H^0(X,\cO_X(W-W))\\ & = \deg(W) + 1 -g_X + 1,
+        g_X & = \dim_k H^0(X,\cO_X(W))  \\ & = \deg(W) + 1 -g_X +  \dim_k H^0(X,\cO_X(W-W))\\ & = \deg(W) + 1 -g_X + 1,
         \end{align*}
     where the first equality is Definition \ref{definitiongenus}, and the second equality follows from the Riemann-Roch theorem.
     \end{proof}
 
+    \todo[inline]{Change next corollary?}
     \begin{cor}
     If $D$ is a divisor degree greater than $2g_X-2$ and $P$ is any point in $X$ then
         \[
-        \dim_k(H^0(X,\cO_X(D +[P]))) = \dim_k(H^0(X,\cO_X(D))) + 1.
+        \dim_k H^0(X,\cO_X(D +[P])) = \dim_k H^0(X,\cO_X(D)) + 1.
         \]
     \end{cor}
     \begin{proof}
     Since $\deg(D) > 2g-2$, it follows from the previous lemma that $\deg(W-D) <0$.
-    Then $\dim_k(H^0(,\cO_X(W - D)))  = 0$.
+    Then $\dim_k(H^0(X,\cO_X(W - D)))  = 0$.
     We then apply the Riemann-Roch theorem and see that
         \begin{multline*}
-        \dim_k(H^0(X,\cO_X(D + [P]))) = \deg(D +[P]) + 1 - g_X \\ = \deg(D) + 1 + 1 - g_X = \dim_k(H^0(X,\cO_X(D)) + 1.
+        \dim_k H^0(X,\cO_X(D + [P])) = \deg(D +[P]) + 1 - g_X \\ = \deg(D) + 1 + 1 - g_X = \dim_k H^0(X,\cO_X(D) + 1.
         \end{multline*}
     \end{proof}
 
 Using the Riemann-Roch theorem and Corollary \ref{cordegreeofcanonicaldivisor} we can compute the dimension of the space of \emph{holomorphic polydifferentials} of order $m$, denoted $H^0(X,\Omega_X^{\otimes m})$, where $m \in \ZZ_{> 0}$.
 
-    \begin{lem}\label{dim3}
+    \begin{cor}\label{dim3}
     Let $g_X, m\geq 2$. Then
         \begin{equation}
         \dim_kH^0(X,\Omega_X^{\otimes m}) = (2m-1)(g_X-1) 
@@ -308,7 +303,8 @@ Using the Riemann-Roch theorem and Corollary \ref{cordegreeofcanonicaldivisor} w
     \end{lem}
     \begin{proof}
     Since $g_X\geq 2$ it follows from Corollary \ref{cordegreeofcanonicaldivisor} that $\deg(W)\geq1$, and hence $\deg(mW)>\deg(W)$.
-    Since $H^0(X,\Omega_X^{\otimes m}) \cong H^0(X,\Omega_X(mW))$ it then follows from the Riemann-Roch theorem (Theorem \ref{theoremriemannroch}) that
+    Similarly to Lemma \ref{lemisomorphismofdifferentialsandfunctions}, we have $H^0(X,\Omega_X^{\otimes m}) \cong H^0(X,\cO_X(mW))$.
+    It then follows from the Riemann-Roch theorem (Theorem \ref{theoremriemannroch}) and Corollary \ref{cordegreeofcanonicaldivisor} that
         \[
         \dim_kH^0(X,\Omega_X^{\otimes m})=\deg(mW)+1-g_X=(2m-1)(g_X-1).
         \]
@@ -363,7 +359,7 @@ The following theorem asserts that the degree of $\phi$ is the same as the numbe
 
     
 Suppose $P \in X$ is a ramification point.
-Then if $p = \cha(k)$ divides $e_P$ we say that $P$ is \emph{wildly ramified}, and we also say $\phi$ is wildly ramified if this holds for any point in $X$.
+Then if $p = \cha(k)$ divides $e_P$ we say that $P$ is \emph{wildly ramified}.
 If $p$ does not divide $e_P$ we say that $P$ is \emph{tamely ramified}.
 
     \begin{defn}
@@ -401,6 +397,7 @@ Note that since $\phi^*(t)$ is regular at $P$ it follows that $\delta_P$ is non-
         R:= \sum_{P \in X} \delta_P [P].
         \]
     \end{defn}
+We will see in Theorem \ref{hilbertsformula} that this sum does have finite support.
 
 The following theorem has the classical Riemann-Hurwitz formula as a corollary, but also goes further, actually relating the canonical divisors on $X$ and $Y$.
     \begin{thm}\label{theoremdetailedhurwitz}
@@ -420,27 +417,25 @@ The following theorem has the classical Riemann-Hurwitz formula as a corollary, 
 
 As a corollary to this we have the Riemann-Hurwitz formula.
     \begin{cor}[Riemann-Hurwitz Formula]\label{corhurwitzformula}
-    Given two non-singular projective curves $X$ and $Y$ of genera $g_X$ and $g_Y$ respectively, with a degree $n$ map $\phi\colon X \rightarrow Y$, then
+    Given $\phi \colon X \ra Y$ as above, we have
         \[
-        2g_X - 2 = n(2g_Y -2) + \deg(R),
+        2g_X - 2 = n(2g_Y -2) + \deg(R).
         \]
-    where $R$ is the ramification divisor of $\phi$.
     \end{cor}
     \begin{proof}
     This follows from Corollary \ref{cordegreeofcanonicaldivisor} and Theorem \ref{theoremdetailedhurwitz}, by taking degrees in \eqref{equationstronghurwitzformula}.
     \end{proof}
 
-Let $G$ be a finite subgroup of the automorphism group of $X$ (recall that if $g_X \geq 2$ then the automorphism group itself is finite).
-The $G$ has a natural action on the function field of $X$, given by $g\cdot f(P) := f(g \cdot P)$ for every $P \in X$.
+The majority of topics considered in the thesis will be concerned with the following situation.
+Let $G$ be a finite subgroup of the automorphism group of $X$ (recall that if $g_X \geq 2$ then the automorphism group itself is finite, see, for example, \cite{finiteautomorphismofcurves}).
+The group $G$ naturally acts on the function field of $X$, by $g\cdot f(P) := f(g \cdot P)$ for every $P \in X$ and $f \in K(X)$.
 Then the quotient $Y := X/G$ of $X$ by the action of $G$ is again a curve (see \cite[Chap.\ 2, \S 1.7, Ex.\ 8]{pretendshafarevichalggeom1}), and the function field of the quotient curve is the subfield of $K(X)$ fixed by this action, which we denote $K(X)^G$.
 We let $\pi \colon X \ra Y$ be the projection of $X$ on to the quotient.
 Note that $G$ acts transitively on the fibres of $\pi$ (\textit{ibid.}).
 We also recall that the stabiliser of a point $P \in X$ is the subgroup $G(P) : = \{ g \in G | g \cdot P = P\}$ of $G$.
-The majority of the topics considered in this thesis will focus on situations where we have such a projection.
 
 
-We now introduce the higher ramification groups, which we will use to state Hilbert's formula. 
-This formula will then be used in subsequent chapters to compute the ramification divisor.
+We now introduce the higher ramification groups, which we will use to state Hilbert's formula, which computes the coefficients of the ramification divisor.
 
    \begin{defn}
     Let $G$ be finite subgroup of $\aut(X)$ and let $t$ be a uniformising parameter at $P\in X$.
@@ -449,7 +444,7 @@ This formula will then be used in subsequent chapters to compute the ramificatio
     \end{defn}
 
 Note that for any $P\in X$ we have that $G_{-1}(P)=G$, $G_0(P)$ is the stabiliser of $P$ and $G_i(P)\supseteq G_{i+1}(P)$.
-Also, $e_P = \ord (G_0(P))$ for any $P \in X$.
+Also, $e_P = \ord (G_0(P))$ for any $P \in X$, and if $n_P$ is the size of the fiber of $\pi(P)$ then $n = e_P\cdot n_P$, where $n = \deg(\pi)$.
 Less obviously, we have that $G_i(P)$ is trivial if $i$ is sufficiently large, that $G_1$ is a $p$-group and that $\ord(G_0(P)/G_1(P))$ is coprime to $p$ ---  see \cite[Chap. IV, \S 1]{localfields} for details.
 In particular, $\phi$ is tamely ramified at $P$ if and only if $G_1(P)$ is the trivial group.
 
