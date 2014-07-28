@@ -27,7 +27,7 @@ Finally, we denote by $g_X$ and $g_Y$ the genus of $X$ and $Y$ respectively, and
 
 In this section we compute the dimension of $H^0(X,\Omega_X^{\otimes m})$ and of $H^0(X,\Omega_X^{\otimes m})^G$, the subspace of $H^0(X,\Omega_X^{\otimes m})$ fixed by $G$.
 We first recall that by Definition \ref{definitiongenus} we have $\dim_kH^0(X,\Omega_X)=g_X$.
-We also computed the dimension of $H^0(X,\Omega_X^{\otimes m})$ when $g_X,m \geq 2$ in Lemma \ref{dim3}.
+We also computed the dimension of $H^0(X,\Omega_X^{\otimes m})$ when $g_X,m \geq 2$ in Corollary \ref{dim3}.
 Finally, as we will see in examples (a) and (b) in Section \ref{sectionexamples}, if $g_X$ is zero or one then $\dim_k(H^0(X,\Omega_X^{\otimes m})= g_X$, for all $m \in \ZZ\geq 1$.
 
 
@@ -272,7 +272,7 @@ We also assume that $g_X \geq 2$.
         \begin{equation}\label{simplehur}
         2g_X-2=-2p+M(p-1),
         \end{equation}
-    and combining this with Lemma \ref{dim3} we can write
+    and combining this with Corollary \ref{dim3} we can write
         \begin{equation}\label{altdim2}
         \dim_kH^0(X,\Omega_X^{\otimes m})=(2m-1)(g_X-1)=(2m-1)\left(\frac{M(p-1)-2p}{2}\right).
         \end{equation}
@@ -345,7 +345,7 @@ We also assume that $g_X \geq 2$.
     This completes the only if direction of the proof when $l=p$.
     
     Now if $l\neq p$ then we know that all the coefficients $\delta_i$ of the ramification divisor are equal to $l-1$. 
-    To show the if direction in this case, first note that $\dim_kH^0(X,\Omega_X^{\otimes m})=3$ by Lemma~\ref{dim3}. 
+    To show the if direction in this case, first note that $\dim_kH^0(X,\Omega_X^{\otimes m})=3$ by Corollary~\ref{dim3}. 
     On the other hand, the Riemann-Hurwitz formula (Corollary \ref{corhurwitzformula}) implies that $2 = 2g_X-2=-2l+\deg(R)=-2l+r(l-1)$, and hence that $r=6$. 
     Finally Proposition \ref{dim} gives us
         \begin{equation*}
@@ -361,7 +361,7 @@ We also assume that $g_X \geq 2$.
     We then show that this implies that $g_X=l=m=2$.
     
     
-    From Lemma \ref{dim3} and Proposition~\ref{dim} we obtain
+    From Corollary \ref{dim3} and Proposition~\ref{dim} we obtain
         \begin{align*}
         (2m-1)(g_X-1)& =\dim_kH^0(X,\Omega_X^{\otimes m}) \\
         & =  \dim_kH^0(X,\Omega_X^{\otimes m})^G\\
@@ -581,7 +581,7 @@ In this section we prove the main theorem of this chapter, describing exactly wh
     
     We now show that $g_Y=0$ when $m\geq 2$. 
     Since $g_X\geq 2$ we have that $\deg(mK_X)=m(2g_X-2)>2g_X-2=\deg(K_X)$.
-    By Lemma \ref{dim3}, and as both $m$ and $g_X$ are at least 2, then $\dim_kH^0(X,\Omega_X^{\otimes m})^G=\dim_kH^0(X,\Omega_X^{\otimes m})=(2m-1)(g_X-1)>1$.
+    By Corollary \ref{dim3}, and as both $m$ and $g_X$ are at least 2, then $\dim_kH^0(X,\Omega_X^{\otimes m})^G=\dim_kH^0(X,\Omega_X^{\otimes m})=(2m-1)(g_X-1)>1$.
     There is only one case in Proposition \ref{dim} such that $m\geq 2$ and $\dim_k H^0(X,\Omega_X^{\otimes m})^G>1$, which yields 
         \begin{equation*}
         (2m-1)(g_X-1)=(2m-1)(g_Y-1)+\deg\left(\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor \right).
