@@ -466,11 +466,9 @@ In particular, $\phi$ is tamely ramified at $P$ if and only if $G_1(P)$ is the t
 \section{Serre duality}
 
 In this section we give the details of Serre duality, in such a way that we will be able to perform explicit computations using Serre duality in later chapters.
-
-
-We retain the notations of the previous sections.
-We further let $\underline{\Omega}_{K(X)}$ and $\underline{K}(X)$ denote the constant sheaves of $\Omega_{K(X)}$ and $K(X)$ respectively, and $\Omega_X$ denote the sheaf of differentials on $X$.
-The following lemma gives us useful descriptions of $\hone$ and $H^1(X,\Omega_X)$.
+We retain the notations of the previous sections, and in particular we recall that the notations $H^1(X,\Omega_X)$ and $\hone$ refer to first cohomology groups of the sheaf of differentials, $\Omega_X$, and the sheaf of rational functions, $\cO_X$, respectively.
+The following lemma gives us useful and elementary descriptions of $\hone$ and $H^1(X,\Omega_X)$.
+We will use these descriptions almost exclusively for the rest of the thesis, and as such the reader may take as their definition if he or she wishes.
     \begin{lem}\label{lemmaexactsequenceofhoneandhzero}
     We have canonical exact sequences as follows:
         \begin{equation}\label{equationinitialdualitylesfunctions}
@@ -484,6 +482,7 @@ The following lemma gives us useful descriptions of $\hone$ and $H^1(X,\Omega_X)
     Note that a sketch of the proof below can be found in \cite[Pg.\ 248]{hart}.
         \end{rem}
     \begin{proof}
+    We let $\underline{\Omega}_{K(X)}$ and $\underline{K}(X)$ denote the constant sheaves of $\Omega_{K(X)}$ and $K(X)$ respectively, and $\Omega_X$ denote the sheaf of differentials on $X$.
     The short exact sequence
         \begin{equation}\label{equationinitialdualitysesfunctions}
         0 \rightarrow \cO_X \rightarrow \underline{K}(X) \rightarrow \underline{K}(X)/\cO_X \rightarrow 0
@@ -501,15 +500,12 @@ The following lemma gives us useful descriptions of $\hone$ and $H^1(X,\Omega_X)
     To explain this isomorphism we first construct a map from $\underline{K}(X)/\cO_X$ in to the product $\prod_{P \in X} i_*\left({K(X)}/\cO_{X,P}\right)$, and then show that the image of each element under this map has finite support.
     
     Given $i\colon \{P\} \hookrightarrow X$ we have the following equalities
-        \begin{align*}
-        i^{-1}\left(\underline{K}(X)/\cO_X\right) & = \left(\underline{K}(X)/\cO_X\right)_P \\
-        & = \underline{K}(X)_P/\cO_{X,P} \\
-        & = K(X)/\cO_{X,P}.
-        \end{align*}
+        \begin{equation*}
+        i^{-1}\left(\underline{K}(X)/\cO_X\right) = \left(\underline{K}(X)/\cO_X\right)_P  = \underline{K}(X)_P/\cO_{X,P}  = K(X)/\cO_{X,P}.
+        \end{equation*}
     It follows that for any $P \in X$ we have the adjunction map $\underline{K}(X)/\cO_X \ra i_* \left( K(X)/\cO_{X,P} \right)$.
-    Since we have an injection $i$ for every $P \in X$, we can actually produce a map in to the product $\prod_{P \in X} i_*\left(K(X)/\cO_{X,P}\right)$.
-    Moreover, the stalk $i_*\left( K(X)/\cO_{X,P} \right)_Q$ is zero for $Q \neq P$ and is $K(X)/\cO_{X,P}$ when $Q = P$.
-    Hence the product is actually isomorphic to the sum $\bigoplus_{P \in X} \left( i_*\left(K(X)/\cO_{X,P} \right)\right)$, and from this the isomorphism in \eqref{equationsheafisomorphism} follows.
+    These adjunction maps give a map $\underline{K(X)}/\cO_X \ra \prod_{P \in X}\left( K(X)/\cO_{X,P} \right)$, whose image is actually in the sum $\oplus_{P \in X} i_*\left(K(X)/\c_{X,P} \right)$.
+    The resulting map is an isomorphism because the stalk $i_*\left( K(X)/\cO_{X,P} \right)_Q$ is zero for $Q \neq P$ and is $K(X)/\cO_{X,P}$ when $Q = P$ and the isomorphism in \eqref{equationsheafisomorphism} follows.
     
     Replacing $\underline{K}(X)/\cO_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{equationinitialdualitysesfunctions} yields
         \begin{equation}\label{equationshortexactsequencefunctionsdirectsum}
@@ -559,7 +555,10 @@ We define the {\em residue map}, $\res_P$, to be the unique map identified in th
 
 
     \begin{thm}[Residue Theorem]\label{theoremresiduetheorem}
-    Given any differential $\omega \in \Omega_{K(X)}$ on $X$ then $\sum_{P \in X}\res_P(\omega) = 0$.
+    Given any differential $\omega \in \Omega_{K(X)}$ on $X$ then 
+        \[
+        \sum_{P \in X}\res_P(\omega) = 0.
+        \]  
     \end{thm}
     \begin{proof}
     See \cite[Chap.\ II, Prop.\ 6]{algebraicgroupsandclassfields} or \cite[Pg.\ 155]{residuesofdifferentialsoncurve}.
@@ -609,7 +608,7 @@ Then the maps
     \theta \colon H^0(X,\Omega_X) \ra \hom(\hone, k)
     \]
 are isomorphisms.
-In particular, given a $k$-basis $\omega_1, \ldots, \omega_g$ of $\hzero$, we can find a basis $f_1, \ldots , f_g$ of $\hone$ such that $\langle \omega_i, f_j \rangle = 1$ for all $1 \leq i \leq n$ and $\langle \omega_i, f)j \rangle = 0$ if $i \neq j$, and likewise, starting with a basis of $\hone$ we can find corresponding basis of $H^0(X,\Omega_X)$. 
+In particular, given a $k$-basis $\omega_1, \ldots, \omega_g$ of $\hzero$, we can find a basis $f_1, \ldots , f_g$ of $\hone$ such that $\langle \omega_i, f_j \rangle = 1$ for all $1 \leq i \leq n$ and $\langle \omega_i, f_j \rangle = 0$ if $i \neq j$, and likewise, starting with a basis of $\hone$ we can find corresponding basis of $H^0(X,\Omega_X)$. 
 
 
 
