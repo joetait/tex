@@ -1,14 +1,14 @@
-\chapter{Bases for the spaces of (poly-)differentials on hyperelliptic curves} \label{chapterhyperellipticcurves}
+\chapter{Bases for the spaces of (poly)differentials on hyperelliptic curves} \label{chapterhyperellipticcurves}
 
 
 In this chapter we recall the definition and basic details of hyperelliptic curves, and then go on to compute bases for the spaces of holomorphic differentials and polydifferentials, see Propositions \ref{prophyperellipticbasispnot2} and \ref{propbasishyperellipticp=2}.
 The primary use of these concepts is to form a foundation for the next chapter.
 Furthermore, we also use the bases computed to illustrate all the facets of our main theorem in Chapter 5.
-The various attributes of hyperelliptic curves differ greatly according to whether the characteristic of the base field is two or not, and as such we split this chapter in two sections, considering these cases separately.
+The various attributes of hyperelliptic curves differ greatly according to whether the characteristic of the base field is two or not, and as such we split this chapter into two sections, considering these cases separately.
 
 
 Before going in to the details of hyperelliptic curves we recall that a curve $X$ is hyperelliptic if there exists a finite separable morphism $\pi \colon X \ra \PP_k^1$ of degree two.
-We let $X$ be a hyperelliptic curve of genus $g$ throughout the chapter, and we fix such map $\pi$, which is unique up to an automorphism of $\PP_k^1$.
+We let $X$ be a hyperelliptic curve of genus $g$ throughout the chapter, and we fix such a map $\pi$, which is unique up to an automorphism of $\PP_k^1$.
 We also let $P_a$ and $P_a'$ denote the unique elements of $\pi^{-1}(a)$ for any point $a \in \mathbb P_k^1$ that is not a branch point.
 If $a \in \mathbb P_k^1$ is a branch point we denote the unique point in $\pi^{-1}(a)$ by $P_a$.
 Finally, we define $D_a$ to be the divisor $\pi^*\left([a]\right)$ for any $a \in \mathbb P_k^1$, and hence
@@ -41,8 +41,8 @@ Firstly, observe that by the Riemann-Hurwitz formula, Corollary \ref{corhurwitzf
     \[ 
     \deg(R) = 2g -2 +2\cdot 2 = 2g + 2.
     \]
-Since $\pi$ is of degree two and hence only tamely ramified,\todo{reference this} it follows that the coefficient of each ramification point is $1$.
-From this is follows that each branch point has precisely one corresponding ramification point, and that there are precisely $2g+2$ ramification points.
+Since $\pi$ is of degree two and $\cha (k) \neq 2$ then it is only tamely ramified, and it follows that the coefficient of each ramification point is $1$.
+From this we conclude that each branch point has precisely one corresponding ramification point, and that there are precisely $2g+2$ ramification points.
 Also, since there are no repeated roots in $f(x)$, then \eqref{equationdefiningequationpnot2} defines a non-singular affine curve $X'$ with a degree two projection $\pi'\colon X'\rightarrow \mathbb A_k^1$.
 For any point $a\in \mathbb A_k^1$ which is not a solution to $f(x)$ there are two points in the pre-image, namely $(a,\pm \sqrt{a})$, and the point is not a branch point.
 On the other hand, if $a = a_i \in \mathbb A_k^1$ is a solution to $f(x)$, then there is only one point in the pre-image and hence it is a branch point.
@@ -59,7 +59,7 @@ We also have, for $x \in K(X)$, that
     \end{equation}
 Furthermore, the strong Riemann-Hurwitz formula (Theorem \ref{theoremdetailedhurwitz}) gives us
     \[
-    \di_X (dx) = \pi^*( \di_{\mathbb P^1_k}(dx)) + R = R - 2D_{\infty},
+    \di_X (dx) = \pi^*( \di_{\mathbb P^1_k}(dx)) + R,
     \]
 and since $\di_{\PP_k^1}(dx) = -2[\infty]$, it follows that $\pi^*(\di_{\PP_k^1}(dx)) = -2D_\infty$.
 Hence we conclude that
@@ -67,7 +67,7 @@ Hence we conclude that
     \di(dx) = R - 2D_\infty.
     \end{equation}
 
-In the following lemma we compute that divisor of $y \in K(X)$.
+In the following lemma we compute the divisor of $y \in K(X)$.
     \begin{lem}\label{lemmadivisorofycharacteristicnot2}
     The divisor of $y \in K(X)$ is 
         \begin{equation}\label{equationdivisorofypnot2}
@@ -80,10 +80,10 @@ In the following lemma we compute that divisor of $y \in K(X)$.
     So for any $P\notin x^{-1}(\infty)$ then $\ord_P(y) =  \frac{1}{2}\ord_P(f(x)) = 1$ if $P$ is a ramification point, and $\ord_P(y) = \frac{1}{2}\ord_P(f(x)) = 0$ otherwise.
 
     We now consider the poles of $y$.
-    By \todo{reference} we know that $\sum_{P \in X} \ord_P(f(x)) = 0$, and we also know that the poles of $f(x)$ can only lie in $\pi^{-1}(\infty)$.
+    By Proposition \ref{propfinitelymanyzeroesandpoles} we know that $\sum_{P \in X} \ord_P(f(x)) = 0$, and we also know that the poles of $f(x)$ can only lie in $\pi^{-1}(\infty)$.
     Hence if $\infty$ is a branch point then $\ord_{P_\infty}(f(x)) = -\sum_{i=1}^{2g+1}\ord_{P_i}(f(x)) = -2(2g+1)$, and $\ord_{P_\infty}(y) = -(2g+1)$.
-    On the other hand, if $\infty$ is not a branch point we know, from a similar computation, that $\ord_{P_\infty}(f(x)) + \ord_{P_\infty'}(f(x)) = -2(2g+2)$.
-    Recall that $\ord_{P}(\sigma(f(x))) = \ord_{\sigma(P)}(f(x))$ for any automorphism $\sigma \in \aut(X)$ and any $P \in X$.
+    On the other hand, if $\infty$ is not a branch point we know that $\ord_{P_\infty}(f(x)) + \ord_{P_\infty'}(f(x)) = -2(2g+2)$.
+    Recall that $\ord_{P}(\sigma(f(x))) = \ord_{\sigma(P)}(f(x))$ for any automorphism $\sigma \in \aut(X)$ and any point $P \in X$.
     In particular, if $\sigma$ is the hyperelliptic involution of $X$ then 
         \[
         \ord_{P_\infty}(f(x)) = \ord_{P_\infty}(\sigma(f(x))) = \ord_{\sigma(P_\infty)}(f(x)) = \ord_{P_\infty'}(f(x)).
@@ -99,26 +99,26 @@ In the following lemma we compute that divisor of $y \in K(X)$.
     \begin{prop}\label{prophyperellipticbasispnot2}
     Let $m\geq 1$.
     Let $X$, $x$ and $y$ be as above, and let $\omega := \frac{dx^{\otimes m}}{y^m}$. 
-    Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by:
-        \begin{itemize}
-        \item $\omega, x\omega, \ldots , x^{g-1}\omega$ if $m=1$ 
-        \item $\omega, x\omega, x^2\omega$  if $m=g=2$ 
-        \item $\omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots x^{(m-1)(g-1)-2}y\omega$ otherwise.
-        \end{itemize}
+    Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by\par
+        {\centering 
+        \begin{tabular}{c c}
+        $\omega, x\omega, \ldots , x^{g-1}\omega$ &  if $m=1$, \\
+        $\omega, x\omega, x^2\omega$  &  if $m=g=2$, \\
+        $\omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots, x^{(m-1)(g-1)-2}y\omega$ &  otherwise.
+        \end{tabular}\par
+        }
     \end{prop}
-    
+
     \begin{rem}
     Note that the case where $m=1$ is treated in \cite[Prop. 7.4.26]{liu} and \cite[Ch. IV, \S 4, Prop. 4.3]{griffiths}.
     \end{rem}
-    
+
     \begin{proof}
     We first show that the elements are linearly independent over $k$.
-    Since $\omega$ is fixed, it is equivalent to show that the coefficients are linearly independent over $k$ - \ie that $1,x,\ldots ,x^n, y, xy, x^ly$ are linearly independent over $k$ for any $n$ and $l$.
-    But the only part of this which is not clear is when the coefficients are not just in $x$, but then it follows since the extension would otherwise be of degree 1.
-    To show that they are indeed holomorphic differentials, we show that their divisors are greater than $0$.
-    We first compute the divisors associated to $x$, $y$ and $dx^{\otimes m}$.
-    
-    To compute $\di (dx^{\otimes m})$, we first note that it suffices to compute the divisor of $dx$, since $\di (dx^{\otimes m}) =m\di (dx)$, as noted above.
+    Since $\omega$ is fixed, it is equivalent to show that the coefficients are linearly independent over $k$ - \ie that $1,x,\ldots ,x^n, y, xy, x^ly$ are linearly independent over $k$ for any $n$ and $l$ in $\NN$.
+    But the only part of this which is not clear is when the coefficients are not just in $x$, but then it follows since the extension $K(X)/K(x)$ would otherwise be of degree 1.
+    To show that the differentials in the statement of the lemma are indeed holomorphic differentials, we show that their divisors are greater than $0$.
+    Recall that $\di (dx^{\otimes m}) =m\di (dx)$, as noted in the previous chapter.
     
     
     We now show that the differentials listed in Proposition \ref{prophyperellipticbasispnot2} are holomorphic.
@@ -132,11 +132,11 @@ In the following lemma we compute that divisor of $y \in K(X)$.
         \end{align*}
     which is positive for $0\leq i \leq m(g-1)$.
     Note that if $m=g=2$ then there are three elements, and since $\dim_kH^0(X,\Omega_X^{\otimes 2})=3$ by Corollary \ref{dim3}, these elements form a basis.
-    Also, if $m=1$ then by the Riemann-Roch theorem (Theorem \ref{theoremriemannroch}) $\dim_k H^0(X,\Omega_X)=g$, and we have $g$ linearly independent elements, so they again must form a basis.
+    Also, if $m=1$ then by Definition \ref{definitiongenus} $\dim_k H^0(X,\Omega_X)=g$, and we have $g$ linearly independent elements, so they again must form a basis.
     
     
     
-    Now we consider the case where $m\geq 2$ and $g \geq 2$ and at least one of these inequalities is strict.
+    Now we consider the case where $m\geq 2$ and $g \geq 2$ and at least one of these inequalities is strict, putting us in the third case in the statement of the lemma.
         \begin{align*}
         \di (x^iy\omega) & =  \di(x^i\omega) + R -(g+1)D_\infty \\
         & =  iD_0 + R +((m-1)(g-1)-2-i)D_\infty,
@@ -148,7 +148,7 @@ In the following lemma we compute that divisor of $y \in K(X)$.
         \]
     Since the number of differentials listed in the last case of the proposition is precisely
         \[
-        (m-1)(g-1)-1 + m(g-1) +1 = 2mg -2m -g + 1 = (2m-1)(g-1)
+        (m-1)(g-1)-1 + m(g-1) +1 = 2mg -2m -g + 1 = (2m-1)(g-1),
         \]
     it is clear that these elements form a basis.
     \end{proof}
@@ -157,7 +157,7 @@ In the following lemma we compute that divisor of $y \in K(X)$.
 \section{Characteristic 2}
 
 In this section we assume that $\cha(k) = p  =2$.   
-In this case, by \cite[Prop. 7.4.24]{liu}, the function field $K(X)$ is $k(x,y)$, a two extension of the function field of one variable over $k$, $k(x) = k(\PP_k^1)$, where
+In this case the function field $K(X)$ is $k(x,y)$, a two extension of the function field of one variable over $k$, $k(x) = k(\PP_k^1)$, where
     \begin{equation}\label{ext}
     y^2 - H(x)y = F(x)
     \end{equation}
@@ -194,7 +194,7 @@ By Lemma \ref{smoothness} if we consider the affine curve defined by this equati
 We denote this curve by $X'$.
 Then $\pi$ restricts to a map $X'\rightarrow \mathbb A^1_k$, the projection on to the $x$ co-ordinate.
 Let $a\in \mathbb A_k^1$.
-Then if $(a,b)$ is a point in $\pi^{-1}(a)$, so is the point $(a,b+h(a))$, which is clearly distinct if and only if $h(a)\neq 0$.
+Then if $(a,b)$ is a point in $\pi^{-1}(a)$, so is the point $(a,b+H(a))$, which is clearly distinct if and only if $H(a)\neq 0$.
 Since the extension is degree two, this shows that the ramified points in the affine part correspond to the roots of $H(x)$.
 We let $d_H = \deg(H(x))$ and then further let
     \begin{equation}\label{equationcapitalh}
@@ -202,7 +202,7 @@ We let $d_H = \deg(H(x))$ and then further let
     \end{equation}
 for some $A_i, B_i \in  k$ and $n_i \in \mathbb N$.
 As above, the $A_i$ are branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points.
-Note that for each $A_i$ there is a corresponding $K_i$, which is the square root of $f(A_i)$.
+Note that for each $A_i$ there is a corresponding $K_i$, which is the square root of $F(A_i)$.
 
 We now compute the ramification divisor of $\pi$.
 
@@ -214,7 +214,7 @@ We now compute the ramification divisor of $\pi$.
         \delta_P = \left\{
             \begin{array}{ll}
             2n_i & \text{if }\ P\in \{P_1,\ldots ,P_k\}, \\
-            2(g+1-d_H) & \text{ if }\  P \in \pi^{-1}\infty, \\
+            2(g+1-d_H) & \text{ if }\  P \in \pi^{-1}(\infty), \\
             0 & \text{ otherwise.} 
             \end{array}
         \right.
@@ -223,7 +223,7 @@ We now compute the ramification divisor of $\pi$.
     \begin{proof}
     We first show that it will suffice to prove that the coefficient of $[P_i]$ is $2n_i$ for $1\leq i \leq k$.
     Note that by the Riemann-Hurwitz formula $\deg(R) = 2g+2$.
-    Then the coefficient at $P_\infty$ is $\deg(R) - \sum_{i=1}^k2n_i$, which, by the Riemann-Hurwitz formula (Corollary \ref{corhurwitzformula}), is equal to $2g+2-2d = 2(g+1-d)$, as stated.
+    Then the coefficient at $P_\infty$ is $\deg(R) - \sum_{i=1}^k2n_i$, which, by the Riemann-Hurwitz formula (Corollary \ref{corhurwitzformula}), is equal to $2g+2-2d_H = 2(g+1-d_H)$, as stated.
     
     Let $P=P_i$ for some $i\in \{1,\ldots , k\}$.
     Then $y-b_i$ is a local parameter at $P$.
@@ -259,12 +259,12 @@ We now compute the divisor of $H(x)$ too.
     \begin{lem}\label{h(x)char2}
     The divisor associated to $\frac{1}{H(x)}$ is
         \[
-        \di \left(\frac{1}{H(x)}\right) = - \sum_{i=1}^k D_{a_i} + dD_\infty = dD_\infty - R
+        \di \left(\frac{1}{H(x)}\right) = - \sum_{i=1}^k D_{a_i} + d_HD_\infty = d_HD_\infty - R
         \]
     \end{lem}
     \begin{proof}
-    Since $\pi$ is ramified at infinity then $\ord_{P_{\infty}}\left(\frac{1}{H(x)}\right) = -\ord_{P_{\infty}}(H(x)) = 2d$.
-    If it is not ramified, then $\ord_{P_{\infty}'}\left(\frac{1}{H(x)}\right) = \ord_{P_{\infty}''}\left(\frac{1}{H(x)}\right)=d$.
+    Since $\pi$ is ramified at infinity then $\ord_{P_{\infty}}\left(\frac{1}{H(x)}\right) = -\ord_{P_{\infty}}(H(x)) = 2d_H$.
+    If it is not ramified, then $\ord_{P_{\infty}'}\left(\frac{1}{H(x)}\right) = \ord_{P_{\infty}''}\left(\frac{1}{H(x)}\right)=d_H$.
     For the ramified points $P_i$, $1\leq i \leq k$, then $\ord_{P_i}\left(\frac{1}{H(x)}\right) = -\ord_{P_i}(H(x))= -2n_i$.
     At any other point of $X$ the order of $\frac{1}{H(x)}$ is clearly zero.
     \end{proof}
@@ -346,24 +346,23 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
     It now follows from a computation similar to that in the previous paragraph that $\ord_{P_\infty}(y) = -\deg(F(x)) + g +1$, completing the proof.
     \end{proof}
 
-We now prove the following proposition, determining a basis of the space of global holomorphic poly-differentials as a vector space over $k$.
-
+The following proposition determines a basis of the $k$ vector space of global holomorphic polydifferentials.
+The case where $m=1$ can again be found in \cite[Prop. 7.4.26]{liu}.
+    
     \begin{prop}\label{propbasishyperellipticp=2}
     We assume that $g\geq 2$ and let $\omega:= \frac{dx^{\otimes m}}{H(x)^m}$. 
-    Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by
-        $\begin{cases}
-        \omega, x\omega, \ldots , x^{g-1}\omega &  \mbox{if}\ m=1 \\
-        \omega, x\omega, x^2\omega & \mbox{if}\ m=g=2 \\
-        \omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots x^{(m-1)(g-1)-2}y\omega & \mbox{otherwise.}
-        \end{cases}$
+    Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by\par
+        {\centering
+        \begin{tabular}{c c}
+        $\omega, x\omega, \ldots , x^{g-1}\omega$ &  if $m=1$, \\
+        $\omega, x\omega, x^2\omega$ & if $m=g=2$, \\
+        $\omega, x\omega, \ldots, x^{m(g-1)}\omega;\  y\omega, xy\omega, \ldots, x^{(m-1)(g-1)-2}y\omega$ & otherwise.
+        \end{tabular}\par
+        }
     \end{prop}
-    
-    \begin{rem}
-    Note that the case where $m=1$ can be found in \cite[Prop. 7.4.26]{liu}.
-    \end{rem}
 
     \begin{proof}
-    We first assume that above elements are holomorphic poly-differentials, and show that they then form a basis.
+    We first assume that above elements are holomorphic polydifferentials, and show that they then form a basis.
     To show that the elements are linearly independent over $k$ we need only show that the coefficients are, since $\omega$ is fixed.
     The only case where this is not clear is when the coefficients contain both $x$ and $y$ terms.
     But since the $y$ terms are all linear, and the extension is of degree two, it must follow that coefficients are linearly independent.
@@ -378,13 +377,12 @@ We now prove the following proposition, determining a basis of the space of glob
         \]
     elements, and again they must form a basis.
     
-    We now show that the listed poly-differentials are holomorphic, \ie that their divisors are non-negative.
+    We now show that the listed polydifferentials are holomorphic, \ie that their divisors are non-negative.
     Firstly we have
         \begin{align*}
-        \di(x^i\omega) & =  \di \left( \frac{x^i dx^{\otimes m}}{H(x)^m} \right)\\ 
-        & =  i(D_0 - D_\infty) +2m\sum_{i=1}^k n_i[P_i] + m(g-1-d)D_\infty\\
-        &  -2m\sum_{i=1}^k n_i [P_i] + dmD_\infty \\
-        & =  iD_0 + (m(g-1) -i)D_\infty
+        & \di(x^i\omega)  =  \di \left( \frac{x^i dx^{\otimes m}}{H(x)^m} \right)\\ 
+        & \hskip 3em =  i(D_0 - D_\infty) +2m\sum_{i=1}^k n_i[P_i] + m(g-1-d)D_\infty -2m\sum_{i=1}^k n_i [P_i] + dmD_\infty \\
+        & \hskip 3em =  iD_0 + (m(g-1) -i)D_\infty
         \end{align*}
     by Lemmas \eqref{equationdivxpis2}, \ref{equationdifferentialdivisor} and Lemma \ref{h(x)char2}, and this is clearly non-negative for $0\leq i \leq m(g-1)$.
     
