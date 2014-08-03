@@ -11,11 +11,13 @@
 \usepackage{etex}
 \usepackage{array} % for better arrays (e.g. matrices) in maths
 \usepackage{amsmath}
+\usepackage{makeidx}
 \usepackage[colorinlistoftodos, textwidth=2.6cm, obeyDraft]{todonotes} % Allows todo notes to be added to the text 
 \usepackage[T1]{fontenc}
 \usepackage{kpfonts,baskervald}
 \usepackage{epigraph}
 \input{definitions}            % Include your abbreviations
+\makeindex
 
 %% ----------------------------------------------------------------
 \begin{document}
@@ -99,5 +101,6 @@ This work is all about \dots
 \backmatter
 \bibliographystyle{amsalpha}
 \bibliography{biblio}
+\printindex
 \end{document}
 %% ----------------------------------------------------------------
