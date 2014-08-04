@@ -1,4 +1,4 @@
-\chapter{Faithful actions on Riemann-Roch spaces} \label{Chapter:Faithfulactions}
+\chapter{Faithful actions on Riemann--Roch spaces} \label{Chapter:Faithfulactions}
 
 In this chapter our main aim is to compute when a subgroup of the automorphism group of an algebraic curve acts faithfully on the space of global holomorphic differentials and polydifferentials.
 Our approach uses the fact that if any finite group $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ then there exists a subgroup of $G$ which fixes at least one element of this $k$ vector space.
@@ -6,9 +6,9 @@ Our approach uses the fact that if any finite group $G$ does not act faithfully 
 Given this, it would be useful to determine whether the fixed space is non-zero, and for this reason we start by computing the dimension of the fixed space $H^0(X,\Omega_X^{\otimes m})^G$.
 We discover (Proposition \ref{dim}) that the dimension relies primarily on the genus of the quotient curve $Y:=X/G$, $m$ and the ramification divisor of $\pi \colon X \ra Y$.
 
-Then we use this formula, along with results from the second chapter, to compute exactly when a cyclic group of prime order will act trivially on $H^0(X,\Omega_X^{\otimes m})$.
+Then we use this dimension formula, along with results from the second chapter, to compute exactly when a cyclic group of prime order will act trivially on $H^0(X,\Omega_X^{\otimes m})$.
 When we are considering holomorphic differentials (\ie when $m=1$), this depends solely on the characteristic of $k$, whilst for polydifferentials (\ie when $m \geq 2$) this is actually independent of $\cha (k)$, and is determined by the genus of $X$, $m$ and the order of the group.
-In the same section we also extend these results to more general Riemann-Roch spaces.
+In the same section we also extend these results to more general Riemann--Roch spaces.
 
 We then move on to the main theorem (Theorem \ref{theoremfaithfulaction}), which answers the question of when $G$ acts faithfully on $H^0(X,\Omega_X^{\otimes m})$.
 After proving this theorem we give examples which illustrate both when we do and do not have faithful actions.
@@ -18,7 +18,7 @@ We close the chapter with an alternative proof of when a cyclic group of prime o
 
 \section{Dimension formulae}\label{dimsection}
 
-Throughout this chapter, unless otherwise stated, we assume that $X$ is a connected, smooth, projective algebraic curve over an algebraically closed field $k$ of characteristic $p \geq 0$.
+Throughout this chapter, unless otherwise stated, we assume that $X$ is an algebraic curve over an algebraically closed field $k$ of characteristic $p \geq 0$.
 We furthermore assume that $G$ is a finite group of order $n$ that acts faithfully on $X$.
 Note that $G$ also induces an action on the vector space $H^0(X,\Omega_X^{\otimes m})$ of global holomorphic poly-differentials of order $m$.
 We let $Y$ denote the quotient curve $X/G$, and we let $\pi\colon X\rightarrow Y$ be the canonical projection.
@@ -26,7 +26,7 @@ Finally, we denote by $g_X$ and $g_Y$ the genus of $X$ and $Y$ respectively, and
 
 
 In this section we compute the dimension of $H^0(X,\Omega_X^{\otimes m})$ and of $H^0(X,\Omega_X^{\otimes m})^G$, the subspace of $H^0(X,\Omega_X^{\otimes m})$ fixed by $G$.
-We first recall that by Definition \ref{definitiongenus} we have $\dim_kH^0(X,\Omega_X)=g_X$.
+We first recall that $\dim_kH^0(X,\Omega_X)=g_X$ by Definition \ref{definitiongenus}.
 We also computed the dimension of $H^0(X,\Omega_X^{\otimes m})$ when $g_X,m \geq 2$ in Corollary \ref{dim3}.
 Finally, as we will see in examples (a) and (b) in Section \ref{sectionexamples}, if $g_X$ is zero or one then $\dim_k(H^0(X,\Omega_X^{\otimes m})= g_X$, for all $m \in \ZZ\geq 1$.
 
@@ -52,8 +52,7 @@ The next lemma is the main idea in the proof of our formula for $\dim_kH^0(X,\Om
         \]
     In particular, both sheaves are subsheaves of the constant sheaf $K(Y)$ as stated. 
     It therefore suffices to check that their stalks are equal. 
-    For any $Q \in Y$ and $P \in \pi^{-1}(Q)$.
-    We have
+    For any $Q \in Y$ and $P \in \pi^{-1}(Q)$, we have
         \begin{align*}
         \pi_*^G\left(\cO_X(D)\right)_Q & = \cO_X(D)_P \cap K(Y) \\
         &= \left\{f \in K(Y): \ord_P(f) \ge -n_P\right\}\\
@@ -84,7 +83,7 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
         \]      
     \end{prop}
     \begin{proof}
-    Let $E$ denote the divisor $\left\lfloor \frac{\pi_*(mK_X)}{n} \right\rfloor$ on $Y$. As $K_X=\pi^*(K_Y)+R$ we have
+    Let $E$ denote the divisor $\left\lfloor \frac{\pi_*(mK_X)}{n} \right\rfloor$ on $Y$. As $K_X=\pi^*(K_Y)+R$ by Theorem \ref{theoremdetailedhurwitz} we have
         \[ 
         E = \left \lfloor \frac{\pi_*\pi^*(mK_Y) + \pi_*(mR)}{n} \right \rfloor = mK_Y + \left \lfloor \frac{m\pi_*(R)}{n} \right \rfloor.
         \]
@@ -94,7 +93,8 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
         \end{equation*}
     
     
-    In the first case of the proposition, \ie if $m=1$ and $\deg \left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor=0$, then $\left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor$ is the zero divisor and we conclude that 
+    We now show that $\dim_kH^0(X,\Omega_X^{\otimes m}) = g_Y$ in the exceptional cases listed in the proposition.
+    Firstly if $m=1$ and $\deg \left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor=0$, then $\left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor$ is the zero divisor and we conclude that 
         \begin{equation*}
         \dim_kH^0(X,\Omega_X)^G = \dim_kH^0(Y, \Omega_Y) = g_Y.
         \end{equation*}
@@ -113,13 +113,13 @@ In particular we see that this dimension is completely determined by $m$, $g_Y$ 
     
     
     
-    We will show below that in all other cases $\deg(E) > \deg(K_Y)$, and then the Riemann-Roch formula (Theorem \ref{theoremriemannroch}) will give 
+    We will show below that in all other cases $\deg(E) > \deg(K_Y)$, and then the Riemann--Roch formula (Theorem \ref{theoremriemannroch}) will give 
         \begin{align*}
         \dim_kH^0(X,\Omega_X^{\otimes m})^G  & = \dim_kH^0\left(Y,\cO_Y\left( E \right)\right) \\
         & =  1-g_Y+\deg\left(mK_Y+\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor\right) \\
         & =  (2m-1)(g_Y-1)+\deg\left\lfloor{\frac{m\pi_*(R)}{n}}\right\rfloor,
         \end{align*}
-    completing the proof for this case.
+    completing the proof for the main case.
     
     
     All that remains is to show that $\deg(E)>\deg(K_Y)$ in all other cases.
@@ -142,7 +142,7 @@ Let $S$ denote the set of all points $Q\in Y$ such that $\pi$ is not tamely rami
 Note that $s=0$ if $p$ does not divide $n$.
 
 
-For the next corollary we recall the notations $e_Q$ and $\delta_Q$ for any $Q\in Y$ defined before Theorem \ref{hilbertsformula}.
+In the next corollary for any $Q \in Y$ we let $\delta_Q = \delta_P$ and $e_Q = e_P$, for any $P \in \pi^{-1}(Q)$.
 
 
     \begin{cor}\label{dim2}
@@ -165,7 +165,7 @@ For the next corollary we recall the notations $e_Q$ and $\delta_Q$ for any $Q\i
     \end{proof}
 
     \begin{rem}
-    Note that if $p>0$ and $G$ is cyclic then Corollary \ref{dim2} can be derived from Proposition $6$ in the recent pre-print \cite{kako} by Karanikolopoulos and Kontogeorgis.
+    Note that if $p>0$ and $G$ is cyclic then Corollary \ref{dim2} can be derived from \cite[Prop. 6.]{kako}.
     \end{rem}
 
 
@@ -189,7 +189,7 @@ We also assume that $g_X \geq 2$.
     \begin{proof}
     From \cite[Lem.\ 1]{Naka} we know that $p$ does not divide $N_i$ for $i=1,\ldots ,r$, a fact we will use several times below. 
     Let $N:= \sum_{i=1}^r N_i$. 
-    Using the Riemann-Hurwitz formula, Corollary \ref{corhurwitzformula}, we obtain
+    Using the Riemann--Hurwitz formula, Corollary \ref{corhurwitzformula}, we obtain
         \begin{equation}\label{hur2}
         2g_X - 2 = -2p + (N+r)(p-1)
         \end{equation}
@@ -346,7 +346,7 @@ We also assume that $g_X \geq 2$.
     
     Now if $l\neq p$ then we know that all the coefficients $\delta_i$ of the ramification divisor are equal to $l-1$. 
     To show the if direction in this case, first note that $\dim_kH^0(X,\Omega_X^{\otimes m})=3$ by Corollary~\ref{dim3}. 
-    On the other hand, the Riemann-Hurwitz formula (Corollary \ref{corhurwitzformula}) implies that $2 = 2g_X-2=-2l+\deg(R)=-2l+r(l-1)$, and hence that $r=6$. 
+    On the other hand, the Riemann--Hurwitz formula (Corollary \ref{corhurwitzformula}) implies that $2 = 2g_X-2=-2l+\deg(R)=-2l+r(l-1)$, and hence that $r=6$. 
     Finally Proposition \ref{dim} gives us
         \begin{equation*}
         \dim_kH^0(X,\Omega_X^{\otimes m})^G = -(2m-1) + \sum_{i=1}^r \left\lfloor \frac{m\cdot \delta_i}{l} \right\rfloor
@@ -357,7 +357,7 @@ We also assume that $g_X \geq 2$.
     As the dimensions of $H^0(X,\Omega_X^{\otimes m})$ and $H^0(X,\Omega_X^{\otimes m})^G$ are equal, the action is trivial.
     
     
-    Now, for the final section of the proof we suppose that $G$ acts trivially on the space $H^0(X,\Omega_X^{\otimes m})$.
+    For the final section of the proof we suppose that $G$ acts trivially on the space $H^0(X,\Omega_X^{\otimes m})$.
     We then show that this implies that $g_X=l=m=2$.
     
     
@@ -429,9 +429,9 @@ Also, for any $Q\in Y$ let $n_Q$ be equal to $n_P$ for any $P\in \pi^{-1}(Q)$.
     \begin{proof}
     We first remind the reader of the notation in \cite{kako}.
     Let $\sigma$ be a generator of $G$.
-    Let $V$ be the $k[G]$ module with $k$-basis $e_1,\ldots ,e_{p^l}$ and $G$-action defined by $\sigma( e_i)=e_i+e_{i-1}$, $1\leq i \leq p^l,\ e_0=0$.
+    Let $V$ be the $k[G]$ module with $k$-basis $e_1,\ldots ,e_{p^l}$ and $G$-action defined by $\sigma( e_i)=e_i+e_{i-1}$ for $1\leq i \leq p^l$, where $e_0=0$.
     Then $V_j$, defined to be the subspace of $V$ spanned by $e_1,\ldots ,e_j$ over $k$, is also a $k[G]$ module.
-    In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representatives for the set of isomorphism classes of indecomposable $k[G]$-modules. For each $j=1,\ldots,p^l$ let $m_j$ denote the multiplicity of $V_j$ in the $k[G]$-module $H^0(X,\cO_x(D))$, \ie we have $H^0(X,\cO_x(D))\cong \oplus_{j=1}^{p^l}m_jV_j$.
+    In fact, the modules $V_1,\ldots ,V_{p^l}$ form a complete set of representatives for the set of isomorphism classes of indecomposable $k[G]$-modules. For each $j=1,\ldots,p^l$ let $m_j$ denote the multiplicity of $V_j$ in the $k[G]$-module $H^0(X,\cO_x(D))$, \ie we have $H^0(X,\cO_x(D))\cong \bigoplus_{j=1}^{p^l}m_jV_j$.
     
     
     
@@ -441,7 +441,7 @@ Also, for any $Q\in Y$ let $n_Q$ be equal to $n_P$ for any $P\in \pi^{-1}(Q)$.
         \end{equation}
     
     It is clear that the $G$-invariant part of each submodule $V_j$ is spanned by $e_1$. 
-    Hence $\dim_kH^0(X,\cO_X(D))^G = \sum_{j=1}^{p^l} m_j$.
+    It then follows that $\dim_kH^0(X,\cO_X(D))^G = \sum_{j=1}^{p^l} m_j$.
     By \cite[Thm.\ 2.1]{quaddiffequi}, which relies on \cite{cohogsheaves}, we have
         \begin{align*}
         \sum_{j=1}^{p^l} m_j & =  1- g_Y +\sum_{Q\in Y} \left\lfloor \frac{n_Q}{e_Q}\right\rfloor\\
@@ -449,7 +449,7 @@ Also, for any $Q\in Y$ let $n_Q$ be equal to $n_P$ for any $P\in \pi^{-1}(Q)$.
         & =  1 - g_Y + \frac{1}{p^l}\deg(D) - \sum_{Q\in Y} \left\langle \frac{n_Q}{e_Q} \right\rangle.
         \end{align*}
     
-    Now as $\deg(D)>2g_X-2$ we have $\dim_kH^0(X,\cO_X(D)) =\deg(D)+1-g_X$ by the Riemann-Roch theorem. 
+    Now as $\deg(D)>2g_X-2$ we have $\dim_kH^0(X,\cO_X(D)) =\deg(D)+1-g_X$ by the Riemann--Roch theorem. 
     So the action of $G$ on $H^0(X,\cO_X(D))$ is trivial if and only if
         \begin{equation*}
         \deg(D)+1-g_X  = 1 - g_Y + \frac{1}{p^l}\deg(D) - \sum_{Q\in Y}\left\langle \frac{n_Q}{e_Q} \right\rangle. \label{hi}
@@ -503,7 +503,7 @@ Similarly to the case $\deg(D)\geq 2g_X$ in Corollary \ref{this}, the following 
 
 
     \begin{rem}
-    It can easily be shown that in the last case the Riemann-Hurwitz formula implies that $r\leq 4$. 
+    It can easily be shown that in the last case the Riemann--Hurwitz formula implies that the number of ramification points $r$ is at most $4$. 
     Furthermore, if $r=1$ then the conditions ``$\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle=\frac{1}{p^l}$" and ``$e_Q\mid n_Q$ for all $Q\in Y$" are already implied by ``$\deg(D)=2g_X-1$".
     \end{rem}
 
@@ -557,14 +557,14 @@ In this section we prove the main theorem of this chapter, describing exactly wh
         \begin{equation*}
         g_X=\dim_k H^0(X,\Omega_X)=\dim_k H^0(X,\Omega_X)^G=g_Y.
         \end{equation*}
-    Substituting this into the Riemann-Hurwitz formula (Corollary \ref{corhurwitzformula}) yields the desired contradiction because $g_X\geq 2, n\geq 2$ and $\deg(R)\geq 0$.
+    Substituting this into the Riemann--Hurwitz formula (Corollary \ref{corhurwitzformula}) yields the desired contradiction because $g_X\geq 2, n\geq 2$ and $\deg(R)\geq 0$.
     
     Thus $\deg\left( \left\lfloor \frac{\pi_*(R)}{n} \right\rfloor \right) >0$. 
     Now Proposition~\ref{dim} gives us that
         \begin{equation*}
         g_X=\dim_k H^0(X,\Omega_X)=\dim_k H^0(X,\Omega_X)^G= g_Y-1+\deg\left\lfloor \frac{\pi_*(R)}{n} \right\rfloor.
         \end{equation*}
-    Substituting this in to the Riemann-Hurwitz formula we see that
+    Substituting this in to the Riemann--Hurwitz formula we see that
         \begin{equation*}
         2\left(g_Y - 1 + \deg\left \lfloor \frac{\pi_*(R)}{n} \right \rfloor -1 \right) = 2n (g_Y -1) + \deg(R).
         \end{equation*}
@@ -586,7 +586,7 @@ In this section we prove the main theorem of this chapter, describing exactly wh
         \begin{equation*}
         (2m-1)(g_X-1)=(2m-1)(g_Y-1)+\deg\left(\left\lfloor \frac{m\pi_*(R)}{n} \right\rfloor \right).
         \end{equation*}
-    Combining this with the Riemann-Hurwitz formula, Corollary \ref{corhurwitzformula}, we see that
+    Combining this with the Riemann--Hurwitz formula, Corollary \ref{corhurwitzformula}, we see that
         \begin{align*}
         2(2m-1)(g_Y-1)+2\deg\left(\left\lfloor\frac{m\pi_*(R)}{n}\right\rfloor\right) & =  2(2m-1)(g_X-1)\\
         & =  2n(2m-1)(g_Y-1)+(2m-1)\deg(R),
@@ -618,8 +618,8 @@ In this section we prove the main theorem of this chapter, describing exactly wh
     \end{proof}
 
     \begin{rem}
-    Note that the existence of a hyperelliptic involution $\sigma$ in $G$ means not only that the genus of $X/\langle \sigma \rangle$, but also the genus of $Y=X/G$, is $0$ (by the Riemann-Hurwitz formula).
-    If, moreover $p=2$, then the canonical projection $X\rightarrow X/\langle \sigma \rangle$ is not unramified (again by the Riemann-Hurwitz formula) and hence not tamely ramified; then $\pi$ cannot be tamely ramified either.
+    Note that the existence of a hyperelliptic involution $\sigma$ in $G$ means not only that the genus of $X/\langle \sigma \rangle$, but also the genus of $Y=X/G$, is $0$ (by the Riemann--Hurwitz formula).
+    Moreover, if $p=2$, then the canonical projection $X\rightarrow X/\langle \sigma \rangle$ is not unramified (again by the Riemann--Hurwitz formula) and hence not tamely ramified; then $\pi$ cannot be tamely ramified either.
     \end{rem}
 
 
@@ -627,10 +627,6 @@ In this section we prove the main theorem of this chapter, describing exactly wh
 We will now give some examples of a finite group acting on a curve, and the consequent action on the holomorphic poly-differentials. 
 We start with some examples in which $G$ acts trivially on $H^0(X,\Omega_X^{\otimes m})$.
 We then follow this with the example of hyperelliptic curves, for which we compute an explicit basis of $H^0(X,\Omega_X^{\otimes m})$, allowing us to see when the action is trivial.
-
-
-\subsection{Trivial Examples}\label{examplessection}
-
 
 (a) Let $g_X = 0$, \ie $X\cong \mathbb P_k^1$.
 Then $\deg(K_X) = -2$ and so $\deg(mK_X) < 0$ for $m~\geq~1$.
@@ -644,9 +640,165 @@ If $p>0$ and $G$ is a $p$-group, then the multiplicative character $G\rightarrow
 in particular the action of $G$ on $H^0(X,\Omega_X^{\otimes m})$ is trivial as well.
 On the other hand, if $p\neq 2$ and $X$ is given by the Weierstrass equation of the form $y^2 = f(x)$, then the involution $\sigma \colon  (x,y) \rightarrow (x,-y)$ maps the invariant differential $\omega = \frac{dx}{y}$ to $-\omega$.
 
+(c) Let $X$ be a hyperelliptic curve and $G$ the subgroup of $\aut(X)$ generated by the hyperelliptic involution.
+We recall that in Propositions \ref{prophyperellipticbasispnot2} and \ref{propbasishyperellipticp=2} we gave bases of $H^0(X,\Omega_X^{\otimes m})$ for $m \geq 1$.
+In particular, if $p \neq 2$ we let $\omega = \frac{dx^{\otimes m}}{y^m}$, and if $p=2$ we let $\omega = \frac{dx^{\otimes m}}{H(x)^m}$.
+
+We first suppose that $p \neq 2$.
+Then $\sigma$ acts by multiplication by $-1$ on $x^i \omega$ and $y x^i \omega$ if $m$ is, respectively, odd and even.
+Hence if $m=1$ or either $m>2$ or $g_X > 2$ the action of $\sigma$ is non-trivial.
+Finally, if $m$ is even then $\sigma$ acts trivially on $\omega$ and $x$, and so $\sigma$ acts trivially, and hence non-faithfully, on $H^0(X,\Omega_X^{\otimes 2})$.
+
+Now we suppose that $p=2$.
+In this case $\sigma$ acts trivially on $x$, and hence on $\omega$.
+So the action is trivial, and hence non-faithful, on $\hzero$, and also on $H^0(X,\Omega_X^{\otimes 2})$ if $g_X = 2$.
+On the other hand, $\sigma(y) = y + H(x)$, so $\sigma$ acts non-trivially on $yx^i \omega$, and the action is faithful if $m \geq 2$ and $g_X > 2$.
 
 
-Since $\sigma$ acts trivially on $x$, it is clear that in both the $m=1$ case and the case where $m=g=2$ that the group action is trivial.
-On other hand, since $\sigma(y) = y+h(x)$, we can see that in the other cases the action is not trivial, as there are $y$ coefficients of the basis elements.
-Hence this proves the main theorem in the case of hyperelliptic curves in characteristic two.
+
+\section{$K[G]$-module structure of $\hzero$ when $|G|=p$}
+
+In this subsection we give an alternative proof of Lemma \ref{m=1}, using a result of Valentini and Madan \cite{valmadan}.
+We let $X$ be a smooth, projective, connected algebraic curve curve of genus $g_X$ over an algebraically closed field $k$ of characteristic $p >0$.
+We suppose that $G$ is a subgroup of $\aut(X)$ of order $p$.
+We then define $Y:= X/G$ to be the quotient of $X$ by the action of $G$.
+We let $\pi \colon X \ra Y$ be the quotient map and we let $g_Y$ be the genus of $Y$.
+We will use \cite[Thm.\ 1]{valmadan} to compute the $k[G]$-module structure of $\hzero$, and from this we will show when the action of $G$ on $\hzero$ is trivial.
+
+We remark that in \cite{valmadan} it is assumed that $|G|=p^n$ for some $n \in \NN$.
+We have simplified this to the case $n=1$, since this will greatly simplify our computations, and since we do not require the general case.
+
+Since $G$ is of prime order it is a cyclic group, and we assume that $\sigma$ is a generator.
+There are $p$ unique indecomposable representations of $G$, which are 
+    \[
+    M_k := k[G]/((\sigma - 1)^k), \qquad k = 1, \ldots, p.
+    \]
+Note that the elements $e:= \sigma^0, \sigma, \ldots, \sigma^k$ form a $k$-vector space basis of $M_k$.
+
+We let $d_k$ denote the number of times that $M_k$ occurs in the decomposition of the $k[G]$-module $\hzero$ in to irreducible $k[G]$-modules, so that
+    \begin{equation}\label{equationdecompositionofhzero}
+    \hzero \cong \bigoplus_{k=1}^p \bigoplus_{i=1}^{d_k} M_k.
+    \end{equation}
+
+Now if the action of $G$ on $\hzero$ is trivial then the only irreducible submodule of $\hzero$ will be the trivial module $M_1$.
+Hence the action of $G$ is trivial if and only if $d_1 = g_X$ and $d_k = 0$ for $k \in \{ 2, \ldots, p \}$.
+
+To show that the latter condition holds we start by defining
+    \[
+    \Omega_X^i := \{ \omega \in \hzero | (\sigma - 1)^i\omega = 0 \}
+    \]
+for $0 \leq i \leq p$.
+Clearly $\Omega_X^{i+1} \supseteq \Omega_X^i$, and also $\Omega_X^0 = \{0\}$ and $\Omega_X^p = \hzero$.
+
+By the decomposition \eqref{equationdecompositionofhzero} of $\hzero$ we know that
+    \[
+    \dim_k \left( \Omega_X^i\right) = \sum_{k=1}^p \sum_{i=1}^{d_k} \dim_k \left( \Omega_X^i \cap M_k \right).
+    \]
+Furthermore, since $e, \sigma, \ldots, \sigma^{k-1}$ forms a $k$-basis of $M_k$ it follows that 
+    \[
+    \dim_k\{ m \in M_k |(\sigma - 1)^iv = 0 \} = 
+        \begin{cases}
+        i & \text{if } i < k \\
+        k & \text{otherwise.}
+        \end{cases}
+     \]   
+Combining the above we conclude that 
+    \[
+    \dim_k \Omega_X^i = \sum_{k=1}^{i-1} kd_k + \sum_{k=i}^p id_k
+    \]
+from which it follows that
+    \[
+    \dim_k \left( \Omega_X^{i+1}/\Omega_X^i \right) = \sum_{k=i+1}^p d_k.
+    \]
+
+
+We then use this to make $d_k$ the subject of the equation, giving
+    \[
+    d_k = 
+        \begin{cases}
+        \dim_k \left( \Omega_X^p/\Omega_X^{p-1} \right) & \text{if } k = p \\
+        \dim_k \left( \Omega_X^k/\Omega_X^{k-1} \right) - \dim_k \left( \Omega_X^{k+1}/\Omega_X^k \right) & \text{otherwise.}
+        \end{cases}
+    \]
+We now determine $\dim_k\left( \Omega_X^i/\Omega_X^{i-1} \right)$ using the extension $K(X)/K(Y)$.
+
+Since $G$ is cyclic of order $p$, $K(X)/K(Y)$ is a degree $p$ Artin extension, and hence $K(X) = K(Y)(y)$, where $y$ satisfies
+    \[
+    y^p - y = a
+    \]
+for some $a \in K(X)$.
+We can and do choose $y$ and $a$ to satisfy the conditions of \cite[App.\ 5, Lem.\ 5.1]{quaddiffequi}, which we state below.
+
+    \begin{lem}
+    Let $L/K$ be a totally ramified Galois extension of degree $p$.
+    Then there exists an element $y \in L$ with valuation $-m$, where $m$ is coprime to $p$ and positive, such that $y^p - y \in K$ and $L = K(y)$.
+    Then if $M$ is the largest integer such that the higher ramification group $G_M$ is non-trivial, we have $M = m$.
+    \end{lem}
+
+We let $Q_1, \ldots, Q_s \in Y$ be the branch points of $\pi$, and we let $P_1, \ldots, P_S$ be the corresponding ramification points (note that since $|G|$ is prime it follows that there is only one point in $\pi^{-1}(Q_i)$ for $1 \leq i \leq s$).
+We let $v_i = v_{P_i}$ denote the valuation at each $P_i \in X$.
+Now if we let $\alpha_i = -v_i(a) = m$\todo[inline]{why are they all equal to $m$? I think it is because the valuation is being divided by the ramification index, which is $p$ in this case. Need to check} then we can compute the different exponent (see Definition \ref{definitiondifferent}) at $P_i$.
+From Hilbert's formula (Theorem \ref{hilbertsformula}) we can conclude that
+    \[
+    \delta_i = \sum_{j=0}^\infty (\ord(G_j(P_i)) = \sum_{i=0}^{m}(p-1) = (p-1)(m+1).
+    \]
+Now we set
+    \[
+    \gamma_{i,k} = \left\lfloor \frac{\delta_i - k \alpha_i}{p} \right\rfloor, \qquad k = 0, \ldots, p-1,
+    \]
+where $\lfloor c \rfloor$ denotes the largest integer less than $c$, for any $c \in \mathbb R$.
+We let $\Gamma_k = \sum_{i=1}^s \gamma_{i,k}$.
+
+We now state the main theorem of \cite{valmadan}, making the appropriate substitutions given our assumptions.
+
+    \begin{thm}\label{theoremofvalentiniandmadan}
+    Let $G$ be a cyclic group of automorphisms of $X$ of order $p$.
+    Let $Y : = X/G$ be the quotient of $X$ by the action of $G$, with genus $g_Y$.
+    The regular representation of $G$ occurs $g_Y$ times in the representation of $G$ on $\hzero$.
+    For $k=1, \ldots, p-1$, the indecomposable representation of degree $k$ occurs $\Gamma_{k-1} - \Gamma_k + \alpha_k$ times, with $\alpha_k = -1$ if $k = p-1$, and zero otherwise.
+    \end{thm}
+    \begin{proof}
+    See \cite[Thm.\ 1]{valmadan}.
+    \end{proof}
+
+Using the above theorem we now give an alternative proof of Lemma \ref{m=1}.
+
+    \begin{proof}[Proof of Lemma \ref{m=1}]
+    We first show that if $p=2$ then the action is trivial.
+    In this case there are only two representations - the regular representation and the identity represenation.
+    By Theorem \ref{theoremofvalentiniandmadan}, the regular representation occurs $g_Y$ times.
+    Since we assumed that $g_Y = 0$ it follows that the action of $G$ on $\hzero$ only affords the identity representation, and hence $G$ acts trivially.
+    
+    We now prove the other direction, recalling that $g_Y= 0$ by assumption.
+    We further suppose that $p >2$ and that $g_X  \geq 2$, and that the action of $G$ on $\hzero$ is trivial.
+    
+    We first observe that for any $i \in \{1, \ldots, s \}$ we have
+        \[
+        \gamma_{i, (p-1)} = \left \lfloor \frac{\delta_i - (p-1)\alpha_i}{p} \right \rfloor  = \left \lfloor \frac{(p-1)(\alpha_i + 1) - (p-1)\alpha_i}{p} \right \rfloor  = \left \lfloor \frac{p-1}{p} \right \rfloor = 0.
+        \]  
+    and hence $\Gamma_{p-1} = \sum_{ i=1}^s \gamma_{i, (p-1)} = 0$.
+
+    Now since we are assuming that the action of $G$ is trivial, it must follow that $d_k = 0$ for all $k \neq 1$, as previously discussed.
+    By Theorem \ref{theoremofvalentiniandmadan} it follows that $\Gamma_{p-2} - \Gamma_{p-1} -1 = 0$, and hence $\Gamma_{p-2} = 1$.
+    We can then show inductively that for $2 \leq k \leq p-2$ then $\Gamma_k = 1$, using the relation $\Gamma_{k-1} - \Gamma_k = 0$ from Theorem \ref{theoremofvalentiniandmadan}.
+
+    Finally, we derive a contradiction when $k =1$.
+    Since $p | \delta_i$, we can write 
+        \begin{equation}\label{equationdifferenceofgamma0andgamma1}
+        \Gamma_0  - \Gamma_1 = \sum_{i=1}^s \left( \left \lfloor \frac{\delta_i}{p} \right \rfloor - \left \lfloor \frac{\delta_i - \alpha_i}{p} \right \rfloor \right) = \sum_{i=1}^s -\left\lfloor \frac{-\alpha_i}{p} \right \rfloor.
+        \end{equation}
+    Since
+        \[
+        1 = \Gamma_{p-2} = \sum_{i=1}^s \left\lfloor \frac{\alpha_i + p -1}{p} \right \rfloor,
+        \]
+    and also since the terms of this sum are all non-negative, we see that for one value of $i$ we have $1 \leq \alpha_i=0 \leq p-1$, and for all other $i$ we have $\alpha_i = 0$.
+    Without loss of generality we may assume that $ 1 \leq \alpha_1 \leq p-1$ and that $\alpha_i = 0$ for $i\geq 2$.
+    Combining this with \eqref{equationdifferenceofgamma0andgamma1} and the action being trivial we conclude that
+        \[
+        1 = - \left \lfloor \frac{\alpha_i}{p} \right \rfloor = \Gamma_0 - \Gamma_1. 
+        \]  
+    From the statement of Theorem \ref{theoremofvalentiniandmadan} we know that $\Gamma_0 - \Gamma_1 = d_1$.
+    However, for $G$ to act trivially we require that $d_1 = g_X$, and since we assumed that $g_X \geq 2$ this gives a contradiction.
+    \end{proof}
+
 
