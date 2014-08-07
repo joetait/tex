@@ -99,7 +99,7 @@ We now describe how the trace map acts on $H^1(X,\Omega_X)$ via the presentation
         \psi = (({\omega}_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right).
         \]
     By commutativity of the diagram $\psi \in \ker(d_3) \cong \sum_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$.
-    This means that $\omega_P$, and hence also $\psi$, is zero for any $P \in U_0 \cap U_\infty$.
+    This means that $\omega_P$, and hence $\psi$, is zero for any $P \in U_0 \cap U_\infty$.
     Since $\psi$ is also zero for $P \in \pi^{-1}(0)$ it follows that 
         \[
         t\left([ \omega ] \right) = \sum_{P \in X}\res_P(\psi) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega).
@@ -123,9 +123,7 @@ We use the cover $\cal U$ and the \cech differentials defined earlier to give us
     & 0 & 0 &}
     \end{equation}
 By a generalisation of Leray's theorem \cite[Cor.\ 12.4.7]{EGA0III} we know that the $\derhamhone$ is isomorphic to the first cohomology of the total complex of \eqref{equationcechbicomplex}.
-Note that this requires ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero for any $\sigma$ in the nerve of $\cU$ and any $p \geq 1$ ---
-since $U_0$ and $U_\infty$ are affine, this follows from Serre's affineness criterion \cite[Thm.\ 5.2.23]{liu}.
-
+Note that this requires ${\check H}^p(U_\sigma, \cO_X)$ and ${\check H}^p(U_\sigma, \Omega_X)$ to be zero for any $\sigma$ in the nerve of $\cU$ and any $p \geq 1$ --- since $U_0$ and $U_\infty$ are affine, this follows from Serre's affineness criterion \cite[Thm.\ 5.2.23]{liu}.
 
 Therefore $\derhamhone$ is isomorphic to the space
     \begin{equation}\label{equationderhamspace}
@@ -595,18 +593,12 @@ Before proving this theorem we use it to prove the following corollary.
         \[
         \gamma_i = \left[ \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y\right) \right],
         \]
-    then clearly
-        \begin{equation*}
-        \sigma(\gamma_i) = -\gamma_i.
-        \end{equation*}
+    then clearly $\sigma(\gamma_i) = -\gamma_i$.
     Similarly, if 
         \[
         \lambda_i = \left[ \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0 \right) \right]
         \]
-    then 
-        \[
-        \sigma(\lambda_i) = - \lambda_i.
-        \]
+    then $\sigma(\lambda_i) = - \lambda_i$.
     Hence $\sigma$ acts by multiplication with $-1$ on $\derhamhone$.
     \end{proof}
 
@@ -616,7 +608,7 @@ We now prove Theorem \ref{theorembasisofderham}.
     \begin{proof}
     We make use of the fact that the short exact sequence in Proposition \ref{propshortexactsequence} splits as a sequence of vector spaces over $k$, and that we know bases of the outer two terms.
     
-    It is clear that the elements in \eqref{equationhzerobasiselementofderhampnot2} and \eqref{equationhzerobasiselementofderhampis2} are elements of the space \eqref{equationderhamspace}. 
+    It is clear that the elements in \eqref{equationhzerobasiselementofderhampnot2} and \eqref{equationhzerobasiselementofderhampis2} are elements of \eqref{equationderhamspace}. 
     In fact, it follows from Propositions \ref{prophyperellipticbasispnot2} and \ref{propbasishyperellipticp=2} that they are the image of a basis of $H^0(X,\Omega_X)$ in $\derhamhone$.
     
     Moreover, it is obvious that if the elements in \eqref{equationhonebasiselementofderhampnot2} and \eqref{equationhonebasiselementofderhampis2} are well defined elements of the space \eqref{equationderhamspace} then they will map to the basis of $\hone$ given in Theorem \ref{theorembasisofhone}.
@@ -645,9 +637,9 @@ We now prove Theorem \ref{theorembasisofderham}.
         \]
     so that
         \begin{align*}
-        \phi_i(x) & = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{g+2,i}x^{g+2} \\
+        \phi_i(x)  & = \alpha_{2g+2,i}x^{2g+2} + \ldots + \alpha_{g+2,i}x^{g+2} \\
         \intertext{and }
-        \psi_i(x) & = \alpha_{g+1,i}x^{g+1} + \ldots + \alpha_{0,i}.
+        \psi_i(x)  & = \alpha_{g+1,i}x^{g+1} + \ldots + \alpha_{0,i}.
         \end{align*}
     Note that it is possible for any of $\alpha_{j,i}$ to be zero. In fact, it is possible for either $\phi_i(x)$ or $\psi_i(x)$ to be zero.
     Whenever they are non-zero we denote their degrees as polynomials in $x$ by $d_\phi$ and $d_\psi$ respectively. From the definition of $\phi_i(x)$ and $\psi_i(x)$ we know that $0 \leq d_\psi \leq g+1$ and $g+1 < d_\phi \leq 2g+2$.
