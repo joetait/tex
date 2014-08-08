@@ -297,9 +297,9 @@ Using the Riemann--Roch theorem and Corollary \ref{cordegreeofcanonicaldivisor} 
 
     \begin{cor}\label{dim3}
     Let $g_X, m\geq 2$. Then
-        \begin{equation}
+        \begin{equation*}
         \dim_kH^0(X,\Omega_X^{\otimes m}) = (2m-1)(g_X-1) 
-        \end{equation}
+        \end{equation*}
     \end{cor}
     \begin{proof}
     Since $g_X\geq 2$ it follows from Corollary \ref{cordegreeofcanonicaldivisor} that $\deg(W)\geq1$, and hence we see that $\deg(mW)>\deg(W)$.
@@ -505,7 +505,8 @@ We will use these descriptions almost exclusively for the rest of the thesis, an
         \end{equation*}
     It follows that for any $P \in X$ we have the adjunction map $\underline{K}(X)/\cO_X \ra i_* \left( K(X)/\cO_{X,P} \right)$.
     These adjunction maps give a map $\underline{K(X)}/\cO_X \ra \prod_{P \in X}\left( K(X)/\cO_{X,P} \right)$, whose image is actually in the sum $\bigoplus_{P \in X} i_*\left(K(X)/\cO_{X,P} \right)$.
-    The resulting map is an isomorphism because the stalk $i_*\left( K(X)/\cO_{X,P} \right)_Q$ is zero for $Q \neq P$ and is $K(X)/\cO_{X,P}$ when $Q = P$ and the isomorphism in \eqref{equationsheafisomorphism} follows.
+    The resulting map is an isomorphism because the stalk $i_*\left( K(X)/\cO_{X,P} \right)_Q$ is zero for $Q \neq P$ and is $K(X)/\cO_{X,P}$ when $Q = P$. 
+    The isomorphism in \eqref{equationsheafisomorphism} follows from this.
     
     Replacing $\underline{K}(X)/\cO_X$ by $\bigoplus_{P\in X} i_*\left(K(X)/\cO_{X,P}\right)$ in \eqref{equationinitialdualitysesfunctions} yields
         \begin{equation}\label{equationshortexactsequencefunctionsdirectsum}

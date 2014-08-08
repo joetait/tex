@@ -249,9 +249,15 @@ We now compute the ramification divisor of $\pi$.
     \end{proof}
 
 
-
-
-The divisors of $x$ and $dx$ are the same as when $\cha(k) = 2$, see \eqref{equationdivxpis2} and \eqref{equationdifferentialdivisor}.
+The divisors of $x$ and $dx$ are the same as when $\cha(k) \neq 2$, see \eqref{equationdivxpis2} and \eqref{equationdifferentialdivisor}.
+We also note that since $\cha(k) = 2$ we have
+    \[
+    dF(x) = d(y^2 + yH(x)) = d(yH(x)) = H(x)dy + ydH(x)
+    \]
+    and hence
+    \begin{equation}\label{equationdivisorofdypis2}
+    dy = \frac{F'(x) + yH'(x)}{H(x)}dx
+    \end{equation}
 We now compute the divisor of $H(x)$ too.
 
 
@@ -292,7 +298,7 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
     \begin{proof}
     We first show that $\di_0(y)$, the divisor of the zeroes of $y$, is $\sum_{i=1}^l m_i [Q_i]$.
     
-    It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{equationdefiningequationpis2} \ie~in $U_\infty$.
+    It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{ext} \ie~in $U_\infty$.
     Suppose $P\in U_\infty$.
     If $\left. F \right|_P \neq 0$ then it follows that $y|_P \neq 0$, since $F(x) = y (y + H(x))$.
     Hence $\di_0(y)$ has a coefficient  of zero for any point in $U_\infty\backslash \{Q_1, \ldots, Q_l \}$.
