@@ -2,7 +2,7 @@
 
 
 Geometry and topology provide perhaps the greatest source of both intuition and vision in mathematics, whilst algebra balances the scales, being the exemplar of precision and abstraction. 
-Perhaps the best example of the interplay between these two areas is the triple equivalence of Riemann surfaces, complex function fields and complex curves.
+A most compelling example of the interplay between these two areas is the triple equivalence of Riemann surfaces, complex function fields and complex curves.
 On the one hand, compact Riemann surfaces constitute all spaces that occur in the topological classification of connected, compact, orientable surfaces.
 On the other hand, complex function fields lie strongly in the algebraic end of the spectrum, with strong relations to number theory and Galois theory.
 Finally, it is algebraic curves that most clearly unites algebra and geometry.
@@ -15,7 +15,6 @@ In the case of algebraic curves, it is Riemann-Roch theory that allows us to ext
 Originally only for Riemann surfaces, the theory focusses on meromorphic functions and differentials.
 It is this focus which allows the definition to be generalised, first just to complex algebraic curves, then to curves over any algebraically closed field $k$.
 The genus appears as a constant in the Riemann-Roch theory of Riemann surfaces, most notably as the dimension of the vector space of holomorphic differentials and in the Riemann-Roch theorem itself.
-Since this constant remains after generalising to algebraic curves, it is natural to continue calling this constant the genus.
 The fact that the genus can be defined in terms of differentials demonstrates why differentials, and in particular holomorphic differentials, play such an important role in the theory of algebraic curves.
 
 %change new page so that it fills pads out the other paragraphs
@@ -26,29 +25,32 @@ The fact that the genus can be defined in terms of differentials demonstrates wh
 With this in mind, determining the automorphism group of collections of differentials on a curve $X$, such as $\hzero$, and more generally how group actions on such objects behave, is a worthwhile pursuit in its own right.
 Moreover, the automorphism groups of algebraic curves, and in particular Riemann surfaces, have given rise to many interesting theories.
 For example, it is known that every finite group is the full automorphism group of some Riemann surface \cite[Thm.\ 6']{greenberg}.
+\todo[inline]{adjust preceding paragraph}
 
 The main focus of this thesis will lie in considering the $k[G]$-module structure of various spaces of differentials on a curve $X$, and related spaces, for a subgroup $G$ of the automorphism group $\aut(X)$.
-Moreover, we will focus on what happens in positive characteristic.
-Of course, if the characteristic divides the order of $G$ the theory is often a lot more complex --- for example, we no longer have Maschke's theorem, a fundamental result in representation theory.
+Particularly, we will focus on what happens in positive characteristic.
+Of course, if the characteristic divides the order of $G$ the theory is often a lot more complex --- for example, we no longer have Maschke's theorem, a fundamental result in classic representation theory.
 
 The thesis is broken in to four main chapters (excluding this one).
 The first gives background and fixes notation.
-We proceed to describe and motivate the other three chapters below.
+We now proceed to describe and motivate the other three chapters.
 
 \section{Bases of spaces of (poly)differentials on hyperelliptic curves}
 
 Hyperelliptic curves are a classically studied class of algebraic curves, characterised by being double covers of the projective line.
+In particular, any hyperelliptic curve $X$ comes equipped with a projection map $\pi \colon X \ra \PP_k^1$, unique up to automorphism of $\PP_k^1$.
 They can be viewed as a natural extension of elliptic curves to higher genera, sharing a similar defining equation of $y^2 = f(x)$ (if $\cha(k) \neq 2$).
 It is this concrete and relatively simple defining equation that allows explicit calculations to be made for them.
 Added to this, there exist hyperelliptic curves with every possible genus (except one and zero), so in this sense they are not a very restrictive class to consider.
 Moreover, hyperelliptic curves also have a number of nice geometric properties --- for example, they can be characterised entirely in terms of Weierstrass points \cite[Chap.\ VII, \S 4, ex.\ R]{miranda}, and also every genus 2 curve is hyperelliptic \cite[Prop.\ 7.4.9]{liu}.
+\todo[inline]{check that projection map is used later}
 
-It is for these reasons that we study hyperelliptic curves throughout this thesis.
+We study hyperelliptic curves throughout this thesis.
 However, despite being commonplace in algebraic geometry, it is not always easy to find precise statements in the literature.
 This is especially true when working over a field of characteristic two, where hyperelliptic curves behave very differently.
 Because of this we split Chapter $3$ in to two sections, according to the characteristic of $k$, and start each section by collecting results that will be needed either later in the chapter or the rest of thesis.
 
-The highlights of the chapter are Proposition \ref{propbasishyperellipticp=2} and Proposition \ref{prophyperellipticbasispnot2}, which give bases of the space of holomorphic differentials and polydifferentials of a hyperelliptic curve $X$ when the characteristic of $k$ is two and is not two, respectively.
+The highlights of Chapter 3 are Proposition \ref{propbasishyperellipticp=2} and Proposition \ref{prophyperellipticbasispnot2}, which give bases of the space of holomorphic differentials and polydifferentials of a hyperelliptic curve $X$ when the characteristic of $k$ is two and is not two, respectively.
 We first state the basis when the characteristic of $k$ is not 2, recalling that in this case the function field $K(X)$ is equal to $k(x,y)$, where $y$ satisfies $y^2 = f(x)$ for some polynomial $f(x) \in k[x]$.
     \begin{unnumprop}
     Let $m\geq 1$ and let $\omega := \frac{dx^{\otimes m}}{y^m}$. 
@@ -65,7 +67,6 @@ We first state the basis when the characteristic of $k$ is not 2, recalling that
 Note that the case where $m=1$ is already in the literature, see \cite[Prop. 7.4.26]{liu} or \cite[Ch. IV, \S 4, Prop. 4.3]{griffiths}.
  
 On the other hand, if $\cha(k) = 2$ then $K(X)$ is still equal to an extension of $k(x)$ of the form $k(x,y)$, but this time we require $y$ to satisfy $y^2 + H(x)y = F(x)$, where $F(x)$ and $H(x)$ are polynomials in $k[x]$, whose degrees will determine the genus.
-We now give another basis for this case.
     \begin{unnumprop}
     Let $m\geq 1$ and let $\omega:= \frac{dx^{\otimes m}}{H(x)^m}$. 
     Then if $g\geq 2$, a basis of $H^0(X,\Omega_X^{\otimes m})$ is given by:\\
@@ -82,7 +83,7 @@ Note that the case where $m=1$ can again be found in \cite[Prop. 7.4.26]{liu}.
 
 Equipped with the knowledge of these explicit bases we can examine group actions on $H^0(X,\Omega_X^{\otimes m})$ much more readily.
 For example, in Chapter 5 we compute the action of the hyperelliptic involution $\sigma$ on the above basis.
-Using this we can see when the group generated by $\sigma$ acts faithfully on $H^0(X,\Omega_X^{\otimes m})$, explicating the main theorem of the chapter in this case.
+Using this we can see when the group generated by $\sigma$ acts faithfully on $H^0(X,\Omega_X^{\otimes m})$, explicating the main theorem of Chapter 5 in this case.
 
 \section{Group actions on algebraic de Rham cohomology}
 
@@ -97,7 +98,7 @@ Moreover, in 1931 Georges de Rham \cite{derhamstheorem} proved de Rham's theorem
     between the de Rham cohomology groups and the singular cohomology groups of $M$.
     \end{unnumthm}
 
-Of course, if de Rham cohomlogy can be defined on complex manifolds, one can compute the de Rham cohomology of Riemann surfaces.
+Hence the de Rham cohomology of Riemann surfaces\todo{edit this}
 This leads to the obvious question as to whether one can define analog of de Rham cohomology for algebraic curves.
 Grothendieck answered this in a letter to Atiyah \cite{grothendiecklettertoatiyah}, where he in fact defined the algebraic de Rham cohomology of a scheme.
 The Hodge-de Rham spectral sequence arose from this definition, and has been much studied.
@@ -106,7 +107,7 @@ In particular, Deligne and Illusie proved that if, for example, $X$ is a complex
     H^n_{\text{dR}}(X) \cong \bigoplus_{i=0}^n H^i(X,\Omega_X^{n-i}),
     \end{equation*}
 see \cite{deligneillusie}.
-Of course, when $X$ is a curve this is equivalent to saying that we have a canonical short exact sequence
+When $X$ is a curve this is more or less equivalent to saying that we have a canonical short exact sequence
     \begin{equation}\label{equationafterhodgetheorydecomposition}
     0 \ra \hzero \ra \derhamhone \ra \hone \ra 0.
     \end{equation}
@@ -114,7 +115,8 @@ Moreover, most of the time (for example, whenever $\cha(k) = 0$), this sequence 
 However, this is not always the case --- in particular, if $\cha(k) = p >0$ divides the order $G$, the sequence may not split.
 In \cite{canonicalrepresentation} Hortsch demonstrated that if $X$ is a hyperelliptic curve over $k$, an algebraically closed field of characteristic $p$, and has $y^2 = x^p-x$ as a defining equation, then \eqref{equationafterhodgetheorydecomposition} does not split.
 
-In Chapter 4 we generalise this result to the following theorem.
+Theorem \ref{theoremsplittingtheorem}, stated below, generalises this result.
+\todo[inline]{explain induced map - finished here}
     \begin{unnumthm}
     Let $X$ be a hyperelliptic curve over an algebraically closed field $k$ of characteristic $p \geq 3$.
     Suppose there exists $\tau \in \aut(X)$ such that the induced automorphism $\bar \tau \colon \mathbb P_k^1 \ra \mathbb P_k^1$ is given by $x \mapsto x+a$ for some $0 \neq a \in k$.
