@@ -1,7 +1,7 @@
 \chapter{Introduction} \label{Chapter:introduction}
 
 
-Geometry and topology provide perhaps the greatest source of intuition and vision in mathematics, whilst algebra balances the scales, being the exemplar of precision and abstraction. 
+Geometry and topology provide perhaps the greatest source of both intuition and vision in mathematics, whilst algebra balances the scales, being the exemplar of precision and abstraction. 
 Perhaps the best example of the interplay between these two areas is the triple equivalence of Riemann surfaces, complex function fields and complex curves.
 On the one hand, compact Riemann surfaces constitute all spaces that occur in the topological classification of connected, compact, orientable surfaces.
 On the other hand, complex function fields lie strongly in the algebraic end of the spectrum, with strong relations to number theory and Galois theory.
@@ -21,7 +21,7 @@ The fact that the genus can be defined in terms of differentials demonstrates wh
 %change new page so that it fills pads out the other paragraphs
 \vbox{On the other hand, we recall the famous quote
 \begin{quotation}
-``Whenever you have to deal with a structure endowed entity, try to determine its automorphism group" --- Hermann Weyl
+``Whenever you have to do with a structure endowed entity $\Sigma$ try to determine its group of automorphism" --- Hermann Weyl \cite[pg. 144]{weyl}
 \end{quotation}}
 With this in mind, determining the automorphism group of collections of differentials on a curve $X$, such as $\hzero$, and more generally how group actions on such objects behave, is a worthwhile pursuit in its own right.
 Moreover, the automorphism groups of algebraic curves, and in particular Riemann surfaces, have given rise to many interesting theories.
@@ -41,12 +41,12 @@ Hyperelliptic curves are a classically studied class of algebraic curves, charac
 They can be viewed as a natural extension of elliptic curves to higher genera, sharing a similar defining equation of $y^2 = f(x)$ (if $\cha(k) \neq 2$).
 It is this concrete and relatively simple defining equation that allows explicit calculations to be made for them.
 Added to this, there exist hyperelliptic curves with every possible genus (except one and zero), so in this sense they are not a very restrictive class to consider.
-Moreover, hyperelliptic curves also have a number of nice geometric properties --- for example, they can be characterised entirely in terms of Weierstrass points, and also every genus 2 curve is hyperelliptic.
+Moreover, hyperelliptic curves also have a number of nice geometric properties --- for example, they can be characterised entirely in terms of Weierstrass points \cite[Chap.\ VII, \S 4, ex.\ R]{miranda}, and also every genus 2 curve is hyperelliptic \cite[Prop.\ 7.4.9]{liu}.
 
 It is for these reasons that we study hyperelliptic curves throughout this thesis.
 However, despite being commonplace in algebraic geometry, it is not always easy to find precise statements in the literature.
 This is especially true when working over a field of characteristic two, where hyperelliptic curves behave very differently.
-Because of this we split Chapter $3$ in to two sections, according to the characteristic of $k$, and start each section by collecting results that will be needed, either later in the chapter or the rest of thesis.
+Because of this we split Chapter $3$ in to two sections, according to the characteristic of $k$, and start each section by collecting results that will be needed either later in the chapter or the rest of thesis.
 
 The highlights of the chapter are Proposition \ref{propbasishyperellipticp=2} and Proposition \ref{prophyperellipticbasispnot2}, which give bases of the space of holomorphic differentials and polydifferentials of a hyperelliptic curve $X$ when the characteristic of $k$ is two and is not two, respectively.
 We first state the basis when the characteristic of $k$ is not 2, recalling that in this case the function field $K(X)$ is equal to $k(x,y)$, where $y$ satisfies $y^2 = f(x)$ for some polynomial $f(x) \in k[x]$.
@@ -101,7 +101,7 @@ Of course, if de Rham cohomlogy can be defined on complex manifolds, one can com
 This leads to the obvious question as to whether one can define analog of de Rham cohomology for algebraic curves.
 Grothendieck answered this in a letter to Atiyah \cite{grothendiecklettertoatiyah}, where he in fact defined the algebraic de Rham cohomology of a scheme.
 The Hodge-de Rham spectral sequence arose from this definition, and has been much studied.
-In particular, Deligne and Illusie proved that if, for example $X$ is a complex, projective variety then
+In particular, Deligne and Illusie proved that if, for example, $X$ is a complex, projective variety then
     \begin{equation*}
     H^n_{\text{dR}}(X) \cong \bigoplus_{i=0}^n H^i(X,\Omega_X^{n-i}),
     \end{equation*}
@@ -110,7 +110,7 @@ Of course, when $X$ is a curve this is equivalent to saying that we have a canon
     \begin{equation}\label{equationafterhodgetheorydecomposition}
     0 \ra \hzero \ra \derhamhone \ra \hone \ra 0.
     \end{equation}
-Moreover, in general (for example, when $\cha(k) = 0$), this sequence splits not only as $k$ vector spaces, but also as $k[G]$-modules, where $G$ is a subgroup of $\aut(X)$.
+Moreover, most of the time (for example, whenever $\cha(k) = 0$), this sequence splits not only as $k$ vector spaces, but also as $k[G]$-modules, where $G$ is a subgroup of $\aut(X)$.
 However, this is not always the case --- in particular, if $\cha(k) = p >0$ divides the order $G$, the sequence may not split.
 In \cite{canonicalrepresentation} Hortsch demonstrated that if $X$ is a hyperelliptic curve over $k$, an algebraically closed field of characteristic $p$, and has $y^2 = x^p-x$ as a defining equation, then \eqref{equationafterhodgetheorydecomposition} does not split.
 
@@ -121,17 +121,17 @@ In Chapter 4 we generalise this result to the following theorem.
     We let $G = \langle \tau \rangle$ be the subgroup of $\aut(X)$ generated by $\tau$, and further suppose that $X$ is not ramified above $\infty \in \PP_k^1$.
     Then the sequence \eqref{equationafterhodgetheorydecomposition} does not split as a sequence of $k[G]$-modules.
     \end{unnumthm}
-Such curves exist in every genus and every characteristic greater than 2, and we give examples of such curves.%, and also give an example from \cite{automorphismshyperellipticmodular} of a curve that is as described in theorem, except that it is not ramified above $\infty \in \PP_k^1$, and show that for this curve the short exact sequence \eqref{equationafterhodgetheorydecomposition} does split.
+Such curves exist in every genus and every characteristic (greater than 2), and we give examples of such curves.%, and also give an example from \cite{automorphismshyperellipticmodular} of a curve that is as described in theorem, except that it is not ramified above $\infty \in \PP_k^1$, and show that for this curve the short exact sequence \eqref{equationafterhodgetheorydecomposition} does split.
 
 We prove the above theorem by first computing explicit bases of each of the spaces in \eqref{equationafterhodgetheorydecomposition}.
 If $\pi \colon X \ra \PP_k^1$ is a degree two projection, then by \cech cohomology we have
-        \[
+        \begin{equation}\label{equationintroductionisomorphism}
         \hone \cong \frac{\cO_X\left(U_0 \cap U_\infty\right)}{\{ f_0 - f_\infty | f_i \in \cO_X(U_i)\}},
-        \]
+        \end{equation}
 where $U_0 = X \backslash \pi^{-1}(0)$ and $U_\infty = X \backslash \pi^{-1}(\infty)$.
-As mentioned, in the preceding chapter we already computed a basis of $\hzero$, and we use this along with Serre duality and the above identity to compute a basis of $\hone$.
+In the preceding chapter we already computed a basis of $\hzero$, and we use this along with Serre duality and the above identity to compute a basis of $\hone$.
     \begin{unnumthm}
-    Then the elements $\frac{y}{x}, \ldots, \frac{y}{x^g} \in K(X)$ are regular on $U_0 \cap U_\infty$, and their residue classes $\left [ \frac{y}{x} \right ],  \ldots, \left [ \frac{y}{x^g} \right]$ form a basis of $\hone$.
+    Then the elements $\frac{y}{x}, \ldots, \frac{y}{x^g} \in K(X)$ are regular on $U_0 \cap U_\infty$, and their residue classes $\left [ \frac{y}{x} \right ],  \ldots, \left [ \frac{y}{x^g} \right]$ in \eqref{equationintroductionisomorphism} form a basis of $\hone$.
     \end{unnumthm}
  It should be noted that this basis is the same regardless of characteristic --- since this is not the case for the dual space $\hzero$, this may be surprising.
  We then go on to compute the basis of $\derhamhone$ as well, given in Theorem \ref{theorembasisofderham}, but this is slightly more involved, so we do not state it here.
@@ -146,13 +146,12 @@ The question has also been answered by Kani \cite{Kani} and Nakajima \cite{naka2
 Valentini and Madan \cite{valmadan} determined the structure when $\pi$ may be wildly ramified, but they assume that $G$ is a cyclic group of order $p^n$, and this was recently generalised by Karanikolopoulos and Kontogeorgis to any cyclic group \cite{kako}.
 %Other papers look at this - read intros to and then write a sentence about other papers already referenced in our paper.
 
-A weaker, but naturally related, question is: "When does a group $G$ act faithfully on $H^0(X,\Omega_X)$."
-We answer this in full generality, and also extend the result to look at the space of holomorphic polydifferentials denoted $H^0(X,\Omega_X^{\otimes m})$.
+A weaker though naturally related question is: "When does a group $G$ act faithfully on $H^0(X,\Omega_X)$?"
+We answer this in full generality, and also extend the result to look at the space of holomorphic polydifferentials, denoted $H^0(X,\Omega_X^{\otimes m})$.
 In particular we obtain the following theorem.
     \begin{unnumthm}
     Suppose that $g_X\geq 2$ and let $m\geq1$. 
-    Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ contains a hyperelliptic involution and one of the following two sets of conditions holds:
-        \begin{itemize}
+    Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ contains a hyperelliptic involution and one of the following two sets of conditions holds:\begin{itemize}
         \item $m=1$ and $p=2$;
         \item $m=2$ and $g_X=2$.
         \end{itemize}
@@ -160,88 +159,14 @@ In particular we obtain the following theorem.
 Our main method of attack in proving this is comparing the dimension of $H^0(X,\Omega_X^{\otimes m})$ to its fixed space, $H^0(X,\Omega_X^{\otimes m})^G$, for a cyclic group $G$ of prime order.
 We then aim to reduce the general case down to this somewhat more manageable example.
 
-We use similar techniques to compute when $G$ acts trivially on more general Riemann-Roch spaces, and in particular we prove the following proposition.
-    \begin{unnumprop}\label{nakaj}
-    Suppose $p>0$ and $G$ is a cyclic group of order $p^l$ for some $l\geq 1$.
-    Let $D$ be a $G$-invariant divisor on $X$ such that $\deg(D)>2g_X-2$.
-    Then the action of~$G$ on $H^0(X,\cO_X(D))$ is trivial if and only if
-        \[ 
-        (p^l-1)\deg(D)=p^l\left(g_X-g_Y-\sum_{Q\in Y}\left\langle \frac{n_Q}{e_Q} \right\rangle\right).
-        \]
-    \end{unnumprop}
+We use similar techniques to compute when $G$ acts trivially on more general Riemann-Roch spaces, such as $H^0(X,\cO_X(D))$ for a $G$-invariant divisor $D$ of degree at least $2g-1$.
+%    \begin{unnumprop}\label{nakaj}
+%    Suppose $p>0$ and $G$ is a cyclic group of order $p^l$ for some $l\geq 1$.
+%    Let $D$ be a $G$-invariant divisor on $X$ such that $\deg(D)>2g_X-2$.
+%    Then the action of~$G$ on $H^0(X,\cO_X(D))$ is trivial if and only if
+%        \[ 
+%        (p^l-1)\deg(D)=p^l\left(g_X-g_Y-\sum_{Q\in Y}\left\langle \frac{n_Q}{e_Q} \right\rangle\right).
+%        \]
+%    \end{unnumprop}
 
 
-
-
-\begin{comment}
-\section{Introduction}
-
-In topology, the number of holes in a compact, orientable surface is an important invariant, called the genus, and classifies compact, orientable surfaces up to homeomorphism.
-In particular the genus is an important topological invariant of compact Riemann surfaces.
-It is well known that for any compact Riemann surface the genus is also equal to the dimension of the space of global holomorphic differentials.
-Furthermore there is a correspondence between compact Riemann surfaces and smooth projective algebraic curves over $\mathbb C$, and the notion of holomorphic differentials can be extended to such curves.
-In fact we can extend this even further, by defining the genus of any curve over an algebraically closed field to the dimension of the space of global holomorphic differentials.
-The above alone makes it obvious that the space of global holomorphic differentials is a fundamental object in the theory of algebraic curves.
-The general motivation underlying this report is to study this space as a representation of a subgroup of the automorphism group of the given curve.
-
-Let $X$ be a smooth connected projective curve over an algebraically closed field $k$.
-Given a subgroup $G$ of the automorphism group of $X$ then a classic problem pertaining to $H^0(X,\Omega_X)$, the space of holomorphic differentials (see section \ref{chapterbackground}), is determining its $k[G]$-module structure.
-This originally dates back to 1934, and a paper of Chevalley and Weil \cite{chev}.
-They only considered the case when $k= \mathbb C$, but the complete structure has since been discovered in the case where the projection from $X$ to the quotient curve is tamely ramified.
-This was done by Kani in 1986 \cite{Kani}.
-Progress has also been made recently in the case where the projection is wildly ramified; in particular Karanikolopoulos and A. Kontogeorgis \cite{kako} have computed the $k[G]$-module structure for any cyclic group $G$.
-Also, in 1986 Broughton \cite{Broughton} computed the $k[G]$-module structure of the space of global holomorphic poly-differentials, $H^0(X,\Omega_X^{\otimes m})$ (see Section \ref{charneq2}), in the case where $\cha(k) = 0$.
-
-In this report we will not look directly at the $k[G]$-module structure, but rather at the related question of determining when the action of $G$ on $H^0(X,\Omega_X)$, and also on $H^0(X,\Omega_X^{\otimes m})$, is faithful.
-The following is our main result:
-
-    \begin{unnumthm}
-    Suppose that $g_X\geq 2$ and let $m\geq1$. 
-    Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ contains a hyperelliptic involution and one of the following two sets of conditions holds:
-        \begin{itemize}
-        \item $m=1$ and $p=2$;
-        \item $m=2$ and $g_X=2$.
-        \end{itemize}
-    \end{unnumthm}
-
-The format of the report is now briefly outlined.
-
-In the first section we prove the strong form of the Riemann-Hurwitz formula (Theorem \ref{theoremdetailedhurwitz}).
-The Riemann-Hurwitz formula relates the genus of two curves when there is a surjective map from one to the other, via the degree of the map and the degree of the ramification divisor.
-However, this can obscure the fact that the canonical divisors (see Section \ref{chapterbackground}) themselves are related.
-The strong form of the theorem states that given two curves and a surjective map $\pi:X\rightarrow Y$ of degree $n$ between the curves, with ramification divisor $R$ (see Section \ref{chapterbackground}), we have
-    \[
-    \di (\pi^* (\omega)) = \pi^*(\di (\omega)) + R,
-    \]
-where $\omega$ is a non-zero differential on $Y$, and $\pi^*$ is the pull-back induced by $\pi$.
-This section closely follows Stichtenoth's book, see \cite{stichtenoth}.
-
-The second section looks at computing the dimension of various spaces, but the most significant is the dimension of the subspace of $H^0(X,\Omega_X^{\otimes m})$ fixed by $G$, where $m\geq 1$.
-This result, along with two other results in section three, forms the heart of the proof of the main theorem.
-The dimension itself is dependent, essentially, on the genus of the quotient curve, $Y=X/G$, the degree of the projection map $\pi:X\rightarrow Y$, the ramification divisor $R$ of $\pi$ and $m$.
-By using the Riemann-Roch theorem we can easily compute the dimension of $H^0(X,\Omega_X^{\otimes m})$, and the comparison of these two dimensions is what will be used in the third section.
-
-
-In the third section we consider when a group of prime power order acts trivially on $H^0(X,\Omega_X^{\otimes m})$.
-By only considering cyclic groups of prime power order our computations are made considerably easier.
-Initially we only consider groups of prime order.
-In this case, if the characteristic of $k$ is different to $p$ then the projection map is tamely ramified, and hence we know that the coefficients of the ramification divisor are $p-1$.
-This makes it considerably easier to compute the dimension of the fixed space, as of all the parameters it depends on, the ramification divisor is the most difficult to deal with.
-When the characteristic of the field and the order of the group are the same (\ie when wild ramification could occur), then the computations are longer, but still made considerably easier by our assumptions.
-At the end of the third section we use results of \cite{kako} to make the same computations for groups whose orders are powers of $p$.
-The results we use are somewhat more technical, but they do extend the original results.
-We also make some computations for a general divisor $D$, which in general should have degree greater than $2g-2$, and give criteria for when the action is trivial on the associated Riemann-Roch space $H^0(X,\cO_X(D))$.
-
-In the fourth section we prove the main result.
-This builds on sections two and three, by reducing from a group which does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$, to a subgroup that acts trivially.
-We consider the cases where $m=1$ and $m\geq 2$ separately; despite similar methods being employed, there are technical details that need to be changed according to which case is being considered.
-These technical details show clearly in the statement: if $m=1$ then the characteristic of $k$ must be 2 for the action to not be faithful, but the genus is not relevant at all.
-In contrast, if we consider $m\geq 2$, the characteristic now does not matter, but the genus must be 2 (as does $m$).
-
-In the final section we consider examples to illuminate what has been done in the previous sections.
-We start by considering the rather trivial cases where $g_X=0$ and $g_X= 1$.
-We give explicit proofs of when the action is faithful, as these cases where not included in the proof of the main theorem.
-We then go on to construct a basis for the space of holomorphic poly-differentials for any given hyperelliptic curve.
-This serves to explicitly prove the main theorem for this class of curves, and helps to enlighten the reader by way of a concrete example.
-In particular, it helps to show why we have a different type of result according to whether $m=1$ or $m\geq 2$.
-\end{comment}
