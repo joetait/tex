@@ -22,13 +22,11 @@ The fact that the genus can be defined in terms of differentials demonstrates wh
 \begin{quotation}
 ``Whenever you have to do with a structure endowed entity $\Sigma$ try to determine its group of automorphism" --- Hermann Weyl \cite[pg. 144]{weyl}
 \end{quotation}}
-With this in mind, determining the automorphism group of collections of differentials on a curve $X$, such as $\hzero$, and more generally how group actions on such objects behave, is a worthwhile pursuit in its own right.
-Moreover, the automorphism groups of algebraic curves, and in particular Riemann surfaces, have given rise to many interesting theories.
+Indeed, the automorphism groups of algebraic curves, and in particular Riemann surfaces, have given rise to many interesting theories.
 For example, it is known that every finite group is the full automorphism group of some Riemann surface \cite[Thm.\ 6']{greenberg}.
-\todo[inline]{adjust preceding paragraph}
-
-The main focus of this thesis will lie in considering the $k[G]$-module structure of various spaces of differentials on a curve $X$, and related spaces, for a subgroup $G$ of the automorphism group $\aut(X)$.
-Particularly, we will focus on what happens in positive characteristic.
+Of course, any group that acts on a curve $X$ also acts on spaces of functions and differentials of $X$, such as $\hzero$, and it is this intersection of group actions and Riemann-Roch spaces that the main focus of our study will lie.
+In particular, we will consider the $k[G]$-module structure of various spaces of differentials on $X$, and related spaces, for a subgroup $G$ of the automorphism group $\aut(X)$.
+Moreover, we will pay special attention to what happens in positive characteristic.
 Of course, if the characteristic divides the order of $G$ the theory is often a lot more complex --- for example, we no longer have Maschke's theorem, a fundamental result in classic representation theory.
 
 The thesis is broken in to four main chapters (excluding this one).
@@ -43,7 +41,6 @@ They can be viewed as a natural extension of elliptic curves to higher genera, s
 It is this concrete and relatively simple defining equation that allows explicit calculations to be made for them.
 Added to this, there exist hyperelliptic curves with every possible genus (except one and zero), so in this sense they are not a very restrictive class to consider.
 Moreover, hyperelliptic curves also have a number of nice geometric properties --- for example, they can be characterised entirely in terms of Weierstrass points \cite[Chap.\ VII, \S 4, ex.\ R]{miranda}, and also every genus 2 curve is hyperelliptic \cite[Prop.\ 7.4.9]{liu}.
-\todo[inline]{check that projection map is used later}
 
 We study hyperelliptic curves throughout this thesis.
 However, despite being commonplace in algebraic geometry, it is not always easy to find precise statements in the literature.
@@ -98,8 +95,7 @@ Moreover, in 1931 Georges de Rham \cite{derhamstheorem} proved de Rham's theorem
     between the de Rham cohomology groups and the singular cohomology groups of $M$.
     \end{unnumthm}
 
-Hence the de Rham cohomology of Riemann surfaces\todo{edit this}
-This leads to the obvious question as to whether one can define analog of de Rham cohomology for algebraic curves.
+Given that de Rham cohomology is defined on complex manifolds, and hence Riemann Surfaces, an obvious question to ask is whether one can define analog of de Rham cohomology for algebraic curves.
 Grothendieck answered this in a letter to Atiyah \cite{grothendiecklettertoatiyah}, where he in fact defined the algebraic de Rham cohomology of a scheme.
 The Hodge-de Rham spectral sequence arose from this definition, and has been much studied.
 In particular, Deligne and Illusie proved that if, for example, $X$ is a complex, projective variety then
@@ -115,51 +111,87 @@ Moreover, most of the time (for example, whenever $\cha(k) = 0$), this sequence 
 However, this is not always the case --- in particular, if $\cha(k) = p >0$ divides the order $G$, the sequence may not split.
 In \cite{canonicalrepresentation} Hortsch demonstrated that if $X$ is a hyperelliptic curve over $k$, an algebraically closed field of characteristic $p$, and has $y^2 = x^p-x$ as a defining equation, then \eqref{equationafterhodgetheorydecomposition} does not split.
 
-Theorem \ref{theoremsplittingtheorem}, stated below, generalises this result.
-\todo[inline]{explain induced map - finished here}
+Theorem \ref{theoremsplittingtheorem}, given below, generalises this result.
+Before stating this, we recall that any automorphism $\tau$ of $X$ commutes with the hyperelliptic involution $\sigma$, and since $\PP_k^1 \cong X/\langle \sigma \rangle$ then $\tau$ induces an automorphism of $\PP_k^1$.
     \begin{unnumthm}
     Let $X$ be a hyperelliptic curve over an algebraically closed field $k$ of characteristic $p \geq 3$.
     Suppose there exists $\tau \in \aut(X)$ such that the induced automorphism $\bar \tau \colon \mathbb P_k^1 \ra \mathbb P_k^1$ is given by $x \mapsto x+a$ for some $0 \neq a \in k$.
     We let $G = \langle \tau \rangle$ be the subgroup of $\aut(X)$ generated by $\tau$, and further suppose that $X$ is not ramified above $\infty \in \PP_k^1$.
     Then the sequence \eqref{equationafterhodgetheorydecomposition} does not split as a sequence of $k[G]$-modules.
     \end{unnumthm}
-Such curves exist in every genus and every characteristic (greater than 2), and we give examples of such curves.%, and also give an example from \cite{automorphismshyperellipticmodular} of a curve that is as described in theorem, except that it is not ramified above $\infty \in \PP_k^1$, and show that for this curve the short exact sequence \eqref{equationafterhodgetheorydecomposition} does split.
+Such curves exist in every genus and every characteristic (greater than 2), and we give examples of such curves in Chapter 4.%, and also give an example from \cite{automorphismshyperellipticmodular} of a curve that is as described in theorem, except that it is not ramified above $\infty \in \PP_k^1$, and show that for this curve the short exact sequence \eqref{equationafterhodgetheorydecomposition} does split.
 
 We prove the above theorem by first computing explicit bases of each of the spaces in \eqref{equationafterhodgetheorydecomposition}.
-If $\pi \colon X \ra \PP_k^1$ is a degree two projection, then by \cech cohomology we have
+Given the projection $\pi \colon X \ra \PP_k^1$, by \cech cohomology we have
         \begin{equation}\label{equationintroductionisomorphism}
         \hone \cong \frac{\cO_X\left(U_0 \cap U_\infty\right)}{\{ f_0 - f_\infty | f_i \in \cO_X(U_i)\}},
         \end{equation}
 where $U_0 = X \backslash \pi^{-1}(0)$ and $U_\infty = X \backslash \pi^{-1}(\infty)$.
-In the preceding chapter we already computed a basis of $\hzero$, and we use this along with Serre duality and the above identity to compute a basis of $\hone$.
+In the preceding chapter we already computed a basis of $\hzero$, and we use this along with Serre duality and the above identity to compute a basis of $\hone$, see Theorem \ref{theorembasisofhone}.
     \begin{unnumthm}
     Then the elements $\frac{y}{x}, \ldots, \frac{y}{x^g} \in K(X)$ are regular on $U_0 \cap U_\infty$, and their residue classes $\left [ \frac{y}{x} \right ],  \ldots, \left [ \frac{y}{x^g} \right]$ in \eqref{equationintroductionisomorphism} form a basis of $\hone$.
     \end{unnumthm}
- It should be noted that this basis is the same regardless of characteristic --- since this is not the case for the dual space $\hzero$, this may be surprising.
- We then go on to compute the basis of $\derhamhone$ as well, given in Theorem \ref{theorembasisofderham}, but this is slightly more involved, so we do not state it here.
+It should be noted that this basis is the same regardless of characteristic --- since this is not the case for the dual space $\hzero$, this may be surprising.
+We apply this theorem by providing a Mittag-Leffler style theorem for hyperelliptic curves, see Corollary \ref{cormittagleffler}.
+
+In the following section we begin by defining polynomials $\phi_i(x)$, $\psi_i(x)$, $\Phi_i(x,y)$ and $\Psi_i(x,y)$ for $ 1 \leq i \leq g$ in terms of  $i$, $y$, $f(x)$, $F(x)$ and $H(x)$, with which we describe a basis of $\derhamhone$ in Theorem \ref{theorembasisofderham}.
+Using \cech cohomology it follows that $\derhamhone$ is isomorphic to a quotient of the space
+    \begin{equation*}
+    \left\{(\omega_0, \omega_\infty, f_{0,\infty}) | \omega_i\in \Omega_X(U_i), f_{0,\infty}\in \cO_X(U_0 \cap U_\infty), df_{0,\infty} = \omega_0|_{U_0\cap U_\infty} - \omega_\infty|_{U_0\cap U_\infty} \right\},
+    \end{equation*}
+and it is this description that we use to give a basis.
+
+    \begin{thm}\label{theorembasisofderham}
+    If $p \neq 2$ then the residue classes 
+        \begin{equation*}
+         \left[ \left( \left( \frac{\psi_i(x)}{2yx^{i+1}}\right) dx, \left(\frac{-\phi_i(x)}{2yx^{i+1}}\right) dx, x^{-i}y \right)\right] 
+    \quad \text{and} \quad
+         \left[ \left( \frac{x^{i-1}}{y} dx , \frac{x^{i-1}}{y} dx, 0 \right)\right] ,\ i = 1,\ldots ,g,
+        \end{equation*}
+    form a $k$-basis of $\derhamhone$.
+    
+    On the other hand, if $p=2$ then the residue classes 
+        \begin{equation*}
+        \left[ \left( \left(\frac{\Psi_i(x,y)}{x^{i+1}H(x)}\right) dx, \left( \frac{\Phi_i(x,y)}{x^{i+1}H(x)} \right) dx, x^{-i}y \right)\right] 
+    \quad \text{and} \quad
+        \left[ \left( \frac{x^{i}}{H(x)} dx, \frac{x^{i}}{H(x)} dx, 0 \right)\right],\ i=1, \ldots, g,
+        \end{equation*}
+    form a $k$-basis of $\derhamhone$.
+    \end{thm}
+
+
+
+
+
 
 
  \section{Faithful actions on Riemann-Roch spaces}
 
-A significant open problem is to, given a smooth, projective curve $X$ over an algebraically closed field $k$, completely determine the $k[G]$-module structure of $\hzero$, for any subgroup $G$ of $\aut(X)$.
+Given a smooth, projective curve $X$ over an algebraically closed field $k$, a significant open problem is to completely determine the $k[G]$-module structure of $\hzero$, for any subgroup $G$ of $\aut(X)$.
 This was done for the case $k = \CC$ by Chevalley and Weil in 1934, see \cite{chev}.
 The result was later broadened to a curve over any algebraically closed field of characteristic zero by Lewittes \cite{lewittes}, and Broughton's paper \cite{broughton} gives another method of generalising to this case.
 The question has also been answered by Kani \cite{Kani} and Nakajima \cite{naka2}, if the projection $\pi \colon X \ra Y:= X/G$ is tamely ramified.
 Valentini and Madan \cite{valmadan} determined the structure when $\pi$ may be wildly ramified, but they assume that $G$ is a cyclic group of order $p^n$, and this was recently generalised by Karanikolopoulos and Kontogeorgis to any cyclic group \cite{kako}.
 %Other papers look at this - read intros to and then write a sentence about other papers already referenced in our paper.
 
-A weaker though naturally related question is: "When does a group $G$ act faithfully on $H^0(X,\Omega_X)$?"
+A weaker though naturally related question is: "When does $G$ act faithfully on $H^0(X,\Omega_X)$?"
 We answer this in full generality, and also extend the result to look at the space of holomorphic polydifferentials, denoted $H^0(X,\Omega_X^{\otimes m})$.
 In particular we obtain the following theorem.
     \begin{unnumthm}
     Suppose that $g_X\geq 2$ and let $m\geq1$. 
-    Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ contains a hyperelliptic involution and one of the following two sets of conditions holds:\begin{itemize}
+    Then $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ if and only if $G$ contains a hyperelliptic involution and one of the following two sets of conditions holds:
+    \vspace{-1em}
+    \begin{itemize}
         \item $m=1$ and $p=2$;
         \item $m=2$ and $g_X=2$.
         \end{itemize}
     \end{unnumthm}
-Our main method of attack in proving this is comparing the dimension of $H^0(X,\Omega_X^{\otimes m})$ to its fixed space, $H^0(X,\Omega_X^{\otimes m})^G$, for a cyclic group $G$ of prime order.
-We then aim to reduce the general case down to this somewhat more manageable example.
+
+Our main method of attack in proving this is comparing the dimension of $H^0(X,\Omega_X^{\otimes m})$ to its fixed space, $H^0(X,\Omega_X^{\otimes m})^G$.
+We compute the latter dimension precisely in Proposition \ref{dim}, where we see that if $n$ is the order of $G$ and $R$ is the ramification divisor of the projection $\pi \colon X \ra Y$ then $ \dim_k \left( H^0(X,\Omega_X^{\otimes m})^G \right) = (2m-1)(g_Y-1) + \deg\left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor$, apart from a few exceptional cases.
+We then use this to determine exactly when $G$ acts trivially if $g_Y = 0$ and $G$ is of prime order, since the $\deg\left\lfloor\frac{m\pi_*(R)}{n} \right\rfloor$ term is easier to handle in this instance.
+We are then able to reduce to this case in general, since any group that fails to act faithfully on $H^0(X,\Omega_X^{\otimes m})$ contains a subgroup which acts trivially on the space.
+
 
 We use similar techniques to compute when $G$ acts trivially on more general Riemann-Roch spaces, such as $H^0(X,\cO_X(D))$ for a $G$-invariant divisor $D$ of degree at least $2g-1$.
 %    \begin{unnumprop}\label{nakaj}
