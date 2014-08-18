@@ -1,14 +1,14 @@
 \chapter{Faithful actions on Riemann--Roch spaces} \label{Chapter:Faithfulactions}
 
-In this chapter our main aim is to compute when a subgroup of the automorphism group of an algebraic curve acts faithfully on the space of global holomorphic differentials and polydifferentials.
-Our approach uses the fact that if any finite group $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ then there exists a subgroup of $G$ which fixes at least one element of this $k$ vector space.
+In this chapter our main aim is to determine when a subgroup of the automorphism group of an algebraic curve acts faithfully on the space of global holomorphic differentials and polydifferentials.
+Our approach uses the obvious fact that if any finite group $G$ does not act faithfully on $H^0(X,\Omega_X^{\otimes m})$ then there exists a subgroup of $G$ which fixes at least one element of this $k$ vector space.
 
-Given this, it would be useful to determine whether the fixed space is non-zero, and for this reason we start by computing the dimension of the fixed space $H^0(X,\Omega_X^{\otimes m})^G$.
+Given this, it will be useful to know whether the fixed space is non-zero, and for this reason we start by computing the dimension of the fixed space $H^0(X,\Omega_X^{\otimes m})^G$.
 We discover (Proposition \ref{dim}) that the dimension relies primarily on the genus of the quotient curve $Y:=X/G$, $m$ and the ramification divisor of $\pi \colon X \ra Y$.
 
-Then we use this dimension formula, along with results from the second chapter, to compute exactly when a cyclic group of prime order will act trivially on $H^0(X,\Omega_X^{\otimes m})$.
+Then we use this dimension formula, along with results from the second chapter, to compute exactly when a cyclic group of prime order will act trivially on $H^0(X,\Omega_X^{\otimes m})$, considering the cases $m = 1$ and $m \geq 2$ in Proposition \ref{m=1} and Proposition \ref{triv} respectively.
 When we are considering holomorphic differentials (\ie when $m=1$), this depends solely on the characteristic of $k$, whilst for polydifferentials (\ie when $m \geq 2$) this is actually independent of $\cha (k)$, and is determined by the genus of $X$, $m$ and the order of the group.
-In the same section we also extend these results to more general Riemann--Roch spaces.
+In the same section we also extend these results to more general Riemann--Roch spaces, see Corollary \ref{this}.
 
 We then move on to the main theorem (Theorem \ref{theoremfaithfulaction}), which answers the question of when $G$ acts faithfully on $H^0(X,\Omega_X^{\otimes m})$.
 After proving this theorem we give examples which illustrate both when we do and do not have faithful actions.
@@ -493,7 +493,7 @@ Similarly to the case $\deg(D)\geq 2g_X$ in Corollary \ref{this}, the following 
 
 
 
-    \begin{cor}
+    \begin{cor}\label{corriemannrochspace}
     Suppose that $\deg(D)= 2g_X-1$ and that $g_Y=0$. Then the action of $G$ on $H^0(X,\cO_X(D))$ is trivial if and only if one of the following conditions hold:
         \begin{itemize}
         \item  $p^l=2$ and $\sum_{Q\in Y}\left\langle\frac{n_Q}{e_Q}\right\rangle=\frac{1}{2}$;
