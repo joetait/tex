@@ -658,98 +658,52 @@ On the other hand, $\sigma(y) = y + H(x)$, so $\sigma$ acts non-trivially on $yx
 
 \section{$K[G]$-module structure of $\hzero$ when $|G|=p$}
 
-In this subsection we give an alternative proof of Lemma \ref{m=1}, using a result of Valentini and Madan \cite{valmadan}.
-We let $X$ be a smooth, projective, connected algebraic curve curve of genus $g_X$ over an algebraically closed field $k$ of characteristic $p >0$.
-We suppose that $G$ is a subgroup of $\aut(X)$ of order $p$.
-We then define $Y:= X/G$ to be the quotient of $X$ by the action of $G$.
+In this subsection we give an alternative proof of Proposition \ref{m=1}, using a sophisticated result of Valentini and Madan \cite{valmadan}.
+We suppose that $G$ is a subgroup of $\aut(X)$ of order $p = cha(k)$ and that $g_X \geq 2$ and $g_Y = 0$.
 We let $\pi \colon X \ra Y$ be the quotient map and we let $g_Y$ be the genus of $Y$.
-We will use \cite[Thm.\ 1]{valmadan} to compute the $k[G]$-module structure of $\hzero$, and from this we will show when the action of $G$ on $\hzero$ is trivial.
+The $k[G]$-module structure of $\hzero$ is computed in \cite[Thm.\ 1]{valmadan}, and from this we will show that the action of $G$ on $\hzero$ is trivial if and only if $p =2$.
 
 We remark that in \cite{valmadan} it is assumed that $|G|=p^n$ for some $n \in \NN$.
 We have simplified this to the case $n=1$, since this will greatly simplify our computations, and since we do not require the general case.
 
-Since $G$ is of prime order it is a cyclic group, and we assume that $\sigma$ is a generator.
+Let $\sigma$ be a generator of $G$.
 There are $p$ unique indecomposable representations of $G$, which are 
     \[
     M_k := k[G]/((\sigma - 1)^k), \qquad k = 1, \ldots, p.
     \]
-Note that the elements $e:= \sigma^0, \sigma, \ldots, \sigma^k$ form a $k$-vector space basis of $M_k$.
+Note that the elements $e:= \sigma^0, \sigma = \sigma^1, \ldots, \sigma^k$ form a $k$-vector space basis of $M_k$.
 
-We let $d_k$ denote the number of times that $M_k$ occurs in the decomposition of the $k[G]$-module $\hzero$ in to irreducible $k[G]$-modules, so that
+We let $d_k$ denote the number of times that $M_k$ occurs in the decomposition of the $k[G]$-module $\hzero$ in to indecomposable $k[G]$-modules, so that
     \begin{equation}\label{equationdecompositionofhzero}
     \hzero \cong \bigoplus_{k=1}^p \bigoplus_{i=1}^{d_k} M_k.
     \end{equation}
 
-Now if the action of $G$ on $\hzero$ is trivial then the only irreducible submodule of $\hzero$ will be the trivial module $M_1$.
+Now if the action of $G$ on $\hzero$ is trivial then the only indecomposable submodule of $\hzero$ will be the trivial module $M_1$.
 Hence the action of $G$ is trivial if and only if $d_1 = g_X$ and $d_k = 0$ for $k \in \{ 2, \ldots, p \}$.
-
-To show that the latter condition holds we start by defining
-    \[
-    \Omega_X^i := \{ \omega \in \hzero | (\sigma - 1)^i\omega = 0 \}
-    \]
-for $0 \leq i \leq p$.
-Clearly $\Omega_X^{i+1} \supseteq \Omega_X^i$, and also $\Omega_X^0 = \{0\}$ and $\Omega_X^p = \hzero$.
-
-By the decomposition \eqref{equationdecompositionofhzero} of $\hzero$ we know that
-    \[
-    \dim_k \left( \Omega_X^i\right) = \sum_{k=1}^p \sum_{i=1}^{d_k} \dim_k \left( \Omega_X^i \cap M_k \right).
-    \]
-Furthermore, since $e, \sigma, \ldots, \sigma^{k-1}$ forms a $k$-basis of $M_k$ it follows that 
-    \[
-    \dim_k\{ m \in M_k |(\sigma - 1)^iv = 0 \} = 
-        \begin{cases}
-        i & \text{if } i < k \\
-        k & \text{otherwise.}
-        \end{cases}
-     \]   
-Combining the above we conclude that 
-    \[
-    \dim_k \Omega_X^i = \sum_{k=1}^{i-1} kd_k + \sum_{k=i}^p id_k
-    \]
-from which it follows that
-    \[
-    \dim_k \left( \Omega_X^{i+1}/\Omega_X^i \right) = \sum_{k=i+1}^p d_k.
-    \]
-
-
-We then use this to make $d_k$ the subject of the equation, giving
-    \[
-    d_k = 
-        \begin{cases}
-        \dim_k \left( \Omega_X^p/\Omega_X^{p-1} \right) & \text{if } k = p \\
-        \dim_k \left( \Omega_X^k/\Omega_X^{k-1} \right) - \dim_k \left( \Omega_X^{k+1}/\Omega_X^k \right) & \text{otherwise.}
-        \end{cases}
-    \]
-We now determine $\dim_k\left( \Omega_X^i/\Omega_X^{i-1} \right)$ using the extension $K(X)/K(Y)$.
 
 Since $G$ is cyclic of order $p$, $K(X)/K(Y)$ is a degree $p$ Artin extension, and hence $K(X) = K(Y)(y)$, where $y$ satisfies
     \[
     y^p - y = a
     \]
 for some $a \in K(X)$.
-We can and do choose $y$ and $a$ to satisfy the conditions of \cite[App.\ 5, Lem.\ 5.1]{quaddiffequi}, which we state below.
-
-    \begin{lem}
-    Let $L/K$ be a totally ramified Galois extension of degree $p$.
-    Then there exists an element $y \in L$ with valuation $-m$, where $m$ is coprime to $p$ and positive, such that $y^p - y \in K$ and $L = K(y)$.
-    Then if $M$ is the largest integer such that the higher ramification group $G_M$ is non-trivial, we have $M = m$.
-    \end{lem}
 
 We let $Q_1, \ldots, Q_s \in Y$ be the branch points of $\pi$, and we let $P_1, \ldots, P_S$ be the corresponding ramification points (note that since $|G|$ is prime it follows that there is only one point in $\pi^{-1}(Q_i)$ for $1 \leq i \leq s$).
 We let $v_i = v_{P_i}$ denote the valuation at each $P_i \in X$.
-Now if we let $\alpha_i = -v_i(a) = m$\todo[inline]{why are they all equal to $m$? I think it is because the valuation is being divided by the ramification index, which is $p$ in this case. Need to check} then we can compute the different exponent (see Definition \ref{definitiondifferent}) at $P_i$.
+By \cite[App.\ 5, Lem.\ 5.1]{quaddiffequi} we can choose $y$ and $a$ above such that for each $P_i$ the maximum $m_i \in \NN$ such that the ramification group $G_{m_i}(P_i)$ is non-trivial is co-prime to $p$.
 From Hilbert's formula (Theorem \ref{hilbertsformula}) we can conclude that
     \[
-    \delta_i = \sum_{j=0}^\infty (\ord(G_j(P_i)) = \sum_{i=0}^{m}(p-1) = (p-1)(m+1).
+    \delta_i = \sum_{j=0}^\infty (\ord(G_j(P_i))-1 = \sum_{j=0}^{m}(p-1) = (p-1)(m+1).
     \]
+In particular, the sum after the second equality is to $m$ since $G_j(P_i)$ is trivial for $j > m$, and hence $\ord(G_j(P_i)) -1 = 0$ for such $j$.
 Now we set
     \[
-    \gamma_{i,k} = \left\lfloor \frac{\delta_i - k \alpha_i}{p} \right\rfloor, \qquad k = 0, \ldots, p-1,
+    \gamma_{i,k} = \left\lfloor \frac{\delta_i - k m}{p} \right\rfloor, \qquad k = 0, \ldots, p-1,
     \]
 where $\lfloor c \rfloor$ denotes the largest integer less than $c$, for any $c \in \mathbb R$.
 We let $\Gamma_k = \sum_{i=1}^s \gamma_{i,k}$.
+Note that $\Gamma_k \leq \Gamma_{k-1}$ for all $k$.
 
-We now state the main theorem of \cite{valmadan}, making the appropriate substitutions given our assumptions.
+We now state the main theorem of \cite{valmadan}.
 
     \begin{thm}\label{theoremofvalentiniandmadan}
     Let $G$ be a cyclic group of automorphisms of $X$ of order $p$.
@@ -801,4 +755,58 @@ Using the above theorem we now give an alternative proof of Lemma \ref{m=1}.
     However, for $G$ to act trivially we require that $d_1 = g_X$, and since we assumed that $g_X \geq 2$ this gives a contradiction.
     \end{proof}
 
+
+\begin{comment}
+Given any $k[G]$-module $M$ we define
+    \[
+    M^i := \{ m \in M | (\sigma - 1)^im = 0 \}
+    \]
+for $0 \leq i \leq p$.
+Clearly $\Omega_X^{i+1} \supseteq \Omega_X^i$, and also $\Omega_X^0 = \{0\}$ and $\Omega_X^p = \hzero$.
+
+By the decomposition \eqref{equationdecompositionofhzero} of $\hzero$ we know that
+    \[
+    \dim_k \left( \Omega_X^i\right) = \sum_{k=1}^p \sum_{i=1}^{d_k} \dim_k \left( \Omega_X^i \cap M_k \right).
+    \]
+Furthermore, since $e, \sigma, \ldots, \sigma^{k-1}$ forms a $k$-basis of $M_k$ it follows that 
+    \[
+    \dim_k\{ m \in M_k |(\sigma - 1)^iv = 0 \} = 
+        \begin{cases}
+        i & \text{if } i < k \\
+        k & \text{otherwise.}
+        \end{cases}
+     \]   
+Combining the above we conclude that 
+    \[
+    \dim_k \Omega_X^i = \sum_{k=1}^{i-1} kd_k + \sum_{k=i}^p id_k
+    \]
+from which it follows that
+    \[
+    \dim_k \left( \Omega_X^{i+1}/\Omega_X^i \right) = \sum_{k=i+1}^p d_k.
+    \]
+
+
+We then use this to make $d_k$ the subject of the equation, giving
+    \[
+    d_k = 
+        \begin{cases}
+        \dim_k \left( \Omega_X^p/\Omega_X^{p-1} \right) & \text{if } k = p \\
+        \dim_k \left( \Omega_X^k/\Omega_X^{k-1} \right) - \dim_k \left( \Omega_X^{k+1}/\Omega_X^k \right) & \text{otherwise.}
+        \end{cases}
+    \]
+We now determine $\dim_k\left( \Omega_X^i/\Omega_X^{i-1} \right)$ using the extension $K(X)/K(Y)$.
+
+Since $G$ is cyclic of order $p$, $K(X)/K(Y)$ is a degree $p$ Artin extension, and hence $K(X) = K(Y)(y)$, where $y$ satisfies
+    \[
+    y^p - y = a
+    \]
+for some $a \in K(X)$.
+We can and do choose $y$ and $a$ to satisfy the conditions of \cite[App.\ 5, Lem.\ 5.1]{quaddiffequi}, which we state below.
+
+    \begin{lem}
+    Let $L/K$ be a totally ramified Galois extension of degree $p$.
+    Then there exists an element $y \in L$ with valuation $-m$, where $m$ is coprime to $p$ and positive, such that $y^p - y \in K$ and $L = K(y)$.
+    Then if $M$ is the largest integer such that the higher ramification group $G_M$ is non-trivial, we have $M = m$.
+    \end{lem}
+\end{comment}
 
