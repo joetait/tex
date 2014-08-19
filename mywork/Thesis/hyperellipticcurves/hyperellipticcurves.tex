@@ -8,10 +8,11 @@ The various attributes of hyperelliptic curves differ greatly according to wheth
 
 
 Before going in to the details of hyperelliptic curves we recall that a curve $X$ is hyperelliptic if there exists a finite separable morphism $\pi \colon X \ra \PP_k^1$ of degree two.\index{Hyperelliptic curve}
-We let $X$ be a hyperelliptic curve of genus $g$ throughout the chapter, and we fix such a map $\pi$, which is unique up to an automorphism of $\PP_k^1$.
+Every hyperelliptic curve has a hyperelliptic involution $\sigma$ which permutes the elements of $\pi^{-1}(a)$ for each $a \in \mathbb P_k^1$ (except for the finite number of points for which $\pi^{-1}(a)$ contains only one point), and the quotient curve $X /\langle \sigma \rangle$ is isomorphic to $\mathbb P_k^1$.
+We let $X$ be a hyperelliptic curve of genus $g$ throughout the chapter, and we fix such a map $\pi$, which is unique up to an automorphism of $\PP_k^1$ \cite[Prop.\ 7.4.29]{liu}.
 We also let $P_a$ and $P_a'$ denote the unique elements of $\pi^{-1}(a)$ for any point $a \in \mathbb P_k^1$ that is not a branch point.
 If $a \in \mathbb P_k^1$ is a branch point we denote the unique point in $\pi^{-1}(a)$ by $P_a$.
-Finally, we define $D_a$ to be the divisor $\pi^*\left([a]\right)$ for any $a \in \mathbb P_k^1$, and hence
+We define $D_a$ to be the divisor $\pi^*\left([a]\right)$ for any $a \in \mathbb P_k^1$, and hence
     \begin{equation*}
     D_a= 
         \begin{cases}
@@ -19,6 +20,22 @@ Finally, we define $D_a$ to be the divisor $\pi^*\left([a]\right)$ for any $a \i
          [P_a] + [P_a'] & \text{otherwise.}
         \end{cases}
     \end{equation*}
+
+We also have for $x \in k(x)  = K(\mathbb P_k^1) \subseteq K(X)$, that
+    \begin{equation}\label{equationdivxpis2}
+    \di (x)  = D_0 - D_\infty,
+    \end{equation}
+regardless of characteristic.
+Furthermore, the strong Riemann-Hurwitz formula (Theorem \ref{theoremdetailedhurwitz}) gives us
+    \[
+    \di_X (dx) = \pi^*( \di_{\mathbb P^1_k}(dx)) + R,
+    \]
+and since $\di_{\PP_k^1}(dx) = -2[\infty]$, it follows that $\pi^*(\di_{\PP_k^1}(dx)) = -2D_\infty$.
+Hence we conclude that
+    \begin{equation}\label{equationdifferentialdivisor}
+    \di(dx) = R - 2D_\infty.
+    \end{equation}
+
 
 \section{Characteristic unequal to 2}\label{charneq2}
 
@@ -35,13 +52,13 @@ If we let $d_f:=\deg(f(x))$ then
     f(x) = \prod_{i=1}^{d_f} (x-a_i) = x^{d_f} + b_{d_f - 1}x^{d_f-1} + \ldots + b_0,
     \end{equation}
 for some $a_i, b_i \in k$.
-We now show that the $a_i \in \AA_i^1$, and possibly $\infty \in \PP_k^1$, are the branch points of $\pi$.
+We now show that the $a_i \in \AA_k^1$, and possibly $\infty \in \PP_k^1$, are the branch points of $\pi$.
 
 Firstly, observe that by the Riemann-Hurwitz formula, Corollary \ref{corhurwitzformula},
     \[ 
     \deg(R) = 2g -2 +2\cdot 2 = 2g + 2.
     \]
-Since $\pi$ is of degree two and $\cha (k) \neq 2$ then it is only tamely ramified, and it follows that the coefficient of each ramification point is $1$.
+Since $\pi$ is of degree two and $\cha (k) \neq 2$ it is only tamely ramified, and it follows that the coefficient of each ramification point is $1$ in $R$.
 From this we conclude that each branch point has precisely one corresponding ramification point, and that there are precisely $2g+2$ ramification points.
 Also, since there are no repeated roots in $f(x)$, then \eqref{equationdefiningequationpnot2} defines a non-singular affine curve $X'$ with a degree two projection $\pi'\colon X'\rightarrow \mathbb A_k^1$.
 For any point $a\in \mathbb A_k^1$ which is not a solution to $f(x)$ there are two points in the pre-image, namely $(a,\pm \sqrt{a})$, and the point is not a branch point.
@@ -53,19 +70,6 @@ Hence the ramification divisor $R$ of $\pi$ is
     R = \sum_{i=1}^{2g+2} [P_i] .
     \]
 
-We also have, for $x \in K(X)$, that
-    \begin{equation}\label{equationdivxpis2}
-    \di (x)  = D_0 - D_\infty.
-    \end{equation}
-Furthermore, the strong Riemann-Hurwitz formula (Theorem \ref{theoremdetailedhurwitz}) gives us
-    \[
-    \di_X (dx) = \pi^*( \di_{\mathbb P^1_k}(dx)) + R,
-    \]
-and since $\di_{\PP_k^1}(dx) = -2[\infty]$, it follows that $\pi^*(\di_{\PP_k^1}(dx)) = -2D_\infty$.
-Hence we conclude that
-    \begin{equation}\label{equationdifferentialdivisor}
-    \di(dx) = R - 2D_\infty.
-    \end{equation}
 
 In the following lemma we compute the divisor of $y \in K(X)$.
     \begin{lem}\label{lemmadivisorofycharacteristicnot2}
@@ -116,32 +120,35 @@ In the following lemma we compute the divisor of $y \in K(X)$.
     \begin{proof}
     We first show that the elements are linearly independent over $k$.
     Since $\omega$ is fixed, it is equivalent to show that the coefficients are linearly independent over $k$ - \ie that $1,x,\ldots ,x^n, y, xy, x^ly$ are linearly independent over $k$ for any $n$ and $l$ in $\NN$.
-    But the only part of this which is not clear is when the coefficients are not just in $x$, but then it follows since the extension $K(X)/K(x)$ would otherwise be of degree 1.
+    It is immediate that $1, x, \ldots, x^n$ are linearly independent, and similarly that $y, yx, \ldots, yx^l$ are linearly independent.
+    Finally, the two sets of elements are linearly independent of each other, otherwise the extension $K(X)/k(x)$ would be degree 1.
+
     To show that the differentials in the statement of the lemma are indeed holomorphic differentials, we show that their divisors are greater than $0$.
     Recall that $\di (dx^{\otimes m}) =m\di (dx)$, as noted in the previous chapter.
-    
-    
     We now show that the differentials listed in Proposition \ref{prophyperellipticbasispnot2} are holomorphic.
-    We consider the first two cases together.
-    So if $m=1$ or $m\geq 2$, $g\geq 2$ then we have that
-        \begin{align*}
+    We have that
+        \begin{equation}\label{eqbasedifferentialdivisor}
+        \begin{split}
         \di(x^i\omega) & =  \di \left( \frac{x^idx^{\otimes m}}{y^m} \right)\\ 
         & =  i(D_0 -D_\infty) + m(R-2D_\infty) -m(R-(g+1)D_\infty) \\
         & =  iD_0 + (mg -m -i)D_\infty \\
         & =  iD_0 + (m(g-1) -i)D_\infty,
-        \end{align*}
-    which is positive for $0\leq i \leq m(g-1)$.
+        \end{split}
+        \end{equation}
+    by Lemma \ref{lemmadivisorofycharacteristicnot2}, \eqref{equationdivxpis2} and \eqref{equationdifferentialdivisor}, which is positive for $0\leq i \leq m(g-1)$.
     Note that if $m=g=2$ then there are three elements, and since $\dim_kH^0(X,\Omega_X^{\otimes 2})=3$ by Corollary \ref{dim3}, these elements form a basis.
     Also, if $m=1$ then by Definition \ref{definitiongenus} $\dim_k H^0(X,\Omega_X)=g$, and we have $g$ linearly independent elements, so they again must form a basis.
     
     
     
-    Now we consider the case where $m\geq 2$ and $g \geq 2$ and at least one of these inequalities is strict, putting us in the third case in the statement of the lemma.
+    Hence all the polydifferentials in the first two cases and the first $m(g-1)+1$ differentials in the third case are holomorphic.
+    We now consider the final $(m-1)(g-1) - 1$ differentials in the third case.
+    The divisor of one of these elements is
         \begin{align*}
         \di (x^iy\omega) & =  \di(x^i\omega) + R -(g+1)D_\infty \\
         & =  iD_0 + R +((m-1)(g-1)-2-i)D_\infty,
         \end{align*}
-    which is positive for $0\leq i \leq (m-1)(g-1)-2$.
+    by Lemma \ref{lemmadivisorofycharacteristicnot2} and \eqref{eqbasedifferentialdivisor}, which is positive for $0\leq i \leq (m-1)(g-1)-2$.
     By Corollary \ref{dim3} we know that 
         \[
         \dim_kH^0(X,\Omega_X^{\otimes m}) = (2m-1)(g-1).
@@ -157,36 +164,35 @@ In the following lemma we compute the divisor of $y \in K(X)$.
 \section{Characteristic 2}
 
 In this section we assume that $\cha(k) = p  =2$.   
-In this case the function field $K(X)$ is $k(x,y)$, a two extension of the function field of one variable over $k$, $k(x) = k(\PP_k^1)$, where
+In this case the function field $K(X)$ is $k(x,y)$, a degree two extension of the function field of one variable over $k$, $k(x) = k(\PP_k^1)$, where
     \begin{equation}\label{ext}
     y^2 - H(x)y = F(x)
     \end{equation}
-for some polynomials $H(x), F(x)\in k[x]$.
+for some polynomials $H(x), F(x)\in k[x]$, such that $H(x)$ and $H'(x)F(x) + F'(x)^2$ have no common roots in $k$ \cite[Prop.\ 7.4.24]{liu}.
 We require that $\deg(H(x)) \leq g+1$, with equality if and only if $\infty$ is not a branch point, and that $\deg(F(x)) \leq 2g+2$ with $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point  \cite[Prop.\ 7.4.24]{liu}.
-We now show what conditions the smoothness of the curve imposes on $F(x)$ and $H(x)$.
 
-
-
-\begin{lem}\label{smoothness}
-    Since the curve is smooth we have $H(x)$ and $H'(x)^2 F(x) + F'(x)$ have no common zeroes on $X$.
+    \begin{lem}\label{smoothness}
+    The affine plane curve given by \eqref{ext} is smooth if and only if $H(x)$ and $H'(x)^2 F(x) + F'(x)^2$ have no common zeroes in $k$.
     \end{lem}
     \begin{proof}
-    The Jacobian criterion (see, for example, \cite[Thm. 4.2.19]{liu}), states that if the derivatives of \eqref{ext} with respect to $x$ and with respect to $y$ are zero at a point $P\in X$ then the curve is not smooth, and otherwise it is.
+    The Jacobian criterion (see, for example, \cite[Thm. 4.2.19]{liu}), states that if the derivatives of \eqref{ext} with respect to $x$ and with respect to $y$ are zero at a point $P\in X$ then the curve is not smooth at $P$, and otherwise it is.
     Clearly
-        \[
+        \begin{equation}\label{eqsmoothnessone}
         \frac{d}{dy} (y^2 -H(x)y -F(x)) = H(x)
-        \]
+        \end{equation}
     since the characteristic of $k$ is 2.
     On the other hand,
-        \[
+        \begin{equation}\label{eqsmoothnesstwo}
         \frac{d}{dx} (y^2 - H(x)y -F(x)) = H'(x)y - F'(x).
-        \]
-    Since this is zero if and only if its square is zero, $H(x)$ and $H'(x)^2 F(x) + F'(x)$ have a common zero if and only if
-        \[
+        \end{equation}
+    The affine plane curve given by \eqref{ext} is smooth if and only if \eqref{eqsmoothnessone} and \eqref{eqsmoothnesstwo} don't share any roots in $k$.
+    Of course, \eqref{eqsmoothnesstwo} is zero if and only its square
+        \begin{equation}\label{eqsmoothnessthree}
         (H'(x)y-F'(x))^2 = H'(x)^2y^2 -F'(x)^2 = H'(x)^2H(x)y + H'(x)^2F(x) - F'(x)^2
-        \]
-    and $H(x)$ are zero at some $P\in X$.
-    But this is the case if and only if $H(x) = 0$ and $H'(x)^2F(x) + F'(x) = 0$ at $P$, which is what we wished to show.
+        \end{equation}
+    is zero.
+    Finally, if $H(a) = 0$ for some $a \in k$, then the $H'(x)^2H(x)y$ term of \eqref{eqsmoothnessthree} will also be zero at $a$, leaving only the $H'(x)^2F(x) - F'(x)^2$ term.
+    Hence the curve is smooth if and only if $H'(x)^2F(x) - F'(x)^2$ and $H(x)$ share a root.
     \end{proof}
 
 We first describe the ramified points of $\pi$, in order to compute the ramification divisor.
@@ -196,12 +202,12 @@ Then $\pi$ restricts to a map $X'\rightarrow \mathbb A^1_k$, the projection on t
 Let $a\in \mathbb A_k^1$.
 Then if $(a,b)$ is a point in $\pi^{-1}(a)$, so is the point $(a,b+H(a))$, which is clearly distinct if and only if $H(a)\neq 0$.
 Since the extension is degree two, this shows that the ramified points in the affine part correspond to the roots of $H(x)$.
-We let $d_H = \deg(H(x))$ and then further let
+We let $k$ be the number of distinct roots that $H(x)$ has and then 
     \begin{equation}\label{equationcapitalh}
-    H(x) = \prod_{i=1}^{d_H} (x-A_i)^{n_i} = x^{d_H} + B_{{d_H}-1}x^{{d_H}-1} + \ldots + B_1x + B_0
+    H(x) = \prod_{i=1}^{k} (x-A_i)^{n_i} = x^{d_H} + B_{{d_H}-1}x^{{d_H}-1} + \ldots + B_1x + B_0
     \end{equation}
 for some $A_i, B_i \in  k$ and $n_i \in \mathbb N$.
-As above, the $A_i$ are branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points.
+As above, the $A_i$ are branch points of $\pi$ and we let $P_i \in X$ be the corresponding ramification points, and $D_i = D_{P_i}$.
 Note that for each $A_i$ there is a corresponding $K_i$, which is the square root of $F(A_i)$.
 
 We now compute the ramification divisor of $\pi$.
@@ -221,9 +227,9 @@ We now compute the ramification divisor of $\pi$.
         \]
     \end{lem}
     \begin{proof}
-    We first show that it will suffice to prove that the coefficient of $[P_i]$ is $2n_i$ for $1\leq i \leq k$.
+    We first show that it will suffice to prove that the coefficient of $[P_i]$ is $2n_i$ for $1\leq i \leq k$.\todo[inline]{explain zero otherwise bit here}
     Note that by the Riemann-Hurwitz formula $\deg(R) = 2g+2$.
-    Then the coefficient at $P_\infty$ is $\deg(R) - \sum_{i=1}^k2n_i$, which, by the Riemann-Hurwitz formula (Corollary \ref{corhurwitzformula}), is equal to $2g+2-2d_H = 2(g+1-d_H)$, as stated.
+    Then the coefficient at $P_\infty$ is $\deg(R) - \sum_{i=1}^k2n_i = 2g+2-2d_H = 2(g+1-d_H)$, as stated.
     
     Let $P=P_i$ for some $i\in \{1,\ldots , k\}$.
     Then $y-b_i$ is a local parameter at $P$.
@@ -232,14 +238,14 @@ We now compute the ramification divisor of $\pi$.
     By Nakayama's lemma \cite[Prop. 2.6]{atiyahmacdonald}, $y-b_i$ is therefore a local parameter at $P$.
     \todo[inline]{change notations to capital a and check definition of $b_i$}
     
-    Using Hilbert's formula \cite[Chap. IV, \S 1, Prop. 4]{localfields} we obtain
+    Using Hilbert's formula, Theorem \ref{hilbertsformula}, we obtain
         \begin{align*}
         \delta_P & =  \sum_{i\geq 0} \left(\ord(G_i(P))-1\right) \\
         & =  \max\left\{ i\in \NN | G_i(P)\neq \{1\}\right\} + 1 \\
         & =  \ord_{P}(\sigma(y-b_i) - (y-b_i)).
         \end{align*}
     
-    By an argument similar to that used to show the correspondence between the solutions of $H(x)$ and the ramification points, it is clear $\sigma(y)=y+H(x)$.
+    From the defining equation \eqref{ext}, it is clear that the hyperelliptic involution is given by $\sigma(y)=y+H(x)$.
     The following calculation then concludes the proof,
         \begin{align*}
         \delta_P & =  \ord_{P}(\sigma(y-b_i) - (y-b_i)) \\
@@ -264,19 +270,29 @@ We now compute the divisor of $H(x)$ too.
 
 
     \begin{lem}\label{h(x)char2}
-    The divisor associated to $\frac{1}{H(x)}$ is
+    The divisor associated to $H(x)$ is
         \[
-        \di \left(\frac{1}{H(x)}\right) = - \sum_{i=1}^k D_{a_i} + d_HD_\infty = d_HD_\infty - R
+        \di (H(x)) = \sum_{i=1}^k n_i D_i - d_HD_\infty.
         \]
+    We also have
+        \begin{equation*}
+        \di(H(x)) = 
+            \begin{cases}
+            R - (g+1)D_\infty & \text{if}\ \infty \ \text{is a branch point,}\\
+            R - (2g+2)D_\infty &  \text{otherwise.}
+        \end{cases}
+        \end{equation*}
     \end{lem}
     \begin{proof}
-    Since $\pi$ is ramified at infinity then $\ord_{P_{\infty}}\left(\frac{1}{H(x)}\right) = -\ord_{P_{\infty}}(H(x)) = 2d_H$.
-    If it is not ramified, then $\ord_{P_{\infty}'}\left(\frac{1}{H(x)}\right) = \ord_{P_{\infty}''}\left(\frac{1}{H(x)}\right)=d_H$.
-    For the ramified points $P_i$, $1\leq i \leq k$, then $\ord_{P_i}\left(\frac{1}{H(x)}\right) = -\ord_{P_i}(H(x))= -2n_i$.
-    At any other point of $X$ the order of $\frac{1}{H(x)}$ is clearly zero.
+    If $\pi$ is ramified at infinity then $\ord_{P_{\infty}}(H(x)) = - 2d_H$.
+    If it is not ramified, then $\ord_{P_{\infty}}(H(x)) = \ord_{P_{\infty}'}(H(x))=d_H$.
+    For the ramified points $P_i$, $1\leq i \leq k$, then $ \ord_{P_i}(H(x))= 2n_i$.
+    At any other point of $X$ the order of $H(x)$ is clearly zero, and the first equality follows.
+
+    The second part of the lemma follows from Lemma \ref{char2ramification}.
     \end{proof}
     
-Finally, we describe the divisor of $y$ when $p=2$.
+Finally, we describe the divisor of $y$.
 In order to do this we need to distinguish the zeroes of $F(x)$.
 Suppose that $F(x)$ has $l \leq \deg(F(x))$ distinct zeroes, and let $\gamma_1, \ldots, \gamma_l \in k \subseteq \mathbb P_k^1$ be these zeroes.
 Then if $\gamma_i$ is a branch point let $Q_i = (\gamma_i, 0)$ be the unique point in the pre-image $\pi^{-1}(\gamma_i)$.
@@ -285,8 +301,7 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
 
 
     \begin{prop}\label{propdivisorofypis2}
-    Suppose that $p=2$.
-    Then, if $\infty$ is a branch point, the divisor of $y$ is
+    If $\infty$ is a branch point, the divisor of $y$ is
         \begin{equation*}
         \di(y) = 
          {\displaystyle \sum_{i=1}^l} m_i[Q_i] -(2g+1)[P_\infty].
@@ -297,12 +312,10 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
         \end{equation*}
     \end{prop}
     \begin{proof}
-    We first show that $\di_0(y)$, the divisor of the zeroes of $y$, is $\sum_{i=1}^l m_i [Q_i]$.
-    
-    It is clear that the zeroes of $y$ can only occur in the affine part of the curve $X$ defined by \eqref{ext} \ie~in $U_\infty$.
+    We first show that the divisor of $y$ on the affine part of $X$, $U_\infty := X \backslash {\pi^{-1}(\infty)}$, is $\sum_{i=1}^l m_i [Q_i]$.
     Suppose $P\in U_\infty$.
-    If $\left. F \right|_P \neq 0$ then it follows that $y|_P \neq 0$, since $F(x) = y (y + H(x))$.
-    Hence $\di_0(y)$ has a coefficient  of zero for any point in $U_\infty\backslash \{Q_1, \ldots, Q_l \}$.
+    If $\left. F \right|_P \neq 0$ then it follows that $y|_P \neq 0$, since $F(x) = y (y + H(x))$ (and similarly $y$ does not have a pole at $P$).
+    Hence $\di(y)$ has a coefficient  of zero for any point in $U_\infty\backslash \{Q_1, \ldots, Q_l \}$.
     
     Suppose that $P= Q_i = (\gamma_i, 0)$ is an unramified point in $U_\infty$.
     Then $H(\gamma_i) \neq 0$ and $\left. y \right|_P = 0$, so $y + H(x)$ is a unit at $P$.
@@ -328,11 +341,11 @@ Also, we denote the order of the zero of $F(x)$ at $\gamma_i \in k$ by $m_i \in 
     Since $\ord_P(x-\gamma_i) = 2$ and $\ord_P\left(\tilde F(x) - y \tilde H(x)\right) \geq 0$ we know that $\ord_P(y) \geq 1$.
     Hence $(y \tilde H(x)) \big|_P = 0$, and since $\tilde F(x)$ is a unit at $P$, we conclude that $\tilde F(x) - y \tilde H(x)$ is a unit at $P$.
     Hence $\ord_P(y^2) = 2$, and so $\ord_P(y) = 1 = m_i$.
-    It follows that $\di_0(y) =  \sum_{i=1}^l m_i [Q_i]$.
+    It follows that the divisor of $y$ restricted to $U_\infty$ is $\sum_{i=1}^l m_i [Q_i]$.
     
-    We now consider the poles of $y$.
+    We now consider the coefficients in $\di(y)$ of the points in $\pi^{-1}(\infty)$.
     If $\infty$ is a branch point then $\deg(F(x)) = 2g+1$ and hence $\sum_{i=1}^l m_i = 2g+1$.
-    Since $y$ can only have a pole at $P_\infty$, we conclude that the degree of this pole is $2g+1$, and hence
+    Since $y$ can only have a pole at $P_\infty$, we conclude that the order of this pole is $2g+1$, and hence
         \[
         \di(y) = \sum_{i=1}^l m_i [Q_i] - (2g+1)[P_\infty].
         \]
@@ -370,12 +383,12 @@ The case where $m=1$ can again be found in \cite[Prop. 7.4.26]{liu}.
 
     \begin{proof}
     We first assume that above elements are holomorphic polydifferentials, and show that they then form a basis.
-    To show that the elements are linearly independent over $k$ we need only show that the coefficients are, since $\omega$ is fixed.
+    To show that the elements are linearly independent over $k$ we need only show that the coefficients of $\omega$ are, since $\omega$ is fixed.
     The only case where this is not clear is when the coefficients contain both $x$ and $y$ terms.
     But since the $y$ terms are all linear, and the extension is of degree two, it must follow that coefficients are linearly independent.
     
     
-    In the case that $m=1$ then we have that $\dim_k H^0(X,\Omega_X) =g$ by Corollary \ref{dim3}, and there are $g$ elements described in the statement of the proposition in this case, so they must form a basis.
+    In the case that $m=1$ then we have that $\dim_k H^0(X,\Omega_X) =g$ by Definition \ref{definitiongenus}, and there are $g$ elements described in the statement of the proposition in this case, so they must form a basis.
     If $m \geq 2$ then $\dim_k H^0(X,\Omega_X^{\otimes m}) = (2m-1)(g-1)$.
     If $m=g=2$ then $(2m-1)(g-1) = 3$, and there are three elements listed in the proposition.
     On the other hand if $m\geq 2$ and $g > 2$ the proposition lists
@@ -388,21 +401,48 @@ The case where $m=1$ can again be found in \cite[Prop. 7.4.26]{liu}.
     Firstly we have
         \begin{align*}
         & \di(x^i\omega)  =  \di \left( \frac{x^i dx^{\otimes m}}{H(x)^m} \right)\\ 
-        & \hskip 3em =  i(D_0 - D_\infty) +2m\sum_{i=1}^k n_i[P_i] + m(g-1-d)D_\infty -2m\sum_{i=1}^k n_i [P_i] + dmD_\infty \\
+        & \hskip 3em =  i(D_0 - D_\infty) +2m\sum_{i=1}^k n_i[P_i] + m(g-1-d_H)D_\infty -2m\sum_{i=1}^k n_i [P_i] + md_HD_\infty \\
         & \hskip 3em =  iD_0 + (m(g-1) -i)D_\infty
         \end{align*}
-    by Lemmas \eqref{equationdivxpis2}, \ref{equationdifferentialdivisor} and Lemma \ref{h(x)char2}, and this is clearly non-negative for $0\leq i \leq m(g-1)$.
+    by \eqref{equationdivxpis2}, \eqref{equationdifferentialdivisor} and Lemma \ref{h(x)char2}, and this is clearly non-negative for $0\leq i \leq m(g-1)$.
     
-    Similarly the divisor 
+    Similarly, if $\infty$ is a branch point, we have
         \begin{align*}
         \di(x^iy\omega) & =  \di \left( \frac{x^i ydx^{\otimes m}}{H(x)^m} \right)\\ 
+        & = iD_0 - iD_\infty + {\displaystyle \sum_{i=1}^l} m_i[Q_i] -(2g+1)[P_\infty] + mR - 2mD_\infty - mR + m(g+1)D_\infty \\
         & =  iD_0 + (m(g-1) -i)D_\infty + \sum_{i=1}^l m_i[Q_i] - (2g+1)[P_\infty] \\
         & =  iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2m(g-1) -(2g+1) -2i)[P_\infty] \\
-        & =  iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2((m-1)(g-1) -1 -i)-1)[P_\infty]
+        & =  iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2((m-1)(g-1) -1 -i)-1)[P_\infty],
         \end{align*}
-    is again clearly non-negative for $0 \leq i \leq (g-1)(m-1)-2$.
-    
+    by \eqref{equationdivxpis2}, \eqref{equationdifferentialdivisor} and Lemma \ref{h(x)char2} and Proposition \ref{propdivisorofypis2}, which is again clearly non-negative for $0 \leq i \leq (g-1)(m-1)-2$.
+
+    Finally, if $\infty$ is not a branch then, after possibly switching $P_\infty$ and $P_\infty'$, we have
+        \begin{align*}
+        \di(x^iy\omega) &  =  \di \left( \frac{x^i ydx^{\otimes m}}{H(x)^m} \right)\\ 
+        & = iD_0 - iD_\infty + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + (g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] + mR - 2mD_\infty \\
+        & \hspace{1em} - mR + m(2g+2)D_\infty \\
+        & =  
+        \end{align*}
     \end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
