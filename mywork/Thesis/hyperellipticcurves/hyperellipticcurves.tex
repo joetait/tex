@@ -421,8 +421,12 @@ The case where $m=1$ can again be found in \cite[Prop. 7.4.26]{liu}.
         \di(x^iy\omega) &  =  \di \left( \frac{x^i ydx^{\otimes m}}{H(x)^m} \right)\\ 
         & = iD_0 - iD_\infty + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + (g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] + mR - 2mD_\infty \\
         & \hspace{1em} - mR + m(2g+2)D_\infty \\
-        & =  
+        & =  iD_0 + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + (2mg - i - g - 1)[P_\infty'] + (2mg - i +g + 1 - \deg(F(x)))[P_\infty],
         \end{align*}
+    by Proposition \ref{propdivisorofypis2}, \eqref{equationdivxpis2}, \eqref{equationdifferentialdivisor} and Lemma \ref{h(x)char2}.
+    Since $0 \leq i \leq (m-1)(g-1) - 2$, and $m, g \geq 2$, it follows that $2mg - i  - g - 1 \geq 0$.
+    Finally, since $\deg(F(x)) \leq 2g+2$, the coefficient of $[P_\infty]$ in the above equation is greater than or equal to that of $[P_\infty']$.
+    Hence the divisor above is non-negative, concluding the proof.
     \end{proof}
 
 
