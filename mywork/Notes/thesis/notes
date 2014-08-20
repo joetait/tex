@@ -1,5 +1,14 @@
 %%%%%%%%%%% Comment from the end of the de rham section (or de-Rham) %%%%%%%%%%%%%%%%%%
 
+\begin{ex}
+    If $2g+1$ is an odd prime then exists an automorphism $\tau$ of the form $\tau\colon (x,y) \mapsto (x+a,y)$ if and only if $p=2g+1$ and $f(x) = x^p - a^{p-1}x + a_0$, for some $a_0 \in k$.
+    In this case we may assume that $a_0 = 0$, since if it doesn't we can apply the automorphism $x \mapsto x+b, y\mapsto y$ to $K(X)$, where $b$ is a root of $f(x)$.
+    Moreover, given an equation of the form $y^2 = x^p - a^{p-1}x$, we can apply automorphism of $K(X)$ to replace the coefficient $a^{p-1}$ by $1$, namely $x \mapsto ax, y \mapsto a^{\frac{p}{2}}y$.
+    Hence we see that all such curves are isomorphic to those defined by $y^2 = x^p - x$.
+    In particular, it follows from \cite[Thm.\ 3.1]{canonicalrepresentation} that the short exact sequence in Proposition \ref{propshortexactsequence} doesn't split when the above conditions hold.
+    \end{ex}
+
+
 \begin{comment}
 We now suppose that $X$ is of genus 2, and that
     \[
