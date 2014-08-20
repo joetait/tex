@@ -7,13 +7,13 @@ We then use this to prove that the sequence of $k[G]$-modules
     \begin{equation}\label{equationintroductionshortexactsequence}
     0 \ra \hzero \ra \derhamhone \ra \hone \ra 0
     \end{equation}
-is exact.
-The rest of the chapter will then build towards showing that a particular class of hyperelliptic curves this sequence does not split.
+is exact, see Proposition \ref{propshortexactsequence}.
+The rest of the chapter will then build towards showing that for a particular class of hyperelliptic curves this sequence does not split.
 
 Building on the \cech cohomology computations of the previous section, we then use Serre duality and the fact that we have already computed a $k$ vector space basis of $\hzero$ to compute a basis of $\hone$ (Theorem \ref{theorembasisofhone}), which surprisingly is the same whether $\cha(k) = 2$ or not.
-As an application of this we then give a Mittag-Leffler style theorem for hyperelliptic curves.
+As an application of this we then give a Mittag-Leffler style theorem for hyperelliptic curves, see Corollary \ref{cormittagleffler}.
 
-In the next section we compute a $k$ vector space basis of $\derhamhone$, which features the bases of $\hzero$ and $\hone$ already mentioned, as well as other components.
+In the next section we compute a $k$ vector space basis of $\derhamhone$, which features the bases of $\hzero$ and $\hone$ already mentioned, as well as other components, see Theorem \ref{theorembasisofderham}.
 Unlike the basis of $\hone$, this basis does depend on whether $\cha(k) = 2$ or not.
 
 Using this basis we are able, after some computations, to determine precisely how certain automorphisms act on the de Rham cohomology of $X$.
@@ -25,9 +25,10 @@ After this we give examples to illustrate the details of what happens when the a
 
 \section{\cech cohomology and de Rham cohomology for {hyperelliptic}~curves}
 
-In addition to the assumptions in Section 1, we now assume that $X$ is hyperelliptic of genus $g \geq 2$.
-We recall that a curve is hyperelliptic if there exists a finite, separable morphism of degree two from the curve to $\mathbb P_k^1$.\index{Hyperelliptic curve}
+Throughout this chapter we assume that $X$ is hyperelliptic of genus $g \geq 2$.
+We recall from Chapter \ref{chapterhyperellipticcurves} that a curve is hyperelliptic if there exists a finite, separable morphism of degree two from the curve to $\mathbb P_k^1$.\index{Hyperelliptic curve}
 We fix such a map $\pi \colon X \rightarrow \mathbb P_k^1$ of degree two, which is unique up to an automorphism of $\mathbb P_k^1$ (see \cite[Rem.\ 7.4.30]{liu}).
+
 In this section we describe $\hone$ and $H^1(X,\Omega_X)$ concretely for such an $X$, using \cech cohomology.
 
 By Leray's theorem \cite[Thm.\ 5.2.12]{liu} and Serre's affineness criterion \cite[Thm.\ 5.2.23]{liu} we know that, if we use an affine cover, the first \cech cohomology group of $\cO_X$ will be isomorphic to $\hone$.
@@ -61,14 +62,12 @@ We now describe how the trace map acts on $H^1(X,\Omega_X)$ via the presentation
     On the right hand side we consider $\omega$ as an element of the module of differentials, $\Omega_{K(X)}$, via the canonical injection $\Omega_X(U_0 \cap U_\infty) \hookrightarrow \Omega_{K(X)}$.
     \end{lem}
     \begin{proof}
-    We take the \cech complex of \eqref{equationshortexactsequencedifferentialsdirectsum} over the cover $\cU$, yielding the following bicomplex
+    We take the \cech complex of \eqref{equationshortexactsequencedifferentialsdirectsum} over the cover $\cU$, yielding the following bicomplex, with exact rows
         \begin{equation}\label{equationdualitycommutativediagramdifferentials}
         \xymatrix{\Omega_X(U_0)\times\Omega_X(U_\infty) \ar@{^{(}->}[r] \ar[d]^{d_1} & \Omega_{K(X)} \times \Omega_{K(X)} \ar[d]^{d_2} \ar@{->>}[r] & \bigoplus \limits_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P} \times \bigoplus \limits_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \ar[d]^{d_3} \\
         \Omega_X(U_0 \cap U_\infty) \ar@{^{(}->}[r]  & \Omega_{K(X)} \ar@{->>}[r] & \bigoplus \limits_{P\in U_0 \cap U_\infty} \Omega_{K(X)}/\Omega_{X,P} }
         \end{equation}
-    In Lemma \ref{lemmaexactsequenceofhoneandhzero} we could replace $X$ by an affine curve the result would still hold.
-    Moreover, in this case $\hone = 0$ by Serre's affineness criteria \cite[Thm.\ 5.2.23]{liu}, and since $U_0$, $U_\infty$ and $U_0 \cap U_\infty$ are all affine, the horizontal maps on the right hand side are surjective.
-    The surjectivity of the right hand horizontal maps follows from 
+    The exactness of the rows can be derived from \ref{lemmaexactsequenceofhoneandhzero}, by replacing $X$ by $U_0$ and $U_\infty$, and noting that in this case the first cohomology group will vanish, by Serre's affineness criteria \cite[Thm.\ 5.2.23]{liu}.
 
     We can now apply the snake lemma to this diagram, giving a long exact sequence.
     We first note that $d_2$ is clearly surjective --- any $\omega \in \Omega_{K(X)}$ is mapped to by $(\omega, 0) \in \Omega_{K(X)} \times \Omega_{K(X)}$.
@@ -185,7 +184,7 @@ The following lemma shows that $\derhamhone$ fits in to a short exact sequence w
 \section{Basis of $\hone$}
 
 We now give concrete elements in $\cO_X(U_0 \cap U_\infty)$ whose classes in $\hone$, via the isomorphism \eqref{equationcechhoneisomorphismfunctions}, form a basis of $\hone$.
-Note in particular that the basis is the same regardless of whether $p=2$ or $p\neq 2$.\todo{not strictly true, since $y$ is defined differently}
+Note in particular that the basis is the same regardless of whether $p=2$ or $p\neq 2$.
 We then give a corollary which is of the same style as the Mittag-Leffler theorem \cite[Chap.\ 5, \S 2, Thm.\ 4]{ahlfors}.
 
     \begin{thm}\label{theorembasisofhone}
@@ -298,7 +297,7 @@ We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the sam
             0 & \quad \text{else.}
             \end{cases}
         \]
-    Clearly $\left( (g_P)_{P \in U_0},0\right) \in \ker (d_3) = \bigoplus_{P \in X} K(X)/\cO_{X,P}$, and $\delta \left( (g_P)_{P \in U_0}, 0 \right) = \gamma_1 + \ldots + \gamma_g$.
+    Clearly $\left( (g_P)_{P \in U_0},0\right) \in \ker (d_3) = \bigoplus_{P \in X} K(X)/\cO_{X,P}$, and $\delta \left( (g_P)_{P \in U_0}, 0 \right) = \alpha_1\gamma_1 + \ldots + \alpha_g\gamma_g$.
     Hence $\delta((f_P)_{P \in X} - (g_P)_{P \in X}) = 0$, and by the exactness of \eqref{equationinitialdualitylesfunctions} it follows that there exists an $f \in K(X)$ which has Laurent tail $f_P - g_P$ at each $P \in X$, as required in the statement of the corollary.
     \end{proof}
 
@@ -358,7 +357,7 @@ Viewing $\derhamhone$ as the quotient of \eqref{equationderhamspace} by \eqref{e
     form a $k$-basis of $\derhamhone$.
     \end{thm}
 
-Before proving this theorem we use it to prove the following corollary.
+Before proving this theorem we use it to prove the following corollaries.
 
     \begin{cor}\label{corfaithfulactiononderhamhone}
     Let $G$ be a subgroup of the automorphism group $\aut(X)$.
@@ -420,7 +419,7 @@ Before proving this theorem we use it to prove the following corollary.
 
     \begin{cor}\label{corollaryinvolutionisjustmultiplicationbyminus}
     Let $p \neq 2$.
-    Then the action of the hyperelliptic involution on $\derhamhone$ is equivalent to multiplication by $-1$.
+    Then the hyperelliptic involution acts on $\derhamhone$ by multiplication with $-1$.
     \end{cor}
     \begin{proof}
     The hyperelliptic involution $\sigma$ acts by $(x,y) \mapsto (x,-y)$.
@@ -594,7 +593,7 @@ We now prove Theorem \ref{theorembasisofderham}.
 \section{Splitting of the short exact sequence}
 
 
-We keep the assumptions of the previous section, and we now also assume that $\cha(k) = p \geq 3$.
+We keep the assumptions of the previous section, and we also assume that $\cha(k) = p \geq 3$.
 
 In the previous section we found a basis for the de Rham cohomology of any hyperelliptic curve using \cech cohomology, with respect to the cover $\cU = \{ U_0 , U_\infty\}$ (Theorem \ref{theorembasisofderham}).
 We let $\lambda_i$ and $\gamma_i$ denote the elements of this basis by defining
@@ -775,9 +774,8 @@ These split the polynomial $(x-a)^g$ in to two parts.
     
     Note that the last relation ($df_{a \infty i} = \omega_{a i} - \omega_{\infty i}$) holds, since 
         \[
-        df_{a \infty i} = df_{0 \infty i} - df_{0 a i} = \omega_{0 i} - \omega_{\infty i } - \omega_{0 i} + \omega_{a i} = \omega_{a i} - \omega_{\infty i}.
-        \]
-    \end{proof}
+        df_{a \infty i} = df_{0 \infty i} - df_{0 a i} = \omega_{0 i} - \omega_{\infty i } - \omega_{0 i} + \omega_{a i} = \omega_{a i} - \omega_{\infty i}.\qedhere 
+        \]\end{proof}
 Recall that the hyperelliptic involution $\sigma$ is in the centre of $\aut(X)$ (see \cite[Cor.\ 7.4.31]{liu}).
 Then, given any $\tau \in \aut(X)$, we have an induced map $\bar \tau \colon \mathbb{P}_k^1 \ra \mathbb{P}_k^1$, since $\mathbb {P}_k^1$ is the quotient of $X$ by the hyperelliptic involution.
 Hence the following diagram commutes 
@@ -785,7 +783,7 @@ Hence the following diagram commutes
     \begin{array}{ccc}
     X & \xrightarrow[\tau] & X \\
     \downarrow\pi & & \downarrow\pi \\
-    \mathbb P^1_k & \xrightarrow[\tau] & \mathbb P_k^1
+    \mathbb P^1_k & \xrightarrow[\bar\tau] & \mathbb P_k^1
     \end{array}
     \]
 since 
@@ -829,7 +827,8 @@ since
     Also, by comparing the degrees in \eqref{equationexpandingysquared} we see that $\deg(g_1(x)) = 0$, and then by comparing coefficients in the same equation we see that $g_1(x)^2 = 1$.
     Hence $\tau^*(y) = \pm y$.
 
-    We now show that $d_f := \deg(f(x))$ is divisible by $p$, and we derived above that $f(x) = f(x+a)$.
+    We now show that $d_f := \deg(f(x))$ is divisible by $p$.
+    We derived above that $f(x) = f(x+a)$.
     Comparing the terms of degree $d_f-1$ on each side we see that $d_fa - b_{d_f -1} = b_{d_f-1}$ (where $b_{d_f - 1}$ is as in \eqref{equationexpansionoff(x)}).
     It follows that $d_f = 0$ in $k$, and hence $p \mid d_f$.
     \end{proof}
@@ -865,10 +864,10 @@ since
     We first compute the action of $\tau^*$ on the residue class $\left[\frac{y}{x^g}\right]$.
     In order to do this we consider the following obvious commutative diagram of isomorphisms:
         \[
-        \begin{array}{cccc}
-        \hone \cong \cechhone{\cU}  & \xleftarrow{\rho} & \cechhone{\cU''}  \\
-                \hspace{-1em}\tau^*\downarrow & ~ & \rho'\downarrow  \\
-        \hone \cong \cechhone{\cU}  & \xleftarrow{\tau^*} & \cechhone{\cU'}
+        \begin{array}{cccccc}
+        \hone & \xleftarrow{\sim} & \cechhone{\cU}  & \xleftarrow{\rho} & \cechhone{\cU''}  \\
+        \tau^*\downarrow & ~ & ~ & ~ & \rho'\downarrow  \\
+        \hone & \xleftarrow{\sim} & \cechhone{\cU}  & \xleftarrow{\tau^*} & \cechhone{\cU'}
         \end{array}
         \]
     where $\rho$ and $\rho'$ are the canonical projections.
@@ -918,10 +917,10 @@ since
 
     To compute $\tau^*(\gamma_g)$ we consider the following commutative diagram of isomorphisms
         \[
-        \begin{array}{ccc}
-        \derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\rho} & \cechderhamhone(\cU'')  \\
-                \hspace{-0.5em}\tau^*\downarrow & ~ & \rho'\downarrow  \\
-        \derhamhone \cong \cechderhamhone(\cU)  & \xleftarrow{\tau^*} & \cechderhamhone(\cU')
+        \begin{array}{ccccc}
+        \derhamhone & \xleftarrow{\sim} & \cechderhamhone(\cU)  & \xleftarrow{\rho} & \cechderhamhone(\cU'')  \\
+        \tau^*\downarrow & ~ & ~ & ~ & \rho'\downarrow  \\
+        \derhamhone & \xleftarrow{\sim} & \cechderhamhone(\cU)  & \xleftarrow{\tau^*} & \cechderhamhone(\cU')
         \end{array}
         \]
         where $\rho$ is the canonical projection \eqref{equationdefinitionofrho} and $\rho'$ is given by
