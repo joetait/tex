@@ -20,7 +20,7 @@ Using this basis we are able, after some computations, to determine precisely ho
 In particular, we look at automorphisms on $X$ of the form $(x,y) \mapsto (x+a, y)$, for some non-zero $a \in k$.
 Then we prove (see Theorem \ref{theoremsplittingtheorem}) that if $G$ contains such an automorphism, and $X$ ramifies above $\infty \in \PP_k^1$, then the short exact sequence \eqref{equationintroductionshortexactsequence} does not split as a sequence of $k[G]$-modules.
 It should be noted that such hyperelliptic curves can occur in any genus greater than 1.
-After this we give examples to illustrate the details of what happens when the above suppositions are satisfied.
+After this is the final section of the chapter, giving examples to illustrate the details of what happens when the above suppositions are satisfied, and finally giving an example to demonstrate that the supposition that $\infty$ is a branch point is required.
 
 
 \section{\cech cohomology and de Rham cohomology for {hyperelliptic}~curves}
@@ -986,6 +986,11 @@ since
     This concludes the proof of theorem \ref{theoremsplittingtheorem}.
     \end{proof}
 
+
+\section{Examples}
+
+In this section we give a number of examples and specialisations of Theorem \ref{theoremsplittingtheorem}, as well as an example which demonstrates the necessity of the supposition that $\infty$ is a branch point of $\pi \colon X \ra \PP_k^1$.
+
 Applying Theorem \ref{theoremsplittingtheorem} to the hyperelliptic curve given by $y^2 = x^p - x$ we obtain Theorem 3.1 in Hortsch's paper \cite{canonicalrepresentation}. 
 Conversely, the following lemma shows that Hortsch's theorem implies Theorem \ref{theoremsplittingtheorem} if $\deg(f(x)) = p$.
 
@@ -1000,12 +1005,12 @@ Conversely, the following lemma shows that Hortsch's theorem implies Theorem \re
         \]
     for some $a_i \in k$.
     We first show, by induction, that $a_i = 0$ for $i \in \{2, \ldots, p-1\}$, and that $a_1 = a^{p-1}$.
-    Since $f(x) = f(x+a)$, we can compare coefficients, and for $x^{p-2}$ this yeilds the equality $a_{p-2} = a_{p-1}(p-1)a + a_{p-2}$, which is equivalent to $a_{p-1}a = 0$.
+    Since $f(x) = f(x+a)$, we can compare coefficients, and for $x^{p-2}$ this yields the equality $a_{p-2} = a_{p-1}(p-1)a + a_{p-2}$, which is equivalent to $a_{p-1}a = 0$.
     Since we assumed that $a \neq = 0$ we conclude that $a_{p-1} = 0$.
 
     We now assume that $a_{p-1} = a_{p-2} = \ldots = a_{k+1} = 0$, where $k >1$.
     Then the coefficient of $x^{k-1}$ in $f(x+a)$ is $a_{k-1} + ka_ka$, and after comparing to the coefficient of $x^{k-1}$ in $f(x)$, which is $a_{k-1}$, we conclude that $ka_ka = 0$.
-    Since $a \neq =0$ by assumption, and also $k \neq 0$, it follows that $a_k = 0$.
+    Since $a \neq 0$ by assumption, and also $k \neq 0$, it follows that $a_k = 0$.
 
     Finally, comparing the constant coefficients of $f(x)$ and $f(x+a)$ gives us $a_0 = a_0 + a_1a + a^p$, and so $a_1 = - a^{p-1}$.
     So we now have
@@ -1013,21 +1018,23 @@ Conversely, the following lemma shows that Hortsch's theorem implies Theorem \re
         f(x) = x^p - a^{p-1}x + a_0.
         \]
     
-    If $b \in k$ is a root of $f(x)$ then the map $x \mapsto x+b$, $y \mapsto y$ is an automorphism of $K(X)$, and when applied to $f(x)$ gives $x^p - a^{p-1}$.
+    If $b \in k$ is a root of $f(x)$ then the map $x \mapsto x+b$, $y \mapsto y$ is an automorphism of $K(X)$, and when applied to $f(x)$ gives $x^p - a^{p-1}x$.
     Further, the map $x \mapsto ax$, $y \mapsto a^{\frac{p}{2}}y$ is also an automorphism of $K(X)$, and when applied to $x^p - a^{p-1}x$ yields $x^p - x$.
     Combining these automorphisms we see that our original curve is isomorphic to that defined by $y^2 = x^p - x$, concluding the proof.
     \end{proof}
 
-    Since we do not, a priori, enforce any conditions on the degree of $f(x)$, it is plausible that Theorem \ref{theoremsplittingtheorem} is much more general that Hortsch's theorem. In fact the following example is a simple and general method to obtain polynomials $f(x)$ of any odd degree such that Theorem \ref{theoremsplittingtheorem} applies to the curve given by $y^2 = f(x)$.
+    Since we do not, a priori, enforce any conditions on the degree of $f(x)$, it is plausible that Theorem \ref{theoremsplittingtheorem} is much more general that Hortsch's theorem. In fact the following example is a simple and general method to obtain polynomials $f(x)$ of any odd degree, and hence any genus, such that Theorem \ref{theoremsplittingtheorem} applies to the curve given by $y^2 = f(x)$.
 
 
     \begin{ex}
     Let $g(x) \in k[x]$ be a polynomial of odd degree without repeated roots.
     Since $x^p -x$ also does not have repeated, the combined polynomial $f(x) = g(x^p - x)$ obviously has no repeated roots either.
     It is also clear that $f(x + 1) = f(x)$, and hence we have an automorphism $\tau$, as described in Theorem \ref{theoremsplittingtheorem}.
+
+    Moreover, for $g \geq 2$ we can fix some prime $p$ which divides $2g+1$, and if we choose $h(x)$ to be a polynomial of degree $n := (2g+1)/p$ then the curve defined by $y^2 = f(x) := h(x^p - x)$ is of genus $g$, and satisfies the criteria of Theorem \ref{theoremsplittingtheorem}.
     \end{ex}
 
-We finally examine hyperelliptic curves that satisfy the requirements of Theorem \ref{theoremsplittingtheorem} of genus 4.
+We now examine hyperelliptic curves that satisfy the requirements of Theorem \ref{theoremsplittingtheorem} of genus 4 in full generality.
 
     \begin{ex}
     Let $p = 3$.
@@ -1048,6 +1055,7 @@ We finally examine hyperelliptic curves that satisfy the requirements of Theorem
     \end{ex}
 
 We conclude this chapter with an example which demonstrates that the requirement in Theorem \ref{theoremsplittingtheorem} for $\infty$ to be a branch point $X$ is a necessary condition.
+
     \begin{ex}
     Let $p = 3$.
     By \cite[Table 1]{automorphismshyperellipticmodular}, the modular curve $X_0(22)$ is the hyperelliptic curve of genus 2 defined by
@@ -1065,7 +1073,7 @@ We conclude this chapter with an example which demonstrates that the requirement
         \[
         y^2 = f(x) =  x^6 + x^4 + x^2 + 2
         \]
-    is isomorphic to $X_0(22)$, and we let $X$ be the curve defined by this eqation, and we fix $f(x) = x^6 + x^4 + x^2 + 2$ for the rest of the example.
+    is isomorphic to $X_0(22)$, and we let $X$ be the curve defined by this equation, and we fix $f(x) = x^6 + x^4 + x^2 + 2$ for the rest of the example.
     Note that $f'(x) = x^3 + 2x$ and $f(x) = f'(x)^2 +2$, and hence $f'(x)$ and $f(x)$ are coprime.
     In particular, this verifies that $f(x)$ has no repeated roots.
     Moreover, it is clear that $f'(x+1) = f'(x)$, and from this it follows that
@@ -1091,7 +1099,7 @@ We conclude this chapter with an example which demonstrates that the requirement
     If $s$ is a well defined map then clear $p \circ s$ is the identity map on $\hone$, and hence the sequence in Proposition \ref{propshortexactsequence} does split as a sequence of $k[\langle \tau \rangle]$-modules.
 
     We now show that $s$ is well defined.
-    Applying Proposition \ref{propbasisoftriplecoverderham} to the basis above we see that the preimages of $\gamma_3$ and $\gamma_4$ in $\cechderhamhone(\cU'')$ are
+    Applying Proposition \ref{propbasisoftriplecoverderham} to the basis above we see that the pre-images of $\gamma_3$ and $\gamma_4$ in $\cechderhamhone(\cU'')$ are
         \[
         \nu_1 = \left(\frac{1}{yx^2}dx, \frac{x^4+2x^2}{y}dx, \frac{x^4+2x^3+2x^2}{2y(x-1)^3}dx, \frac{y}{x}, \frac{y}{x(x-a)^2}, \frac{2y(x+1)}{(x-1)^2} \right)
         \]
@@ -1102,7 +1110,7 @@ We conclude this chapter with an example which demonstrates that the requirement
     
     It is then easy to verify that
         \[
-        \tau(\gamma_3) = \tau (\rho'(\nu_1)) = 2\gamma_2 + 2\gamma_$ + \gamma_3
+        \tau(\gamma_3) = \tau (\rho'(\nu_1)) = 2\gamma_2 + 2\gamma_4 + \gamma_3
         \]
     and that
         \[
