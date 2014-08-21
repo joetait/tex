@@ -119,7 +119,7 @@ In the following lemma we compute the divisor of $y \in K(X)$.
 
     \begin{proof}
     We first show that the elements are linearly independent over $k$.
-    Since $\omega$ is fixed, it is equivalent to show that the coefficients are linearly independent over $k$ - \ie that $1,x,\ldots ,x^n, y, xy, x^ly$ are linearly independent over $k$ for any $n$ and $l$ in $\NN$.
+    Since $\omega$ is fixed, it is equivalent to show that the coefficients are linearly independent over $k$ - \ie that $1,x,\ldots ,x^n, y, xy, \ldots, x^ly$ are linearly independent over $k$ for any $n$ and $l$ in $\NN$.
     It is immediate that $1, x, \ldots, x^n$ are linearly independent, and similarly that $y, yx, \ldots, yx^l$ are linearly independent.
     Finally, the two sets of elements are linearly independent of each other, otherwise the extension $K(X)/k(x)$ would be degree 1.
 
@@ -191,7 +191,7 @@ We require that $\deg(H(x)) \leq g+1$, with equality if and only if $\infty$ is 
         (H'(x)y-F'(x))^2 = H'(x)^2y^2 -F'(x)^2 = H'(x)^2H(x)y + H'(x)^2F(x) - F'(x)^2
         \end{equation}
     is zero.
-    Finally, if $H(a) = 0$ for some $a \in k$, then the $H'(x)^2H(x)y$ term of \eqref{eqsmoothnessthree} will also be zero at $a$, leaving only the $H'(x)^2F(x) - F'(x)^2$ term.
+    Finally, if $H(a) = 0$ for some $a \in k$, then \eqref{eqsmoothnessthree} evaluated at $a$ is $H'(a)^2F(a) - F'(a)^2$.
     Hence the curve is smooth if and only if $H'(x)^2F(x) - F'(x)^2$ and $H(x)$ share a root.
     \end{proof}
 
@@ -279,7 +279,7 @@ We now compute the divisor of $H(x)$ too.
         \di(H(x)) = 
             \begin{cases}
             R - (g+1)D_\infty & \text{if}\ \infty \ \text{is a branch point,}\\
-            R - (2g+2)D_\infty &  \text{otherwise.}
+            R - (g+1)D_\infty &  \text{otherwise.}
         \end{cases}
         \end{equation*}
     \end{lem}
@@ -420,13 +420,13 @@ The case where $m=1$ can again be found in \cite[Prop. 7.4.26]{liu}.
         \begin{align*}
         \di(x^iy\omega) &  =  \di \left( \frac{x^i ydx^{\otimes m}}{H(x)^m} \right)\\ 
         & = iD_0 - iD_\infty + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + (g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] + mR - 2mD_\infty \\
-        & \hspace{1em} - mR + m(2g+2)D_\infty \\
-        & =  iD_0 + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + (2mg - i - g - 1)[P_\infty'] + (2mg - i +g + 1 - \deg(F(x)))[P_\infty],
+        & \hspace{1em} - mR + m(g+1)D_\infty \\
+        & =  iD_0 + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + (mg - i - m - g - 1)[P_\infty'] + (mg - i - m + g + 1 - \deg(F(x)))[P_\infty],
+        & =  iD_0 + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + ((m-1)(g-1) - 2 - i)[P_\infty'] + (mg - i - m + g + 1 - \deg(F(x)))[P_\infty],
         \end{align*}
     by Proposition \ref{propdivisorofypis2}, \eqref{equationdivxpis2}, \eqref{equationdifferentialdivisor} and Lemma \ref{h(x)char2}.
-    Since $0 \leq i \leq (m-1)(g-1) - 2$, and $m, g \geq 2$, it follows that $2mg - i  - g - 1 \geq 0$.
-    Finally, since $\deg(F(x)) \leq 2g+2$, the coefficient of $[P_\infty]$ in the above equation is greater than or equal to that of $[P_\infty']$.
-    Hence the divisor above is non-negative, concluding the proof.
+    Since $0 \leq 0 \leq (g-1)(m-1)- 2$ then the coefficient of $[P_\infty']$ is clearly non-negative.
+    Finally, since $\deg(F(x)) \leq 2g+2$, the coefficient of $[P_\infty]$ is greater than or equal to that of $[P_\infty']$, and we conclude that the above divisor is non-negative, completing the proof.
     \end{proof}
 
 
