@@ -136,12 +136,12 @@ In the following lemma we compute the divisor of $y \in K(X)$.
         \end{split}
         \end{equation}
     by Lemma \ref{lemmadivisorofycharacteristicnot2}, \eqref{equationdivxpis2} and \eqref{equationdifferentialdivisor}, which is positive for $0\leq i \leq m(g-1)$.
+    Hence all the polydifferentials in the first two cases and the first $m(g-1)+1$ differentials in the third case are holomorphic.
     Note that if $m=g=2$ then there are three elements, and since $\dim_kH^0(X,\Omega_X^{\otimes 2})=3$ by Corollary \ref{dim3}, these elements form a basis.
     Also, if $m=1$ then by Definition \ref{definitiongenus} $\dim_k H^0(X,\Omega_X)=g$, and we have $g$ linearly independent elements, so they again must form a basis.
     
     
     
-    Hence all the polydifferentials in the first two cases and the first $m(g-1)+1$ differentials in the third case are holomorphic.
     We now consider the final $(m-1)(g-1) - 1$ differentials in the third case.
     The divisor of one of these elements is
         \begin{align*}
@@ -169,13 +169,13 @@ In this case the function field $K(X)$ is $k(x,y)$, a degree two extension of th
     y^2 - H(x)y = F(x)
     \end{equation}
 for some polynomials $H(x), F(x)\in k[x]$, such that $H(x)$ and $H'(x)F(x) + F'(x)^2$ have no common roots in $k$ \cite[Prop.\ 7.4.24]{liu}.
-We require that $\deg(H(x)) \leq g+1$, with equality if and only if $\infty$ is not a branch point, and that $\deg(F(x)) \leq 2g+2$ with $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point  \cite[Prop.\ 7.4.24]{liu}.
+We have that $\deg(H(x)) \leq g+1$, with equality if and only if $\infty$ is not a branch point, and that $\deg(F(x)) \leq 2g+2$ with $\deg(F(x)) = 2g+1$ if $\infty$ is a branch point  \cite[Prop.\ 7.4.24]{liu}.
 
     \begin{lem}\label{smoothness}
-    The affine plane curve given by \eqref{ext} is smooth if and only if $H(x)$ and $H'(x)^2 F(x) + F'(x)^2$ have no common zeroes in $k$.
+    The affine plane curve $X'$ given by \eqref{ext} is smooth if and only if $H(x)$ and $H'(x)^2 F(x) + F'(x)^2$ have no common zeroes in $k$.
     \end{lem}
     \begin{proof}
-    The Jacobian criterion (see, for example, \cite[Thm. 4.2.19]{liu}), states that if the derivatives of \eqref{ext} with respect to $x$ and with respect to $y$ are zero at a point $P\in X$ then the curve is not smooth at $P$, and otherwise it is.
+    The Jacobian criterion (see, for example, \cite[Thm. 4.2.19]{liu}), states that if the derivatives of \eqref{ext} with respect to $x$ and with respect to $y$ are zero at a point $P\in X'$ then the curve is not smooth at $P$, and otherwise it is.
     Clearly
         \begin{equation}\label{eqsmoothnessone}
         \frac{d}{dy} (y^2 -H(x)y -F(x)) = H(x)
@@ -185,14 +185,14 @@ We require that $\deg(H(x)) \leq g+1$, with equality if and only if $\infty$ is 
         \begin{equation}\label{eqsmoothnesstwo}
         \frac{d}{dx} (y^2 - H(x)y -F(x)) = H'(x)y - F'(x).
         \end{equation}
-    The affine plane curve given by \eqref{ext} is smooth if and only if \eqref{eqsmoothnessone} and \eqref{eqsmoothnesstwo} don't share any roots in $k$.
+    The affine plane curve given by \eqref{ext} is smooth at $P\in X'$ if and only if at least one of \eqref{eqsmoothnessone} and \eqref{eqsmoothnesstwo} is non-zero at $P$.
     Of course, \eqref{eqsmoothnesstwo} is zero if and only its square
         \begin{equation}\label{eqsmoothnessthree}
         (H'(x)y-F'(x))^2 = H'(x)^2y^2 -F'(x)^2 = H'(x)^2H(x)y + H'(x)^2F(x) - F'(x)^2
         \end{equation}
     is zero.
     Finally, if $H(a) = 0$ for some $a \in k$, then \eqref{eqsmoothnessthree} evaluated at $a$ is $H'(a)^2F(a) - F'(a)^2$.
-    Hence the curve is smooth if and only if $H'(x)^2F(x) - F'(x)^2$ and $H(x)$ share a root.
+    Hence the curve is smooth if and only if $H'(x)^2F(x) - F'(x)^2$ and $H(x)$ share no roots in $k$.
     \end{proof}
 
 We first describe the ramified points of $\pi$, in order to compute the ramification divisor.
@@ -227,9 +227,10 @@ We now compute the ramification divisor of $\pi$.
         \]
     \end{lem}
     \begin{proof}
-    We first show that it will suffice to prove that the coefficient of $[P_i]$ is $2n_i$ for $1\leq i \leq k$.\todo[inline]{explain zero otherwise bit here}
+    We first show that it will suffice to prove that the coefficient of $[P_i]$ is $2n_i$ for $1\leq i \leq k$.
     Note that by the Riemann-Hurwitz formula $\deg(R) = 2g+2$.
-    Then the coefficient at $P_\infty$ is $\deg(R) - \sum_{i=1}^k2n_i = 2g+2-2d_H = 2(g+1-d_H)$, as stated.
+    If $\infty$ is not a branch point of $\pi$ then $\delta_P = 0 = 2(g+1-d_H)$, as stated.
+    If $\infty$ is a branch point then the coefficient at $P_\infty$ is $\deg(R) - \sum_{i=1}^k2n_i = 2g+2-2d_H = 2(g+1-d_H)$, again as stated.
     
     Let $P=P_i$ for some $i\in \{1,\ldots , k\}$.
     Then $y-b_i$ is a local parameter at $P$.
@@ -251,7 +252,7 @@ We now compute the ramification divisor of $\pi$.
         \delta_P & =  \ord_{P}(\sigma(y-b_i) - (y-b_i)) \\
         & =  \ord_{P}(y-b_i+H(x) - y + b_i) \\
         & =  2\ord_{a_i}(H(x)) \\
-        & =  2n_i.
+        & =  2n_i.\qedhere
         \end{align*}
     \end{proof}
 
@@ -272,24 +273,16 @@ We now compute the divisor of $H(x)$ too.
     \begin{lem}\label{h(x)char2}
     The divisor associated to $H(x)$ is
         \[
-        \di (H(x)) = \sum_{i=1}^k n_i D_i - d_HD_\infty.
+        \di (H(x)) = \sum_{i=1}^k n_i D_i - d_HD_\infty = R - (g+1)D_\infty.
         \]
-    We also have
-        \begin{equation*}
-        \di(H(x)) = 
-            \begin{cases}
-            R - (g+1)D_\infty & \text{if}\ \infty \ \text{is a branch point,}\\
-            R - (g+1)D_\infty &  \text{otherwise.}
-        \end{cases}
-        \end{equation*}
     \end{lem}
     \begin{proof}
     If $\pi$ is ramified at infinity then $\ord_{P_{\infty}}(H(x)) = - 2d_H$.
-    If it is not ramified, then $\ord_{P_{\infty}}(H(x)) = \ord_{P_{\infty}'}(H(x))=d_H$.
+    If it is not ramified, then $\ord_{P_{\infty}}(H(x)) = \ord_{P_{\infty}'}(H(x))=-d_H= -(g+1)$.
     For the ramified points $P_i$, $1\leq i \leq k$, then $ \ord_{P_i}(H(x))= 2n_i$.
     At any other point of $X$ the order of $H(x)$ is clearly zero, and the first equality follows.
 
-    The second part of the lemma follows from Lemma \ref{char2ramification}.
+    The second equality follows from Lemma \ref{char2ramification}.
     \end{proof}
     
 Finally, we describe the divisor of $y$.
@@ -401,31 +394,30 @@ The case where $m=1$ can again be found in \cite[Prop. 7.4.26]{liu}.
     Firstly we have
         \begin{align*}
         & \di(x^i\omega)  =  \di \left( \frac{x^i dx^{\otimes m}}{H(x)^m} \right)\\ 
-        & \hskip 3em =  i(D_0 - D_\infty) +2m\sum_{i=1}^k n_i[P_i] + m(g-1-d_H)D_\infty -2m\sum_{i=1}^k n_i [P_i] + md_HD_\infty \\
-        & \hskip 3em =  iD_0 + (m(g-1) -i)D_\infty
+        & =  i(D_0 - D_\infty) +m(R-2D_\infty) - m(R - (g+1)D_\infty) \\
+        & =  iD_0 + (m(g-1) -i)D_\infty
         \end{align*}
     by \eqref{equationdivxpis2}, \eqref{equationdifferentialdivisor} and Lemma \ref{h(x)char2}, and this is clearly non-negative for $0\leq i \leq m(g-1)$.
     
     Similarly, if $\infty$ is a branch point, we have
         \begin{align*}
-        \di(x^iy\omega) & =  \di \left( \frac{x^i ydx^{\otimes m}}{H(x)^m} \right)\\ 
-        & = iD_0 - iD_\infty + {\displaystyle \sum_{i=1}^l} m_i[Q_i] -(2g+1)[P_\infty] + mR - 2mD_\infty - mR + m(g+1)D_\infty \\
+        \di(x^iy\omega) & =  \di (x^i\omega) + \di(y) \\
         & =  iD_0 + (m(g-1) -i)D_\infty + \sum_{i=1}^l m_i[Q_i] - (2g+1)[P_\infty] \\
-        & =  iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2m(g-1) -(2g+1) -2i)[P_\infty] \\
+        & =  iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2m(g-1) -2g-1 -2i)[P_\infty] \\
         & =  iD_0 +  \sum_{i=1}^l m_i[Q_i] + (2((m-1)(g-1) -1 -i)-1)[P_\infty],
         \end{align*}
     by \eqref{equationdivxpis2}, \eqref{equationdifferentialdivisor} and Lemma \ref{h(x)char2} and Proposition \ref{propdivisorofypis2}, which is again clearly non-negative for $0 \leq i \leq (g-1)(m-1)-2$.
 
     Finally, if $\infty$ is not a branch then, after possibly switching $P_\infty$ and $P_\infty'$, we have
         \begin{align*}
-        \di(x^iy\omega) &  =  \di \left( \frac{x^i ydx^{\otimes m}}{H(x)^m} \right)\\ 
-        & = iD_0 - iD_\infty + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + (g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] + mR - 2mD_\infty \\
-        & \hspace{1em} - mR + m(g+1)D_\infty \\
-        & =  iD_0 + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + (mg - i - m - g - 1)[P_\infty'] + (mg - i - m + g + 1 - \deg(F(x)))[P_\infty],
-        & =  iD_0 + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + ((m-1)(g-1) - 2 - i)[P_\infty'] + (mg - i - m + g + 1 - \deg(F(x)))[P_\infty],
+        \di(x^iy\omega) &  = \di (x^i\omega) + \di(y) \\
+        & \hspace{-3em} = iD_0 + (m(g-1)-1)D_\infty + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + (g+1-\deg(F(x)))[P_\infty] - (g+1)[P_\infty'] \\
+        & \hspace{-2em} - mR + m(g+1)D_\infty \\
+        & \hspace{-3em} =  iD_0 + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + (mg - i - m - g - 1)[P_\infty'] + (mg - i - m + g + 1 - \deg(F(x)))[P_\infty] \\
+        & \hspace{-3em} =  iD_0 + {\displaystyle \sum_{i=1}^l} m_i[Q_i] + ((m-1)(g-1) - 2 - i)[P_\infty'] + (mg - i - m + g + 1 - \deg(F(x)))[P_\infty],
         \end{align*}
     by Proposition \ref{propdivisorofypis2}, \eqref{equationdivxpis2}, \eqref{equationdifferentialdivisor} and Lemma \ref{h(x)char2}.
-    Since $0 \leq 0 \leq (g-1)(m-1)- 2$ then the coefficient of $[P_\infty']$ is clearly non-negative.
+    Since $0 \leq i \leq (g-1)(m-1)- 2$ then the coefficient of $[P_\infty']$ is clearly non-negative.
     Finally, since $\deg(F(x)) \leq 2g+2$, the coefficient of $[P_\infty]$ is greater than or equal to that of $[P_\infty']$, and we conclude that the above divisor is non-negative, completing the proof.
     \end{proof}
 
