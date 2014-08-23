@@ -563,6 +563,18 @@ We define the {\em residue map}, $\res_P$, to be the unique map identified in th
     See \cite[Chap.\ II, \S 7 and \S 11]{algebraicgroupsandclassfields} or \cite{residuesofdifferentialsoncurve}.
     \end{proof}
 
+This definition implies that the following explicit standard description of the residue map.
+Let $P \in X$ and let $t \in \cO_{X,P}$ be a local parameter at $P$.
+We may then write any $\omega \in \Omega_{K(X)}$ in the form 
+    \[
+    \omega = \sum_{i = -n}^{-1} a_i t^i dt + \omega_0,
+    \]
+for some $a_{-n}, \ldots, a_{-1}$ and $\omega_0 \in \Omega_{X,P}$.
+Then we obviously have
+    \[
+    \res_P(\omega) = a_{-1}.
+    \]
+    
 
     \begin{thm}[Residue Theorem]\label{theoremresiduetheorem}
     Given any differential $\omega \in \Omega_{K(X)}$ on $X$ then 
