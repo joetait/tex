@@ -71,7 +71,7 @@ We now describe how the trace map acts on $H^1(X,\Omega_X)$ via the presentation
 
     We can now apply the snake lemma to this diagram, giving a long exact sequence.
     We first note that $d_2$ is clearly surjective --- any $\omega \in \Omega_{K(X)}$ is mapped to by $(\omega, 0) \in \Omega_{K(X)} \times \Omega_{K(X)}$.
-    Now recall that $d_3$ is defined by $((\omega_P)_{P \in U_0}, (\omega_P')_{P \in U_\infty}) \mapsto (\omega_P - \omega_P')_{P_ \in U_0 \cap U_\infty}$.
+    Now recall that $d_3$ is defined by $((\omega_P)_{P \in U_0}, (\omega_P')_{P \in U_\infty}) \mapsto (\omega_P - \omega_P')_{P \in U_0 \cap U_\infty}$.
     Then given any element $(\omega_P)_{U_0 \cap U_\infty} \in \bigoplus \Omega_{K(X)}/\Omega_{X,P}$ we can define
         \[
         (\omega_P') := 
@@ -271,7 +271,7 @@ We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the sam
         0 \ra H^0(X,\cO_X) \ra K(X) \ra \bigoplus_{P \in X} K(X)/\cO_{X,P} \rightarrow \hone \ra 0,
         \end{equation*}
     and we let $\delta$ denote the map $\bigoplus_{P \in X} K(X)/\cO_{X,P} \rightarrow \hone$.
-    By Theorem \ref{theorembasisofhone} the residue classes $ \gamma_ 1= \left[ \frac{x}{y}\right], \ldots, \gamma_g = \left[\frac{x^g}{y}\right]$ form a basis of $\hone$, and it follows that there exist unique $\alpha_1, \ldots, \alpha_g \in k$ such that
+    By Theorem \ref{theorembasisofhone} the residue classes $ \gamma_ 1= \left[ \frac{y}{x}\right], \ldots, \gamma_g = \left[\frac{y}{x^g}\right]$ form a basis of $\hone$, and it follows that there exist unique $\alpha_1, \ldots, \alpha_g \in k$ such that
         \[
         \delta\left( (f_P)_{P \in X} \right) - \left( \alpha_1\gamma_1 + \ldots + \alpha_g\gamma_g \right) = 0.
         \]
@@ -289,7 +289,7 @@ We now give a corollary to Theorem \ref{theorembasisofhone}, which is of the sam
         \begin{equation}\label{immediate}
         \left( \left(\left( \alpha_1\frac{y}{x} + \ldots + \alpha_g\frac{y}{x^g} \right) \right)_{P \in U_0}, 0\right) \in \bigoplus_{P \in U_0}K(X)/\cO_{X,P} \times \bigoplus_{P \in U_\infty}K(X)/\cO_{X,P}.
         \end{equation}
-    Since $\alpha_ix^i/y$ is regular on $U_\infty \cap U_0$, then \eqref{immediate} is equal to $\left( (g_P)_{P \in U_0}\, 0\right)$, where
+    Since $\alpha_ix^i/y$ is regular on $U_\infty \cap U_0$, then \eqref{immediate} is equal to $\left( (g_P)_{P \in U_0}, 0\right)$, where
         \[
         g_P =
             \begin{cases}
@@ -327,7 +327,7 @@ We now define the following polynomials:
     \begin{split}
     \Phi_i^x(x) & =  A_{2g+2, i}x^{2g+2} + \ldots + A_{i+1, i}x^{i+1}, \\
     \Psi_i^x(x) & =  A_{i,i}x^i + \ldots + A_{1,i}x, \\
-    \Phi_i^y(x) & =  B_{g,i}x^g + \ldots B_{i+1,i}x^{i+1}, \\
+    \Phi_i^y(x) & =  B_{g+1,i}x^{g+1} + \ldots B_{i+1,i}x^{i+1}, \\
     \Psi_i^y(x) & =  B_{i-1,i}x^{i-1} + \ldots + B_{1,i}x + B_{0,i}.
     \end{split}
     \end{equation}
@@ -566,11 +566,11 @@ We now prove Theorem \ref{theorembasisofderham}.
     and it is clear that the divisor is positive on $U_0 = X \backslash \pi^{-1}(0)$.
     
     For the other half of the differential we need to consider separate cases.
-    If we assume that $\infty$ is branch point then  using Proposition \ref{propdivisorofypis2} we see that
+    If we assume that $\infty$ is a branch point then  using Proposition \ref{propdivisorofypis2} we see that
         \begin{align*}
-        \di\left(\frac{y\Psi_i^y(x) }{x^{i+1}H(x)}dx \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y(x)) - (i+1)D_0 + (g+i)[P_\infty] \\
+        \di\left(\frac{y\Psi_i^y(x) }{x^{i+1}H(x)}dx \right)  =  & \di_0(y) - (2g+1)[P_\infty] + \di(\Psi_i^y(x)) - (i+1)D_0 + 2(g+i)[P_\infty] \\
          =  & \di_0(y) + \di(\Psi_i^y(x)) -(i+1)D_0 + (2i -1)[P_\infty] \\
-         = &  \di_0(y) + \di_0(\Psi_i^y(x)) - d_\Psi^y[P_\infty] - (i+1)D_0 + (2i-1)[P_\infty] \\
+         = &  \di_0(y) + \di_0(\Psi_i^y(x)) - 2d_\Psi^y[P_\infty] - (i+1)D_0 + (2i-1)[P_\infty] \\
          \geq &  \di_0(y) + \di_0(\Psi_i^y(x)) -(i-1)[P_\infty] -(i+1)D_0 + (2i-1)[P_\infty] \\
          =   &\di_0(y) + \di_0(\Psi_i^y(x)) -(i+1)D_0 + [P_\infty],
         \end{align*}
@@ -725,7 +725,7 @@ These split the polynomial $(x-a)^g$ in to two parts.
         df_{0 a i} & = d \left( \frac{y r_i(x)}{x^i(x-a)^g} \right) \\
         & = \frac{r_i(x)}{x^i(x-a)^g}dy + y d\left( \frac{r_i(x)}{x^i(x-a)^g} \right) \\
         & = \frac{f'(x)r_i(x)}{2yx^i(x-a)^g}dx + y\left( \frac{r_i'(x)}{x^i(x-a)^g} -\frac{i r_i(x)}{x^{i+1}(x-a)^g} - \frac{gr_i(x)}{x^i(x-a)^{g+1}}\right) dx \\
-        & = \frac{xf'(x)r_i(x)(x-a) + 2f(xr_i'(x)(x-a) - i(x-a)r_i(x) - gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}} dx.
+        & = \frac{xf'(x)r_i(x)(x-a) + 2f(x)(xr_i'(x)(x-a) - i(x-a)r_i(x) - gxr_i(x))}{2yx^{i+1}(x-a)^{g+1}} dx.
         \end{align*}
     Hence $\omega_{0 i} - df_{0 a i}$ expands to
         \[
@@ -898,14 +898,14 @@ since
         \begin{align*}
         \tau^*(\lambda_i) & = \tau^*\left( \left[ \left( \frac{x^i}{y}dx, \frac{x^i}{y}dx, 0\right) \right] \right) \\
         & = \left[ \left( \frac{(x+a)^i}{y}dx, \frac{(x+a)^i}{y}dx, 0 \right) \right] \\
-        & = \sum_{k=0}^i \binom{i}{k} a^{i-k} \lambda_i.
+        & = \sum_{k=0}^i \binom{i}{k} a^{i-k} \lambda_k.
         \end{align*}
     Then, by \eqref{equationcommutativityoftauandsplittingmap}, it follows that
         \begin{align*}
         \gamma_g + \sum_{i=0}^{g-1} d_i\lambda_i & = s \left( \left[ \frac{y}{x^g} \right] \right) \\
         & = s \left( \tau^*\left( \left[ \frac{y}{x^g} \right] \right) \right) \\
         & = \tau^* \left( \gamma_g + \sum_{i=0}^{g-1} d_i \lambda_i \right) \\
-        & = \left( \gamma_g + \sum_{i=0}^{g-1} c_i \lambda_i \right) + \sum_{i=0}^{g-1} d_i \left( \sum_{k = 0}^i \binom{i}{k} a^{i-k} \lambda_i \right).
+        & = \left( \gamma_g + \sum_{i=0}^{g-1} c_i \lambda_i \right) + \sum_{i=0}^{g-1} d_i \left( \sum_{k = 0}^i \binom{i}{k} a^{i-k} \lambda_k \right).
         \end{align*}
     By comparing coefficients of the basis elements $\lambda_{g-1}$, we see that $c_{g-1} = 0$.
     We now show that we must have $c_{g-1} = a/4$ for the defining equation
@@ -949,7 +949,7 @@ since
     Note that the third entry in both \eqref{equationactionoftauongamma} and \eqref{equationimageofgammaunders} is $\frac{y}{x^g}$.
     Since any element of the form $(\omega_0, \omega_\infty, 0)$ in the subspace \eqref{equationderhamquotient} of the space \eqref{equationderhamspace} is in fact zero, we conclude, by comparing the second entries of \eqref{equationactionoftauongamma} and \eqref{equationimageofgammaunders}, that
         \[
-        - \frac{\phi_g(x+a)}{2y(x+a)^g} dx = -\frac{\phi_g(x)}{2yx^{g+1}}dx + \sum_{i = 0}^{g-1} c_i \frac{x^i}{y}dx
+        - \frac{\phi_g(x+a)}{2y(x+a)^{g+1}} dx = -\frac{\phi_g(x)}{2yx^{g+1}}dx + \sum_{i = 0}^{g-1} c_i \frac{x^i}{y}dx
         \]
     in $\Omega_{K(X)}$.
     
@@ -1004,7 +1004,7 @@ Conversely, the following lemma shows that Hortsch's theorem implies Theorem \re
         f(x) = x^p + a_{p-1}x^{p-1} + \ldots + a_1x + a_0,
         \]
     for some $a_i \in k$.
-    We first show, by induction, that $a_i = 0$ for $i \in \{2, \ldots, p-1\}$, and that $a_1 = a^{p-1}$.
+    We first show, by induction, that $a_i = 0$ for $i \in \{2, \ldots, p-1\}$, and that $a_1 = -a^{p-1}$.
     Since $f(x) = f(x+a)$, we can compare coefficients, and for $x^{p-2}$ this yields the equality $a_{p-2} = a_{p-1}(p-1)a + a_{p-2}$, which is equivalent to $a_{p-1}a = 0$.
     Since we assumed that $a \neq 0$ we conclude that $a_{p-1} = 0$.
     We now assume that $a_{p-1} = a_{p-2} = \ldots = a_{k+1} = 0$, where $k >1$.
@@ -1107,7 +1107,7 @@ We conclude this chapter with an example which demonstrates that the requirement
         \]
     and
         \[
-        \nu_2 = \left( \frac{1+x^2}{2yx^3}dx, \frac{x^3+x^2+x+1}{2y(x-1)^3}dx, \frac{2x^3}{y}dx, \frac{y(x+1)}{x^2(x-1)^2}dx, \frac{y}{x^2}, \frac{y}{(x-1)^2} \right).
+        \nu_2 = \left( \frac{1+x^2}{2yx^3}dx, \frac{x^3+x^2+x+1}{2y(x-1)^3}dx, \frac{2x^3}{y}dx, \frac{y(x+1)}{x^2(x-1)^2}, \frac{y}{x^2}, \frac{y}{(x-1)^2} \right).
         \]
     
     Using a computation similar to \eqref{equationderhamcommutativediagram} it is easy to verify that
