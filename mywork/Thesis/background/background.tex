@@ -343,7 +343,7 @@ Recall that we have
     \]
 
     \begin{defn}
-    Let $P \in X$ and choose a uniformising parameter $t \in \cO_{Y,\phi(P)}$.
+    Let $P$ be a point in $X$ and choose a uniformising parameter $t \in \cO_{Y,\phi(P)}$.
     We define\index{Ramification} the \emph{ramification index}\index{Ramification!index} $e_P$ of $\phi$ at $P$ to be
         \[
         e_P := \ord_P(\phi^*(t)).
@@ -426,7 +426,8 @@ The following theorem has the classical Riemann--Hurwitz formula as a corollary,
 
 
     \begin{cor}[Riemann--Hurwitz Formula]\label{corhurwitzformula}
-    Given $\phi \colon X \ra Y$ as above, we have
+    We let $g_X$ and $g_Y$ be the genera of $X$ and $Y$ respectively.
+    Then we have
         \[
         2g_X - 2 = n(2g_Y -2) + \deg(R).
         \]
@@ -448,7 +449,7 @@ We now introduce the higher ramification groups, which we will use to state Hilb
 
    \begin{defn}
     Let $G$ be finite subgroup of $\aut(X)$ and let $t$ be a uniformising parameter at $P\in X$.
-    Then for $i\geq -1$ we define the \emph{$i^{th}$ ramification group}\index{Ramification!group} at $P$, denoted $G_i(P)$, to be the subgroup of $s\in G_{-1}(P)$ such that $i_G(s) := \ord_P(s(t)-t)$ is at least $i+1$.
+    Then for $i\geq -1$ we define the \emph{$i^{th}$ ramification group}\index{Ramification!group} at $P$, denoted $G_i(P)$, to be the subgroup formed by the $s\in G_{-1}(P)$ such that $i_G(s) := \ord_P(s(t)-t)$ is at least $i+1$.
     This is	independent of the choice of $t$, see \cite[Chap. IV, \S 1, pg. 62]{localfields}.
     \end{defn}
 
@@ -513,7 +514,7 @@ We will use these descriptions almost exclusively for the rest of the thesis, an
         i^{-1}\left(\underline{K}(X)/\cO_X\right) = \left(\underline{K}(X)/\cO_X\right)_P  = \underline{K}(X)_P/\cO_{X,P}  = K(X)/\cO_{X,P}.
         \end{equation*}
     It follows that for any $P \in X$ we have the adjunction map $\underline{K}(X)/\cO_X \ra i_* \left( K(X)/\cO_{X,P} \right)$.
-    These adjunction maps give a map $\underline{K(X)}/\cO_X \ra \prod_{P \in X}\left( K(X)/\cO_{X,P} \right)$, whose image is actually in the sum $\bigoplus_{P \in X} i_*\left(K(X)/\cO_{X,P} \right)$.
+    These adjunction maps give a map $\underline{K}(X)/\cO_X \ra \prod_{P \in X}\left( K(X)/\cO_{X,P} \right)$, whose image is actually in the sum $\bigoplus_{P \in X} i_*\left(K(X)/\cO_{X,P} \right)$.
     The resulting map is an isomorphism because the stalk $i_*\left( K(X)/\cO_{X,P} \right)_Q$ is zero for $Q \neq P$ and is $K(X)/\cO_{X,P}$ when $Q = P$. 
     The isomorphism in \eqref{equationsheafisomorphism} follows from this.
     
@@ -604,13 +605,13 @@ vanishes on the image of $\Omega_{K(X)}$, which allows us to make the following 
 We now use the trace map to define a pairing between the $k$-vector spaces $\hone$ and $\hzero$.
 Since $\Omega_{K(X)}$ is a $K(X)$-module, we can define the product map 
     \begin{equation}\label{equationproductmap}
-    \hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ (\omega, \overline{(f_P)}_{P \in X}) \mapsto ( \overline {(f  \omega)_P})_{P \in X},
+    \hzero \times \hone \ra H^1\left(X, \Omega_X\right), \ \left(\omega, \overline{(f_P)}_{P \in X}\right) \mapsto ( \overline {(f  \omega)_P})_{P \in X},
     \end{equation}
 where $(f\omega)_P$ is the product of $f_P \in K(X)/\cO_{X,P}$ and the residue class of $\omega$ in $\Omega_{K(X)}/\Omega_{X,P}$.
 
 We now combine the product map in \eqref{equationproductmap} with the trace map $t$ to get a map 
     \[
-    \hzero \times \hone \ra k,\quad (\omega, \overline{(f_P)}_{P \in X}) \mapsto \langle \omega, \overline{(f_P)}_{P \in X} \rangle := t \left( \overline{(f \omega)}_P \right)_{P \in X}.
+    \hzero \times \hone \ra k,\quad \left(\omega, \overline{(f_P)}_{P \in X}\right) \mapsto \left\langle \omega, \overline{(f_P)}_{P \in X} \right\rangle := t \left( \overline{(f \omega)}_P \right)_{P \in X}.
     \]
 
     \begin{thm}\label{theoremserreduality}\index{Serre duality}

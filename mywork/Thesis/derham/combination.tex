@@ -39,7 +39,7 @@ Via this differential we have the following cochain complex
     \begin{equation*}
     0 \rightarrow \cO_X(U_0)\times \cO_X(U_\infty) \xrightarrow{\check{d}} \cO_X(U_0 \cap U_\infty) \rightarrow 0.
     \end{equation*}
-The first cohomology group of this chain complex is $\cechhone{\cal U} = \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(\check{d})}$ and hence
+The first cohomology group of this chain complex is $\check{H}^1({\cU},\cO_X) = \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(\check{d})}$ and hence
     \begin{equation}\label{equationcechhoneisomorphismfunctions}
     \hone \cong \frac{\cO_X(U_0 \cap U_\infty)}{\Ima(\check{d})}  
      = \frac{\cO_X(U_0 \cap U_\infty)}{\{f_0 - f_\infty | f_i \in \cO_X(U_i) \}}.
@@ -99,9 +99,9 @@ We now describe how the trace map acts on $H^1(X,\Omega_X)$ via the presentation
         \[
         \psi = (({\omega}_P)_{P\in U_0}, 0) \in \left( \bigoplus_{P \in U_0} \Omega_{K(X)}/\Omega_{X,P}\right) \times \left( \bigoplus_{P \in U_\infty} \Omega_{K(X)}/\Omega_{X,P} \right).
         \]
-    By commutativity of the diagram $\psi \in \ker(d_3) \cong \sum_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$.
+    By commutativity of the diagram $\psi \in \ker(d_3) \cong \bigoplus_{P \in X}\Omega_{K(X)}/\Omega_{X,P}$.
     This means that $\omega_P$, and hence $\psi$, is zero for any $P \in U_0 \cap U_\infty$.
-    Since $\psi$ is also zero for $P \in \pi^{-1}(0)$ it follows that 
+    Since $\psi$ is also zero for $P \in \pi^{-1}(\infty)$ it follows that 
         \[
         t\left([ \omega ] \right) = \sum_{P \in X}\res_P(\psi) = \sum_{P \in \pi^{-1}(\infty)} \res_P(\omega).
         \]
@@ -786,7 +786,6 @@ Hence the following diagram commutes
     \mathbb P^1_k & \xrightarrow[\bar\tau] & \mathbb P_k^1
     \end{array}
     \]
-since 
 %Hence, if $a = \sigma(0)$, the following diagram also commutes:
 %    \[
 %    \begin{array}{ccc}
@@ -1022,7 +1021,7 @@ Conversely, the following lemma shows that Hortsch's theorem implies Theorem \re
     Combining these isomorphisms we see that our original curve is isomorphic to that defined by $y^2 = x^p - x$, concluding the proof.
     \end{proof}
 
-    Since we do not, a priori, enforce any conditions on the degree of $f(x)$, it is plausible that Theorem \ref{theoremsplittingtheorem} is much more general that Hortsch's theorem. In fact the following example is a simple and general method to obtain polynomials $f(x)$ of any odd degree, and hence any genus, such that Theorem \ref{theoremsplittingtheorem} applies to the curve given by $y^2 = f(x)$.
+    Since we do not, a priori, enforce any conditions on the degree of $f(x)$, it is plausible that Theorem \ref{theoremsplittingtheorem} is much more general that Hortsch's theorem. In fact the following example is a simple and general method to obtain polynomials $f(x)$ of any odd degree, and hence any genus, such that Theorem \ref{theoremsplittingtheorem} applies to the curve given by $y^2 = f(x)$. Of course this will only hold in a finite number of characteristics for any fixed genus.
 
 
     \begin{ex}
